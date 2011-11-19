@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.androtext.lang/src-gen"
+    editDirectory="/hu.bme.mit.androtext.lang.edit/src" editorDirectory="/hu.bme.mit.androtext.lang.editor/src"
+    modelPluginID="hu.bme.mit.androtext.lang" forceOverwrite="true" modelName="AndroTextDsl"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="hu.bme.mit.androtext.lang.edit"
+    editorPluginID="hu.bme.mit.androtext.lang.editor">
+  <genPackages prefix="AndroTextDsl" basePackage="hu.bme.mit.androtext.lang" disposableProviderFactory="true"
+      ecorePackage="AndroTextDsl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//ApiLevel">
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ApiLevel/API8"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ApiLevel/API9"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ApiLevel/API10"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ApiLevel/API11"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ApiLevel/API12"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ApiLevel/API14"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//DataTypes">
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//DataTypes/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//DataTypes/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//DataTypes/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//DataTypes/INT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//LayoutStyle">
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//LayoutStyle/FILL"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//LayoutStyle/WRAP"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//LayoutStyle/FILL_WRAP"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//LayoutStyle/WRAP_FILL"/>
+    </genEnums>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroTextModelRoot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//AndroTextModelRoot/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroTextModelRoot/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroTextModelRoot/actualModelRoot"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ModelRoot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//ModelRoot/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroGenModelRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroGenModelRoot/targetApplications"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//TargetApplication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TargetApplication/application"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//TargetApplication/projectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//TargetApplication/packageName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//TargetApplication/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//TargetApplication/version"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroidApplication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroidApplication/dataroot"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroidApplication/mainActivity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroidApplication/modelElements"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroidApplicationModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//AndroidApplicationModelElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Activity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Activity/layout"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//TabActivity"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroDataModelRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroDataModelRoot/entities"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Entity/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Entity/superType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Entity/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Property/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Property/type"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//TypeRef"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//DataTypesRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//DataTypesRef/type"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//EntityTypeRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//EntityTypeRef/type"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroGuiModelRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroGuiModelRoot/rootLayout"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//UIElement"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Layout"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//RootLayout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RootLayout/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//BaseLayout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//BaseLayout/layoutStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//BaseLayout/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AbsoluteLayout"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//LinearLayout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//LinearLayout/orientation"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//FrameLayout"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//RelativeLayout"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Widget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Widget/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Widget/layoutStyle"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//TextView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//TextView/text"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//EditText">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//EditText/text"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Button">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Button/text"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ListView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListView/entries"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListView/layout"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Spinner">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Spinner/entries"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//CheckBox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//CheckBox/text"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//RadioGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RadioGroup/orientation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//RadioGroup/radiobuttons"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//RatingBar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RatingBar/numStars"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ToggleButton">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//ToggleButton/textOn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//ToggleButton/textOff"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//RadioButton">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RadioButton/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RadioButton/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RadioButton/layoutStyle"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//PreferenceScreen">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//PreferenceScreen/title"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroResModelRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroResModelRoot/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Resource/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//StringResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//StringResource/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//IntegerResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//IntegerResource/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//BooleanResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//BooleanResource/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ColorResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//ColorResource/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//DimensionResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//DimensionResource/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ArrayResource"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//IntegerArrayResource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//IntegerArrayResource/entries"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//IntegerArrayEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//IntegerArrayEntry/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//IntegerArrayEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//StringArrayResource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//StringArrayResource/entries"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//StringArrayEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//StringArrayEntry/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//StringArrayEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//DrawableResource"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//BitmapDrawableResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//BitmapDrawableResource/filename"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//TransitionDrawableResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TransitionDrawableResource/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TransitionDrawableResource/to"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

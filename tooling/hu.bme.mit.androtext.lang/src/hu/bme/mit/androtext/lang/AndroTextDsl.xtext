@@ -1,0 +1,289 @@
+grammar hu.bme.mit.androtext.lang.AndroTextDsl with org.eclipse.xtext.common.Terminals
+
+generate androTextDsl "http://www.bme.hu/mit/androtext/lang/AndroTextDsl"
+
+AndroTextModelRoot:
+	('package' name=QualifiedName)?
+	imports+=Import*
+	actualModelRoot=ModelRoot;
+
+ModelRoot:
+	AndroGenModelRoot | AndroidApplication | AndroGuiModelRoot | AndroDataModelRoot | AndroResModelRoot
+;
+
+/* Common language elements */
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCard;
+
+QualifiedName:
+	ID ('.'ID)*;
+
+QualifiedNameWithWildCard :
+	QualifiedName  ('.' '*')?;
+/* End of Common language elements */
+
+/* AndroGenModelRoot and model elements */
+AndroGenModelRoot:
+	'generator' name=ID '{'
+		targetApplications+=TargetApplication*	
+	'}';
+	
+TargetApplication:
+	'target' application=[AndroidApplication | QualifiedName] '{'
+		'project' projectName=QualifiedName
+		('package' packageName=AndroidPackageName)?
+		'platform' target=ApiLevel
+		'version' version=
+	'}'
+;
+
+AndroidPackageName:
+	ID ('.'ID)+ 
+;
+
+enum ApiLevel:
+	API8 = 'Android 2.2' | 
+	API9 = 'Android 2.3.1' | 
+	API10 = 'Android 2.3.3' |
+	API11 = 'Android 3.0' |
+	API12 = 'Android 3.1' |
+	API14 = 'Android 4.0'
+;
+/* End of AndroGenModelRoot and generator model elements */
+
+/* AndroAppModelRoot and model elements */
+AndroidApplication:
+	'application' name=ID '{'
+		'datamodel' dataroot=[AndroDataModelRoot|QualifiedName]
+		mainActivity = Activity
+		modelElements+=AndroidApplicationModelElement*
+	'}';
+
+AndroidApplicationModelElement:
+	Activity | TabActivity
+;
+
+Activity:
+	'activity' name=ID 'layout' layout=[RootLayout | QualifiedName]
+;
+
+TabActivity:
+	'tabactivity' name=ID
+;
+/* End of AndroAppModelRoot and application model elements */
+
+/* AndroDataModelRoot and model elements */
+AndroDataModelRoot:
+	'datamodel' name=ID '{'
+		entities+=Entity*
+	'}'
+;
+
+Entity:
+	'entity' name=ID ('extends' superType=[Entity])? '{'
+		properties+=Property*
+	'}'
+;
+
+Property:
+	name=ID	':' type=TypeRef
+;
+
+TypeRef:
+	DataTypesRef | EntityTypeRef 
+;
+
+DataTypesRef:
+	type = DataTypes
+;
+
+EntityTypeRef:
+	type = [Entity | QualifiedName]
+;
+
+enum DataTypes:
+	STRING="String" | FLOAT="float" | BOOLEAN="boolean" | INT="int";
+/* End of AndroDataModelRoot and data model elements */
+
+/* AndroGuiModelRoot and model elements */
+AndroGuiModelRoot:
+	'guimodel' name=ID '{' 
+		rootLayout+=RootLayout*	
+	'}'
+;
+
+UIElement:
+	Widget | Layout;
+	
+Layout:
+	RootLayout
+;
+
+RootLayout:
+	BaseLayout | PreferenceScreen
+;
+
+BaseLayout:
+	LinearLayout | AbsoluteLayout | FrameLayout | RelativeLayout
+;
+
+enum LayoutStyle:
+	FILL="fill" | WRAP="wrap" | FILL_WRAP="fill&wrap" | WRAP_FILL="wrap&fill";
+
+AbsoluteLayout:
+	"absolutelayout" (name=ID)? layoutStyle=LayoutStyle
+	"{"
+		elements+=UIElement* 
+	"}";
+
+LinearLayout:
+	"linearlayout" (name=ID)? (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle
+	"{"
+		elements+=UIElement*
+	"}";
+
+FrameLayout:
+	"framelayout" (name=ID)? layoutStyle=LayoutStyle
+	"{"
+		elements+=UIElement*
+	"}";
+	
+RelativeLayout:
+	"relativelayout" (name=ID)? layoutStyle=LayoutStyle "{"
+		elements+=UIElement*
+	"}";
+
+Widget:
+	TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton;
+	
+TextView:
+	"textview" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	
+EditText:
+	"edittext" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	
+Button:
+	"button" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	
+ListView:
+	'listview' name=ID layoutStyle=LayoutStyle '{'
+		('entries' entries=[ArrayResource | QualifiedName])?
+		('listitem' layout=[Layout | QualifiedName])?
+	'}';
+	
+Spinner:
+	"spinner" (name=ID)? ('entries' entries=[Resource | QualifiedName])? layoutStyle=LayoutStyle;
+	
+CheckBox:
+	"checkbox" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	
+RadioGroup:
+	"radiogroup" (name=ID)? (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle "{" 
+		(radiobuttons+=RadioButton)+
+	"}";
+	
+RatingBar:
+	"ratingbar" (name=ID)? numStars=INT layoutStyle=LayoutStyle;
+	
+ToggleButton:
+	"togglebutton" (name=ID)? "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=LayoutStyle;
+	
+RadioButton:
+	"radiobutton" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+
+
+PreferenceScreen:
+	"preferencescreen" name=ID title=STRING '{'
+	'}'
+;
+/* End of AndroGuiModelRoot and gui model elements */
+
+/* AndroRes ModelRoot and model elements */
+AndroResModelRoot:
+	'resources' name=ID '{'
+		resources+=Resource*
+	'}'
+;
+
+Resource:
+    StringResource | IntegerResource | BooleanResource
+    | ColorResource | DimensionResource
+    | ArrayResource | DrawableResource
+;
+
+StringResource:
+    name=ID '=' value=STRING
+;
+
+IntegerResource:
+    name=ID '=' value=INT
+;
+
+BooleanResource:
+    name=ID '=' value=BOOL
+;
+
+ColorResource:
+    name=ID '=' value=HEX_COLOR
+;
+
+DimensionResource:
+    name=ID '=' value=DimensionValue
+;
+
+ArrayResource:
+    IntegerArrayResource | StringArrayResource
+;
+
+IntegerArrayResource:
+    'intarray' name=ID '{'
+        (entries+=IntegerArrayEntry (',' entries+=IntegerArrayEntry)*) 
+    '}'
+;
+
+IntegerArrayEntry:
+	(name=ID "=")? value=INT
+;
+
+StringArrayResource:
+	"stringarray" name=ID "{" 
+		( entries+=StringArrayEntry (',' entries+=StringArrayEntry)*)
+	"}";
+	
+StringArrayEntry:
+	(name=ID "=")? value=STRING;
+
+DrawableResource:
+    (BitmapDrawableResource | TransitionDrawableResource)
+;
+
+BitmapDrawableResource:
+    name=ID '=' filename=ID
+;
+
+TransitionDrawableResource:
+    name=ID
+        from=[BitmapDrawableResource] '<->' to=[BitmapDrawableResource]
+;
+
+DimensionValue:
+    FLOAT ('dp' | 'sp' | 'pt' | 'px' | 'mm' | 'in')
+;
+
+BOOL:
+    'YES' | 'NO'
+;
+
+FLOAT:
+    INT ('.' INT)?
+;
+
+terminal HEX_COLOR:
+  '#'
+  ('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f')
+  ('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f')
+  ('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f')
+  (('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f'))? 
+;
+/* End of AndroResModelRoot and resource model elements */
+

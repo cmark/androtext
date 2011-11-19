@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="androtext"
+            id="hu.bme.mit.androtext.lang.AndroTextDsl"
+            name="AndroTextDsl Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="hu.bme.mit.androtext.lang.AndroTextDsl.validate">
+         <activeWhen>
+            <reference
+                    definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="hu.bme.mit.androtext.lang.AndroTextDsl" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="hu.bme.mit.androtext.lang.AndroTextDsl"
+            name="AndroTextDsl">
+            <keywordReference id="hu.bme.mit.androtext.lang.ui.keyword_AndroTextDsl"/>
+        </page>
+        <page
+            category="hu.bme.mit.androtext.lang.AndroTextDsl"
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="hu.bme.mit.androtext.lang.AndroTextDsl.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="hu.bme.mit.androtext.lang.ui.keyword_AndroTextDsl"/>
+        </page>
+        <page
+            category="hu.bme.mit.androtext.lang.AndroTextDsl"
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="hu.bme.mit.androtext.lang.AndroTextDsl.templates"
+            name="Templates">
+            <keywordReference id="hu.bme.mit.androtext.lang.ui.keyword_AndroTextDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="hu.bme.mit.androtext.lang.AndroTextDsl"
+            name="AndroTextDsl">
+            <keywordReference id="hu.bme.mit.androtext.lang.ui.keyword_AndroTextDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="hu.bme.mit.androtext.lang.ui.keyword_AndroTextDsl"
+            label="AndroTextDsl"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="hu.bme.mit.androtext.lang.AndroTextDsl.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="hu.bme.mit.androtext.lang.AndroTextDsl.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="androtext">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="androtext">
+        </resourceServiceProvider>
+    </extension>
+
+
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+   <!-- quickfix marker resolution generator -->
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+      </markerResolutionGenerator>
+   </extension>
+
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="hu.bme.mit.androtext.lang.AndroTextDsl.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="hu.bme.mit.androtext.lang.AndroTextDsl"
+	        class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="hu.bme.mit.androtext.lang.AndroTextDsl.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="hu.bme.mit.androtext.lang.ui.keyword_AndroTextDsl"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="hu.bme.mit.androtext.lang.AndroTextDsl.compare.contentViewers"
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="androtext">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="hu.bme.mit.androtext.lang.AndroTextDsl.compare.contentMergeViewers"
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="androtext" label="AndroTextDsl Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="hu.bme.mit.androtext.lang.AndroTextDsl.editors.documentProviders"
+            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="androtext">
+    </provider>
+  </extension>
+
+</plugin>

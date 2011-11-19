@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.androtext.lang
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: hu.bme.mit.androtext.lang; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;bundle-version="2.1.0";visibility:=reexport,
+ org.eclipse.xtext.xbase;bundle-version="2.1.0";resolution:=optional;visibility:=reexport,
+ org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.apache.commons.logging
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: hu.bme.mit.androtext.lang,
+ hu.bme.mit.androtext.lang.services,
+ hu.bme.mit.androtext.lang.androTextDsl,
+ hu.bme.mit.androtext.lang.androTextDsl.impl,
+ hu.bme.mit.androtext.lang.androTextDsl.util,
+ hu.bme.mit.androtext.lang.serializer,
+ hu.bme.mit.androtext.lang.parser.antlr,
+ hu.bme.mit.androtext.lang.parser.antlr.internal,
+ hu.bme.mit.androtext.lang.validation,
+ hu.bme.mit.androtext.lang.scoping,
+ hu.bme.mit.androtext.lang.formatting
