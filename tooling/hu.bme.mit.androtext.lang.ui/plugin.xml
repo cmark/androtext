@@ -153,12 +153,6 @@
 
 
    <extension
-         point="org.eclipse.xtext.builder.participant">
-      <participant
-            class="hu.bme.mit.androtext.lang.ui.AndroTextDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
-      </participant>
-   </extension>
-   <extension
             point="org.eclipse.ui.preferencePages">
         <page
             category="hu.bme.mit.androtext.lang.AndroTextDsl"
