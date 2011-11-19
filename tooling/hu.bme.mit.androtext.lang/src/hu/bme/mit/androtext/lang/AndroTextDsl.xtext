@@ -70,8 +70,16 @@ Activity:
 ;
 
 TabActivity:
-	'tabactivity' name=ID
+	'tabactivity' name=ID '{'
+		(tabs+=Tab)+
+	'}'
 ;
+
+Tab:
+	'tab' tag=STRING '{' 
+		'show' activity=[Activity]
+	'}';
+
 /* End of AndroAppModelRoot and application model elements */
 
 /* AndroDataModelRoot and model elements */
