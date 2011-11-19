@@ -1,0 +1,11 @@
+generator HelloWorldGenerators {
+	
+	target HelloWorld {
+		
+		project hu.bme.mit.androtext.examples.helloworld
+		platform Android 4.0
+		version
+		
+	}
+	
+}

@@ -1,0 +1,7 @@
+guimodel HelloWorldGui {
+	
+	linearlayout hellolayout vertical fill {
+		textview "Hello AndroText World!" wrap
+	}
+	
+}

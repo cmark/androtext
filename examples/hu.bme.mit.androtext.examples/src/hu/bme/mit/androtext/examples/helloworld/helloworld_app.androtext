@@ -1,0 +1,10 @@
+/*
+ * This is a Hello World example application
+ */
+application HelloWorld {
+	
+	datamodel HelloWorldData
+	
+	activity HelloWorldMain layout HelloWorldGui.hellolayout
+	
+}
