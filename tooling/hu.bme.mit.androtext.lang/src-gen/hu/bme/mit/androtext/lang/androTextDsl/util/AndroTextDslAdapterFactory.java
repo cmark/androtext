@@ -254,9 +254,59 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createRadioButtonAdapter();
       }
       @Override
+      public Adapter caseAbstractPreference(AbstractPreference object)
+      {
+        return createAbstractPreferenceAdapter();
+      }
+      @Override
+      public Adapter casePreference(Preference object)
+      {
+        return createPreferenceAdapter();
+      }
+      @Override
       public Adapter casePreferenceScreen(PreferenceScreen object)
       {
         return createPreferenceScreenAdapter();
+      }
+      @Override
+      public Adapter casePreferenceCategory(PreferenceCategory object)
+      {
+        return createPreferenceCategoryAdapter();
+      }
+      @Override
+      public Adapter caseEditTextPreference(EditTextPreference object)
+      {
+        return createEditTextPreferenceAdapter();
+      }
+      @Override
+      public Adapter caseListPreference(ListPreference object)
+      {
+        return createListPreferenceAdapter();
+      }
+      @Override
+      public Adapter caseCheckBoxPreference(CheckBoxPreference object)
+      {
+        return createCheckBoxPreferenceAdapter();
+      }
+      @Override
+      public Adapter caseRingtonePrefence(RingtonePrefence object)
+      {
+        return createRingtonePrefenceAdapter();
+      }
+      @Override
+      public Adapter casePreferenceAttributes(PreferenceAttributes object)
+      {
+        return createPreferenceAttributesAdapter();
+      }
+      @Override
+      public Adapter caseDialogPreferenceAttributes(DialogPreferenceAttributes object)
+      {
+        return createDialogPreferenceAttributesAdapter();
+      }
+      @Override
+      public Adapter caseListPreferenceAttributes(ListPreferenceAttributes object)
+      {
+        return createListPreferenceAttributesAdapter();
       }
       @Override
       public Adapter caseAndroResModelRoot(AndroResModelRoot object)
@@ -881,6 +931,36 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference <em>Abstract Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference
+   * @generated
+   */
+  public Adapter createAbstractPreferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Preference <em>Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Preference
+   * @generated
+   */
+  public Adapter createPreferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen <em>Preference Screen</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -891,6 +971,126 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPreferenceScreenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory <em>Preference Category</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory
+   * @generated
+   */
+  public Adapter createPreferenceCategoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference <em>Edit Text Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference
+   * @generated
+   */
+  public Adapter createEditTextPreferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreference <em>List Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreference
+   * @generated
+   */
+  public Adapter createListPreferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference <em>Check Box Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference
+   * @generated
+   */
+  public Adapter createCheckBoxPreferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence <em>Ringtone Prefence</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence
+   * @generated
+   */
+  public Adapter createRingtonePrefenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes <em>Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes
+   * @generated
+   */
+  public Adapter createPreferenceAttributesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes <em>Dialog Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes
+   * @generated
+   */
+  public Adapter createDialogPreferenceAttributesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes <em>List Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes
+   * @generated
+   */
+  public Adapter createListPreferenceAttributesAdapter()
   {
     return null;
   }

@@ -6,6 +6,7 @@
  */
 package hu.bme.mit.androtext.lang.androTextDsl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +16,8 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getTitle <em>Title</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferenceAttributes <em>Preference Attributes</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferences <em>Preferences</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,32 +25,48 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface PreferenceScreen extends RootLayout
+public interface PreferenceScreen extends RootLayout, AbstractPreference
 {
   /**
-   * Returns the value of the '<em><b>Title</b></em>' attribute.
+   * Returns the value of the '<em><b>Preference Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Title</em>' attribute isn't clear,
+   * If the meaning of the '<em>Preference Attributes</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Title</em>' attribute.
-   * @see #setTitle(String)
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getPreferenceScreen_Title()
-   * @model
+   * @return the value of the '<em>Preference Attributes</em>' containment reference.
+   * @see #setPreferenceAttributes(PreferenceAttributes)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getPreferenceScreen_PreferenceAttributes()
+   * @model containment="true"
    * @generated
    */
-  String getTitle();
+  PreferenceAttributes getPreferenceAttributes();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getTitle <em>Title</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferenceAttributes <em>Preference Attributes</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Title</em>' attribute.
-   * @see #getTitle()
+   * @param value the new value of the '<em>Preference Attributes</em>' containment reference.
+   * @see #getPreferenceAttributes()
    * @generated
    */
-  void setTitle(String value);
+  void setPreferenceAttributes(PreferenceAttributes value);
+
+  /**
+   * Returns the value of the '<em><b>Preferences</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Preferences</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Preferences</em>' containment reference list.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getPreferenceScreen_Preferences()
+   * @model containment="true"
+   * @generated
+   */
+  EList<AbstractPreference> getPreferences();
 
 } // PreferenceScreen

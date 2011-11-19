@@ -32,8 +32,11 @@ class AndroTextGeneratorMain implements IGenerator {
 	@Inject LayoutResourceGenerator layoutGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication targetApplication) {
-		entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
-		entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication);
+		// generate data related stuff only if datamodel is defined
+		if (targetApplication.application.dataroot != null) {
+			entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
+			entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication);	
+		}
 		manifestGenerator.doGenerate(resourceSet, fsa, targetApplication);
 		basicValueGenerator.doGenerate(resourceSet, fsa, targetApplication);
 		stringArrayResourceGenerator.doGenerate(resourceSet, fsa, targetApplication);

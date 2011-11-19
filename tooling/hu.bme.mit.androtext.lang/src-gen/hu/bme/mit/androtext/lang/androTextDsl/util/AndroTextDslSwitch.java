@@ -370,13 +370,90 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AndroTextDslPackage.ABSTRACT_PREFERENCE:
+      {
+        AbstractPreference abstractPreference = (AbstractPreference)theEObject;
+        T result = caseAbstractPreference(abstractPreference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.PREFERENCE:
+      {
+        Preference preference = (Preference)theEObject;
+        T result = casePreference(preference);
+        if (result == null) result = caseAbstractPreference(preference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AndroTextDslPackage.PREFERENCE_SCREEN:
       {
         PreferenceScreen preferenceScreen = (PreferenceScreen)theEObject;
         T result = casePreferenceScreen(preferenceScreen);
         if (result == null) result = caseRootLayout(preferenceScreen);
+        if (result == null) result = caseAbstractPreference(preferenceScreen);
         if (result == null) result = caseLayout(preferenceScreen);
         if (result == null) result = caseUIElement(preferenceScreen);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.PREFERENCE_CATEGORY:
+      {
+        PreferenceCategory preferenceCategory = (PreferenceCategory)theEObject;
+        T result = casePreferenceCategory(preferenceCategory);
+        if (result == null) result = caseAbstractPreference(preferenceCategory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.EDIT_TEXT_PREFERENCE:
+      {
+        EditTextPreference editTextPreference = (EditTextPreference)theEObject;
+        T result = caseEditTextPreference(editTextPreference);
+        if (result == null) result = caseAbstractPreference(editTextPreference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.LIST_PREFERENCE:
+      {
+        ListPreference listPreference = (ListPreference)theEObject;
+        T result = caseListPreference(listPreference);
+        if (result == null) result = caseAbstractPreference(listPreference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.CHECK_BOX_PREFERENCE:
+      {
+        CheckBoxPreference checkBoxPreference = (CheckBoxPreference)theEObject;
+        T result = caseCheckBoxPreference(checkBoxPreference);
+        if (result == null) result = caseAbstractPreference(checkBoxPreference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.RINGTONE_PREFENCE:
+      {
+        RingtonePrefence ringtonePrefence = (RingtonePrefence)theEObject;
+        T result = caseRingtonePrefence(ringtonePrefence);
+        if (result == null) result = caseAbstractPreference(ringtonePrefence);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.PREFERENCE_ATTRIBUTES:
+      {
+        PreferenceAttributes preferenceAttributes = (PreferenceAttributes)theEObject;
+        T result = casePreferenceAttributes(preferenceAttributes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.DIALOG_PREFERENCE_ATTRIBUTES:
+      {
+        DialogPreferenceAttributes dialogPreferenceAttributes = (DialogPreferenceAttributes)theEObject;
+        T result = caseDialogPreferenceAttributes(dialogPreferenceAttributes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES:
+      {
+        ListPreferenceAttributes listPreferenceAttributes = (ListPreferenceAttributes)theEObject;
+        T result = caseListPreferenceAttributes(listPreferenceAttributes);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1066,6 +1143,38 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Preference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Preference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractPreference(AbstractPreference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Preference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Preference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePreference(Preference object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Preference Screen</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1077,6 +1186,134 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePreferenceScreen(PreferenceScreen object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Preference Category</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Preference Category</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePreferenceCategory(PreferenceCategory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Edit Text Preference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Edit Text Preference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEditTextPreference(EditTextPreference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Preference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Preference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListPreference(ListPreference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Check Box Preference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Check Box Preference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCheckBoxPreference(CheckBoxPreference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ringtone Prefence</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ringtone Prefence</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRingtonePrefence(RingtonePrefence object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Preference Attributes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Preference Attributes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePreferenceAttributes(PreferenceAttributes object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dialog Preference Attributes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dialog Preference Attributes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDialogPreferenceAttributes(DialogPreferenceAttributes object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Preference Attributes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Preference Attributes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListPreferenceAttributes(ListPreferenceAttributes object)
   {
     return null;
   }

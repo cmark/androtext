@@ -22,20 +22,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_HEX_COLOR", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'.'", "'*'", "'generator'", "'{'", "'}'", "'target'", "'project'", "'platform'", "'version'", "'application'", "'datamodel'", "'activity'", "'layout'", "'tabactivity'", "'entity'", "'extends'", "':'", "'guimodel'", "'absolutelayout'", "'linearlayout'", "'horizontal'", "'vertical'", "'framelayout'", "'relativelayout'", "'textview'", "'edittext'", "'button'", "'listview'", "'entries'", "'listitem'", "'spinner'", "'checkbox'", "'radiogroup'", "'ratingbar'", "'togglebutton'", "'textOn'", "'textOff'", "'radiobutton'", "'preferencescreen'", "'resources'", "'='", "'intarray'", "','", "'stringarray'", "'<->'", "'dp'", "'sp'", "'pt'", "'px'", "'mm'", "'in'", "'YES'", "'NO'", "'Android 2.2'", "'Android 2.3.1'", "'Android 2.3.3'", "'Android 3.0'", "'Android 3.1'", "'Android 4.0'", "'String'", "'float'", "'boolean'", "'int'", "'fill'", "'wrap'", "'fill&wrap'", "'wrap&fill'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_HEX_COLOR", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'.'", "'*'", "'generator'", "'{'", "'}'", "'target'", "'project'", "'platform'", "'version'", "'application'", "'datamodel'", "'activity'", "'layout'", "'tabactivity'", "'entity'", "'extends'", "':'", "'guimodel'", "'absolutelayout'", "'linearlayout'", "'horizontal'", "'vertical'", "'framelayout'", "'relativelayout'", "'textview'", "'edittext'", "'button'", "'listview'", "'entries'", "'listitem'", "'spinner'", "'checkbox'", "'radiogroup'", "'ratingbar'", "'togglebutton'", "'textOn'", "'textOff'", "'radiobutton'", "'preference'", "'preferencescreen'", "'preferencecategery'", "'edittextpreference'", "'listpreference'", "'checkboxpreference'", "'ringtonepreference'", "'key'", "'summary'", "'enabled'", "'persistent'", "'dialogTitle'", "'defaultValue'", "'entryValues'", "'resources'", "'='", "'intarray'", "','", "'stringarray'", "'<->'", "'dp'", "'sp'", "'pt'", "'px'", "'mm'", "'in'", "'true'", "'false'", "'Android 2.2'", "'Android 2.3.1'", "'Android 2.3.3'", "'Android 3.0'", "'Android 3.1'", "'Android 4.0'", "'String'", "'float'", "'boolean'", "'int'", "'fill'", "'wrap'", "'fill&wrap'", "'wrap&fill'"
     };
-    public static final int T__68=68;
-    public static final int T__69=69;
     public static final int RULE_ID=4;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
     public static final int T__29=29;
-    public static final int T__65=65;
     public static final int T__28=28;
-    public static final int T__62=62;
     public static final int T__27=27;
-    public static final int T__63=63;
     public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
@@ -45,56 +37,34 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int RULE_HEX_COLOR=7;
-    public static final int T__61=61;
-    public static final int T__60=60;
     public static final int EOF=-1;
-    public static final int T__55=55;
-    public static final int T__56=56;
+    public static final int T__93=93;
     public static final int T__19=19;
-    public static final int T__57=57;
-    public static final int T__58=58;
+    public static final int T__91=91;
+    public static final int T__92=92;
     public static final int T__16=16;
-    public static final int T__51=51;
-    public static final int T__52=52;
     public static final int T__15=15;
-    public static final int T__53=53;
+    public static final int T__90=90;
     public static final int T__18=18;
-    public static final int T__54=54;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int T__59=59;
-    public static final int RULE_INT=6;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__80=80;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=9;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int T__85=85;
+    public static final int T__84=84;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
+    public static final int T__88=88;
     public static final int RULE_ML_COMMENT=8;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int RULE_STRING=5;
-    public static final int T__32=32;
+    public static final int RULE_STRING=6;
     public static final int T__71=71;
-    public static final int T__33=33;
     public static final int T__72=72;
-    public static final int T__34=34;
-    public static final int T__35=35;
     public static final int T__70=70;
-    public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int RULE_WS=10;
     public static final int T__76=76;
     public static final int T__75=75;
     public static final int T__74=74;
@@ -102,6 +72,49 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     public static final int T__79=79;
     public static final int T__78=78;
     public static final int T__77=77;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__61=61;
+    public static final int T__60=60;
+    public static final int T__55=55;
+    public static final int T__56=56;
+    public static final int T__57=57;
+    public static final int T__58=58;
+    public static final int T__51=51;
+    public static final int T__52=52;
+    public static final int T__53=53;
+    public static final int T__54=54;
+    public static final int T__59=59;
+    public static final int RULE_INT=5;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int RULE_SL_COMMENT=9;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int RULE_WS=10;
 
     // delegates
     // delegators
@@ -432,7 +445,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                 alt3=4;
                 }
                 break;
-            case 53:
+            case 66:
                 {
                 alt3=5;
                 }
@@ -1103,7 +1116,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTargetApplication"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:423:1: ruleTargetApplication returns [EObject current=null] : (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= '}' ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:423:1: ruleTargetApplication returns [EObject current=null] : (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= ruleVersionCode ) ) otherlv_11= '}' ) ;
     public final EObject ruleTargetApplication() throws RecognitionException {
         EObject current = null;
 
@@ -1113,22 +1126,24 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
         Token otherlv_5=null;
         Token otherlv_7=null;
         Token otherlv_9=null;
-        Token lv_version_10_0=null;
+        Token otherlv_11=null;
         AntlrDatatypeRuleToken lv_projectName_4_0 = null;
 
         AntlrDatatypeRuleToken lv_packageName_6_0 = null;
 
         Enumerator lv_target_8_0 = null;
 
+        AntlrDatatypeRuleToken lv_version_10_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:426:28: ( (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= '}' ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:427:1: (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= '}' ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:426:28: ( (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= ruleVersionCode ) ) otherlv_11= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:427:1: (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= ruleVersionCode ) ) otherlv_11= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:427:1: (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= '}' ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:427:3: otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:427:1: (otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= ruleVersionCode ) ) otherlv_11= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:427:3: otherlv_0= 'target' ( ( ruleQualifiedName ) ) otherlv_2= '{' otherlv_3= 'project' ( (lv_projectName_4_0= ruleQualifiedName ) ) (otherlv_5= 'package' ( (lv_packageName_6_0= ruleAndroidPackageName ) ) )? otherlv_7= 'platform' ( (lv_target_8_0= ruleApiLevel ) ) otherlv_9= 'version' ( (lv_version_10_0= ruleVersionCode ) ) otherlv_11= '}'
             {
             otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleTargetApplication993); 
 
@@ -1292,21 +1307,30 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_9, grammarAccess.getTargetApplicationAccess().getVersionKeyword_8());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:520:1: ( (lv_version_10_0= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:521:1: (lv_version_10_0= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:520:1: ( (lv_version_10_0= ruleVersionCode ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:521:1: (lv_version_10_0= ruleVersionCode )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:521:1: (lv_version_10_0= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:522:3: lv_version_10_0= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:521:1: (lv_version_10_0= ruleVersionCode )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:522:3: lv_version_10_0= ruleVersionCode
             {
-            lv_version_10_0=(Token)match(input,18,FOLLOW_18_in_ruleTargetApplication1160); 
+             
+            	        newCompositeNode(grammarAccess.getTargetApplicationAccess().getVersionVersionCodeParserRuleCall_9_0()); 
+            	    
+            pushFollow(FOLLOW_ruleVersionCode_in_ruleTargetApplication1163);
+            lv_version_10_0=ruleVersionCode();
 
-                    newLeafNode(lv_version_10_0, grammarAccess.getTargetApplicationAccess().getVersionRightCurlyBracketKeyword_9_0());
-                
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTargetApplicationRule());
+            	            current = createModelElementForParent(grammarAccess.getTargetApplicationRule());
             	        }
-                   		setWithLastConsumed(current, "version", lv_version_10_0, "}");
+                   		set(
+                   			current, 
+                   			"version",
+                    		lv_version_10_0, 
+                    		"VersionCode");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1314,6 +1338,10 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_11=(Token)match(input,18,FOLLOW_18_in_ruleTargetApplication1175); 
+
+                	newLeafNode(otherlv_11, grammarAccess.getTargetApplicationAccess().getRightCurlyBracketKeyword_10());
+                
 
             }
 
@@ -1334,8 +1362,101 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleTargetApplication"
 
 
+    // $ANTLR start "entryRuleVersionCode"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:550:1: entryRuleVersionCode returns [String current=null] : iv_ruleVersionCode= ruleVersionCode EOF ;
+    public final String entryRuleVersionCode() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleVersionCode = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:551:2: (iv_ruleVersionCode= ruleVersionCode EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:552:2: iv_ruleVersionCode= ruleVersionCode EOF
+            {
+             newCompositeNode(grammarAccess.getVersionCodeRule()); 
+            pushFollow(FOLLOW_ruleVersionCode_in_entryRuleVersionCode1212);
+            iv_ruleVersionCode=ruleVersionCode();
+
+            state._fsp--;
+
+             current =iv_ruleVersionCode.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVersionCode1223); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleVersionCode"
+
+
+    // $ANTLR start "ruleVersionCode"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:559:1: ruleVersionCode returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
+    public final AntlrDatatypeRuleToken ruleVersionCode() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_INT_0=null;
+        Token kw=null;
+        Token this_INT_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:562:28: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:563:1: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:563:1: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:563:6: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
+            {
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleVersionCode1263); 
+
+            		current.merge(this_INT_0);
+                
+             
+                newLeafNode(this_INT_0, grammarAccess.getVersionCodeAccess().getINTTerminalRuleCall_0()); 
+                
+            kw=(Token)match(input,14,FOLLOW_14_in_ruleVersionCode1281); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getVersionCodeAccess().getFullStopKeyword_1()); 
+                
+            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleVersionCode1296); 
+
+            		current.merge(this_INT_2);
+                
+             
+                newLeafNode(this_INT_2, grammarAccess.getVersionCodeAccess().getINTTerminalRuleCall_2()); 
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleVersionCode"
+
+
     // $ANTLR start "entryRuleAndroidPackageName"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:543:1: entryRuleAndroidPackageName returns [String current=null] : iv_ruleAndroidPackageName= ruleAndroidPackageName EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:591:1: entryRuleAndroidPackageName returns [String current=null] : iv_ruleAndroidPackageName= ruleAndroidPackageName EOF ;
     public final String entryRuleAndroidPackageName() throws RecognitionException {
         String current = null;
 
@@ -1343,17 +1464,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:544:2: (iv_ruleAndroidPackageName= ruleAndroidPackageName EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:545:2: iv_ruleAndroidPackageName= ruleAndroidPackageName EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:592:2: (iv_ruleAndroidPackageName= ruleAndroidPackageName EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:593:2: iv_ruleAndroidPackageName= ruleAndroidPackageName EOF
             {
              newCompositeNode(grammarAccess.getAndroidPackageNameRule()); 
-            pushFollow(FOLLOW_ruleAndroidPackageName_in_entryRuleAndroidPackageName1210);
+            pushFollow(FOLLOW_ruleAndroidPackageName_in_entryRuleAndroidPackageName1342);
             iv_ruleAndroidPackageName=ruleAndroidPackageName();
 
             state._fsp--;
 
              current =iv_ruleAndroidPackageName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroidPackageName1221); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroidPackageName1353); 
 
             }
 
@@ -1371,7 +1492,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAndroidPackageName"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:552:1: ruleAndroidPackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:600:1: ruleAndroidPackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) ;
     public final AntlrDatatypeRuleToken ruleAndroidPackageName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1382,20 +1503,20 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:555:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:556:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:603:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:604:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:556:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:556:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:604:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:604:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroidPackageName1261); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroidPackageName1393); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getAndroidPackageNameAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:563:1: (kw= '.' this_ID_2= RULE_ID )+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:611:1: (kw= '.' this_ID_2= RULE_ID )+
             int cnt8=0;
             loop8:
             do {
@@ -1409,14 +1530,14 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:564:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:612:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,14,FOLLOW_14_in_ruleAndroidPackageName1280); 
+            	    kw=(Token)match(input,14,FOLLOW_14_in_ruleAndroidPackageName1412); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getAndroidPackageNameAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroidPackageName1295); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroidPackageName1427); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -1457,7 +1578,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAndroidApplication"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:584:1: entryRuleAndroidApplication returns [EObject current=null] : iv_ruleAndroidApplication= ruleAndroidApplication EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:632:1: entryRuleAndroidApplication returns [EObject current=null] : iv_ruleAndroidApplication= ruleAndroidApplication EOF ;
     public final EObject entryRuleAndroidApplication() throws RecognitionException {
         EObject current = null;
 
@@ -1465,17 +1586,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:585:2: (iv_ruleAndroidApplication= ruleAndroidApplication EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:586:2: iv_ruleAndroidApplication= ruleAndroidApplication EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:633:2: (iv_ruleAndroidApplication= ruleAndroidApplication EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:634:2: iv_ruleAndroidApplication= ruleAndroidApplication EOF
             {
              newCompositeNode(grammarAccess.getAndroidApplicationRule()); 
-            pushFollow(FOLLOW_ruleAndroidApplication_in_entryRuleAndroidApplication1342);
+            pushFollow(FOLLOW_ruleAndroidApplication_in_entryRuleAndroidApplication1474);
             iv_ruleAndroidApplication=ruleAndroidApplication();
 
             state._fsp--;
 
              current =iv_ruleAndroidApplication; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroidApplication1352); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroidApplication1484); 
 
             }
 
@@ -1493,7 +1614,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAndroidApplication"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:593:1: ruleAndroidApplication returns [EObject current=null] : (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:641:1: ruleAndroidApplication returns [EObject current=null] : (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) )? ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' ) ;
     public final EObject ruleAndroidApplication() throws RecognitionException {
         EObject current = null;
 
@@ -1510,23 +1631,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:596:28: ( (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:597:1: (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:644:28: ( (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) )? ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:645:1: (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) )? ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:597:1: (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:597:3: otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:645:1: (otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) )? ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:645:3: otherlv_0= 'application' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) )? ( (lv_mainActivity_5_0= ruleActivity ) ) ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )* otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleAndroidApplication1389); 
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleAndroidApplication1521); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAndroidApplicationAccess().getApplicationKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:601:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:602:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:649:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:650:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:602:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:603:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:650:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:651:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroidApplication1406); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroidApplication1538); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getAndroidApplicationAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1546,52 +1667,69 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroidApplication1423); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroidApplication1555); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAndroidApplicationAccess().getLeftCurlyBracketKeyword_2());
                 
-            otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleAndroidApplication1435); 
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:671:1: (otherlv_3= 'datamodel' ( ( ruleQualifiedName ) ) )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-                	newLeafNode(otherlv_3, grammarAccess.getAndroidApplicationAccess().getDatamodelKeyword_3());
-                
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:627:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:628:1: ( ruleQualifiedName )
-            {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:628:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:629:3: ruleQualifiedName
-            {
+            if ( (LA9_0==24) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:671:3: otherlv_3= 'datamodel' ( ( ruleQualifiedName ) )
+                    {
+                    otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleAndroidApplication1568); 
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getAndroidApplicationRule());
-            	        }
-                    
-             
-            	        newCompositeNode(grammarAccess.getAndroidApplicationAccess().getDatarootAndroDataModelRootCrossReference_4_0()); 
-            	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleAndroidApplication1458);
-            ruleQualifiedName();
+                        	newLeafNode(otherlv_3, grammarAccess.getAndroidApplicationAccess().getDatamodelKeyword_3_0());
+                        
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:675:1: ( ( ruleQualifiedName ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:676:1: ( ruleQualifiedName )
+                    {
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:676:1: ( ruleQualifiedName )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:677:3: ruleQualifiedName
+                    {
 
-            state._fsp--;
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getAndroidApplicationRule());
+                    	        }
+                            
+                     
+                    	        newCompositeNode(grammarAccess.getAndroidApplicationAccess().getDatarootAndroDataModelRootCrossReference_3_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleAndroidApplication1591);
+                    ruleQualifiedName();
 
-             
-            	        afterParserOrEnumRuleCall();
-            	    
+                    state._fsp--;
+
+                     
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
-
-            }
-
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:642:2: ( (lv_mainActivity_5_0= ruleActivity ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:643:1: (lv_mainActivity_5_0= ruleActivity )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:690:4: ( (lv_mainActivity_5_0= ruleActivity ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:691:1: (lv_mainActivity_5_0= ruleActivity )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:643:1: (lv_mainActivity_5_0= ruleActivity )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:644:3: lv_mainActivity_5_0= ruleActivity
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:691:1: (lv_mainActivity_5_0= ruleActivity )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:692:3: lv_mainActivity_5_0= ruleActivity
             {
              
-            	        newCompositeNode(grammarAccess.getAndroidApplicationAccess().getMainActivityActivityParserRuleCall_5_0()); 
+            	        newCompositeNode(grammarAccess.getAndroidApplicationAccess().getMainActivityActivityParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleActivity_in_ruleAndroidApplication1479);
+            pushFollow(FOLLOW_ruleActivity_in_ruleAndroidApplication1614);
             lv_mainActivity_5_0=ruleActivity();
 
             state._fsp--;
@@ -1613,28 +1751,28 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:660:2: ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )*
-            loop9:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:708:2: ( (lv_modelElements_6_0= ruleAndroidApplicationModelElement ) )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==25||LA9_0==27) ) {
-                    alt9=1;
+                if ( (LA10_0==25||LA10_0==27) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:661:1: (lv_modelElements_6_0= ruleAndroidApplicationModelElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:709:1: (lv_modelElements_6_0= ruleAndroidApplicationModelElement )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:661:1: (lv_modelElements_6_0= ruleAndroidApplicationModelElement )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:662:3: lv_modelElements_6_0= ruleAndroidApplicationModelElement
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:709:1: (lv_modelElements_6_0= ruleAndroidApplicationModelElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:710:3: lv_modelElements_6_0= ruleAndroidApplicationModelElement
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getAndroidApplicationAccess().getModelElementsAndroidApplicationModelElementParserRuleCall_6_0()); 
+            	    	        newCompositeNode(grammarAccess.getAndroidApplicationAccess().getModelElementsAndroidApplicationModelElementParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAndroidApplicationModelElement_in_ruleAndroidApplication1500);
+            	    pushFollow(FOLLOW_ruleAndroidApplicationModelElement_in_ruleAndroidApplication1635);
             	    lv_modelElements_6_0=ruleAndroidApplicationModelElement();
 
             	    state._fsp--;
@@ -1658,13 +1796,13 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleAndroidApplication1513); 
+            otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleAndroidApplication1648); 
 
-                	newLeafNode(otherlv_7, grammarAccess.getAndroidApplicationAccess().getRightCurlyBracketKeyword_7());
+                	newLeafNode(otherlv_7, grammarAccess.getAndroidApplicationAccess().getRightCurlyBracketKeyword_6());
                 
 
             }
@@ -1687,7 +1825,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAndroidApplicationModelElement"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:690:1: entryRuleAndroidApplicationModelElement returns [EObject current=null] : iv_ruleAndroidApplicationModelElement= ruleAndroidApplicationModelElement EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:738:1: entryRuleAndroidApplicationModelElement returns [EObject current=null] : iv_ruleAndroidApplicationModelElement= ruleAndroidApplicationModelElement EOF ;
     public final EObject entryRuleAndroidApplicationModelElement() throws RecognitionException {
         EObject current = null;
 
@@ -1695,17 +1833,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:691:2: (iv_ruleAndroidApplicationModelElement= ruleAndroidApplicationModelElement EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:692:2: iv_ruleAndroidApplicationModelElement= ruleAndroidApplicationModelElement EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:739:2: (iv_ruleAndroidApplicationModelElement= ruleAndroidApplicationModelElement EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:740:2: iv_ruleAndroidApplicationModelElement= ruleAndroidApplicationModelElement EOF
             {
              newCompositeNode(grammarAccess.getAndroidApplicationModelElementRule()); 
-            pushFollow(FOLLOW_ruleAndroidApplicationModelElement_in_entryRuleAndroidApplicationModelElement1549);
+            pushFollow(FOLLOW_ruleAndroidApplicationModelElement_in_entryRuleAndroidApplicationModelElement1684);
             iv_ruleAndroidApplicationModelElement=ruleAndroidApplicationModelElement();
 
             state._fsp--;
 
              current =iv_ruleAndroidApplicationModelElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroidApplicationModelElement1559); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroidApplicationModelElement1694); 
 
             }
 
@@ -1723,7 +1861,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAndroidApplicationModelElement"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:699:1: ruleAndroidApplicationModelElement returns [EObject current=null] : (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:747:1: ruleAndroidApplicationModelElement returns [EObject current=null] : (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity ) ;
     public final EObject ruleAndroidApplicationModelElement() throws RecognitionException {
         EObject current = null;
 
@@ -1735,33 +1873,33 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:702:28: ( (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:703:1: (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:750:28: ( (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:751:1: (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:703:1: (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:751:1: (this_Activity_0= ruleActivity | this_TabActivity_1= ruleTabActivity )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==25) ) {
-                alt10=1;
+            if ( (LA11_0==25) ) {
+                alt11=1;
             }
-            else if ( (LA10_0==27) ) {
-                alt10=2;
+            else if ( (LA11_0==27) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:704:5: this_Activity_0= ruleActivity
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:752:5: this_Activity_0= ruleActivity
                     {
                      
                             newCompositeNode(grammarAccess.getAndroidApplicationModelElementAccess().getActivityParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleActivity_in_ruleAndroidApplicationModelElement1606);
+                    pushFollow(FOLLOW_ruleActivity_in_ruleAndroidApplicationModelElement1741);
                     this_Activity_0=ruleActivity();
 
                     state._fsp--;
@@ -1774,12 +1912,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:714:5: this_TabActivity_1= ruleTabActivity
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:762:5: this_TabActivity_1= ruleTabActivity
                     {
                      
                             newCompositeNode(grammarAccess.getAndroidApplicationModelElementAccess().getTabActivityParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleTabActivity_in_ruleAndroidApplicationModelElement1633);
+                    pushFollow(FOLLOW_ruleTabActivity_in_ruleAndroidApplicationModelElement1768);
                     this_TabActivity_1=ruleTabActivity();
 
                     state._fsp--;
@@ -1812,7 +1950,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActivity"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:730:1: entryRuleActivity returns [EObject current=null] : iv_ruleActivity= ruleActivity EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:778:1: entryRuleActivity returns [EObject current=null] : iv_ruleActivity= ruleActivity EOF ;
     public final EObject entryRuleActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1820,17 +1958,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:731:2: (iv_ruleActivity= ruleActivity EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:732:2: iv_ruleActivity= ruleActivity EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:779:2: (iv_ruleActivity= ruleActivity EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:780:2: iv_ruleActivity= ruleActivity EOF
             {
              newCompositeNode(grammarAccess.getActivityRule()); 
-            pushFollow(FOLLOW_ruleActivity_in_entryRuleActivity1668);
+            pushFollow(FOLLOW_ruleActivity_in_entryRuleActivity1803);
             iv_ruleActivity=ruleActivity();
 
             state._fsp--;
 
              current =iv_ruleActivity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActivity1678); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActivity1813); 
 
             }
 
@@ -1848,7 +1986,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActivity"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:739:1: ruleActivity returns [EObject current=null] : (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:787:1: ruleActivity returns [EObject current=null] : (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1859,23 +1997,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:742:28: ( (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:743:1: (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:790:28: ( (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:791:1: (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:743:1: (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:743:3: otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:791:1: (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:791:3: otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'layout' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleActivity1715); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleActivity1850); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActivityAccess().getActivityKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:747:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:748:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:795:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:796:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:748:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:749:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:796:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:797:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleActivity1732); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleActivity1867); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getActivityAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1895,15 +2033,15 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,26,FOLLOW_26_in_ruleActivity1749); 
+            otherlv_2=(Token)match(input,26,FOLLOW_26_in_ruleActivity1884); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getActivityAccess().getLayoutKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:769:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:770:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:817:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:818:1: ( ruleQualifiedName )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:770:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:771:3: ruleQualifiedName
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:818:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:819:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -1913,7 +2051,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getActivityAccess().getLayoutRootLayoutCrossReference_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleActivity1772);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleActivity1907);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1948,7 +2086,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTabActivity"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:792:1: entryRuleTabActivity returns [EObject current=null] : iv_ruleTabActivity= ruleTabActivity EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:840:1: entryRuleTabActivity returns [EObject current=null] : iv_ruleTabActivity= ruleTabActivity EOF ;
     public final EObject entryRuleTabActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1956,17 +2094,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:793:2: (iv_ruleTabActivity= ruleTabActivity EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:794:2: iv_ruleTabActivity= ruleTabActivity EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:841:2: (iv_ruleTabActivity= ruleTabActivity EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:842:2: iv_ruleTabActivity= ruleTabActivity EOF
             {
              newCompositeNode(grammarAccess.getTabActivityRule()); 
-            pushFollow(FOLLOW_ruleTabActivity_in_entryRuleTabActivity1808);
+            pushFollow(FOLLOW_ruleTabActivity_in_entryRuleTabActivity1943);
             iv_ruleTabActivity=ruleTabActivity();
 
             state._fsp--;
 
              current =iv_ruleTabActivity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTabActivity1818); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTabActivity1953); 
 
             }
 
@@ -1984,7 +2122,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTabActivity"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:801:1: ruleTabActivity returns [EObject current=null] : (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:849:1: ruleTabActivity returns [EObject current=null] : (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleTabActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1994,23 +2132,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:804:28: ( (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:805:1: (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:852:28: ( (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:853:1: (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:805:1: (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:805:3: otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:853:1: (otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:853:3: otherlv_0= 'tabactivity' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleTabActivity1855); 
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleTabActivity1990); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTabActivityAccess().getTabactivityKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:809:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:810:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:857:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:858:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:810:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:811:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:858:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:859:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTabActivity1872); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTabActivity2007); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getTabActivityAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2051,7 +2189,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAndroDataModelRoot"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:835:1: entryRuleAndroDataModelRoot returns [EObject current=null] : iv_ruleAndroDataModelRoot= ruleAndroDataModelRoot EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:883:1: entryRuleAndroDataModelRoot returns [EObject current=null] : iv_ruleAndroDataModelRoot= ruleAndroDataModelRoot EOF ;
     public final EObject entryRuleAndroDataModelRoot() throws RecognitionException {
         EObject current = null;
 
@@ -2059,17 +2197,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:836:2: (iv_ruleAndroDataModelRoot= ruleAndroDataModelRoot EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:837:2: iv_ruleAndroDataModelRoot= ruleAndroDataModelRoot EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:884:2: (iv_ruleAndroDataModelRoot= ruleAndroDataModelRoot EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:885:2: iv_ruleAndroDataModelRoot= ruleAndroDataModelRoot EOF
             {
              newCompositeNode(grammarAccess.getAndroDataModelRootRule()); 
-            pushFollow(FOLLOW_ruleAndroDataModelRoot_in_entryRuleAndroDataModelRoot1913);
+            pushFollow(FOLLOW_ruleAndroDataModelRoot_in_entryRuleAndroDataModelRoot2048);
             iv_ruleAndroDataModelRoot=ruleAndroDataModelRoot();
 
             state._fsp--;
 
              current =iv_ruleAndroDataModelRoot; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroDataModelRoot1923); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroDataModelRoot2058); 
 
             }
 
@@ -2087,7 +2225,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAndroDataModelRoot"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:844:1: ruleAndroDataModelRoot returns [EObject current=null] : (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:892:1: ruleAndroDataModelRoot returns [EObject current=null] : (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' ) ;
     public final EObject ruleAndroDataModelRoot() throws RecognitionException {
         EObject current = null;
 
@@ -2101,23 +2239,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:847:28: ( (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:848:1: (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:895:28: ( (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:896:1: (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:848:1: (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:848:3: otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:896:1: (otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:896:3: otherlv_0= 'datamodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_entities_3_0= ruleEntity ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleAndroDataModelRoot1960); 
+            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleAndroDataModelRoot2095); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAndroDataModelRootAccess().getDatamodelKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:852:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:853:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:900:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:901:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:853:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:854:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:901:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:902:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroDataModelRoot1977); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroDataModelRoot2112); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getAndroDataModelRootAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2137,32 +2275,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroDataModelRoot1994); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroDataModelRoot2129); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAndroDataModelRootAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:874:1: ( (lv_entities_3_0= ruleEntity ) )*
-            loop11:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:922:1: ( (lv_entities_3_0= ruleEntity ) )*
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA11_0==28) ) {
-                    alt11=1;
+                if ( (LA12_0==28) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:875:1: (lv_entities_3_0= ruleEntity )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:923:1: (lv_entities_3_0= ruleEntity )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:875:1: (lv_entities_3_0= ruleEntity )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:876:3: lv_entities_3_0= ruleEntity
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:923:1: (lv_entities_3_0= ruleEntity )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:924:3: lv_entities_3_0= ruleEntity
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAndroDataModelRootAccess().getEntitiesEntityParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleEntity_in_ruleAndroDataModelRoot2015);
+            	    pushFollow(FOLLOW_ruleEntity_in_ruleAndroDataModelRoot2150);
             	    lv_entities_3_0=ruleEntity();
 
             	    state._fsp--;
@@ -2186,11 +2324,11 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleAndroDataModelRoot2028); 
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleAndroDataModelRoot2163); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getAndroDataModelRootAccess().getRightCurlyBracketKeyword_4());
                 
@@ -2215,7 +2353,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntity"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:904:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:952:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
     public final EObject entryRuleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -2223,17 +2361,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:905:2: (iv_ruleEntity= ruleEntity EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:906:2: iv_ruleEntity= ruleEntity EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:953:2: (iv_ruleEntity= ruleEntity EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:954:2: iv_ruleEntity= ruleEntity EOF
             {
              newCompositeNode(grammarAccess.getEntityRule()); 
-            pushFollow(FOLLOW_ruleEntity_in_entryRuleEntity2064);
+            pushFollow(FOLLOW_ruleEntity_in_entryRuleEntity2199);
             iv_ruleEntity=ruleEntity();
 
             state._fsp--;
 
              current =iv_ruleEntity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEntity2074); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEntity2209); 
 
             }
 
@@ -2251,7 +2389,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:913:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:961:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -2267,23 +2405,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:916:28: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:917:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:964:28: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:965:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:917:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:917:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:965:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:965:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_properties_5_0= ruleProperty ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleEntity2111); 
+            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleEntity2246); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEntityAccess().getEntityKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:921:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:922:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:969:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:970:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:922:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:923:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:970:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:971:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity2128); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity2263); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2303,33 +2441,33 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:939:2: (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:987:2: (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==29) ) {
-                alt12=1;
+            if ( (LA13_0==29) ) {
+                alt13=1;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:939:4: otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:987:4: otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )
                     {
-                    otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleEntity2146); 
+                    otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleEntity2281); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getEntityAccess().getExtendsKeyword_2_0());
                         
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:943:1: ( (otherlv_3= RULE_ID ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:944:1: (otherlv_3= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:991:1: ( (otherlv_3= RULE_ID ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:992:1: (otherlv_3= RULE_ID )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:944:1: (otherlv_3= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:945:3: otherlv_3= RULE_ID
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:992:1: (otherlv_3= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:993:3: otherlv_3= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getEntityRule());
                     	        }
                             
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity2166); 
+                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity2301); 
 
                     		newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_2_1_0()); 
                     	
@@ -2345,32 +2483,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleEntity2180); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleEntity2315); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:960:1: ( (lv_properties_5_0= ruleProperty ) )*
-            loop13:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1008:1: ( (lv_properties_5_0= ruleProperty ) )*
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==RULE_ID) ) {
-                    alt13=1;
+                if ( (LA14_0==RULE_ID) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:961:1: (lv_properties_5_0= ruleProperty )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1009:1: (lv_properties_5_0= ruleProperty )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:961:1: (lv_properties_5_0= ruleProperty )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:962:3: lv_properties_5_0= ruleProperty
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1009:1: (lv_properties_5_0= ruleProperty )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1010:3: lv_properties_5_0= ruleProperty
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityAccess().getPropertiesPropertyParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleProperty_in_ruleEntity2201);
+            	    pushFollow(FOLLOW_ruleProperty_in_ruleEntity2336);
             	    lv_properties_5_0=ruleProperty();
 
             	    state._fsp--;
@@ -2394,11 +2532,11 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleEntity2214); 
+            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleEntity2349); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5());
                 
@@ -2423,7 +2561,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProperty"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:990:1: entryRuleProperty returns [EObject current=null] : iv_ruleProperty= ruleProperty EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1038:1: entryRuleProperty returns [EObject current=null] : iv_ruleProperty= ruleProperty EOF ;
     public final EObject entryRuleProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2431,17 +2569,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:991:2: (iv_ruleProperty= ruleProperty EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:992:2: iv_ruleProperty= ruleProperty EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1039:2: (iv_ruleProperty= ruleProperty EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1040:2: iv_ruleProperty= ruleProperty EOF
             {
              newCompositeNode(grammarAccess.getPropertyRule()); 
-            pushFollow(FOLLOW_ruleProperty_in_entryRuleProperty2250);
+            pushFollow(FOLLOW_ruleProperty_in_entryRuleProperty2385);
             iv_ruleProperty=ruleProperty();
 
             state._fsp--;
 
              current =iv_ruleProperty; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleProperty2260); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleProperty2395); 
 
             }
 
@@ -2459,7 +2597,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProperty"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:999:1: ruleProperty returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1047:1: ruleProperty returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) ) ;
     public final EObject ruleProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2471,19 +2609,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1002:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1003:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1050:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1051:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1003:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1003:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1051:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1051:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleTypeRef ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1003:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1004:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1051:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1052:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1004:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1005:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1052:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1053:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleProperty2302); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleProperty2437); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getPropertyAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -2503,20 +2641,20 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleProperty2319); 
+            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleProperty2454); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPropertyAccess().getColonKeyword_1());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1025:1: ( (lv_type_2_0= ruleTypeRef ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1026:1: (lv_type_2_0= ruleTypeRef )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1073:1: ( (lv_type_2_0= ruleTypeRef ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1074:1: (lv_type_2_0= ruleTypeRef )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1026:1: (lv_type_2_0= ruleTypeRef )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1027:3: lv_type_2_0= ruleTypeRef
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1074:1: (lv_type_2_0= ruleTypeRef )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1075:3: lv_type_2_0= ruleTypeRef
             {
              
             	        newCompositeNode(grammarAccess.getPropertyAccess().getTypeTypeRefParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeRef_in_ruleProperty2340);
+            pushFollow(FOLLOW_ruleTypeRef_in_ruleProperty2475);
             lv_type_2_0=ruleTypeRef();
 
             state._fsp--;
@@ -2559,7 +2697,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeRef"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1051:1: entryRuleTypeRef returns [EObject current=null] : iv_ruleTypeRef= ruleTypeRef EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1099:1: entryRuleTypeRef returns [EObject current=null] : iv_ruleTypeRef= ruleTypeRef EOF ;
     public final EObject entryRuleTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -2567,17 +2705,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1052:2: (iv_ruleTypeRef= ruleTypeRef EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1053:2: iv_ruleTypeRef= ruleTypeRef EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1100:2: (iv_ruleTypeRef= ruleTypeRef EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1101:2: iv_ruleTypeRef= ruleTypeRef EOF
             {
              newCompositeNode(grammarAccess.getTypeRefRule()); 
-            pushFollow(FOLLOW_ruleTypeRef_in_entryRuleTypeRef2376);
+            pushFollow(FOLLOW_ruleTypeRef_in_entryRuleTypeRef2511);
             iv_ruleTypeRef=ruleTypeRef();
 
             state._fsp--;
 
              current =iv_ruleTypeRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeRef2386); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeRef2521); 
 
             }
 
@@ -2595,7 +2733,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeRef"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1060:1: ruleTypeRef returns [EObject current=null] : (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1108:1: ruleTypeRef returns [EObject current=null] : (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef ) ;
     public final EObject ruleTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -2607,33 +2745,33 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1063:28: ( (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1064:1: (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1111:28: ( (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1112:1: (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1064:1: (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1112:1: (this_DataTypesRef_0= ruleDataTypesRef | this_EntityTypeRef_1= ruleEntityTypeRef )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( ((LA14_0>=73 && LA14_0<=76)) ) {
-                alt14=1;
+            if ( ((LA15_0>=86 && LA15_0<=89)) ) {
+                alt15=1;
             }
-            else if ( (LA14_0==RULE_ID) ) {
-                alt14=2;
+            else if ( (LA15_0==RULE_ID) ) {
+                alt15=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1065:5: this_DataTypesRef_0= ruleDataTypesRef
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1113:5: this_DataTypesRef_0= ruleDataTypesRef
                     {
                      
                             newCompositeNode(grammarAccess.getTypeRefAccess().getDataTypesRefParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleDataTypesRef_in_ruleTypeRef2433);
+                    pushFollow(FOLLOW_ruleDataTypesRef_in_ruleTypeRef2568);
                     this_DataTypesRef_0=ruleDataTypesRef();
 
                     state._fsp--;
@@ -2646,12 +2784,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1075:5: this_EntityTypeRef_1= ruleEntityTypeRef
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1123:5: this_EntityTypeRef_1= ruleEntityTypeRef
                     {
                      
                             newCompositeNode(grammarAccess.getTypeRefAccess().getEntityTypeRefParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleEntityTypeRef_in_ruleTypeRef2460);
+                    pushFollow(FOLLOW_ruleEntityTypeRef_in_ruleTypeRef2595);
                     this_EntityTypeRef_1=ruleEntityTypeRef();
 
                     state._fsp--;
@@ -2684,7 +2822,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataTypesRef"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1091:1: entryRuleDataTypesRef returns [EObject current=null] : iv_ruleDataTypesRef= ruleDataTypesRef EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1139:1: entryRuleDataTypesRef returns [EObject current=null] : iv_ruleDataTypesRef= ruleDataTypesRef EOF ;
     public final EObject entryRuleDataTypesRef() throws RecognitionException {
         EObject current = null;
 
@@ -2692,17 +2830,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1092:2: (iv_ruleDataTypesRef= ruleDataTypesRef EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1093:2: iv_ruleDataTypesRef= ruleDataTypesRef EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1140:2: (iv_ruleDataTypesRef= ruleDataTypesRef EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1141:2: iv_ruleDataTypesRef= ruleDataTypesRef EOF
             {
              newCompositeNode(grammarAccess.getDataTypesRefRule()); 
-            pushFollow(FOLLOW_ruleDataTypesRef_in_entryRuleDataTypesRef2495);
+            pushFollow(FOLLOW_ruleDataTypesRef_in_entryRuleDataTypesRef2630);
             iv_ruleDataTypesRef=ruleDataTypesRef();
 
             state._fsp--;
 
              current =iv_ruleDataTypesRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDataTypesRef2505); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDataTypesRef2640); 
 
             }
 
@@ -2720,7 +2858,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataTypesRef"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1100:1: ruleDataTypesRef returns [EObject current=null] : ( (lv_type_0_0= ruleDataTypes ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1148:1: ruleDataTypesRef returns [EObject current=null] : ( (lv_type_0_0= ruleDataTypes ) ) ;
     public final EObject ruleDataTypesRef() throws RecognitionException {
         EObject current = null;
 
@@ -2730,19 +2868,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1103:28: ( ( (lv_type_0_0= ruleDataTypes ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1104:1: ( (lv_type_0_0= ruleDataTypes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1151:28: ( ( (lv_type_0_0= ruleDataTypes ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1152:1: ( (lv_type_0_0= ruleDataTypes ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1104:1: ( (lv_type_0_0= ruleDataTypes ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1105:1: (lv_type_0_0= ruleDataTypes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1152:1: ( (lv_type_0_0= ruleDataTypes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1153:1: (lv_type_0_0= ruleDataTypes )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1105:1: (lv_type_0_0= ruleDataTypes )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1106:3: lv_type_0_0= ruleDataTypes
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1153:1: (lv_type_0_0= ruleDataTypes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1154:3: lv_type_0_0= ruleDataTypes
             {
              
             	        newCompositeNode(grammarAccess.getDataTypesRefAccess().getTypeDataTypesEnumRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleDataTypes_in_ruleDataTypesRef2550);
+            pushFollow(FOLLOW_ruleDataTypes_in_ruleDataTypesRef2685);
             lv_type_0_0=ruleDataTypes();
 
             state._fsp--;
@@ -2782,7 +2920,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntityTypeRef"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1130:1: entryRuleEntityTypeRef returns [EObject current=null] : iv_ruleEntityTypeRef= ruleEntityTypeRef EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1178:1: entryRuleEntityTypeRef returns [EObject current=null] : iv_ruleEntityTypeRef= ruleEntityTypeRef EOF ;
     public final EObject entryRuleEntityTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -2790,17 +2928,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1131:2: (iv_ruleEntityTypeRef= ruleEntityTypeRef EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1132:2: iv_ruleEntityTypeRef= ruleEntityTypeRef EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1179:2: (iv_ruleEntityTypeRef= ruleEntityTypeRef EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1180:2: iv_ruleEntityTypeRef= ruleEntityTypeRef EOF
             {
              newCompositeNode(grammarAccess.getEntityTypeRefRule()); 
-            pushFollow(FOLLOW_ruleEntityTypeRef_in_entryRuleEntityTypeRef2585);
+            pushFollow(FOLLOW_ruleEntityTypeRef_in_entryRuleEntityTypeRef2720);
             iv_ruleEntityTypeRef=ruleEntityTypeRef();
 
             state._fsp--;
 
              current =iv_ruleEntityTypeRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEntityTypeRef2595); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEntityTypeRef2730); 
 
             }
 
@@ -2818,21 +2956,21 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntityTypeRef"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1139:1: ruleEntityTypeRef returns [EObject current=null] : ( ( ruleQualifiedName ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1187:1: ruleEntityTypeRef returns [EObject current=null] : ( ( ruleQualifiedName ) ) ;
     public final EObject ruleEntityTypeRef() throws RecognitionException {
         EObject current = null;
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1142:28: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1143:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1190:28: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1191:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1143:1: ( ( ruleQualifiedName ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1144:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1191:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1192:1: ( ruleQualifiedName )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1144:1: ( ruleQualifiedName )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1145:3: ruleQualifiedName
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1192:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1193:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -2842,7 +2980,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getEntityTypeRefAccess().getTypeEntityCrossReference_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleEntityTypeRef2642);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleEntityTypeRef2777);
             ruleQualifiedName();
 
             state._fsp--;
@@ -2874,7 +3012,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAndroGuiModelRoot"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1166:1: entryRuleAndroGuiModelRoot returns [EObject current=null] : iv_ruleAndroGuiModelRoot= ruleAndroGuiModelRoot EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1214:1: entryRuleAndroGuiModelRoot returns [EObject current=null] : iv_ruleAndroGuiModelRoot= ruleAndroGuiModelRoot EOF ;
     public final EObject entryRuleAndroGuiModelRoot() throws RecognitionException {
         EObject current = null;
 
@@ -2882,17 +3020,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1167:2: (iv_ruleAndroGuiModelRoot= ruleAndroGuiModelRoot EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1168:2: iv_ruleAndroGuiModelRoot= ruleAndroGuiModelRoot EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1215:2: (iv_ruleAndroGuiModelRoot= ruleAndroGuiModelRoot EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1216:2: iv_ruleAndroGuiModelRoot= ruleAndroGuiModelRoot EOF
             {
              newCompositeNode(grammarAccess.getAndroGuiModelRootRule()); 
-            pushFollow(FOLLOW_ruleAndroGuiModelRoot_in_entryRuleAndroGuiModelRoot2677);
+            pushFollow(FOLLOW_ruleAndroGuiModelRoot_in_entryRuleAndroGuiModelRoot2812);
             iv_ruleAndroGuiModelRoot=ruleAndroGuiModelRoot();
 
             state._fsp--;
 
              current =iv_ruleAndroGuiModelRoot; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroGuiModelRoot2687); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroGuiModelRoot2822); 
 
             }
 
@@ -2910,7 +3048,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAndroGuiModelRoot"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1175:1: ruleAndroGuiModelRoot returns [EObject current=null] : (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1223:1: ruleAndroGuiModelRoot returns [EObject current=null] : (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' ) ;
     public final EObject ruleAndroGuiModelRoot() throws RecognitionException {
         EObject current = null;
 
@@ -2924,23 +3062,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1178:28: ( (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1179:1: (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1226:28: ( (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1227:1: (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1179:1: (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1179:3: otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1227:1: (otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1227:3: otherlv_0= 'guimodel' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_rootLayout_3_0= ruleRootLayout ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleAndroGuiModelRoot2724); 
+            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleAndroGuiModelRoot2859); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAndroGuiModelRootAccess().getGuimodelKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1183:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1184:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1231:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1232:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1184:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1185:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1232:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1233:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroGuiModelRoot2741); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroGuiModelRoot2876); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getAndroGuiModelRootAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2960,32 +3098,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroGuiModelRoot2758); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroGuiModelRoot2893); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAndroGuiModelRootAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1205:1: ( (lv_rootLayout_3_0= ruleRootLayout ) )*
-            loop15:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1253:1: ( (lv_rootLayout_3_0= ruleRootLayout ) )*
+            loop16:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( ((LA15_0>=32 && LA15_0<=33)||(LA15_0>=36 && LA15_0<=37)||LA15_0==52) ) {
-                    alt15=1;
+                if ( ((LA16_0>=32 && LA16_0<=33)||(LA16_0>=36 && LA16_0<=37)||LA16_0==53) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt16) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1206:1: (lv_rootLayout_3_0= ruleRootLayout )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1254:1: (lv_rootLayout_3_0= ruleRootLayout )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1206:1: (lv_rootLayout_3_0= ruleRootLayout )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1207:3: lv_rootLayout_3_0= ruleRootLayout
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1254:1: (lv_rootLayout_3_0= ruleRootLayout )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1255:3: lv_rootLayout_3_0= ruleRootLayout
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAndroGuiModelRootAccess().getRootLayoutRootLayoutParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRootLayout_in_ruleAndroGuiModelRoot2779);
+            	    pushFollow(FOLLOW_ruleRootLayout_in_ruleAndroGuiModelRoot2914);
             	    lv_rootLayout_3_0=ruleRootLayout();
 
             	    state._fsp--;
@@ -3009,11 +3147,11 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop16;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleAndroGuiModelRoot2792); 
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleAndroGuiModelRoot2927); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getAndroGuiModelRootAccess().getRightCurlyBracketKeyword_4());
                 
@@ -3038,7 +3176,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUIElement"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1235:1: entryRuleUIElement returns [EObject current=null] : iv_ruleUIElement= ruleUIElement EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1283:1: entryRuleUIElement returns [EObject current=null] : iv_ruleUIElement= ruleUIElement EOF ;
     public final EObject entryRuleUIElement() throws RecognitionException {
         EObject current = null;
 
@@ -3046,17 +3184,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1236:2: (iv_ruleUIElement= ruleUIElement EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1237:2: iv_ruleUIElement= ruleUIElement EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1284:2: (iv_ruleUIElement= ruleUIElement EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1285:2: iv_ruleUIElement= ruleUIElement EOF
             {
              newCompositeNode(grammarAccess.getUIElementRule()); 
-            pushFollow(FOLLOW_ruleUIElement_in_entryRuleUIElement2828);
+            pushFollow(FOLLOW_ruleUIElement_in_entryRuleUIElement2963);
             iv_ruleUIElement=ruleUIElement();
 
             state._fsp--;
 
              current =iv_ruleUIElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUIElement2838); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUIElement2973); 
 
             }
 
@@ -3074,7 +3212,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUIElement"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1244:1: ruleUIElement returns [EObject current=null] : (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1292:1: ruleUIElement returns [EObject current=null] : (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout ) ;
     public final EObject ruleUIElement() throws RecognitionException {
         EObject current = null;
 
@@ -3086,33 +3224,33 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1247:28: ( (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1248:1: (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1295:28: ( (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1296:1: (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1248:1: (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1296:1: (this_Widget_0= ruleWidget | this_Layout_1= ruleLayout )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( ((LA16_0>=38 && LA16_0<=41)||(LA16_0>=44 && LA16_0<=48)) ) {
-                alt16=1;
+            if ( ((LA17_0>=38 && LA17_0<=41)||(LA17_0>=44 && LA17_0<=48)) ) {
+                alt17=1;
             }
-            else if ( ((LA16_0>=32 && LA16_0<=33)||(LA16_0>=36 && LA16_0<=37)||LA16_0==52) ) {
-                alt16=2;
+            else if ( ((LA17_0>=32 && LA17_0<=33)||(LA17_0>=36 && LA17_0<=37)||LA17_0==53) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1249:5: this_Widget_0= ruleWidget
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1297:5: this_Widget_0= ruleWidget
                     {
                      
                             newCompositeNode(grammarAccess.getUIElementAccess().getWidgetParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleWidget_in_ruleUIElement2885);
+                    pushFollow(FOLLOW_ruleWidget_in_ruleUIElement3020);
                     this_Widget_0=ruleWidget();
 
                     state._fsp--;
@@ -3125,12 +3263,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1259:5: this_Layout_1= ruleLayout
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1307:5: this_Layout_1= ruleLayout
                     {
                      
                             newCompositeNode(grammarAccess.getUIElementAccess().getLayoutParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleLayout_in_ruleUIElement2912);
+                    pushFollow(FOLLOW_ruleLayout_in_ruleUIElement3047);
                     this_Layout_1=ruleLayout();
 
                     state._fsp--;
@@ -3163,7 +3301,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1275:1: entryRuleLayout returns [EObject current=null] : iv_ruleLayout= ruleLayout EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1323:1: entryRuleLayout returns [EObject current=null] : iv_ruleLayout= ruleLayout EOF ;
     public final EObject entryRuleLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3171,17 +3309,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1276:2: (iv_ruleLayout= ruleLayout EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1277:2: iv_ruleLayout= ruleLayout EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1324:2: (iv_ruleLayout= ruleLayout EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1325:2: iv_ruleLayout= ruleLayout EOF
             {
              newCompositeNode(grammarAccess.getLayoutRule()); 
-            pushFollow(FOLLOW_ruleLayout_in_entryRuleLayout2947);
+            pushFollow(FOLLOW_ruleLayout_in_entryRuleLayout3082);
             iv_ruleLayout=ruleLayout();
 
             state._fsp--;
 
              current =iv_ruleLayout; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLayout2957); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLayout3092); 
 
             }
 
@@ -3199,7 +3337,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1284:1: ruleLayout returns [EObject current=null] : this_RootLayout_0= ruleRootLayout ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1332:1: ruleLayout returns [EObject current=null] : this_RootLayout_0= ruleRootLayout ;
     public final EObject ruleLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3209,13 +3347,13 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1287:28: (this_RootLayout_0= ruleRootLayout )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1289:5: this_RootLayout_0= ruleRootLayout
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1335:28: (this_RootLayout_0= ruleRootLayout )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1337:5: this_RootLayout_0= ruleRootLayout
             {
              
                     newCompositeNode(grammarAccess.getLayoutAccess().getRootLayoutParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleRootLayout_in_ruleLayout3003);
+            pushFollow(FOLLOW_ruleRootLayout_in_ruleLayout3138);
             this_RootLayout_0=ruleRootLayout();
 
             state._fsp--;
@@ -3242,7 +3380,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRootLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1305:1: entryRuleRootLayout returns [EObject current=null] : iv_ruleRootLayout= ruleRootLayout EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1353:1: entryRuleRootLayout returns [EObject current=null] : iv_ruleRootLayout= ruleRootLayout EOF ;
     public final EObject entryRuleRootLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3250,17 +3388,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1306:2: (iv_ruleRootLayout= ruleRootLayout EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1307:2: iv_ruleRootLayout= ruleRootLayout EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1354:2: (iv_ruleRootLayout= ruleRootLayout EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1355:2: iv_ruleRootLayout= ruleRootLayout EOF
             {
              newCompositeNode(grammarAccess.getRootLayoutRule()); 
-            pushFollow(FOLLOW_ruleRootLayout_in_entryRuleRootLayout3037);
+            pushFollow(FOLLOW_ruleRootLayout_in_entryRuleRootLayout3172);
             iv_ruleRootLayout=ruleRootLayout();
 
             state._fsp--;
 
              current =iv_ruleRootLayout; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRootLayout3047); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRootLayout3182); 
 
             }
 
@@ -3278,7 +3416,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRootLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1314:1: ruleRootLayout returns [EObject current=null] : (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1362:1: ruleRootLayout returns [EObject current=null] : (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen ) ;
     public final EObject ruleRootLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3290,33 +3428,33 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1317:28: ( (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1318:1: (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1365:28: ( (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1366:1: (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1318:1: (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1366:1: (this_BaseLayout_0= ruleBaseLayout | this_PreferenceScreen_1= rulePreferenceScreen )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( ((LA17_0>=32 && LA17_0<=33)||(LA17_0>=36 && LA17_0<=37)) ) {
-                alt17=1;
+            if ( ((LA18_0>=32 && LA18_0<=33)||(LA18_0>=36 && LA18_0<=37)) ) {
+                alt18=1;
             }
-            else if ( (LA17_0==52) ) {
-                alt17=2;
+            else if ( (LA18_0==53) ) {
+                alt18=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1319:5: this_BaseLayout_0= ruleBaseLayout
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1367:5: this_BaseLayout_0= ruleBaseLayout
                     {
                      
                             newCompositeNode(grammarAccess.getRootLayoutAccess().getBaseLayoutParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleBaseLayout_in_ruleRootLayout3094);
+                    pushFollow(FOLLOW_ruleBaseLayout_in_ruleRootLayout3229);
                     this_BaseLayout_0=ruleBaseLayout();
 
                     state._fsp--;
@@ -3329,12 +3467,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1329:5: this_PreferenceScreen_1= rulePreferenceScreen
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1377:5: this_PreferenceScreen_1= rulePreferenceScreen
                     {
                      
                             newCompositeNode(grammarAccess.getRootLayoutAccess().getPreferenceScreenParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_rulePreferenceScreen_in_ruleRootLayout3121);
+                    pushFollow(FOLLOW_rulePreferenceScreen_in_ruleRootLayout3256);
                     this_PreferenceScreen_1=rulePreferenceScreen();
 
                     state._fsp--;
@@ -3367,7 +3505,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBaseLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1345:1: entryRuleBaseLayout returns [EObject current=null] : iv_ruleBaseLayout= ruleBaseLayout EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1393:1: entryRuleBaseLayout returns [EObject current=null] : iv_ruleBaseLayout= ruleBaseLayout EOF ;
     public final EObject entryRuleBaseLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3375,17 +3513,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1346:2: (iv_ruleBaseLayout= ruleBaseLayout EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1347:2: iv_ruleBaseLayout= ruleBaseLayout EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1394:2: (iv_ruleBaseLayout= ruleBaseLayout EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1395:2: iv_ruleBaseLayout= ruleBaseLayout EOF
             {
              newCompositeNode(grammarAccess.getBaseLayoutRule()); 
-            pushFollow(FOLLOW_ruleBaseLayout_in_entryRuleBaseLayout3156);
+            pushFollow(FOLLOW_ruleBaseLayout_in_entryRuleBaseLayout3291);
             iv_ruleBaseLayout=ruleBaseLayout();
 
             state._fsp--;
 
              current =iv_ruleBaseLayout; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBaseLayout3166); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBaseLayout3301); 
 
             }
 
@@ -3403,7 +3541,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBaseLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1354:1: ruleBaseLayout returns [EObject current=null] : (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1402:1: ruleBaseLayout returns [EObject current=null] : (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout ) ;
     public final EObject ruleBaseLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3419,47 +3557,47 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1357:28: ( (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1358:1: (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1405:28: ( (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1406:1: (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1358:1: (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout )
-            int alt18=4;
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1406:1: (this_LinearLayout_0= ruleLinearLayout | this_AbsoluteLayout_1= ruleAbsoluteLayout | this_FrameLayout_2= ruleFrameLayout | this_RelativeLayout_3= ruleRelativeLayout )
+            int alt19=4;
             switch ( input.LA(1) ) {
             case 33:
                 {
-                alt18=1;
+                alt19=1;
                 }
                 break;
             case 32:
                 {
-                alt18=2;
+                alt19=2;
                 }
                 break;
             case 36:
                 {
-                alt18=3;
+                alt19=3;
                 }
                 break;
             case 37:
                 {
-                alt18=4;
+                alt19=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1359:5: this_LinearLayout_0= ruleLinearLayout
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1407:5: this_LinearLayout_0= ruleLinearLayout
                     {
                      
                             newCompositeNode(grammarAccess.getBaseLayoutAccess().getLinearLayoutParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleLinearLayout_in_ruleBaseLayout3213);
+                    pushFollow(FOLLOW_ruleLinearLayout_in_ruleBaseLayout3348);
                     this_LinearLayout_0=ruleLinearLayout();
 
                     state._fsp--;
@@ -3472,12 +3610,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1369:5: this_AbsoluteLayout_1= ruleAbsoluteLayout
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1417:5: this_AbsoluteLayout_1= ruleAbsoluteLayout
                     {
                      
                             newCompositeNode(grammarAccess.getBaseLayoutAccess().getAbsoluteLayoutParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleAbsoluteLayout_in_ruleBaseLayout3240);
+                    pushFollow(FOLLOW_ruleAbsoluteLayout_in_ruleBaseLayout3375);
                     this_AbsoluteLayout_1=ruleAbsoluteLayout();
 
                     state._fsp--;
@@ -3490,12 +3628,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1379:5: this_FrameLayout_2= ruleFrameLayout
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1427:5: this_FrameLayout_2= ruleFrameLayout
                     {
                      
                             newCompositeNode(grammarAccess.getBaseLayoutAccess().getFrameLayoutParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleFrameLayout_in_ruleBaseLayout3267);
+                    pushFollow(FOLLOW_ruleFrameLayout_in_ruleBaseLayout3402);
                     this_FrameLayout_2=ruleFrameLayout();
 
                     state._fsp--;
@@ -3508,12 +3646,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1389:5: this_RelativeLayout_3= ruleRelativeLayout
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1437:5: this_RelativeLayout_3= ruleRelativeLayout
                     {
                      
                             newCompositeNode(grammarAccess.getBaseLayoutAccess().getRelativeLayoutParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleRelativeLayout_in_ruleBaseLayout3294);
+                    pushFollow(FOLLOW_ruleRelativeLayout_in_ruleBaseLayout3429);
                     this_RelativeLayout_3=ruleRelativeLayout();
 
                     state._fsp--;
@@ -3546,7 +3684,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbsoluteLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1405:1: entryRuleAbsoluteLayout returns [EObject current=null] : iv_ruleAbsoluteLayout= ruleAbsoluteLayout EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1453:1: entryRuleAbsoluteLayout returns [EObject current=null] : iv_ruleAbsoluteLayout= ruleAbsoluteLayout EOF ;
     public final EObject entryRuleAbsoluteLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3554,17 +3692,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1406:2: (iv_ruleAbsoluteLayout= ruleAbsoluteLayout EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1407:2: iv_ruleAbsoluteLayout= ruleAbsoluteLayout EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1454:2: (iv_ruleAbsoluteLayout= ruleAbsoluteLayout EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1455:2: iv_ruleAbsoluteLayout= ruleAbsoluteLayout EOF
             {
              newCompositeNode(grammarAccess.getAbsoluteLayoutRule()); 
-            pushFollow(FOLLOW_ruleAbsoluteLayout_in_entryRuleAbsoluteLayout3329);
+            pushFollow(FOLLOW_ruleAbsoluteLayout_in_entryRuleAbsoluteLayout3464);
             iv_ruleAbsoluteLayout=ruleAbsoluteLayout();
 
             state._fsp--;
 
              current =iv_ruleAbsoluteLayout; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbsoluteLayout3339); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbsoluteLayout3474); 
 
             }
 
@@ -3582,7 +3720,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbsoluteLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1414:1: ruleAbsoluteLayout returns [EObject current=null] : (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1462:1: ruleAbsoluteLayout returns [EObject current=null] : (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) ;
     public final EObject ruleAbsoluteLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3598,63 +3736,52 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1417:28: ( (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1418:1: (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1465:28: ( (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1466:1: (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1418:1: (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1418:3: otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1466:1: (otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1466:3: otherlv_0= 'absolutelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleAbsoluteLayout3376); 
+            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleAbsoluteLayout3511); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAbsoluteLayoutAccess().getAbsolutelayoutKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1422:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
-
-            if ( (LA19_0==RULE_ID) ) {
-                alt19=1;
-            }
-            switch (alt19) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1423:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1423:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1424:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAbsoluteLayout3393); 
-
-                    			newLeafNode(lv_name_1_0, grammarAccess.getAbsoluteLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAbsoluteLayoutRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1440:3: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1441:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1470:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1471:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1441:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1442:3: lv_layoutStyle_2_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1471:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1472:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAbsoluteLayout3528); 
+
+            			newLeafNode(lv_name_1_0, grammarAccess.getAbsoluteLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getAbsoluteLayoutRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1488:2: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1489:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1489:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1490:3: lv_layoutStyle_2_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getAbsoluteLayoutAccess().getLayoutStyleLayoutStyleEnumRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleAbsoluteLayout3420);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleAbsoluteLayout3554);
             lv_layoutStyle_2_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -3676,32 +3803,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleAbsoluteLayout3432); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleAbsoluteLayout3566); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getAbsoluteLayoutAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1462:1: ( (lv_elements_4_0= ruleUIElement ) )*
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1510:1: ( (lv_elements_4_0= ruleUIElement ) )*
             loop20:
             do {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( ((LA20_0>=32 && LA20_0<=33)||(LA20_0>=36 && LA20_0<=41)||(LA20_0>=44 && LA20_0<=48)||LA20_0==52) ) {
+                if ( ((LA20_0>=32 && LA20_0<=33)||(LA20_0>=36 && LA20_0<=41)||(LA20_0>=44 && LA20_0<=48)||LA20_0==53) ) {
                     alt20=1;
                 }
 
 
                 switch (alt20) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1463:1: (lv_elements_4_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1511:1: (lv_elements_4_0= ruleUIElement )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1463:1: (lv_elements_4_0= ruleUIElement )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1464:3: lv_elements_4_0= ruleUIElement
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1511:1: (lv_elements_4_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1512:3: lv_elements_4_0= ruleUIElement
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAbsoluteLayoutAccess().getElementsUIElementParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleUIElement_in_ruleAbsoluteLayout3453);
+            	    pushFollow(FOLLOW_ruleUIElement_in_ruleAbsoluteLayout3587);
             	    lv_elements_4_0=ruleUIElement();
 
             	    state._fsp--;
@@ -3729,7 +3856,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleAbsoluteLayout3466); 
+            otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleAbsoluteLayout3600); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getAbsoluteLayoutAccess().getRightCurlyBracketKeyword_5());
                 
@@ -3754,7 +3881,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLinearLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1492:1: entryRuleLinearLayout returns [EObject current=null] : iv_ruleLinearLayout= ruleLinearLayout EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1540:1: entryRuleLinearLayout returns [EObject current=null] : iv_ruleLinearLayout= ruleLinearLayout EOF ;
     public final EObject entryRuleLinearLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3762,17 +3889,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1493:2: (iv_ruleLinearLayout= ruleLinearLayout EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1494:2: iv_ruleLinearLayout= ruleLinearLayout EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1541:2: (iv_ruleLinearLayout= ruleLinearLayout EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1542:2: iv_ruleLinearLayout= ruleLinearLayout EOF
             {
              newCompositeNode(grammarAccess.getLinearLayoutRule()); 
-            pushFollow(FOLLOW_ruleLinearLayout_in_entryRuleLinearLayout3502);
+            pushFollow(FOLLOW_ruleLinearLayout_in_entryRuleLinearLayout3636);
             iv_ruleLinearLayout=ruleLinearLayout();
 
             state._fsp--;
 
              current =iv_ruleLinearLayout; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLinearLayout3512); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLinearLayout3646); 
 
             }
 
@@ -3790,7 +3917,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinearLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1501:1: ruleLinearLayout returns [EObject current=null] : (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1549:1: ruleLinearLayout returns [EObject current=null] : (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' ) ;
     public final EObject ruleLinearLayout() throws RecognitionException {
         EObject current = null;
 
@@ -3808,74 +3935,63 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1504:28: ( (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1505:1: (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1552:28: ( (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1553:1: (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1505:1: (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1505:3: otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1553:1: (otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1553:3: otherlv_0= 'linearlayout' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_elements_6_0= ruleUIElement ) )* otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_33_in_ruleLinearLayout3549); 
+            otherlv_0=(Token)match(input,33,FOLLOW_33_in_ruleLinearLayout3683); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getLinearLayoutAccess().getLinearlayoutKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1509:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt21=2;
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1557:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1558:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1558:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1559:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLinearLayout3700); 
+
+            			newLeafNode(lv_name_1_0, grammarAccess.getLinearLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getLinearLayoutRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1575:2: ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )?
+            int alt21=3;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==RULE_ID) ) {
+            if ( (LA21_0==34) ) {
                 alt21=1;
+            }
+            else if ( (LA21_0==35) ) {
+                alt21=2;
             }
             switch (alt21) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1510:1: (lv_name_1_0= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1575:3: ( (lv_orientation_2_0= 'horizontal' ) )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1510:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1511:3: lv_name_1_0= RULE_ID
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1575:3: ( (lv_orientation_2_0= 'horizontal' ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1576:1: (lv_orientation_2_0= 'horizontal' )
                     {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLinearLayout3566); 
-
-                    			newLeafNode(lv_name_1_0, grammarAccess.getLinearLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getLinearLayoutRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1527:3: ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )?
-            int alt22=3;
-            int LA22_0 = input.LA(1);
-
-            if ( (LA22_0==34) ) {
-                alt22=1;
-            }
-            else if ( (LA22_0==35) ) {
-                alt22=2;
-            }
-            switch (alt22) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1527:4: ( (lv_orientation_2_0= 'horizontal' ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1576:1: (lv_orientation_2_0= 'horizontal' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1577:3: lv_orientation_2_0= 'horizontal'
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1527:4: ( (lv_orientation_2_0= 'horizontal' ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1528:1: (lv_orientation_2_0= 'horizontal' )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1528:1: (lv_orientation_2_0= 'horizontal' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1529:3: lv_orientation_2_0= 'horizontal'
-                    {
-                    lv_orientation_2_0=(Token)match(input,34,FOLLOW_34_in_ruleLinearLayout3591); 
+                    lv_orientation_2_0=(Token)match(input,34,FOLLOW_34_in_ruleLinearLayout3724); 
 
                             newLeafNode(lv_orientation_2_0, grammarAccess.getLinearLayoutAccess().getOrientationHorizontalKeyword_2_0_0());
                         
@@ -3895,9 +4011,9 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1543:7: otherlv_3= 'vertical'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1591:7: otherlv_3= 'vertical'
                     {
-                    otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleLinearLayout3622); 
+                    otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleLinearLayout3755); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getLinearLayoutAccess().getVerticalKeyword_2_1());
                         
@@ -3907,16 +4023,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1547:3: ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1548:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1595:3: ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1596:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1548:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1549:3: lv_layoutStyle_4_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1596:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1597:3: lv_layoutStyle_4_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getLinearLayoutAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleLinearLayout3645);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleLinearLayout3778);
             lv_layoutStyle_4_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -3938,32 +4054,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleLinearLayout3657); 
+            otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleLinearLayout3790); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getLinearLayoutAccess().getLeftCurlyBracketKeyword_4());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1569:1: ( (lv_elements_6_0= ruleUIElement ) )*
-            loop23:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1617:1: ( (lv_elements_6_0= ruleUIElement ) )*
+            loop22:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( ((LA23_0>=32 && LA23_0<=33)||(LA23_0>=36 && LA23_0<=41)||(LA23_0>=44 && LA23_0<=48)||LA23_0==52) ) {
-                    alt23=1;
+                if ( ((LA22_0>=32 && LA22_0<=33)||(LA22_0>=36 && LA22_0<=41)||(LA22_0>=44 && LA22_0<=48)||LA22_0==53) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt22) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1570:1: (lv_elements_6_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1618:1: (lv_elements_6_0= ruleUIElement )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1570:1: (lv_elements_6_0= ruleUIElement )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1571:3: lv_elements_6_0= ruleUIElement
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1618:1: (lv_elements_6_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1619:3: lv_elements_6_0= ruleUIElement
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLinearLayoutAccess().getElementsUIElementParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleUIElement_in_ruleLinearLayout3678);
+            	    pushFollow(FOLLOW_ruleUIElement_in_ruleLinearLayout3811);
             	    lv_elements_6_0=ruleUIElement();
 
             	    state._fsp--;
@@ -3987,11 +4103,11 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop22;
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleLinearLayout3691); 
+            otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleLinearLayout3824); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getLinearLayoutAccess().getRightCurlyBracketKeyword_6());
                 
@@ -4016,7 +4132,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFrameLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1599:1: entryRuleFrameLayout returns [EObject current=null] : iv_ruleFrameLayout= ruleFrameLayout EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1647:1: entryRuleFrameLayout returns [EObject current=null] : iv_ruleFrameLayout= ruleFrameLayout EOF ;
     public final EObject entryRuleFrameLayout() throws RecognitionException {
         EObject current = null;
 
@@ -4024,17 +4140,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1600:2: (iv_ruleFrameLayout= ruleFrameLayout EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1601:2: iv_ruleFrameLayout= ruleFrameLayout EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1648:2: (iv_ruleFrameLayout= ruleFrameLayout EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1649:2: iv_ruleFrameLayout= ruleFrameLayout EOF
             {
              newCompositeNode(grammarAccess.getFrameLayoutRule()); 
-            pushFollow(FOLLOW_ruleFrameLayout_in_entryRuleFrameLayout3727);
+            pushFollow(FOLLOW_ruleFrameLayout_in_entryRuleFrameLayout3860);
             iv_ruleFrameLayout=ruleFrameLayout();
 
             state._fsp--;
 
              current =iv_ruleFrameLayout; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFrameLayout3737); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFrameLayout3870); 
 
             }
 
@@ -4052,7 +4168,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFrameLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1608:1: ruleFrameLayout returns [EObject current=null] : (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1656:1: ruleFrameLayout returns [EObject current=null] : (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) ;
     public final EObject ruleFrameLayout() throws RecognitionException {
         EObject current = null;
 
@@ -4068,63 +4184,52 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1611:28: ( (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1612:1: (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1659:28: ( (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1660:1: (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1612:1: (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1612:3: otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1660:1: (otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1660:3: otherlv_0= 'framelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleFrameLayout3774); 
+            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleFrameLayout3907); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFrameLayoutAccess().getFramelayoutKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1616:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
-
-            if ( (LA24_0==RULE_ID) ) {
-                alt24=1;
-            }
-            switch (alt24) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1617:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1617:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1618:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFrameLayout3791); 
-
-                    			newLeafNode(lv_name_1_0, grammarAccess.getFrameLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFrameLayoutRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1634:3: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1635:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1664:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1665:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1635:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1636:3: lv_layoutStyle_2_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1665:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1666:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFrameLayout3924); 
+
+            			newLeafNode(lv_name_1_0, grammarAccess.getFrameLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getFrameLayoutRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1682:2: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1683:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1683:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1684:3: lv_layoutStyle_2_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getFrameLayoutAccess().getLayoutStyleLayoutStyleEnumRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleFrameLayout3818);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleFrameLayout3950);
             lv_layoutStyle_2_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -4146,32 +4251,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleFrameLayout3830); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleFrameLayout3962); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getFrameLayoutAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1656:1: ( (lv_elements_4_0= ruleUIElement ) )*
-            loop25:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1704:1: ( (lv_elements_4_0= ruleUIElement ) )*
+            loop23:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( ((LA25_0>=32 && LA25_0<=33)||(LA25_0>=36 && LA25_0<=41)||(LA25_0>=44 && LA25_0<=48)||LA25_0==52) ) {
-                    alt25=1;
+                if ( ((LA23_0>=32 && LA23_0<=33)||(LA23_0>=36 && LA23_0<=41)||(LA23_0>=44 && LA23_0<=48)||LA23_0==53) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt23) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1657:1: (lv_elements_4_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1705:1: (lv_elements_4_0= ruleUIElement )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1657:1: (lv_elements_4_0= ruleUIElement )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1658:3: lv_elements_4_0= ruleUIElement
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1705:1: (lv_elements_4_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1706:3: lv_elements_4_0= ruleUIElement
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getFrameLayoutAccess().getElementsUIElementParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleUIElement_in_ruleFrameLayout3851);
+            	    pushFollow(FOLLOW_ruleUIElement_in_ruleFrameLayout3983);
             	    lv_elements_4_0=ruleUIElement();
 
             	    state._fsp--;
@@ -4195,11 +4300,11 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop23;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleFrameLayout3864); 
+            otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleFrameLayout3996); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getFrameLayoutAccess().getRightCurlyBracketKeyword_5());
                 
@@ -4224,7 +4329,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelativeLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1686:1: entryRuleRelativeLayout returns [EObject current=null] : iv_ruleRelativeLayout= ruleRelativeLayout EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1734:1: entryRuleRelativeLayout returns [EObject current=null] : iv_ruleRelativeLayout= ruleRelativeLayout EOF ;
     public final EObject entryRuleRelativeLayout() throws RecognitionException {
         EObject current = null;
 
@@ -4232,17 +4337,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1687:2: (iv_ruleRelativeLayout= ruleRelativeLayout EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1688:2: iv_ruleRelativeLayout= ruleRelativeLayout EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1735:2: (iv_ruleRelativeLayout= ruleRelativeLayout EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1736:2: iv_ruleRelativeLayout= ruleRelativeLayout EOF
             {
              newCompositeNode(grammarAccess.getRelativeLayoutRule()); 
-            pushFollow(FOLLOW_ruleRelativeLayout_in_entryRuleRelativeLayout3900);
+            pushFollow(FOLLOW_ruleRelativeLayout_in_entryRuleRelativeLayout4032);
             iv_ruleRelativeLayout=ruleRelativeLayout();
 
             state._fsp--;
 
              current =iv_ruleRelativeLayout; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRelativeLayout3910); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRelativeLayout4042); 
 
             }
 
@@ -4260,7 +4365,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelativeLayout"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1695:1: ruleRelativeLayout returns [EObject current=null] : (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1743:1: ruleRelativeLayout returns [EObject current=null] : (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) ;
     public final EObject ruleRelativeLayout() throws RecognitionException {
         EObject current = null;
 
@@ -4276,63 +4381,52 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1698:28: ( (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1699:1: (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1746:28: ( (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1747:1: (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1699:1: (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1699:3: otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) )? ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1747:1: (otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1747:3: otherlv_0= 'relativelayout' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' ( (lv_elements_4_0= ruleUIElement ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleRelativeLayout3947); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleRelativeLayout4079); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRelativeLayoutAccess().getRelativelayoutKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1703:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
-
-            if ( (LA26_0==RULE_ID) ) {
-                alt26=1;
-            }
-            switch (alt26) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1704:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1704:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1705:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRelativeLayout3964); 
-
-                    			newLeafNode(lv_name_1_0, grammarAccess.getRelativeLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getRelativeLayoutRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1721:3: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1722:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1751:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1752:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1722:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1723:3: lv_layoutStyle_2_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1752:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1753:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRelativeLayout4096); 
+
+            			newLeafNode(lv_name_1_0, grammarAccess.getRelativeLayoutAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getRelativeLayoutRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1769:2: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1770:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1770:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1771:3: lv_layoutStyle_2_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getRelativeLayoutAccess().getLayoutStyleLayoutStyleEnumRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRelativeLayout3991);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRelativeLayout4122);
             lv_layoutStyle_2_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -4354,32 +4448,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleRelativeLayout4003); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleRelativeLayout4134); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getRelativeLayoutAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1743:1: ( (lv_elements_4_0= ruleUIElement ) )*
-            loop27:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1791:1: ( (lv_elements_4_0= ruleUIElement ) )*
+            loop24:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( ((LA27_0>=32 && LA27_0<=33)||(LA27_0>=36 && LA27_0<=41)||(LA27_0>=44 && LA27_0<=48)||LA27_0==52) ) {
-                    alt27=1;
+                if ( ((LA24_0>=32 && LA24_0<=33)||(LA24_0>=36 && LA24_0<=41)||(LA24_0>=44 && LA24_0<=48)||LA24_0==53) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt24) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1744:1: (lv_elements_4_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1792:1: (lv_elements_4_0= ruleUIElement )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1744:1: (lv_elements_4_0= ruleUIElement )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1745:3: lv_elements_4_0= ruleUIElement
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1792:1: (lv_elements_4_0= ruleUIElement )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1793:3: lv_elements_4_0= ruleUIElement
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRelativeLayoutAccess().getElementsUIElementParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleUIElement_in_ruleRelativeLayout4024);
+            	    pushFollow(FOLLOW_ruleUIElement_in_ruleRelativeLayout4155);
             	    lv_elements_4_0=ruleUIElement();
 
             	    state._fsp--;
@@ -4403,11 +4497,11 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop24;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleRelativeLayout4037); 
+            otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleRelativeLayout4168); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getRelativeLayoutAccess().getRightCurlyBracketKeyword_5());
                 
@@ -4432,7 +4526,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWidget"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1773:1: entryRuleWidget returns [EObject current=null] : iv_ruleWidget= ruleWidget EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1821:1: entryRuleWidget returns [EObject current=null] : iv_ruleWidget= ruleWidget EOF ;
     public final EObject entryRuleWidget() throws RecognitionException {
         EObject current = null;
 
@@ -4440,17 +4534,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1774:2: (iv_ruleWidget= ruleWidget EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1775:2: iv_ruleWidget= ruleWidget EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1822:2: (iv_ruleWidget= ruleWidget EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1823:2: iv_ruleWidget= ruleWidget EOF
             {
              newCompositeNode(grammarAccess.getWidgetRule()); 
-            pushFollow(FOLLOW_ruleWidget_in_entryRuleWidget4073);
+            pushFollow(FOLLOW_ruleWidget_in_entryRuleWidget4204);
             iv_ruleWidget=ruleWidget();
 
             state._fsp--;
 
              current =iv_ruleWidget; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWidget4083); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWidget4214); 
 
             }
 
@@ -4468,7 +4562,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWidget"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1782:1: ruleWidget returns [EObject current=null] : (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1830:1: ruleWidget returns [EObject current=null] : (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton ) ;
     public final EObject ruleWidget() throws RecognitionException {
         EObject current = null;
 
@@ -4494,72 +4588,72 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1785:28: ( (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1786:1: (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1833:28: ( (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1834:1: (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1786:1: (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton )
-            int alt28=9;
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1834:1: (this_TextView_0= ruleTextView | this_EditText_1= ruleEditText | this_Button_2= ruleButton | this_ListView_3= ruleListView | this_Spinner_4= ruleSpinner | this_RadioGroup_5= ruleRadioGroup | this_CheckBox_6= ruleCheckBox | this_RatingBar_7= ruleRatingBar | this_ToggleButton_8= ruleToggleButton )
+            int alt25=9;
             switch ( input.LA(1) ) {
             case 38:
                 {
-                alt28=1;
+                alt25=1;
                 }
                 break;
             case 39:
                 {
-                alt28=2;
+                alt25=2;
                 }
                 break;
             case 40:
                 {
-                alt28=3;
+                alt25=3;
                 }
                 break;
             case 41:
                 {
-                alt28=4;
+                alt25=4;
                 }
                 break;
             case 44:
                 {
-                alt28=5;
+                alt25=5;
                 }
                 break;
             case 46:
                 {
-                alt28=6;
+                alt25=6;
                 }
                 break;
             case 45:
                 {
-                alt28=7;
+                alt25=7;
                 }
                 break;
             case 47:
                 {
-                alt28=8;
+                alt25=8;
                 }
                 break;
             case 48:
                 {
-                alt28=9;
+                alt25=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt28) {
+            switch (alt25) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1787:5: this_TextView_0= ruleTextView
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1835:5: this_TextView_0= ruleTextView
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getTextViewParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleTextView_in_ruleWidget4130);
+                    pushFollow(FOLLOW_ruleTextView_in_ruleWidget4261);
                     this_TextView_0=ruleTextView();
 
                     state._fsp--;
@@ -4572,12 +4666,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1797:5: this_EditText_1= ruleEditText
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1845:5: this_EditText_1= ruleEditText
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getEditTextParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleEditText_in_ruleWidget4157);
+                    pushFollow(FOLLOW_ruleEditText_in_ruleWidget4288);
                     this_EditText_1=ruleEditText();
 
                     state._fsp--;
@@ -4590,12 +4684,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1807:5: this_Button_2= ruleButton
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1855:5: this_Button_2= ruleButton
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getButtonParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleButton_in_ruleWidget4184);
+                    pushFollow(FOLLOW_ruleButton_in_ruleWidget4315);
                     this_Button_2=ruleButton();
 
                     state._fsp--;
@@ -4608,12 +4702,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1817:5: this_ListView_3= ruleListView
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1865:5: this_ListView_3= ruleListView
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getListViewParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleListView_in_ruleWidget4211);
+                    pushFollow(FOLLOW_ruleListView_in_ruleWidget4342);
                     this_ListView_3=ruleListView();
 
                     state._fsp--;
@@ -4626,12 +4720,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1827:5: this_Spinner_4= ruleSpinner
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1875:5: this_Spinner_4= ruleSpinner
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getSpinnerParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleSpinner_in_ruleWidget4238);
+                    pushFollow(FOLLOW_ruleSpinner_in_ruleWidget4369);
                     this_Spinner_4=ruleSpinner();
 
                     state._fsp--;
@@ -4644,12 +4738,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1837:5: this_RadioGroup_5= ruleRadioGroup
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1885:5: this_RadioGroup_5= ruleRadioGroup
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getRadioGroupParserRuleCall_5()); 
                         
-                    pushFollow(FOLLOW_ruleRadioGroup_in_ruleWidget4265);
+                    pushFollow(FOLLOW_ruleRadioGroup_in_ruleWidget4396);
                     this_RadioGroup_5=ruleRadioGroup();
 
                     state._fsp--;
@@ -4662,12 +4756,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1847:5: this_CheckBox_6= ruleCheckBox
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1895:5: this_CheckBox_6= ruleCheckBox
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getCheckBoxParserRuleCall_6()); 
                         
-                    pushFollow(FOLLOW_ruleCheckBox_in_ruleWidget4292);
+                    pushFollow(FOLLOW_ruleCheckBox_in_ruleWidget4423);
                     this_CheckBox_6=ruleCheckBox();
 
                     state._fsp--;
@@ -4680,12 +4774,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1857:5: this_RatingBar_7= ruleRatingBar
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1905:5: this_RatingBar_7= ruleRatingBar
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getRatingBarParserRuleCall_7()); 
                         
-                    pushFollow(FOLLOW_ruleRatingBar_in_ruleWidget4319);
+                    pushFollow(FOLLOW_ruleRatingBar_in_ruleWidget4450);
                     this_RatingBar_7=ruleRatingBar();
 
                     state._fsp--;
@@ -4698,12 +4792,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1867:5: this_ToggleButton_8= ruleToggleButton
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1915:5: this_ToggleButton_8= ruleToggleButton
                     {
                      
                             newCompositeNode(grammarAccess.getWidgetAccess().getToggleButtonParserRuleCall_8()); 
                         
-                    pushFollow(FOLLOW_ruleToggleButton_in_ruleWidget4346);
+                    pushFollow(FOLLOW_ruleToggleButton_in_ruleWidget4477);
                     this_ToggleButton_8=ruleToggleButton();
 
                     state._fsp--;
@@ -4736,7 +4830,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextView"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1883:1: entryRuleTextView returns [EObject current=null] : iv_ruleTextView= ruleTextView EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1931:1: entryRuleTextView returns [EObject current=null] : iv_ruleTextView= ruleTextView EOF ;
     public final EObject entryRuleTextView() throws RecognitionException {
         EObject current = null;
 
@@ -4744,17 +4838,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1884:2: (iv_ruleTextView= ruleTextView EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1885:2: iv_ruleTextView= ruleTextView EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1932:2: (iv_ruleTextView= ruleTextView EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1933:2: iv_ruleTextView= ruleTextView EOF
             {
              newCompositeNode(grammarAccess.getTextViewRule()); 
-            pushFollow(FOLLOW_ruleTextView_in_entryRuleTextView4381);
+            pushFollow(FOLLOW_ruleTextView_in_entryRuleTextView4512);
             iv_ruleTextView=ruleTextView();
 
             state._fsp--;
 
              current =iv_ruleTextView; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTextView4391); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTextView4522); 
 
             }
 
@@ -4772,7 +4866,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextView"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1892:1: ruleTextView returns [EObject current=null] : (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1940:1: ruleTextView returns [EObject current=null] : (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleTextView() throws RecognitionException {
         EObject current = null;
 
@@ -4785,60 +4879,49 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1895:28: ( (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1896:1: (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1943:28: ( (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1944:1: (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1896:1: (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1896:3: otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1944:1: (otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1944:3: otherlv_0= 'textview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,38,FOLLOW_38_in_ruleTextView4428); 
+            otherlv_0=(Token)match(input,38,FOLLOW_38_in_ruleTextView4559); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTextViewAccess().getTextviewKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1900:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1948:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1949:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1949:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1950:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextView4576); 
 
-            if ( (LA29_0==RULE_ID) ) {
-                alt29=1;
-            }
-            switch (alt29) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1901:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1901:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1902:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextView4445); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getTextViewAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
 
-                    			newLeafNode(lv_name_1_0, grammarAccess.getTextViewAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getTextViewRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getTextViewRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1918:3: ( (lv_text_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1919:1: (lv_text_2_0= RULE_STRING )
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1966:2: ( (lv_text_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1967:1: (lv_text_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1919:1: (lv_text_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1920:3: lv_text_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1967:1: (lv_text_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1968:3: lv_text_2_0= RULE_STRING
             {
-            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextView4468); 
+            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextView4598); 
 
             			newLeafNode(lv_text_2_0, grammarAccess.getTextViewAccess().getTextSTRINGTerminalRuleCall_2_0()); 
             		
@@ -4858,16 +4941,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1936:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1937:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1984:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1985:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1937:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1938:3: lv_layoutStyle_3_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1985:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1986:3: lv_layoutStyle_3_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getTextViewAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleTextView4494);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleTextView4624);
             lv_layoutStyle_3_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -4910,7 +4993,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEditText"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1962:1: entryRuleEditText returns [EObject current=null] : iv_ruleEditText= ruleEditText EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2010:1: entryRuleEditText returns [EObject current=null] : iv_ruleEditText= ruleEditText EOF ;
     public final EObject entryRuleEditText() throws RecognitionException {
         EObject current = null;
 
@@ -4918,17 +5001,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1963:2: (iv_ruleEditText= ruleEditText EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1964:2: iv_ruleEditText= ruleEditText EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2011:2: (iv_ruleEditText= ruleEditText EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2012:2: iv_ruleEditText= ruleEditText EOF
             {
              newCompositeNode(grammarAccess.getEditTextRule()); 
-            pushFollow(FOLLOW_ruleEditText_in_entryRuleEditText4530);
+            pushFollow(FOLLOW_ruleEditText_in_entryRuleEditText4660);
             iv_ruleEditText=ruleEditText();
 
             state._fsp--;
 
              current =iv_ruleEditText; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEditText4540); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEditText4670); 
 
             }
 
@@ -4946,7 +5029,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEditText"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1971:1: ruleEditText returns [EObject current=null] : (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2019:1: ruleEditText returns [EObject current=null] : (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleEditText() throws RecognitionException {
         EObject current = null;
 
@@ -4959,60 +5042,49 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1974:28: ( (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1975:1: (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2022:28: ( (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2023:1: (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1975:1: (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1975:3: otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2023:1: (otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2023:3: otherlv_0= 'edittext' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleEditText4577); 
+            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleEditText4707); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEditTextAccess().getEdittextKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1979:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2027:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2028:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2028:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2029:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEditText4724); 
 
-            if ( (LA30_0==RULE_ID) ) {
-                alt30=1;
-            }
-            switch (alt30) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1980:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1980:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1981:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEditText4594); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getEditTextAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
 
-                    			newLeafNode(lv_name_1_0, grammarAccess.getEditTextAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getEditTextRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getEditTextRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1997:3: ( (lv_text_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1998:1: (lv_text_2_0= RULE_STRING )
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2045:2: ( (lv_text_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2046:1: (lv_text_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1998:1: (lv_text_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:1999:3: lv_text_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2046:1: (lv_text_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2047:3: lv_text_2_0= RULE_STRING
             {
-            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEditText4617); 
+            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEditText4746); 
 
             			newLeafNode(lv_text_2_0, grammarAccess.getEditTextAccess().getTextSTRINGTerminalRuleCall_2_0()); 
             		
@@ -5032,16 +5104,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2015:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2016:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2063:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2064:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2016:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2017:3: lv_layoutStyle_3_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2064:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2065:3: lv_layoutStyle_3_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getEditTextAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleEditText4643);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleEditText4772);
             lv_layoutStyle_3_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -5084,7 +5156,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleButton"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2041:1: entryRuleButton returns [EObject current=null] : iv_ruleButton= ruleButton EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2089:1: entryRuleButton returns [EObject current=null] : iv_ruleButton= ruleButton EOF ;
     public final EObject entryRuleButton() throws RecognitionException {
         EObject current = null;
 
@@ -5092,17 +5164,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2042:2: (iv_ruleButton= ruleButton EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2043:2: iv_ruleButton= ruleButton EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2090:2: (iv_ruleButton= ruleButton EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2091:2: iv_ruleButton= ruleButton EOF
             {
              newCompositeNode(grammarAccess.getButtonRule()); 
-            pushFollow(FOLLOW_ruleButton_in_entryRuleButton4679);
+            pushFollow(FOLLOW_ruleButton_in_entryRuleButton4808);
             iv_ruleButton=ruleButton();
 
             state._fsp--;
 
              current =iv_ruleButton; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleButton4689); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleButton4818); 
 
             }
 
@@ -5120,7 +5192,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleButton"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2050:1: ruleButton returns [EObject current=null] : (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2098:1: ruleButton returns [EObject current=null] : (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleButton() throws RecognitionException {
         EObject current = null;
 
@@ -5133,60 +5205,49 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2053:28: ( (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2054:1: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2101:28: ( (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2102:1: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2054:1: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2054:3: otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2102:1: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2102:3: otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleButton4726); 
+            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleButton4855); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getButtonAccess().getButtonKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2058:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2106:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2107:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2107:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2108:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleButton4872); 
 
-            if ( (LA31_0==RULE_ID) ) {
-                alt31=1;
-            }
-            switch (alt31) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2059:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2059:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2060:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleButton4743); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
 
-                    			newLeafNode(lv_name_1_0, grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getButtonRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getButtonRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2076:3: ( (lv_text_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2077:1: (lv_text_2_0= RULE_STRING )
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2124:2: ( (lv_text_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2125:1: (lv_text_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2077:1: (lv_text_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2078:3: lv_text_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2125:1: (lv_text_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2126:3: lv_text_2_0= RULE_STRING
             {
-            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleButton4766); 
+            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleButton4894); 
 
             			newLeafNode(lv_text_2_0, grammarAccess.getButtonAccess().getTextSTRINGTerminalRuleCall_2_0()); 
             		
@@ -5206,16 +5267,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2094:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2095:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2142:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2143:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2095:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2096:3: lv_layoutStyle_3_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2143:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2144:3: lv_layoutStyle_3_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getButtonAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleButton4792);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleButton4920);
             lv_layoutStyle_3_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -5258,7 +5319,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleListView"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2120:1: entryRuleListView returns [EObject current=null] : iv_ruleListView= ruleListView EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2168:1: entryRuleListView returns [EObject current=null] : iv_ruleListView= ruleListView EOF ;
     public final EObject entryRuleListView() throws RecognitionException {
         EObject current = null;
 
@@ -5266,17 +5327,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2121:2: (iv_ruleListView= ruleListView EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2122:2: iv_ruleListView= ruleListView EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2169:2: (iv_ruleListView= ruleListView EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2170:2: iv_ruleListView= ruleListView EOF
             {
              newCompositeNode(grammarAccess.getListViewRule()); 
-            pushFollow(FOLLOW_ruleListView_in_entryRuleListView4828);
+            pushFollow(FOLLOW_ruleListView_in_entryRuleListView4956);
             iv_ruleListView=ruleListView();
 
             state._fsp--;
 
              current =iv_ruleListView; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleListView4838); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleListView4966); 
 
             }
 
@@ -5294,7 +5355,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleListView"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2129:1: ruleListView returns [EObject current=null] : (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2177:1: ruleListView returns [EObject current=null] : (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleListView() throws RecognitionException {
         EObject current = null;
 
@@ -5310,23 +5371,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2132:28: ( (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2133:1: (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2180:28: ( (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2181:1: (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2133:1: (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2133:3: otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2181:1: (otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2181:3: otherlv_0= 'listview' ( (lv_name_1_0= RULE_ID ) ) ( (lv_layoutStyle_2_0= ruleLayoutStyle ) ) otherlv_3= '{' (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )? (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )? otherlv_8= '}'
             {
-            otherlv_0=(Token)match(input,41,FOLLOW_41_in_ruleListView4875); 
+            otherlv_0=(Token)match(input,41,FOLLOW_41_in_ruleListView5003); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getListViewAccess().getListviewKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2137:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2138:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2185:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2186:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2138:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2139:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2186:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2187:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleListView4892); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleListView5020); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getListViewAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -5346,16 +5407,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2155:2: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2156:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2203:2: ( (lv_layoutStyle_2_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2204:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2156:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2157:3: lv_layoutStyle_2_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2204:1: (lv_layoutStyle_2_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2205:3: lv_layoutStyle_2_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getListViewAccess().getLayoutStyleLayoutStyleEnumRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleListView4918);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleListView5046);
             lv_layoutStyle_2_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -5377,30 +5438,30 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleListView4930); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleListView5058); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getListViewAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2177:1: (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2225:1: (otherlv_4= 'entries' ( ( ruleQualifiedName ) ) )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA32_0==42) ) {
-                alt32=1;
+            if ( (LA26_0==42) ) {
+                alt26=1;
             }
-            switch (alt32) {
+            switch (alt26) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2177:3: otherlv_4= 'entries' ( ( ruleQualifiedName ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2225:3: otherlv_4= 'entries' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_4=(Token)match(input,42,FOLLOW_42_in_ruleListView4943); 
+                    otherlv_4=(Token)match(input,42,FOLLOW_42_in_ruleListView5071); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getListViewAccess().getEntriesKeyword_4_0());
                         
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2181:1: ( ( ruleQualifiedName ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2182:1: ( ruleQualifiedName )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2229:1: ( ( ruleQualifiedName ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2230:1: ( ruleQualifiedName )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2182:1: ( ruleQualifiedName )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2183:3: ruleQualifiedName
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2230:1: ( ruleQualifiedName )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2231:3: ruleQualifiedName
                     {
 
                     			if (current==null) {
@@ -5410,7 +5471,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getListViewAccess().getEntriesArrayResourceCrossReference_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleListView4966);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleListView5094);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -5430,26 +5491,26 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2196:4: (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2244:4: (otherlv_6= 'listitem' ( ( ruleQualifiedName ) ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA33_0==43) ) {
-                alt33=1;
+            if ( (LA27_0==43) ) {
+                alt27=1;
             }
-            switch (alt33) {
+            switch (alt27) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2196:6: otherlv_6= 'listitem' ( ( ruleQualifiedName ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2244:6: otherlv_6= 'listitem' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_6=(Token)match(input,43,FOLLOW_43_in_ruleListView4981); 
+                    otherlv_6=(Token)match(input,43,FOLLOW_43_in_ruleListView5109); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getListViewAccess().getListitemKeyword_5_0());
                         
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2200:1: ( ( ruleQualifiedName ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2201:1: ( ruleQualifiedName )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2248:1: ( ( ruleQualifiedName ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2249:1: ( ruleQualifiedName )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2201:1: ( ruleQualifiedName )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2202:3: ruleQualifiedName
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2249:1: ( ruleQualifiedName )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2250:3: ruleQualifiedName
                     {
 
                     			if (current==null) {
@@ -5459,7 +5520,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getListViewAccess().getLayoutLayoutCrossReference_5_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleListView5004);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleListView5132);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -5479,7 +5540,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,18,FOLLOW_18_in_ruleListView5018); 
+            otherlv_8=(Token)match(input,18,FOLLOW_18_in_ruleListView5146); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getListViewAccess().getRightCurlyBracketKeyword_6());
                 
@@ -5504,7 +5565,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSpinner"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2227:1: entryRuleSpinner returns [EObject current=null] : iv_ruleSpinner= ruleSpinner EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2275:1: entryRuleSpinner returns [EObject current=null] : iv_ruleSpinner= ruleSpinner EOF ;
     public final EObject entryRuleSpinner() throws RecognitionException {
         EObject current = null;
 
@@ -5512,17 +5573,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2228:2: (iv_ruleSpinner= ruleSpinner EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2229:2: iv_ruleSpinner= ruleSpinner EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2276:2: (iv_ruleSpinner= ruleSpinner EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2277:2: iv_ruleSpinner= ruleSpinner EOF
             {
              newCompositeNode(grammarAccess.getSpinnerRule()); 
-            pushFollow(FOLLOW_ruleSpinner_in_entryRuleSpinner5054);
+            pushFollow(FOLLOW_ruleSpinner_in_entryRuleSpinner5182);
             iv_ruleSpinner=ruleSpinner();
 
             state._fsp--;
 
              current =iv_ruleSpinner; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpinner5064); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpinner5192); 
 
             }
 
@@ -5540,7 +5601,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSpinner"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2236:1: ruleSpinner returns [EObject current=null] : (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) )? (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2284:1: ruleSpinner returns [EObject current=null] : (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleSpinner() throws RecognitionException {
         EObject current = null;
 
@@ -5553,73 +5614,62 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2239:28: ( (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) )? (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2240:1: (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) )? (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2287:28: ( (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2288:1: (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2240:1: (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) )? (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2240:3: otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) )? (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2288:1: (otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2288:3: otherlv_0= 'spinner' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,44,FOLLOW_44_in_ruleSpinner5101); 
+            otherlv_0=(Token)match(input,44,FOLLOW_44_in_ruleSpinner5229); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSpinnerAccess().getSpinnerKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2244:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2292:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2293:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2293:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2294:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSpinner5246); 
 
-            if ( (LA34_0==RULE_ID) ) {
-                alt34=1;
+            			newLeafNode(lv_name_1_0, grammarAccess.getSpinnerAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getSpinnerRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
             }
-            switch (alt34) {
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2310:2: (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
+
+            if ( (LA28_0==42) ) {
+                alt28=1;
+            }
+            switch (alt28) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2245:1: (lv_name_1_0= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2310:4: otherlv_2= 'entries' ( ( ruleQualifiedName ) )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2245:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2246:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSpinner5118); 
-
-                    			newLeafNode(lv_name_1_0, grammarAccess.getSpinnerAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getSpinnerRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2262:3: (otherlv_2= 'entries' ( ( ruleQualifiedName ) ) )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
-
-            if ( (LA35_0==42) ) {
-                alt35=1;
-            }
-            switch (alt35) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2262:5: otherlv_2= 'entries' ( ( ruleQualifiedName ) )
-                    {
-                    otherlv_2=(Token)match(input,42,FOLLOW_42_in_ruleSpinner5137); 
+                    otherlv_2=(Token)match(input,42,FOLLOW_42_in_ruleSpinner5264); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getSpinnerAccess().getEntriesKeyword_2_0());
                         
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2266:1: ( ( ruleQualifiedName ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2267:1: ( ruleQualifiedName )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2314:1: ( ( ruleQualifiedName ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2315:1: ( ruleQualifiedName )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2267:1: ( ruleQualifiedName )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2268:3: ruleQualifiedName
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2315:1: ( ruleQualifiedName )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2316:3: ruleQualifiedName
                     {
 
                     			if (current==null) {
@@ -5629,7 +5679,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getSpinnerAccess().getEntriesResourceCrossReference_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleSpinner5160);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleSpinner5287);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -5649,16 +5699,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2281:4: ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2282:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2329:4: ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2330:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2282:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2283:3: lv_layoutStyle_4_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2330:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2331:3: lv_layoutStyle_4_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getSpinnerAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleSpinner5183);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleSpinner5310);
             lv_layoutStyle_4_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -5701,7 +5751,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCheckBox"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2307:1: entryRuleCheckBox returns [EObject current=null] : iv_ruleCheckBox= ruleCheckBox EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2355:1: entryRuleCheckBox returns [EObject current=null] : iv_ruleCheckBox= ruleCheckBox EOF ;
     public final EObject entryRuleCheckBox() throws RecognitionException {
         EObject current = null;
 
@@ -5709,17 +5759,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2308:2: (iv_ruleCheckBox= ruleCheckBox EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2309:2: iv_ruleCheckBox= ruleCheckBox EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2356:2: (iv_ruleCheckBox= ruleCheckBox EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2357:2: iv_ruleCheckBox= ruleCheckBox EOF
             {
              newCompositeNode(grammarAccess.getCheckBoxRule()); 
-            pushFollow(FOLLOW_ruleCheckBox_in_entryRuleCheckBox5219);
+            pushFollow(FOLLOW_ruleCheckBox_in_entryRuleCheckBox5346);
             iv_ruleCheckBox=ruleCheckBox();
 
             state._fsp--;
 
              current =iv_ruleCheckBox; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCheckBox5229); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCheckBox5356); 
 
             }
 
@@ -5737,7 +5787,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCheckBox"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2316:1: ruleCheckBox returns [EObject current=null] : (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2364:1: ruleCheckBox returns [EObject current=null] : (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleCheckBox() throws RecognitionException {
         EObject current = null;
 
@@ -5750,60 +5800,49 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2319:28: ( (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2320:1: (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2367:28: ( (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2368:1: (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2320:1: (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2320:3: otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2368:1: (otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2368:3: otherlv_0= 'checkbox' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,45,FOLLOW_45_in_ruleCheckBox5266); 
+            otherlv_0=(Token)match(input,45,FOLLOW_45_in_ruleCheckBox5393); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCheckBoxAccess().getCheckboxKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2324:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2372:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2373:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2373:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2374:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCheckBox5410); 
 
-            if ( (LA36_0==RULE_ID) ) {
-                alt36=1;
-            }
-            switch (alt36) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2325:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2325:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2326:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCheckBox5283); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getCheckBoxAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
 
-                    			newLeafNode(lv_name_1_0, grammarAccess.getCheckBoxAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCheckBoxRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getCheckBoxRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2342:3: ( (lv_text_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2343:1: (lv_text_2_0= RULE_STRING )
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2390:2: ( (lv_text_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2391:1: (lv_text_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2343:1: (lv_text_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2344:3: lv_text_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2391:1: (lv_text_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2392:3: lv_text_2_0= RULE_STRING
             {
-            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCheckBox5306); 
+            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCheckBox5432); 
 
             			newLeafNode(lv_text_2_0, grammarAccess.getCheckBoxAccess().getTextSTRINGTerminalRuleCall_2_0()); 
             		
@@ -5823,16 +5862,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2360:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2361:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2408:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2409:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2361:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2362:3: lv_layoutStyle_3_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2409:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2410:3: lv_layoutStyle_3_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getCheckBoxAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleCheckBox5332);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleCheckBox5458);
             lv_layoutStyle_3_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -5875,7 +5914,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRadioGroup"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2386:1: entryRuleRadioGroup returns [EObject current=null] : iv_ruleRadioGroup= ruleRadioGroup EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2434:1: entryRuleRadioGroup returns [EObject current=null] : iv_ruleRadioGroup= ruleRadioGroup EOF ;
     public final EObject entryRuleRadioGroup() throws RecognitionException {
         EObject current = null;
 
@@ -5883,17 +5922,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2387:2: (iv_ruleRadioGroup= ruleRadioGroup EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2388:2: iv_ruleRadioGroup= ruleRadioGroup EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2435:2: (iv_ruleRadioGroup= ruleRadioGroup EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2436:2: iv_ruleRadioGroup= ruleRadioGroup EOF
             {
              newCompositeNode(grammarAccess.getRadioGroupRule()); 
-            pushFollow(FOLLOW_ruleRadioGroup_in_entryRuleRadioGroup5368);
+            pushFollow(FOLLOW_ruleRadioGroup_in_entryRuleRadioGroup5494);
             iv_ruleRadioGroup=ruleRadioGroup();
 
             state._fsp--;
 
              current =iv_ruleRadioGroup; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRadioGroup5378); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRadioGroup5504); 
 
             }
 
@@ -5911,7 +5950,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRadioGroup"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2395:1: ruleRadioGroup returns [EObject current=null] : (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2443:1: ruleRadioGroup returns [EObject current=null] : (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' ) ;
     public final EObject ruleRadioGroup() throws RecognitionException {
         EObject current = null;
 
@@ -5929,74 +5968,63 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2398:28: ( (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2399:1: (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2446:28: ( (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2447:1: (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2399:1: (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2399:3: otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) )? ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2447:1: (otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2447:3: otherlv_0= 'radiogroup' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )? ( (lv_layoutStyle_4_0= ruleLayoutStyle ) ) otherlv_5= '{' ( (lv_radiobuttons_6_0= ruleRadioButton ) )+ otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,46,FOLLOW_46_in_ruleRadioGroup5415); 
+            otherlv_0=(Token)match(input,46,FOLLOW_46_in_ruleRadioGroup5541); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRadioGroupAccess().getRadiogroupKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2403:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2451:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2452:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2452:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2453:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRadioGroup5558); 
 
-            if ( (LA37_0==RULE_ID) ) {
-                alt37=1;
+            			newLeafNode(lv_name_1_0, grammarAccess.getRadioGroupAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getRadioGroupRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
+
             }
-            switch (alt37) {
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2469:2: ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )?
+            int alt29=3;
+            int LA29_0 = input.LA(1);
+
+            if ( (LA29_0==34) ) {
+                alt29=1;
+            }
+            else if ( (LA29_0==35) ) {
+                alt29=2;
+            }
+            switch (alt29) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2404:1: (lv_name_1_0= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2469:3: ( (lv_orientation_2_0= 'horizontal' ) )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2404:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2405:3: lv_name_1_0= RULE_ID
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2469:3: ( (lv_orientation_2_0= 'horizontal' ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2470:1: (lv_orientation_2_0= 'horizontal' )
                     {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRadioGroup5432); 
-
-                    			newLeafNode(lv_name_1_0, grammarAccess.getRadioGroupAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getRadioGroupRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2421:3: ( ( (lv_orientation_2_0= 'horizontal' ) ) | otherlv_3= 'vertical' )?
-            int alt38=3;
-            int LA38_0 = input.LA(1);
-
-            if ( (LA38_0==34) ) {
-                alt38=1;
-            }
-            else if ( (LA38_0==35) ) {
-                alt38=2;
-            }
-            switch (alt38) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2421:4: ( (lv_orientation_2_0= 'horizontal' ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2470:1: (lv_orientation_2_0= 'horizontal' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2471:3: lv_orientation_2_0= 'horizontal'
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2421:4: ( (lv_orientation_2_0= 'horizontal' ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2422:1: (lv_orientation_2_0= 'horizontal' )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2422:1: (lv_orientation_2_0= 'horizontal' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2423:3: lv_orientation_2_0= 'horizontal'
-                    {
-                    lv_orientation_2_0=(Token)match(input,34,FOLLOW_34_in_ruleRadioGroup5457); 
+                    lv_orientation_2_0=(Token)match(input,34,FOLLOW_34_in_ruleRadioGroup5582); 
 
                             newLeafNode(lv_orientation_2_0, grammarAccess.getRadioGroupAccess().getOrientationHorizontalKeyword_2_0_0());
                         
@@ -6016,9 +6044,9 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2437:7: otherlv_3= 'vertical'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2485:7: otherlv_3= 'vertical'
                     {
-                    otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleRadioGroup5488); 
+                    otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleRadioGroup5613); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getRadioGroupAccess().getVerticalKeyword_2_1());
                         
@@ -6028,16 +6056,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2441:3: ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2442:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2489:3: ( (lv_layoutStyle_4_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2490:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2442:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2443:3: lv_layoutStyle_4_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2490:1: (lv_layoutStyle_4_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2491:3: lv_layoutStyle_4_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getRadioGroupAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRadioGroup5511);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRadioGroup5636);
             lv_layoutStyle_4_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -6059,33 +6087,33 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleRadioGroup5523); 
+            otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleRadioGroup5648); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getRadioGroupAccess().getLeftCurlyBracketKeyword_4());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2463:1: ( (lv_radiobuttons_6_0= ruleRadioButton ) )+
-            int cnt39=0;
-            loop39:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2511:1: ( (lv_radiobuttons_6_0= ruleRadioButton ) )+
+            int cnt30=0;
+            loop30:
             do {
-                int alt39=2;
-                int LA39_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( (LA39_0==51) ) {
-                    alt39=1;
+                if ( (LA30_0==51) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt39) {
+                switch (alt30) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2464:1: (lv_radiobuttons_6_0= ruleRadioButton )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2512:1: (lv_radiobuttons_6_0= ruleRadioButton )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2464:1: (lv_radiobuttons_6_0= ruleRadioButton )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2465:3: lv_radiobuttons_6_0= ruleRadioButton
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2512:1: (lv_radiobuttons_6_0= ruleRadioButton )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2513:3: lv_radiobuttons_6_0= ruleRadioButton
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRadioGroupAccess().getRadiobuttonsRadioButtonParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRadioButton_in_ruleRadioGroup5544);
+            	    pushFollow(FOLLOW_ruleRadioButton_in_ruleRadioGroup5669);
             	    lv_radiobuttons_6_0=ruleRadioButton();
 
             	    state._fsp--;
@@ -6109,15 +6137,15 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt39 >= 1 ) break loop39;
+            	    if ( cnt30 >= 1 ) break loop30;
                         EarlyExitException eee =
-                            new EarlyExitException(39, input);
+                            new EarlyExitException(30, input);
                         throw eee;
                 }
-                cnt39++;
+                cnt30++;
             } while (true);
 
-            otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleRadioGroup5557); 
+            otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleRadioGroup5682); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getRadioGroupAccess().getRightCurlyBracketKeyword_6());
                 
@@ -6142,7 +6170,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRatingBar"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2493:1: entryRuleRatingBar returns [EObject current=null] : iv_ruleRatingBar= ruleRatingBar EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2541:1: entryRuleRatingBar returns [EObject current=null] : iv_ruleRatingBar= ruleRatingBar EOF ;
     public final EObject entryRuleRatingBar() throws RecognitionException {
         EObject current = null;
 
@@ -6150,17 +6178,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2494:2: (iv_ruleRatingBar= ruleRatingBar EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2495:2: iv_ruleRatingBar= ruleRatingBar EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2542:2: (iv_ruleRatingBar= ruleRatingBar EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2543:2: iv_ruleRatingBar= ruleRatingBar EOF
             {
              newCompositeNode(grammarAccess.getRatingBarRule()); 
-            pushFollow(FOLLOW_ruleRatingBar_in_entryRuleRatingBar5593);
+            pushFollow(FOLLOW_ruleRatingBar_in_entryRuleRatingBar5718);
             iv_ruleRatingBar=ruleRatingBar();
 
             state._fsp--;
 
              current =iv_ruleRatingBar; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRatingBar5603); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRatingBar5728); 
 
             }
 
@@ -6178,7 +6206,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRatingBar"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2502:1: ruleRatingBar returns [EObject current=null] : (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) )? ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2550:1: ruleRatingBar returns [EObject current=null] : (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) ) ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleRatingBar() throws RecognitionException {
         EObject current = null;
 
@@ -6191,60 +6219,49 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2505:28: ( (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) )? ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2506:1: (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) )? ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2553:28: ( (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) ) ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2554:1: (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) ) ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2506:1: (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) )? ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2506:3: otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) )? ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2554:1: (otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) ) ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2554:3: otherlv_0= 'ratingbar' ( (lv_name_1_0= RULE_ID ) ) ( (lv_numStars_2_0= RULE_INT ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,47,FOLLOW_47_in_ruleRatingBar5640); 
+            otherlv_0=(Token)match(input,47,FOLLOW_47_in_ruleRatingBar5765); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRatingBarAccess().getRatingbarKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2510:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2558:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2559:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2559:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2560:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRatingBar5782); 
 
-            if ( (LA40_0==RULE_ID) ) {
-                alt40=1;
-            }
-            switch (alt40) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2511:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2511:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2512:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRatingBar5657); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getRatingBarAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
 
-                    			newLeafNode(lv_name_1_0, grammarAccess.getRatingBarAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getRatingBarRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getRatingBarRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2528:3: ( (lv_numStars_2_0= RULE_INT ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2529:1: (lv_numStars_2_0= RULE_INT )
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2576:2: ( (lv_numStars_2_0= RULE_INT ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2577:1: (lv_numStars_2_0= RULE_INT )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2529:1: (lv_numStars_2_0= RULE_INT )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2530:3: lv_numStars_2_0= RULE_INT
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2577:1: (lv_numStars_2_0= RULE_INT )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2578:3: lv_numStars_2_0= RULE_INT
             {
-            lv_numStars_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleRatingBar5680); 
+            lv_numStars_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleRatingBar5804); 
 
             			newLeafNode(lv_numStars_2_0, grammarAccess.getRatingBarAccess().getNumStarsINTTerminalRuleCall_2_0()); 
             		
@@ -6264,16 +6281,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2546:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2547:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2594:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2595:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2547:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2548:3: lv_layoutStyle_3_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2595:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2596:3: lv_layoutStyle_3_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getRatingBarAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRatingBar5706);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRatingBar5830);
             lv_layoutStyle_3_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -6316,7 +6333,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleToggleButton"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2572:1: entryRuleToggleButton returns [EObject current=null] : iv_ruleToggleButton= ruleToggleButton EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2620:1: entryRuleToggleButton returns [EObject current=null] : iv_ruleToggleButton= ruleToggleButton EOF ;
     public final EObject entryRuleToggleButton() throws RecognitionException {
         EObject current = null;
 
@@ -6324,17 +6341,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2573:2: (iv_ruleToggleButton= ruleToggleButton EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2574:2: iv_ruleToggleButton= ruleToggleButton EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2621:2: (iv_ruleToggleButton= ruleToggleButton EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2622:2: iv_ruleToggleButton= ruleToggleButton EOF
             {
              newCompositeNode(grammarAccess.getToggleButtonRule()); 
-            pushFollow(FOLLOW_ruleToggleButton_in_entryRuleToggleButton5742);
+            pushFollow(FOLLOW_ruleToggleButton_in_entryRuleToggleButton5866);
             iv_ruleToggleButton=ruleToggleButton();
 
             state._fsp--;
 
              current =iv_ruleToggleButton; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleToggleButton5752); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleToggleButton5876); 
 
             }
 
@@ -6352,7 +6369,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleToggleButton"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2581:1: ruleToggleButton returns [EObject current=null] : (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2629:1: ruleToggleButton returns [EObject current=null] : (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleToggleButton() throws RecognitionException {
         EObject current = null;
 
@@ -6368,64 +6385,53 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2584:28: ( (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2585:1: (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2632:28: ( (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2633:1: (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2585:1: (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2585:3: otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) )? otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2633:1: (otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2633:3: otherlv_0= 'togglebutton' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'textOn' ( (lv_textOn_3_0= RULE_STRING ) ) otherlv_4= 'textOff' ( (lv_textOff_5_0= RULE_STRING ) ) ( (lv_layoutStyle_6_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,48,FOLLOW_48_in_ruleToggleButton5789); 
+            otherlv_0=(Token)match(input,48,FOLLOW_48_in_ruleToggleButton5913); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getToggleButtonAccess().getTogglebuttonKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2589:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2637:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2638:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2638:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2639:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleToggleButton5930); 
 
-            if ( (LA41_0==RULE_ID) ) {
-                alt41=1;
-            }
-            switch (alt41) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2590:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2590:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2591:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleToggleButton5806); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getToggleButtonAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
 
-                    			newLeafNode(lv_name_1_0, grammarAccess.getToggleButtonAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getToggleButtonRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getToggleButtonRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
 
             }
 
-            otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleToggleButton5824); 
+
+            }
+
+            otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleToggleButton5947); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getToggleButtonAccess().getTextOnKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2611:1: ( (lv_textOn_3_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2612:1: (lv_textOn_3_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2659:1: ( (lv_textOn_3_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2660:1: (lv_textOn_3_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2612:1: (lv_textOn_3_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2613:3: lv_textOn_3_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2660:1: (lv_textOn_3_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2661:3: lv_textOn_3_0= RULE_STRING
             {
-            lv_textOn_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleToggleButton5841); 
+            lv_textOn_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleToggleButton5964); 
 
             			newLeafNode(lv_textOn_3_0, grammarAccess.getToggleButtonAccess().getTextOnSTRINGTerminalRuleCall_3_0()); 
             		
@@ -6445,17 +6451,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,50,FOLLOW_50_in_ruleToggleButton5858); 
+            otherlv_4=(Token)match(input,50,FOLLOW_50_in_ruleToggleButton5981); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getToggleButtonAccess().getTextOffKeyword_4());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2633:1: ( (lv_textOff_5_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2634:1: (lv_textOff_5_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2681:1: ( (lv_textOff_5_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2682:1: (lv_textOff_5_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2634:1: (lv_textOff_5_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2635:3: lv_textOff_5_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2682:1: (lv_textOff_5_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2683:3: lv_textOff_5_0= RULE_STRING
             {
-            lv_textOff_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleToggleButton5875); 
+            lv_textOff_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleToggleButton5998); 
 
             			newLeafNode(lv_textOff_5_0, grammarAccess.getToggleButtonAccess().getTextOffSTRINGTerminalRuleCall_5_0()); 
             		
@@ -6475,16 +6481,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2651:2: ( (lv_layoutStyle_6_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2652:1: (lv_layoutStyle_6_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2699:2: ( (lv_layoutStyle_6_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2700:1: (lv_layoutStyle_6_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2652:1: (lv_layoutStyle_6_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2653:3: lv_layoutStyle_6_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2700:1: (lv_layoutStyle_6_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2701:3: lv_layoutStyle_6_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getToggleButtonAccess().getLayoutStyleLayoutStyleEnumRuleCall_6_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleToggleButton5901);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleToggleButton6024);
             lv_layoutStyle_6_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -6527,7 +6533,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRadioButton"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2677:1: entryRuleRadioButton returns [EObject current=null] : iv_ruleRadioButton= ruleRadioButton EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2725:1: entryRuleRadioButton returns [EObject current=null] : iv_ruleRadioButton= ruleRadioButton EOF ;
     public final EObject entryRuleRadioButton() throws RecognitionException {
         EObject current = null;
 
@@ -6535,17 +6541,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2678:2: (iv_ruleRadioButton= ruleRadioButton EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2679:2: iv_ruleRadioButton= ruleRadioButton EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2726:2: (iv_ruleRadioButton= ruleRadioButton EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2727:2: iv_ruleRadioButton= ruleRadioButton EOF
             {
              newCompositeNode(grammarAccess.getRadioButtonRule()); 
-            pushFollow(FOLLOW_ruleRadioButton_in_entryRuleRadioButton5937);
+            pushFollow(FOLLOW_ruleRadioButton_in_entryRuleRadioButton6060);
             iv_ruleRadioButton=ruleRadioButton();
 
             state._fsp--;
 
              current =iv_ruleRadioButton; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRadioButton5947); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRadioButton6070); 
 
             }
 
@@ -6563,7 +6569,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRadioButton"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2686:1: ruleRadioButton returns [EObject current=null] : (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2734:1: ruleRadioButton returns [EObject current=null] : (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) ;
     public final EObject ruleRadioButton() throws RecognitionException {
         EObject current = null;
 
@@ -6576,60 +6582,49 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2689:28: ( (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2690:1: (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2737:28: ( (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2738:1: (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2690:1: (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2690:3: otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) )? ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2738:1: (otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2738:3: otherlv_0= 'radiobutton' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleRadioButton5984); 
+            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleRadioButton6107); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRadioButtonAccess().getRadiobuttonKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2694:1: ( (lv_name_1_0= RULE_ID ) )?
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2742:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2743:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2743:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2744:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRadioButton6124); 
 
-            if ( (LA42_0==RULE_ID) ) {
-                alt42=1;
-            }
-            switch (alt42) {
-                case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2695:1: (lv_name_1_0= RULE_ID )
-                    {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2695:1: (lv_name_1_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2696:3: lv_name_1_0= RULE_ID
-                    {
-                    lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRadioButton6001); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getRadioButtonAccess().getNameIDTerminalRuleCall_1_0()); 
+            		
 
-                    			newLeafNode(lv_name_1_0, grammarAccess.getRadioButtonAccess().getNameIDTerminalRuleCall_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getRadioButtonRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_1_0, 
-                            		"ID");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getRadioButtonRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"ID");
+            	    
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2712:3: ( (lv_text_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2713:1: (lv_text_2_0= RULE_STRING )
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2760:2: ( (lv_text_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2761:1: (lv_text_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2713:1: (lv_text_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2714:3: lv_text_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2761:1: (lv_text_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2762:3: lv_text_2_0= RULE_STRING
             {
-            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRadioButton6024); 
+            lv_text_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRadioButton6146); 
 
             			newLeafNode(lv_text_2_0, grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_2_0()); 
             		
@@ -6649,16 +6644,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2730:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2731:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2778:2: ( (lv_layoutStyle_3_0= ruleLayoutStyle ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2779:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2731:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2732:3: lv_layoutStyle_3_0= ruleLayoutStyle
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2779:1: (lv_layoutStyle_3_0= ruleLayoutStyle )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2780:3: lv_layoutStyle_3_0= ruleLayoutStyle
             {
              
             	        newCompositeNode(grammarAccess.getRadioButtonAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRadioButton6050);
+            pushFollow(FOLLOW_ruleLayoutStyle_in_ruleRadioButton6172);
             lv_layoutStyle_3_0=ruleLayoutStyle();
 
             state._fsp--;
@@ -6700,8 +6695,408 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleRadioButton"
 
 
+    // $ANTLR start "entryRuleAbstractPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2804:1: entryRuleAbstractPreference returns [EObject current=null] : iv_ruleAbstractPreference= ruleAbstractPreference EOF ;
+    public final EObject entryRuleAbstractPreference() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAbstractPreference = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2805:2: (iv_ruleAbstractPreference= ruleAbstractPreference EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2806:2: iv_ruleAbstractPreference= ruleAbstractPreference EOF
+            {
+             newCompositeNode(grammarAccess.getAbstractPreferenceRule()); 
+            pushFollow(FOLLOW_ruleAbstractPreference_in_entryRuleAbstractPreference6208);
+            iv_ruleAbstractPreference=ruleAbstractPreference();
+
+            state._fsp--;
+
+             current =iv_ruleAbstractPreference; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractPreference6218); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAbstractPreference"
+
+
+    // $ANTLR start "ruleAbstractPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2813:1: ruleAbstractPreference returns [EObject current=null] : (this_Preference_0= rulePreference | this_EditTextPreference_1= ruleEditTextPreference | this_ListPreference_2= ruleListPreference | this_CheckBoxPreference_3= ruleCheckBoxPreference | this_RingtonePrefence_4= ruleRingtonePrefence | this_PreferenceCategory_5= rulePreferenceCategory | this_PreferenceScreen_6= rulePreferenceScreen ) ;
+    public final EObject ruleAbstractPreference() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_Preference_0 = null;
+
+        EObject this_EditTextPreference_1 = null;
+
+        EObject this_ListPreference_2 = null;
+
+        EObject this_CheckBoxPreference_3 = null;
+
+        EObject this_RingtonePrefence_4 = null;
+
+        EObject this_PreferenceCategory_5 = null;
+
+        EObject this_PreferenceScreen_6 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2816:28: ( (this_Preference_0= rulePreference | this_EditTextPreference_1= ruleEditTextPreference | this_ListPreference_2= ruleListPreference | this_CheckBoxPreference_3= ruleCheckBoxPreference | this_RingtonePrefence_4= ruleRingtonePrefence | this_PreferenceCategory_5= rulePreferenceCategory | this_PreferenceScreen_6= rulePreferenceScreen ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2817:1: (this_Preference_0= rulePreference | this_EditTextPreference_1= ruleEditTextPreference | this_ListPreference_2= ruleListPreference | this_CheckBoxPreference_3= ruleCheckBoxPreference | this_RingtonePrefence_4= ruleRingtonePrefence | this_PreferenceCategory_5= rulePreferenceCategory | this_PreferenceScreen_6= rulePreferenceScreen )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2817:1: (this_Preference_0= rulePreference | this_EditTextPreference_1= ruleEditTextPreference | this_ListPreference_2= ruleListPreference | this_CheckBoxPreference_3= ruleCheckBoxPreference | this_RingtonePrefence_4= ruleRingtonePrefence | this_PreferenceCategory_5= rulePreferenceCategory | this_PreferenceScreen_6= rulePreferenceScreen )
+            int alt31=7;
+            switch ( input.LA(1) ) {
+            case 52:
+                {
+                alt31=1;
+                }
+                break;
+            case 55:
+                {
+                alt31=2;
+                }
+                break;
+            case 56:
+                {
+                alt31=3;
+                }
+                break;
+            case 57:
+                {
+                alt31=4;
+                }
+                break;
+            case 58:
+                {
+                alt31=5;
+                }
+                break;
+            case 54:
+                {
+                alt31=6;
+                }
+                break;
+            case 53:
+                {
+                alt31=7;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 31, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt31) {
+                case 1 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2818:5: this_Preference_0= rulePreference
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractPreferenceAccess().getPreferenceParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_rulePreference_in_ruleAbstractPreference6265);
+                    this_Preference_0=rulePreference();
+
+                    state._fsp--;
+
+                     
+                            current = this_Preference_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2828:5: this_EditTextPreference_1= ruleEditTextPreference
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractPreferenceAccess().getEditTextPreferenceParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleEditTextPreference_in_ruleAbstractPreference6292);
+                    this_EditTextPreference_1=ruleEditTextPreference();
+
+                    state._fsp--;
+
+                     
+                            current = this_EditTextPreference_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2838:5: this_ListPreference_2= ruleListPreference
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractPreferenceAccess().getListPreferenceParserRuleCall_2()); 
+                        
+                    pushFollow(FOLLOW_ruleListPreference_in_ruleAbstractPreference6319);
+                    this_ListPreference_2=ruleListPreference();
+
+                    state._fsp--;
+
+                     
+                            current = this_ListPreference_2; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 4 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2848:5: this_CheckBoxPreference_3= ruleCheckBoxPreference
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractPreferenceAccess().getCheckBoxPreferenceParserRuleCall_3()); 
+                        
+                    pushFollow(FOLLOW_ruleCheckBoxPreference_in_ruleAbstractPreference6346);
+                    this_CheckBoxPreference_3=ruleCheckBoxPreference();
+
+                    state._fsp--;
+
+                     
+                            current = this_CheckBoxPreference_3; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 5 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2858:5: this_RingtonePrefence_4= ruleRingtonePrefence
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractPreferenceAccess().getRingtonePrefenceParserRuleCall_4()); 
+                        
+                    pushFollow(FOLLOW_ruleRingtonePrefence_in_ruleAbstractPreference6373);
+                    this_RingtonePrefence_4=ruleRingtonePrefence();
+
+                    state._fsp--;
+
+                     
+                            current = this_RingtonePrefence_4; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 6 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2868:5: this_PreferenceCategory_5= rulePreferenceCategory
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractPreferenceAccess().getPreferenceCategoryParserRuleCall_5()); 
+                        
+                    pushFollow(FOLLOW_rulePreferenceCategory_in_ruleAbstractPreference6400);
+                    this_PreferenceCategory_5=rulePreferenceCategory();
+
+                    state._fsp--;
+
+                     
+                            current = this_PreferenceCategory_5; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 7 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2878:5: this_PreferenceScreen_6= rulePreferenceScreen
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractPreferenceAccess().getPreferenceScreenParserRuleCall_6()); 
+                        
+                    pushFollow(FOLLOW_rulePreferenceScreen_in_ruleAbstractPreference6427);
+                    this_PreferenceScreen_6=rulePreferenceScreen();
+
+                    state._fsp--;
+
+                     
+                            current = this_PreferenceScreen_6; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAbstractPreference"
+
+
+    // $ANTLR start "entryRulePreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2894:1: entryRulePreference returns [EObject current=null] : iv_rulePreference= rulePreference EOF ;
+    public final EObject entryRulePreference() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePreference = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2895:2: (iv_rulePreference= rulePreference EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2896:2: iv_rulePreference= rulePreference EOF
+            {
+             newCompositeNode(grammarAccess.getPreferenceRule()); 
+            pushFollow(FOLLOW_rulePreference_in_entryRulePreference6462);
+            iv_rulePreference=rulePreference();
+
+            state._fsp--;
+
+             current =iv_rulePreference; 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePreference6472); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePreference"
+
+
+    // $ANTLR start "rulePreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2903:1: rulePreference returns [EObject current=null] : (otherlv_0= 'preference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' ) ;
+    public final EObject rulePreference() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_title_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_preferenceAttributes_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2906:28: ( (otherlv_0= 'preference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2907:1: (otherlv_0= 'preference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2907:1: (otherlv_0= 'preference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2907:3: otherlv_0= 'preference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}'
+            {
+            otherlv_0=(Token)match(input,52,FOLLOW_52_in_rulePreference6509); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getPreferenceAccess().getPreferenceKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2911:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2912:1: (lv_title_1_0= RULE_STRING )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2912:1: (lv_title_1_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2913:3: lv_title_1_0= RULE_STRING
+            {
+            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePreference6526); 
+
+            			newLeafNode(lv_title_1_0, grammarAccess.getPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getPreferenceRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"title",
+                    		lv_title_1_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_rulePreference6543); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getPreferenceAccess().getLeftCurlyBracketKeyword_2());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2933:1: ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2934:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2934:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2935:3: lv_preferenceAttributes_3_0= rulePreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_rulePreferenceAttributes_in_rulePreference6564);
+            lv_preferenceAttributes_3_0=rulePreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getPreferenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"preferenceAttributes",
+                    		lv_preferenceAttributes_3_0, 
+                    		"PreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_rulePreference6576); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getPreferenceAccess().getRightCurlyBracketKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePreference"
+
+
     // $ANTLR start "entryRulePreferenceScreen"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2756:1: entryRulePreferenceScreen returns [EObject current=null] : iv_rulePreferenceScreen= rulePreferenceScreen EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2963:1: entryRulePreferenceScreen returns [EObject current=null] : iv_rulePreferenceScreen= rulePreferenceScreen EOF ;
     public final EObject entryRulePreferenceScreen() throws RecognitionException {
         EObject current = null;
 
@@ -6709,17 +7104,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2757:2: (iv_rulePreferenceScreen= rulePreferenceScreen EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2758:2: iv_rulePreferenceScreen= rulePreferenceScreen EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2964:2: (iv_rulePreferenceScreen= rulePreferenceScreen EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2965:2: iv_rulePreferenceScreen= rulePreferenceScreen EOF
             {
              newCompositeNode(grammarAccess.getPreferenceScreenRule()); 
-            pushFollow(FOLLOW_rulePreferenceScreen_in_entryRulePreferenceScreen6086);
+            pushFollow(FOLLOW_rulePreferenceScreen_in_entryRulePreferenceScreen6612);
             iv_rulePreferenceScreen=rulePreferenceScreen();
 
             state._fsp--;
 
              current =iv_rulePreferenceScreen; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePreferenceScreen6096); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePreferenceScreen6622); 
 
             }
 
@@ -6737,7 +7132,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePreferenceScreen"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2765:1: rulePreferenceScreen returns [EObject current=null] : (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' otherlv_4= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2972:1: rulePreferenceScreen returns [EObject current=null] : (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_preferenceAttributes_4_0= rulePreferenceAttributes ) ) ( (lv_preferences_5_0= ruleAbstractPreference ) )* otherlv_6= '}' ) ;
     public final EObject rulePreferenceScreen() throws RecognitionException {
         EObject current = null;
 
@@ -6745,28 +7140,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
         Token lv_name_1_0=null;
         Token lv_title_2_0=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
+        Token otherlv_6=null;
+        EObject lv_preferenceAttributes_4_0 = null;
+
+        EObject lv_preferences_5_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2768:28: ( (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' otherlv_4= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2769:1: (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2975:28: ( (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_preferenceAttributes_4_0= rulePreferenceAttributes ) ) ( (lv_preferences_5_0= ruleAbstractPreference ) )* otherlv_6= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2976:1: (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_preferenceAttributes_4_0= rulePreferenceAttributes ) ) ( (lv_preferences_5_0= ruleAbstractPreference ) )* otherlv_6= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2769:1: (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' otherlv_4= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2769:3: otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' otherlv_4= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2976:1: (otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_preferenceAttributes_4_0= rulePreferenceAttributes ) ) ( (lv_preferences_5_0= ruleAbstractPreference ) )* otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2976:3: otherlv_0= 'preferencescreen' ( (lv_name_1_0= RULE_ID ) ) ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_preferenceAttributes_4_0= rulePreferenceAttributes ) ) ( (lv_preferences_5_0= ruleAbstractPreference ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,52,FOLLOW_52_in_rulePreferenceScreen6133); 
+            otherlv_0=(Token)match(input,53,FOLLOW_53_in_rulePreferenceScreen6659); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPreferenceScreenAccess().getPreferencescreenKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2773:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2774:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2980:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2981:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2774:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2775:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2981:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2982:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePreferenceScreen6150); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePreferenceScreen6676); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getPreferenceScreenAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -6786,13 +7185,13 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2791:2: ( (lv_title_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2792:1: (lv_title_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2998:2: ( (lv_title_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2999:1: (lv_title_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2792:1: (lv_title_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2793:3: lv_title_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2999:1: (lv_title_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3000:3: lv_title_2_0= RULE_STRING
             {
-            lv_title_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePreferenceScreen6172); 
+            lv_title_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePreferenceScreen6698); 
 
             			newLeafNode(lv_title_2_0, grammarAccess.getPreferenceScreenAccess().getTitleSTRINGTerminalRuleCall_2_0()); 
             		
@@ -6812,13 +7211,93 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FOLLOW_17_in_rulePreferenceScreen6189); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_rulePreferenceScreen6715); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getPreferenceScreenAccess().getLeftCurlyBracketKeyword_3());
                 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_rulePreferenceScreen6201); 
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3020:1: ( (lv_preferenceAttributes_4_0= rulePreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3021:1: (lv_preferenceAttributes_4_0= rulePreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3021:1: (lv_preferenceAttributes_4_0= rulePreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3022:3: lv_preferenceAttributes_4_0= rulePreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getPreferenceScreenAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_4_0()); 
+            	    
+            pushFollow(FOLLOW_rulePreferenceAttributes_in_rulePreferenceScreen6736);
+            lv_preferenceAttributes_4_0=rulePreferenceAttributes();
 
-                	newLeafNode(otherlv_4, grammarAccess.getPreferenceScreenAccess().getRightCurlyBracketKeyword_4());
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getPreferenceScreenRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"preferenceAttributes",
+                    		lv_preferenceAttributes_4_0, 
+                    		"PreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3038:2: ( (lv_preferences_5_0= ruleAbstractPreference ) )*
+            loop32:
+            do {
+                int alt32=2;
+                int LA32_0 = input.LA(1);
+
+                if ( ((LA32_0>=52 && LA32_0<=58)) ) {
+                    alt32=1;
+                }
+
+
+                switch (alt32) {
+            	case 1 :
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3039:1: (lv_preferences_5_0= ruleAbstractPreference )
+            	    {
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3039:1: (lv_preferences_5_0= ruleAbstractPreference )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3040:3: lv_preferences_5_0= ruleAbstractPreference
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getPreferenceScreenAccess().getPreferencesAbstractPreferenceParserRuleCall_5_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleAbstractPreference_in_rulePreferenceScreen6757);
+            	    lv_preferences_5_0=ruleAbstractPreference();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getPreferenceScreenRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"preferences",
+            	            		lv_preferences_5_0, 
+            	            		"AbstractPreference");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop32;
+                }
+            } while (true);
+
+            otherlv_6=(Token)match(input,18,FOLLOW_18_in_rulePreferenceScreen6770); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getPreferenceScreenAccess().getRightCurlyBracketKeyword_6());
                 
 
             }
@@ -6840,8 +7319,1423 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePreferenceScreen"
 
 
+    // $ANTLR start "entryRulePreferenceCategory"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3068:1: entryRulePreferenceCategory returns [EObject current=null] : iv_rulePreferenceCategory= rulePreferenceCategory EOF ;
+    public final EObject entryRulePreferenceCategory() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePreferenceCategory = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3069:2: (iv_rulePreferenceCategory= rulePreferenceCategory EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3070:2: iv_rulePreferenceCategory= rulePreferenceCategory EOF
+            {
+             newCompositeNode(grammarAccess.getPreferenceCategoryRule()); 
+            pushFollow(FOLLOW_rulePreferenceCategory_in_entryRulePreferenceCategory6806);
+            iv_rulePreferenceCategory=rulePreferenceCategory();
+
+            state._fsp--;
+
+             current =iv_rulePreferenceCategory; 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePreferenceCategory6816); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePreferenceCategory"
+
+
+    // $ANTLR start "rulePreferenceCategory"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3077:1: rulePreferenceCategory returns [EObject current=null] : (otherlv_0= 'preferencecategery' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferences_3_0= ruleAbstractPreference ) )* otherlv_4= '}' ) ;
+    public final EObject rulePreferenceCategory() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_title_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_preferences_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3080:28: ( (otherlv_0= 'preferencecategery' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferences_3_0= ruleAbstractPreference ) )* otherlv_4= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3081:1: (otherlv_0= 'preferencecategery' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferences_3_0= ruleAbstractPreference ) )* otherlv_4= '}' )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3081:1: (otherlv_0= 'preferencecategery' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferences_3_0= ruleAbstractPreference ) )* otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3081:3: otherlv_0= 'preferencecategery' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferences_3_0= ruleAbstractPreference ) )* otherlv_4= '}'
+            {
+            otherlv_0=(Token)match(input,54,FOLLOW_54_in_rulePreferenceCategory6853); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getPreferenceCategoryAccess().getPreferencecategeryKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3085:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3086:1: (lv_title_1_0= RULE_STRING )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3086:1: (lv_title_1_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3087:3: lv_title_1_0= RULE_STRING
+            {
+            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePreferenceCategory6870); 
+
+            			newLeafNode(lv_title_1_0, grammarAccess.getPreferenceCategoryAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getPreferenceCategoryRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"title",
+                    		lv_title_1_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_rulePreferenceCategory6887); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getPreferenceCategoryAccess().getLeftCurlyBracketKeyword_2());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3107:1: ( (lv_preferences_3_0= ruleAbstractPreference ) )*
+            loop33:
+            do {
+                int alt33=2;
+                int LA33_0 = input.LA(1);
+
+                if ( ((LA33_0>=52 && LA33_0<=58)) ) {
+                    alt33=1;
+                }
+
+
+                switch (alt33) {
+            	case 1 :
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3108:1: (lv_preferences_3_0= ruleAbstractPreference )
+            	    {
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3108:1: (lv_preferences_3_0= ruleAbstractPreference )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3109:3: lv_preferences_3_0= ruleAbstractPreference
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getPreferenceCategoryAccess().getPreferencesAbstractPreferenceParserRuleCall_3_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleAbstractPreference_in_rulePreferenceCategory6908);
+            	    lv_preferences_3_0=ruleAbstractPreference();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getPreferenceCategoryRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"preferences",
+            	            		lv_preferences_3_0, 
+            	            		"AbstractPreference");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop33;
+                }
+            } while (true);
+
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_rulePreferenceCategory6921); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getPreferenceCategoryAccess().getRightCurlyBracketKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePreferenceCategory"
+
+
+    // $ANTLR start "entryRuleEditTextPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3137:1: entryRuleEditTextPreference returns [EObject current=null] : iv_ruleEditTextPreference= ruleEditTextPreference EOF ;
+    public final EObject entryRuleEditTextPreference() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEditTextPreference = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3138:2: (iv_ruleEditTextPreference= ruleEditTextPreference EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3139:2: iv_ruleEditTextPreference= ruleEditTextPreference EOF
+            {
+             newCompositeNode(grammarAccess.getEditTextPreferenceRule()); 
+            pushFollow(FOLLOW_ruleEditTextPreference_in_entryRuleEditTextPreference6957);
+            iv_ruleEditTextPreference=ruleEditTextPreference();
+
+            state._fsp--;
+
+             current =iv_ruleEditTextPreference; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEditTextPreference6967); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEditTextPreference"
+
+
+    // $ANTLR start "ruleEditTextPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3146:1: ruleEditTextPreference returns [EObject current=null] : (otherlv_0= 'edittextpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) otherlv_5= '}' ) ;
+    public final EObject ruleEditTextPreference() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_title_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_5=null;
+        EObject lv_preferenceAttributes_3_0 = null;
+
+        EObject lv_dialogPreferenceAttributes_4_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3149:28: ( (otherlv_0= 'edittextpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) otherlv_5= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3150:1: (otherlv_0= 'edittextpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) otherlv_5= '}' )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3150:1: (otherlv_0= 'edittextpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) otherlv_5= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3150:3: otherlv_0= 'edittextpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) otherlv_5= '}'
+            {
+            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleEditTextPreference7004); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getEditTextPreferenceAccess().getEdittextpreferenceKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3154:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3155:1: (lv_title_1_0= RULE_STRING )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3155:1: (lv_title_1_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3156:3: lv_title_1_0= RULE_STRING
+            {
+            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEditTextPreference7021); 
+
+            			newLeafNode(lv_title_1_0, grammarAccess.getEditTextPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getEditTextPreferenceRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"title",
+                    		lv_title_1_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleEditTextPreference7038); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getEditTextPreferenceAccess().getLeftCurlyBracketKeyword_2());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3176:1: ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3177:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3177:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3178:3: lv_preferenceAttributes_3_0= rulePreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getEditTextPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_rulePreferenceAttributes_in_ruleEditTextPreference7059);
+            lv_preferenceAttributes_3_0=rulePreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getEditTextPreferenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"preferenceAttributes",
+                    		lv_preferenceAttributes_3_0, 
+                    		"PreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3194:2: ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3195:1: (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3195:1: (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3196:3: lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getEditTextPreferenceAccess().getDialogPreferenceAttributesDialogPreferenceAttributesParserRuleCall_4_0()); 
+            	    
+            pushFollow(FOLLOW_ruleDialogPreferenceAttributes_in_ruleEditTextPreference7080);
+            lv_dialogPreferenceAttributes_4_0=ruleDialogPreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getEditTextPreferenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"dialogPreferenceAttributes",
+                    		lv_dialogPreferenceAttributes_4_0, 
+                    		"DialogPreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleEditTextPreference7092); 
+
+                	newLeafNode(otherlv_5, grammarAccess.getEditTextPreferenceAccess().getRightCurlyBracketKeyword_5());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEditTextPreference"
+
+
+    // $ANTLR start "entryRuleListPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3224:1: entryRuleListPreference returns [EObject current=null] : iv_ruleListPreference= ruleListPreference EOF ;
+    public final EObject entryRuleListPreference() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleListPreference = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3225:2: (iv_ruleListPreference= ruleListPreference EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3226:2: iv_ruleListPreference= ruleListPreference EOF
+            {
+             newCompositeNode(grammarAccess.getListPreferenceRule()); 
+            pushFollow(FOLLOW_ruleListPreference_in_entryRuleListPreference7128);
+            iv_ruleListPreference=ruleListPreference();
+
+            state._fsp--;
+
+             current =iv_ruleListPreference; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleListPreference7138); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleListPreference"
+
+
+    // $ANTLR start "ruleListPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3233:1: ruleListPreference returns [EObject current=null] : (otherlv_0= 'listpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) ( (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes ) ) otherlv_6= '}' ) ;
+    public final EObject ruleListPreference() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_title_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_6=null;
+        EObject lv_preferenceAttributes_3_0 = null;
+
+        EObject lv_dialogPreferenceAttributes_4_0 = null;
+
+        EObject lv_listPreferenceAttributes_5_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3236:28: ( (otherlv_0= 'listpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) ( (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes ) ) otherlv_6= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3237:1: (otherlv_0= 'listpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) ( (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes ) ) otherlv_6= '}' )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3237:1: (otherlv_0= 'listpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) ( (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes ) ) otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3237:3: otherlv_0= 'listpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) ) ( (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes ) ) otherlv_6= '}'
+            {
+            otherlv_0=(Token)match(input,56,FOLLOW_56_in_ruleListPreference7175); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getListPreferenceAccess().getListpreferenceKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3241:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3242:1: (lv_title_1_0= RULE_STRING )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3242:1: (lv_title_1_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3243:3: lv_title_1_0= RULE_STRING
+            {
+            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleListPreference7192); 
+
+            			newLeafNode(lv_title_1_0, grammarAccess.getListPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getListPreferenceRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"title",
+                    		lv_title_1_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleListPreference7209); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getListPreferenceAccess().getLeftCurlyBracketKeyword_2());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3263:1: ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3264:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3264:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3265:3: lv_preferenceAttributes_3_0= rulePreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getListPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_rulePreferenceAttributes_in_ruleListPreference7230);
+            lv_preferenceAttributes_3_0=rulePreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getListPreferenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"preferenceAttributes",
+                    		lv_preferenceAttributes_3_0, 
+                    		"PreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3281:2: ( (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3282:1: (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3282:1: (lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3283:3: lv_dialogPreferenceAttributes_4_0= ruleDialogPreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getListPreferenceAccess().getDialogPreferenceAttributesDialogPreferenceAttributesParserRuleCall_4_0()); 
+            	    
+            pushFollow(FOLLOW_ruleDialogPreferenceAttributes_in_ruleListPreference7251);
+            lv_dialogPreferenceAttributes_4_0=ruleDialogPreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getListPreferenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"dialogPreferenceAttributes",
+                    		lv_dialogPreferenceAttributes_4_0, 
+                    		"DialogPreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3299:2: ( (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3300:1: (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3300:1: (lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3301:3: lv_listPreferenceAttributes_5_0= ruleListPreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getListPreferenceAccess().getListPreferenceAttributesListPreferenceAttributesParserRuleCall_5_0()); 
+            	    
+            pushFollow(FOLLOW_ruleListPreferenceAttributes_in_ruleListPreference7272);
+            lv_listPreferenceAttributes_5_0=ruleListPreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getListPreferenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"listPreferenceAttributes",
+                    		lv_listPreferenceAttributes_5_0, 
+                    		"ListPreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleListPreference7284); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getListPreferenceAccess().getRightCurlyBracketKeyword_6());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleListPreference"
+
+
+    // $ANTLR start "entryRuleCheckBoxPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3329:1: entryRuleCheckBoxPreference returns [EObject current=null] : iv_ruleCheckBoxPreference= ruleCheckBoxPreference EOF ;
+    public final EObject entryRuleCheckBoxPreference() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleCheckBoxPreference = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3330:2: (iv_ruleCheckBoxPreference= ruleCheckBoxPreference EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3331:2: iv_ruleCheckBoxPreference= ruleCheckBoxPreference EOF
+            {
+             newCompositeNode(grammarAccess.getCheckBoxPreferenceRule()); 
+            pushFollow(FOLLOW_ruleCheckBoxPreference_in_entryRuleCheckBoxPreference7320);
+            iv_ruleCheckBoxPreference=ruleCheckBoxPreference();
+
+            state._fsp--;
+
+             current =iv_ruleCheckBoxPreference; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCheckBoxPreference7330); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCheckBoxPreference"
+
+
+    // $ANTLR start "ruleCheckBoxPreference"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3338:1: ruleCheckBoxPreference returns [EObject current=null] : (otherlv_0= 'checkboxpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' ) ;
+    public final EObject ruleCheckBoxPreference() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_title_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_preferenceAttributes_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3341:28: ( (otherlv_0= 'checkboxpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3342:1: (otherlv_0= 'checkboxpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3342:1: (otherlv_0= 'checkboxpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3342:3: otherlv_0= 'checkboxpreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}'
+            {
+            otherlv_0=(Token)match(input,57,FOLLOW_57_in_ruleCheckBoxPreference7367); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getCheckBoxPreferenceAccess().getCheckboxpreferenceKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3346:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3347:1: (lv_title_1_0= RULE_STRING )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3347:1: (lv_title_1_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3348:3: lv_title_1_0= RULE_STRING
+            {
+            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCheckBoxPreference7384); 
+
+            			newLeafNode(lv_title_1_0, grammarAccess.getCheckBoxPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getCheckBoxPreferenceRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"title",
+                    		lv_title_1_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleCheckBoxPreference7401); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getCheckBoxPreferenceAccess().getLeftCurlyBracketKeyword_2());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3368:1: ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3369:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3369:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3370:3: lv_preferenceAttributes_3_0= rulePreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getCheckBoxPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_rulePreferenceAttributes_in_ruleCheckBoxPreference7422);
+            lv_preferenceAttributes_3_0=rulePreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getCheckBoxPreferenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"preferenceAttributes",
+                    		lv_preferenceAttributes_3_0, 
+                    		"PreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleCheckBoxPreference7434); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getCheckBoxPreferenceAccess().getRightCurlyBracketKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCheckBoxPreference"
+
+
+    // $ANTLR start "entryRuleRingtonePrefence"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3398:1: entryRuleRingtonePrefence returns [EObject current=null] : iv_ruleRingtonePrefence= ruleRingtonePrefence EOF ;
+    public final EObject entryRuleRingtonePrefence() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleRingtonePrefence = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3399:2: (iv_ruleRingtonePrefence= ruleRingtonePrefence EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3400:2: iv_ruleRingtonePrefence= ruleRingtonePrefence EOF
+            {
+             newCompositeNode(grammarAccess.getRingtonePrefenceRule()); 
+            pushFollow(FOLLOW_ruleRingtonePrefence_in_entryRuleRingtonePrefence7470);
+            iv_ruleRingtonePrefence=ruleRingtonePrefence();
+
+            state._fsp--;
+
+             current =iv_ruleRingtonePrefence; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRingtonePrefence7480); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleRingtonePrefence"
+
+
+    // $ANTLR start "ruleRingtonePrefence"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3407:1: ruleRingtonePrefence returns [EObject current=null] : (otherlv_0= 'ringtonepreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' ) ;
+    public final EObject ruleRingtonePrefence() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_title_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_preferenceAttributes_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3410:28: ( (otherlv_0= 'ringtonepreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3411:1: (otherlv_0= 'ringtonepreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3411:1: (otherlv_0= 'ringtonepreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3411:3: otherlv_0= 'ringtonepreference' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) ) otherlv_4= '}'
+            {
+            otherlv_0=(Token)match(input,58,FOLLOW_58_in_ruleRingtonePrefence7517); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getRingtonePrefenceAccess().getRingtonepreferenceKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3415:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3416:1: (lv_title_1_0= RULE_STRING )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3416:1: (lv_title_1_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3417:3: lv_title_1_0= RULE_STRING
+            {
+            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRingtonePrefence7534); 
+
+            			newLeafNode(lv_title_1_0, grammarAccess.getRingtonePrefenceAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getRingtonePrefenceRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"title",
+                    		lv_title_1_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleRingtonePrefence7551); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getRingtonePrefenceAccess().getLeftCurlyBracketKeyword_2());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3437:1: ( (lv_preferenceAttributes_3_0= rulePreferenceAttributes ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3438:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3438:1: (lv_preferenceAttributes_3_0= rulePreferenceAttributes )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3439:3: lv_preferenceAttributes_3_0= rulePreferenceAttributes
+            {
+             
+            	        newCompositeNode(grammarAccess.getRingtonePrefenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_rulePreferenceAttributes_in_ruleRingtonePrefence7572);
+            lv_preferenceAttributes_3_0=rulePreferenceAttributes();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getRingtonePrefenceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"preferenceAttributes",
+                    		lv_preferenceAttributes_3_0, 
+                    		"PreferenceAttributes");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleRingtonePrefence7584); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getRingtonePrefenceAccess().getRightCurlyBracketKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleRingtonePrefence"
+
+
+    // $ANTLR start "entryRulePreferenceAttributes"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3467:1: entryRulePreferenceAttributes returns [EObject current=null] : iv_rulePreferenceAttributes= rulePreferenceAttributes EOF ;
+    public final EObject entryRulePreferenceAttributes() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePreferenceAttributes = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3468:2: (iv_rulePreferenceAttributes= rulePreferenceAttributes EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3469:2: iv_rulePreferenceAttributes= rulePreferenceAttributes EOF
+            {
+             newCompositeNode(grammarAccess.getPreferenceAttributesRule()); 
+            pushFollow(FOLLOW_rulePreferenceAttributes_in_entryRulePreferenceAttributes7620);
+            iv_rulePreferenceAttributes=rulePreferenceAttributes();
+
+            state._fsp--;
+
+             current =iv_rulePreferenceAttributes; 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePreferenceAttributes7630); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePreferenceAttributes"
+
+
+    // $ANTLR start "rulePreferenceAttributes"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3476:1: rulePreferenceAttributes returns [EObject current=null] : (otherlv_0= 'key' ( (lv_key_1_0= RULE_ID ) ) (otherlv_2= 'summary' ( (lv_summary_3_0= RULE_STRING ) ) )? (otherlv_4= 'enabled' ( (lv_enabled_5_0= ruleBOOL ) ) )? (otherlv_6= 'persistent' ( (lv_persistent_7_0= ruleBOOL ) ) )? ) ;
+    public final EObject rulePreferenceAttributes() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_key_1_0=null;
+        Token otherlv_2=null;
+        Token lv_summary_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_enabled_5_0 = null;
+
+        AntlrDatatypeRuleToken lv_persistent_7_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3479:28: ( (otherlv_0= 'key' ( (lv_key_1_0= RULE_ID ) ) (otherlv_2= 'summary' ( (lv_summary_3_0= RULE_STRING ) ) )? (otherlv_4= 'enabled' ( (lv_enabled_5_0= ruleBOOL ) ) )? (otherlv_6= 'persistent' ( (lv_persistent_7_0= ruleBOOL ) ) )? ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3480:1: (otherlv_0= 'key' ( (lv_key_1_0= RULE_ID ) ) (otherlv_2= 'summary' ( (lv_summary_3_0= RULE_STRING ) ) )? (otherlv_4= 'enabled' ( (lv_enabled_5_0= ruleBOOL ) ) )? (otherlv_6= 'persistent' ( (lv_persistent_7_0= ruleBOOL ) ) )? )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3480:1: (otherlv_0= 'key' ( (lv_key_1_0= RULE_ID ) ) (otherlv_2= 'summary' ( (lv_summary_3_0= RULE_STRING ) ) )? (otherlv_4= 'enabled' ( (lv_enabled_5_0= ruleBOOL ) ) )? (otherlv_6= 'persistent' ( (lv_persistent_7_0= ruleBOOL ) ) )? )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3480:3: otherlv_0= 'key' ( (lv_key_1_0= RULE_ID ) ) (otherlv_2= 'summary' ( (lv_summary_3_0= RULE_STRING ) ) )? (otherlv_4= 'enabled' ( (lv_enabled_5_0= ruleBOOL ) ) )? (otherlv_6= 'persistent' ( (lv_persistent_7_0= ruleBOOL ) ) )?
+            {
+            otherlv_0=(Token)match(input,59,FOLLOW_59_in_rulePreferenceAttributes7667); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getPreferenceAttributesAccess().getKeyKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3484:1: ( (lv_key_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3485:1: (lv_key_1_0= RULE_ID )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3485:1: (lv_key_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3486:3: lv_key_1_0= RULE_ID
+            {
+            lv_key_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePreferenceAttributes7684); 
+
+            			newLeafNode(lv_key_1_0, grammarAccess.getPreferenceAttributesAccess().getKeyIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getPreferenceAttributesRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"key",
+                    		lv_key_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3502:2: (otherlv_2= 'summary' ( (lv_summary_3_0= RULE_STRING ) ) )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
+
+            if ( (LA34_0==60) ) {
+                alt34=1;
+            }
+            switch (alt34) {
+                case 1 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3502:4: otherlv_2= 'summary' ( (lv_summary_3_0= RULE_STRING ) )
+                    {
+                    otherlv_2=(Token)match(input,60,FOLLOW_60_in_rulePreferenceAttributes7702); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getPreferenceAttributesAccess().getSummaryKeyword_2_0());
+                        
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3506:1: ( (lv_summary_3_0= RULE_STRING ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3507:1: (lv_summary_3_0= RULE_STRING )
+                    {
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3507:1: (lv_summary_3_0= RULE_STRING )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3508:3: lv_summary_3_0= RULE_STRING
+                    {
+                    lv_summary_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePreferenceAttributes7719); 
+
+                    			newLeafNode(lv_summary_3_0, grammarAccess.getPreferenceAttributesAccess().getSummarySTRINGTerminalRuleCall_2_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getPreferenceAttributesRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"summary",
+                            		lv_summary_3_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3524:4: (otherlv_4= 'enabled' ( (lv_enabled_5_0= ruleBOOL ) ) )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
+
+            if ( (LA35_0==61) ) {
+                alt35=1;
+            }
+            switch (alt35) {
+                case 1 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3524:6: otherlv_4= 'enabled' ( (lv_enabled_5_0= ruleBOOL ) )
+                    {
+                    otherlv_4=(Token)match(input,61,FOLLOW_61_in_rulePreferenceAttributes7739); 
+
+                        	newLeafNode(otherlv_4, grammarAccess.getPreferenceAttributesAccess().getEnabledKeyword_3_0());
+                        
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3528:1: ( (lv_enabled_5_0= ruleBOOL ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3529:1: (lv_enabled_5_0= ruleBOOL )
+                    {
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3529:1: (lv_enabled_5_0= ruleBOOL )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3530:3: lv_enabled_5_0= ruleBOOL
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getPreferenceAttributesAccess().getEnabledBOOLParserRuleCall_3_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleBOOL_in_rulePreferenceAttributes7760);
+                    lv_enabled_5_0=ruleBOOL();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getPreferenceAttributesRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"enabled",
+                            		lv_enabled_5_0, 
+                            		"BOOL");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3546:4: (otherlv_6= 'persistent' ( (lv_persistent_7_0= ruleBOOL ) ) )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
+
+            if ( (LA36_0==62) ) {
+                alt36=1;
+            }
+            switch (alt36) {
+                case 1 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3546:6: otherlv_6= 'persistent' ( (lv_persistent_7_0= ruleBOOL ) )
+                    {
+                    otherlv_6=(Token)match(input,62,FOLLOW_62_in_rulePreferenceAttributes7775); 
+
+                        	newLeafNode(otherlv_6, grammarAccess.getPreferenceAttributesAccess().getPersistentKeyword_4_0());
+                        
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3550:1: ( (lv_persistent_7_0= ruleBOOL ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3551:1: (lv_persistent_7_0= ruleBOOL )
+                    {
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3551:1: (lv_persistent_7_0= ruleBOOL )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3552:3: lv_persistent_7_0= ruleBOOL
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getPreferenceAttributesAccess().getPersistentBOOLParserRuleCall_4_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleBOOL_in_rulePreferenceAttributes7796);
+                    lv_persistent_7_0=ruleBOOL();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getPreferenceAttributesRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"persistent",
+                            		lv_persistent_7_0, 
+                            		"BOOL");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePreferenceAttributes"
+
+
+    // $ANTLR start "entryRuleDialogPreferenceAttributes"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3576:1: entryRuleDialogPreferenceAttributes returns [EObject current=null] : iv_ruleDialogPreferenceAttributes= ruleDialogPreferenceAttributes EOF ;
+    public final EObject entryRuleDialogPreferenceAttributes() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDialogPreferenceAttributes = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3577:2: (iv_ruleDialogPreferenceAttributes= ruleDialogPreferenceAttributes EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3578:2: iv_ruleDialogPreferenceAttributes= ruleDialogPreferenceAttributes EOF
+            {
+             newCompositeNode(grammarAccess.getDialogPreferenceAttributesRule()); 
+            pushFollow(FOLLOW_ruleDialogPreferenceAttributes_in_entryRuleDialogPreferenceAttributes7834);
+            iv_ruleDialogPreferenceAttributes=ruleDialogPreferenceAttributes();
+
+            state._fsp--;
+
+             current =iv_ruleDialogPreferenceAttributes; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDialogPreferenceAttributes7844); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDialogPreferenceAttributes"
+
+
+    // $ANTLR start "ruleDialogPreferenceAttributes"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3585:1: ruleDialogPreferenceAttributes returns [EObject current=null] : ( (otherlv_0= 'dialogTitle' ( (lv_dialogTitle_1_0= RULE_STRING ) ) )? (otherlv_2= 'defaultValue' ( (lv_defaultValue_3_0= RULE_STRING ) ) )? ) ;
+    public final EObject ruleDialogPreferenceAttributes() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_dialogTitle_1_0=null;
+        Token otherlv_2=null;
+        Token lv_defaultValue_3_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3588:28: ( ( (otherlv_0= 'dialogTitle' ( (lv_dialogTitle_1_0= RULE_STRING ) ) )? (otherlv_2= 'defaultValue' ( (lv_defaultValue_3_0= RULE_STRING ) ) )? ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3589:1: ( (otherlv_0= 'dialogTitle' ( (lv_dialogTitle_1_0= RULE_STRING ) ) )? (otherlv_2= 'defaultValue' ( (lv_defaultValue_3_0= RULE_STRING ) ) )? )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3589:1: ( (otherlv_0= 'dialogTitle' ( (lv_dialogTitle_1_0= RULE_STRING ) ) )? (otherlv_2= 'defaultValue' ( (lv_defaultValue_3_0= RULE_STRING ) ) )? )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3589:2: (otherlv_0= 'dialogTitle' ( (lv_dialogTitle_1_0= RULE_STRING ) ) )? (otherlv_2= 'defaultValue' ( (lv_defaultValue_3_0= RULE_STRING ) ) )?
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3589:2: (otherlv_0= 'dialogTitle' ( (lv_dialogTitle_1_0= RULE_STRING ) ) )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
+
+            if ( (LA37_0==63) ) {
+                alt37=1;
+            }
+            switch (alt37) {
+                case 1 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3589:4: otherlv_0= 'dialogTitle' ( (lv_dialogTitle_1_0= RULE_STRING ) )
+                    {
+                    otherlv_0=(Token)match(input,63,FOLLOW_63_in_ruleDialogPreferenceAttributes7882); 
+
+                        	newLeafNode(otherlv_0, grammarAccess.getDialogPreferenceAttributesAccess().getDialogTitleKeyword_0_0());
+                        
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3593:1: ( (lv_dialogTitle_1_0= RULE_STRING ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3594:1: (lv_dialogTitle_1_0= RULE_STRING )
+                    {
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3594:1: (lv_dialogTitle_1_0= RULE_STRING )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3595:3: lv_dialogTitle_1_0= RULE_STRING
+                    {
+                    lv_dialogTitle_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDialogPreferenceAttributes7899); 
+
+                    			newLeafNode(lv_dialogTitle_1_0, grammarAccess.getDialogPreferenceAttributesAccess().getDialogTitleSTRINGTerminalRuleCall_0_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getDialogPreferenceAttributesRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"dialogTitle",
+                            		lv_dialogTitle_1_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3611:4: (otherlv_2= 'defaultValue' ( (lv_defaultValue_3_0= RULE_STRING ) ) )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
+
+            if ( (LA38_0==64) ) {
+                alt38=1;
+            }
+            switch (alt38) {
+                case 1 :
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3611:6: otherlv_2= 'defaultValue' ( (lv_defaultValue_3_0= RULE_STRING ) )
+                    {
+                    otherlv_2=(Token)match(input,64,FOLLOW_64_in_ruleDialogPreferenceAttributes7919); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getDialogPreferenceAttributesAccess().getDefaultValueKeyword_1_0());
+                        
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3615:1: ( (lv_defaultValue_3_0= RULE_STRING ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3616:1: (lv_defaultValue_3_0= RULE_STRING )
+                    {
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3616:1: (lv_defaultValue_3_0= RULE_STRING )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3617:3: lv_defaultValue_3_0= RULE_STRING
+                    {
+                    lv_defaultValue_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDialogPreferenceAttributes7936); 
+
+                    			newLeafNode(lv_defaultValue_3_0, grammarAccess.getDialogPreferenceAttributesAccess().getDefaultValueSTRINGTerminalRuleCall_1_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getDialogPreferenceAttributesRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"defaultValue",
+                            		lv_defaultValue_3_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDialogPreferenceAttributes"
+
+
+    // $ANTLR start "entryRuleListPreferenceAttributes"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3641:1: entryRuleListPreferenceAttributes returns [EObject current=null] : iv_ruleListPreferenceAttributes= ruleListPreferenceAttributes EOF ;
+    public final EObject entryRuleListPreferenceAttributes() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleListPreferenceAttributes = null;
+
+
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3642:2: (iv_ruleListPreferenceAttributes= ruleListPreferenceAttributes EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3643:2: iv_ruleListPreferenceAttributes= ruleListPreferenceAttributes EOF
+            {
+             newCompositeNode(grammarAccess.getListPreferenceAttributesRule()); 
+            pushFollow(FOLLOW_ruleListPreferenceAttributes_in_entryRuleListPreferenceAttributes7979);
+            iv_ruleListPreferenceAttributes=ruleListPreferenceAttributes();
+
+            state._fsp--;
+
+             current =iv_ruleListPreferenceAttributes; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleListPreferenceAttributes7989); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleListPreferenceAttributes"
+
+
+    // $ANTLR start "ruleListPreferenceAttributes"
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3650:1: ruleListPreferenceAttributes returns [EObject current=null] : (otherlv_0= 'entries' ( ( ruleQualifiedName ) ) otherlv_2= 'entryValues' ( ( ruleQualifiedName ) ) ) ;
+    public final EObject ruleListPreferenceAttributes() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3653:28: ( (otherlv_0= 'entries' ( ( ruleQualifiedName ) ) otherlv_2= 'entryValues' ( ( ruleQualifiedName ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3654:1: (otherlv_0= 'entries' ( ( ruleQualifiedName ) ) otherlv_2= 'entryValues' ( ( ruleQualifiedName ) ) )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3654:1: (otherlv_0= 'entries' ( ( ruleQualifiedName ) ) otherlv_2= 'entryValues' ( ( ruleQualifiedName ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3654:3: otherlv_0= 'entries' ( ( ruleQualifiedName ) ) otherlv_2= 'entryValues' ( ( ruleQualifiedName ) )
+            {
+            otherlv_0=(Token)match(input,42,FOLLOW_42_in_ruleListPreferenceAttributes8026); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getListPreferenceAttributesAccess().getEntriesKeyword_0());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3658:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3659:1: ( ruleQualifiedName )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3659:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3660:3: ruleQualifiedName
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getListPreferenceAttributesRule());
+            	        }
+                    
+             
+            	        newCompositeNode(grammarAccess.getListPreferenceAttributesAccess().getEntriesStringArrayEntryCrossReference_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleListPreferenceAttributes8049);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,65,FOLLOW_65_in_ruleListPreferenceAttributes8061); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getListPreferenceAttributesAccess().getEntryValuesKeyword_2());
+                
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3677:1: ( ( ruleQualifiedName ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3678:1: ( ruleQualifiedName )
+            {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3678:1: ( ruleQualifiedName )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3679:3: ruleQualifiedName
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getListPreferenceAttributesRule());
+            	        }
+                    
+             
+            	        newCompositeNode(grammarAccess.getListPreferenceAttributesAccess().getEntryValuesStringArrayEntryCrossReference_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleListPreferenceAttributes8084);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleListPreferenceAttributes"
+
+
     // $ANTLR start "entryRuleAndroResModelRoot"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2825:1: entryRuleAndroResModelRoot returns [EObject current=null] : iv_ruleAndroResModelRoot= ruleAndroResModelRoot EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3700:1: entryRuleAndroResModelRoot returns [EObject current=null] : iv_ruleAndroResModelRoot= ruleAndroResModelRoot EOF ;
     public final EObject entryRuleAndroResModelRoot() throws RecognitionException {
         EObject current = null;
 
@@ -6849,17 +8743,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2826:2: (iv_ruleAndroResModelRoot= ruleAndroResModelRoot EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2827:2: iv_ruleAndroResModelRoot= ruleAndroResModelRoot EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3701:2: (iv_ruleAndroResModelRoot= ruleAndroResModelRoot EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3702:2: iv_ruleAndroResModelRoot= ruleAndroResModelRoot EOF
             {
              newCompositeNode(grammarAccess.getAndroResModelRootRule()); 
-            pushFollow(FOLLOW_ruleAndroResModelRoot_in_entryRuleAndroResModelRoot6237);
+            pushFollow(FOLLOW_ruleAndroResModelRoot_in_entryRuleAndroResModelRoot8120);
             iv_ruleAndroResModelRoot=ruleAndroResModelRoot();
 
             state._fsp--;
 
              current =iv_ruleAndroResModelRoot; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroResModelRoot6247); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAndroResModelRoot8130); 
 
             }
 
@@ -6877,7 +8771,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAndroResModelRoot"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2834:1: ruleAndroResModelRoot returns [EObject current=null] : (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3709:1: ruleAndroResModelRoot returns [EObject current=null] : (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' ) ;
     public final EObject ruleAndroResModelRoot() throws RecognitionException {
         EObject current = null;
 
@@ -6891,23 +8785,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2837:28: ( (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2838:1: (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3712:28: ( (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3713:1: (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2838:1: (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2838:3: otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3713:1: (otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3713:3: otherlv_0= 'resources' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_resources_3_0= ruleResource ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,53,FOLLOW_53_in_ruleAndroResModelRoot6284); 
+            otherlv_0=(Token)match(input,66,FOLLOW_66_in_ruleAndroResModelRoot8167); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAndroResModelRootAccess().getResourcesKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2842:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2843:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3717:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3718:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2843:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2844:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3718:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3719:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroResModelRoot6301); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAndroResModelRoot8184); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getAndroResModelRootAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -6927,32 +8821,32 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroResModelRoot6318); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleAndroResModelRoot8201); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAndroResModelRootAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2864:1: ( (lv_resources_3_0= ruleResource ) )*
-            loop43:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3739:1: ( (lv_resources_3_0= ruleResource ) )*
+            loop39:
             do {
-                int alt43=2;
-                int LA43_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA43_0==RULE_ID||LA43_0==55||LA43_0==57) ) {
-                    alt43=1;
+                if ( (LA39_0==RULE_ID||LA39_0==68||LA39_0==70) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt43) {
+                switch (alt39) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2865:1: (lv_resources_3_0= ruleResource )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3740:1: (lv_resources_3_0= ruleResource )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2865:1: (lv_resources_3_0= ruleResource )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2866:3: lv_resources_3_0= ruleResource
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3740:1: (lv_resources_3_0= ruleResource )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3741:3: lv_resources_3_0= ruleResource
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAndroResModelRootAccess().getResourcesResourceParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleResource_in_ruleAndroResModelRoot6339);
+            	    pushFollow(FOLLOW_ruleResource_in_ruleAndroResModelRoot8222);
             	    lv_resources_3_0=ruleResource();
 
             	    state._fsp--;
@@ -6976,11 +8870,11 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop43;
+            	    break loop39;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleAndroResModelRoot6352); 
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleAndroResModelRoot8235); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getAndroResModelRootAccess().getRightCurlyBracketKeyword_4());
                 
@@ -7005,7 +8899,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2894:1: entryRuleResource returns [EObject current=null] : iv_ruleResource= ruleResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3769:1: entryRuleResource returns [EObject current=null] : iv_ruleResource= ruleResource EOF ;
     public final EObject entryRuleResource() throws RecognitionException {
         EObject current = null;
 
@@ -7013,17 +8907,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2895:2: (iv_ruleResource= ruleResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2896:2: iv_ruleResource= ruleResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3770:2: (iv_ruleResource= ruleResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3771:2: iv_ruleResource= ruleResource EOF
             {
              newCompositeNode(grammarAccess.getResourceRule()); 
-            pushFollow(FOLLOW_ruleResource_in_entryRuleResource6388);
+            pushFollow(FOLLOW_ruleResource_in_entryRuleResource8271);
             iv_ruleResource=ruleResource();
 
             state._fsp--;
 
              current =iv_ruleResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleResource6398); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleResource8281); 
 
             }
 
@@ -7041,7 +8935,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2903:1: ruleResource returns [EObject current=null] : (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3778:1: ruleResource returns [EObject current=null] : (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource ) ;
     public final EObject ruleResource() throws RecognitionException {
         EObject current = null;
 
@@ -7063,20 +8957,20 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2906:28: ( (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2907:1: (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3781:28: ( (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3782:1: (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2907:1: (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource )
-            int alt44=7;
-            alt44 = dfa44.predict(input);
-            switch (alt44) {
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3782:1: (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource )
+            int alt40=7;
+            alt40 = dfa40.predict(input);
+            switch (alt40) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2908:5: this_StringResource_0= ruleStringResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3783:5: this_StringResource_0= ruleStringResource
                     {
                      
                             newCompositeNode(grammarAccess.getResourceAccess().getStringResourceParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleStringResource_in_ruleResource6445);
+                    pushFollow(FOLLOW_ruleStringResource_in_ruleResource8328);
                     this_StringResource_0=ruleStringResource();
 
                     state._fsp--;
@@ -7089,12 +8983,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2918:5: this_IntegerResource_1= ruleIntegerResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3793:5: this_IntegerResource_1= ruleIntegerResource
                     {
                      
                             newCompositeNode(grammarAccess.getResourceAccess().getIntegerResourceParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleIntegerResource_in_ruleResource6472);
+                    pushFollow(FOLLOW_ruleIntegerResource_in_ruleResource8355);
                     this_IntegerResource_1=ruleIntegerResource();
 
                     state._fsp--;
@@ -7107,12 +9001,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2928:5: this_BooleanResource_2= ruleBooleanResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3803:5: this_BooleanResource_2= ruleBooleanResource
                     {
                      
                             newCompositeNode(grammarAccess.getResourceAccess().getBooleanResourceParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleBooleanResource_in_ruleResource6499);
+                    pushFollow(FOLLOW_ruleBooleanResource_in_ruleResource8382);
                     this_BooleanResource_2=ruleBooleanResource();
 
                     state._fsp--;
@@ -7125,12 +9019,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2938:5: this_ColorResource_3= ruleColorResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3813:5: this_ColorResource_3= ruleColorResource
                     {
                      
                             newCompositeNode(grammarAccess.getResourceAccess().getColorResourceParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleColorResource_in_ruleResource6526);
+                    pushFollow(FOLLOW_ruleColorResource_in_ruleResource8409);
                     this_ColorResource_3=ruleColorResource();
 
                     state._fsp--;
@@ -7143,12 +9037,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2948:5: this_DimensionResource_4= ruleDimensionResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3823:5: this_DimensionResource_4= ruleDimensionResource
                     {
                      
                             newCompositeNode(grammarAccess.getResourceAccess().getDimensionResourceParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleDimensionResource_in_ruleResource6553);
+                    pushFollow(FOLLOW_ruleDimensionResource_in_ruleResource8436);
                     this_DimensionResource_4=ruleDimensionResource();
 
                     state._fsp--;
@@ -7161,12 +9055,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2958:5: this_ArrayResource_5= ruleArrayResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3833:5: this_ArrayResource_5= ruleArrayResource
                     {
                      
                             newCompositeNode(grammarAccess.getResourceAccess().getArrayResourceParserRuleCall_5()); 
                         
-                    pushFollow(FOLLOW_ruleArrayResource_in_ruleResource6580);
+                    pushFollow(FOLLOW_ruleArrayResource_in_ruleResource8463);
                     this_ArrayResource_5=ruleArrayResource();
 
                     state._fsp--;
@@ -7179,12 +9073,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2968:5: this_DrawableResource_6= ruleDrawableResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3843:5: this_DrawableResource_6= ruleDrawableResource
                     {
                      
                             newCompositeNode(grammarAccess.getResourceAccess().getDrawableResourceParserRuleCall_6()); 
                         
-                    pushFollow(FOLLOW_ruleDrawableResource_in_ruleResource6607);
+                    pushFollow(FOLLOW_ruleDrawableResource_in_ruleResource8490);
                     this_DrawableResource_6=ruleDrawableResource();
 
                     state._fsp--;
@@ -7217,7 +9111,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2984:1: entryRuleStringResource returns [EObject current=null] : iv_ruleStringResource= ruleStringResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3859:1: entryRuleStringResource returns [EObject current=null] : iv_ruleStringResource= ruleStringResource EOF ;
     public final EObject entryRuleStringResource() throws RecognitionException {
         EObject current = null;
 
@@ -7225,17 +9119,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2985:2: (iv_ruleStringResource= ruleStringResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2986:2: iv_ruleStringResource= ruleStringResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3860:2: (iv_ruleStringResource= ruleStringResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3861:2: iv_ruleStringResource= ruleStringResource EOF
             {
              newCompositeNode(grammarAccess.getStringResourceRule()); 
-            pushFollow(FOLLOW_ruleStringResource_in_entryRuleStringResource6642);
+            pushFollow(FOLLOW_ruleStringResource_in_entryRuleStringResource8525);
             iv_ruleStringResource=ruleStringResource();
 
             state._fsp--;
 
              current =iv_ruleStringResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringResource6652); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringResource8535); 
 
             }
 
@@ -7253,7 +9147,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2993:1: ruleStringResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3868:1: ruleStringResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleStringResource() throws RecognitionException {
         EObject current = null;
 
@@ -7264,19 +9158,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2996:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2997:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3871:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3872:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2997:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2997:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3872:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3872:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_STRING ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2997:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2998:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3872:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3873:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2998:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:2999:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3873:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3874:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringResource6694); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringResource8577); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getStringResourceAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -7296,17 +9190,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleStringResource6711); 
+            otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleStringResource8594); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getStringResourceAccess().getEqualsSignKeyword_1());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3019:1: ( (lv_value_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3020:1: (lv_value_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3894:1: ( (lv_value_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3895:1: (lv_value_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3020:1: (lv_value_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3021:3: lv_value_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3895:1: (lv_value_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3896:3: lv_value_2_0= RULE_STRING
             {
-            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringResource6728); 
+            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringResource8611); 
 
             			newLeafNode(lv_value_2_0, grammarAccess.getStringResourceAccess().getValueSTRINGTerminalRuleCall_2_0()); 
             		
@@ -7347,7 +9241,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3045:1: entryRuleIntegerResource returns [EObject current=null] : iv_ruleIntegerResource= ruleIntegerResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3920:1: entryRuleIntegerResource returns [EObject current=null] : iv_ruleIntegerResource= ruleIntegerResource EOF ;
     public final EObject entryRuleIntegerResource() throws RecognitionException {
         EObject current = null;
 
@@ -7355,17 +9249,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3046:2: (iv_ruleIntegerResource= ruleIntegerResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3047:2: iv_ruleIntegerResource= ruleIntegerResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3921:2: (iv_ruleIntegerResource= ruleIntegerResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3922:2: iv_ruleIntegerResource= ruleIntegerResource EOF
             {
              newCompositeNode(grammarAccess.getIntegerResourceRule()); 
-            pushFollow(FOLLOW_ruleIntegerResource_in_entryRuleIntegerResource6769);
+            pushFollow(FOLLOW_ruleIntegerResource_in_entryRuleIntegerResource8652);
             iv_ruleIntegerResource=ruleIntegerResource();
 
             state._fsp--;
 
              current =iv_ruleIntegerResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerResource6779); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerResource8662); 
 
             }
 
@@ -7383,7 +9277,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3054:1: ruleIntegerResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3929:1: ruleIntegerResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) ) ;
     public final EObject ruleIntegerResource() throws RecognitionException {
         EObject current = null;
 
@@ -7394,19 +9288,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3057:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3058:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3932:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3933:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3058:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3058:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3933:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3933:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_INT ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3058:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3059:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3933:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3934:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3059:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3060:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3934:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3935:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIntegerResource6821); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIntegerResource8704); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getIntegerResourceAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -7426,17 +9320,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleIntegerResource6838); 
+            otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleIntegerResource8721); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getIntegerResourceAccess().getEqualsSignKeyword_1());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3080:1: ( (lv_value_2_0= RULE_INT ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3081:1: (lv_value_2_0= RULE_INT )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3955:1: ( (lv_value_2_0= RULE_INT ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3956:1: (lv_value_2_0= RULE_INT )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3081:1: (lv_value_2_0= RULE_INT )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3082:3: lv_value_2_0= RULE_INT
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3956:1: (lv_value_2_0= RULE_INT )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3957:3: lv_value_2_0= RULE_INT
             {
-            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIntegerResource6855); 
+            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIntegerResource8738); 
 
             			newLeafNode(lv_value_2_0, grammarAccess.getIntegerResourceAccess().getValueINTTerminalRuleCall_2_0()); 
             		
@@ -7477,7 +9371,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3106:1: entryRuleBooleanResource returns [EObject current=null] : iv_ruleBooleanResource= ruleBooleanResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3981:1: entryRuleBooleanResource returns [EObject current=null] : iv_ruleBooleanResource= ruleBooleanResource EOF ;
     public final EObject entryRuleBooleanResource() throws RecognitionException {
         EObject current = null;
 
@@ -7485,17 +9379,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3107:2: (iv_ruleBooleanResource= ruleBooleanResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3108:2: iv_ruleBooleanResource= ruleBooleanResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3982:2: (iv_ruleBooleanResource= ruleBooleanResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3983:2: iv_ruleBooleanResource= ruleBooleanResource EOF
             {
              newCompositeNode(grammarAccess.getBooleanResourceRule()); 
-            pushFollow(FOLLOW_ruleBooleanResource_in_entryRuleBooleanResource6896);
+            pushFollow(FOLLOW_ruleBooleanResource_in_entryRuleBooleanResource8779);
             iv_ruleBooleanResource=ruleBooleanResource();
 
             state._fsp--;
 
              current =iv_ruleBooleanResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanResource6906); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanResource8789); 
 
             }
 
@@ -7513,7 +9407,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3115:1: ruleBooleanResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3990:1: ruleBooleanResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) ) ;
     public final EObject ruleBooleanResource() throws RecognitionException {
         EObject current = null;
 
@@ -7525,19 +9419,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3118:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3119:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3993:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3994:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3119:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3119:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3994:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3994:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleBOOL ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3119:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3120:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3994:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3995:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3120:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3121:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3995:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3996:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBooleanResource6948); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBooleanResource8831); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getBooleanResourceAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -7557,20 +9451,20 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleBooleanResource6965); 
+            otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleBooleanResource8848); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getBooleanResourceAccess().getEqualsSignKeyword_1());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3141:1: ( (lv_value_2_0= ruleBOOL ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3142:1: (lv_value_2_0= ruleBOOL )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4016:1: ( (lv_value_2_0= ruleBOOL ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4017:1: (lv_value_2_0= ruleBOOL )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3142:1: (lv_value_2_0= ruleBOOL )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3143:3: lv_value_2_0= ruleBOOL
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4017:1: (lv_value_2_0= ruleBOOL )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4018:3: lv_value_2_0= ruleBOOL
             {
              
             	        newCompositeNode(grammarAccess.getBooleanResourceAccess().getValueBOOLParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleBOOL_in_ruleBooleanResource6986);
+            pushFollow(FOLLOW_ruleBOOL_in_ruleBooleanResource8869);
             lv_value_2_0=ruleBOOL();
 
             state._fsp--;
@@ -7613,7 +9507,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleColorResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3167:1: entryRuleColorResource returns [EObject current=null] : iv_ruleColorResource= ruleColorResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4042:1: entryRuleColorResource returns [EObject current=null] : iv_ruleColorResource= ruleColorResource EOF ;
     public final EObject entryRuleColorResource() throws RecognitionException {
         EObject current = null;
 
@@ -7621,17 +9515,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3168:2: (iv_ruleColorResource= ruleColorResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3169:2: iv_ruleColorResource= ruleColorResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4043:2: (iv_ruleColorResource= ruleColorResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4044:2: iv_ruleColorResource= ruleColorResource EOF
             {
              newCompositeNode(grammarAccess.getColorResourceRule()); 
-            pushFollow(FOLLOW_ruleColorResource_in_entryRuleColorResource7022);
+            pushFollow(FOLLOW_ruleColorResource_in_entryRuleColorResource8905);
             iv_ruleColorResource=ruleColorResource();
 
             state._fsp--;
 
              current =iv_ruleColorResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleColorResource7032); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleColorResource8915); 
 
             }
 
@@ -7649,7 +9543,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColorResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3176:1: ruleColorResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4051:1: ruleColorResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) ) ;
     public final EObject ruleColorResource() throws RecognitionException {
         EObject current = null;
 
@@ -7660,19 +9554,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3179:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3180:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4054:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4055:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3180:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3180:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4055:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4055:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= RULE_HEX_COLOR ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3180:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3181:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4055:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4056:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3181:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3182:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4056:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4057:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleColorResource7074); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleColorResource8957); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getColorResourceAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -7692,17 +9586,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleColorResource7091); 
+            otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleColorResource8974); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getColorResourceAccess().getEqualsSignKeyword_1());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3202:1: ( (lv_value_2_0= RULE_HEX_COLOR ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3203:1: (lv_value_2_0= RULE_HEX_COLOR )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4077:1: ( (lv_value_2_0= RULE_HEX_COLOR ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4078:1: (lv_value_2_0= RULE_HEX_COLOR )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3203:1: (lv_value_2_0= RULE_HEX_COLOR )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3204:3: lv_value_2_0= RULE_HEX_COLOR
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4078:1: (lv_value_2_0= RULE_HEX_COLOR )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4079:3: lv_value_2_0= RULE_HEX_COLOR
             {
-            lv_value_2_0=(Token)match(input,RULE_HEX_COLOR,FOLLOW_RULE_HEX_COLOR_in_ruleColorResource7108); 
+            lv_value_2_0=(Token)match(input,RULE_HEX_COLOR,FOLLOW_RULE_HEX_COLOR_in_ruleColorResource8991); 
 
             			newLeafNode(lv_value_2_0, grammarAccess.getColorResourceAccess().getValueHEX_COLORTerminalRuleCall_2_0()); 
             		
@@ -7743,7 +9637,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDimensionResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3228:1: entryRuleDimensionResource returns [EObject current=null] : iv_ruleDimensionResource= ruleDimensionResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4103:1: entryRuleDimensionResource returns [EObject current=null] : iv_ruleDimensionResource= ruleDimensionResource EOF ;
     public final EObject entryRuleDimensionResource() throws RecognitionException {
         EObject current = null;
 
@@ -7751,17 +9645,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3229:2: (iv_ruleDimensionResource= ruleDimensionResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3230:2: iv_ruleDimensionResource= ruleDimensionResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4104:2: (iv_ruleDimensionResource= ruleDimensionResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4105:2: iv_ruleDimensionResource= ruleDimensionResource EOF
             {
              newCompositeNode(grammarAccess.getDimensionResourceRule()); 
-            pushFollow(FOLLOW_ruleDimensionResource_in_entryRuleDimensionResource7149);
+            pushFollow(FOLLOW_ruleDimensionResource_in_entryRuleDimensionResource9032);
             iv_ruleDimensionResource=ruleDimensionResource();
 
             state._fsp--;
 
              current =iv_ruleDimensionResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDimensionResource7159); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDimensionResource9042); 
 
             }
 
@@ -7779,7 +9673,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDimensionResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3237:1: ruleDimensionResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4112:1: ruleDimensionResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) ) ;
     public final EObject ruleDimensionResource() throws RecognitionException {
         EObject current = null;
 
@@ -7791,19 +9685,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3240:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3241:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4115:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4116:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3241:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3241:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4116:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4116:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleDimensionValue ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3241:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3242:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4116:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4117:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3242:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3243:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4117:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4118:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDimensionResource7201); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDimensionResource9084); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getDimensionResourceAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -7823,20 +9717,20 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleDimensionResource7218); 
+            otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleDimensionResource9101); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDimensionResourceAccess().getEqualsSignKeyword_1());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3263:1: ( (lv_value_2_0= ruleDimensionValue ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3264:1: (lv_value_2_0= ruleDimensionValue )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4138:1: ( (lv_value_2_0= ruleDimensionValue ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4139:1: (lv_value_2_0= ruleDimensionValue )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3264:1: (lv_value_2_0= ruleDimensionValue )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3265:3: lv_value_2_0= ruleDimensionValue
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4139:1: (lv_value_2_0= ruleDimensionValue )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4140:3: lv_value_2_0= ruleDimensionValue
             {
              
             	        newCompositeNode(grammarAccess.getDimensionResourceAccess().getValueDimensionValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleDimensionValue_in_ruleDimensionResource7239);
+            pushFollow(FOLLOW_ruleDimensionValue_in_ruleDimensionResource9122);
             lv_value_2_0=ruleDimensionValue();
 
             state._fsp--;
@@ -7879,7 +9773,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3289:1: entryRuleArrayResource returns [EObject current=null] : iv_ruleArrayResource= ruleArrayResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4164:1: entryRuleArrayResource returns [EObject current=null] : iv_ruleArrayResource= ruleArrayResource EOF ;
     public final EObject entryRuleArrayResource() throws RecognitionException {
         EObject current = null;
 
@@ -7887,17 +9781,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3290:2: (iv_ruleArrayResource= ruleArrayResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3291:2: iv_ruleArrayResource= ruleArrayResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4165:2: (iv_ruleArrayResource= ruleArrayResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4166:2: iv_ruleArrayResource= ruleArrayResource EOF
             {
              newCompositeNode(grammarAccess.getArrayResourceRule()); 
-            pushFollow(FOLLOW_ruleArrayResource_in_entryRuleArrayResource7275);
+            pushFollow(FOLLOW_ruleArrayResource_in_entryRuleArrayResource9158);
             iv_ruleArrayResource=ruleArrayResource();
 
             state._fsp--;
 
              current =iv_ruleArrayResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayResource7285); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayResource9168); 
 
             }
 
@@ -7915,7 +9809,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3298:1: ruleArrayResource returns [EObject current=null] : (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4173:1: ruleArrayResource returns [EObject current=null] : (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource ) ;
     public final EObject ruleArrayResource() throws RecognitionException {
         EObject current = null;
 
@@ -7927,33 +9821,33 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3301:28: ( (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3302:1: (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4176:28: ( (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4177:1: (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3302:1: (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource )
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4177:1: (this_IntegerArrayResource_0= ruleIntegerArrayResource | this_StringArrayResource_1= ruleStringArrayResource )
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA45_0==55) ) {
-                alt45=1;
+            if ( (LA41_0==68) ) {
+                alt41=1;
             }
-            else if ( (LA45_0==57) ) {
-                alt45=2;
+            else if ( (LA41_0==70) ) {
+                alt41=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 41, 0, input);
 
                 throw nvae;
             }
-            switch (alt45) {
+            switch (alt41) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3303:5: this_IntegerArrayResource_0= ruleIntegerArrayResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4178:5: this_IntegerArrayResource_0= ruleIntegerArrayResource
                     {
                      
                             newCompositeNode(grammarAccess.getArrayResourceAccess().getIntegerArrayResourceParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleIntegerArrayResource_in_ruleArrayResource7332);
+                    pushFollow(FOLLOW_ruleIntegerArrayResource_in_ruleArrayResource9215);
                     this_IntegerArrayResource_0=ruleIntegerArrayResource();
 
                     state._fsp--;
@@ -7966,12 +9860,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3313:5: this_StringArrayResource_1= ruleStringArrayResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4188:5: this_StringArrayResource_1= ruleStringArrayResource
                     {
                      
                             newCompositeNode(grammarAccess.getArrayResourceAccess().getStringArrayResourceParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleStringArrayResource_in_ruleArrayResource7359);
+                    pushFollow(FOLLOW_ruleStringArrayResource_in_ruleArrayResource9242);
                     this_StringArrayResource_1=ruleStringArrayResource();
 
                     state._fsp--;
@@ -8004,7 +9898,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerArrayResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3329:1: entryRuleIntegerArrayResource returns [EObject current=null] : iv_ruleIntegerArrayResource= ruleIntegerArrayResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4204:1: entryRuleIntegerArrayResource returns [EObject current=null] : iv_ruleIntegerArrayResource= ruleIntegerArrayResource EOF ;
     public final EObject entryRuleIntegerArrayResource() throws RecognitionException {
         EObject current = null;
 
@@ -8012,17 +9906,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3330:2: (iv_ruleIntegerArrayResource= ruleIntegerArrayResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3331:2: iv_ruleIntegerArrayResource= ruleIntegerArrayResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4205:2: (iv_ruleIntegerArrayResource= ruleIntegerArrayResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4206:2: iv_ruleIntegerArrayResource= ruleIntegerArrayResource EOF
             {
              newCompositeNode(grammarAccess.getIntegerArrayResourceRule()); 
-            pushFollow(FOLLOW_ruleIntegerArrayResource_in_entryRuleIntegerArrayResource7394);
+            pushFollow(FOLLOW_ruleIntegerArrayResource_in_entryRuleIntegerArrayResource9277);
             iv_ruleIntegerArrayResource=ruleIntegerArrayResource();
 
             state._fsp--;
 
              current =iv_ruleIntegerArrayResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerArrayResource7404); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerArrayResource9287); 
 
             }
 
@@ -8040,7 +9934,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerArrayResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3338:1: ruleIntegerArrayResource returns [EObject current=null] : (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4213:1: ruleIntegerArrayResource returns [EObject current=null] : (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' ) ;
     public final EObject ruleIntegerArrayResource() throws RecognitionException {
         EObject current = null;
 
@@ -8057,23 +9951,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3341:28: ( (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3342:1: (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4216:28: ( (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4217:1: (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3342:1: (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3342:3: otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4217:1: (otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4217:3: otherlv_0= 'intarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleIntegerArrayResource7441); 
+            otherlv_0=(Token)match(input,68,FOLLOW_68_in_ruleIntegerArrayResource9324); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getIntegerArrayResourceAccess().getIntarrayKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3346:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3347:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4221:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4222:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3347:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3348:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4222:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4223:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIntegerArrayResource7458); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIntegerArrayResource9341); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getIntegerArrayResourceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -8093,23 +9987,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleIntegerArrayResource7475); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleIntegerArrayResource9358); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getIntegerArrayResourceAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3368:1: ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3368:2: ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )*
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4243:1: ( ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )* )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4243:2: ( (lv_entries_3_0= ruleIntegerArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )*
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3368:2: ( (lv_entries_3_0= ruleIntegerArrayEntry ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3369:1: (lv_entries_3_0= ruleIntegerArrayEntry )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4243:2: ( (lv_entries_3_0= ruleIntegerArrayEntry ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4244:1: (lv_entries_3_0= ruleIntegerArrayEntry )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3369:1: (lv_entries_3_0= ruleIntegerArrayEntry )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3370:3: lv_entries_3_0= ruleIntegerArrayEntry
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4244:1: (lv_entries_3_0= ruleIntegerArrayEntry )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4245:3: lv_entries_3_0= ruleIntegerArrayEntry
             {
              
             	        newCompositeNode(grammarAccess.getIntegerArrayResourceAccess().getEntriesIntegerArrayEntryParserRuleCall_3_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource7497);
+            pushFollow(FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource9380);
             lv_entries_3_0=ruleIntegerArrayEntry();
 
             state._fsp--;
@@ -8131,35 +10025,35 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3386:2: (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )*
-            loop46:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4261:2: (otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) ) )*
+            loop42:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt42=2;
+                int LA42_0 = input.LA(1);
 
-                if ( (LA46_0==56) ) {
-                    alt46=1;
+                if ( (LA42_0==69) ) {
+                    alt42=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt42) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3386:4: otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4261:4: otherlv_4= ',' ( (lv_entries_5_0= ruleIntegerArrayEntry ) )
             	    {
-            	    otherlv_4=(Token)match(input,56,FOLLOW_56_in_ruleIntegerArrayResource7510); 
+            	    otherlv_4=(Token)match(input,69,FOLLOW_69_in_ruleIntegerArrayResource9393); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getIntegerArrayResourceAccess().getCommaKeyword_3_1_0());
             	        
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3390:1: ( (lv_entries_5_0= ruleIntegerArrayEntry ) )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3391:1: (lv_entries_5_0= ruleIntegerArrayEntry )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4265:1: ( (lv_entries_5_0= ruleIntegerArrayEntry ) )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4266:1: (lv_entries_5_0= ruleIntegerArrayEntry )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3391:1: (lv_entries_5_0= ruleIntegerArrayEntry )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3392:3: lv_entries_5_0= ruleIntegerArrayEntry
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4266:1: (lv_entries_5_0= ruleIntegerArrayEntry )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4267:3: lv_entries_5_0= ruleIntegerArrayEntry
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getIntegerArrayResourceAccess().getEntriesIntegerArrayEntryParserRuleCall_3_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource7531);
+            	    pushFollow(FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource9414);
             	    lv_entries_5_0=ruleIntegerArrayEntry();
 
             	    state._fsp--;
@@ -8186,14 +10080,14 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop42;
                 }
             } while (true);
 
 
             }
 
-            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleIntegerArrayResource7546); 
+            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleIntegerArrayResource9429); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getIntegerArrayResourceAccess().getRightCurlyBracketKeyword_4());
                 
@@ -8218,7 +10112,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerArrayEntry"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3420:1: entryRuleIntegerArrayEntry returns [EObject current=null] : iv_ruleIntegerArrayEntry= ruleIntegerArrayEntry EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4295:1: entryRuleIntegerArrayEntry returns [EObject current=null] : iv_ruleIntegerArrayEntry= ruleIntegerArrayEntry EOF ;
     public final EObject entryRuleIntegerArrayEntry() throws RecognitionException {
         EObject current = null;
 
@@ -8226,17 +10120,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3421:2: (iv_ruleIntegerArrayEntry= ruleIntegerArrayEntry EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3422:2: iv_ruleIntegerArrayEntry= ruleIntegerArrayEntry EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4296:2: (iv_ruleIntegerArrayEntry= ruleIntegerArrayEntry EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4297:2: iv_ruleIntegerArrayEntry= ruleIntegerArrayEntry EOF
             {
              newCompositeNode(grammarAccess.getIntegerArrayEntryRule()); 
-            pushFollow(FOLLOW_ruleIntegerArrayEntry_in_entryRuleIntegerArrayEntry7582);
+            pushFollow(FOLLOW_ruleIntegerArrayEntry_in_entryRuleIntegerArrayEntry9465);
             iv_ruleIntegerArrayEntry=ruleIntegerArrayEntry();
 
             state._fsp--;
 
              current =iv_ruleIntegerArrayEntry; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerArrayEntry7592); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerArrayEntry9475); 
 
             }
 
@@ -8254,7 +10148,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerArrayEntry"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3429:1: ruleIntegerArrayEntry returns [EObject current=null] : ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4304:1: ruleIntegerArrayEntry returns [EObject current=null] : ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) ) ;
     public final EObject ruleIntegerArrayEntry() throws RecognitionException {
         EObject current = null;
 
@@ -8265,30 +10159,30 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3432:28: ( ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3433:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4307:28: ( ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4308:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3433:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3433:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4308:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4308:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_INT ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3433:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4308:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA47_0==RULE_ID) ) {
-                alt47=1;
+            if ( (LA43_0==RULE_ID) ) {
+                alt43=1;
             }
-            switch (alt47) {
+            switch (alt43) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3433:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '='
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4308:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '='
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3433:3: ( (lv_name_0_0= RULE_ID ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3434:1: (lv_name_0_0= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4308:3: ( (lv_name_0_0= RULE_ID ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4309:1: (lv_name_0_0= RULE_ID )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3434:1: (lv_name_0_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3435:3: lv_name_0_0= RULE_ID
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4309:1: (lv_name_0_0= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4310:3: lv_name_0_0= RULE_ID
                     {
-                    lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIntegerArrayEntry7635); 
+                    lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIntegerArrayEntry9518); 
 
                     			newLeafNode(lv_name_0_0, grammarAccess.getIntegerArrayEntryAccess().getNameIDTerminalRuleCall_0_0_0()); 
                     		
@@ -8308,7 +10202,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleIntegerArrayEntry7652); 
+                    otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleIntegerArrayEntry9535); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getIntegerArrayEntryAccess().getEqualsSignKeyword_0_1());
                         
@@ -8318,13 +10212,13 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3455:3: ( (lv_value_2_0= RULE_INT ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3456:1: (lv_value_2_0= RULE_INT )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4330:3: ( (lv_value_2_0= RULE_INT ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4331:1: (lv_value_2_0= RULE_INT )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3456:1: (lv_value_2_0= RULE_INT )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3457:3: lv_value_2_0= RULE_INT
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4331:1: (lv_value_2_0= RULE_INT )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4332:3: lv_value_2_0= RULE_INT
             {
-            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIntegerArrayEntry7671); 
+            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIntegerArrayEntry9554); 
 
             			newLeafNode(lv_value_2_0, grammarAccess.getIntegerArrayEntryAccess().getValueINTTerminalRuleCall_1_0()); 
             		
@@ -8365,7 +10259,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringArrayResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3481:1: entryRuleStringArrayResource returns [EObject current=null] : iv_ruleStringArrayResource= ruleStringArrayResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4356:1: entryRuleStringArrayResource returns [EObject current=null] : iv_ruleStringArrayResource= ruleStringArrayResource EOF ;
     public final EObject entryRuleStringArrayResource() throws RecognitionException {
         EObject current = null;
 
@@ -8373,17 +10267,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3482:2: (iv_ruleStringArrayResource= ruleStringArrayResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3483:2: iv_ruleStringArrayResource= ruleStringArrayResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4357:2: (iv_ruleStringArrayResource= ruleStringArrayResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4358:2: iv_ruleStringArrayResource= ruleStringArrayResource EOF
             {
              newCompositeNode(grammarAccess.getStringArrayResourceRule()); 
-            pushFollow(FOLLOW_ruleStringArrayResource_in_entryRuleStringArrayResource7712);
+            pushFollow(FOLLOW_ruleStringArrayResource_in_entryRuleStringArrayResource9595);
             iv_ruleStringArrayResource=ruleStringArrayResource();
 
             state._fsp--;
 
              current =iv_ruleStringArrayResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringArrayResource7722); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringArrayResource9605); 
 
             }
 
@@ -8401,7 +10295,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringArrayResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3490:1: ruleStringArrayResource returns [EObject current=null] : (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4365:1: ruleStringArrayResource returns [EObject current=null] : (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' ) ;
     public final EObject ruleStringArrayResource() throws RecognitionException {
         EObject current = null;
 
@@ -8418,23 +10312,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3493:28: ( (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3494:1: (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4368:28: ( (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4369:1: (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3494:1: (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3494:3: otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4369:1: (otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4369:3: otherlv_0= 'stringarray' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,57,FOLLOW_57_in_ruleStringArrayResource7759); 
+            otherlv_0=(Token)match(input,70,FOLLOW_70_in_ruleStringArrayResource9642); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStringArrayResourceAccess().getStringarrayKeyword_0());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3498:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3499:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4373:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4374:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3499:1: (lv_name_1_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3500:3: lv_name_1_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4374:1: (lv_name_1_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4375:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringArrayResource7776); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringArrayResource9659); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getStringArrayResourceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -8454,23 +10348,23 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleStringArrayResource7793); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleStringArrayResource9676); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getStringArrayResourceAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3520:1: ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3520:2: ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )*
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4395:1: ( ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )* )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4395:2: ( (lv_entries_3_0= ruleStringArrayEntry ) ) (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )*
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3520:2: ( (lv_entries_3_0= ruleStringArrayEntry ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3521:1: (lv_entries_3_0= ruleStringArrayEntry )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4395:2: ( (lv_entries_3_0= ruleStringArrayEntry ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4396:1: (lv_entries_3_0= ruleStringArrayEntry )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3521:1: (lv_entries_3_0= ruleStringArrayEntry )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3522:3: lv_entries_3_0= ruleStringArrayEntry
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4396:1: (lv_entries_3_0= ruleStringArrayEntry )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4397:3: lv_entries_3_0= ruleStringArrayEntry
             {
              
             	        newCompositeNode(grammarAccess.getStringArrayResourceAccess().getEntriesStringArrayEntryParserRuleCall_3_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource7815);
+            pushFollow(FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource9698);
             lv_entries_3_0=ruleStringArrayEntry();
 
             state._fsp--;
@@ -8492,35 +10386,35 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3538:2: (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )*
-            loop48:
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4413:2: (otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) ) )*
+            loop44:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA48_0==56) ) {
-                    alt48=1;
+                if ( (LA44_0==69) ) {
+                    alt44=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt44) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3538:4: otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4413:4: otherlv_4= ',' ( (lv_entries_5_0= ruleStringArrayEntry ) )
             	    {
-            	    otherlv_4=(Token)match(input,56,FOLLOW_56_in_ruleStringArrayResource7828); 
+            	    otherlv_4=(Token)match(input,69,FOLLOW_69_in_ruleStringArrayResource9711); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getStringArrayResourceAccess().getCommaKeyword_3_1_0());
             	        
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3542:1: ( (lv_entries_5_0= ruleStringArrayEntry ) )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3543:1: (lv_entries_5_0= ruleStringArrayEntry )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4417:1: ( (lv_entries_5_0= ruleStringArrayEntry ) )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4418:1: (lv_entries_5_0= ruleStringArrayEntry )
             	    {
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3543:1: (lv_entries_5_0= ruleStringArrayEntry )
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3544:3: lv_entries_5_0= ruleStringArrayEntry
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4418:1: (lv_entries_5_0= ruleStringArrayEntry )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4419:3: lv_entries_5_0= ruleStringArrayEntry
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getStringArrayResourceAccess().getEntriesStringArrayEntryParserRuleCall_3_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource7849);
+            	    pushFollow(FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource9732);
             	    lv_entries_5_0=ruleStringArrayEntry();
 
             	    state._fsp--;
@@ -8547,14 +10441,14 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop44;
                 }
             } while (true);
 
 
             }
 
-            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleStringArrayResource7864); 
+            otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleStringArrayResource9747); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getStringArrayResourceAccess().getRightCurlyBracketKeyword_4());
                 
@@ -8579,7 +10473,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringArrayEntry"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3572:1: entryRuleStringArrayEntry returns [EObject current=null] : iv_ruleStringArrayEntry= ruleStringArrayEntry EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4447:1: entryRuleStringArrayEntry returns [EObject current=null] : iv_ruleStringArrayEntry= ruleStringArrayEntry EOF ;
     public final EObject entryRuleStringArrayEntry() throws RecognitionException {
         EObject current = null;
 
@@ -8587,17 +10481,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3573:2: (iv_ruleStringArrayEntry= ruleStringArrayEntry EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3574:2: iv_ruleStringArrayEntry= ruleStringArrayEntry EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4448:2: (iv_ruleStringArrayEntry= ruleStringArrayEntry EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4449:2: iv_ruleStringArrayEntry= ruleStringArrayEntry EOF
             {
              newCompositeNode(grammarAccess.getStringArrayEntryRule()); 
-            pushFollow(FOLLOW_ruleStringArrayEntry_in_entryRuleStringArrayEntry7900);
+            pushFollow(FOLLOW_ruleStringArrayEntry_in_entryRuleStringArrayEntry9783);
             iv_ruleStringArrayEntry=ruleStringArrayEntry();
 
             state._fsp--;
 
              current =iv_ruleStringArrayEntry; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringArrayEntry7910); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringArrayEntry9793); 
 
             }
 
@@ -8615,7 +10509,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringArrayEntry"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3581:1: ruleStringArrayEntry returns [EObject current=null] : ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4456:1: ruleStringArrayEntry returns [EObject current=null] : ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleStringArrayEntry() throws RecognitionException {
         EObject current = null;
 
@@ -8626,30 +10520,30 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3584:28: ( ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3585:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4459:28: ( ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4460:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3585:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3585:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4460:1: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4460:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )? ( (lv_value_2_0= RULE_STRING ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3585:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4460:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA49_0==RULE_ID) ) {
-                alt49=1;
+            if ( (LA45_0==RULE_ID) ) {
+                alt45=1;
             }
-            switch (alt49) {
+            switch (alt45) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3585:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '='
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4460:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '='
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3585:3: ( (lv_name_0_0= RULE_ID ) )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3586:1: (lv_name_0_0= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4460:3: ( (lv_name_0_0= RULE_ID ) )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4461:1: (lv_name_0_0= RULE_ID )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3586:1: (lv_name_0_0= RULE_ID )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3587:3: lv_name_0_0= RULE_ID
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4461:1: (lv_name_0_0= RULE_ID )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4462:3: lv_name_0_0= RULE_ID
                     {
-                    lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringArrayEntry7953); 
+                    lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringArrayEntry9836); 
 
                     			newLeafNode(lv_name_0_0, grammarAccess.getStringArrayEntryAccess().getNameIDTerminalRuleCall_0_0_0()); 
                     		
@@ -8669,7 +10563,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleStringArrayEntry7970); 
+                    otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleStringArrayEntry9853); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getStringArrayEntryAccess().getEqualsSignKeyword_0_1());
                         
@@ -8679,13 +10573,13 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3607:3: ( (lv_value_2_0= RULE_STRING ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3608:1: (lv_value_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4482:3: ( (lv_value_2_0= RULE_STRING ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4483:1: (lv_value_2_0= RULE_STRING )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3608:1: (lv_value_2_0= RULE_STRING )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3609:3: lv_value_2_0= RULE_STRING
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4483:1: (lv_value_2_0= RULE_STRING )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4484:3: lv_value_2_0= RULE_STRING
             {
-            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringArrayEntry7989); 
+            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringArrayEntry9872); 
 
             			newLeafNode(lv_value_2_0, grammarAccess.getStringArrayEntryAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -8726,7 +10620,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDrawableResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3633:1: entryRuleDrawableResource returns [EObject current=null] : iv_ruleDrawableResource= ruleDrawableResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4508:1: entryRuleDrawableResource returns [EObject current=null] : iv_ruleDrawableResource= ruleDrawableResource EOF ;
     public final EObject entryRuleDrawableResource() throws RecognitionException {
         EObject current = null;
 
@@ -8734,17 +10628,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3634:2: (iv_ruleDrawableResource= ruleDrawableResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3635:2: iv_ruleDrawableResource= ruleDrawableResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4509:2: (iv_ruleDrawableResource= ruleDrawableResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4510:2: iv_ruleDrawableResource= ruleDrawableResource EOF
             {
              newCompositeNode(grammarAccess.getDrawableResourceRule()); 
-            pushFollow(FOLLOW_ruleDrawableResource_in_entryRuleDrawableResource8030);
+            pushFollow(FOLLOW_ruleDrawableResource_in_entryRuleDrawableResource9913);
             iv_ruleDrawableResource=ruleDrawableResource();
 
             state._fsp--;
 
              current =iv_ruleDrawableResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDrawableResource8040); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDrawableResource9923); 
 
             }
 
@@ -8762,7 +10656,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDrawableResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3642:1: ruleDrawableResource returns [EObject current=null] : (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4517:1: ruleDrawableResource returns [EObject current=null] : (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource ) ;
     public final EObject ruleDrawableResource() throws RecognitionException {
         EObject current = null;
 
@@ -8774,43 +10668,43 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3645:28: ( (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3646:1: (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4520:28: ( (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4521:1: (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3646:1: (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource )
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4521:1: (this_BitmapDrawableResource_0= ruleBitmapDrawableResource | this_TransitionDrawableResource_1= ruleTransitionDrawableResource )
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA50_0==RULE_ID) ) {
-                int LA50_1 = input.LA(2);
+            if ( (LA46_0==RULE_ID) ) {
+                int LA46_1 = input.LA(2);
 
-                if ( (LA50_1==RULE_ID) ) {
-                    alt50=2;
+                if ( (LA46_1==67) ) {
+                    alt46=1;
                 }
-                else if ( (LA50_1==54) ) {
-                    alt50=1;
+                else if ( (LA46_1==RULE_ID) ) {
+                    alt46=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 50, 1, input);
+                        new NoViableAltException("", 46, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
-            switch (alt50) {
+            switch (alt46) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3647:5: this_BitmapDrawableResource_0= ruleBitmapDrawableResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4522:5: this_BitmapDrawableResource_0= ruleBitmapDrawableResource
                     {
                      
                             newCompositeNode(grammarAccess.getDrawableResourceAccess().getBitmapDrawableResourceParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleBitmapDrawableResource_in_ruleDrawableResource8087);
+                    pushFollow(FOLLOW_ruleBitmapDrawableResource_in_ruleDrawableResource9970);
                     this_BitmapDrawableResource_0=ruleBitmapDrawableResource();
 
                     state._fsp--;
@@ -8823,12 +10717,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3657:5: this_TransitionDrawableResource_1= ruleTransitionDrawableResource
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4532:5: this_TransitionDrawableResource_1= ruleTransitionDrawableResource
                     {
                      
                             newCompositeNode(grammarAccess.getDrawableResourceAccess().getTransitionDrawableResourceParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleTransitionDrawableResource_in_ruleDrawableResource8114);
+                    pushFollow(FOLLOW_ruleTransitionDrawableResource_in_ruleDrawableResource9997);
                     this_TransitionDrawableResource_1=ruleTransitionDrawableResource();
 
                     state._fsp--;
@@ -8861,7 +10755,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBitmapDrawableResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3673:1: entryRuleBitmapDrawableResource returns [EObject current=null] : iv_ruleBitmapDrawableResource= ruleBitmapDrawableResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4548:1: entryRuleBitmapDrawableResource returns [EObject current=null] : iv_ruleBitmapDrawableResource= ruleBitmapDrawableResource EOF ;
     public final EObject entryRuleBitmapDrawableResource() throws RecognitionException {
         EObject current = null;
 
@@ -8869,17 +10763,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3674:2: (iv_ruleBitmapDrawableResource= ruleBitmapDrawableResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3675:2: iv_ruleBitmapDrawableResource= ruleBitmapDrawableResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4549:2: (iv_ruleBitmapDrawableResource= ruleBitmapDrawableResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4550:2: iv_ruleBitmapDrawableResource= ruleBitmapDrawableResource EOF
             {
              newCompositeNode(grammarAccess.getBitmapDrawableResourceRule()); 
-            pushFollow(FOLLOW_ruleBitmapDrawableResource_in_entryRuleBitmapDrawableResource8149);
+            pushFollow(FOLLOW_ruleBitmapDrawableResource_in_entryRuleBitmapDrawableResource10032);
             iv_ruleBitmapDrawableResource=ruleBitmapDrawableResource();
 
             state._fsp--;
 
              current =iv_ruleBitmapDrawableResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBitmapDrawableResource8159); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBitmapDrawableResource10042); 
 
             }
 
@@ -8897,7 +10791,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBitmapDrawableResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3682:1: ruleBitmapDrawableResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4557:1: ruleBitmapDrawableResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) ) ;
     public final EObject ruleBitmapDrawableResource() throws RecognitionException {
         EObject current = null;
 
@@ -8908,19 +10802,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3685:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3686:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4560:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4561:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3686:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3686:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4561:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4561:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_filename_2_0= RULE_ID ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3686:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3687:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4561:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4562:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3687:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3688:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4562:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4563:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBitmapDrawableResource8201); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBitmapDrawableResource10084); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getBitmapDrawableResourceAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -8940,17 +10834,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleBitmapDrawableResource8218); 
+            otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleBitmapDrawableResource10101); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getBitmapDrawableResourceAccess().getEqualsSignKeyword_1());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3708:1: ( (lv_filename_2_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3709:1: (lv_filename_2_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4583:1: ( (lv_filename_2_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4584:1: (lv_filename_2_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3709:1: (lv_filename_2_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3710:3: lv_filename_2_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4584:1: (lv_filename_2_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4585:3: lv_filename_2_0= RULE_ID
             {
-            lv_filename_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBitmapDrawableResource8235); 
+            lv_filename_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBitmapDrawableResource10118); 
 
             			newLeafNode(lv_filename_2_0, grammarAccess.getBitmapDrawableResourceAccess().getFilenameIDTerminalRuleCall_2_0()); 
             		
@@ -8991,7 +10885,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransitionDrawableResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3734:1: entryRuleTransitionDrawableResource returns [EObject current=null] : iv_ruleTransitionDrawableResource= ruleTransitionDrawableResource EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4609:1: entryRuleTransitionDrawableResource returns [EObject current=null] : iv_ruleTransitionDrawableResource= ruleTransitionDrawableResource EOF ;
     public final EObject entryRuleTransitionDrawableResource() throws RecognitionException {
         EObject current = null;
 
@@ -8999,17 +10893,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3735:2: (iv_ruleTransitionDrawableResource= ruleTransitionDrawableResource EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3736:2: iv_ruleTransitionDrawableResource= ruleTransitionDrawableResource EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4610:2: (iv_ruleTransitionDrawableResource= ruleTransitionDrawableResource EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4611:2: iv_ruleTransitionDrawableResource= ruleTransitionDrawableResource EOF
             {
              newCompositeNode(grammarAccess.getTransitionDrawableResourceRule()); 
-            pushFollow(FOLLOW_ruleTransitionDrawableResource_in_entryRuleTransitionDrawableResource8276);
+            pushFollow(FOLLOW_ruleTransitionDrawableResource_in_entryRuleTransitionDrawableResource10159);
             iv_ruleTransitionDrawableResource=ruleTransitionDrawableResource();
 
             state._fsp--;
 
              current =iv_ruleTransitionDrawableResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTransitionDrawableResource8286); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTransitionDrawableResource10169); 
 
             }
 
@@ -9027,7 +10921,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransitionDrawableResource"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3743:1: ruleTransitionDrawableResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4618:1: ruleTransitionDrawableResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleTransitionDrawableResource() throws RecognitionException {
         EObject current = null;
 
@@ -9039,19 +10933,19 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3746:28: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3747:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4621:28: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4622:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3747:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3747:2: ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4622:1: ( ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4622:2: ( (lv_name_0_0= RULE_ID ) ) ( (otherlv_1= RULE_ID ) ) otherlv_2= '<->' ( (otherlv_3= RULE_ID ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3747:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3748:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4622:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4623:1: (lv_name_0_0= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3748:1: (lv_name_0_0= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3749:3: lv_name_0_0= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4623:1: (lv_name_0_0= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4624:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTransitionDrawableResource8328); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTransitionDrawableResource10211); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getTransitionDrawableResourceAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -9071,18 +10965,18 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3765:2: ( (otherlv_1= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3766:1: (otherlv_1= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4640:2: ( (otherlv_1= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4641:1: (otherlv_1= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3766:1: (otherlv_1= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3767:3: otherlv_1= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4641:1: (otherlv_1= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4642:3: otherlv_1= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getTransitionDrawableResourceRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTransitionDrawableResource8353); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTransitionDrawableResource10236); 
 
             		newLeafNode(otherlv_1, grammarAccess.getTransitionDrawableResourceAccess().getFromBitmapDrawableResourceCrossReference_1_0()); 
             	
@@ -9092,22 +10986,22 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,58,FOLLOW_58_in_ruleTransitionDrawableResource8365); 
+            otherlv_2=(Token)match(input,71,FOLLOW_71_in_ruleTransitionDrawableResource10248); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getTransitionDrawableResourceAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_2());
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3782:1: ( (otherlv_3= RULE_ID ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3783:1: (otherlv_3= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4657:1: ( (otherlv_3= RULE_ID ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4658:1: (otherlv_3= RULE_ID )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3783:1: (otherlv_3= RULE_ID )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3784:3: otherlv_3= RULE_ID
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4658:1: (otherlv_3= RULE_ID )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4659:3: otherlv_3= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getTransitionDrawableResourceRule());
             	        }
                     
-            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTransitionDrawableResource8385); 
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTransitionDrawableResource10268); 
 
             		newLeafNode(otherlv_3, grammarAccess.getTransitionDrawableResourceAccess().getToBitmapDrawableResourceCrossReference_3_0()); 
             	
@@ -9138,7 +11032,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDimensionValue"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3803:1: entryRuleDimensionValue returns [String current=null] : iv_ruleDimensionValue= ruleDimensionValue EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4678:1: entryRuleDimensionValue returns [String current=null] : iv_ruleDimensionValue= ruleDimensionValue EOF ;
     public final String entryRuleDimensionValue() throws RecognitionException {
         String current = null;
 
@@ -9146,17 +11040,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3804:2: (iv_ruleDimensionValue= ruleDimensionValue EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3805:2: iv_ruleDimensionValue= ruleDimensionValue EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4679:2: (iv_ruleDimensionValue= ruleDimensionValue EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4680:2: iv_ruleDimensionValue= ruleDimensionValue EOF
             {
              newCompositeNode(grammarAccess.getDimensionValueRule()); 
-            pushFollow(FOLLOW_ruleDimensionValue_in_entryRuleDimensionValue8422);
+            pushFollow(FOLLOW_ruleDimensionValue_in_entryRuleDimensionValue10305);
             iv_ruleDimensionValue=ruleDimensionValue();
 
             state._fsp--;
 
              current =iv_ruleDimensionValue.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDimensionValue8433); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDimensionValue10316); 
 
             }
 
@@ -9174,7 +11068,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDimensionValue"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3812:1: ruleDimensionValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4687:1: ruleDimensionValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) ) ;
     public final AntlrDatatypeRuleToken ruleDimensionValue() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9185,16 +11079,16 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3815:28: ( (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3816:1: (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4690:28: ( (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4691:1: (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3816:1: (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3817:5: this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4691:1: (this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4692:5: this_FLOAT_0= ruleFLOAT (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' )
             {
              
                     newCompositeNode(grammarAccess.getDimensionValueAccess().getFLOATParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleFLOAT_in_ruleDimensionValue8480);
+            pushFollow(FOLLOW_ruleFLOAT_in_ruleDimensionValue10363);
             this_FLOAT_0=ruleFLOAT();
 
             state._fsp--;
@@ -9205,51 +11099,51 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3827:1: (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' )
-            int alt51=6;
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4702:1: (kw= 'dp' | kw= 'sp' | kw= 'pt' | kw= 'px' | kw= 'mm' | kw= 'in' )
+            int alt47=6;
             switch ( input.LA(1) ) {
-            case 59:
+            case 72:
                 {
-                alt51=1;
+                alt47=1;
                 }
                 break;
-            case 60:
+            case 73:
                 {
-                alt51=2;
+                alt47=2;
                 }
                 break;
-            case 61:
+            case 74:
                 {
-                alt51=3;
+                alt47=3;
                 }
                 break;
-            case 62:
+            case 75:
                 {
-                alt51=4;
+                alt47=4;
                 }
                 break;
-            case 63:
+            case 76:
                 {
-                alt51=5;
+                alt47=5;
                 }
                 break;
-            case 64:
+            case 77:
                 {
-                alt51=6;
+                alt47=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 47, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt51) {
+            switch (alt47) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3828:2: kw= 'dp'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4703:2: kw= 'dp'
                     {
-                    kw=(Token)match(input,59,FOLLOW_59_in_ruleDimensionValue8499); 
+                    kw=(Token)match(input,72,FOLLOW_72_in_ruleDimensionValue10382); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDimensionValueAccess().getDpKeyword_1_0()); 
@@ -9258,9 +11152,9 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3835:2: kw= 'sp'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4710:2: kw= 'sp'
                     {
-                    kw=(Token)match(input,60,FOLLOW_60_in_ruleDimensionValue8518); 
+                    kw=(Token)match(input,73,FOLLOW_73_in_ruleDimensionValue10401); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDimensionValueAccess().getSpKeyword_1_1()); 
@@ -9269,9 +11163,9 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3842:2: kw= 'pt'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4717:2: kw= 'pt'
                     {
-                    kw=(Token)match(input,61,FOLLOW_61_in_ruleDimensionValue8537); 
+                    kw=(Token)match(input,74,FOLLOW_74_in_ruleDimensionValue10420); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDimensionValueAccess().getPtKeyword_1_2()); 
@@ -9280,9 +11174,9 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3849:2: kw= 'px'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4724:2: kw= 'px'
                     {
-                    kw=(Token)match(input,62,FOLLOW_62_in_ruleDimensionValue8556); 
+                    kw=(Token)match(input,75,FOLLOW_75_in_ruleDimensionValue10439); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDimensionValueAccess().getPxKeyword_1_3()); 
@@ -9291,9 +11185,9 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3856:2: kw= 'mm'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4731:2: kw= 'mm'
                     {
-                    kw=(Token)match(input,63,FOLLOW_63_in_ruleDimensionValue8575); 
+                    kw=(Token)match(input,76,FOLLOW_76_in_ruleDimensionValue10458); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDimensionValueAccess().getMmKeyword_1_4()); 
@@ -9302,9 +11196,9 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3863:2: kw= 'in'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4738:2: kw= 'in'
                     {
-                    kw=(Token)match(input,64,FOLLOW_64_in_ruleDimensionValue8594); 
+                    kw=(Token)match(input,77,FOLLOW_77_in_ruleDimensionValue10477); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDimensionValueAccess().getInKeyword_1_5()); 
@@ -9336,7 +11230,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBOOL"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3876:1: entryRuleBOOL returns [String current=null] : iv_ruleBOOL= ruleBOOL EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4751:1: entryRuleBOOL returns [String current=null] : iv_ruleBOOL= ruleBOOL EOF ;
     public final String entryRuleBOOL() throws RecognitionException {
         String current = null;
 
@@ -9344,17 +11238,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3877:2: (iv_ruleBOOL= ruleBOOL EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3878:2: iv_ruleBOOL= ruleBOOL EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4752:2: (iv_ruleBOOL= ruleBOOL EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4753:2: iv_ruleBOOL= ruleBOOL EOF
             {
              newCompositeNode(grammarAccess.getBOOLRule()); 
-            pushFollow(FOLLOW_ruleBOOL_in_entryRuleBOOL8636);
+            pushFollow(FOLLOW_ruleBOOL_in_entryRuleBOOL10519);
             iv_ruleBOOL=ruleBOOL();
 
             state._fsp--;
 
              current =iv_ruleBOOL.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOL8647); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOL10530); 
 
             }
 
@@ -9372,7 +11266,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBOOL"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3885:1: ruleBOOL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'YES' | kw= 'NO' ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4760:1: ruleBOOL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleBOOL() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9381,44 +11275,44 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3888:28: ( (kw= 'YES' | kw= 'NO' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3889:1: (kw= 'YES' | kw= 'NO' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4763:28: ( (kw= 'true' | kw= 'false' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4764:1: (kw= 'true' | kw= 'false' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3889:1: (kw= 'YES' | kw= 'NO' )
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4764:1: (kw= 'true' | kw= 'false' )
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA52_0==65) ) {
-                alt52=1;
+            if ( (LA48_0==78) ) {
+                alt48=1;
             }
-            else if ( (LA52_0==66) ) {
-                alt52=2;
+            else if ( (LA48_0==79) ) {
+                alt48=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
-            switch (alt52) {
+            switch (alt48) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3890:2: kw= 'YES'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4765:2: kw= 'true'
                     {
-                    kw=(Token)match(input,65,FOLLOW_65_in_ruleBOOL8685); 
+                    kw=(Token)match(input,78,FOLLOW_78_in_ruleBOOL10568); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getBOOLAccess().getYESKeyword_0()); 
+                            newLeafNode(kw, grammarAccess.getBOOLAccess().getTrueKeyword_0()); 
                         
 
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3897:2: kw= 'NO'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4772:2: kw= 'false'
                     {
-                    kw=(Token)match(input,66,FOLLOW_66_in_ruleBOOL8704); 
+                    kw=(Token)match(input,79,FOLLOW_79_in_ruleBOOL10587); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getBOOLAccess().getNOKeyword_1()); 
+                            newLeafNode(kw, grammarAccess.getBOOLAccess().getFalseKeyword_1()); 
                         
 
                     }
@@ -9444,7 +11338,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFLOAT"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3910:1: entryRuleFLOAT returns [String current=null] : iv_ruleFLOAT= ruleFLOAT EOF ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4785:1: entryRuleFLOAT returns [String current=null] : iv_ruleFLOAT= ruleFLOAT EOF ;
     public final String entryRuleFLOAT() throws RecognitionException {
         String current = null;
 
@@ -9452,17 +11346,17 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3911:2: (iv_ruleFLOAT= ruleFLOAT EOF )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3912:2: iv_ruleFLOAT= ruleFLOAT EOF
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4786:2: (iv_ruleFLOAT= ruleFLOAT EOF )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4787:2: iv_ruleFLOAT= ruleFLOAT EOF
             {
              newCompositeNode(grammarAccess.getFLOATRule()); 
-            pushFollow(FOLLOW_ruleFLOAT_in_entryRuleFLOAT8745);
+            pushFollow(FOLLOW_ruleFLOAT_in_entryRuleFLOAT10628);
             iv_ruleFLOAT=ruleFLOAT();
 
             state._fsp--;
 
              current =iv_ruleFLOAT.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFLOAT8756); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFLOAT10639); 
 
             }
 
@@ -9480,7 +11374,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFLOAT"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3919:1: ruleFLOAT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4794:1: ruleFLOAT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) ;
     public final AntlrDatatypeRuleToken ruleFLOAT() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9491,36 +11385,36 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3922:28: ( (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3923:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4797:28: ( (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4798:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3923:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3923:6: this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )?
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4798:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )? )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4798:6: this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT )?
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFLOAT8796); 
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFLOAT10679); 
 
             		current.merge(this_INT_0);
                 
              
                 newLeafNode(this_INT_0, grammarAccess.getFLOATAccess().getINTTerminalRuleCall_0()); 
                 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3930:1: (kw= '.' this_INT_2= RULE_INT )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4805:1: (kw= '.' this_INT_2= RULE_INT )?
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA53_0==14) ) {
-                alt53=1;
+            if ( (LA49_0==14) ) {
+                alt49=1;
             }
-            switch (alt53) {
+            switch (alt49) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3931:2: kw= '.' this_INT_2= RULE_INT
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4806:2: kw= '.' this_INT_2= RULE_INT
                     {
-                    kw=(Token)match(input,14,FOLLOW_14_in_ruleFLOAT8815); 
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleFLOAT10698); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFLOATAccess().getFullStopKeyword_1_0()); 
                         
-                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFLOAT8830); 
+                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFLOAT10713); 
 
                     		current.merge(this_INT_2);
                         
@@ -9554,7 +11448,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApiLevel"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3951:1: ruleApiLevel returns [Enumerator current=null] : ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4826:1: ruleApiLevel returns [Enumerator current=null] : ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) ) ;
     public final Enumerator ruleApiLevel() throws RecognitionException {
         Enumerator current = null;
 
@@ -9567,57 +11461,57 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3953:28: ( ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3954:1: ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4828:28: ( ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4829:1: ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3954:1: ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) )
-            int alt54=6;
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4829:1: ( (enumLiteral_0= 'Android 2.2' ) | (enumLiteral_1= 'Android 2.3.1' ) | (enumLiteral_2= 'Android 2.3.3' ) | (enumLiteral_3= 'Android 3.0' ) | (enumLiteral_4= 'Android 3.1' ) | (enumLiteral_5= 'Android 4.0' ) )
+            int alt50=6;
             switch ( input.LA(1) ) {
-            case 67:
+            case 80:
                 {
-                alt54=1;
+                alt50=1;
                 }
                 break;
-            case 68:
+            case 81:
                 {
-                alt54=2;
+                alt50=2;
                 }
                 break;
-            case 69:
+            case 82:
                 {
-                alt54=3;
+                alt50=3;
                 }
                 break;
-            case 70:
+            case 83:
                 {
-                alt54=4;
+                alt50=4;
                 }
                 break;
-            case 71:
+            case 84:
                 {
-                alt54=5;
+                alt50=5;
                 }
                 break;
-            case 72:
+            case 85:
                 {
-                alt54=6;
+                alt50=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 54, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt54) {
+            switch (alt50) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3954:2: (enumLiteral_0= 'Android 2.2' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4829:2: (enumLiteral_0= 'Android 2.2' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3954:2: (enumLiteral_0= 'Android 2.2' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3954:4: enumLiteral_0= 'Android 2.2'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4829:2: (enumLiteral_0= 'Android 2.2' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4829:4: enumLiteral_0= 'Android 2.2'
                     {
-                    enumLiteral_0=(Token)match(input,67,FOLLOW_67_in_ruleApiLevel8891); 
+                    enumLiteral_0=(Token)match(input,80,FOLLOW_80_in_ruleApiLevel10774); 
 
                             current = grammarAccess.getApiLevelAccess().getAPI8EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getApiLevelAccess().getAPI8EnumLiteralDeclaration_0()); 
@@ -9629,12 +11523,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3960:6: (enumLiteral_1= 'Android 2.3.1' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4835:6: (enumLiteral_1= 'Android 2.3.1' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3960:6: (enumLiteral_1= 'Android 2.3.1' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3960:8: enumLiteral_1= 'Android 2.3.1'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4835:6: (enumLiteral_1= 'Android 2.3.1' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4835:8: enumLiteral_1= 'Android 2.3.1'
                     {
-                    enumLiteral_1=(Token)match(input,68,FOLLOW_68_in_ruleApiLevel8908); 
+                    enumLiteral_1=(Token)match(input,81,FOLLOW_81_in_ruleApiLevel10791); 
 
                             current = grammarAccess.getApiLevelAccess().getAPI9EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getApiLevelAccess().getAPI9EnumLiteralDeclaration_1()); 
@@ -9646,12 +11540,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3966:6: (enumLiteral_2= 'Android 2.3.3' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4841:6: (enumLiteral_2= 'Android 2.3.3' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3966:6: (enumLiteral_2= 'Android 2.3.3' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3966:8: enumLiteral_2= 'Android 2.3.3'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4841:6: (enumLiteral_2= 'Android 2.3.3' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4841:8: enumLiteral_2= 'Android 2.3.3'
                     {
-                    enumLiteral_2=(Token)match(input,69,FOLLOW_69_in_ruleApiLevel8925); 
+                    enumLiteral_2=(Token)match(input,82,FOLLOW_82_in_ruleApiLevel10808); 
 
                             current = grammarAccess.getApiLevelAccess().getAPI10EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getApiLevelAccess().getAPI10EnumLiteralDeclaration_2()); 
@@ -9663,12 +11557,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3972:6: (enumLiteral_3= 'Android 3.0' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4847:6: (enumLiteral_3= 'Android 3.0' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3972:6: (enumLiteral_3= 'Android 3.0' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3972:8: enumLiteral_3= 'Android 3.0'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4847:6: (enumLiteral_3= 'Android 3.0' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4847:8: enumLiteral_3= 'Android 3.0'
                     {
-                    enumLiteral_3=(Token)match(input,70,FOLLOW_70_in_ruleApiLevel8942); 
+                    enumLiteral_3=(Token)match(input,83,FOLLOW_83_in_ruleApiLevel10825); 
 
                             current = grammarAccess.getApiLevelAccess().getAPI11EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getApiLevelAccess().getAPI11EnumLiteralDeclaration_3()); 
@@ -9680,12 +11574,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3978:6: (enumLiteral_4= 'Android 3.1' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4853:6: (enumLiteral_4= 'Android 3.1' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3978:6: (enumLiteral_4= 'Android 3.1' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3978:8: enumLiteral_4= 'Android 3.1'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4853:6: (enumLiteral_4= 'Android 3.1' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4853:8: enumLiteral_4= 'Android 3.1'
                     {
-                    enumLiteral_4=(Token)match(input,71,FOLLOW_71_in_ruleApiLevel8959); 
+                    enumLiteral_4=(Token)match(input,84,FOLLOW_84_in_ruleApiLevel10842); 
 
                             current = grammarAccess.getApiLevelAccess().getAPI12EnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getApiLevelAccess().getAPI12EnumLiteralDeclaration_4()); 
@@ -9697,12 +11591,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3984:6: (enumLiteral_5= 'Android 4.0' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4859:6: (enumLiteral_5= 'Android 4.0' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3984:6: (enumLiteral_5= 'Android 4.0' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3984:8: enumLiteral_5= 'Android 4.0'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4859:6: (enumLiteral_5= 'Android 4.0' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4859:8: enumLiteral_5= 'Android 4.0'
                     {
-                    enumLiteral_5=(Token)match(input,72,FOLLOW_72_in_ruleApiLevel8976); 
+                    enumLiteral_5=(Token)match(input,85,FOLLOW_85_in_ruleApiLevel10859); 
 
                             current = grammarAccess.getApiLevelAccess().getAPI14EnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getApiLevelAccess().getAPI14EnumLiteralDeclaration_5()); 
@@ -9734,7 +11628,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataTypes"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3994:1: ruleDataTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4869:1: ruleDataTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) ) ;
     public final Enumerator ruleDataTypes() throws RecognitionException {
         Enumerator current = null;
 
@@ -9745,47 +11639,47 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3996:28: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3997:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4871:28: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4872:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3997:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) )
-            int alt55=4;
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4872:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'float' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'int' ) )
+            int alt51=4;
             switch ( input.LA(1) ) {
-            case 73:
+            case 86:
                 {
-                alt55=1;
+                alt51=1;
                 }
                 break;
-            case 74:
+            case 87:
                 {
-                alt55=2;
+                alt51=2;
                 }
                 break;
-            case 75:
+            case 88:
                 {
-                alt55=3;
+                alt51=3;
                 }
                 break;
-            case 76:
+            case 89:
                 {
-                alt55=4;
+                alt51=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 55, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt55) {
+            switch (alt51) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3997:2: (enumLiteral_0= 'String' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4872:2: (enumLiteral_0= 'String' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3997:2: (enumLiteral_0= 'String' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:3997:4: enumLiteral_0= 'String'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4872:2: (enumLiteral_0= 'String' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4872:4: enumLiteral_0= 'String'
                     {
-                    enumLiteral_0=(Token)match(input,73,FOLLOW_73_in_ruleDataTypes9021); 
+                    enumLiteral_0=(Token)match(input,86,FOLLOW_86_in_ruleDataTypes10904); 
 
                             current = grammarAccess.getDataTypesAccess().getSTRINGEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getDataTypesAccess().getSTRINGEnumLiteralDeclaration_0()); 
@@ -9797,12 +11691,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4003:6: (enumLiteral_1= 'float' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4878:6: (enumLiteral_1= 'float' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4003:6: (enumLiteral_1= 'float' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4003:8: enumLiteral_1= 'float'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4878:6: (enumLiteral_1= 'float' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4878:8: enumLiteral_1= 'float'
                     {
-                    enumLiteral_1=(Token)match(input,74,FOLLOW_74_in_ruleDataTypes9038); 
+                    enumLiteral_1=(Token)match(input,87,FOLLOW_87_in_ruleDataTypes10921); 
 
                             current = grammarAccess.getDataTypesAccess().getFLOATEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getDataTypesAccess().getFLOATEnumLiteralDeclaration_1()); 
@@ -9814,12 +11708,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4009:6: (enumLiteral_2= 'boolean' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4884:6: (enumLiteral_2= 'boolean' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4009:6: (enumLiteral_2= 'boolean' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4009:8: enumLiteral_2= 'boolean'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4884:6: (enumLiteral_2= 'boolean' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4884:8: enumLiteral_2= 'boolean'
                     {
-                    enumLiteral_2=(Token)match(input,75,FOLLOW_75_in_ruleDataTypes9055); 
+                    enumLiteral_2=(Token)match(input,88,FOLLOW_88_in_ruleDataTypes10938); 
 
                             current = grammarAccess.getDataTypesAccess().getBOOLEANEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getDataTypesAccess().getBOOLEANEnumLiteralDeclaration_2()); 
@@ -9831,12 +11725,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4015:6: (enumLiteral_3= 'int' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4890:6: (enumLiteral_3= 'int' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4015:6: (enumLiteral_3= 'int' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4015:8: enumLiteral_3= 'int'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4890:6: (enumLiteral_3= 'int' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4890:8: enumLiteral_3= 'int'
                     {
-                    enumLiteral_3=(Token)match(input,76,FOLLOW_76_in_ruleDataTypes9072); 
+                    enumLiteral_3=(Token)match(input,89,FOLLOW_89_in_ruleDataTypes10955); 
 
                             current = grammarAccess.getDataTypesAccess().getINTEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getDataTypesAccess().getINTEnumLiteralDeclaration_3()); 
@@ -9868,7 +11762,7 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLayoutStyle"
-    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4025:1: ruleLayoutStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) ) ;
+    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4900:1: ruleLayoutStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) ) ;
     public final Enumerator ruleLayoutStyle() throws RecognitionException {
         Enumerator current = null;
 
@@ -9879,47 +11773,47 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4027:28: ( ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4028:1: ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4902:28: ( ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4903:1: ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4028:1: ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) )
-            int alt56=4;
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4903:1: ( (enumLiteral_0= 'fill' ) | (enumLiteral_1= 'wrap' ) | (enumLiteral_2= 'fill&wrap' ) | (enumLiteral_3= 'wrap&fill' ) )
+            int alt52=4;
             switch ( input.LA(1) ) {
-            case 77:
+            case 90:
                 {
-                alt56=1;
+                alt52=1;
                 }
                 break;
-            case 78:
+            case 91:
                 {
-                alt56=2;
+                alt52=2;
                 }
                 break;
-            case 79:
+            case 92:
                 {
-                alt56=3;
+                alt52=3;
                 }
                 break;
-            case 80:
+            case 93:
                 {
-                alt56=4;
+                alt52=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 56, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt56) {
+            switch (alt52) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4028:2: (enumLiteral_0= 'fill' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4903:2: (enumLiteral_0= 'fill' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4028:2: (enumLiteral_0= 'fill' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4028:4: enumLiteral_0= 'fill'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4903:2: (enumLiteral_0= 'fill' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4903:4: enumLiteral_0= 'fill'
                     {
-                    enumLiteral_0=(Token)match(input,77,FOLLOW_77_in_ruleLayoutStyle9117); 
+                    enumLiteral_0=(Token)match(input,90,FOLLOW_90_in_ruleLayoutStyle11000); 
 
                             current = grammarAccess.getLayoutStyleAccess().getFILLEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getLayoutStyleAccess().getFILLEnumLiteralDeclaration_0()); 
@@ -9931,12 +11825,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4034:6: (enumLiteral_1= 'wrap' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4909:6: (enumLiteral_1= 'wrap' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4034:6: (enumLiteral_1= 'wrap' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4034:8: enumLiteral_1= 'wrap'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4909:6: (enumLiteral_1= 'wrap' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4909:8: enumLiteral_1= 'wrap'
                     {
-                    enumLiteral_1=(Token)match(input,78,FOLLOW_78_in_ruleLayoutStyle9134); 
+                    enumLiteral_1=(Token)match(input,91,FOLLOW_91_in_ruleLayoutStyle11017); 
 
                             current = grammarAccess.getLayoutStyleAccess().getWRAPEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getLayoutStyleAccess().getWRAPEnumLiteralDeclaration_1()); 
@@ -9948,12 +11842,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4040:6: (enumLiteral_2= 'fill&wrap' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4915:6: (enumLiteral_2= 'fill&wrap' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4040:6: (enumLiteral_2= 'fill&wrap' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4040:8: enumLiteral_2= 'fill&wrap'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4915:6: (enumLiteral_2= 'fill&wrap' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4915:8: enumLiteral_2= 'fill&wrap'
                     {
-                    enumLiteral_2=(Token)match(input,79,FOLLOW_79_in_ruleLayoutStyle9151); 
+                    enumLiteral_2=(Token)match(input,92,FOLLOW_92_in_ruleLayoutStyle11034); 
 
                             current = grammarAccess.getLayoutStyleAccess().getFILL_WRAPEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getLayoutStyleAccess().getFILL_WRAPEnumLiteralDeclaration_2()); 
@@ -9965,12 +11859,12 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4046:6: (enumLiteral_3= 'wrap&fill' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4921:6: (enumLiteral_3= 'wrap&fill' )
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4046:6: (enumLiteral_3= 'wrap&fill' )
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4046:8: enumLiteral_3= 'wrap&fill'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4921:6: (enumLiteral_3= 'wrap&fill' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:4921:8: enumLiteral_3= 'wrap&fill'
                     {
-                    enumLiteral_3=(Token)match(input,80,FOLLOW_80_in_ruleLayoutStyle9168); 
+                    enumLiteral_3=(Token)match(input,93,FOLLOW_93_in_ruleLayoutStyle11051); 
 
                             current = grammarAccess.getLayoutStyleAccess().getWRAP_FILLEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getLayoutStyleAccess().getWRAP_FILLEnumLiteralDeclaration_3()); 
@@ -10003,65 +11897,65 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA44 dfa44 = new DFA44(this);
-    static final String DFA44_eotS =
+    protected DFA40 dfa40 = new DFA40(this);
+    static final String DFA40_eotS =
         "\13\uffff";
-    static final String DFA44_eofS =
-        "\7\uffff\1\12\3\uffff";
-    static final String DFA44_minS =
-        "\2\4\1\uffff\1\4\3\uffff\1\4\3\uffff";
-    static final String DFA44_maxS =
-        "\1\71\1\66\1\uffff\1\102\3\uffff\1\100\3\uffff";
-    static final String DFA44_acceptS =
-        "\2\uffff\1\6\1\uffff\1\7\1\3\1\1\1\uffff\1\4\1\5\1\2";
-    static final String DFA44_specialS =
+    static final String DFA40_eofS =
+        "\5\uffff\1\12\5\uffff";
+    static final String DFA40_minS =
+        "\2\4\1\uffff\1\4\1\uffff\1\4\5\uffff";
+    static final String DFA40_maxS =
+        "\1\106\1\103\1\uffff\1\117\1\uffff\1\115\5\uffff";
+    static final String DFA40_acceptS =
+        "\2\uffff\1\6\1\uffff\1\7\1\uffff\1\1\1\3\1\4\1\5\1\2";
+    static final String DFA40_specialS =
         "\13\uffff}>";
-    static final String[] DFA44_transitionS = {
-            "\1\1\62\uffff\1\2\1\uffff\1\2",
-            "\1\4\61\uffff\1\3",
+    static final String[] DFA40_transitionS = {
+            "\1\1\77\uffff\1\2\1\uffff\1\2",
+            "\1\4\76\uffff\1\3",
             "",
-            "\1\4\1\6\1\7\1\10\71\uffff\2\5",
+            "\1\4\1\5\1\6\1\10\106\uffff\2\7",
             "",
-            "",
-            "",
-            "\1\12\11\uffff\1\11\3\uffff\1\12\44\uffff\1\12\1\uffff\1\12"+
+            "\1\12\11\uffff\1\11\3\uffff\1\12\61\uffff\1\12\1\uffff\1\12"+
             "\1\uffff\6\11",
+            "",
+            "",
             "",
             "",
             ""
     };
 
-    static final short[] DFA44_eot = DFA.unpackEncodedString(DFA44_eotS);
-    static final short[] DFA44_eof = DFA.unpackEncodedString(DFA44_eofS);
-    static final char[] DFA44_min = DFA.unpackEncodedStringToUnsignedChars(DFA44_minS);
-    static final char[] DFA44_max = DFA.unpackEncodedStringToUnsignedChars(DFA44_maxS);
-    static final short[] DFA44_accept = DFA.unpackEncodedString(DFA44_acceptS);
-    static final short[] DFA44_special = DFA.unpackEncodedString(DFA44_specialS);
-    static final short[][] DFA44_transition;
+    static final short[] DFA40_eot = DFA.unpackEncodedString(DFA40_eotS);
+    static final short[] DFA40_eof = DFA.unpackEncodedString(DFA40_eofS);
+    static final char[] DFA40_min = DFA.unpackEncodedStringToUnsignedChars(DFA40_minS);
+    static final char[] DFA40_max = DFA.unpackEncodedStringToUnsignedChars(DFA40_maxS);
+    static final short[] DFA40_accept = DFA.unpackEncodedString(DFA40_acceptS);
+    static final short[] DFA40_special = DFA.unpackEncodedString(DFA40_specialS);
+    static final short[][] DFA40_transition;
 
     static {
-        int numStates = DFA44_transitionS.length;
-        DFA44_transition = new short[numStates][];
+        int numStates = DFA40_transitionS.length;
+        DFA40_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA44_transition[i] = DFA.unpackEncodedString(DFA44_transitionS[i]);
+            DFA40_transition[i] = DFA.unpackEncodedString(DFA40_transitionS[i]);
         }
     }
 
-    class DFA44 extends DFA {
+    class DFA40 extends DFA {
 
-        public DFA44(BaseRecognizer recognizer) {
+        public DFA40(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 44;
-            this.eot = DFA44_eot;
-            this.eof = DFA44_eof;
-            this.min = DFA44_min;
-            this.max = DFA44_max;
-            this.accept = DFA44_accept;
-            this.special = DFA44_special;
-            this.transition = DFA44_transition;
+            this.decisionNumber = 40;
+            this.eot = DFA40_eot;
+            this.eof = DFA40_eof;
+            this.min = DFA40_min;
+            this.max = DFA40_max;
+            this.accept = DFA40_accept;
+            this.special = DFA40_special;
+            this.transition = DFA40_transition;
         }
         public String getDescription() {
-            return "2907:1: (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource )";
+            return "3782:1: (this_StringResource_0= ruleStringResource | this_IntegerResource_1= ruleIntegerResource | this_BooleanResource_2= ruleBooleanResource | this_ColorResource_3= ruleColorResource | this_DimensionResource_4= ruleDimensionResource | this_ArrayResource_5= ruleArrayResource | this_DrawableResource_6= ruleDrawableResource )";
         }
     }
  
@@ -10069,8 +11963,8 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleAndroTextModelRoot_in_entryRuleAndroTextModelRoot75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAndroTextModelRoot85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_ruleAndroTextModelRoot123 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAndroTextModelRoot144 = new BitSet(new long[]{0x0020000081812000L});
-    public static final BitSet FOLLOW_ruleImport_in_ruleAndroTextModelRoot167 = new BitSet(new long[]{0x0020000081812000L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAndroTextModelRoot144 = new BitSet(new long[]{0x0000000081812000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_ruleImport_in_ruleAndroTextModelRoot167 = new BitSet(new long[]{0x0000000081812000L,0x0000000000000004L});
     public static final BitSet FOLLOW_ruleModelRoot_in_ruleAndroTextModelRoot189 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleModelRoot_in_entryRuleModelRoot225 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModelRoot235 = new BitSet(new long[]{0x0000000000000002L});
@@ -10109,338 +12003,422 @@ public class InternalAndroTextDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTargetApplication1061 = new BitSet(new long[]{0x0000000000201000L});
     public static final BitSet FOLLOW_12_in_ruleTargetApplication1074 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleAndroidPackageName_in_ruleTargetApplication1095 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleTargetApplication1109 = new BitSet(new long[]{0x0000000000000000L,0x00000000000001F8L});
+    public static final BitSet FOLLOW_21_in_ruleTargetApplication1109 = new BitSet(new long[]{0x0000000000000000L,0x00000000003F0000L});
     public static final BitSet FOLLOW_ruleApiLevel_in_ruleTargetApplication1130 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleTargetApplication1142 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleTargetApplication1160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndroidPackageName_in_entryRuleAndroidPackageName1210 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAndroidPackageName1221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroidPackageName1261 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleAndroidPackageName1280 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroidPackageName1295 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_ruleAndroidApplication_in_entryRuleAndroidApplication1342 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAndroidApplication1352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleAndroidApplication1389 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroidApplication1406 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleAndroidApplication1423 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleAndroidApplication1435 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAndroidApplication1458 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_ruleActivity_in_ruleAndroidApplication1479 = new BitSet(new long[]{0x000000000A040000L});
-    public static final BitSet FOLLOW_ruleAndroidApplicationModelElement_in_ruleAndroidApplication1500 = new BitSet(new long[]{0x000000000A040000L});
-    public static final BitSet FOLLOW_18_in_ruleAndroidApplication1513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndroidApplicationModelElement_in_entryRuleAndroidApplicationModelElement1549 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAndroidApplicationModelElement1559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActivity_in_ruleAndroidApplicationModelElement1606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTabActivity_in_ruleAndroidApplicationModelElement1633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActivity_in_entryRuleActivity1668 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActivity1678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleActivity1715 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleActivity1732 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleActivity1749 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleActivity1772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTabActivity_in_entryRuleTabActivity1808 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTabActivity1818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleTabActivity1855 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTabActivity1872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndroDataModelRoot_in_entryRuleAndroDataModelRoot1913 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAndroDataModelRoot1923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleAndroDataModelRoot1960 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroDataModelRoot1977 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleAndroDataModelRoot1994 = new BitSet(new long[]{0x0000000010040000L});
-    public static final BitSet FOLLOW_ruleEntity_in_ruleAndroDataModelRoot2015 = new BitSet(new long[]{0x0000000010040000L});
-    public static final BitSet FOLLOW_18_in_ruleAndroDataModelRoot2028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity2064 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEntity2074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleEntity2111 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity2128 = new BitSet(new long[]{0x0000000020020000L});
-    public static final BitSet FOLLOW_29_in_ruleEntity2146 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity2166 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleEntity2180 = new BitSet(new long[]{0x0000000000040010L});
-    public static final BitSet FOLLOW_ruleProperty_in_ruleEntity2201 = new BitSet(new long[]{0x0000000000040010L});
-    public static final BitSet FOLLOW_18_in_ruleEntity2214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty2250 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleProperty2260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleProperty2302 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleProperty2319 = new BitSet(new long[]{0x0000000000000010L,0x0000000000001E00L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_ruleProperty2340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRef_in_entryRuleTypeRef2376 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeRef2386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypesRef_in_ruleTypeRef2433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntityTypeRef_in_ruleTypeRef2460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypesRef_in_entryRuleDataTypesRef2495 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDataTypesRef2505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypes_in_ruleDataTypesRef2550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntityTypeRef_in_entryRuleEntityTypeRef2585 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEntityTypeRef2595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntityTypeRef2642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndroGuiModelRoot_in_entryRuleAndroGuiModelRoot2677 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAndroGuiModelRoot2687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleAndroGuiModelRoot2724 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroGuiModelRoot2741 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleAndroGuiModelRoot2758 = new BitSet(new long[]{0x0010003300040000L});
-    public static final BitSet FOLLOW_ruleRootLayout_in_ruleAndroGuiModelRoot2779 = new BitSet(new long[]{0x0010003300040000L});
-    public static final BitSet FOLLOW_18_in_ruleAndroGuiModelRoot2792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUIElement_in_entryRuleUIElement2828 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUIElement2838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWidget_in_ruleUIElement2885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLayout_in_ruleUIElement2912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLayout_in_entryRuleLayout2947 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLayout2957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRootLayout_in_ruleLayout3003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRootLayout_in_entryRuleRootLayout3037 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRootLayout3047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBaseLayout_in_ruleRootLayout3094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePreferenceScreen_in_ruleRootLayout3121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBaseLayout_in_entryRuleBaseLayout3156 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBaseLayout3166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLinearLayout_in_ruleBaseLayout3213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbsoluteLayout_in_ruleBaseLayout3240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFrameLayout_in_ruleBaseLayout3267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRelativeLayout_in_ruleBaseLayout3294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbsoluteLayout_in_entryRuleAbsoluteLayout3329 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbsoluteLayout3339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleAbsoluteLayout3376 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAbsoluteLayout3393 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleAbsoluteLayout3420 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleAbsoluteLayout3432 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_ruleUIElement_in_ruleAbsoluteLayout3453 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_18_in_ruleAbsoluteLayout3466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLinearLayout_in_entryRuleLinearLayout3502 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLinearLayout3512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleLinearLayout3549 = new BitSet(new long[]{0x0000000C00000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleLinearLayout3566 = new BitSet(new long[]{0x0000000C00000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_34_in_ruleLinearLayout3591 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_35_in_ruleLinearLayout3622 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleLinearLayout3645 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleLinearLayout3657 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_ruleUIElement_in_ruleLinearLayout3678 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_18_in_ruleLinearLayout3691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFrameLayout_in_entryRuleFrameLayout3727 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFrameLayout3737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleFrameLayout3774 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFrameLayout3791 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleFrameLayout3818 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleFrameLayout3830 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_ruleUIElement_in_ruleFrameLayout3851 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_18_in_ruleFrameLayout3864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRelativeLayout_in_entryRuleRelativeLayout3900 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRelativeLayout3910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleRelativeLayout3947 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRelativeLayout3964 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRelativeLayout3991 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleRelativeLayout4003 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_ruleUIElement_in_ruleRelativeLayout4024 = new BitSet(new long[]{0x0011F3F300040000L});
-    public static final BitSet FOLLOW_18_in_ruleRelativeLayout4037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWidget_in_entryRuleWidget4073 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWidget4083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextView_in_ruleWidget4130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEditText_in_ruleWidget4157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleButton_in_ruleWidget4184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListView_in_ruleWidget4211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpinner_in_ruleWidget4238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRadioGroup_in_ruleWidget4265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCheckBox_in_ruleWidget4292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRatingBar_in_ruleWidget4319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleToggleButton_in_ruleWidget4346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextView_in_entryRuleTextView4381 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTextView4391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleTextView4428 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTextView4445 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextView4468 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleTextView4494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEditText_in_entryRuleEditText4530 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEditText4540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleEditText4577 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEditText4594 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEditText4617 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleEditText4643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleButton_in_entryRuleButton4679 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleButton4689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleButton4726 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleButton4743 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleButton4766 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleButton4792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListView_in_entryRuleListView4828 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleListView4838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleListView4875 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleListView4892 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleListView4918 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleListView4930 = new BitSet(new long[]{0x00000C0000040000L});
-    public static final BitSet FOLLOW_42_in_ruleListView4943 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleListView4966 = new BitSet(new long[]{0x0000080000040000L});
-    public static final BitSet FOLLOW_43_in_ruleListView4981 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleListView5004 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleListView5018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpinner_in_entryRuleSpinner5054 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpinner5064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleSpinner5101 = new BitSet(new long[]{0x0000040000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSpinner5118 = new BitSet(new long[]{0x0000040000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_42_in_ruleSpinner5137 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleSpinner5160 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleSpinner5183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCheckBox_in_entryRuleCheckBox5219 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCheckBox5229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleCheckBox5266 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCheckBox5283 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleCheckBox5306 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleCheckBox5332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRadioGroup_in_entryRuleRadioGroup5368 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRadioGroup5378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleRadioGroup5415 = new BitSet(new long[]{0x0000000C00000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRadioGroup5432 = new BitSet(new long[]{0x0000000C00000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_34_in_ruleRadioGroup5457 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_35_in_ruleRadioGroup5488 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRadioGroup5511 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleRadioGroup5523 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_ruleRadioButton_in_ruleRadioGroup5544 = new BitSet(new long[]{0x0008000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleRadioGroup5557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRatingBar_in_entryRuleRatingBar5593 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRatingBar5603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_ruleRatingBar5640 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRatingBar5657 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleRatingBar5680 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRatingBar5706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleToggleButton_in_entryRuleToggleButton5742 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleToggleButton5752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleToggleButton5789 = new BitSet(new long[]{0x0002000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleToggleButton5806 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleToggleButton5824 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleToggleButton5841 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleToggleButton5858 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleToggleButton5875 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleToggleButton5901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRadioButton_in_entryRuleRadioButton5937 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRadioButton5947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleRadioButton5984 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRadioButton6001 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleRadioButton6024 = new BitSet(new long[]{0x0000000000000010L,0x000000000001E000L});
-    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRadioButton6050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePreferenceScreen_in_entryRulePreferenceScreen6086 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePreferenceScreen6096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_rulePreferenceScreen6133 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePreferenceScreen6150 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rulePreferenceScreen6172 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_rulePreferenceScreen6189 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_rulePreferenceScreen6201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndroResModelRoot_in_entryRuleAndroResModelRoot6237 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAndroResModelRoot6247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleAndroResModelRoot6284 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroResModelRoot6301 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleAndroResModelRoot6318 = new BitSet(new long[]{0x0280000000040010L});
-    public static final BitSet FOLLOW_ruleResource_in_ruleAndroResModelRoot6339 = new BitSet(new long[]{0x0280000000040010L});
-    public static final BitSet FOLLOW_18_in_ruleAndroResModelRoot6352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleResource_in_entryRuleResource6388 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleResource6398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringResource_in_ruleResource6445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerResource_in_ruleResource6472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanResource_in_ruleResource6499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColorResource_in_ruleResource6526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDimensionResource_in_ruleResource6553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayResource_in_ruleResource6580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDrawableResource_in_ruleResource6607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringResource_in_entryRuleStringResource6642 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringResource6652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStringResource6694 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleStringResource6711 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringResource6728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerResource_in_entryRuleIntegerResource6769 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerResource6779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleIntegerResource6821 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleIntegerResource6838 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleIntegerResource6855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanResource_in_entryRuleBooleanResource6896 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanResource6906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBooleanResource6948 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleBooleanResource6965 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_ruleBOOL_in_ruleBooleanResource6986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColorResource_in_entryRuleColorResource7022 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleColorResource7032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleColorResource7074 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleColorResource7091 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_HEX_COLOR_in_ruleColorResource7108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDimensionResource_in_entryRuleDimensionResource7149 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDimensionResource7159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDimensionResource7201 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleDimensionResource7218 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleDimensionValue_in_ruleDimensionResource7239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayResource_in_entryRuleArrayResource7275 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArrayResource7285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerArrayResource_in_ruleArrayResource7332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringArrayResource_in_ruleArrayResource7359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerArrayResource_in_entryRuleIntegerArrayResource7394 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerArrayResource7404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleIntegerArrayResource7441 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleIntegerArrayResource7458 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleIntegerArrayResource7475 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource7497 = new BitSet(new long[]{0x0100000000040000L});
-    public static final BitSet FOLLOW_56_in_ruleIntegerArrayResource7510 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource7531 = new BitSet(new long[]{0x0100000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleIntegerArrayResource7546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerArrayEntry_in_entryRuleIntegerArrayEntry7582 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerArrayEntry7592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleIntegerArrayEntry7635 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleIntegerArrayEntry7652 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleIntegerArrayEntry7671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringArrayResource_in_entryRuleStringArrayResource7712 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringArrayResource7722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_ruleStringArrayResource7759 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStringArrayResource7776 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleStringArrayResource7793 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource7815 = new BitSet(new long[]{0x0100000000040000L});
-    public static final BitSet FOLLOW_56_in_ruleStringArrayResource7828 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource7849 = new BitSet(new long[]{0x0100000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleStringArrayResource7864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringArrayEntry_in_entryRuleStringArrayEntry7900 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringArrayEntry7910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStringArrayEntry7953 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleStringArrayEntry7970 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringArrayEntry7989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDrawableResource_in_entryRuleDrawableResource8030 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDrawableResource8040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBitmapDrawableResource_in_ruleDrawableResource8087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTransitionDrawableResource_in_ruleDrawableResource8114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBitmapDrawableResource_in_entryRuleBitmapDrawableResource8149 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBitmapDrawableResource8159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBitmapDrawableResource8201 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_54_in_ruleBitmapDrawableResource8218 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBitmapDrawableResource8235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTransitionDrawableResource_in_entryRuleTransitionDrawableResource8276 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTransitionDrawableResource8286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTransitionDrawableResource8328 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTransitionDrawableResource8353 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_58_in_ruleTransitionDrawableResource8365 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTransitionDrawableResource8385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDimensionValue_in_entryRuleDimensionValue8422 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDimensionValue8433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFLOAT_in_ruleDimensionValue8480 = new BitSet(new long[]{0xF800000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_59_in_ruleDimensionValue8499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleDimensionValue8518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleDimensionValue8537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleDimensionValue8556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleDimensionValue8575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleDimensionValue8594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBOOL_in_entryRuleBOOL8636 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBOOL8647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleBOOL8685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_ruleBOOL8704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFLOAT_in_entryRuleFLOAT8745 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFLOAT8756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleFLOAT8796 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleFLOAT8815 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleFLOAT8830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_ruleApiLevel8891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_ruleApiLevel8908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleApiLevel8925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_ruleApiLevel8942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleApiLevel8959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleApiLevel8976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_ruleDataTypes9021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_ruleDataTypes9038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleDataTypes9055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_ruleDataTypes9072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_ruleLayoutStyle9117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_ruleLayoutStyle9134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleLayoutStyle9151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleLayoutStyle9168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleTargetApplication1142 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleVersionCode_in_ruleTargetApplication1163 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleTargetApplication1175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVersionCode_in_entryRuleVersionCode1212 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVersionCode1223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleVersionCode1263 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleVersionCode1281 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleVersionCode1296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndroidPackageName_in_entryRuleAndroidPackageName1342 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAndroidPackageName1353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroidPackageName1393 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleAndroidPackageName1412 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroidPackageName1427 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_ruleAndroidApplication_in_entryRuleAndroidApplication1474 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAndroidApplication1484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleAndroidApplication1521 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroidApplication1538 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleAndroidApplication1555 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_24_in_ruleAndroidApplication1568 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAndroidApplication1591 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_ruleActivity_in_ruleAndroidApplication1614 = new BitSet(new long[]{0x000000000B040000L});
+    public static final BitSet FOLLOW_ruleAndroidApplicationModelElement_in_ruleAndroidApplication1635 = new BitSet(new long[]{0x000000000B040000L});
+    public static final BitSet FOLLOW_18_in_ruleAndroidApplication1648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndroidApplicationModelElement_in_entryRuleAndroidApplicationModelElement1684 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAndroidApplicationModelElement1694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivity_in_ruleAndroidApplicationModelElement1741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTabActivity_in_ruleAndroidApplicationModelElement1768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivity_in_entryRuleActivity1803 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActivity1813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleActivity1850 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleActivity1867 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleActivity1884 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleActivity1907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTabActivity_in_entryRuleTabActivity1943 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTabActivity1953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleTabActivity1990 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTabActivity2007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndroDataModelRoot_in_entryRuleAndroDataModelRoot2048 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAndroDataModelRoot2058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleAndroDataModelRoot2095 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroDataModelRoot2112 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleAndroDataModelRoot2129 = new BitSet(new long[]{0x0000000010040000L});
+    public static final BitSet FOLLOW_ruleEntity_in_ruleAndroDataModelRoot2150 = new BitSet(new long[]{0x0000000010040000L});
+    public static final BitSet FOLLOW_18_in_ruleAndroDataModelRoot2163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity2199 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEntity2209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleEntity2246 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity2263 = new BitSet(new long[]{0x0000000020020000L});
+    public static final BitSet FOLLOW_29_in_ruleEntity2281 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity2301 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleEntity2315 = new BitSet(new long[]{0x0000000000040010L});
+    public static final BitSet FOLLOW_ruleProperty_in_ruleEntity2336 = new BitSet(new long[]{0x0000000000040010L});
+    public static final BitSet FOLLOW_18_in_ruleEntity2349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty2385 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleProperty2395 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleProperty2437 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleProperty2454 = new BitSet(new long[]{0x0000000000000010L,0x0000000003C00000L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_ruleProperty2475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeRef_in_entryRuleTypeRef2511 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeRef2521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypesRef_in_ruleTypeRef2568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntityTypeRef_in_ruleTypeRef2595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypesRef_in_entryRuleDataTypesRef2630 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDataTypesRef2640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypes_in_ruleDataTypesRef2685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntityTypeRef_in_entryRuleEntityTypeRef2720 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEntityTypeRef2730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntityTypeRef2777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndroGuiModelRoot_in_entryRuleAndroGuiModelRoot2812 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAndroGuiModelRoot2822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleAndroGuiModelRoot2859 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroGuiModelRoot2876 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleAndroGuiModelRoot2893 = new BitSet(new long[]{0x0020003300040000L});
+    public static final BitSet FOLLOW_ruleRootLayout_in_ruleAndroGuiModelRoot2914 = new BitSet(new long[]{0x0020003300040000L});
+    public static final BitSet FOLLOW_18_in_ruleAndroGuiModelRoot2927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUIElement_in_entryRuleUIElement2963 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUIElement2973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWidget_in_ruleUIElement3020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLayout_in_ruleUIElement3047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLayout_in_entryRuleLayout3082 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLayout3092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRootLayout_in_ruleLayout3138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRootLayout_in_entryRuleRootLayout3172 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRootLayout3182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBaseLayout_in_ruleRootLayout3229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreferenceScreen_in_ruleRootLayout3256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBaseLayout_in_entryRuleBaseLayout3291 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBaseLayout3301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLinearLayout_in_ruleBaseLayout3348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbsoluteLayout_in_ruleBaseLayout3375 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFrameLayout_in_ruleBaseLayout3402 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelativeLayout_in_ruleBaseLayout3429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbsoluteLayout_in_entryRuleAbsoluteLayout3464 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbsoluteLayout3474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleAbsoluteLayout3511 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAbsoluteLayout3528 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleAbsoluteLayout3554 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleAbsoluteLayout3566 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_ruleUIElement_in_ruleAbsoluteLayout3587 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_18_in_ruleAbsoluteLayout3600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLinearLayout_in_entryRuleLinearLayout3636 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLinearLayout3646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_ruleLinearLayout3683 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleLinearLayout3700 = new BitSet(new long[]{0x0000000C00000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_34_in_ruleLinearLayout3724 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_35_in_ruleLinearLayout3755 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleLinearLayout3778 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleLinearLayout3790 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_ruleUIElement_in_ruleLinearLayout3811 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_18_in_ruleLinearLayout3824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFrameLayout_in_entryRuleFrameLayout3860 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFrameLayout3870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleFrameLayout3907 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFrameLayout3924 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleFrameLayout3950 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleFrameLayout3962 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_ruleUIElement_in_ruleFrameLayout3983 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_18_in_ruleFrameLayout3996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelativeLayout_in_entryRuleRelativeLayout4032 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRelativeLayout4042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleRelativeLayout4079 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRelativeLayout4096 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRelativeLayout4122 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleRelativeLayout4134 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_ruleUIElement_in_ruleRelativeLayout4155 = new BitSet(new long[]{0x0021F3F300040000L});
+    public static final BitSet FOLLOW_18_in_ruleRelativeLayout4168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWidget_in_entryRuleWidget4204 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWidget4214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextView_in_ruleWidget4261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEditText_in_ruleWidget4288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleButton_in_ruleWidget4315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListView_in_ruleWidget4342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpinner_in_ruleWidget4369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadioGroup_in_ruleWidget4396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCheckBox_in_ruleWidget4423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRatingBar_in_ruleWidget4450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleToggleButton_in_ruleWidget4477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextView_in_entryRuleTextView4512 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTextView4522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleTextView4559 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTextView4576 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextView4598 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleTextView4624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEditText_in_entryRuleEditText4660 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEditText4670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleEditText4707 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEditText4724 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEditText4746 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleEditText4772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleButton_in_entryRuleButton4808 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleButton4818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleButton4855 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleButton4872 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleButton4894 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleButton4920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListView_in_entryRuleListView4956 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleListView4966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleListView5003 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleListView5020 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleListView5046 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleListView5058 = new BitSet(new long[]{0x00000C0000040000L});
+    public static final BitSet FOLLOW_42_in_ruleListView5071 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleListView5094 = new BitSet(new long[]{0x0000080000040000L});
+    public static final BitSet FOLLOW_43_in_ruleListView5109 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleListView5132 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleListView5146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpinner_in_entryRuleSpinner5182 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpinner5192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleSpinner5229 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSpinner5246 = new BitSet(new long[]{0x0000040000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_42_in_ruleSpinner5264 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleSpinner5287 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleSpinner5310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCheckBox_in_entryRuleCheckBox5346 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCheckBox5356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleCheckBox5393 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCheckBox5410 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleCheckBox5432 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleCheckBox5458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadioGroup_in_entryRuleRadioGroup5494 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRadioGroup5504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleRadioGroup5541 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRadioGroup5558 = new BitSet(new long[]{0x0000000C00000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_34_in_ruleRadioGroup5582 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_35_in_ruleRadioGroup5613 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRadioGroup5636 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleRadioGroup5648 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_ruleRadioButton_in_ruleRadioGroup5669 = new BitSet(new long[]{0x0008000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleRadioGroup5682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRatingBar_in_entryRuleRatingBar5718 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRatingBar5728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleRatingBar5765 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRatingBar5782 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleRatingBar5804 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRatingBar5830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleToggleButton_in_entryRuleToggleButton5866 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleToggleButton5876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleToggleButton5913 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleToggleButton5930 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_49_in_ruleToggleButton5947 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleToggleButton5964 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleToggleButton5981 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleToggleButton5998 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleToggleButton6024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadioButton_in_entryRuleRadioButton6060 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRadioButton6070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleRadioButton6107 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRadioButton6124 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleRadioButton6146 = new BitSet(new long[]{0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleLayoutStyle_in_ruleRadioButton6172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractPreference_in_entryRuleAbstractPreference6208 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractPreference6218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreference_in_ruleAbstractPreference6265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEditTextPreference_in_ruleAbstractPreference6292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListPreference_in_ruleAbstractPreference6319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCheckBoxPreference_in_ruleAbstractPreference6346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRingtonePrefence_in_ruleAbstractPreference6373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreferenceCategory_in_ruleAbstractPreference6400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreferenceScreen_in_ruleAbstractPreference6427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreference_in_entryRulePreference6462 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePreference6472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_rulePreference6509 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePreference6526 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_rulePreference6543 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_rulePreferenceAttributes_in_rulePreference6564 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_rulePreference6576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreferenceScreen_in_entryRulePreferenceScreen6612 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePreferenceScreen6622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rulePreferenceScreen6659 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePreferenceScreen6676 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePreferenceScreen6698 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_rulePreferenceScreen6715 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_rulePreferenceAttributes_in_rulePreferenceScreen6736 = new BitSet(new long[]{0x07F0003300040000L});
+    public static final BitSet FOLLOW_ruleAbstractPreference_in_rulePreferenceScreen6757 = new BitSet(new long[]{0x07F0003300040000L});
+    public static final BitSet FOLLOW_18_in_rulePreferenceScreen6770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreferenceCategory_in_entryRulePreferenceCategory6806 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePreferenceCategory6816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rulePreferenceCategory6853 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePreferenceCategory6870 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_rulePreferenceCategory6887 = new BitSet(new long[]{0x07F0003300040000L});
+    public static final BitSet FOLLOW_ruleAbstractPreference_in_rulePreferenceCategory6908 = new BitSet(new long[]{0x07F0003300040000L});
+    public static final BitSet FOLLOW_18_in_rulePreferenceCategory6921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEditTextPreference_in_entryRuleEditTextPreference6957 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEditTextPreference6967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleEditTextPreference7004 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEditTextPreference7021 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleEditTextPreference7038 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_rulePreferenceAttributes_in_ruleEditTextPreference7059 = new BitSet(new long[]{0x8000000000040000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_ruleDialogPreferenceAttributes_in_ruleEditTextPreference7080 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleEditTextPreference7092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListPreference_in_entryRuleListPreference7128 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleListPreference7138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleListPreference7175 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleListPreference7192 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleListPreference7209 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_rulePreferenceAttributes_in_ruleListPreference7230 = new BitSet(new long[]{0x8000040000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_ruleDialogPreferenceAttributes_in_ruleListPreference7251 = new BitSet(new long[]{0x8000040000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_ruleListPreferenceAttributes_in_ruleListPreference7272 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleListPreference7284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCheckBoxPreference_in_entryRuleCheckBoxPreference7320 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCheckBoxPreference7330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleCheckBoxPreference7367 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleCheckBoxPreference7384 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleCheckBoxPreference7401 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_rulePreferenceAttributes_in_ruleCheckBoxPreference7422 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleCheckBoxPreference7434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRingtonePrefence_in_entryRuleRingtonePrefence7470 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRingtonePrefence7480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleRingtonePrefence7517 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleRingtonePrefence7534 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleRingtonePrefence7551 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_rulePreferenceAttributes_in_ruleRingtonePrefence7572 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleRingtonePrefence7584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreferenceAttributes_in_entryRulePreferenceAttributes7620 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePreferenceAttributes7630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_rulePreferenceAttributes7667 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePreferenceAttributes7684 = new BitSet(new long[]{0x7000000000000002L});
+    public static final BitSet FOLLOW_60_in_rulePreferenceAttributes7702 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePreferenceAttributes7719 = new BitSet(new long[]{0x6000000000000002L});
+    public static final BitSet FOLLOW_61_in_rulePreferenceAttributes7739 = new BitSet(new long[]{0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_ruleBOOL_in_rulePreferenceAttributes7760 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_62_in_rulePreferenceAttributes7775 = new BitSet(new long[]{0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_ruleBOOL_in_rulePreferenceAttributes7796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDialogPreferenceAttributes_in_entryRuleDialogPreferenceAttributes7834 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDialogPreferenceAttributes7844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleDialogPreferenceAttributes7882 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleDialogPreferenceAttributes7899 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_64_in_ruleDialogPreferenceAttributes7919 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleDialogPreferenceAttributes7936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListPreferenceAttributes_in_entryRuleListPreferenceAttributes7979 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleListPreferenceAttributes7989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleListPreferenceAttributes8026 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleListPreferenceAttributes8049 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleListPreferenceAttributes8061 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleListPreferenceAttributes8084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndroResModelRoot_in_entryRuleAndroResModelRoot8120 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAndroResModelRoot8130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleAndroResModelRoot8167 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAndroResModelRoot8184 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleAndroResModelRoot8201 = new BitSet(new long[]{0x0000000000040010L,0x0000000000000050L});
+    public static final BitSet FOLLOW_ruleResource_in_ruleAndroResModelRoot8222 = new BitSet(new long[]{0x0000000000040010L,0x0000000000000050L});
+    public static final BitSet FOLLOW_18_in_ruleAndroResModelRoot8235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleResource_in_entryRuleResource8271 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleResource8281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringResource_in_ruleResource8328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerResource_in_ruleResource8355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanResource_in_ruleResource8382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColorResource_in_ruleResource8409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDimensionResource_in_ruleResource8436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayResource_in_ruleResource8463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDrawableResource_in_ruleResource8490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringResource_in_entryRuleStringResource8525 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringResource8535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStringResource8577 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleStringResource8594 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringResource8611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerResource_in_entryRuleIntegerResource8652 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerResource8662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleIntegerResource8704 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleIntegerResource8721 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleIntegerResource8738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanResource_in_entryRuleBooleanResource8779 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanResource8789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBooleanResource8831 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleBooleanResource8848 = new BitSet(new long[]{0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_ruleBOOL_in_ruleBooleanResource8869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColorResource_in_entryRuleColorResource8905 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleColorResource8915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleColorResource8957 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleColorResource8974 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_HEX_COLOR_in_ruleColorResource8991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDimensionResource_in_entryRuleDimensionResource9032 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDimensionResource9042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDimensionResource9084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleDimensionResource9101 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleDimensionValue_in_ruleDimensionResource9122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayResource_in_entryRuleArrayResource9158 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArrayResource9168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerArrayResource_in_ruleArrayResource9215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringArrayResource_in_ruleArrayResource9242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerArrayResource_in_entryRuleIntegerArrayResource9277 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerArrayResource9287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_ruleIntegerArrayResource9324 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleIntegerArrayResource9341 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleIntegerArrayResource9358 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource9380 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_69_in_ruleIntegerArrayResource9393 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleIntegerArrayEntry_in_ruleIntegerArrayResource9414 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_18_in_ruleIntegerArrayResource9429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerArrayEntry_in_entryRuleIntegerArrayEntry9465 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerArrayEntry9475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleIntegerArrayEntry9518 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleIntegerArrayEntry9535 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleIntegerArrayEntry9554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringArrayResource_in_entryRuleStringArrayResource9595 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringArrayResource9605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_ruleStringArrayResource9642 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStringArrayResource9659 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleStringArrayResource9676 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource9698 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_69_in_ruleStringArrayResource9711 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_ruleStringArrayEntry_in_ruleStringArrayResource9732 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_18_in_ruleStringArrayResource9747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringArrayEntry_in_entryRuleStringArrayEntry9783 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringArrayEntry9793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStringArrayEntry9836 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleStringArrayEntry9853 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringArrayEntry9872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDrawableResource_in_entryRuleDrawableResource9913 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDrawableResource9923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBitmapDrawableResource_in_ruleDrawableResource9970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTransitionDrawableResource_in_ruleDrawableResource9997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBitmapDrawableResource_in_entryRuleBitmapDrawableResource10032 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBitmapDrawableResource10042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBitmapDrawableResource10084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleBitmapDrawableResource10101 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBitmapDrawableResource10118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTransitionDrawableResource_in_entryRuleTransitionDrawableResource10159 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTransitionDrawableResource10169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTransitionDrawableResource10211 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTransitionDrawableResource10236 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_71_in_ruleTransitionDrawableResource10248 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTransitionDrawableResource10268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDimensionValue_in_entryRuleDimensionValue10305 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDimensionValue10316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFLOAT_in_ruleDimensionValue10363 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003F00L});
+    public static final BitSet FOLLOW_72_in_ruleDimensionValue10382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_ruleDimensionValue10401 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_ruleDimensionValue10420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_ruleDimensionValue10439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_ruleDimensionValue10458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_ruleDimensionValue10477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBOOL_in_entryRuleBOOL10519 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBOOL10530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_ruleBOOL10568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_ruleBOOL10587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFLOAT_in_entryRuleFLOAT10628 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFLOAT10639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFLOAT10679 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleFLOAT10698 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFLOAT10713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_ruleApiLevel10774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleApiLevel10791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleApiLevel10808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_ruleApiLevel10825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_84_in_ruleApiLevel10842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleApiLevel10859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_ruleDataTypes10904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_ruleDataTypes10921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_ruleDataTypes10938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleDataTypes10955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_ruleLayoutStyle11000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleLayoutStyle11017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleLayoutStyle11034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_93_in_ruleLayoutStyle11051 = new BitSet(new long[]{0x0000000000000002L});
 
 }

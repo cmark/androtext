@@ -7,6 +7,7 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AbsoluteLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot;
@@ -24,12 +25,15 @@ import hu.bme.mit.androtext.lang.androTextDsl.BitmapDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.CheckBox;
+import hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorResource;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypes;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
+import hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource;
 import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.EditText;
+import hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
@@ -40,8 +44,13 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Layout;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
+import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.ModelRoot;
+import hu.bme.mit.androtext.lang.androTextDsl.Preference;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
@@ -49,6 +58,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.RadioGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
 import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Resource;
+import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
 import hu.bme.mit.androtext.lang.androTextDsl.RootLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Spinner;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayEntry;
@@ -329,7 +339,77 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass abstractPreferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass preferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass preferenceScreenEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass preferenceCategoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass editTextPreferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listPreferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass checkBoxPreferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ringtonePrefenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass preferenceAttributesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dialogPreferenceAttributesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listPreferenceAttributesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1335,6 +1415,46 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAbstractPreference()
+  {
+    return abstractPreferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAbstractPreference_Title()
+  {
+    return (EAttribute)abstractPreferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPreference()
+  {
+    return preferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPreference_PreferenceAttributes()
+  {
+    return (EReference)preferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPreferenceScreen()
   {
     return preferenceScreenEClass;
@@ -1345,9 +1465,259 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPreferenceScreen_Title()
+  public EReference getPreferenceScreen_PreferenceAttributes()
   {
-    return (EAttribute)preferenceScreenEClass.getEStructuralFeatures().get(0);
+    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPreferenceScreen_Preferences()
+  {
+    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPreferenceCategory()
+  {
+    return preferenceCategoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPreferenceCategory_Preferences()
+  {
+    return (EReference)preferenceCategoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEditTextPreference()
+  {
+    return editTextPreferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditTextPreference_PreferenceAttributes()
+  {
+    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditTextPreference_DialogPreferenceAttributes()
+  {
+    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getListPreference()
+  {
+    return listPreferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getListPreference_PreferenceAttributes()
+  {
+    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getListPreference_DialogPreferenceAttributes()
+  {
+    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getListPreference_ListPreferenceAttributes()
+  {
+    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCheckBoxPreference()
+  {
+    return checkBoxPreferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCheckBoxPreference_PreferenceAttributes()
+  {
+    return (EReference)checkBoxPreferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRingtonePrefence()
+  {
+    return ringtonePrefenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRingtonePrefence_PreferenceAttributes()
+  {
+    return (EReference)ringtonePrefenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPreferenceAttributes()
+  {
+    return preferenceAttributesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPreferenceAttributes_Key()
+  {
+    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPreferenceAttributes_Summary()
+  {
+    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPreferenceAttributes_Enabled()
+  {
+    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPreferenceAttributes_Persistent()
+  {
+    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDialogPreferenceAttributes()
+  {
+    return dialogPreferenceAttributesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDialogPreferenceAttributes_DialogTitle()
+  {
+    return (EAttribute)dialogPreferenceAttributesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDialogPreferenceAttributes_DefaultValue()
+  {
+    return (EAttribute)dialogPreferenceAttributesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getListPreferenceAttributes()
+  {
+    return listPreferenceAttributesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getListPreferenceAttributes_Entries()
+  {
+    return (EReference)listPreferenceAttributesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getListPreferenceAttributes_EntryValues()
+  {
+    return (EReference)listPreferenceAttributesEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1836,8 +2206,47 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEAttribute(radioButtonEClass, RADIO_BUTTON__TEXT);
     createEAttribute(radioButtonEClass, RADIO_BUTTON__LAYOUT_STYLE);
 
+    abstractPreferenceEClass = createEClass(ABSTRACT_PREFERENCE);
+    createEAttribute(abstractPreferenceEClass, ABSTRACT_PREFERENCE__TITLE);
+
+    preferenceEClass = createEClass(PREFERENCE);
+    createEReference(preferenceEClass, PREFERENCE__PREFERENCE_ATTRIBUTES);
+
     preferenceScreenEClass = createEClass(PREFERENCE_SCREEN);
-    createEAttribute(preferenceScreenEClass, PREFERENCE_SCREEN__TITLE);
+    createEReference(preferenceScreenEClass, PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES);
+    createEReference(preferenceScreenEClass, PREFERENCE_SCREEN__PREFERENCES);
+
+    preferenceCategoryEClass = createEClass(PREFERENCE_CATEGORY);
+    createEReference(preferenceCategoryEClass, PREFERENCE_CATEGORY__PREFERENCES);
+
+    editTextPreferenceEClass = createEClass(EDIT_TEXT_PREFERENCE);
+    createEReference(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES);
+    createEReference(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES);
+
+    listPreferenceEClass = createEClass(LIST_PREFERENCE);
+    createEReference(listPreferenceEClass, LIST_PREFERENCE__PREFERENCE_ATTRIBUTES);
+    createEReference(listPreferenceEClass, LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES);
+    createEReference(listPreferenceEClass, LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES);
+
+    checkBoxPreferenceEClass = createEClass(CHECK_BOX_PREFERENCE);
+    createEReference(checkBoxPreferenceEClass, CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES);
+
+    ringtonePrefenceEClass = createEClass(RINGTONE_PREFENCE);
+    createEReference(ringtonePrefenceEClass, RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES);
+
+    preferenceAttributesEClass = createEClass(PREFERENCE_ATTRIBUTES);
+    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__KEY);
+    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__SUMMARY);
+    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__ENABLED);
+    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__PERSISTENT);
+
+    dialogPreferenceAttributesEClass = createEClass(DIALOG_PREFERENCE_ATTRIBUTES);
+    createEAttribute(dialogPreferenceAttributesEClass, DIALOG_PREFERENCE_ATTRIBUTES__DIALOG_TITLE);
+    createEAttribute(dialogPreferenceAttributesEClass, DIALOG_PREFERENCE_ATTRIBUTES__DEFAULT_VALUE);
+
+    listPreferenceAttributesEClass = createEClass(LIST_PREFERENCE_ATTRIBUTES);
+    createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRIES);
+    createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES);
 
     androResModelRootEClass = createEClass(ANDRO_RES_MODEL_ROOT);
     createEReference(androResModelRootEClass, ANDRO_RES_MODEL_ROOT__RESOURCES);
@@ -1945,7 +2354,14 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     radioGroupEClass.getESuperTypes().add(this.getWidget());
     ratingBarEClass.getESuperTypes().add(this.getWidget());
     toggleButtonEClass.getESuperTypes().add(this.getWidget());
+    preferenceEClass.getESuperTypes().add(this.getAbstractPreference());
     preferenceScreenEClass.getESuperTypes().add(this.getRootLayout());
+    preferenceScreenEClass.getESuperTypes().add(this.getAbstractPreference());
+    preferenceCategoryEClass.getESuperTypes().add(this.getAbstractPreference());
+    editTextPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
+    listPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
+    checkBoxPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
+    ringtonePrefenceEClass.getESuperTypes().add(this.getAbstractPreference());
     androResModelRootEClass.getESuperTypes().add(this.getModelRoot());
     stringResourceEClass.getESuperTypes().add(this.getResource());
     integerResourceEClass.getESuperTypes().add(this.getResource());
@@ -2076,8 +2492,47 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEAttribute(getRadioButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRadioButton_LayoutStyle(), this.getLayoutStyle(), "layoutStyle", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(abstractPreferenceEClass, AbstractPreference.class, "AbstractPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbstractPreference_Title(), ecorePackage.getEString(), "title", null, 0, 1, AbstractPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(preferenceEClass, Preference.class, "Preference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, Preference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(preferenceScreenEClass, PreferenceScreen.class, "PreferenceScreen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPreferenceScreen_Title(), ecorePackage.getEString(), "title", null, 0, 1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPreferenceScreen_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPreferenceScreen_Preferences(), this.getAbstractPreference(), null, "preferences", null, 0, -1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(preferenceCategoryEClass, PreferenceCategory.class, "PreferenceCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPreferenceCategory_Preferences(), this.getAbstractPreference(), null, "preferences", null, 0, -1, PreferenceCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(editTextPreferenceEClass, EditTextPreference.class, "EditTextPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEditTextPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEditTextPreference_DialogPreferenceAttributes(), this.getDialogPreferenceAttributes(), null, "dialogPreferenceAttributes", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listPreferenceEClass, ListPreference.class, "ListPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListPreference_DialogPreferenceAttributes(), this.getDialogPreferenceAttributes(), null, "dialogPreferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListPreference_ListPreferenceAttributes(), this.getListPreferenceAttributes(), null, "listPreferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(checkBoxPreferenceEClass, CheckBoxPreference.class, "CheckBoxPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCheckBoxPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, CheckBoxPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ringtonePrefenceEClass, RingtonePrefence.class, "RingtonePrefence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRingtonePrefence_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, RingtonePrefence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(preferenceAttributesEClass, PreferenceAttributes.class, "PreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPreferenceAttributes_Key(), ecorePackage.getEString(), "key", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPreferenceAttributes_Summary(), ecorePackage.getEString(), "summary", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPreferenceAttributes_Enabled(), ecorePackage.getEString(), "enabled", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPreferenceAttributes_Persistent(), ecorePackage.getEString(), "persistent", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dialogPreferenceAttributesEClass, DialogPreferenceAttributes.class, "DialogPreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDialogPreferenceAttributes_DialogTitle(), ecorePackage.getEString(), "dialogTitle", null, 0, 1, DialogPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDialogPreferenceAttributes_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, DialogPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listPreferenceAttributesEClass, ListPreferenceAttributes.class, "ListPreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListPreferenceAttributes_Entries(), this.getStringArrayEntry(), null, "entries", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListPreferenceAttributes_EntryValues(), this.getStringArrayEntry(), null, "entryValues", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(androResModelRootEClass, AndroResModelRoot.class, "AndroResModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAndroResModelRoot_Resources(), this.getResource(), null, "resources", null, 0, -1, AndroResModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

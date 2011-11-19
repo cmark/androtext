@@ -138,8 +138,47 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RadioButton/text"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//RadioButton/layoutStyle"/>
     </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//AbstractPreference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//AbstractPreference/title"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Preference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Preference/preferenceAttributes"/>
+    </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//PreferenceScreen">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//PreferenceScreen/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//PreferenceScreen/preferenceAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//PreferenceScreen/preferences"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//PreferenceCategory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//PreferenceCategory/preferences"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//EditTextPreference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//EditTextPreference/preferenceAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//EditTextPreference/dialogPreferenceAttributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ListPreference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListPreference/preferenceAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListPreference/dialogPreferenceAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListPreference/listPreferenceAttributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//CheckBoxPreference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//CheckBoxPreference/preferenceAttributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//RingtonePrefence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//RingtonePrefence/preferenceAttributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//PreferenceAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//PreferenceAttributes/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//PreferenceAttributes/summary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//PreferenceAttributes/enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//PreferenceAttributes/persistent"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//DialogPreferenceAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//DialogPreferenceAttributes/dialogTitle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//DialogPreferenceAttributes/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ListPreferenceAttributes">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListPreferenceAttributes/entries"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListPreferenceAttributes/entryValues"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//AndroResModelRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroResModelRoot/resources"/>

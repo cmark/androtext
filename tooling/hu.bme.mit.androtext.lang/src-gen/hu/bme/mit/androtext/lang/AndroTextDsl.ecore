@@ -143,8 +143,58 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutStyle" eType="#//LayoutStyle"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PreferenceScreen" eSuperTypes="#//RootLayout">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractPreference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Preference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreferenceScreen" eSuperTypes="#//RootLayout #//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferences" upperBound="-1"
+        eType="#//AbstractPreference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreferenceCategory" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferences" upperBound="-1"
+        eType="#//AbstractPreference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditTextPreference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dialogPreferenceAttributes"
+        eType="#//DialogPreferenceAttributes" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListPreference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dialogPreferenceAttributes"
+        eType="#//DialogPreferenceAttributes" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listPreferenceAttributes"
+        eType="#//ListPreferenceAttributes" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckBoxPreference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RingtonePrefence" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreferenceAttributes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="persistent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DialogPreferenceAttributes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dialogTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListPreferenceAttributes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" eType="#//StringArrayEntry"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryValues" eType="#//StringArrayEntry"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroResModelRoot" eSuperTypes="#//ModelRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"

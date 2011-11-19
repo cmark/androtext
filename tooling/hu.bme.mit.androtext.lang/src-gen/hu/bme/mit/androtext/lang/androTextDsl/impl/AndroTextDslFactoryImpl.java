@@ -104,7 +104,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.RATING_BAR: return createRatingBar();
       case AndroTextDslPackage.TOGGLE_BUTTON: return createToggleButton();
       case AndroTextDslPackage.RADIO_BUTTON: return createRadioButton();
+      case AndroTextDslPackage.ABSTRACT_PREFERENCE: return createAbstractPreference();
+      case AndroTextDslPackage.PREFERENCE: return createPreference();
       case AndroTextDslPackage.PREFERENCE_SCREEN: return createPreferenceScreen();
+      case AndroTextDslPackage.PREFERENCE_CATEGORY: return createPreferenceCategory();
+      case AndroTextDslPackage.EDIT_TEXT_PREFERENCE: return createEditTextPreference();
+      case AndroTextDslPackage.LIST_PREFERENCE: return createListPreference();
+      case AndroTextDslPackage.CHECK_BOX_PREFERENCE: return createCheckBoxPreference();
+      case AndroTextDslPackage.RINGTONE_PREFENCE: return createRingtonePrefence();
+      case AndroTextDslPackage.PREFERENCE_ATTRIBUTES: return createPreferenceAttributes();
+      case AndroTextDslPackage.DIALOG_PREFERENCE_ATTRIBUTES: return createDialogPreferenceAttributes();
+      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES: return createListPreferenceAttributes();
       case AndroTextDslPackage.ANDRO_RES_MODEL_ROOT: return createAndroResModelRoot();
       case AndroTextDslPackage.RESOURCE: return createResource();
       case AndroTextDslPackage.STRING_RESOURCE: return createStringResource();
@@ -557,10 +567,120 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public AbstractPreference createAbstractPreference()
+  {
+    AbstractPreferenceImpl abstractPreference = new AbstractPreferenceImpl();
+    return abstractPreference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Preference createPreference()
+  {
+    PreferenceImpl preference = new PreferenceImpl();
+    return preference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PreferenceScreen createPreferenceScreen()
   {
     PreferenceScreenImpl preferenceScreen = new PreferenceScreenImpl();
     return preferenceScreen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PreferenceCategory createPreferenceCategory()
+  {
+    PreferenceCategoryImpl preferenceCategory = new PreferenceCategoryImpl();
+    return preferenceCategory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EditTextPreference createEditTextPreference()
+  {
+    EditTextPreferenceImpl editTextPreference = new EditTextPreferenceImpl();
+    return editTextPreference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ListPreference createListPreference()
+  {
+    ListPreferenceImpl listPreference = new ListPreferenceImpl();
+    return listPreference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CheckBoxPreference createCheckBoxPreference()
+  {
+    CheckBoxPreferenceImpl checkBoxPreference = new CheckBoxPreferenceImpl();
+    return checkBoxPreference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RingtonePrefence createRingtonePrefence()
+  {
+    RingtonePrefenceImpl ringtonePrefence = new RingtonePrefenceImpl();
+    return ringtonePrefence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PreferenceAttributes createPreferenceAttributes()
+  {
+    PreferenceAttributesImpl preferenceAttributes = new PreferenceAttributesImpl();
+    return preferenceAttributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DialogPreferenceAttributes createDialogPreferenceAttributes()
+  {
+    DialogPreferenceAttributesImpl dialogPreferenceAttributes = new DialogPreferenceAttributesImpl();
+    return dialogPreferenceAttributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ListPreferenceAttributes createListPreferenceAttributes()
+  {
+    ListPreferenceAttributesImpl listPreferenceAttributes = new ListPreferenceAttributesImpl();
+    return listPreferenceAttributes;
   }
 
   /**

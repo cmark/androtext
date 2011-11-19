@@ -15,10 +15,13 @@ import hu.bme.mit.androtext.lang.androTextDsl.BitmapDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.CheckBox;
+import hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorResource;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
+import hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource;
 import hu.bme.mit.androtext.lang.androTextDsl.EditText;
+import hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
@@ -27,13 +30,19 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayEntry;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
+import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
+import hu.bme.mit.androtext.lang.androTextDsl.Preference;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
 import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
 import hu.bme.mit.androtext.lang.androTextDsl.Spinner;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayEntry;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource;
@@ -173,6 +182,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.CHECK_BOX_PREFERENCE:
+				if(context == grammarAccess.getAbstractPreferenceRule() ||
+				   context == grammarAccess.getCheckBoxPreferenceRule()) {
+					sequence_CheckBoxPreference(context, (CheckBoxPreference) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.COLOR_RESOURCE:
 				if(context == grammarAccess.getColorResourceRule() ||
 				   context == grammarAccess.getResourceRule()) {
@@ -184,6 +200,12 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				if(context == grammarAccess.getDataTypesRefRule() ||
 				   context == grammarAccess.getTypeRefRule()) {
 					sequence_DataTypesRef(context, (DataTypesRef) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.DIALOG_PREFERENCE_ATTRIBUTES:
+				if(context == grammarAccess.getDialogPreferenceAttributesRule()) {
+					sequence_DialogPreferenceAttributes(context, (DialogPreferenceAttributes) semanticObject); 
 					return; 
 				}
 				else break;
@@ -199,6 +221,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getUIElementRule() ||
 				   context == grammarAccess.getWidgetRule()) {
 					sequence_EditText(context, (EditText) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.EDIT_TEXT_PREFERENCE:
+				if(context == grammarAccess.getAbstractPreferenceRule() ||
+				   context == grammarAccess.getEditTextPreferenceRule()) {
+					sequence_EditTextPreference(context, (EditTextPreference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -262,6 +291,19 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.LIST_PREFERENCE:
+				if(context == grammarAccess.getAbstractPreferenceRule() ||
+				   context == grammarAccess.getListPreferenceRule()) {
+					sequence_ListPreference(context, (ListPreference) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES:
+				if(context == grammarAccess.getListPreferenceAttributesRule()) {
+					sequence_ListPreferenceAttributes(context, (ListPreferenceAttributes) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.LIST_VIEW:
 				if(context == grammarAccess.getListViewRule() ||
 				   context == grammarAccess.getUIElementRule() ||
@@ -270,8 +312,29 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.PREFERENCE:
+				if(context == grammarAccess.getAbstractPreferenceRule() ||
+				   context == grammarAccess.getPreferenceRule()) {
+					sequence_Preference(context, (Preference) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.PREFERENCE_ATTRIBUTES:
+				if(context == grammarAccess.getPreferenceAttributesRule()) {
+					sequence_PreferenceAttributes(context, (PreferenceAttributes) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.PREFERENCE_CATEGORY:
+				if(context == grammarAccess.getAbstractPreferenceRule() ||
+				   context == grammarAccess.getPreferenceCategoryRule()) {
+					sequence_PreferenceCategory(context, (PreferenceCategory) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.PREFERENCE_SCREEN:
-				if(context == grammarAccess.getLayoutRule() ||
+				if(context == grammarAccess.getAbstractPreferenceRule() ||
+				   context == grammarAccess.getLayoutRule() ||
 				   context == grammarAccess.getPreferenceScreenRule() ||
 				   context == grammarAccess.getRootLayoutRule() ||
 				   context == grammarAccess.getUIElementRule()) {
@@ -314,6 +377,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getRootLayoutRule() ||
 				   context == grammarAccess.getUIElementRule()) {
 					sequence_RelativeLayout(context, (RelativeLayout) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.RINGTONE_PREFENCE:
+				if(context == grammarAccess.getAbstractPreferenceRule() ||
+				   context == grammarAccess.getRingtonePrefenceRule()) {
+					sequence_RingtonePrefence(context, (RingtonePrefence) semanticObject); 
 					return; 
 				}
 				else break;
@@ -389,7 +459,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? layoutStyle=LayoutStyle elements+=UIElement*)
+	 *     (name=ID layoutStyle=LayoutStyle elements+=UIElement*)
 	 */
 	protected void sequence_AbsoluteLayout(EObject context, AbsoluteLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -462,7 +532,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID dataroot=[AndroDataModelRoot|QualifiedName] mainActivity=Activity modelElements+=AndroidApplicationModelElement*)
+	 *     (name=ID dataroot=[AndroDataModelRoot|QualifiedName]? mainActivity=Activity modelElements+=AndroidApplicationModelElement*)
 	 */
 	protected void sequence_AndroidApplication(EObject context, AndroidApplication semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -509,19 +579,64 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? text=STRING layoutStyle=LayoutStyle)
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_Button(EObject context, Button semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.BUTTON__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.BUTTON__TEXT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getButtonAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getButtonAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? text=STRING layoutStyle=LayoutStyle)
+	 *     (title=STRING preferenceAttributes=PreferenceAttributes)
+	 */
+	protected void sequence_CheckBoxPreference(EObject context, CheckBoxPreference semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCheckBoxPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getCheckBoxPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0(), semanticObject.getPreferenceAttributes());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_CheckBox(EObject context, CheckBox semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.CHECK_BOX__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.CHECK_BOX__TEXT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCheckBoxAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCheckBoxAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getCheckBoxAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
 	}
 	
 	
@@ -562,6 +677,15 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     (dialogTitle=STRING? defaultValue=STRING?)
+	 */
+	protected void sequence_DialogPreferenceAttributes(EObject context, DialogPreferenceAttributes semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID value=DimensionValue)
 	 */
 	protected void sequence_DimensionResource(EObject context, DimensionResource semanticObject) {
@@ -581,10 +705,45 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? text=STRING layoutStyle=LayoutStyle)
+	 *     (title=STRING preferenceAttributes=PreferenceAttributes dialogPreferenceAttributes=DialogPreferenceAttributes)
+	 */
+	protected void sequence_EditTextPreference(EObject context, EditTextPreference semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEditTextPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getEditTextPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0(), semanticObject.getPreferenceAttributes());
+		feeder.accept(grammarAccess.getEditTextPreferenceAccess().getDialogPreferenceAttributesDialogPreferenceAttributesParserRuleCall_4_0(), semanticObject.getDialogPreferenceAttributes());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_EditText(EObject context, EditText semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.EDIT_TEXT__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.EDIT_TEXT__TEXT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEditTextAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEditTextAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getEditTextAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
 	}
 	
 	
@@ -615,7 +774,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? layoutStyle=LayoutStyle elements+=UIElement*)
+	 *     (name=ID layoutStyle=LayoutStyle elements+=UIElement*)
 	 */
 	protected void sequence_FrameLayout(EObject context, FrameLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -677,10 +836,59 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? orientation?='horizontal'? layoutStyle=LayoutStyle elements+=UIElement*)
+	 *     (name=ID orientation?='horizontal'? layoutStyle=LayoutStyle elements+=UIElement*)
 	 */
 	protected void sequence_LinearLayout(EObject context, LinearLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (entries=[StringArrayEntry|QualifiedName] entryValues=[StringArrayEntry|QualifiedName])
+	 */
+	protected void sequence_ListPreferenceAttributes(EObject context, ListPreferenceAttributes semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE_ATTRIBUTES__ENTRIES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE_ATTRIBUTES__ENTRIES));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getListPreferenceAttributesAccess().getEntriesStringArrayEntryQualifiedNameParserRuleCall_1_0_1(), semanticObject.getEntries());
+		feeder.accept(grammarAccess.getListPreferenceAttributesAccess().getEntryValuesStringArrayEntryQualifiedNameParserRuleCall_3_0_1(), semanticObject.getEntryValues());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         title=STRING 
+	 *         preferenceAttributes=PreferenceAttributes 
+	 *         dialogPreferenceAttributes=DialogPreferenceAttributes 
+	 *         listPreferenceAttributes=ListPreferenceAttributes
+	 *     )
+	 */
+	protected void sequence_ListPreference(EObject context, ListPreference semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE__PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE__PREFERENCE_ATTRIBUTES));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getListPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getListPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0(), semanticObject.getPreferenceAttributes());
+		feeder.accept(grammarAccess.getListPreferenceAccess().getDialogPreferenceAttributesDialogPreferenceAttributesParserRuleCall_4_0(), semanticObject.getDialogPreferenceAttributes());
+		feeder.accept(grammarAccess.getListPreferenceAccess().getListPreferenceAttributesListPreferenceAttributesParserRuleCall_5_0(), semanticObject.getListPreferenceAttributes());
+		feeder.finish();
 	}
 	
 	
@@ -695,19 +903,46 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID title=STRING)
+	 *     (key=ID summary=STRING? enabled=BOOL? persistent=BOOL?)
+	 */
+	protected void sequence_PreferenceAttributes(EObject context, PreferenceAttributes semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (title=STRING preferences+=AbstractPreference*)
+	 */
+	protected void sequence_PreferenceCategory(EObject context, PreferenceCategory semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID title=STRING preferenceAttributes=PreferenceAttributes preferences+=AbstractPreference*)
 	 */
 	protected void sequence_PreferenceScreen(EObject context, PreferenceScreen semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (title=STRING preferenceAttributes=PreferenceAttributes)
+	 */
+	protected void sequence_Preference(EObject context, Preference semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.ROOT_LAYOUT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.ROOT_LAYOUT__NAME));
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.PREFERENCE_SCREEN__TITLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.PREFERENCE_SCREEN__TITLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.PREFERENCE__PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.PREFERENCE__PREFERENCE_ATTRIBUTES));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPreferenceScreenAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPreferenceScreenAccess().getTitleSTRINGTerminalRuleCall_2_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getPreferenceAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getPreferenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0(), semanticObject.getPreferenceAttributes());
 		feeder.finish();
 	}
 	
@@ -733,16 +968,29 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? text=STRING layoutStyle=LayoutStyle)
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_RadioButton(EObject context, RadioButton semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.RADIO_BUTTON__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.RADIO_BUTTON__NAME));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.RADIO_BUTTON__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.RADIO_BUTTON__TEXT));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.RADIO_BUTTON__LAYOUT_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.RADIO_BUTTON__LAYOUT_STYLE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRadioButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getRadioButtonAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? orientation?='horizontal'? layoutStyle=LayoutStyle radiobuttons+=RadioButton+)
+	 *     (name=ID orientation?='horizontal'? layoutStyle=LayoutStyle radiobuttons+=RadioButton+)
 	 */
 	protected void sequence_RadioGroup(EObject context, RadioGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -751,16 +999,29 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? numStars=INT layoutStyle=LayoutStyle)
+	 *     (name=ID numStars=INT layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_RatingBar(EObject context, RatingBar semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.RATING_BAR__NUM_STARS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.RATING_BAR__NUM_STARS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRatingBarAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRatingBarAccess().getNumStarsINTTerminalRuleCall_2_0(), semanticObject.getNumStars());
+		feeder.accept(grammarAccess.getRatingBarAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? layoutStyle=LayoutStyle elements+=UIElement*)
+	 *     (name=ID layoutStyle=LayoutStyle elements+=UIElement*)
 	 */
 	protected void sequence_RelativeLayout(EObject context, RelativeLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -769,7 +1030,26 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? entries=[Resource|QualifiedName]? layoutStyle=LayoutStyle)
+	 *     (title=STRING preferenceAttributes=PreferenceAttributes)
+	 */
+	protected void sequence_RingtonePrefence(EObject context, RingtonePrefence semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE__TITLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRingtonePrefenceAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getRingtonePrefenceAccess().getPreferenceAttributesPreferenceAttributesParserRuleCall_3_0(), semanticObject.getPreferenceAttributes());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID entries=[Resource|QualifiedName]? layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_Spinner(EObject context, Spinner semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -831,7 +1111,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (application=[AndroidApplication|QualifiedName] projectName=QualifiedName packageName=AndroidPackageName? target=ApiLevel version='}')
+	 *     (application=[AndroidApplication|QualifiedName] projectName=QualifiedName packageName=AndroidPackageName? target=ApiLevel version=VersionCode)
 	 */
 	protected void sequence_TargetApplication(EObject context, TargetApplication semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -840,19 +1120,48 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? text=STRING layoutStyle=LayoutStyle)
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_TextView(EObject context, TextView semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.TEXT_VIEW__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.TEXT_VIEW__TEXT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTextViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTextViewAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getTextViewAccess().getLayoutStyleLayoutStyleEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? textOn=STRING textOff=STRING layoutStyle=LayoutStyle)
+	 *     (name=ID textOn=STRING textOff=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_ToggleButton(EObject context, ToggleButton semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__NAME));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.WIDGET__LAYOUT_STYLE));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.TOGGLE_BUTTON__TEXT_ON) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.TOGGLE_BUTTON__TEXT_ON));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.TOGGLE_BUTTON__TEXT_OFF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.TOGGLE_BUTTON__TEXT_OFF));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getToggleButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getToggleButtonAccess().getTextOnSTRINGTerminalRuleCall_3_0(), semanticObject.getTextOn());
+		feeder.accept(grammarAccess.getToggleButtonAccess().getTextOffSTRINGTerminalRuleCall_5_0(), semanticObject.getTextOff());
+		feeder.accept(grammarAccess.getToggleButtonAccess().getLayoutStyleLayoutStyleEnumRuleCall_6_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
 	}
 	
 	

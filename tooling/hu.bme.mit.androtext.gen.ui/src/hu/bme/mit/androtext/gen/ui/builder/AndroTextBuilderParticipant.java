@@ -294,7 +294,9 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			// load all remaining resource for generation
 			List<URI> uris = new ArrayList<URI>();
 			uris.add(app.getApplication().eResource().getURI());
-			uris.add(app.getApplication().getDataroot().eResource().getURI());
+			if (app.getApplication().getDataroot() != null) {
+				uris.add(app.getApplication().getDataroot().eResource().getURI());
+			}
 			uris.add(app.getApplication().getMainActivity().getLayout().eResource().getURI());
 			for (AndroidApplicationModelElement ac : app.getApplication().getModelElements()) {
 				if (ac instanceof Activity) {

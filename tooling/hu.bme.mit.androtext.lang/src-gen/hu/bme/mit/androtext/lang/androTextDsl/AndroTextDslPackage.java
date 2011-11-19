@@ -1474,6 +1474,71 @@ public interface AndroTextDslPackage extends EPackage
   int RADIO_BUTTON_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AbstractPreferenceImpl <em>Abstract Preference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AbstractPreferenceImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAbstractPreference()
+   * @generated
+   */
+  int ABSTRACT_PREFERENCE = 35;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_PREFERENCE__TITLE = 0;
+
+  /**
+   * The number of structural features of the '<em>Abstract Preference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_PREFERENCE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceImpl <em>Preference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreference()
+   * @generated
+   */
+  int PREFERENCE = 36;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
+
+  /**
+   * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Preference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceScreenImpl <em>Preference Screen</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1481,7 +1546,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceScreen()
    * @generated
    */
-  int PREFERENCE_SCREEN = 35;
+  int PREFERENCE_SCREEN = 37;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1502,13 +1567,372 @@ public interface AndroTextDslPackage extends EPackage
   int PREFERENCE_SCREEN__TITLE = ROOT_LAYOUT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES = ROOT_LAYOUT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Preferences</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_SCREEN__PREFERENCES = ROOT_LAYOUT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Preference Screen</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREFERENCE_SCREEN_FEATURE_COUNT = ROOT_LAYOUT_FEATURE_COUNT + 1;
+  int PREFERENCE_SCREEN_FEATURE_COUNT = ROOT_LAYOUT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceCategoryImpl <em>Preference Category</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceCategoryImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceCategory()
+   * @generated
+   */
+  int PREFERENCE_CATEGORY = 38;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_CATEGORY__TITLE = ABSTRACT_PREFERENCE__TITLE;
+
+  /**
+   * The feature id for the '<em><b>Preferences</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_CATEGORY__PREFERENCES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Preference Category</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_CATEGORY_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextPreferenceImpl <em>Edit Text Preference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextPreferenceImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEditTextPreference()
+   * @generated
+   */
+  int EDIT_TEXT_PREFERENCE = 39;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT_PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
+
+  /**
+   * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Dialog Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Edit Text Preference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl <em>List Preference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListPreference()
+   * @generated
+   */
+  int LIST_PREFERENCE = 40;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
+
+  /**
+   * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Dialog Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>List Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>List Preference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxPreferenceImpl <em>Check Box Preference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxPreferenceImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCheckBoxPreference()
+   * @generated
+   */
+  int CHECK_BOX_PREFERENCE = 41;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECK_BOX_PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
+
+  /**
+   * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Check Box Preference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECK_BOX_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RingtonePrefenceImpl <em>Ringtone Prefence</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RingtonePrefenceImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRingtonePrefence()
+   * @generated
+   */
+  int RINGTONE_PREFENCE = 42;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RINGTONE_PREFENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
+
+  /**
+   * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Ringtone Prefence</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RINGTONE_PREFENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl <em>Preference Attributes</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceAttributes()
+   * @generated
+   */
+  int PREFERENCE_ATTRIBUTES = 43;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ATTRIBUTES__KEY = 0;
+
+  /**
+   * The feature id for the '<em><b>Summary</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ATTRIBUTES__SUMMARY = 1;
+
+  /**
+   * The feature id for the '<em><b>Enabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ATTRIBUTES__ENABLED = 2;
+
+  /**
+   * The feature id for the '<em><b>Persistent</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ATTRIBUTES__PERSISTENT = 3;
+
+  /**
+   * The number of structural features of the '<em>Preference Attributes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ATTRIBUTES_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DialogPreferenceAttributesImpl <em>Dialog Preference Attributes</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DialogPreferenceAttributesImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDialogPreferenceAttributes()
+   * @generated
+   */
+  int DIALOG_PREFERENCE_ATTRIBUTES = 44;
+
+  /**
+   * The feature id for the '<em><b>Dialog Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIALOG_PREFERENCE_ATTRIBUTES__DIALOG_TITLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Default Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIALOG_PREFERENCE_ATTRIBUTES__DEFAULT_VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Dialog Preference Attributes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIALOG_PREFERENCE_ATTRIBUTES_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceAttributesImpl <em>List Preference Attributes</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceAttributesImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListPreferenceAttributes()
+   * @generated
+   */
+  int LIST_PREFERENCE_ATTRIBUTES = 45;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE_ATTRIBUTES__ENTRIES = 0;
+
+  /**
+   * The feature id for the '<em><b>Entry Values</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES = 1;
+
+  /**
+   * The number of structural features of the '<em>List Preference Attributes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE_ATTRIBUTES_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroResModelRootImpl <em>Andro Res Model Root</em>}' class.
@@ -1518,7 +1942,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroResModelRoot()
    * @generated
    */
-  int ANDRO_RES_MODEL_ROOT = 36;
+  int ANDRO_RES_MODEL_ROOT = 46;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1555,7 +1979,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getResource()
    * @generated
    */
-  int RESOURCE = 37;
+  int RESOURCE = 47;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1583,7 +2007,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringResource()
    * @generated
    */
-  int STRING_RESOURCE = 38;
+  int STRING_RESOURCE = 48;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1620,7 +2044,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerResource()
    * @generated
    */
-  int INTEGER_RESOURCE = 39;
+  int INTEGER_RESOURCE = 49;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1657,7 +2081,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanResource()
    * @generated
    */
-  int BOOLEAN_RESOURCE = 40;
+  int BOOLEAN_RESOURCE = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1694,7 +2118,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorResource()
    * @generated
    */
-  int COLOR_RESOURCE = 41;
+  int COLOR_RESOURCE = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1731,7 +2155,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionResource()
    * @generated
    */
-  int DIMENSION_RESOURCE = 42;
+  int DIMENSION_RESOURCE = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1768,7 +2192,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getArrayResource()
    * @generated
    */
-  int ARRAY_RESOURCE = 43;
+  int ARRAY_RESOURCE = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1796,7 +2220,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerArrayResource()
    * @generated
    */
-  int INTEGER_ARRAY_RESOURCE = 44;
+  int INTEGER_ARRAY_RESOURCE = 54;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1833,7 +2257,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerArrayEntry()
    * @generated
    */
-  int INTEGER_ARRAY_ENTRY = 45;
+  int INTEGER_ARRAY_ENTRY = 55;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1870,7 +2294,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringArrayResource()
    * @generated
    */
-  int STRING_ARRAY_RESOURCE = 46;
+  int STRING_ARRAY_RESOURCE = 56;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1907,7 +2331,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringArrayEntry()
    * @generated
    */
-  int STRING_ARRAY_ENTRY = 47;
+  int STRING_ARRAY_ENTRY = 57;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1944,7 +2368,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDrawableResource()
    * @generated
    */
-  int DRAWABLE_RESOURCE = 48;
+  int DRAWABLE_RESOURCE = 58;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1972,7 +2396,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBitmapDrawableResource()
    * @generated
    */
-  int BITMAP_DRAWABLE_RESOURCE = 49;
+  int BITMAP_DRAWABLE_RESOURCE = 59;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2009,7 +2433,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTransitionDrawableResource()
    * @generated
    */
-  int TRANSITION_DRAWABLE_RESOURCE = 50;
+  int TRANSITION_DRAWABLE_RESOURCE = 60;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2055,7 +2479,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getApiLevel()
    * @generated
    */
-  int API_LEVEL = 51;
+  int API_LEVEL = 61;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DataTypes <em>Data Types</em>}' enum.
@@ -2065,7 +2489,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDataTypes()
    * @generated
    */
-  int DATA_TYPES = 52;
+  int DATA_TYPES = 62;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle <em>Layout Style</em>}' enum.
@@ -2075,7 +2499,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutStyle()
    * @generated
    */
-  int LAYOUT_STYLE = 53;
+  int LAYOUT_STYLE = 63;
 
 
   /**
@@ -2935,6 +3359,48 @@ public interface AndroTextDslPackage extends EPackage
   EAttribute getRadioButton_LayoutStyle();
 
   /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference <em>Abstract Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Abstract Preference</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference
+   * @generated
+   */
+  EClass getAbstractPreference();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference#getTitle()
+   * @see #getAbstractPreference()
+   * @generated
+   */
+  EAttribute getAbstractPreference_Title();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Preference <em>Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Preference</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Preference
+   * @generated
+   */
+  EClass getPreference();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Preference#getPreferenceAttributes <em>Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Preference#getPreferenceAttributes()
+   * @see #getPreference()
+   * @generated
+   */
+  EReference getPreference_PreferenceAttributes();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen <em>Preference Screen</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2945,15 +3411,282 @@ public interface AndroTextDslPackage extends EPackage
   EClass getPreferenceScreen();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getTitle <em>Title</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferenceAttributes <em>Preference Attributes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getTitle()
+   * @return the meta object for the containment reference '<em>Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferenceAttributes()
    * @see #getPreferenceScreen()
    * @generated
    */
-  EAttribute getPreferenceScreen_Title();
+  EReference getPreferenceScreen_PreferenceAttributes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferences <em>Preferences</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Preferences</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferences()
+   * @see #getPreferenceScreen()
+   * @generated
+   */
+  EReference getPreferenceScreen_Preferences();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory <em>Preference Category</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Preference Category</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory
+   * @generated
+   */
+  EClass getPreferenceCategory();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory#getPreferences <em>Preferences</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Preferences</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory#getPreferences()
+   * @see #getPreferenceCategory()
+   * @generated
+   */
+  EReference getPreferenceCategory_Preferences();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference <em>Edit Text Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Edit Text Preference</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference
+   * @generated
+   */
+  EClass getEditTextPreference();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference#getPreferenceAttributes <em>Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference#getPreferenceAttributes()
+   * @see #getEditTextPreference()
+   * @generated
+   */
+  EReference getEditTextPreference_PreferenceAttributes();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference#getDialogPreferenceAttributes <em>Dialog Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Dialog Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference#getDialogPreferenceAttributes()
+   * @see #getEditTextPreference()
+   * @generated
+   */
+  EReference getEditTextPreference_DialogPreferenceAttributes();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreference <em>List Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List Preference</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreference
+   * @generated
+   */
+  EClass getListPreference();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getPreferenceAttributes <em>Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getPreferenceAttributes()
+   * @see #getListPreference()
+   * @generated
+   */
+  EReference getListPreference_PreferenceAttributes();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getDialogPreferenceAttributes <em>Dialog Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Dialog Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getDialogPreferenceAttributes()
+   * @see #getListPreference()
+   * @generated
+   */
+  EReference getListPreference_DialogPreferenceAttributes();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getListPreferenceAttributes <em>List Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getListPreferenceAttributes()
+   * @see #getListPreference()
+   * @generated
+   */
+  EReference getListPreference_ListPreferenceAttributes();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference <em>Check Box Preference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Check Box Preference</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference
+   * @generated
+   */
+  EClass getCheckBoxPreference();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference#getPreferenceAttributes <em>Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference#getPreferenceAttributes()
+   * @see #getCheckBoxPreference()
+   * @generated
+   */
+  EReference getCheckBoxPreference_PreferenceAttributes();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence <em>Ringtone Prefence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ringtone Prefence</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence
+   * @generated
+   */
+  EClass getRingtonePrefence();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence#getPreferenceAttributes <em>Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence#getPreferenceAttributes()
+   * @see #getRingtonePrefence()
+   * @generated
+   */
+  EReference getRingtonePrefence_PreferenceAttributes();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes <em>Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes
+   * @generated
+   */
+  EClass getPreferenceAttributes();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getKey()
+   * @see #getPreferenceAttributes()
+   * @generated
+   */
+  EAttribute getPreferenceAttributes_Key();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getSummary <em>Summary</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Summary</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getSummary()
+   * @see #getPreferenceAttributes()
+   * @generated
+   */
+  EAttribute getPreferenceAttributes_Summary();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getEnabled <em>Enabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Enabled</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getEnabled()
+   * @see #getPreferenceAttributes()
+   * @generated
+   */
+  EAttribute getPreferenceAttributes_Enabled();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getPersistent <em>Persistent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Persistent</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getPersistent()
+   * @see #getPreferenceAttributes()
+   * @generated
+   */
+  EAttribute getPreferenceAttributes_Persistent();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes <em>Dialog Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dialog Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes
+   * @generated
+   */
+  EClass getDialogPreferenceAttributes();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes#getDialogTitle <em>Dialog Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dialog Title</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes#getDialogTitle()
+   * @see #getDialogPreferenceAttributes()
+   * @generated
+   */
+  EAttribute getDialogPreferenceAttributes_DialogTitle();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes#getDefaultValue <em>Default Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Default Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes#getDefaultValue()
+   * @see #getDialogPreferenceAttributes()
+   * @generated
+   */
+  EAttribute getDialogPreferenceAttributes_DefaultValue();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes <em>List Preference Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List Preference Attributes</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes
+   * @generated
+   */
+  EClass getListPreferenceAttributes();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entries</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntries()
+   * @see #getListPreferenceAttributes()
+   * @generated
+   */
+  EReference getListPreferenceAttributes_Entries();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntryValues <em>Entry Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entry Values</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntryValues()
+   * @see #getListPreferenceAttributes()
+   * @generated
+   */
+  EReference getListPreferenceAttributes_EntryValues();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot <em>Andro Res Model Root</em>}'.
@@ -4053,6 +4786,42 @@ public interface AndroTextDslPackage extends EPackage
     EAttribute RADIO_BUTTON__LAYOUT_STYLE = eINSTANCE.getRadioButton_LayoutStyle();
 
     /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AbstractPreferenceImpl <em>Abstract Preference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AbstractPreferenceImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAbstractPreference()
+     * @generated
+     */
+    EClass ABSTRACT_PREFERENCE = eINSTANCE.getAbstractPreference();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_PREFERENCE__TITLE = eINSTANCE.getAbstractPreference_Title();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceImpl <em>Preference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreference()
+     * @generated
+     */
+    EClass PREFERENCE = eINSTANCE.getPreference();
+
+    /**
+     * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREFERENCE__PREFERENCE_ATTRIBUTES = eINSTANCE.getPreference_PreferenceAttributes();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceScreenImpl <em>Preference Screen</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4063,12 +4832,228 @@ public interface AndroTextDslPackage extends EPackage
     EClass PREFERENCE_SCREEN = eINSTANCE.getPreferenceScreen();
 
     /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PREFERENCE_SCREEN__TITLE = eINSTANCE.getPreferenceScreen_Title();
+    EReference PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES = eINSTANCE.getPreferenceScreen_PreferenceAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Preferences</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREFERENCE_SCREEN__PREFERENCES = eINSTANCE.getPreferenceScreen_Preferences();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceCategoryImpl <em>Preference Category</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceCategoryImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceCategory()
+     * @generated
+     */
+    EClass PREFERENCE_CATEGORY = eINSTANCE.getPreferenceCategory();
+
+    /**
+     * The meta object literal for the '<em><b>Preferences</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREFERENCE_CATEGORY__PREFERENCES = eINSTANCE.getPreferenceCategory_Preferences();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextPreferenceImpl <em>Edit Text Preference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextPreferenceImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEditTextPreference()
+     * @generated
+     */
+    EClass EDIT_TEXT_PREFERENCE = eINSTANCE.getEditTextPreference();
+
+    /**
+     * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES = eINSTANCE.getEditTextPreference_PreferenceAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Dialog Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = eINSTANCE.getEditTextPreference_DialogPreferenceAttributes();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl <em>List Preference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListPreference()
+     * @generated
+     */
+    EClass LIST_PREFERENCE = eINSTANCE.getListPreference();
+
+    /**
+     * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_PREFERENCE__PREFERENCE_ATTRIBUTES = eINSTANCE.getListPreference_PreferenceAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Dialog Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = eINSTANCE.getListPreference_DialogPreferenceAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>List Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES = eINSTANCE.getListPreference_ListPreferenceAttributes();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxPreferenceImpl <em>Check Box Preference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxPreferenceImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCheckBoxPreference()
+     * @generated
+     */
+    EClass CHECK_BOX_PREFERENCE = eINSTANCE.getCheckBoxPreference();
+
+    /**
+     * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES = eINSTANCE.getCheckBoxPreference_PreferenceAttributes();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RingtonePrefenceImpl <em>Ringtone Prefence</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RingtonePrefenceImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRingtonePrefence()
+     * @generated
+     */
+    EClass RINGTONE_PREFENCE = eINSTANCE.getRingtonePrefence();
+
+    /**
+     * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES = eINSTANCE.getRingtonePrefence_PreferenceAttributes();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl <em>Preference Attributes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceAttributes()
+     * @generated
+     */
+    EClass PREFERENCE_ATTRIBUTES = eINSTANCE.getPreferenceAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFERENCE_ATTRIBUTES__KEY = eINSTANCE.getPreferenceAttributes_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFERENCE_ATTRIBUTES__SUMMARY = eINSTANCE.getPreferenceAttributes_Summary();
+
+    /**
+     * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFERENCE_ATTRIBUTES__ENABLED = eINSTANCE.getPreferenceAttributes_Enabled();
+
+    /**
+     * The meta object literal for the '<em><b>Persistent</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFERENCE_ATTRIBUTES__PERSISTENT = eINSTANCE.getPreferenceAttributes_Persistent();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DialogPreferenceAttributesImpl <em>Dialog Preference Attributes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DialogPreferenceAttributesImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDialogPreferenceAttributes()
+     * @generated
+     */
+    EClass DIALOG_PREFERENCE_ATTRIBUTES = eINSTANCE.getDialogPreferenceAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Dialog Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIALOG_PREFERENCE_ATTRIBUTES__DIALOG_TITLE = eINSTANCE.getDialogPreferenceAttributes_DialogTitle();
+
+    /**
+     * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIALOG_PREFERENCE_ATTRIBUTES__DEFAULT_VALUE = eINSTANCE.getDialogPreferenceAttributes_DefaultValue();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceAttributesImpl <em>List Preference Attributes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceAttributesImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListPreferenceAttributes()
+     * @generated
+     */
+    EClass LIST_PREFERENCE_ATTRIBUTES = eINSTANCE.getListPreferenceAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_PREFERENCE_ATTRIBUTES__ENTRIES = eINSTANCE.getListPreferenceAttributes_Entries();
+
+    /**
+     * The meta object literal for the '<em><b>Entry Values</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES = eINSTANCE.getListPreferenceAttributes_EntryValues();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroResModelRootImpl <em>Andro Res Model Root</em>}' class.

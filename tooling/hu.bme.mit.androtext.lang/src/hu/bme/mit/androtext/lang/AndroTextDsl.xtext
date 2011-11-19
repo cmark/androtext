@@ -33,9 +33,11 @@ TargetApplication:
 		'project' projectName=QualifiedName
 		('package' packageName=AndroidPackageName)?
 		'platform' target=ApiLevel
-		'version' version=
+		'version' version=VersionCode
 	'}'
 ;
+
+VersionCode: INT'.'INT;
 
 AndroidPackageName:
 	ID ('.'ID)+ 
@@ -54,7 +56,7 @@ enum ApiLevel:
 /* AndroAppModelRoot and model elements */
 AndroidApplication:
 	'application' name=ID '{'
-		'datamodel' dataroot=[AndroDataModelRoot|QualifiedName]
+		('datamodel' dataroot=[AndroDataModelRoot|QualifiedName])?
 		mainActivity = Activity
 		modelElements+=AndroidApplicationModelElement*
 	'}';
@@ -131,25 +133,25 @@ enum LayoutStyle:
 	FILL="fill" | WRAP="wrap" | FILL_WRAP="fill&wrap" | WRAP_FILL="wrap&fill";
 
 AbsoluteLayout:
-	"absolutelayout" (name=ID)? layoutStyle=LayoutStyle
+	"absolutelayout" name=ID layoutStyle=LayoutStyle
 	"{"
 		elements+=UIElement* 
 	"}";
 
 LinearLayout:
-	"linearlayout" (name=ID)? (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle
+	"linearlayout" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle
 	"{"
 		elements+=UIElement*
 	"}";
 
 FrameLayout:
-	"framelayout" (name=ID)? layoutStyle=LayoutStyle
+	"framelayout" name=ID layoutStyle=LayoutStyle
 	"{"
 		elements+=UIElement*
 	"}";
 	
 RelativeLayout:
-	"relativelayout" (name=ID)? layoutStyle=LayoutStyle "{"
+	"relativelayout" name=ID layoutStyle=LayoutStyle "{"
 		elements+=UIElement*
 	"}";
 
@@ -157,13 +159,13 @@ Widget:
 	TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton;
 	
 TextView:
-	"textview" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	"textview" name=ID text=STRING layoutStyle=LayoutStyle;
 	
 EditText:
-	"edittext" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	"edittext" name=ID text=STRING layoutStyle=LayoutStyle;
 	
 Button:
-	"button" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	"button" name=ID text=STRING layoutStyle=LayoutStyle;
 	
 ListView:
 	'listview' name=ID layoutStyle=LayoutStyle '{'
@@ -172,30 +174,89 @@ ListView:
 	'}';
 	
 Spinner:
-	"spinner" (name=ID)? ('entries' entries=[Resource | QualifiedName])? layoutStyle=LayoutStyle;
+	"spinner" name=ID ('entries' entries=[Resource | QualifiedName])? layoutStyle=LayoutStyle;
 	
 CheckBox:
-	"checkbox" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	"checkbox" name=ID text=STRING layoutStyle=LayoutStyle;
 	
 RadioGroup:
-	"radiogroup" (name=ID)? (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle "{" 
+	"radiogroup" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle "{" 
 		(radiobuttons+=RadioButton)+
 	"}";
 	
 RatingBar:
-	"ratingbar" (name=ID)? numStars=INT layoutStyle=LayoutStyle;
+	"ratingbar" name=ID numStars=INT layoutStyle=LayoutStyle;
 	
 ToggleButton:
-	"togglebutton" (name=ID)? "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=LayoutStyle;
+	"togglebutton" name=ID "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=LayoutStyle;
 	
 RadioButton:
-	"radiobutton" (name=ID)? text=STRING layoutStyle=LayoutStyle;
+	"radiobutton" name=ID text=STRING layoutStyle=LayoutStyle;
 
+
+/* Preference Framework Elements */
+AbstractPreference:
+	Preference | EditTextPreference | ListPreference | CheckBoxPreference | RingtonePrefence | PreferenceCategory | PreferenceScreen
+;
+
+Preference:
+	"preference" title=STRING "{"  
+		preferenceAttributes = PreferenceAttributes
+	"}"
+;
 
 PreferenceScreen:
 	"preferencescreen" name=ID title=STRING '{'
+		preferenceAttributes = PreferenceAttributes
+		(preferences+=AbstractPreference)*
 	'}'
 ;
+
+PreferenceCategory:
+	"preferencecategery" title=STRING "{"
+		(preferences+=AbstractPreference)*
+	"}";
+
+EditTextPreference:
+	"edittextpreference" title=STRING "{"
+		preferenceAttributes = PreferenceAttributes
+		dialogPreferenceAttributes = DialogPreferenceAttributes
+	"}";
+	
+ListPreference:
+	"listpreference" title=STRING "{"
+		preferenceAttributes = PreferenceAttributes
+		dialogPreferenceAttributes = DialogPreferenceAttributes
+		listPreferenceAttributes = ListPreferenceAttributes
+	"}";
+	
+CheckBoxPreference:
+	"checkboxpreference" title=STRING "{"
+		preferenceAttributes = PreferenceAttributes
+	"}";
+	
+RingtonePrefence:
+	"ringtonepreference" title=STRING "{"
+		preferenceAttributes = PreferenceAttributes
+	"}";
+
+PreferenceAttributes:
+	"key" key=ID
+	("summary" summary=STRING)?
+	("enabled" enabled=BOOL)?
+	("persistent" persistent=BOOL)?
+;
+
+DialogPreferenceAttributes:
+	("dialogTitle" dialogTitle=STRING)?
+	("defaultValue" defaultValue=STRING)?
+;
+
+ListPreferenceAttributes:
+	"entries" entries=[StringArrayEntry | QualifiedName]
+	"entryValues" entryValues=[StringArrayEntry | QualifiedName]
+;
+/* End of Preference Framework Elements */
 /* End of AndroGuiModelRoot and gui model elements */
 
 /* AndroRes ModelRoot and model elements */
@@ -271,7 +332,7 @@ DimensionValue:
 ;
 
 BOOL:
-    'YES' | 'NO'
+    'true' | 'false'
 ;
 
 FLOAT:
@@ -286,4 +347,3 @@ terminal HEX_COLOR:
   (('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f'))? 
 ;
 /* End of AndroResModelRoot and resource model elements */
-

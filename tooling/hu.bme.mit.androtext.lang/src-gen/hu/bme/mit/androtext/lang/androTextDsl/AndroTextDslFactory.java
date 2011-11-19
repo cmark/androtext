@@ -342,6 +342,24 @@ public interface AndroTextDslFactory extends EFactory
   RadioButton createRadioButton();
 
   /**
+   * Returns a new object of class '<em>Abstract Preference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Preference</em>'.
+   * @generated
+   */
+  AbstractPreference createAbstractPreference();
+
+  /**
+   * Returns a new object of class '<em>Preference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Preference</em>'.
+   * @generated
+   */
+  Preference createPreference();
+
+  /**
    * Returns a new object of class '<em>Preference Screen</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -349,6 +367,78 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   PreferenceScreen createPreferenceScreen();
+
+  /**
+   * Returns a new object of class '<em>Preference Category</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Preference Category</em>'.
+   * @generated
+   */
+  PreferenceCategory createPreferenceCategory();
+
+  /**
+   * Returns a new object of class '<em>Edit Text Preference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Edit Text Preference</em>'.
+   * @generated
+   */
+  EditTextPreference createEditTextPreference();
+
+  /**
+   * Returns a new object of class '<em>List Preference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Preference</em>'.
+   * @generated
+   */
+  ListPreference createListPreference();
+
+  /**
+   * Returns a new object of class '<em>Check Box Preference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Check Box Preference</em>'.
+   * @generated
+   */
+  CheckBoxPreference createCheckBoxPreference();
+
+  /**
+   * Returns a new object of class '<em>Ringtone Prefence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ringtone Prefence</em>'.
+   * @generated
+   */
+  RingtonePrefence createRingtonePrefence();
+
+  /**
+   * Returns a new object of class '<em>Preference Attributes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Preference Attributes</em>'.
+   * @generated
+   */
+  PreferenceAttributes createPreferenceAttributes();
+
+  /**
+   * Returns a new object of class '<em>Dialog Preference Attributes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dialog Preference Attributes</em>'.
+   * @generated
+   */
+  DialogPreferenceAttributes createDialogPreferenceAttributes();
+
+  /**
+   * Returns a new object of class '<em>List Preference Attributes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Preference Attributes</em>'.
+   * @generated
+   */
+  ListPreferenceAttributes createListPreferenceAttributes();
 
   /**
    * Returns a new object of class '<em>Andro Res Model Root</em>'.
