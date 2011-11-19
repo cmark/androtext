@@ -1,10 +1,11 @@
 /*
- * This is a Hello World example application
+ * This is a Hello World example application model
  */
 application HelloWorld {
 	
-	datamodel HelloWorldData
+	// add link to data model
+	// datamodel HelloWorldData
 	
-	activity HelloWorldMain layout HelloWorldGui.hellolayout
+	activity HelloWorldActivity layout HelloWorldGui.hellolayout
 	
 }
