@@ -24,7 +24,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface ListView extends Widget
+public interface ListView extends SimpleView
 {
   /**
    * Returns the value of the '<em><b>Entries</b></em>' reference.
@@ -61,12 +61,12 @@ public interface ListView extends Widget
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Layout</em>' reference.
-   * @see #setLayout(Layout)
+   * @see #setLayout(View)
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getListView_Layout()
    * @model
    * @generated
    */
-  Layout getLayout();
+  View getLayout();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ListView#getLayout <em>Layout</em>}' reference.
@@ -76,6 +76,6 @@ public interface ListView extends Widget
    * @see #getLayout()
    * @generated
    */
-  void setLayout(Layout value);
+  void setLayout(View value);
 
 } // ListView

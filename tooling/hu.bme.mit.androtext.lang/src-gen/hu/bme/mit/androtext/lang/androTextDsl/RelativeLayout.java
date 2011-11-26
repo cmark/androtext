@@ -17,6 +17,6 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface RelativeLayout extends BaseLayout
+public interface RelativeLayout extends ViewGroup
 {
 } // RelativeLayout

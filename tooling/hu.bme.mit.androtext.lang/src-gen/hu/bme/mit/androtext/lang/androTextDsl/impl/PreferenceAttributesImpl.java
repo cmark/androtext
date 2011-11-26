@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl#getKey <em>Key</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl#getSummary <em>Summary</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl#getEnabled <em>Enabled</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl#getPersistent <em>Persistent</em>}</li>
@@ -34,26 +33,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container implements PreferenceAttributes
 {
-  /**
-   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKey()
-   * @generated
-   * @ordered
-   */
-  protected static final String KEY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKey()
-   * @generated
-   * @ordered
-   */
-  protected String key = KEY_EDEFAULT;
-
   /**
    * The default value of the '{@link #getSummary() <em>Summary</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -140,29 +119,6 @@ public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getKey()
-  {
-    return key;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setKey(String newKey)
-  {
-    String oldKey = key;
-    key = newKey;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.PREFERENCE_ATTRIBUTES__KEY, oldKey, key));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getSummary()
   {
     return summary;
@@ -237,8 +193,6 @@ public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__KEY:
-        return getKey();
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__SUMMARY:
         return getSummary();
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__ENABLED:
@@ -259,9 +213,6 @@ public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__KEY:
-        setKey((String)newValue);
-        return;
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__SUMMARY:
         setSummary((String)newValue);
         return;
@@ -285,9 +236,6 @@ public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__KEY:
-        setKey(KEY_EDEFAULT);
-        return;
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__SUMMARY:
         setSummary(SUMMARY_EDEFAULT);
         return;
@@ -311,8 +259,6 @@ public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__KEY:
-        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__SUMMARY:
         return SUMMARY_EDEFAULT == null ? summary != null : !SUMMARY_EDEFAULT.equals(summary);
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES__ENABLED:
@@ -334,9 +280,7 @@ public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container imple
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (key: ");
-    result.append(key);
-    result.append(", summary: ");
+    result.append(" (summary: ");
     result.append(summary);
     result.append(", enabled: ");
     result.append(enabled);

@@ -7,27 +7,29 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.Layout;
+import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Layout</b></em>'.
+ * An implementation of the model object '<em><b>Property Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class LayoutImpl extends UIElementImpl implements Layout
+public class PropertyValueImpl extends MinimalEObjectImpl.Container implements PropertyValue
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LayoutImpl()
+  protected PropertyValueImpl()
   {
     super();
   }
@@ -40,7 +42,7 @@ public class LayoutImpl extends UIElementImpl implements Layout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.LAYOUT;
+    return AndroTextDslPackage.Literals.PROPERTY_VALUE;
   }
 
-} //LayoutImpl
+} //PropertyValueImpl

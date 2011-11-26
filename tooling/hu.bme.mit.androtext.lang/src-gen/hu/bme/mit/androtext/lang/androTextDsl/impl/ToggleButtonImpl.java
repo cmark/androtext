@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ToggleButtonImpl extends WidgetImpl implements ToggleButton
+public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
 {
   /**
    * The default value of the '{@link #getTextOn() <em>Text On</em>}' attribute.

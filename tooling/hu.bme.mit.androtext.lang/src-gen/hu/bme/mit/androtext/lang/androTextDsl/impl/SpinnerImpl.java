@@ -7,7 +7,7 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.Resource;
+import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Spinner;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SpinnerImpl extends WidgetImpl implements Spinner
+public class SpinnerImpl extends SimpleViewImpl implements Spinner
 {
   /**
    * The cached value of the '{@link #getEntries() <em>Entries</em>}' reference.
@@ -40,7 +40,7 @@ public class SpinnerImpl extends WidgetImpl implements Spinner
    * @generated
    * @ordered
    */
-  protected Resource entries;
+  protected ArrayResource entries;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,12 +68,12 @@ public class SpinnerImpl extends WidgetImpl implements Spinner
    * <!-- end-user-doc -->
    * @generated
    */
-  public Resource getEntries()
+  public ArrayResource getEntries()
   {
     if (entries != null && entries.eIsProxy())
     {
       InternalEObject oldEntries = (InternalEObject)entries;
-      entries = (Resource)eResolveProxy(oldEntries);
+      entries = (ArrayResource)eResolveProxy(oldEntries);
       if (entries != oldEntries)
       {
         if (eNotificationRequired())
@@ -88,7 +88,7 @@ public class SpinnerImpl extends WidgetImpl implements Spinner
    * <!-- end-user-doc -->
    * @generated
    */
-  public Resource basicGetEntries()
+  public ArrayResource basicGetEntries()
   {
     return entries;
   }
@@ -98,9 +98,9 @@ public class SpinnerImpl extends WidgetImpl implements Spinner
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEntries(Resource newEntries)
+  public void setEntries(ArrayResource newEntries)
   {
-    Resource oldEntries = entries;
+    ArrayResource oldEntries = entries;
     entries = newEntries;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.SPINNER__ENTRIES, oldEntries, entries));
@@ -134,7 +134,7 @@ public class SpinnerImpl extends WidgetImpl implements Spinner
     switch (featureID)
     {
       case AndroTextDslPackage.SPINNER__ENTRIES:
-        setEntries((Resource)newValue);
+        setEntries((ArrayResource)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -151,7 +151,7 @@ public class SpinnerImpl extends WidgetImpl implements Spinner
     switch (featureID)
     {
       case AndroTextDslPackage.SPINNER__ENTRIES:
-        setEntries((Resource)null);
+        setEntries((ArrayResource)null);
         return;
     }
     super.eUnset(featureID);

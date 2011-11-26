@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CheckBoxImpl extends WidgetImpl implements CheckBox
+public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
 {
   /**
    * The default value of the '{@link #getText() <em>Text</em>}' attribute.

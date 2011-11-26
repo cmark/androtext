@@ -8,7 +8,9 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AbsoluteLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
+import hu.bme.mit.androtext.lang.androTextDsl.Action;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot;
@@ -18,60 +20,95 @@ import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ApiLevel;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
-import hu.bme.mit.androtext.lang.androTextDsl.BaseLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView;
+import hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.BitmapDrawableResource;
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource;
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.CheckBox;
 import hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference;
+import hu.bme.mit.androtext.lang.androTextDsl.CheckedTextView;
+import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorResource;
+import hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypes;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
 import hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes;
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric;
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource;
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource;
+import hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.EditText;
 import hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
+import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
 import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.Gallery;
+import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.GridLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.GridView;
+import hu.bme.mit.androtext.lang.androTextDsl.ImageView;
 import hu.bme.mit.androtext.lang.androTextDsl.Import;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayEntry;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
+import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
-import hu.bme.mit.androtext.lang.androTextDsl.Layout;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
+import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams;
+import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.ModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.Preference;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
+import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
 import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Resource;
 import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
-import hu.bme.mit.androtext.lang.androTextDsl.RootLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.SimpleView;
 import hu.bme.mit.androtext.lang.androTextDsl.Spinner;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayEntry;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource;
+import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.StringResource;
+import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.Tab;
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
+import hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.TextView;
 import hu.bme.mit.androtext.lang.androTextDsl.ToggleButton;
 import hu.bme.mit.androtext.lang.androTextDsl.TransitionDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.TypeRef;
-import hu.bme.mit.androtext.lang.androTextDsl.UIElement;
-import hu.bme.mit.androtext.lang.androTextDsl.Widget;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
+import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
+import hu.bme.mit.androtext.lang.androTextDsl.WebView;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -150,7 +187,56 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass simpleActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass tabActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tabEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass preferenceActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invokeActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invokeWebUrlEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -206,28 +292,28 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass uiElementEClass = null;
+  private EClass viewEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass layoutEClass = null;
+  private EClass viewGroupEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rootLayoutEClass = null;
+  private EClass layoutParamsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass baseLayoutEClass = null;
+  private EClass layoutGravityAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -248,6 +334,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass linearLayoutParamsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass frameLayoutEClass = null;
 
   /**
@@ -262,7 +355,49 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass widgetEClass = null;
+  private EClass gridLayoutEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableLayoutEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass galleryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expandableListViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass webViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass imageViewEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -270,6 +405,27 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass textViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gravityAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textSizeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass backgroundAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -291,6 +447,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass listViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gridViewEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -333,6 +496,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass radioButtonEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass checkedTextViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass autoCompleteTextViewEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -410,6 +587,97 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass listPreferenceAttributesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass propertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass anyDrawablePropertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringPropertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass integerPropertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanPropertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass colorPropertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dimensionPropertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass drawableResourceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringResourceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass integerResourceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanResourceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass colorResourceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dimensionResourceLinkEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -521,7 +789,21 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass dimensionValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum apiLevelEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum activityThemeEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -535,7 +817,21 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum layoutStyleEEnum = null;
+  private EEnum layoutGravityKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum layoutDimensionKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum dimensionMetricEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -835,9 +1131,29 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getActivity_Layout()
+  public EClass getSimpleActivity()
   {
-    return (EReference)activityEClass.getEStructuralFeatures().get(0);
+    return simpleActivityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSimpleActivity_Layout()
+  {
+    return (EReference)simpleActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleActivity_Theme()
+  {
+    return (EAttribute)simpleActivityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -848,6 +1164,136 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EClass getTabActivity()
   {
     return tabActivityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTabActivity_Tabs()
+  {
+    return (EReference)tabActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTab()
+  {
+    return tabEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTab_Tag()
+  {
+    return (EAttribute)tabEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTab_Activity()
+  {
+    return (EReference)tabEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getListActivity()
+  {
+    return listActivityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getListActivity_Listitem()
+  {
+    return (EReference)listActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPreferenceActivity()
+  {
+    return preferenceActivityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPreferenceActivity_Layout()
+  {
+    return (EReference)preferenceActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAction()
+  {
+    return actionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInvokeActivity()
+  {
+    return invokeActivityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInvokeActivity_Activity()
+  {
+    return (EReference)invokeActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInvokeWebUrl()
+  {
+    return invokeWebUrlEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInvokeWebUrl_Url()
+  {
+    return (EAttribute)invokeWebUrlEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1005,7 +1451,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndroGuiModelRoot_RootLayout()
+  public EReference getAndroGuiModelRoot_Roots()
   {
     return (EReference)androGuiModelRootEClass.getEStructuralFeatures().get(0);
   }
@@ -1015,9 +1461,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUIElement()
+  public EClass getView()
   {
-    return uiElementEClass;
+    return viewEClass;
   }
 
   /**
@@ -1025,9 +1471,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLayout()
+  public EAttribute getView_Name()
   {
-    return layoutEClass;
+    return (EAttribute)viewEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1035,9 +1481,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRootLayout()
+  public EAttribute getView_LayoutStyle()
   {
-    return rootLayoutEClass;
+    return (EAttribute)viewEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1045,9 +1491,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRootLayout_Name()
+  public EClass getViewGroup()
   {
-    return (EAttribute)rootLayoutEClass.getEStructuralFeatures().get(0);
+    return viewGroupEClass;
   }
 
   /**
@@ -1055,9 +1501,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBaseLayout()
+  public EReference getViewGroup_Views()
   {
-    return baseLayoutEClass;
+    return (EReference)viewGroupEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1065,9 +1511,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBaseLayout_LayoutStyle()
+  public EClass getLayoutParams()
   {
-    return (EAttribute)baseLayoutEClass.getEStructuralFeatures().get(0);
+    return layoutParamsEClass;
   }
 
   /**
@@ -1075,9 +1521,119 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBaseLayout_Elements()
+  public EReference getLayoutParams_Weight()
   {
-    return (EReference)baseLayoutEClass.getEStructuralFeatures().get(1);
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_MarginLeft()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_MarginTop()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_MarginRight()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_MarginBottom()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_Left()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_Top()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_Right()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_Bottom()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_BackgroundAttribute()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLayoutGravityAttribute()
+  {
+    return layoutGravityAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLayoutGravityAttribute_Gravity()
+  {
+    return (EAttribute)layoutGravityAttributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1105,9 +1661,49 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLinearLayout_Orientation()
+  public EAttribute getLinearLayout_Vertical()
   {
     return (EAttribute)linearLayoutEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinearLayout_LayoutParams()
+  {
+    return (EReference)linearLayoutEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLinearLayoutParams()
+  {
+    return linearLayoutParamsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinearLayoutParams_LayoutParams()
+  {
+    return (EReference)linearLayoutParamsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinearLayoutParams_Gravity()
+  {
+    return (EReference)linearLayoutParamsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1135,9 +1731,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getWidget()
+  public EClass getGridLayout()
   {
-    return widgetEClass;
+    return gridLayoutEClass;
   }
 
   /**
@@ -1145,9 +1741,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWidget_Name()
+  public EClass getTableLayout()
   {
-    return (EAttribute)widgetEClass.getEStructuralFeatures().get(0);
+    return tableLayoutEClass;
   }
 
   /**
@@ -1155,9 +1751,59 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWidget_LayoutStyle()
+  public EClass getSimpleView()
   {
-    return (EAttribute)widgetEClass.getEStructuralFeatures().get(1);
+    return simpleViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGallery()
+  {
+    return galleryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpandableListView()
+  {
+    return expandableListViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWebView()
+  {
+    return webViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImageView()
+  {
+    return imageViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_Src()
+  {
+    return (EReference)imageViewEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1185,6 +1831,96 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getTextView_GravityAttribute()
+  {
+    return (EReference)textViewEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_TextSizeAttribute()
+  {
+    return (EReference)textViewEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_LayoutParams()
+  {
+    return (EReference)textViewEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGravityAttribute()
+  {
+    return gravityAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGravityAttribute_Gravity()
+  {
+    return (EAttribute)gravityAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextSizeAttribute()
+  {
+    return textSizeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextSizeAttribute_TextSize()
+  {
+    return (EReference)textSizeAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBackgroundAttribute()
+  {
+    return backgroundAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBackgroundAttribute_Background()
+  {
+    return (EReference)backgroundAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEditText()
   {
     return editTextEClass;
@@ -1198,6 +1934,36 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EAttribute getEditText_Text()
   {
     return (EAttribute)editTextEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_GravityAttribute()
+  {
+    return (EReference)editTextEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_TextSizeAttribute()
+  {
+    return (EReference)editTextEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_LayoutParams()
+  {
+    return (EReference)editTextEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1248,6 +2014,16 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EReference getListView_Layout()
   {
     return (EReference)listViewEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGridView()
+  {
+    return gridViewEClass;
   }
 
   /**
@@ -1415,6 +2191,56 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCheckedTextView()
+  {
+    return checkedTextViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCheckedTextView_Text()
+  {
+    return (EAttribute)checkedTextViewEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAutoCompleteTextView()
+  {
+    return autoCompleteTextViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAutoCompleteTextView_Entries()
+  {
+    return (EReference)autoCompleteTextViewEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAutoCompleteTextView_IsMulti()
+  {
+    return (EAttribute)autoCompleteTextViewEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAbstractPreference()
   {
     return abstractPreferenceEClass;
@@ -1445,9 +2271,19 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getPreference_Name()
+  {
+    return (EAttribute)preferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getPreference_PreferenceAttributes()
   {
-    return (EReference)preferenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)preferenceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1465,9 +2301,19 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getPreferenceScreen_Name()
+  {
+    return (EAttribute)preferenceScreenEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getPreferenceScreen_PreferenceAttributes()
   {
-    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(0);
+    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1477,7 +2323,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getPreferenceScreen_Preferences()
   {
-    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(1);
+    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1515,9 +2361,19 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getEditTextPreference_Name()
+  {
+    return (EAttribute)editTextPreferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getEditTextPreference_PreferenceAttributes()
   {
-    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1527,7 +2383,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEditTextPreference_DialogPreferenceAttributes()
   {
-    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(1);
+    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1545,9 +2401,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListPreference_PreferenceAttributes()
+  public EAttribute getListPreference_Name()
   {
-    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)listPreferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1555,7 +2411,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListPreference_DialogPreferenceAttributes()
+  public EReference getListPreference_PreferenceAttributes()
   {
     return (EReference)listPreferenceEClass.getEStructuralFeatures().get(1);
   }
@@ -1565,9 +2421,19 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListPreference_ListPreferenceAttributes()
+  public EReference getListPreference_DialogPreferenceAttributes()
   {
     return (EReference)listPreferenceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getListPreference_ListPreferenceAttributes()
+  {
+    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1585,9 +2451,19 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getCheckBoxPreference_Name()
+  {
+    return (EAttribute)checkBoxPreferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getCheckBoxPreference_PreferenceAttributes()
   {
-    return (EReference)checkBoxPreferenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)checkBoxPreferenceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1605,9 +2481,19 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getRingtonePrefence_Name()
+  {
+    return (EAttribute)ringtonePrefenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getRingtonePrefence_PreferenceAttributes()
   {
-    return (EReference)ringtonePrefenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)ringtonePrefenceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1625,7 +2511,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPreferenceAttributes_Key()
+  public EAttribute getPreferenceAttributes_Summary()
   {
     return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(0);
   }
@@ -1635,7 +2521,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPreferenceAttributes_Summary()
+  public EAttribute getPreferenceAttributes_Enabled()
   {
     return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(1);
   }
@@ -1645,19 +2531,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPreferenceAttributes_Enabled()
-  {
-    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getPreferenceAttributes_Persistent()
   {
-    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1718,6 +2594,246 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EReference getListPreferenceAttributes_EntryValues()
   {
     return (EReference)listPreferenceAttributesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPropertyValue()
+  {
+    return propertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAnyDrawablePropertyValue()
+  {
+    return anyDrawablePropertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringPropertyValue()
+  {
+    return stringPropertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringPropertyValue_Value()
+  {
+    return (EAttribute)stringPropertyValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIntegerPropertyValue()
+  {
+    return integerPropertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIntegerPropertyValue_Value()
+  {
+    return (EAttribute)integerPropertyValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanPropertyValue()
+  {
+    return booleanPropertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanPropertyValue_Value()
+  {
+    return (EAttribute)booleanPropertyValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getColorPropertyValue()
+  {
+    return colorPropertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getColorPropertyValue_Value()
+  {
+    return (EAttribute)colorPropertyValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDimensionPropertyValue()
+  {
+    return dimensionPropertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDimensionPropertyValue_Value()
+  {
+    return (EReference)dimensionPropertyValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDrawableResourceLink()
+  {
+    return drawableResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDrawableResourceLink_Link()
+  {
+    return (EReference)drawableResourceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringResourceLink()
+  {
+    return stringResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStringResourceLink_Link()
+  {
+    return (EReference)stringResourceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIntegerResourceLink()
+  {
+    return integerResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIntegerResourceLink_Link()
+  {
+    return (EReference)integerResourceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanResourceLink()
+  {
+    return booleanResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanResourceLink_Link()
+  {
+    return (EReference)booleanResourceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getColorResourceLink()
+  {
+    return colorResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getColorResourceLink_Link()
+  {
+    return (EReference)colorResourceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDimensionResourceLink()
+  {
+    return dimensionResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDimensionResourceLink_Link()
+  {
+    return (EReference)dimensionResourceLinkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1855,9 +2971,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDimensionResource_Value()
+  public EReference getDimensionResource_Value()
   {
-    return (EAttribute)dimensionResourceEClass.getEStructuralFeatures().get(0);
+    return (EReference)dimensionResourceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2035,9 +3151,49 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDimensionValue()
+  {
+    return dimensionValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDimensionValue_Value()
+  {
+    return (EAttribute)dimensionValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDimensionValue_Metric()
+  {
+    return (EAttribute)dimensionValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getApiLevel()
   {
     return apiLevelEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getActivityTheme()
+  {
+    return activityThemeEEnum;
   }
 
   /**
@@ -2055,9 +3211,29 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getLayoutStyle()
+  public EEnum getLayoutGravityKind()
   {
-    return layoutStyleEEnum;
+    return layoutGravityKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getLayoutDimensionKind()
+  {
+    return layoutDimensionKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getDimensionMetric()
+  {
+    return dimensionMetricEEnum;
   }
 
   /**
@@ -2120,9 +3296,31 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEAttribute(androidApplicationModelElementEClass, ANDROID_APPLICATION_MODEL_ELEMENT__NAME);
 
     activityEClass = createEClass(ACTIVITY);
-    createEReference(activityEClass, ACTIVITY__LAYOUT);
+
+    simpleActivityEClass = createEClass(SIMPLE_ACTIVITY);
+    createEReference(simpleActivityEClass, SIMPLE_ACTIVITY__LAYOUT);
+    createEAttribute(simpleActivityEClass, SIMPLE_ACTIVITY__THEME);
 
     tabActivityEClass = createEClass(TAB_ACTIVITY);
+    createEReference(tabActivityEClass, TAB_ACTIVITY__TABS);
+
+    tabEClass = createEClass(TAB);
+    createEAttribute(tabEClass, TAB__TAG);
+    createEReference(tabEClass, TAB__ACTIVITY);
+
+    listActivityEClass = createEClass(LIST_ACTIVITY);
+    createEReference(listActivityEClass, LIST_ACTIVITY__LISTITEM);
+
+    preferenceActivityEClass = createEClass(PREFERENCE_ACTIVITY);
+    createEReference(preferenceActivityEClass, PREFERENCE_ACTIVITY__LAYOUT);
+
+    actionEClass = createEClass(ACTION);
+
+    invokeActivityEClass = createEClass(INVOKE_ACTIVITY);
+    createEReference(invokeActivityEClass, INVOKE_ACTIVITY__ACTIVITY);
+
+    invokeWebUrlEClass = createEClass(INVOKE_WEB_URL);
+    createEAttribute(invokeWebUrlEClass, INVOKE_WEB_URL__URL);
 
     androDataModelRootEClass = createEClass(ANDRO_DATA_MODEL_ROOT);
     createEReference(androDataModelRootEClass, ANDRO_DATA_MODEL_ROOT__ENTITIES);
@@ -2145,37 +3343,79 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(entityTypeRefEClass, ENTITY_TYPE_REF__TYPE);
 
     androGuiModelRootEClass = createEClass(ANDRO_GUI_MODEL_ROOT);
-    createEReference(androGuiModelRootEClass, ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT);
+    createEReference(androGuiModelRootEClass, ANDRO_GUI_MODEL_ROOT__ROOTS);
 
-    uiElementEClass = createEClass(UI_ELEMENT);
+    viewEClass = createEClass(VIEW);
+    createEAttribute(viewEClass, VIEW__NAME);
+    createEAttribute(viewEClass, VIEW__LAYOUT_STYLE);
 
-    layoutEClass = createEClass(LAYOUT);
+    viewGroupEClass = createEClass(VIEW_GROUP);
+    createEReference(viewGroupEClass, VIEW_GROUP__VIEWS);
 
-    rootLayoutEClass = createEClass(ROOT_LAYOUT);
-    createEAttribute(rootLayoutEClass, ROOT_LAYOUT__NAME);
+    layoutParamsEClass = createEClass(LAYOUT_PARAMS);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__WEIGHT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_LEFT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_TOP);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_RIGHT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_BOTTOM);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__LEFT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__TOP);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__RIGHT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__BOTTOM);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE);
 
-    baseLayoutEClass = createEClass(BASE_LAYOUT);
-    createEAttribute(baseLayoutEClass, BASE_LAYOUT__LAYOUT_STYLE);
-    createEReference(baseLayoutEClass, BASE_LAYOUT__ELEMENTS);
+    layoutGravityAttributeEClass = createEClass(LAYOUT_GRAVITY_ATTRIBUTE);
+    createEAttribute(layoutGravityAttributeEClass, LAYOUT_GRAVITY_ATTRIBUTE__GRAVITY);
 
     absoluteLayoutEClass = createEClass(ABSOLUTE_LAYOUT);
 
     linearLayoutEClass = createEClass(LINEAR_LAYOUT);
-    createEAttribute(linearLayoutEClass, LINEAR_LAYOUT__ORIENTATION);
+    createEAttribute(linearLayoutEClass, LINEAR_LAYOUT__VERTICAL);
+    createEReference(linearLayoutEClass, LINEAR_LAYOUT__LAYOUT_PARAMS);
+
+    linearLayoutParamsEClass = createEClass(LINEAR_LAYOUT_PARAMS);
+    createEReference(linearLayoutParamsEClass, LINEAR_LAYOUT_PARAMS__LAYOUT_PARAMS);
+    createEReference(linearLayoutParamsEClass, LINEAR_LAYOUT_PARAMS__GRAVITY);
 
     frameLayoutEClass = createEClass(FRAME_LAYOUT);
 
     relativeLayoutEClass = createEClass(RELATIVE_LAYOUT);
 
-    widgetEClass = createEClass(WIDGET);
-    createEAttribute(widgetEClass, WIDGET__NAME);
-    createEAttribute(widgetEClass, WIDGET__LAYOUT_STYLE);
+    gridLayoutEClass = createEClass(GRID_LAYOUT);
+
+    tableLayoutEClass = createEClass(TABLE_LAYOUT);
+
+    simpleViewEClass = createEClass(SIMPLE_VIEW);
+
+    galleryEClass = createEClass(GALLERY);
+
+    expandableListViewEClass = createEClass(EXPANDABLE_LIST_VIEW);
+
+    webViewEClass = createEClass(WEB_VIEW);
+
+    imageViewEClass = createEClass(IMAGE_VIEW);
+    createEReference(imageViewEClass, IMAGE_VIEW__SRC);
 
     textViewEClass = createEClass(TEXT_VIEW);
     createEAttribute(textViewEClass, TEXT_VIEW__TEXT);
+    createEReference(textViewEClass, TEXT_VIEW__GRAVITY_ATTRIBUTE);
+    createEReference(textViewEClass, TEXT_VIEW__TEXT_SIZE_ATTRIBUTE);
+    createEReference(textViewEClass, TEXT_VIEW__LAYOUT_PARAMS);
+
+    gravityAttributeEClass = createEClass(GRAVITY_ATTRIBUTE);
+    createEAttribute(gravityAttributeEClass, GRAVITY_ATTRIBUTE__GRAVITY);
+
+    textSizeAttributeEClass = createEClass(TEXT_SIZE_ATTRIBUTE);
+    createEReference(textSizeAttributeEClass, TEXT_SIZE_ATTRIBUTE__TEXT_SIZE);
+
+    backgroundAttributeEClass = createEClass(BACKGROUND_ATTRIBUTE);
+    createEReference(backgroundAttributeEClass, BACKGROUND_ATTRIBUTE__BACKGROUND);
 
     editTextEClass = createEClass(EDIT_TEXT);
     createEAttribute(editTextEClass, EDIT_TEXT__TEXT);
+    createEReference(editTextEClass, EDIT_TEXT__GRAVITY_ATTRIBUTE);
+    createEReference(editTextEClass, EDIT_TEXT__TEXT_SIZE_ATTRIBUTE);
+    createEReference(editTextEClass, EDIT_TEXT__LAYOUT_PARAMS);
 
     buttonEClass = createEClass(BUTTON);
     createEAttribute(buttonEClass, BUTTON__TEXT);
@@ -2183,6 +3423,8 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     listViewEClass = createEClass(LIST_VIEW);
     createEReference(listViewEClass, LIST_VIEW__ENTRIES);
     createEReference(listViewEClass, LIST_VIEW__LAYOUT);
+
+    gridViewEClass = createEClass(GRID_VIEW);
 
     spinnerEClass = createEClass(SPINNER);
     createEReference(spinnerEClass, SPINNER__ENTRIES);
@@ -2206,13 +3448,22 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEAttribute(radioButtonEClass, RADIO_BUTTON__TEXT);
     createEAttribute(radioButtonEClass, RADIO_BUTTON__LAYOUT_STYLE);
 
+    checkedTextViewEClass = createEClass(CHECKED_TEXT_VIEW);
+    createEAttribute(checkedTextViewEClass, CHECKED_TEXT_VIEW__TEXT);
+
+    autoCompleteTextViewEClass = createEClass(AUTO_COMPLETE_TEXT_VIEW);
+    createEReference(autoCompleteTextViewEClass, AUTO_COMPLETE_TEXT_VIEW__ENTRIES);
+    createEAttribute(autoCompleteTextViewEClass, AUTO_COMPLETE_TEXT_VIEW__IS_MULTI);
+
     abstractPreferenceEClass = createEClass(ABSTRACT_PREFERENCE);
     createEAttribute(abstractPreferenceEClass, ABSTRACT_PREFERENCE__TITLE);
 
     preferenceEClass = createEClass(PREFERENCE);
+    createEAttribute(preferenceEClass, PREFERENCE__NAME);
     createEReference(preferenceEClass, PREFERENCE__PREFERENCE_ATTRIBUTES);
 
     preferenceScreenEClass = createEClass(PREFERENCE_SCREEN);
+    createEAttribute(preferenceScreenEClass, PREFERENCE_SCREEN__NAME);
     createEReference(preferenceScreenEClass, PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES);
     createEReference(preferenceScreenEClass, PREFERENCE_SCREEN__PREFERENCES);
 
@@ -2220,22 +3471,25 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(preferenceCategoryEClass, PREFERENCE_CATEGORY__PREFERENCES);
 
     editTextPreferenceEClass = createEClass(EDIT_TEXT_PREFERENCE);
+    createEAttribute(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__NAME);
     createEReference(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES);
     createEReference(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES);
 
     listPreferenceEClass = createEClass(LIST_PREFERENCE);
+    createEAttribute(listPreferenceEClass, LIST_PREFERENCE__NAME);
     createEReference(listPreferenceEClass, LIST_PREFERENCE__PREFERENCE_ATTRIBUTES);
     createEReference(listPreferenceEClass, LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES);
     createEReference(listPreferenceEClass, LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES);
 
     checkBoxPreferenceEClass = createEClass(CHECK_BOX_PREFERENCE);
+    createEAttribute(checkBoxPreferenceEClass, CHECK_BOX_PREFERENCE__NAME);
     createEReference(checkBoxPreferenceEClass, CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES);
 
     ringtonePrefenceEClass = createEClass(RINGTONE_PREFENCE);
+    createEAttribute(ringtonePrefenceEClass, RINGTONE_PREFENCE__NAME);
     createEReference(ringtonePrefenceEClass, RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES);
 
     preferenceAttributesEClass = createEClass(PREFERENCE_ATTRIBUTES);
-    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__KEY);
     createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__SUMMARY);
     createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__ENABLED);
     createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__PERSISTENT);
@@ -2247,6 +3501,43 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     listPreferenceAttributesEClass = createEClass(LIST_PREFERENCE_ATTRIBUTES);
     createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRIES);
     createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES);
+
+    propertyValueEClass = createEClass(PROPERTY_VALUE);
+
+    anyDrawablePropertyValueEClass = createEClass(ANY_DRAWABLE_PROPERTY_VALUE);
+
+    stringPropertyValueEClass = createEClass(STRING_PROPERTY_VALUE);
+    createEAttribute(stringPropertyValueEClass, STRING_PROPERTY_VALUE__VALUE);
+
+    integerPropertyValueEClass = createEClass(INTEGER_PROPERTY_VALUE);
+    createEAttribute(integerPropertyValueEClass, INTEGER_PROPERTY_VALUE__VALUE);
+
+    booleanPropertyValueEClass = createEClass(BOOLEAN_PROPERTY_VALUE);
+    createEAttribute(booleanPropertyValueEClass, BOOLEAN_PROPERTY_VALUE__VALUE);
+
+    colorPropertyValueEClass = createEClass(COLOR_PROPERTY_VALUE);
+    createEAttribute(colorPropertyValueEClass, COLOR_PROPERTY_VALUE__VALUE);
+
+    dimensionPropertyValueEClass = createEClass(DIMENSION_PROPERTY_VALUE);
+    createEReference(dimensionPropertyValueEClass, DIMENSION_PROPERTY_VALUE__VALUE);
+
+    drawableResourceLinkEClass = createEClass(DRAWABLE_RESOURCE_LINK);
+    createEReference(drawableResourceLinkEClass, DRAWABLE_RESOURCE_LINK__LINK);
+
+    stringResourceLinkEClass = createEClass(STRING_RESOURCE_LINK);
+    createEReference(stringResourceLinkEClass, STRING_RESOURCE_LINK__LINK);
+
+    integerResourceLinkEClass = createEClass(INTEGER_RESOURCE_LINK);
+    createEReference(integerResourceLinkEClass, INTEGER_RESOURCE_LINK__LINK);
+
+    booleanResourceLinkEClass = createEClass(BOOLEAN_RESOURCE_LINK);
+    createEReference(booleanResourceLinkEClass, BOOLEAN_RESOURCE_LINK__LINK);
+
+    colorResourceLinkEClass = createEClass(COLOR_RESOURCE_LINK);
+    createEReference(colorResourceLinkEClass, COLOR_RESOURCE_LINK__LINK);
+
+    dimensionResourceLinkEClass = createEClass(DIMENSION_RESOURCE_LINK);
+    createEReference(dimensionResourceLinkEClass, DIMENSION_RESOURCE_LINK__LINK);
 
     androResModelRootEClass = createEClass(ANDRO_RES_MODEL_ROOT);
     createEReference(androResModelRootEClass, ANDRO_RES_MODEL_ROOT__RESOURCES);
@@ -2267,7 +3558,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEAttribute(colorResourceEClass, COLOR_RESOURCE__VALUE);
 
     dimensionResourceEClass = createEClass(DIMENSION_RESOURCE);
-    createEAttribute(dimensionResourceEClass, DIMENSION_RESOURCE__VALUE);
+    createEReference(dimensionResourceEClass, DIMENSION_RESOURCE__VALUE);
 
     arrayResourceEClass = createEClass(ARRAY_RESOURCE);
 
@@ -2294,10 +3585,17 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(transitionDrawableResourceEClass, TRANSITION_DRAWABLE_RESOURCE__FROM);
     createEReference(transitionDrawableResourceEClass, TRANSITION_DRAWABLE_RESOURCE__TO);
 
+    dimensionValueEClass = createEClass(DIMENSION_VALUE);
+    createEAttribute(dimensionValueEClass, DIMENSION_VALUE__VALUE);
+    createEAttribute(dimensionValueEClass, DIMENSION_VALUE__METRIC);
+
     // Create enums
     apiLevelEEnum = createEEnum(API_LEVEL);
+    activityThemeEEnum = createEEnum(ACTIVITY_THEME);
     dataTypesEEnum = createEEnum(DATA_TYPES);
-    layoutStyleEEnum = createEEnum(LAYOUT_STYLE);
+    layoutGravityKindEEnum = createEEnum(LAYOUT_GRAVITY_KIND);
+    layoutDimensionKindEEnum = createEEnum(LAYOUT_DIMENSION_KIND);
+    dimensionMetricEEnum = createEEnum(DIMENSION_METRIC);
   }
 
   /**
@@ -2332,36 +3630,59 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     androGenModelRootEClass.getESuperTypes().add(this.getModelRoot());
     androidApplicationEClass.getESuperTypes().add(this.getModelRoot());
     activityEClass.getESuperTypes().add(this.getAndroidApplicationModelElement());
-    tabActivityEClass.getESuperTypes().add(this.getAndroidApplicationModelElement());
+    simpleActivityEClass.getESuperTypes().add(this.getActivity());
+    tabActivityEClass.getESuperTypes().add(this.getActivity());
+    listActivityEClass.getESuperTypes().add(this.getActivity());
+    preferenceActivityEClass.getESuperTypes().add(this.getAndroidApplicationModelElement());
+    invokeActivityEClass.getESuperTypes().add(this.getAction());
+    invokeWebUrlEClass.getESuperTypes().add(this.getAction());
     androDataModelRootEClass.getESuperTypes().add(this.getModelRoot());
     dataTypesRefEClass.getESuperTypes().add(this.getTypeRef());
     entityTypeRefEClass.getESuperTypes().add(this.getTypeRef());
     androGuiModelRootEClass.getESuperTypes().add(this.getModelRoot());
-    layoutEClass.getESuperTypes().add(this.getUIElement());
-    rootLayoutEClass.getESuperTypes().add(this.getLayout());
-    baseLayoutEClass.getESuperTypes().add(this.getRootLayout());
-    absoluteLayoutEClass.getESuperTypes().add(this.getBaseLayout());
-    linearLayoutEClass.getESuperTypes().add(this.getBaseLayout());
-    frameLayoutEClass.getESuperTypes().add(this.getBaseLayout());
-    relativeLayoutEClass.getESuperTypes().add(this.getBaseLayout());
-    widgetEClass.getESuperTypes().add(this.getUIElement());
-    textViewEClass.getESuperTypes().add(this.getWidget());
-    editTextEClass.getESuperTypes().add(this.getWidget());
-    buttonEClass.getESuperTypes().add(this.getWidget());
-    listViewEClass.getESuperTypes().add(this.getWidget());
-    spinnerEClass.getESuperTypes().add(this.getWidget());
-    checkBoxEClass.getESuperTypes().add(this.getWidget());
-    radioGroupEClass.getESuperTypes().add(this.getWidget());
-    ratingBarEClass.getESuperTypes().add(this.getWidget());
-    toggleButtonEClass.getESuperTypes().add(this.getWidget());
+    viewGroupEClass.getESuperTypes().add(this.getView());
+    absoluteLayoutEClass.getESuperTypes().add(this.getViewGroup());
+    linearLayoutEClass.getESuperTypes().add(this.getViewGroup());
+    frameLayoutEClass.getESuperTypes().add(this.getViewGroup());
+    relativeLayoutEClass.getESuperTypes().add(this.getViewGroup());
+    gridLayoutEClass.getESuperTypes().add(this.getViewGroup());
+    tableLayoutEClass.getESuperTypes().add(this.getViewGroup());
+    simpleViewEClass.getESuperTypes().add(this.getView());
+    galleryEClass.getESuperTypes().add(this.getSimpleView());
+    expandableListViewEClass.getESuperTypes().add(this.getSimpleView());
+    webViewEClass.getESuperTypes().add(this.getSimpleView());
+    imageViewEClass.getESuperTypes().add(this.getSimpleView());
+    textViewEClass.getESuperTypes().add(this.getSimpleView());
+    editTextEClass.getESuperTypes().add(this.getSimpleView());
+    buttonEClass.getESuperTypes().add(this.getSimpleView());
+    listViewEClass.getESuperTypes().add(this.getSimpleView());
+    gridViewEClass.getESuperTypes().add(this.getSimpleView());
+    spinnerEClass.getESuperTypes().add(this.getSimpleView());
+    checkBoxEClass.getESuperTypes().add(this.getSimpleView());
+    radioGroupEClass.getESuperTypes().add(this.getSimpleView());
+    ratingBarEClass.getESuperTypes().add(this.getSimpleView());
+    toggleButtonEClass.getESuperTypes().add(this.getSimpleView());
+    checkedTextViewEClass.getESuperTypes().add(this.getSimpleView());
+    autoCompleteTextViewEClass.getESuperTypes().add(this.getSimpleView());
     preferenceEClass.getESuperTypes().add(this.getAbstractPreference());
-    preferenceScreenEClass.getESuperTypes().add(this.getRootLayout());
     preferenceScreenEClass.getESuperTypes().add(this.getAbstractPreference());
     preferenceCategoryEClass.getESuperTypes().add(this.getAbstractPreference());
     editTextPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
     listPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
     checkBoxPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
     ringtonePrefenceEClass.getESuperTypes().add(this.getAbstractPreference());
+    anyDrawablePropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
+    stringPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
+    integerPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
+    booleanPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
+    colorPropertyValueEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
+    dimensionPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
+    drawableResourceLinkEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
+    stringResourceLinkEClass.getESuperTypes().add(this.getStringPropertyValue());
+    integerResourceLinkEClass.getESuperTypes().add(this.getIntegerPropertyValue());
+    booleanResourceLinkEClass.getESuperTypes().add(this.getBooleanPropertyValue());
+    colorResourceLinkEClass.getESuperTypes().add(this.getColorPropertyValue());
+    dimensionResourceLinkEClass.getESuperTypes().add(this.getDimensionPropertyValue());
     androResModelRootEClass.getESuperTypes().add(this.getModelRoot());
     stringResourceEClass.getESuperTypes().add(this.getResource());
     integerResourceEClass.getESuperTypes().add(this.getResource());
@@ -2406,9 +3727,31 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEAttribute(getAndroidApplicationModelElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AndroidApplicationModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getActivity_Layout(), this.getRootLayout(), null, "layout", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simpleActivityEClass, SimpleActivity.class, "SimpleActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSimpleActivity_Layout(), this.getViewGroup(), null, "layout", null, 0, 1, SimpleActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleActivity_Theme(), this.getActivityTheme(), "theme", null, 0, 1, SimpleActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tabActivityEClass, TabActivity.class, "TabActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTabActivity_Tabs(), this.getTab(), null, "tabs", null, 0, -1, TabActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tabEClass, Tab.class, "Tab", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTab_Tag(), ecorePackage.getEString(), "tag", null, 0, 1, Tab.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTab_Activity(), this.getActivity(), null, "activity", null, 0, 1, Tab.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listActivityEClass, ListActivity.class, "ListActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListActivity_Listitem(), this.getView(), null, "listitem", null, 0, 1, ListActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(preferenceActivityEClass, PreferenceActivity.class, "PreferenceActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPreferenceActivity_Layout(), this.getPreferenceScreen(), null, "layout", null, 0, 1, PreferenceActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(invokeActivityEClass, InvokeActivity.class, "InvokeActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInvokeActivity_Activity(), this.getActivity(), null, "activity", null, 0, 1, InvokeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(invokeWebUrlEClass, InvokeWebUrl.class, "InvokeWebUrl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInvokeWebUrl_Url(), ecorePackage.getEString(), "url", null, 0, 1, InvokeWebUrl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(androDataModelRootEClass, AndroDataModelRoot.class, "AndroDataModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAndroDataModelRoot_Entities(), this.getEntity(), null, "entities", null, 0, -1, AndroDataModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2431,47 +3774,91 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getEntityTypeRef_Type(), this.getEntity(), null, "type", null, 0, 1, EntityTypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(androGuiModelRootEClass, AndroGuiModelRoot.class, "AndroGuiModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAndroGuiModelRoot_RootLayout(), this.getRootLayout(), null, "rootLayout", null, 0, -1, AndroGuiModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAndroGuiModelRoot_Roots(), this.getView(), null, "roots", null, 0, -1, AndroGuiModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(uiElementEClass, UIElement.class, "UIElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getView_Name(), ecorePackage.getEString(), "name", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getView_LayoutStyle(), this.getLayoutDimensionKind(), "layoutStyle", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(layoutEClass, Layout.class, "Layout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(viewGroupEClass, ViewGroup.class, "ViewGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getViewGroup_Views(), this.getView(), null, "views", null, 0, -1, ViewGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(rootLayoutEClass, RootLayout.class, "RootLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRootLayout_Name(), ecorePackage.getEString(), "name", null, 0, 1, RootLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(layoutParamsEClass, LayoutParams.class, "LayoutParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLayoutParams_Weight(), this.getIntegerPropertyValue(), null, "weight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_MarginLeft(), this.getDimensionPropertyValue(), null, "marginLeft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_MarginTop(), this.getDimensionPropertyValue(), null, "marginTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_MarginRight(), this.getDimensionPropertyValue(), null, "marginRight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_MarginBottom(), this.getDimensionPropertyValue(), null, "marginBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_Left(), this.getBooleanPropertyValue(), null, "left", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_Top(), this.getBooleanPropertyValue(), null, "top", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_Right(), this.getBooleanPropertyValue(), null, "right", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_Bottom(), this.getBooleanPropertyValue(), null, "bottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_BackgroundAttribute(), this.getBackgroundAttribute(), null, "backgroundAttribute", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(baseLayoutEClass, BaseLayout.class, "BaseLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBaseLayout_LayoutStyle(), this.getLayoutStyle(), "layoutStyle", null, 0, 1, BaseLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBaseLayout_Elements(), this.getUIElement(), null, "elements", null, 0, -1, BaseLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(layoutGravityAttributeEClass, LayoutGravityAttribute.class, "LayoutGravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLayoutGravityAttribute_Gravity(), this.getLayoutGravityKind(), "gravity", null, 0, -1, LayoutGravityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(absoluteLayoutEClass, AbsoluteLayout.class, "AbsoluteLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(linearLayoutEClass, LinearLayout.class, "LinearLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLinearLayout_Orientation(), ecorePackage.getEBoolean(), "orientation", null, 0, 1, LinearLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLinearLayout_Vertical(), ecorePackage.getEBoolean(), "vertical", null, 0, 1, LinearLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinearLayout_LayoutParams(), this.getLinearLayoutParams(), null, "layoutParams", null, 0, 1, LinearLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(linearLayoutParamsEClass, LinearLayoutParams.class, "LinearLayoutParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLinearLayoutParams_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, LinearLayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinearLayoutParams_Gravity(), this.getLayoutGravityAttribute(), null, "gravity", null, 0, 1, LinearLayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(frameLayoutEClass, FrameLayout.class, "FrameLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(relativeLayoutEClass, RelativeLayout.class, "RelativeLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(widgetEClass, Widget.class, "Widget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWidget_Name(), ecorePackage.getEString(), "name", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWidget_LayoutStyle(), this.getLayoutStyle(), "layoutStyle", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(gridLayoutEClass, GridLayout.class, "GridLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(tableLayoutEClass, TableLayout.class, "TableLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(simpleViewEClass, SimpleView.class, "SimpleView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(galleryEClass, Gallery.class, "Gallery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(expandableListViewEClass, ExpandableListView.class, "ExpandableListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(webViewEClass, WebView.class, "WebView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(imageViewEClass, ImageView.class, "ImageView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getImageView_Src(), this.getDrawableResource(), null, "src", null, 0, 1, ImageView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textViewEClass, TextView.class, "TextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTextView_Text(), ecorePackage.getEString(), "text", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTextView_GravityAttribute(), this.getGravityAttribute(), null, "gravityAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTextView_TextSizeAttribute(), this.getTextSizeAttribute(), null, "textSizeAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTextView_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(gravityAttributeEClass, GravityAttribute.class, "GravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGravityAttribute_Gravity(), this.getLayoutGravityKind(), "gravity", null, 0, 1, GravityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textSizeAttributeEClass, TextSizeAttribute.class, "TextSizeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTextSizeAttribute_TextSize(), this.getDimensionPropertyValue(), null, "textSize", null, 0, 1, TextSizeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(backgroundAttributeEClass, BackgroundAttribute.class, "BackgroundAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBackgroundAttribute_Background(), this.getAnyDrawablePropertyValue(), null, "background", null, 0, 1, BackgroundAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(editTextEClass, EditText.class, "EditText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEditText_Text(), ecorePackage.getEString(), "text", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEditText_GravityAttribute(), this.getGravityAttribute(), null, "gravityAttribute", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEditText_TextSizeAttribute(), this.getTextSizeAttribute(), null, "textSizeAttribute", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEditText_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listViewEClass, ListView.class, "ListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListView_Entries(), this.getArrayResource(), null, "entries", null, 0, 1, ListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListView_Layout(), this.getLayout(), null, "layout", null, 0, 1, ListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListView_Layout(), this.getView(), null, "layout", null, 0, 1, ListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(gridViewEClass, GridView.class, "GridView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(spinnerEClass, Spinner.class, "Spinner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSpinner_Entries(), this.getResource(), null, "entries", null, 0, 1, Spinner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpinner_Entries(), this.getArrayResource(), null, "entries", null, 0, 1, Spinner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCheckBox_Text(), ecorePackage.getEString(), "text", null, 0, 1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2490,15 +3877,24 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEClass(radioButtonEClass, RadioButton.class, "RadioButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRadioButton_Name(), ecorePackage.getEString(), "name", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRadioButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRadioButton_LayoutStyle(), this.getLayoutStyle(), "layoutStyle", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRadioButton_LayoutStyle(), this.getLayoutDimensionKind(), "layoutStyle", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(checkedTextViewEClass, CheckedTextView.class, "CheckedTextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCheckedTextView_Text(), ecorePackage.getEString(), "text", null, 0, 1, CheckedTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(autoCompleteTextViewEClass, AutoCompleteTextView.class, "AutoCompleteTextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAutoCompleteTextView_Entries(), this.getStringArrayResource(), null, "entries", null, 0, 1, AutoCompleteTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAutoCompleteTextView_IsMulti(), ecorePackage.getEBoolean(), "isMulti", null, 0, 1, AutoCompleteTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractPreferenceEClass, AbstractPreference.class, "AbstractPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractPreference_Title(), ecorePackage.getEString(), "title", null, 0, 1, AbstractPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preferenceEClass, Preference.class, "Preference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, Preference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, Preference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preferenceScreenEClass, PreferenceScreen.class, "PreferenceScreen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPreferenceScreen_Name(), ecorePackage.getEString(), "name", null, 0, 1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPreferenceScreen_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPreferenceScreen_Preferences(), this.getAbstractPreference(), null, "preferences", null, 0, -1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2506,22 +3902,25 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getPreferenceCategory_Preferences(), this.getAbstractPreference(), null, "preferences", null, 0, -1, PreferenceCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(editTextPreferenceEClass, EditTextPreference.class, "EditTextPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEditTextPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEditTextPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEditTextPreference_DialogPreferenceAttributes(), this.getDialogPreferenceAttributes(), null, "dialogPreferenceAttributes", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listPreferenceEClass, ListPreference.class, "ListPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getListPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListPreference_DialogPreferenceAttributes(), this.getDialogPreferenceAttributes(), null, "dialogPreferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListPreference_ListPreferenceAttributes(), this.getListPreferenceAttributes(), null, "listPreferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(checkBoxPreferenceEClass, CheckBoxPreference.class, "CheckBoxPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCheckBoxPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, CheckBoxPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCheckBoxPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, CheckBoxPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ringtonePrefenceEClass, RingtonePrefence.class, "RingtonePrefence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRingtonePrefence_Name(), ecorePackage.getEString(), "name", null, 0, 1, RingtonePrefence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRingtonePrefence_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, RingtonePrefence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preferenceAttributesEClass, PreferenceAttributes.class, "PreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPreferenceAttributes_Key(), ecorePackage.getEString(), "key", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPreferenceAttributes_Summary(), ecorePackage.getEString(), "summary", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPreferenceAttributes_Enabled(), ecorePackage.getEString(), "enabled", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPreferenceAttributes_Persistent(), ecorePackage.getEString(), "persistent", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2533,6 +3932,43 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEClass(listPreferenceAttributesEClass, ListPreferenceAttributes.class, "ListPreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListPreferenceAttributes_Entries(), this.getStringArrayEntry(), null, "entries", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListPreferenceAttributes_EntryValues(), this.getStringArrayEntry(), null, "entryValues", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(propertyValueEClass, PropertyValue.class, "PropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(anyDrawablePropertyValueEClass, AnyDrawablePropertyValue.class, "AnyDrawablePropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(stringPropertyValueEClass, StringPropertyValue.class, "StringPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringPropertyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(integerPropertyValueEClass, IntegerPropertyValue.class, "IntegerPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIntegerPropertyValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanPropertyValueEClass, BooleanPropertyValue.class, "BooleanPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanPropertyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(colorPropertyValueEClass, ColorPropertyValue.class, "ColorPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getColorPropertyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, ColorPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dimensionPropertyValueEClass, DimensionPropertyValue.class, "DimensionPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDimensionPropertyValue_Value(), this.getDimensionValue(), null, "value", null, 0, 1, DimensionPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(drawableResourceLinkEClass, DrawableResourceLink.class, "DrawableResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDrawableResourceLink_Link(), this.getDrawableResource(), null, "link", null, 0, 1, DrawableResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringResourceLinkEClass, StringResourceLink.class, "StringResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStringResourceLink_Link(), this.getStringResource(), null, "link", null, 0, 1, StringResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(integerResourceLinkEClass, IntegerResourceLink.class, "IntegerResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIntegerResourceLink_Link(), this.getIntegerResource(), null, "link", null, 0, 1, IntegerResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanResourceLinkEClass, BooleanResourceLink.class, "BooleanResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBooleanResourceLink_Link(), this.getBooleanResource(), null, "link", null, 0, 1, BooleanResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(colorResourceLinkEClass, ColorResourceLink.class, "ColorResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getColorResourceLink_Link(), this.getColorResource(), null, "link", null, 0, 1, ColorResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dimensionResourceLinkEClass, DimensionResourceLink.class, "DimensionResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDimensionResourceLink_Link(), this.getDimensionResource(), null, "link", null, 0, 1, DimensionResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(androResModelRootEClass, AndroResModelRoot.class, "AndroResModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAndroResModelRoot_Resources(), this.getResource(), null, "resources", null, 0, -1, AndroResModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2553,7 +3989,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEAttribute(getColorResource_Value(), ecorePackage.getEString(), "value", null, 0, 1, ColorResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dimensionResourceEClass, DimensionResource.class, "DimensionResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDimensionResource_Value(), ecorePackage.getEString(), "value", null, 0, 1, DimensionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDimensionResource_Value(), this.getDimensionValue(), null, "value", null, 0, 1, DimensionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arrayResourceEClass, ArrayResource.class, "ArrayResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2580,6 +4016,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getTransitionDrawableResource_From(), this.getBitmapDrawableResource(), null, "from", null, 0, 1, TransitionDrawableResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTransitionDrawableResource_To(), this.getBitmapDrawableResource(), null, "to", null, 0, 1, TransitionDrawableResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(dimensionValueEClass, DimensionValue.class, "DimensionValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDimensionValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, DimensionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDimensionValue_Metric(), this.getDimensionMetric(), "metric", null, 0, 1, DimensionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     // Initialize enums and add enum literals
     initEEnum(apiLevelEEnum, ApiLevel.class, "ApiLevel");
     addEEnumLiteral(apiLevelEEnum, ApiLevel.API8);
@@ -2589,17 +4029,44 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     addEEnumLiteral(apiLevelEEnum, ApiLevel.API12);
     addEEnumLiteral(apiLevelEEnum, ApiLevel.API14);
 
+    initEEnum(activityThemeEEnum, ActivityTheme.class, "ActivityTheme");
+    addEEnumLiteral(activityThemeEEnum, ActivityTheme.DIALOG);
+    addEEnumLiteral(activityThemeEEnum, ActivityTheme.NOTITLE);
+    addEEnumLiteral(activityThemeEEnum, ActivityTheme.FULLSCREEN);
+
     initEEnum(dataTypesEEnum, DataTypes.class, "DataTypes");
     addEEnumLiteral(dataTypesEEnum, DataTypes.STRING);
     addEEnumLiteral(dataTypesEEnum, DataTypes.FLOAT);
     addEEnumLiteral(dataTypesEEnum, DataTypes.BOOLEAN);
     addEEnumLiteral(dataTypesEEnum, DataTypes.INT);
 
-    initEEnum(layoutStyleEEnum, LayoutStyle.class, "LayoutStyle");
-    addEEnumLiteral(layoutStyleEEnum, LayoutStyle.FILL);
-    addEEnumLiteral(layoutStyleEEnum, LayoutStyle.WRAP);
-    addEEnumLiteral(layoutStyleEEnum, LayoutStyle.FILL_WRAP);
-    addEEnumLiteral(layoutStyleEEnum, LayoutStyle.WRAP_FILL);
+    initEEnum(layoutGravityKindEEnum, LayoutGravityKind.class, "LayoutGravityKind");
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.TOP);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.BOTTOM);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.LEFT);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.RIGHT);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CENTER);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CENTER_VERTICAL);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CENTER_HORIZONTAL);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.FILL);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.FILL_VERTICAL);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.FILL_HORIZONTAL);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CLIP_VERTICAL);
+    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CLIP_HORIZONTAL);
+
+    initEEnum(layoutDimensionKindEEnum, LayoutDimensionKind.class, "LayoutDimensionKind");
+    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.FILL);
+    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.WRAP);
+    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.FILL_WRAP);
+    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.WRAP_FILL);
+
+    initEEnum(dimensionMetricEEnum, DimensionMetric.class, "DimensionMetric");
+    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.DP);
+    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.SP);
+    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.PT);
+    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.PX);
+    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.MM);
+    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.IN);
 
     // Create resource
     createResource(eNS_URI);

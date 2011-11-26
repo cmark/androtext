@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextPreferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextPreferenceImpl#getPreferenceAttributes <em>Preference Attributes</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextPreferenceImpl#getDialogPreferenceAttributes <em>Dialog Preference Attributes</em>}</li>
  * </ul>
@@ -35,6 +36,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class EditTextPreferenceImpl extends AbstractPreferenceImpl implements EditTextPreference
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getPreferenceAttributes() <em>Preference Attributes</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -74,6 +95,29 @@ public class EditTextPreferenceImpl extends AbstractPreferenceImpl implements Ed
   protected EClass eStaticClass()
   {
     return AndroTextDslPackage.Literals.EDIT_TEXT_PREFERENCE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.EDIT_TEXT_PREFERENCE__NAME, oldName, name));
   }
 
   /**
@@ -200,6 +244,8 @@ public class EditTextPreferenceImpl extends AbstractPreferenceImpl implements Ed
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__NAME:
+        return getName();
       case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES:
         return getPreferenceAttributes();
       case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES:
@@ -218,6 +264,9 @@ public class EditTextPreferenceImpl extends AbstractPreferenceImpl implements Ed
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__NAME:
+        setName((String)newValue);
+        return;
       case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)newValue);
         return;
@@ -238,6 +287,9 @@ public class EditTextPreferenceImpl extends AbstractPreferenceImpl implements Ed
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)null);
         return;
@@ -258,12 +310,31 @@ public class EditTextPreferenceImpl extends AbstractPreferenceImpl implements Ed
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES:
         return preferenceAttributes != null;
       case AndroTextDslPackage.EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES:
         return dialogPreferenceAttributes != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //EditTextPreferenceImpl

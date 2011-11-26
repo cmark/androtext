@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface RadioGroup extends Widget
+public interface RadioGroup extends SimpleView
 {
   /**
    * Returns the value of the '<em><b>Orientation</b></em>' attribute.

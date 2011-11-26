@@ -77,7 +77,14 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.ANDROID_APPLICATION: return createAndroidApplication();
       case AndroTextDslPackage.ANDROID_APPLICATION_MODEL_ELEMENT: return createAndroidApplicationModelElement();
       case AndroTextDslPackage.ACTIVITY: return createActivity();
+      case AndroTextDslPackage.SIMPLE_ACTIVITY: return createSimpleActivity();
       case AndroTextDslPackage.TAB_ACTIVITY: return createTabActivity();
+      case AndroTextDslPackage.TAB: return createTab();
+      case AndroTextDslPackage.LIST_ACTIVITY: return createListActivity();
+      case AndroTextDslPackage.PREFERENCE_ACTIVITY: return createPreferenceActivity();
+      case AndroTextDslPackage.ACTION: return createAction();
+      case AndroTextDslPackage.INVOKE_ACTIVITY: return createInvokeActivity();
+      case AndroTextDslPackage.INVOKE_WEB_URL: return createInvokeWebUrl();
       case AndroTextDslPackage.ANDRO_DATA_MODEL_ROOT: return createAndroDataModelRoot();
       case AndroTextDslPackage.ENTITY: return createEntity();
       case AndroTextDslPackage.PROPERTY: return createProperty();
@@ -85,25 +92,38 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.DATA_TYPES_REF: return createDataTypesRef();
       case AndroTextDslPackage.ENTITY_TYPE_REF: return createEntityTypeRef();
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT: return createAndroGuiModelRoot();
-      case AndroTextDslPackage.UI_ELEMENT: return createUIElement();
-      case AndroTextDslPackage.LAYOUT: return createLayout();
-      case AndroTextDslPackage.ROOT_LAYOUT: return createRootLayout();
-      case AndroTextDslPackage.BASE_LAYOUT: return createBaseLayout();
+      case AndroTextDslPackage.VIEW: return createView();
+      case AndroTextDslPackage.VIEW_GROUP: return createViewGroup();
+      case AndroTextDslPackage.LAYOUT_PARAMS: return createLayoutParams();
+      case AndroTextDslPackage.LAYOUT_GRAVITY_ATTRIBUTE: return createLayoutGravityAttribute();
       case AndroTextDslPackage.ABSOLUTE_LAYOUT: return createAbsoluteLayout();
       case AndroTextDslPackage.LINEAR_LAYOUT: return createLinearLayout();
+      case AndroTextDslPackage.LINEAR_LAYOUT_PARAMS: return createLinearLayoutParams();
       case AndroTextDslPackage.FRAME_LAYOUT: return createFrameLayout();
       case AndroTextDslPackage.RELATIVE_LAYOUT: return createRelativeLayout();
-      case AndroTextDslPackage.WIDGET: return createWidget();
+      case AndroTextDslPackage.GRID_LAYOUT: return createGridLayout();
+      case AndroTextDslPackage.TABLE_LAYOUT: return createTableLayout();
+      case AndroTextDslPackage.SIMPLE_VIEW: return createSimpleView();
+      case AndroTextDslPackage.GALLERY: return createGallery();
+      case AndroTextDslPackage.EXPANDABLE_LIST_VIEW: return createExpandableListView();
+      case AndroTextDslPackage.WEB_VIEW: return createWebView();
+      case AndroTextDslPackage.IMAGE_VIEW: return createImageView();
       case AndroTextDslPackage.TEXT_VIEW: return createTextView();
+      case AndroTextDslPackage.GRAVITY_ATTRIBUTE: return createGravityAttribute();
+      case AndroTextDslPackage.TEXT_SIZE_ATTRIBUTE: return createTextSizeAttribute();
+      case AndroTextDslPackage.BACKGROUND_ATTRIBUTE: return createBackgroundAttribute();
       case AndroTextDslPackage.EDIT_TEXT: return createEditText();
       case AndroTextDslPackage.BUTTON: return createButton();
       case AndroTextDslPackage.LIST_VIEW: return createListView();
+      case AndroTextDslPackage.GRID_VIEW: return createGridView();
       case AndroTextDslPackage.SPINNER: return createSpinner();
       case AndroTextDslPackage.CHECK_BOX: return createCheckBox();
       case AndroTextDslPackage.RADIO_GROUP: return createRadioGroup();
       case AndroTextDslPackage.RATING_BAR: return createRatingBar();
       case AndroTextDslPackage.TOGGLE_BUTTON: return createToggleButton();
       case AndroTextDslPackage.RADIO_BUTTON: return createRadioButton();
+      case AndroTextDslPackage.CHECKED_TEXT_VIEW: return createCheckedTextView();
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW: return createAutoCompleteTextView();
       case AndroTextDslPackage.ABSTRACT_PREFERENCE: return createAbstractPreference();
       case AndroTextDslPackage.PREFERENCE: return createPreference();
       case AndroTextDslPackage.PREFERENCE_SCREEN: return createPreferenceScreen();
@@ -115,6 +135,19 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES: return createPreferenceAttributes();
       case AndroTextDslPackage.DIALOG_PREFERENCE_ATTRIBUTES: return createDialogPreferenceAttributes();
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES: return createListPreferenceAttributes();
+      case AndroTextDslPackage.PROPERTY_VALUE: return createPropertyValue();
+      case AndroTextDslPackage.ANY_DRAWABLE_PROPERTY_VALUE: return createAnyDrawablePropertyValue();
+      case AndroTextDslPackage.STRING_PROPERTY_VALUE: return createStringPropertyValue();
+      case AndroTextDslPackage.INTEGER_PROPERTY_VALUE: return createIntegerPropertyValue();
+      case AndroTextDslPackage.BOOLEAN_PROPERTY_VALUE: return createBooleanPropertyValue();
+      case AndroTextDslPackage.COLOR_PROPERTY_VALUE: return createColorPropertyValue();
+      case AndroTextDslPackage.DIMENSION_PROPERTY_VALUE: return createDimensionPropertyValue();
+      case AndroTextDslPackage.DRAWABLE_RESOURCE_LINK: return createDrawableResourceLink();
+      case AndroTextDslPackage.STRING_RESOURCE_LINK: return createStringResourceLink();
+      case AndroTextDslPackage.INTEGER_RESOURCE_LINK: return createIntegerResourceLink();
+      case AndroTextDslPackage.BOOLEAN_RESOURCE_LINK: return createBooleanResourceLink();
+      case AndroTextDslPackage.COLOR_RESOURCE_LINK: return createColorResourceLink();
+      case AndroTextDslPackage.DIMENSION_RESOURCE_LINK: return createDimensionResourceLink();
       case AndroTextDslPackage.ANDRO_RES_MODEL_ROOT: return createAndroResModelRoot();
       case AndroTextDslPackage.RESOURCE: return createResource();
       case AndroTextDslPackage.STRING_RESOURCE: return createStringResource();
@@ -130,6 +163,7 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.DRAWABLE_RESOURCE: return createDrawableResource();
       case AndroTextDslPackage.BITMAP_DRAWABLE_RESOURCE: return createBitmapDrawableResource();
       case AndroTextDslPackage.TRANSITION_DRAWABLE_RESOURCE: return createTransitionDrawableResource();
+      case AndroTextDslPackage.DIMENSION_VALUE: return createDimensionValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -147,10 +181,16 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
     {
       case AndroTextDslPackage.API_LEVEL:
         return createApiLevelFromString(eDataType, initialValue);
+      case AndroTextDslPackage.ACTIVITY_THEME:
+        return createActivityThemeFromString(eDataType, initialValue);
       case AndroTextDslPackage.DATA_TYPES:
         return createDataTypesFromString(eDataType, initialValue);
-      case AndroTextDslPackage.LAYOUT_STYLE:
-        return createLayoutStyleFromString(eDataType, initialValue);
+      case AndroTextDslPackage.LAYOUT_GRAVITY_KIND:
+        return createLayoutGravityKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
+        return createLayoutDimensionKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.DIMENSION_METRIC:
+        return createDimensionMetricFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -168,10 +208,16 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
     {
       case AndroTextDslPackage.API_LEVEL:
         return convertApiLevelToString(eDataType, instanceValue);
+      case AndroTextDslPackage.ACTIVITY_THEME:
+        return convertActivityThemeToString(eDataType, instanceValue);
       case AndroTextDslPackage.DATA_TYPES:
         return convertDataTypesToString(eDataType, instanceValue);
-      case AndroTextDslPackage.LAYOUT_STYLE:
-        return convertLayoutStyleToString(eDataType, instanceValue);
+      case AndroTextDslPackage.LAYOUT_GRAVITY_KIND:
+        return convertLayoutGravityKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
+        return convertLayoutDimensionKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.DIMENSION_METRIC:
+        return convertDimensionMetricToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -270,10 +316,87 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public SimpleActivity createSimpleActivity()
+  {
+    SimpleActivityImpl simpleActivity = new SimpleActivityImpl();
+    return simpleActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public TabActivity createTabActivity()
   {
     TabActivityImpl tabActivity = new TabActivityImpl();
     return tabActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Tab createTab()
+  {
+    TabImpl tab = new TabImpl();
+    return tab;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ListActivity createListActivity()
+  {
+    ListActivityImpl listActivity = new ListActivityImpl();
+    return listActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PreferenceActivity createPreferenceActivity()
+  {
+    PreferenceActivityImpl preferenceActivity = new PreferenceActivityImpl();
+    return preferenceActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Action createAction()
+  {
+    ActionImpl action = new ActionImpl();
+    return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InvokeActivity createInvokeActivity()
+  {
+    InvokeActivityImpl invokeActivity = new InvokeActivityImpl();
+    return invokeActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InvokeWebUrl createInvokeWebUrl()
+  {
+    InvokeWebUrlImpl invokeWebUrl = new InvokeWebUrlImpl();
+    return invokeWebUrl;
   }
 
   /**
@@ -358,10 +481,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public UIElement createUIElement()
+  public View createView()
   {
-    UIElementImpl uiElement = new UIElementImpl();
-    return uiElement;
+    ViewImpl view = new ViewImpl();
+    return view;
   }
 
   /**
@@ -369,10 +492,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public Layout createLayout()
+  public ViewGroup createViewGroup()
   {
-    LayoutImpl layout = new LayoutImpl();
-    return layout;
+    ViewGroupImpl viewGroup = new ViewGroupImpl();
+    return viewGroup;
   }
 
   /**
@@ -380,10 +503,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public RootLayout createRootLayout()
+  public LayoutParams createLayoutParams()
   {
-    RootLayoutImpl rootLayout = new RootLayoutImpl();
-    return rootLayout;
+    LayoutParamsImpl layoutParams = new LayoutParamsImpl();
+    return layoutParams;
   }
 
   /**
@@ -391,10 +514,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public BaseLayout createBaseLayout()
+  public LayoutGravityAttribute createLayoutGravityAttribute()
   {
-    BaseLayoutImpl baseLayout = new BaseLayoutImpl();
-    return baseLayout;
+    LayoutGravityAttributeImpl layoutGravityAttribute = new LayoutGravityAttributeImpl();
+    return layoutGravityAttribute;
   }
 
   /**
@@ -424,6 +547,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public LinearLayoutParams createLinearLayoutParams()
+  {
+    LinearLayoutParamsImpl linearLayoutParams = new LinearLayoutParamsImpl();
+    return linearLayoutParams;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FrameLayout createFrameLayout()
   {
     FrameLayoutImpl frameLayout = new FrameLayoutImpl();
@@ -446,10 +580,76 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public Widget createWidget()
+  public GridLayout createGridLayout()
   {
-    WidgetImpl widget = new WidgetImpl();
-    return widget;
+    GridLayoutImpl gridLayout = new GridLayoutImpl();
+    return gridLayout;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TableLayout createTableLayout()
+  {
+    TableLayoutImpl tableLayout = new TableLayoutImpl();
+    return tableLayout;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleView createSimpleView()
+  {
+    SimpleViewImpl simpleView = new SimpleViewImpl();
+    return simpleView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Gallery createGallery()
+  {
+    GalleryImpl gallery = new GalleryImpl();
+    return gallery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExpandableListView createExpandableListView()
+  {
+    ExpandableListViewImpl expandableListView = new ExpandableListViewImpl();
+    return expandableListView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WebView createWebView()
+  {
+    WebViewImpl webView = new WebViewImpl();
+    return webView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImageView createImageView()
+  {
+    ImageViewImpl imageView = new ImageViewImpl();
+    return imageView;
   }
 
   /**
@@ -461,6 +661,39 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     TextViewImpl textView = new TextViewImpl();
     return textView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GravityAttribute createGravityAttribute()
+  {
+    GravityAttributeImpl gravityAttribute = new GravityAttributeImpl();
+    return gravityAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextSizeAttribute createTextSizeAttribute()
+  {
+    TextSizeAttributeImpl textSizeAttribute = new TextSizeAttributeImpl();
+    return textSizeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BackgroundAttribute createBackgroundAttribute()
+  {
+    BackgroundAttributeImpl backgroundAttribute = new BackgroundAttributeImpl();
+    return backgroundAttribute;
   }
 
   /**
@@ -494,6 +727,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     ListViewImpl listView = new ListViewImpl();
     return listView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GridView createGridView()
+  {
+    GridViewImpl gridView = new GridViewImpl();
+    return gridView;
   }
 
   /**
@@ -560,6 +804,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     RadioButtonImpl radioButton = new RadioButtonImpl();
     return radioButton;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CheckedTextView createCheckedTextView()
+  {
+    CheckedTextViewImpl checkedTextView = new CheckedTextViewImpl();
+    return checkedTextView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AutoCompleteTextView createAutoCompleteTextView()
+  {
+    AutoCompleteTextViewImpl autoCompleteTextView = new AutoCompleteTextViewImpl();
+    return autoCompleteTextView;
   }
 
   /**
@@ -681,6 +947,149 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     ListPreferenceAttributesImpl listPreferenceAttributes = new ListPreferenceAttributesImpl();
     return listPreferenceAttributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PropertyValue createPropertyValue()
+  {
+    PropertyValueImpl propertyValue = new PropertyValueImpl();
+    return propertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AnyDrawablePropertyValue createAnyDrawablePropertyValue()
+  {
+    AnyDrawablePropertyValueImpl anyDrawablePropertyValue = new AnyDrawablePropertyValueImpl();
+    return anyDrawablePropertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringPropertyValue createStringPropertyValue()
+  {
+    StringPropertyValueImpl stringPropertyValue = new StringPropertyValueImpl();
+    return stringPropertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntegerPropertyValue createIntegerPropertyValue()
+  {
+    IntegerPropertyValueImpl integerPropertyValue = new IntegerPropertyValueImpl();
+    return integerPropertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanPropertyValue createBooleanPropertyValue()
+  {
+    BooleanPropertyValueImpl booleanPropertyValue = new BooleanPropertyValueImpl();
+    return booleanPropertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ColorPropertyValue createColorPropertyValue()
+  {
+    ColorPropertyValueImpl colorPropertyValue = new ColorPropertyValueImpl();
+    return colorPropertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DimensionPropertyValue createDimensionPropertyValue()
+  {
+    DimensionPropertyValueImpl dimensionPropertyValue = new DimensionPropertyValueImpl();
+    return dimensionPropertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DrawableResourceLink createDrawableResourceLink()
+  {
+    DrawableResourceLinkImpl drawableResourceLink = new DrawableResourceLinkImpl();
+    return drawableResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringResourceLink createStringResourceLink()
+  {
+    StringResourceLinkImpl stringResourceLink = new StringResourceLinkImpl();
+    return stringResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntegerResourceLink createIntegerResourceLink()
+  {
+    IntegerResourceLinkImpl integerResourceLink = new IntegerResourceLinkImpl();
+    return integerResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanResourceLink createBooleanResourceLink()
+  {
+    BooleanResourceLinkImpl booleanResourceLink = new BooleanResourceLinkImpl();
+    return booleanResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ColorResourceLink createColorResourceLink()
+  {
+    ColorResourceLinkImpl colorResourceLink = new ColorResourceLinkImpl();
+    return colorResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DimensionResourceLink createDimensionResourceLink()
+  {
+    DimensionResourceLinkImpl dimensionResourceLink = new DimensionResourceLinkImpl();
+    return dimensionResourceLink;
   }
 
   /**
@@ -853,6 +1262,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public DimensionValue createDimensionValue()
+  {
+    DimensionValueImpl dimensionValue = new DimensionValueImpl();
+    return dimensionValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ApiLevel createApiLevelFromString(EDataType eDataType, String initialValue)
   {
     ApiLevel result = ApiLevel.get(initialValue);
@@ -866,6 +1286,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * @generated
    */
   public String convertApiLevelToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActivityTheme createActivityThemeFromString(EDataType eDataType, String initialValue)
+  {
+    ActivityTheme result = ActivityTheme.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertActivityThemeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -897,9 +1339,9 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutStyle createLayoutStyleFromString(EDataType eDataType, String initialValue)
+  public LayoutGravityKind createLayoutGravityKindFromString(EDataType eDataType, String initialValue)
   {
-    LayoutStyle result = LayoutStyle.get(initialValue);
+    LayoutGravityKind result = LayoutGravityKind.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -909,7 +1351,51 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertLayoutStyleToString(EDataType eDataType, Object instanceValue)
+  public String convertLayoutGravityKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LayoutDimensionKind createLayoutDimensionKindFromString(EDataType eDataType, String initialValue)
+  {
+    LayoutDimensionKind result = LayoutDimensionKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertLayoutDimensionKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DimensionMetric createDimensionMetricFromString(EDataType eDataType, String initialValue)
+  {
+    DimensionMetric result = DimensionMetric.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertDimensionMetricToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

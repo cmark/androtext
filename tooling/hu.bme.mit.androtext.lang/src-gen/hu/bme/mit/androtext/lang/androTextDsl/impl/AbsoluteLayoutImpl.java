@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AbsoluteLayoutImpl extends BaseLayoutImpl implements AbsoluteLayout
+public class AbsoluteLayoutImpl extends ViewGroupImpl implements AbsoluteLayout
 {
   /**
    * <!-- begin-user-doc -->

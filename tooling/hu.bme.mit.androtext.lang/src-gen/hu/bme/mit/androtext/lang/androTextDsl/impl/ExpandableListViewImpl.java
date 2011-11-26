@@ -7,29 +7,27 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.UIElement;
+import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>UI Element</b></em>'.
+ * An implementation of the model object '<em><b>Expandable List View</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class UIElementImpl extends MinimalEObjectImpl.Container implements UIElement
+public class ExpandableListViewImpl extends SimpleViewImpl implements ExpandableListView
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UIElementImpl()
+  protected ExpandableListViewImpl()
   {
     super();
   }
@@ -42,7 +40,7 @@ public class UIElementImpl extends MinimalEObjectImpl.Container implements UIEle
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.UI_ELEMENT;
+    return AndroTextDslPackage.Literals.EXPANDABLE_LIST_VIEW;
   }
 
-} //UIElementImpl
+} //ExpandableListViewImpl

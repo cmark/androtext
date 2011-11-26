@@ -14,14 +14,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Layout Style</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Layout Dimension Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getLayoutStyle()
+ * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getLayoutDimensionKind()
  * @model
  * @generated
  */
-public enum LayoutStyle implements Enumerator
+public enum LayoutDimensionKind implements Enumerator
 {
   /**
    * The '<em><b>FILL</b></em>' literal object.
@@ -124,13 +124,13 @@ public enum LayoutStyle implements Enumerator
   public static final int WRAP_FILL_VALUE = 3;
 
   /**
-   * An array of all the '<em><b>Layout Style</b></em>' enumerators.
+   * An array of all the '<em><b>Layout Dimension Kind</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final LayoutStyle[] VALUES_ARRAY =
-    new LayoutStyle[]
+  private static final LayoutDimensionKind[] VALUES_ARRAY =
+    new LayoutDimensionKind[]
     {
       FILL,
       WRAP,
@@ -139,24 +139,24 @@ public enum LayoutStyle implements Enumerator
     };
 
   /**
-   * A public read-only list of all the '<em><b>Layout Style</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Layout Dimension Kind</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<LayoutStyle> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<LayoutDimensionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Layout Style</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Layout Dimension Kind</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static LayoutStyle get(String literal)
+  public static LayoutDimensionKind get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      LayoutStyle result = VALUES_ARRAY[i];
+      LayoutDimensionKind result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -166,16 +166,16 @@ public enum LayoutStyle implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Layout Style</b></em>' literal with the specified name.
+   * Returns the '<em><b>Layout Dimension Kind</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static LayoutStyle getByName(String name)
+  public static LayoutDimensionKind getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      LayoutStyle result = VALUES_ARRAY[i];
+      LayoutDimensionKind result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -185,12 +185,12 @@ public enum LayoutStyle implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Layout Style</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Layout Dimension Kind</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static LayoutStyle get(int value)
+  public static LayoutDimensionKind get(int value)
   {
     switch (value)
     {
@@ -229,7 +229,7 @@ public enum LayoutStyle implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private LayoutStyle(int value, String name, String literal)
+  private LayoutDimensionKind(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -278,4 +278,4 @@ public enum LayoutStyle implements Enumerator
     return literal;
   }
   
-} //LayoutStyle
+} //LayoutDimensionKind

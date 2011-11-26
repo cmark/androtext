@@ -89,6 +89,11 @@ public abstract class AbstractAndroTextDslRuntimeModule extends DefaultRuntimeMo
 		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
 	}
 
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parser.antlr.IUnorderedGroupHelper> bindIUnorderedGroupHelper() {
+		return org.eclipse.xtext.parser.antlr.UnorderedGroupHelper.class;
+	}
+
 	// contributed by org.eclipse.xtext.generator.validation.JavaValidatorFragment
 	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends hu.bme.mit.androtext.lang.validation.AndroTextDslJavaValidator> bindAndroTextDslJavaValidator() {
 		return hu.bme.mit.androtext.lang.validation.AndroTextDslJavaValidator.class;

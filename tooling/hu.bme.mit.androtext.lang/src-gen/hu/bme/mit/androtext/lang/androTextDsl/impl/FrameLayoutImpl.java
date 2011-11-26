@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class FrameLayoutImpl extends BaseLayoutImpl implements FrameLayout
+public class FrameLayoutImpl extends ViewGroupImpl implements FrameLayout
 {
   /**
    * <!-- begin-user-doc -->

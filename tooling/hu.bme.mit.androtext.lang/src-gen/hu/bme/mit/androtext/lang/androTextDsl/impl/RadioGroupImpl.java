@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class RadioGroupImpl extends WidgetImpl implements RadioGroup
+public class RadioGroupImpl extends SimpleViewImpl implements RadioGroup
 {
   /**
    * The default value of the '{@link #isOrientation() <em>Orientation</em>}' attribute.

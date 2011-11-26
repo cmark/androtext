@@ -17,6 +17,6 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface FrameLayout extends BaseLayout
+public interface FrameLayout extends ViewGroup
 {
 } // FrameLayout

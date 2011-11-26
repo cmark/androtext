@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ButtonImpl extends WidgetImpl implements Button
+public class ButtonImpl extends SimpleViewImpl implements Button
 {
   /**
    * The default value of the '{@link #getText() <em>Text</em>}' attribute.

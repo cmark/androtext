@@ -8,8 +8,8 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
-import hu.bme.mit.androtext.lang.androTextDsl.Layout;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ListViewImpl extends WidgetImpl implements ListView
+public class ListViewImpl extends SimpleViewImpl implements ListView
 {
   /**
    * The cached value of the '{@link #getEntries() <em>Entries</em>}' reference.
@@ -52,7 +52,7 @@ public class ListViewImpl extends WidgetImpl implements ListView
    * @generated
    * @ordered
    */
-  protected Layout layout;
+  protected View layout;
 
   /**
    * <!-- begin-user-doc -->
@@ -123,12 +123,12 @@ public class ListViewImpl extends WidgetImpl implements ListView
    * <!-- end-user-doc -->
    * @generated
    */
-  public Layout getLayout()
+  public View getLayout()
   {
     if (layout != null && layout.eIsProxy())
     {
       InternalEObject oldLayout = (InternalEObject)layout;
-      layout = (Layout)eResolveProxy(oldLayout);
+      layout = (View)eResolveProxy(oldLayout);
       if (layout != oldLayout)
       {
         if (eNotificationRequired())
@@ -143,7 +143,7 @@ public class ListViewImpl extends WidgetImpl implements ListView
    * <!-- end-user-doc -->
    * @generated
    */
-  public Layout basicGetLayout()
+  public View basicGetLayout()
   {
     return layout;
   }
@@ -153,9 +153,9 @@ public class ListViewImpl extends WidgetImpl implements ListView
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLayout(Layout newLayout)
+  public void setLayout(View newLayout)
   {
-    Layout oldLayout = layout;
+    View oldLayout = layout;
     layout = newLayout;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LIST_VIEW__LAYOUT, oldLayout, layout));
@@ -195,7 +195,7 @@ public class ListViewImpl extends WidgetImpl implements ListView
         setEntries((ArrayResource)newValue);
         return;
       case AndroTextDslPackage.LIST_VIEW__LAYOUT:
-        setLayout((Layout)newValue);
+        setLayout((View)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -215,7 +215,7 @@ public class ListViewImpl extends WidgetImpl implements ListView
         setEntries((ArrayResource)null);
         return;
       case AndroTextDslPackage.LIST_VIEW__LAYOUT:
-        setLayout((Layout)null);
+        setLayout((View)null);
         return;
     }
     super.eUnset(featureID);

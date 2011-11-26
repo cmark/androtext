@@ -7,7 +7,7 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -82,7 +82,7 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
    * @generated
    * @ordered
    */
-  protected static final LayoutStyle LAYOUT_STYLE_EDEFAULT = LayoutStyle.FILL;
+  protected static final LayoutDimensionKind LAYOUT_STYLE_EDEFAULT = LayoutDimensionKind.FILL;
 
   /**
    * The cached value of the '{@link #getLayoutStyle() <em>Layout Style</em>}' attribute.
@@ -92,7 +92,7 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
    * @generated
    * @ordered
    */
-  protected LayoutStyle layoutStyle = LAYOUT_STYLE_EDEFAULT;
+  protected LayoutDimensionKind layoutStyle = LAYOUT_STYLE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -166,7 +166,7 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutStyle getLayoutStyle()
+  public LayoutDimensionKind getLayoutStyle()
   {
     return layoutStyle;
   }
@@ -176,9 +176,9 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLayoutStyle(LayoutStyle newLayoutStyle)
+  public void setLayoutStyle(LayoutDimensionKind newLayoutStyle)
   {
-    LayoutStyle oldLayoutStyle = layoutStyle;
+    LayoutDimensionKind oldLayoutStyle = layoutStyle;
     layoutStyle = newLayoutStyle == null ? LAYOUT_STYLE_EDEFAULT : newLayoutStyle;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.RADIO_BUTTON__LAYOUT_STYLE, oldLayoutStyle, layoutStyle));
@@ -221,7 +221,7 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
         setText((String)newValue);
         return;
       case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_STYLE:
-        setLayoutStyle((LayoutStyle)newValue);
+        setLayoutStyle((LayoutDimensionKind)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -7,55 +7,47 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.RootLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.StringResource;
+import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Root Layout</b></em>'.
+ * An implementation of the model object '<em><b>String Resource Link</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RootLayoutImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.StringResourceLinkImpl#getLink <em>Link</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RootLayoutImpl extends LayoutImpl implements RootLayout
+public class StringResourceLinkImpl extends StringPropertyValueImpl implements StringResourceLink
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getLink() <em>Link</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getLink()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected StringResource link;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RootLayoutImpl()
+  protected StringResourceLinkImpl()
   {
     super();
   }
@@ -68,7 +60,7 @@ public class RootLayoutImpl extends LayoutImpl implements RootLayout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ROOT_LAYOUT;
+    return AndroTextDslPackage.Literals.STRING_RESOURCE_LINK;
   }
 
   /**
@@ -76,9 +68,19 @@ public class RootLayoutImpl extends LayoutImpl implements RootLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public StringResource getLink()
   {
-    return name;
+    if (link != null && link.eIsProxy())
+    {
+      InternalEObject oldLink = (InternalEObject)link;
+      link = (StringResource)eResolveProxy(oldLink);
+      if (link != oldLink)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.STRING_RESOURCE_LINK__LINK, oldLink, link));
+      }
+    }
+    return link;
   }
 
   /**
@@ -86,12 +88,22 @@ public class RootLayoutImpl extends LayoutImpl implements RootLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public StringResource basicGetLink()
   {
-    String oldName = name;
-    name = newName;
+    return link;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLink(StringResource newLink)
+  {
+    StringResource oldLink = link;
+    link = newLink;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.ROOT_LAYOUT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.STRING_RESOURCE_LINK__LINK, oldLink, link));
   }
 
   /**
@@ -104,8 +116,9 @@ public class RootLayoutImpl extends LayoutImpl implements RootLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ROOT_LAYOUT__NAME:
-        return getName();
+      case AndroTextDslPackage.STRING_RESOURCE_LINK__LINK:
+        if (resolve) return getLink();
+        return basicGetLink();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +133,8 @@ public class RootLayoutImpl extends LayoutImpl implements RootLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ROOT_LAYOUT__NAME:
-        setName((String)newValue);
+      case AndroTextDslPackage.STRING_RESOURCE_LINK__LINK:
+        setLink((StringResource)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +150,8 @@ public class RootLayoutImpl extends LayoutImpl implements RootLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ROOT_LAYOUT__NAME:
-        setName(NAME_EDEFAULT);
+      case AndroTextDslPackage.STRING_RESOURCE_LINK__LINK:
+        setLink((StringResource)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +167,10 @@ public class RootLayoutImpl extends LayoutImpl implements RootLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ROOT_LAYOUT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AndroTextDslPackage.STRING_RESOURCE_LINK__LINK:
+        return link != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
-
-} //RootLayoutImpl
+} //StringResourceLinkImpl

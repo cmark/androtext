@@ -24,7 +24,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface ToggleButton extends Widget
+public interface ToggleButton extends SimpleView
 {
   /**
    * Returns the value of the '<em><b>Text On</b></em>' attribute.

@@ -10,14 +10,14 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>UI Element</b></em>'.
+ * A representation of the model object '<em><b>Property Value</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getUIElement()
+ * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getPropertyValue()
  * @model
  * @generated
  */
-public interface UIElement extends EObject
+public interface PropertyValue extends EObject
 {
-} // UIElement
+} // PropertyValue

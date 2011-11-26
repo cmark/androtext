@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class RatingBarImpl extends WidgetImpl implements RatingBar
+public class RatingBarImpl extends SimpleViewImpl implements RatingBar
 {
   /**
    * The default value of the '{@link #getNumStars() <em>Num Stars</em>}' attribute.

@@ -23,7 +23,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface RatingBar extends Widget
+public interface RatingBar extends SimpleView
 {
   /**
    * Returns the value of the '<em><b>Num Stars</b></em>' attribute.

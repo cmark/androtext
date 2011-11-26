@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class RelativeLayoutImpl extends BaseLayoutImpl implements RelativeLayout
+public class RelativeLayoutImpl extends ViewGroupImpl implements RelativeLayout
 {
   /**
    * <!-- begin-user-doc -->

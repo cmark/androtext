@@ -45,10 +45,37 @@
   <eClassifiers xsi:type="ecore:EClass" name="AndroidApplicationModelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//AndroidApplicationModelElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//RootLayout"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//AndroidApplicationModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleActivity" eSuperTypes="#//Activity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//ViewGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="theme" eType="#//ActivityTheme"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TabActivity" eSuperTypes="#//AndroidApplicationModelElement"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActivityTheme">
+    <eLiterals name="DIALOG" literal="DIALOG"/>
+    <eLiterals name="NOTITLE" value="1" literal="NOTITLE"/>
+    <eLiterals name="FULLSCREEN" value="2" literal="FULLSCREEN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabActivity" eSuperTypes="#//Activity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabs" upperBound="-1" eType="#//Tab"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tab">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListActivity" eSuperTypes="#//Activity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listitem" eType="#//View"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreferenceActivity" eSuperTypes="#//AndroidApplicationModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//PreferenceScreen"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InvokeActivity" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InvokeWebUrl" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroDataModelRoot" eSuperTypes="#//ModelRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="#//Entity" containment="true"/>
@@ -78,79 +105,164 @@
     <eLiterals name="INT" value="3" literal="int"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroGuiModelRoot" eSuperTypes="#//ModelRoot">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rootLayout" upperBound="-1"
-        eType="#//RootLayout" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roots" upperBound="-1"
+        eType="#//View" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UIElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Layout" eSuperTypes="#//UIElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RootLayout" eSuperTypes="#//Layout">
+  <eClassifiers xsi:type="ecore:EClass" name="View">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutStyle" eType="#//LayoutDimensionKind"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BaseLayout" eSuperTypes="#//RootLayout">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutStyle" eType="#//LayoutStyle"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//UIElement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewGroup" eSuperTypes="#//View">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="views" upperBound="-1"
+        eType="#//View" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="LayoutStyle">
+  <eClassifiers xsi:type="ecore:EClass" name="LayoutParams">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="weight" eType="#//IntegerPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="marginLeft" eType="#//DimensionPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="marginTop" eType="#//DimensionPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="marginRight" eType="#//DimensionPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="marginBottom" eType="#//DimensionPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="top" eType="#//BooleanPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bottom" eType="#//BooleanPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="backgroundAttribute" eType="#//BackgroundAttribute"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LayoutGravityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gravity" unique="false"
+        upperBound="-1" eType="#//LayoutGravityKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LayoutGravityKind">
+    <eLiterals name="top" literal="top"/>
+    <eLiterals name="bottom" value="1" literal="bottom"/>
+    <eLiterals name="left" value="2" literal="left"/>
+    <eLiterals name="right" value="3" literal="right"/>
+    <eLiterals name="center" value="4" literal="center"/>
+    <eLiterals name="center_vertical" value="5" literal="center_vertical"/>
+    <eLiterals name="center_horizontal" value="6" literal="center_horizontal"/>
+    <eLiterals name="fill" value="7" literal="fill"/>
+    <eLiterals name="fill_vertical" value="8" literal="fill_vertical"/>
+    <eLiterals name="fill_horizontal" value="9" literal="fill_horizontal"/>
+    <eLiterals name="clip_vertical" value="10" literal="clip_vertical"/>
+    <eLiterals name="clip_horizontal" value="11" literal="clip_horizontal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LayoutDimensionKind">
     <eLiterals name="FILL" literal="fill"/>
     <eLiterals name="WRAP" value="1" literal="wrap"/>
     <eLiterals name="FILL_WRAP" value="2" literal="fill&amp;wrap"/>
     <eLiterals name="WRAP_FILL" value="3" literal="wrap&amp;fill"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbsoluteLayout" eSuperTypes="#//BaseLayout"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LinearLayout" eSuperTypes="#//BaseLayout">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbsoluteLayout" eSuperTypes="#//ViewGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearLayout" eSuperTypes="#//ViewGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutParams" eType="#//LinearLayoutParams"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FrameLayout" eSuperTypes="#//BaseLayout"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RelativeLayout" eSuperTypes="#//BaseLayout"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Widget" eSuperTypes="#//UIElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutStyle" eType="#//LayoutStyle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearLayoutParams">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutParams" eType="#//LayoutParams"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gravity" eType="#//LayoutGravityAttribute"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextView" eSuperTypes="#//Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="FrameLayout" eSuperTypes="#//ViewGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelativeLayout" eSuperTypes="#//ViewGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GridLayout" eSuperTypes="#//ViewGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TableLayout" eSuperTypes="#//ViewGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleView" eSuperTypes="#//View"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Gallery" eSuperTypes="#//SimpleView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpandableListView" eSuperTypes="#//SimpleView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WebView" eSuperTypes="#//SimpleView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageView" eSuperTypes="#//SimpleView">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" eType="#//DrawableResource"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextView" eSuperTypes="#//SimpleView">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gravityAttribute" eType="#//GravityAttribute"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textSizeAttribute" eType="#//TextSizeAttribute"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutParams" eType="#//LayoutParams"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GravityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gravity" eType="#//LayoutGravityKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextSizeAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textSize" eType="#//DimensionPropertyValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BackgroundAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="background" eType="#//AnyDrawablePropertyValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditText" eSuperTypes="#//SimpleView">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gravityAttribute" eType="#//GravityAttribute"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textSizeAttribute" eType="#//TextSizeAttribute"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutParams" eType="#//LayoutParams"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EditText" eSuperTypes="#//Widget">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//Widget">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListView" eSuperTypes="#//Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="ListView" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" eType="#//ArrayResource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//Layout"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//View"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Spinner" eSuperTypes="#//Widget">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" eType="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GridView" eSuperTypes="#//SimpleView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Spinner" eSuperTypes="#//SimpleView">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" eType="#//ArrayResource"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RadioGroup" eSuperTypes="#//Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="RadioGroup" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="radiobuttons" upperBound="-1"
         eType="#//RadioButton" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RatingBar" eSuperTypes="#//Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="RatingBar" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numStars" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ToggleButton" eSuperTypes="#//Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="ToggleButton" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="textOn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="textOff" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RadioButton">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutStyle" eType="#//LayoutStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutStyle" eType="#//LayoutDimensionKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckedTextView" eSuperTypes="#//SimpleView">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AutoCompleteTextView" eSuperTypes="#//SimpleView">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" eType="#//StringArrayResource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMulti" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractPreference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Preference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PreferenceScreen" eSuperTypes="#//RootLayout #//AbstractPreference">
+  <eClassifiers xsi:type="ecore:EClass" name="PreferenceScreen" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preferences" upperBound="-1"
@@ -161,12 +273,14 @@
         eType="#//AbstractPreference" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditTextPreference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dialogPreferenceAttributes"
         eType="#//DialogPreferenceAttributes" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListPreference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dialogPreferenceAttributes"
@@ -175,15 +289,16 @@
         eType="#//ListPreferenceAttributes" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CheckBoxPreference" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RingtonePrefence" eSuperTypes="#//AbstractPreference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preferenceAttributes" eType="#//PreferenceAttributes"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PreferenceAttributes">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="persistent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -195,6 +310,42 @@
   <eClassifiers xsi:type="ecore:EClass" name="ListPreferenceAttributes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" eType="#//StringArrayEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entryValues" eType="#//StringArrayEntry"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnyDrawablePropertyValue" eSuperTypes="#//PropertyValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringPropertyValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerPropertyValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanPropertyValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColorPropertyValue" eSuperTypes="#//AnyDrawablePropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DimensionPropertyValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//DimensionValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DrawableResourceLink" eSuperTypes="#//AnyDrawablePropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//DrawableResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringResourceLink" eSuperTypes="#//StringPropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//StringResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerResourceLink" eSuperTypes="#//IntegerPropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//IntegerResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanResourceLink" eSuperTypes="#//BooleanPropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//BooleanResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColorResourceLink" eSuperTypes="#//ColorPropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//ColorResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DimensionResourceLink" eSuperTypes="#//DimensionPropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//DimensionResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroResModelRoot" eSuperTypes="#//ModelRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
@@ -216,7 +367,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DimensionResource" eSuperTypes="#//Resource">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//DimensionValue"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrayResource" eSuperTypes="#//Resource"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerArrayResource" eSuperTypes="#//ArrayResource">
@@ -242,5 +394,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="TransitionDrawableResource" eSuperTypes="#//DrawableResource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//BitmapDrawableResource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//BitmapDrawableResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DimensionValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metric" eType="#//DimensionMetric"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DimensionMetric">
+    <eLiterals name="dp" literal="dp"/>
+    <eLiterals name="sp" value="1" literal="sp"/>
+    <eLiterals name="pt" value="2" literal="pt"/>
+    <eLiterals name="px" value="3" literal="px"/>
+    <eLiterals name="mm" value="4" literal="mm"/>
+    <eLiterals name="in" value="5" literal="in"/>
   </eClassifiers>
 </ecore:EPackage>

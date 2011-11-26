@@ -99,6 +99,15 @@ public interface AndroTextDslFactory extends EFactory
   Activity createActivity();
 
   /**
+   * Returns a new object of class '<em>Simple Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Activity</em>'.
+   * @generated
+   */
+  SimpleActivity createSimpleActivity();
+
+  /**
    * Returns a new object of class '<em>Tab Activity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -106,6 +115,60 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   TabActivity createTabActivity();
+
+  /**
+   * Returns a new object of class '<em>Tab</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tab</em>'.
+   * @generated
+   */
+  Tab createTab();
+
+  /**
+   * Returns a new object of class '<em>List Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Activity</em>'.
+   * @generated
+   */
+  ListActivity createListActivity();
+
+  /**
+   * Returns a new object of class '<em>Preference Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Preference Activity</em>'.
+   * @generated
+   */
+  PreferenceActivity createPreferenceActivity();
+
+  /**
+   * Returns a new object of class '<em>Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action</em>'.
+   * @generated
+   */
+  Action createAction();
+
+  /**
+   * Returns a new object of class '<em>Invoke Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Invoke Activity</em>'.
+   * @generated
+   */
+  InvokeActivity createInvokeActivity();
+
+  /**
+   * Returns a new object of class '<em>Invoke Web Url</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Invoke Web Url</em>'.
+   * @generated
+   */
+  InvokeWebUrl createInvokeWebUrl();
 
   /**
    * Returns a new object of class '<em>Andro Data Model Root</em>'.
@@ -171,40 +234,40 @@ public interface AndroTextDslFactory extends EFactory
   AndroGuiModelRoot createAndroGuiModelRoot();
 
   /**
-   * Returns a new object of class '<em>UI Element</em>'.
+   * Returns a new object of class '<em>View</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>UI Element</em>'.
+   * @return a new object of class '<em>View</em>'.
    * @generated
    */
-  UIElement createUIElement();
+  View createView();
 
   /**
-   * Returns a new object of class '<em>Layout</em>'.
+   * Returns a new object of class '<em>View Group</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Layout</em>'.
+   * @return a new object of class '<em>View Group</em>'.
    * @generated
    */
-  Layout createLayout();
+  ViewGroup createViewGroup();
 
   /**
-   * Returns a new object of class '<em>Root Layout</em>'.
+   * Returns a new object of class '<em>Layout Params</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Root Layout</em>'.
+   * @return a new object of class '<em>Layout Params</em>'.
    * @generated
    */
-  RootLayout createRootLayout();
+  LayoutParams createLayoutParams();
 
   /**
-   * Returns a new object of class '<em>Base Layout</em>'.
+   * Returns a new object of class '<em>Layout Gravity Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Base Layout</em>'.
+   * @return a new object of class '<em>Layout Gravity Attribute</em>'.
    * @generated
    */
-  BaseLayout createBaseLayout();
+  LayoutGravityAttribute createLayoutGravityAttribute();
 
   /**
    * Returns a new object of class '<em>Absolute Layout</em>'.
@@ -225,6 +288,15 @@ public interface AndroTextDslFactory extends EFactory
   LinearLayout createLinearLayout();
 
   /**
+   * Returns a new object of class '<em>Linear Layout Params</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Linear Layout Params</em>'.
+   * @generated
+   */
+  LinearLayoutParams createLinearLayoutParams();
+
+  /**
    * Returns a new object of class '<em>Frame Layout</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -243,13 +315,67 @@ public interface AndroTextDslFactory extends EFactory
   RelativeLayout createRelativeLayout();
 
   /**
-   * Returns a new object of class '<em>Widget</em>'.
+   * Returns a new object of class '<em>Grid Layout</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Widget</em>'.
+   * @return a new object of class '<em>Grid Layout</em>'.
    * @generated
    */
-  Widget createWidget();
+  GridLayout createGridLayout();
+
+  /**
+   * Returns a new object of class '<em>Table Layout</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Table Layout</em>'.
+   * @generated
+   */
+  TableLayout createTableLayout();
+
+  /**
+   * Returns a new object of class '<em>Simple View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple View</em>'.
+   * @generated
+   */
+  SimpleView createSimpleView();
+
+  /**
+   * Returns a new object of class '<em>Gallery</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gallery</em>'.
+   * @generated
+   */
+  Gallery createGallery();
+
+  /**
+   * Returns a new object of class '<em>Expandable List View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expandable List View</em>'.
+   * @generated
+   */
+  ExpandableListView createExpandableListView();
+
+  /**
+   * Returns a new object of class '<em>Web View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Web View</em>'.
+   * @generated
+   */
+  WebView createWebView();
+
+  /**
+   * Returns a new object of class '<em>Image View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Image View</em>'.
+   * @generated
+   */
+  ImageView createImageView();
 
   /**
    * Returns a new object of class '<em>Text View</em>'.
@@ -259,6 +385,33 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   TextView createTextView();
+
+  /**
+   * Returns a new object of class '<em>Gravity Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gravity Attribute</em>'.
+   * @generated
+   */
+  GravityAttribute createGravityAttribute();
+
+  /**
+   * Returns a new object of class '<em>Text Size Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Size Attribute</em>'.
+   * @generated
+   */
+  TextSizeAttribute createTextSizeAttribute();
+
+  /**
+   * Returns a new object of class '<em>Background Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Background Attribute</em>'.
+   * @generated
+   */
+  BackgroundAttribute createBackgroundAttribute();
 
   /**
    * Returns a new object of class '<em>Edit Text</em>'.
@@ -286,6 +439,15 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   ListView createListView();
+
+  /**
+   * Returns a new object of class '<em>Grid View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Grid View</em>'.
+   * @generated
+   */
+  GridView createGridView();
 
   /**
    * Returns a new object of class '<em>Spinner</em>'.
@@ -340,6 +502,24 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   RadioButton createRadioButton();
+
+  /**
+   * Returns a new object of class '<em>Checked Text View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Checked Text View</em>'.
+   * @generated
+   */
+  CheckedTextView createCheckedTextView();
+
+  /**
+   * Returns a new object of class '<em>Auto Complete Text View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Auto Complete Text View</em>'.
+   * @generated
+   */
+  AutoCompleteTextView createAutoCompleteTextView();
 
   /**
    * Returns a new object of class '<em>Abstract Preference</em>'.
@@ -439,6 +619,123 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   ListPreferenceAttributes createListPreferenceAttributes();
+
+  /**
+   * Returns a new object of class '<em>Property Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Property Value</em>'.
+   * @generated
+   */
+  PropertyValue createPropertyValue();
+
+  /**
+   * Returns a new object of class '<em>Any Drawable Property Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Any Drawable Property Value</em>'.
+   * @generated
+   */
+  AnyDrawablePropertyValue createAnyDrawablePropertyValue();
+
+  /**
+   * Returns a new object of class '<em>String Property Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Property Value</em>'.
+   * @generated
+   */
+  StringPropertyValue createStringPropertyValue();
+
+  /**
+   * Returns a new object of class '<em>Integer Property Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer Property Value</em>'.
+   * @generated
+   */
+  IntegerPropertyValue createIntegerPropertyValue();
+
+  /**
+   * Returns a new object of class '<em>Boolean Property Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Property Value</em>'.
+   * @generated
+   */
+  BooleanPropertyValue createBooleanPropertyValue();
+
+  /**
+   * Returns a new object of class '<em>Color Property Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Color Property Value</em>'.
+   * @generated
+   */
+  ColorPropertyValue createColorPropertyValue();
+
+  /**
+   * Returns a new object of class '<em>Dimension Property Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dimension Property Value</em>'.
+   * @generated
+   */
+  DimensionPropertyValue createDimensionPropertyValue();
+
+  /**
+   * Returns a new object of class '<em>Drawable Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Drawable Resource Link</em>'.
+   * @generated
+   */
+  DrawableResourceLink createDrawableResourceLink();
+
+  /**
+   * Returns a new object of class '<em>String Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Resource Link</em>'.
+   * @generated
+   */
+  StringResourceLink createStringResourceLink();
+
+  /**
+   * Returns a new object of class '<em>Integer Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer Resource Link</em>'.
+   * @generated
+   */
+  IntegerResourceLink createIntegerResourceLink();
+
+  /**
+   * Returns a new object of class '<em>Boolean Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Resource Link</em>'.
+   * @generated
+   */
+  BooleanResourceLink createBooleanResourceLink();
+
+  /**
+   * Returns a new object of class '<em>Color Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Color Resource Link</em>'.
+   * @generated
+   */
+  ColorResourceLink createColorResourceLink();
+
+  /**
+   * Returns a new object of class '<em>Dimension Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dimension Resource Link</em>'.
+   * @generated
+   */
+  DimensionResourceLink createDimensionResourceLink();
 
   /**
    * Returns a new object of class '<em>Andro Res Model Root</em>'.
@@ -574,6 +871,15 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   TransitionDrawableResource createTransitionDrawableResource();
+
+  /**
+   * Returns a new object of class '<em>Dimension Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dimension Value</em>'.
+   * @generated
+   */
+  DimensionValue createDimensionValue();
 
   /**
    * Returns the package supported by this factory.

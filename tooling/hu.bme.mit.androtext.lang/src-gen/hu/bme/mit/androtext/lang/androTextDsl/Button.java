@@ -23,7 +23,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface Button extends Widget
+public interface Button extends SimpleView
 {
   /**
    * Returns the value of the '<em><b>Text</b></em>' attribute.

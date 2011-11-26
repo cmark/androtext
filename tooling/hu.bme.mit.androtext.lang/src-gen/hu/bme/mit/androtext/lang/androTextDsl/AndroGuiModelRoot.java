@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getRootLayout <em>Root Layout</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getRoots <em>Roots</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,19 +27,19 @@ import org.eclipse.emf.common.util.EList;
 public interface AndroGuiModelRoot extends ModelRoot
 {
   /**
-   * Returns the value of the '<em><b>Root Layout</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.androtext.lang.androTextDsl.RootLayout}.
+   * Returns the value of the '<em><b>Roots</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.androtext.lang.androTextDsl.View}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Root Layout</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Roots</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Root Layout</em>' containment reference list.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAndroGuiModelRoot_RootLayout()
+   * @return the value of the '<em>Roots</em>' containment reference list.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAndroGuiModelRoot_Roots()
    * @model containment="true"
    * @generated
    */
-  EList<RootLayout> getRootLayout();
+  EList<View> getRoots();
 
 } // AndroGuiModelRoot

@@ -367,22 +367,59 @@ public interface AndroTextDslPackage extends EPackage
   int ACTIVITY__NAME = ANDROID_APPLICATION_MODEL_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Layout</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY__LAYOUT = ANDROID_APPLICATION_MODEL_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>Activity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTIVITY_FEATURE_COUNT = ANDROID_APPLICATION_MODEL_ELEMENT_FEATURE_COUNT + 1;
+  int ACTIVITY_FEATURE_COUNT = ANDROID_APPLICATION_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleActivityImpl <em>Simple Activity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleActivityImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSimpleActivity()
+   * @generated
+   */
+  int SIMPLE_ACTIVITY = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ACTIVITY__NAME = ACTIVITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ACTIVITY__LAYOUT = ACTIVITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Theme</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ACTIVITY__THEME = ACTIVITY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Simple Activity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ACTIVITY_FEATURE_COUNT = ACTIVITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TabActivityImpl <em>Tab Activity</em>}' class.
@@ -392,7 +429,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTabActivity()
    * @generated
    */
-  int TAB_ACTIVITY = 8;
+  int TAB_ACTIVITY = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -401,7 +438,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TAB_ACTIVITY__NAME = ANDROID_APPLICATION_MODEL_ELEMENT__NAME;
+  int TAB_ACTIVITY__NAME = ACTIVITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Tabs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TAB_ACTIVITY__TABS = ACTIVITY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Tab Activity</em>' class.
@@ -410,7 +456,193 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TAB_ACTIVITY_FEATURE_COUNT = ANDROID_APPLICATION_MODEL_ELEMENT_FEATURE_COUNT + 0;
+  int TAB_ACTIVITY_FEATURE_COUNT = ACTIVITY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TabImpl <em>Tab</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TabImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTab()
+   * @generated
+   */
+  int TAB = 10;
+
+  /**
+   * The feature id for the '<em><b>Tag</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TAB__TAG = 0;
+
+  /**
+   * The feature id for the '<em><b>Activity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TAB__ACTIVITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Tab</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TAB_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListActivityImpl <em>List Activity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ListActivityImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListActivity()
+   * @generated
+   */
+  int LIST_ACTIVITY = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_ACTIVITY__NAME = ACTIVITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Listitem</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_ACTIVITY__LISTITEM = ACTIVITY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>List Activity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_ACTIVITY_FEATURE_COUNT = ACTIVITY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceActivityImpl <em>Preference Activity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceActivityImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceActivity()
+   * @generated
+   */
+  int PREFERENCE_ACTIVITY = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ACTIVITY__NAME = ANDROID_APPLICATION_MODEL_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ACTIVITY__LAYOUT = ANDROID_APPLICATION_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Preference Activity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_ACTIVITY_FEATURE_COUNT = ANDROID_APPLICATION_MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ActionImpl <em>Action</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ActionImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAction()
+   * @generated
+   */
+  int ACTION = 13;
+
+  /**
+   * The number of structural features of the '<em>Action</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeActivityImpl <em>Invoke Activity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeActivityImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getInvokeActivity()
+   * @generated
+   */
+  int INVOKE_ACTIVITY = 14;
+
+  /**
+   * The feature id for the '<em><b>Activity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INVOKE_ACTIVITY__ACTIVITY = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Invoke Activity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INVOKE_ACTIVITY_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeWebUrlImpl <em>Invoke Web Url</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeWebUrlImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getInvokeWebUrl()
+   * @generated
+   */
+  int INVOKE_WEB_URL = 15;
+
+  /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INVOKE_WEB_URL__URL = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Invoke Web Url</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INVOKE_WEB_URL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroDataModelRootImpl <em>Andro Data Model Root</em>}' class.
@@ -420,7 +652,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroDataModelRoot()
    * @generated
    */
-  int ANDRO_DATA_MODEL_ROOT = 9;
+  int ANDRO_DATA_MODEL_ROOT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -457,7 +689,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 10;
+  int ENTITY = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -503,7 +735,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 11;
+  int PROPERTY = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -540,7 +772,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTypeRef()
    * @generated
    */
-  int TYPE_REF = 12;
+  int TYPE_REF = 19;
 
   /**
    * The number of structural features of the '<em>Type Ref</em>' class.
@@ -559,7 +791,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDataTypesRef()
    * @generated
    */
-  int DATA_TYPES_REF = 13;
+  int DATA_TYPES_REF = 20;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -587,7 +819,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEntityTypeRef()
    * @generated
    */
-  int ENTITY_TYPE_REF = 14;
+  int ENTITY_TYPE_REF = 21;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -615,7 +847,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroGuiModelRoot()
    * @generated
    */
-  int ANDRO_GUI_MODEL_ROOT = 15;
+  int ANDRO_GUI_MODEL_ROOT = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -627,13 +859,13 @@ public interface AndroTextDslPackage extends EPackage
   int ANDRO_GUI_MODEL_ROOT__NAME = MODEL_ROOT__NAME;
 
   /**
-   * The feature id for the '<em><b>Root Layout</b></em>' containment reference list.
+   * The feature id for the '<em><b>Roots</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT = MODEL_ROOT_FEATURE_COUNT + 0;
+  int ANDRO_GUI_MODEL_ROOT__ROOTS = MODEL_ROOT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Andro Gui Model Root</em>' class.
@@ -645,52 +877,14 @@ public interface AndroTextDslPackage extends EPackage
   int ANDRO_GUI_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.UIElementImpl <em>UI Element</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewImpl <em>View</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.UIElementImpl
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getUIElement()
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getView()
    * @generated
    */
-  int UI_ELEMENT = 16;
-
-  /**
-   * The number of structural features of the '<em>UI Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UI_ELEMENT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutImpl <em>Layout</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutImpl
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayout()
-   * @generated
-   */
-  int LAYOUT = 17;
-
-  /**
-   * The number of structural features of the '<em>Layout</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LAYOUT_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RootLayoutImpl <em>Root Layout</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RootLayoutImpl
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRootLayout()
-   * @generated
-   */
-  int ROOT_LAYOUT = 18;
+  int VIEW = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -699,35 +893,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROOT_LAYOUT__NAME = LAYOUT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Root Layout</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ROOT_LAYOUT_FEATURE_COUNT = LAYOUT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BaseLayoutImpl <em>Base Layout</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BaseLayoutImpl
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBaseLayout()
-   * @generated
-   */
-  int BASE_LAYOUT = 19;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BASE_LAYOUT__NAME = ROOT_LAYOUT__NAME;
+  int VIEW__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -736,25 +902,199 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BASE_LAYOUT__LAYOUT_STYLE = ROOT_LAYOUT_FEATURE_COUNT + 0;
+  int VIEW__LAYOUT_STYLE = 1;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * The number of structural features of the '<em>View</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASE_LAYOUT__ELEMENTS = ROOT_LAYOUT_FEATURE_COUNT + 1;
+  int VIEW_FEATURE_COUNT = 2;
 
   /**
-   * The number of structural features of the '<em>Base Layout</em>' class.
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewGroupImpl <em>View Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ViewGroupImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getViewGroup()
+   * @generated
+   */
+  int VIEW_GROUP = 24;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASE_LAYOUT_FEATURE_COUNT = ROOT_LAYOUT_FEATURE_COUNT + 2;
+  int VIEW_GROUP__NAME = VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEW_GROUP__LAYOUT_STYLE = VIEW__LAYOUT_STYLE;
+
+  /**
+   * The feature id for the '<em><b>Views</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEW_GROUP__VIEWS = VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>View Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEW_GROUP_FEATURE_COUNT = VIEW_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl <em>Layout Params</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutParams()
+   * @generated
+   */
+  int LAYOUT_PARAMS = 25;
+
+  /**
+   * The feature id for the '<em><b>Weight</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__WEIGHT = 0;
+
+  /**
+   * The feature id for the '<em><b>Margin Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__MARGIN_LEFT = 1;
+
+  /**
+   * The feature id for the '<em><b>Margin Top</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__MARGIN_TOP = 2;
+
+  /**
+   * The feature id for the '<em><b>Margin Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__MARGIN_RIGHT = 3;
+
+  /**
+   * The feature id for the '<em><b>Margin Bottom</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__MARGIN_BOTTOM = 4;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__LEFT = 5;
+
+  /**
+   * The feature id for the '<em><b>Top</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__TOP = 6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__RIGHT = 7;
+
+  /**
+   * The feature id for the '<em><b>Bottom</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__BOTTOM = 8;
+
+  /**
+   * The feature id for the '<em><b>Background Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE = 9;
+
+  /**
+   * The number of structural features of the '<em>Layout Params</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS_FEATURE_COUNT = 10;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutGravityAttributeImpl <em>Layout Gravity Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutGravityAttributeImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutGravityAttribute()
+   * @generated
+   */
+  int LAYOUT_GRAVITY_ATTRIBUTE = 26;
+
+  /**
+   * The feature id for the '<em><b>Gravity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_GRAVITY_ATTRIBUTE__GRAVITY = 0;
+
+  /**
+   * The number of structural features of the '<em>Layout Gravity Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_GRAVITY_ATTRIBUTE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AbsoluteLayoutImpl <em>Absolute Layout</em>}' class.
@@ -764,7 +1104,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAbsoluteLayout()
    * @generated
    */
-  int ABSOLUTE_LAYOUT = 20;
+  int ABSOLUTE_LAYOUT = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -773,7 +1113,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSOLUTE_LAYOUT__NAME = BASE_LAYOUT__NAME;
+  int ABSOLUTE_LAYOUT__NAME = VIEW_GROUP__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -782,16 +1122,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSOLUTE_LAYOUT__LAYOUT_STYLE = BASE_LAYOUT__LAYOUT_STYLE;
+  int ABSOLUTE_LAYOUT__LAYOUT_STYLE = VIEW_GROUP__LAYOUT_STYLE;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Views</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSOLUTE_LAYOUT__ELEMENTS = BASE_LAYOUT__ELEMENTS;
+  int ABSOLUTE_LAYOUT__VIEWS = VIEW_GROUP__VIEWS;
 
   /**
    * The number of structural features of the '<em>Absolute Layout</em>' class.
@@ -800,7 +1140,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSOLUTE_LAYOUT_FEATURE_COUNT = BASE_LAYOUT_FEATURE_COUNT + 0;
+  int ABSOLUTE_LAYOUT_FEATURE_COUNT = VIEW_GROUP_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutImpl <em>Linear Layout</em>}' class.
@@ -810,7 +1150,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLinearLayout()
    * @generated
    */
-  int LINEAR_LAYOUT = 21;
+  int LINEAR_LAYOUT = 28;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -819,7 +1159,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR_LAYOUT__NAME = BASE_LAYOUT__NAME;
+  int LINEAR_LAYOUT__NAME = VIEW_GROUP__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -828,25 +1168,34 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR_LAYOUT__LAYOUT_STYLE = BASE_LAYOUT__LAYOUT_STYLE;
+  int LINEAR_LAYOUT__LAYOUT_STYLE = VIEW_GROUP__LAYOUT_STYLE;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Views</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINEAR_LAYOUT__ELEMENTS = BASE_LAYOUT__ELEMENTS;
+  int LINEAR_LAYOUT__VIEWS = VIEW_GROUP__VIEWS;
 
   /**
-   * The feature id for the '<em><b>Orientation</b></em>' attribute.
+   * The feature id for the '<em><b>Vertical</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINEAR_LAYOUT__ORIENTATION = BASE_LAYOUT_FEATURE_COUNT + 0;
+  int LINEAR_LAYOUT__VERTICAL = VIEW_GROUP_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Layout Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_LAYOUT__LAYOUT_PARAMS = VIEW_GROUP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Linear Layout</em>' class.
@@ -855,7 +1204,44 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR_LAYOUT_FEATURE_COUNT = BASE_LAYOUT_FEATURE_COUNT + 1;
+  int LINEAR_LAYOUT_FEATURE_COUNT = VIEW_GROUP_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutParamsImpl <em>Linear Layout Params</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutParamsImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLinearLayoutParams()
+   * @generated
+   */
+  int LINEAR_LAYOUT_PARAMS = 29;
+
+  /**
+   * The feature id for the '<em><b>Layout Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_LAYOUT_PARAMS__LAYOUT_PARAMS = 0;
+
+  /**
+   * The feature id for the '<em><b>Gravity</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_LAYOUT_PARAMS__GRAVITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Linear Layout Params</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_LAYOUT_PARAMS_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FrameLayoutImpl <em>Frame Layout</em>}' class.
@@ -865,7 +1251,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFrameLayout()
    * @generated
    */
-  int FRAME_LAYOUT = 22;
+  int FRAME_LAYOUT = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -874,7 +1260,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FRAME_LAYOUT__NAME = BASE_LAYOUT__NAME;
+  int FRAME_LAYOUT__NAME = VIEW_GROUP__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -883,16 +1269,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FRAME_LAYOUT__LAYOUT_STYLE = BASE_LAYOUT__LAYOUT_STYLE;
+  int FRAME_LAYOUT__LAYOUT_STYLE = VIEW_GROUP__LAYOUT_STYLE;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Views</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FRAME_LAYOUT__ELEMENTS = BASE_LAYOUT__ELEMENTS;
+  int FRAME_LAYOUT__VIEWS = VIEW_GROUP__VIEWS;
 
   /**
    * The number of structural features of the '<em>Frame Layout</em>' class.
@@ -901,7 +1287,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FRAME_LAYOUT_FEATURE_COUNT = BASE_LAYOUT_FEATURE_COUNT + 0;
+  int FRAME_LAYOUT_FEATURE_COUNT = VIEW_GROUP_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RelativeLayoutImpl <em>Relative Layout</em>}' class.
@@ -911,7 +1297,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRelativeLayout()
    * @generated
    */
-  int RELATIVE_LAYOUT = 23;
+  int RELATIVE_LAYOUT = 31;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -920,7 +1306,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIVE_LAYOUT__NAME = BASE_LAYOUT__NAME;
+  int RELATIVE_LAYOUT__NAME = VIEW_GROUP__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -929,16 +1315,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIVE_LAYOUT__LAYOUT_STYLE = BASE_LAYOUT__LAYOUT_STYLE;
+  int RELATIVE_LAYOUT__LAYOUT_STYLE = VIEW_GROUP__LAYOUT_STYLE;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Views</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RELATIVE_LAYOUT__ELEMENTS = BASE_LAYOUT__ELEMENTS;
+  int RELATIVE_LAYOUT__VIEWS = VIEW_GROUP__VIEWS;
 
   /**
    * The number of structural features of the '<em>Relative Layout</em>' class.
@@ -947,17 +1333,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIVE_LAYOUT_FEATURE_COUNT = BASE_LAYOUT_FEATURE_COUNT + 0;
+  int RELATIVE_LAYOUT_FEATURE_COUNT = VIEW_GROUP_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.WidgetImpl <em>Widget</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GridLayoutImpl <em>Grid Layout</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.WidgetImpl
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getWidget()
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GridLayoutImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGridLayout()
    * @generated
    */
-  int WIDGET = 24;
+  int GRID_LAYOUT = 32;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -966,7 +1352,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET__NAME = UI_ELEMENT_FEATURE_COUNT + 0;
+  int GRID_LAYOUT__NAME = VIEW_GROUP__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -975,16 +1361,265 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET__LAYOUT_STYLE = UI_ELEMENT_FEATURE_COUNT + 1;
+  int GRID_LAYOUT__LAYOUT_STYLE = VIEW_GROUP__LAYOUT_STYLE;
 
   /**
-   * The number of structural features of the '<em>Widget</em>' class.
+   * The feature id for the '<em><b>Views</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WIDGET_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 2;
+  int GRID_LAYOUT__VIEWS = VIEW_GROUP__VIEWS;
+
+  /**
+   * The number of structural features of the '<em>Grid Layout</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_LAYOUT_FEATURE_COUNT = VIEW_GROUP_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl <em>Table Layout</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTableLayout()
+   * @generated
+   */
+  int TABLE_LAYOUT = 33;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_LAYOUT__NAME = VIEW_GROUP__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_LAYOUT__LAYOUT_STYLE = VIEW_GROUP__LAYOUT_STYLE;
+
+  /**
+   * The feature id for the '<em><b>Views</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_LAYOUT__VIEWS = VIEW_GROUP__VIEWS;
+
+  /**
+   * The number of structural features of the '<em>Table Layout</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_LAYOUT_FEATURE_COUNT = VIEW_GROUP_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleViewImpl <em>Simple View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSimpleView()
+   * @generated
+   */
+  int SIMPLE_VIEW = 34;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_VIEW__NAME = VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_VIEW__LAYOUT_STYLE = VIEW__LAYOUT_STYLE;
+
+  /**
+   * The number of structural features of the '<em>Simple View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_VIEW_FEATURE_COUNT = VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GalleryImpl <em>Gallery</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GalleryImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGallery()
+   * @generated
+   */
+  int GALLERY = 35;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GALLERY__NAME = SIMPLE_VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GALLERY__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
+
+  /**
+   * The number of structural features of the '<em>Gallery</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GALLERY_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ExpandableListViewImpl <em>Expandable List View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ExpandableListViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getExpandableListView()
+   * @generated
+   */
+  int EXPANDABLE_LIST_VIEW = 36;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPANDABLE_LIST_VIEW__NAME = SIMPLE_VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPANDABLE_LIST_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
+
+  /**
+   * The number of structural features of the '<em>Expandable List View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPANDABLE_LIST_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.WebViewImpl <em>Web View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.WebViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getWebView()
+   * @generated
+   */
+  int WEB_VIEW = 37;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEB_VIEW__NAME = SIMPLE_VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEB_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
+
+  /**
+   * The number of structural features of the '<em>Web View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEB_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ImageViewImpl <em>Image View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ImageViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getImageView()
+   * @generated
+   */
+  int IMAGE_VIEW = 38;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_VIEW__NAME = SIMPLE_VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
+
+  /**
+   * The feature id for the '<em><b>Src</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_VIEW__SRC = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Image View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextViewImpl <em>Text View</em>}' class.
@@ -994,7 +1629,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTextView()
    * @generated
    */
-  int TEXT_VIEW = 25;
+  int TEXT_VIEW = 39;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1003,7 +1638,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_VIEW__NAME = WIDGET__NAME;
+  int TEXT_VIEW__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1012,7 +1647,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_VIEW__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int TEXT_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -1021,7 +1656,34 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_VIEW__TEXT = WIDGET_FEATURE_COUNT + 0;
+  int TEXT_VIEW__TEXT = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Gravity Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_VIEW__GRAVITY_ATTRIBUTE = SIMPLE_VIEW_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Text Size Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_VIEW__TEXT_SIZE_ATTRIBUTE = SIMPLE_VIEW_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Layout Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_VIEW__LAYOUT_PARAMS = SIMPLE_VIEW_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Text View</em>' class.
@@ -1030,7 +1692,91 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_VIEW_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+  int TEXT_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GravityAttributeImpl <em>Gravity Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GravityAttributeImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGravityAttribute()
+   * @generated
+   */
+  int GRAVITY_ATTRIBUTE = 40;
+
+  /**
+   * The feature id for the '<em><b>Gravity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAVITY_ATTRIBUTE__GRAVITY = 0;
+
+  /**
+   * The number of structural features of the '<em>Gravity Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAVITY_ATTRIBUTE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextSizeAttributeImpl <em>Text Size Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TextSizeAttributeImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTextSizeAttribute()
+   * @generated
+   */
+  int TEXT_SIZE_ATTRIBUTE = 41;
+
+  /**
+   * The feature id for the '<em><b>Text Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_SIZE_ATTRIBUTE__TEXT_SIZE = 0;
+
+  /**
+   * The number of structural features of the '<em>Text Size Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_SIZE_ATTRIBUTE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BackgroundAttributeImpl <em>Background Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BackgroundAttributeImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBackgroundAttribute()
+   * @generated
+   */
+  int BACKGROUND_ATTRIBUTE = 42;
+
+  /**
+   * The feature id for the '<em><b>Background</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BACKGROUND_ATTRIBUTE__BACKGROUND = 0;
+
+  /**
+   * The number of structural features of the '<em>Background Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BACKGROUND_ATTRIBUTE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextImpl <em>Edit Text</em>}' class.
@@ -1040,7 +1786,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEditText()
    * @generated
    */
-  int EDIT_TEXT = 26;
+  int EDIT_TEXT = 43;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1049,7 +1795,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDIT_TEXT__NAME = WIDGET__NAME;
+  int EDIT_TEXT__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1058,7 +1804,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDIT_TEXT__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int EDIT_TEXT__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -1067,7 +1813,34 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDIT_TEXT__TEXT = WIDGET_FEATURE_COUNT + 0;
+  int EDIT_TEXT__TEXT = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Gravity Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT__GRAVITY_ATTRIBUTE = SIMPLE_VIEW_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Text Size Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT__TEXT_SIZE_ATTRIBUTE = SIMPLE_VIEW_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Layout Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT__LAYOUT_PARAMS = SIMPLE_VIEW_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Edit Text</em>' class.
@@ -1076,7 +1849,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDIT_TEXT_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+  int EDIT_TEXT_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ButtonImpl <em>Button</em>}' class.
@@ -1086,7 +1859,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getButton()
    * @generated
    */
-  int BUTTON = 27;
+  int BUTTON = 44;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1095,7 +1868,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BUTTON__NAME = WIDGET__NAME;
+  int BUTTON__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1104,7 +1877,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BUTTON__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int BUTTON__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -1113,7 +1886,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BUTTON__TEXT = WIDGET_FEATURE_COUNT + 0;
+  int BUTTON__TEXT = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Button</em>' class.
@@ -1122,7 +1895,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BUTTON_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+  int BUTTON_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListViewImpl <em>List View</em>}' class.
@@ -1132,7 +1905,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListView()
    * @generated
    */
-  int LIST_VIEW = 28;
+  int LIST_VIEW = 45;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1141,7 +1914,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_VIEW__NAME = WIDGET__NAME;
+  int LIST_VIEW__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1150,7 +1923,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_VIEW__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int LIST_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' reference.
@@ -1159,7 +1932,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_VIEW__ENTRIES = WIDGET_FEATURE_COUNT + 0;
+  int LIST_VIEW__ENTRIES = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Layout</b></em>' reference.
@@ -1168,7 +1941,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_VIEW__LAYOUT = WIDGET_FEATURE_COUNT + 1;
+  int LIST_VIEW__LAYOUT = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>List View</em>' class.
@@ -1177,7 +1950,44 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_VIEW_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+  int LIST_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GridViewImpl <em>Grid View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GridViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGridView()
+   * @generated
+   */
+  int GRID_VIEW = 46;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_VIEW__NAME = SIMPLE_VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
+
+  /**
+   * The number of structural features of the '<em>Grid View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
@@ -1187,7 +1997,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSpinner()
    * @generated
    */
-  int SPINNER = 29;
+  int SPINNER = 47;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1196,7 +2006,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPINNER__NAME = WIDGET__NAME;
+  int SPINNER__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1205,7 +2015,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPINNER__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int SPINNER__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' reference.
@@ -1214,7 +2024,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPINNER__ENTRIES = WIDGET_FEATURE_COUNT + 0;
+  int SPINNER__ENTRIES = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Spinner</em>' class.
@@ -1223,7 +2033,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPINNER_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+  int SPINNER_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxImpl <em>Check Box</em>}' class.
@@ -1233,7 +2043,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCheckBox()
    * @generated
    */
-  int CHECK_BOX = 30;
+  int CHECK_BOX = 48;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1242,7 +2052,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHECK_BOX__NAME = WIDGET__NAME;
+  int CHECK_BOX__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1251,7 +2061,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHECK_BOX__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int CHECK_BOX__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -1260,7 +2070,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHECK_BOX__TEXT = WIDGET_FEATURE_COUNT + 0;
+  int CHECK_BOX__TEXT = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Check Box</em>' class.
@@ -1269,7 +2079,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHECK_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+  int CHECK_BOX_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RadioGroupImpl <em>Radio Group</em>}' class.
@@ -1279,7 +2089,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRadioGroup()
    * @generated
    */
-  int RADIO_GROUP = 31;
+  int RADIO_GROUP = 49;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1288,7 +2098,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIO_GROUP__NAME = WIDGET__NAME;
+  int RADIO_GROUP__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1297,7 +2107,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIO_GROUP__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int RADIO_GROUP__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Orientation</b></em>' attribute.
@@ -1306,7 +2116,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIO_GROUP__ORIENTATION = WIDGET_FEATURE_COUNT + 0;
+  int RADIO_GROUP__ORIENTATION = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Radiobuttons</b></em>' containment reference list.
@@ -1315,7 +2125,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIO_GROUP__RADIOBUTTONS = WIDGET_FEATURE_COUNT + 1;
+  int RADIO_GROUP__RADIOBUTTONS = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Radio Group</em>' class.
@@ -1324,7 +2134,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIO_GROUP_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+  int RADIO_GROUP_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RatingBarImpl <em>Rating Bar</em>}' class.
@@ -1334,7 +2144,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRatingBar()
    * @generated
    */
-  int RATING_BAR = 32;
+  int RATING_BAR = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1343,7 +2153,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RATING_BAR__NAME = WIDGET__NAME;
+  int RATING_BAR__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1352,7 +2162,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RATING_BAR__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int RATING_BAR__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Num Stars</b></em>' attribute.
@@ -1361,7 +2171,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RATING_BAR__NUM_STARS = WIDGET_FEATURE_COUNT + 0;
+  int RATING_BAR__NUM_STARS = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Rating Bar</em>' class.
@@ -1370,7 +2180,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RATING_BAR_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+  int RATING_BAR_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ToggleButtonImpl <em>Toggle Button</em>}' class.
@@ -1380,7 +2190,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getToggleButton()
    * @generated
    */
-  int TOGGLE_BUTTON = 33;
+  int TOGGLE_BUTTON = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1389,7 +2199,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TOGGLE_BUTTON__NAME = WIDGET__NAME;
+  int TOGGLE_BUTTON__NAME = SIMPLE_VIEW__NAME;
 
   /**
    * The feature id for the '<em><b>Layout Style</b></em>' attribute.
@@ -1398,7 +2208,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TOGGLE_BUTTON__LAYOUT_STYLE = WIDGET__LAYOUT_STYLE;
+  int TOGGLE_BUTTON__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
 
   /**
    * The feature id for the '<em><b>Text On</b></em>' attribute.
@@ -1407,7 +2217,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TOGGLE_BUTTON__TEXT_ON = WIDGET_FEATURE_COUNT + 0;
+  int TOGGLE_BUTTON__TEXT_ON = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Text Off</b></em>' attribute.
@@ -1416,7 +2226,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TOGGLE_BUTTON__TEXT_OFF = WIDGET_FEATURE_COUNT + 1;
+  int TOGGLE_BUTTON__TEXT_OFF = SIMPLE_VIEW_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Toggle Button</em>' class.
@@ -1425,7 +2235,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TOGGLE_BUTTON_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+  int TOGGLE_BUTTON_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RadioButtonImpl <em>Radio Button</em>}' class.
@@ -1435,7 +2245,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRadioButton()
    * @generated
    */
-  int RADIO_BUTTON = 34;
+  int RADIO_BUTTON = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1474,6 +2284,107 @@ public interface AndroTextDslPackage extends EPackage
   int RADIO_BUTTON_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckedTextViewImpl <em>Checked Text View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.CheckedTextViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCheckedTextView()
+   * @generated
+   */
+  int CHECKED_TEXT_VIEW = 53;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKED_TEXT_VIEW__NAME = SIMPLE_VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKED_TEXT_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKED_TEXT_VIEW__TEXT = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Checked Text View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKED_TEXT_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl <em>Auto Complete Text View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAutoCompleteTextView()
+   * @generated
+   */
+  int AUTO_COMPLETE_TEXT_VIEW = 54;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTO_COMPLETE_TEXT_VIEW__NAME = SIMPLE_VIEW__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTO_COMPLETE_TEXT_VIEW__LAYOUT_STYLE = SIMPLE_VIEW__LAYOUT_STYLE;
+
+  /**
+   * The feature id for the '<em><b>Entries</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTO_COMPLETE_TEXT_VIEW__ENTRIES = SIMPLE_VIEW_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Multi</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTO_COMPLETE_TEXT_VIEW__IS_MULTI = SIMPLE_VIEW_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Auto Complete Text View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTO_COMPLETE_TEXT_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AbstractPreferenceImpl <em>Abstract Preference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1481,7 +2392,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAbstractPreference()
    * @generated
    */
-  int ABSTRACT_PREFERENCE = 35;
+  int ABSTRACT_PREFERENCE = 55;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1509,7 +2420,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreference()
    * @generated
    */
-  int PREFERENCE = 36;
+  int PREFERENCE = 56;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1521,13 +2432,22 @@ public interface AndroTextDslPackage extends EPackage
   int PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE__NAME = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+  int PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Preference</em>' class.
@@ -1536,7 +2456,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+  int PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceScreenImpl <em>Preference Screen</em>}' class.
@@ -1546,16 +2466,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceScreen()
    * @generated
    */
-  int PREFERENCE_SCREEN = 37;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREFERENCE_SCREEN__NAME = ROOT_LAYOUT__NAME;
+  int PREFERENCE_SCREEN = 57;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1564,7 +2475,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_SCREEN__TITLE = ROOT_LAYOUT_FEATURE_COUNT + 0;
+  int PREFERENCE_SCREEN__TITLE = ABSTRACT_PREFERENCE__TITLE;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFERENCE_SCREEN__NAME = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
@@ -1573,7 +2493,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES = ROOT_LAYOUT_FEATURE_COUNT + 1;
+  int PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Preferences</b></em>' containment reference list.
@@ -1582,7 +2502,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_SCREEN__PREFERENCES = ROOT_LAYOUT_FEATURE_COUNT + 2;
+  int PREFERENCE_SCREEN__PREFERENCES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Preference Screen</em>' class.
@@ -1591,7 +2511,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_SCREEN_FEATURE_COUNT = ROOT_LAYOUT_FEATURE_COUNT + 3;
+  int PREFERENCE_SCREEN_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceCategoryImpl <em>Preference Category</em>}' class.
@@ -1601,7 +2521,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceCategory()
    * @generated
    */
-  int PREFERENCE_CATEGORY = 38;
+  int PREFERENCE_CATEGORY = 58;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1638,7 +2558,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEditTextPreference()
    * @generated
    */
-  int EDIT_TEXT_PREFERENCE = 39;
+  int EDIT_TEXT_PREFERENCE = 59;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1650,13 +2570,22 @@ public interface AndroTextDslPackage extends EPackage
   int EDIT_TEXT_PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_TEXT_PREFERENCE__NAME = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+  int EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Dialog Preference Attributes</b></em>' containment reference.
@@ -1665,7 +2594,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+  int EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Edit Text Preference</em>' class.
@@ -1674,7 +2603,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDIT_TEXT_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
+  int EDIT_TEXT_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl <em>List Preference</em>}' class.
@@ -1684,7 +2613,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListPreference()
    * @generated
    */
-  int LIST_PREFERENCE = 40;
+  int LIST_PREFERENCE = 60;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1696,13 +2625,22 @@ public interface AndroTextDslPackage extends EPackage
   int LIST_PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_PREFERENCE__NAME = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+  int LIST_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Dialog Preference Attributes</b></em>' containment reference.
@@ -1711,7 +2649,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+  int LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>List Preference Attributes</b></em>' containment reference.
@@ -1720,7 +2658,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
+  int LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>List Preference</em>' class.
@@ -1729,7 +2667,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 3;
+  int LIST_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxPreferenceImpl <em>Check Box Preference</em>}' class.
@@ -1739,7 +2677,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCheckBoxPreference()
    * @generated
    */
-  int CHECK_BOX_PREFERENCE = 41;
+  int CHECK_BOX_PREFERENCE = 61;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1751,13 +2689,22 @@ public interface AndroTextDslPackage extends EPackage
   int CHECK_BOX_PREFERENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECK_BOX_PREFERENCE__NAME = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+  int CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Check Box Preference</em>' class.
@@ -1766,7 +2713,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHECK_BOX_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+  int CHECK_BOX_PREFERENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RingtonePrefenceImpl <em>Ringtone Prefence</em>}' class.
@@ -1776,7 +2723,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRingtonePrefence()
    * @generated
    */
-  int RINGTONE_PREFENCE = 42;
+  int RINGTONE_PREFENCE = 62;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1788,13 +2735,22 @@ public interface AndroTextDslPackage extends EPackage
   int RINGTONE_PREFENCE__TITLE = ABSTRACT_PREFERENCE__TITLE;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RINGTONE_PREFENCE__NAME = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Preference Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 0;
+  int RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Ringtone Prefence</em>' class.
@@ -1803,7 +2759,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RINGTONE_PREFENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 1;
+  int RINGTONE_PREFENCE_FEATURE_COUNT = ABSTRACT_PREFERENCE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceAttributesImpl <em>Preference Attributes</em>}' class.
@@ -1813,16 +2769,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceAttributes()
    * @generated
    */
-  int PREFERENCE_ATTRIBUTES = 43;
-
-  /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PREFERENCE_ATTRIBUTES__KEY = 0;
+  int PREFERENCE_ATTRIBUTES = 63;
 
   /**
    * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -1831,7 +2778,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_ATTRIBUTES__SUMMARY = 1;
+  int PREFERENCE_ATTRIBUTES__SUMMARY = 0;
 
   /**
    * The feature id for the '<em><b>Enabled</b></em>' attribute.
@@ -1840,7 +2787,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_ATTRIBUTES__ENABLED = 2;
+  int PREFERENCE_ATTRIBUTES__ENABLED = 1;
 
   /**
    * The feature id for the '<em><b>Persistent</b></em>' attribute.
@@ -1849,7 +2796,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_ATTRIBUTES__PERSISTENT = 3;
+  int PREFERENCE_ATTRIBUTES__PERSISTENT = 2;
 
   /**
    * The number of structural features of the '<em>Preference Attributes</em>' class.
@@ -1858,7 +2805,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PREFERENCE_ATTRIBUTES_FEATURE_COUNT = 4;
+  int PREFERENCE_ATTRIBUTES_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DialogPreferenceAttributesImpl <em>Dialog Preference Attributes</em>}' class.
@@ -1868,7 +2815,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDialogPreferenceAttributes()
    * @generated
    */
-  int DIALOG_PREFERENCE_ATTRIBUTES = 44;
+  int DIALOG_PREFERENCE_ATTRIBUTES = 64;
 
   /**
    * The feature id for the '<em><b>Dialog Title</b></em>' attribute.
@@ -1905,7 +2852,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListPreferenceAttributes()
    * @generated
    */
-  int LIST_PREFERENCE_ATTRIBUTES = 45;
+  int LIST_PREFERENCE_ATTRIBUTES = 65;
 
   /**
    * The feature id for the '<em><b>Entries</b></em>' reference.
@@ -1935,6 +2882,397 @@ public interface AndroTextDslPackage extends EPackage
   int LIST_PREFERENCE_ATTRIBUTES_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PropertyValueImpl <em>Property Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PropertyValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPropertyValue()
+   * @generated
+   */
+  int PROPERTY_VALUE = 66;
+
+  /**
+   * The number of structural features of the '<em>Property Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_VALUE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AnyDrawablePropertyValueImpl <em>Any Drawable Property Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AnyDrawablePropertyValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAnyDrawablePropertyValue()
+   * @generated
+   */
+  int ANY_DRAWABLE_PROPERTY_VALUE = 67;
+
+  /**
+   * The number of structural features of the '<em>Any Drawable Property Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.StringPropertyValueImpl <em>String Property Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.StringPropertyValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringPropertyValue()
+   * @generated
+   */
+  int STRING_PROPERTY_VALUE = 68;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_PROPERTY_VALUE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Property Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_PROPERTY_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerPropertyValueImpl <em>Integer Property Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerPropertyValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerPropertyValue()
+   * @generated
+   */
+  int INTEGER_PROPERTY_VALUE = 69;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_PROPERTY_VALUE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Integer Property Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_PROPERTY_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanPropertyValueImpl <em>Boolean Property Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanPropertyValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanPropertyValue()
+   * @generated
+   */
+  int BOOLEAN_PROPERTY_VALUE = 70;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_PROPERTY_VALUE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean Property Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_PROPERTY_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ColorPropertyValueImpl <em>Color Property Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ColorPropertyValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorPropertyValue()
+   * @generated
+   */
+  int COLOR_PROPERTY_VALUE = 71;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_PROPERTY_VALUE__VALUE = ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Color Property Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_PROPERTY_VALUE_FEATURE_COUNT = ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionPropertyValueImpl <em>Dimension Property Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionPropertyValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionPropertyValue()
+   * @generated
+   */
+  int DIMENSION_PROPERTY_VALUE = 72;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_PROPERTY_VALUE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Dimension Property Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_PROPERTY_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DrawableResourceLinkImpl <em>Drawable Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DrawableResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDrawableResourceLink()
+   * @generated
+   */
+  int DRAWABLE_RESOURCE_LINK = 73;
+
+  /**
+   * The feature id for the '<em><b>Link</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DRAWABLE_RESOURCE_LINK__LINK = ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Drawable Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DRAWABLE_RESOURCE_LINK_FEATURE_COUNT = ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.StringResourceLinkImpl <em>String Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.StringResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringResourceLink()
+   * @generated
+   */
+  int STRING_RESOURCE_LINK = 74;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_RESOURCE_LINK__VALUE = STRING_PROPERTY_VALUE__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Link</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_RESOURCE_LINK__LINK = STRING_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_RESOURCE_LINK_FEATURE_COUNT = STRING_PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerResourceLinkImpl <em>Integer Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerResourceLink()
+   * @generated
+   */
+  int INTEGER_RESOURCE_LINK = 75;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_RESOURCE_LINK__VALUE = INTEGER_PROPERTY_VALUE__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Link</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_RESOURCE_LINK__LINK = INTEGER_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Integer Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_RESOURCE_LINK_FEATURE_COUNT = INTEGER_PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanResourceLinkImpl <em>Boolean Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanResourceLink()
+   * @generated
+   */
+  int BOOLEAN_RESOURCE_LINK = 76;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_RESOURCE_LINK__VALUE = BOOLEAN_PROPERTY_VALUE__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Link</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_RESOURCE_LINK__LINK = BOOLEAN_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_RESOURCE_LINK_FEATURE_COUNT = BOOLEAN_PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ColorResourceLinkImpl <em>Color Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ColorResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorResourceLink()
+   * @generated
+   */
+  int COLOR_RESOURCE_LINK = 77;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_RESOURCE_LINK__VALUE = COLOR_PROPERTY_VALUE__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Link</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_RESOURCE_LINK__LINK = COLOR_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Color Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_RESOURCE_LINK_FEATURE_COUNT = COLOR_PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionResourceLinkImpl <em>Dimension Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionResourceLink()
+   * @generated
+   */
+  int DIMENSION_RESOURCE_LINK = 78;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_RESOURCE_LINK__VALUE = DIMENSION_PROPERTY_VALUE__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Link</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_RESOURCE_LINK__LINK = DIMENSION_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Dimension Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_RESOURCE_LINK_FEATURE_COUNT = DIMENSION_PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroResModelRootImpl <em>Andro Res Model Root</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1942,7 +3280,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroResModelRoot()
    * @generated
    */
-  int ANDRO_RES_MODEL_ROOT = 46;
+  int ANDRO_RES_MODEL_ROOT = 79;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1979,7 +3317,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getResource()
    * @generated
    */
-  int RESOURCE = 47;
+  int RESOURCE = 80;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2007,7 +3345,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringResource()
    * @generated
    */
-  int STRING_RESOURCE = 48;
+  int STRING_RESOURCE = 81;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2044,7 +3382,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerResource()
    * @generated
    */
-  int INTEGER_RESOURCE = 49;
+  int INTEGER_RESOURCE = 82;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2081,7 +3419,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanResource()
    * @generated
    */
-  int BOOLEAN_RESOURCE = 50;
+  int BOOLEAN_RESOURCE = 83;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2118,7 +3456,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorResource()
    * @generated
    */
-  int COLOR_RESOURCE = 51;
+  int COLOR_RESOURCE = 84;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2155,7 +3493,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionResource()
    * @generated
    */
-  int DIMENSION_RESOURCE = 52;
+  int DIMENSION_RESOURCE = 85;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2167,7 +3505,7 @@ public interface AndroTextDslPackage extends EPackage
   int DIMENSION_RESOURCE__NAME = RESOURCE__NAME;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2192,7 +3530,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getArrayResource()
    * @generated
    */
-  int ARRAY_RESOURCE = 53;
+  int ARRAY_RESOURCE = 86;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2220,7 +3558,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerArrayResource()
    * @generated
    */
-  int INTEGER_ARRAY_RESOURCE = 54;
+  int INTEGER_ARRAY_RESOURCE = 87;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2257,7 +3595,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerArrayEntry()
    * @generated
    */
-  int INTEGER_ARRAY_ENTRY = 55;
+  int INTEGER_ARRAY_ENTRY = 88;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2294,7 +3632,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringArrayResource()
    * @generated
    */
-  int STRING_ARRAY_RESOURCE = 56;
+  int STRING_ARRAY_RESOURCE = 89;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2331,7 +3669,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringArrayEntry()
    * @generated
    */
-  int STRING_ARRAY_ENTRY = 57;
+  int STRING_ARRAY_ENTRY = 90;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2368,7 +3706,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDrawableResource()
    * @generated
    */
-  int DRAWABLE_RESOURCE = 58;
+  int DRAWABLE_RESOURCE = 91;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2396,7 +3734,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBitmapDrawableResource()
    * @generated
    */
-  int BITMAP_DRAWABLE_RESOURCE = 59;
+  int BITMAP_DRAWABLE_RESOURCE = 92;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2433,7 +3771,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTransitionDrawableResource()
    * @generated
    */
-  int TRANSITION_DRAWABLE_RESOURCE = 60;
+  int TRANSITION_DRAWABLE_RESOURCE = 93;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2472,6 +3810,43 @@ public interface AndroTextDslPackage extends EPackage
   int TRANSITION_DRAWABLE_RESOURCE_FEATURE_COUNT = DRAWABLE_RESOURCE_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionValueImpl <em>Dimension Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionValueImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionValue()
+   * @generated
+   */
+  int DIMENSION_VALUE = 94;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_VALUE__VALUE = 0;
+
+  /**
+   * The feature id for the '<em><b>Metric</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_VALUE__METRIC = 1;
+
+  /**
+   * The number of structural features of the '<em>Dimension Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_VALUE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ApiLevel <em>Api Level</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2479,7 +3854,17 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getApiLevel()
    * @generated
    */
-  int API_LEVEL = 61;
+  int API_LEVEL = 95;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme <em>Activity Theme</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getActivityTheme()
+   * @generated
+   */
+  int ACTIVITY_THEME = 96;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DataTypes <em>Data Types</em>}' enum.
@@ -2489,17 +3874,37 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDataTypes()
    * @generated
    */
-  int DATA_TYPES = 62;
+  int DATA_TYPES = 97;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle <em>Layout Style</em>}' enum.
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind <em>Layout Gravity Kind</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
-   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutStyle()
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutGravityKind()
    * @generated
    */
-  int LAYOUT_STYLE = 63;
+  int LAYOUT_GRAVITY_KIND = 98;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind <em>Layout Dimension Kind</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutDimensionKind()
+   * @generated
+   */
+  int LAYOUT_DIMENSION_KIND = 99;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionMetric()
+   * @generated
+   */
+  int DIMENSION_METRIC = 100;
 
 
   /**
@@ -2748,15 +4153,36 @@ public interface AndroTextDslPackage extends EPackage
   EClass getActivity();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Activity#getLayout <em>Layout</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity <em>Simple Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Activity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity
+   * @generated
+   */
+  EClass getSimpleActivity();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity#getLayout <em>Layout</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Layout</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Activity#getLayout()
-   * @see #getActivity()
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity#getLayout()
+   * @see #getSimpleActivity()
    * @generated
    */
-  EReference getActivity_Layout();
+  EReference getSimpleActivity_Layout();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity#getTheme <em>Theme</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Theme</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity#getTheme()
+   * @see #getSimpleActivity()
+   * @generated
+   */
+  EAttribute getSimpleActivity_Theme();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.TabActivity <em>Tab Activity</em>}'.
@@ -2767,6 +4193,143 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EClass getTabActivity();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.TabActivity#getTabs <em>Tabs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Tabs</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TabActivity#getTabs()
+   * @see #getTabActivity()
+   * @generated
+   */
+  EReference getTabActivity_Tabs();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Tab <em>Tab</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tab</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Tab
+   * @generated
+   */
+  EClass getTab();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Tab#getTag <em>Tag</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tag</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Tab#getTag()
+   * @see #getTab()
+   * @generated
+   */
+  EAttribute getTab_Tag();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Tab#getActivity <em>Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Activity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Tab#getActivity()
+   * @see #getTab()
+   * @generated
+   */
+  EReference getTab_Activity();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ListActivity <em>List Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List Activity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListActivity
+   * @generated
+   */
+  EClass getListActivity();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ListActivity#getListitem <em>Listitem</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Listitem</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListActivity#getListitem()
+   * @see #getListActivity()
+   * @generated
+   */
+  EReference getListActivity_Listitem();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity <em>Preference Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Preference Activity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
+   * @generated
+   */
+  EClass getPreferenceActivity();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity#getLayout <em>Layout</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Layout</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity#getLayout()
+   * @see #getPreferenceActivity()
+   * @generated
+   */
+  EReference getPreferenceActivity_Layout();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Action <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Action
+   * @generated
+   */
+  EClass getAction();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity <em>Invoke Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Invoke Activity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity
+   * @generated
+   */
+  EClass getInvokeActivity();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity#getActivity <em>Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Activity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity#getActivity()
+   * @see #getInvokeActivity()
+   * @generated
+   */
+  EReference getInvokeActivity_Activity();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl <em>Invoke Web Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Invoke Web Url</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl
+   * @generated
+   */
+  EClass getInvokeWebUrl();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl#getUrl()
+   * @see #getInvokeWebUrl()
+   * @generated
+   */
+  EAttribute getInvokeWebUrl_Url();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot <em>Andro Data Model Root</em>}'.
@@ -2927,88 +4490,209 @@ public interface AndroTextDslPackage extends EPackage
   EClass getAndroGuiModelRoot();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getRootLayout <em>Root Layout</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getRoots <em>Roots</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Root Layout</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getRootLayout()
+   * @return the meta object for the containment reference list '<em>Roots</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getRoots()
    * @see #getAndroGuiModelRoot()
    * @generated
    */
-  EReference getAndroGuiModelRoot_RootLayout();
+  EReference getAndroGuiModelRoot_Roots();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.UIElement <em>UI Element</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.View <em>View</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>UI Element</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.UIElement
+   * @return the meta object for class '<em>View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.View
    * @generated
    */
-  EClass getUIElement();
+  EClass getView();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Layout <em>Layout</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Layout</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Layout
-   * @generated
-   */
-  EClass getLayout();
-
-  /**
-   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.RootLayout <em>Root Layout</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Root Layout</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.RootLayout
-   * @generated
-   */
-  EClass getRootLayout();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.RootLayout#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.View#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.RootLayout#getName()
-   * @see #getRootLayout()
+   * @see hu.bme.mit.androtext.lang.androTextDsl.View#getName()
+   * @see #getView()
    * @generated
    */
-  EAttribute getRootLayout_Name();
+  EAttribute getView_Name();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseLayout <em>Base Layout</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Base Layout</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseLayout
-   * @generated
-   */
-  EClass getBaseLayout();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseLayout#getLayoutStyle <em>Layout Style</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.View#getLayoutStyle <em>Layout Style</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Layout Style</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseLayout#getLayoutStyle()
-   * @see #getBaseLayout()
+   * @see hu.bme.mit.androtext.lang.androTextDsl.View#getLayoutStyle()
+   * @see #getView()
    * @generated
    */
-  EAttribute getBaseLayout_LayoutStyle();
+  EAttribute getView_LayoutStyle();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseLayout#getElements <em>Elements</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ViewGroup <em>View Group</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseLayout#getElements()
-   * @see #getBaseLayout()
+   * @return the meta object for class '<em>View Group</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ViewGroup
    * @generated
    */
-  EReference getBaseLayout_Elements();
+  EClass getViewGroup();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.ViewGroup#getViews <em>Views</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Views</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ViewGroup#getViews()
+   * @see #getViewGroup()
+   * @generated
+   */
+  EReference getViewGroup_Views();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams <em>Layout Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Layout Params</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams
+   * @generated
+   */
+  EClass getLayoutParams();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getWeight <em>Weight</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Weight</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getWeight()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_Weight();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginLeft <em>Margin Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Margin Left</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginLeft()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_MarginLeft();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginTop <em>Margin Top</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Margin Top</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginTop()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_MarginTop();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginRight <em>Margin Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Margin Right</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginRight()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_MarginRight();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginBottom <em>Margin Bottom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Margin Bottom</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginBottom()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_MarginBottom();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getLeft()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getTop <em>Top</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Top</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getTop()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_Top();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getRight()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_Right();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBottom <em>Bottom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bottom</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBottom()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_Bottom();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBackgroundAttribute <em>Background Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Background Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBackgroundAttribute()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_BackgroundAttribute();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute <em>Layout Gravity Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Layout Gravity Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute
+   * @generated
+   */
+  EClass getLayoutGravityAttribute();
+
+  /**
+   * Returns the meta object for the attribute list '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute#getGravity <em>Gravity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Gravity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute#getGravity()
+   * @see #getLayoutGravityAttribute()
+   * @generated
+   */
+  EAttribute getLayoutGravityAttribute_Gravity();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AbsoluteLayout <em>Absolute Layout</em>}'.
@@ -3031,15 +4715,58 @@ public interface AndroTextDslPackage extends EPackage
   EClass getLinearLayout();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#isOrientation <em>Orientation</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#isVertical <em>Vertical</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Orientation</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#isOrientation()
+   * @return the meta object for the attribute '<em>Vertical</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#isVertical()
    * @see #getLinearLayout()
    * @generated
    */
-  EAttribute getLinearLayout_Orientation();
+  EAttribute getLinearLayout_Vertical();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#getLayoutParams <em>Layout Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Layout Params</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#getLayoutParams()
+   * @see #getLinearLayout()
+   * @generated
+   */
+  EReference getLinearLayout_LayoutParams();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams <em>Linear Layout Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Linear Layout Params</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams
+   * @generated
+   */
+  EClass getLinearLayoutParams();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams#getLayoutParams <em>Layout Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Layout Params</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams#getLayoutParams()
+   * @see #getLinearLayoutParams()
+   * @generated
+   */
+  EReference getLinearLayoutParams_LayoutParams();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams#getGravity <em>Gravity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Gravity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams#getGravity()
+   * @see #getLinearLayoutParams()
+   * @generated
+   */
+  EReference getLinearLayoutParams_Gravity();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.FrameLayout <em>Frame Layout</em>}'.
@@ -3062,36 +4789,85 @@ public interface AndroTextDslPackage extends EPackage
   EClass getRelativeLayout();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Widget <em>Widget</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.GridLayout <em>Grid Layout</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Widget</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Widget
+   * @return the meta object for class '<em>Grid Layout</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GridLayout
    * @generated
    */
-  EClass getWidget();
+  EClass getGridLayout();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Widget#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.TableLayout <em>Table Layout</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Widget#getName()
-   * @see #getWidget()
+   * @return the meta object for class '<em>Table Layout</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TableLayout
    * @generated
    */
-  EAttribute getWidget_Name();
+  EClass getTableLayout();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Widget#getLayoutStyle <em>Layout Style</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleView <em>Simple View</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Layout Style</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Widget#getLayoutStyle()
-   * @see #getWidget()
+   * @return the meta object for class '<em>Simple View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleView
    * @generated
    */
-  EAttribute getWidget_LayoutStyle();
+  EClass getSimpleView();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Gallery <em>Gallery</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Gallery</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Gallery
+   * @generated
+   */
+  EClass getGallery();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView <em>Expandable List View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expandable List View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView
+   * @generated
+   */
+  EClass getExpandableListView();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.WebView <em>Web View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Web View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.WebView
+   * @generated
+   */
+  EClass getWebView();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ImageView <em>Image View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Image View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ImageView
+   * @generated
+   */
+  EClass getImageView();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ImageView#getSrc <em>Src</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Src</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ImageView#getSrc()
+   * @see #getImageView()
+   * @generated
+   */
+  EReference getImageView_Src();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextView <em>Text View</em>}'.
@@ -3115,6 +4891,102 @@ public interface AndroTextDslPackage extends EPackage
   EAttribute getTextView_Text();
 
   /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getGravityAttribute <em>Gravity Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Gravity Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextView#getGravityAttribute()
+   * @see #getTextView()
+   * @generated
+   */
+  EReference getTextView_GravityAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getTextSizeAttribute <em>Text Size Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Text Size Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextView#getTextSizeAttribute()
+   * @see #getTextView()
+   * @generated
+   */
+  EReference getTextView_TextSizeAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getLayoutParams <em>Layout Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Layout Params</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextView#getLayoutParams()
+   * @see #getTextView()
+   * @generated
+   */
+  EReference getTextView_LayoutParams();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute <em>Gravity Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Gravity Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute
+   * @generated
+   */
+  EClass getGravityAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute#getGravity <em>Gravity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Gravity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute#getGravity()
+   * @see #getGravityAttribute()
+   * @generated
+   */
+  EAttribute getGravityAttribute_Gravity();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute <em>Text Size Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text Size Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute
+   * @generated
+   */
+  EClass getTextSizeAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute#getTextSize <em>Text Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Text Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute#getTextSize()
+   * @see #getTextSizeAttribute()
+   * @generated
+   */
+  EReference getTextSizeAttribute_TextSize();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute <em>Background Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Background Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute
+   * @generated
+   */
+  EClass getBackgroundAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute#getBackground <em>Background</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Background</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute#getBackground()
+   * @see #getBackgroundAttribute()
+   * @generated
+   */
+  EReference getBackgroundAttribute_Background();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.EditText <em>Edit Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3134,6 +5006,39 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getEditText_Text();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.EditText#getGravityAttribute <em>Gravity Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Gravity Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditText#getGravityAttribute()
+   * @see #getEditText()
+   * @generated
+   */
+  EReference getEditText_GravityAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.EditText#getTextSizeAttribute <em>Text Size Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Text Size Attribute</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditText#getTextSizeAttribute()
+   * @see #getEditText()
+   * @generated
+   */
+  EReference getEditText_TextSizeAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.EditText#getLayoutParams <em>Layout Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Layout Params</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditText#getLayoutParams()
+   * @see #getEditText()
+   * @generated
+   */
+  EReference getEditText_LayoutParams();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Button <em>Button</em>}'.
@@ -3187,6 +5092,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EReference getListView_Layout();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.GridView <em>Grid View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Grid View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GridView
+   * @generated
+   */
+  EClass getGridView();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Spinner <em>Spinner</em>}'.
@@ -3359,6 +5274,59 @@ public interface AndroTextDslPackage extends EPackage
   EAttribute getRadioButton_LayoutStyle();
 
   /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.CheckedTextView <em>Checked Text View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Checked Text View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CheckedTextView
+   * @generated
+   */
+  EClass getCheckedTextView();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.CheckedTextView#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CheckedTextView#getText()
+   * @see #getCheckedTextView()
+   * @generated
+   */
+  EAttribute getCheckedTextView_Text();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView <em>Auto Complete Text View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Auto Complete Text View</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView
+   * @generated
+   */
+  EClass getAutoCompleteTextView();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getEntries <em>Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entries</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getEntries()
+   * @see #getAutoCompleteTextView()
+   * @generated
+   */
+  EReference getAutoCompleteTextView_Entries();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#isIsMulti <em>Is Multi</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Multi</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#isIsMulti()
+   * @see #getAutoCompleteTextView()
+   * @generated
+   */
+  EAttribute getAutoCompleteTextView_IsMulti();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference <em>Abstract Preference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3390,6 +5358,17 @@ public interface AndroTextDslPackage extends EPackage
   EClass getPreference();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Preference#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Preference#getName()
+   * @see #getPreference()
+   * @generated
+   */
+  EAttribute getPreference_Name();
+
+  /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Preference#getPreferenceAttributes <em>Preference Attributes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3409,6 +5388,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EClass getPreferenceScreen();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getName()
+   * @see #getPreferenceScreen()
+   * @generated
+   */
+  EAttribute getPreferenceScreen_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen#getPreferenceAttributes <em>Preference Attributes</em>}'.
@@ -3464,6 +5454,17 @@ public interface AndroTextDslPackage extends EPackage
   EClass getEditTextPreference();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference#getName()
+   * @see #getEditTextPreference()
+   * @generated
+   */
+  EAttribute getEditTextPreference_Name();
+
+  /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference#getPreferenceAttributes <em>Preference Attributes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3494,6 +5495,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EClass getListPreference();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getName()
+   * @see #getListPreference()
+   * @generated
+   */
+  EAttribute getListPreference_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreference#getPreferenceAttributes <em>Preference Attributes</em>}'.
@@ -3539,6 +5551,17 @@ public interface AndroTextDslPackage extends EPackage
   EClass getCheckBoxPreference();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference#getName()
+   * @see #getCheckBoxPreference()
+   * @generated
+   */
+  EAttribute getCheckBoxPreference_Name();
+
+  /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference#getPreferenceAttributes <em>Preference Attributes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3560,6 +5583,17 @@ public interface AndroTextDslPackage extends EPackage
   EClass getRingtonePrefence();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence#getName()
+   * @see #getRingtonePrefence()
+   * @generated
+   */
+  EAttribute getRingtonePrefence_Name();
+
+  /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence#getPreferenceAttributes <em>Preference Attributes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3579,17 +5613,6 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EClass getPreferenceAttributes();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getKey()
-   * @see #getPreferenceAttributes()
-   * @generated
-   */
-  EAttribute getPreferenceAttributes_Key();
 
   /**
    * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes#getSummary <em>Summary</em>}'.
@@ -3687,6 +5710,257 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EReference getListPreferenceAttributes_EntryValues();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.PropertyValue <em>Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Property Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PropertyValue
+   * @generated
+   */
+  EClass getPropertyValue();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue <em>Any Drawable Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Any Drawable Property Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue
+   * @generated
+   */
+  EClass getAnyDrawablePropertyValue();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue <em>String Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Property Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue
+   * @generated
+   */
+  EClass getStringPropertyValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue#getValue()
+   * @see #getStringPropertyValue()
+   * @generated
+   */
+  EAttribute getStringPropertyValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue <em>Integer Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Integer Property Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue
+   * @generated
+   */
+  EClass getIntegerPropertyValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue#getValue()
+   * @see #getIntegerPropertyValue()
+   * @generated
+   */
+  EAttribute getIntegerPropertyValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue <em>Boolean Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Property Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue
+   * @generated
+   */
+  EClass getBooleanPropertyValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue#getValue()
+   * @see #getBooleanPropertyValue()
+   * @generated
+   */
+  EAttribute getBooleanPropertyValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue <em>Color Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Color Property Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue
+   * @generated
+   */
+  EClass getColorPropertyValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue#getValue()
+   * @see #getColorPropertyValue()
+   * @generated
+   */
+  EAttribute getColorPropertyValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue <em>Dimension Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dimension Property Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue
+   * @generated
+   */
+  EClass getDimensionPropertyValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue#getValue()
+   * @see #getDimensionPropertyValue()
+   * @generated
+   */
+  EReference getDimensionPropertyValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink <em>Drawable Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Drawable Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink
+   * @generated
+   */
+  EClass getDrawableResourceLink();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink#getLink <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink#getLink()
+   * @see #getDrawableResourceLink()
+   * @generated
+   */
+  EReference getDrawableResourceLink_Link();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink <em>String Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink
+   * @generated
+   */
+  EClass getStringResourceLink();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink#getLink <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink#getLink()
+   * @see #getStringResourceLink()
+   * @generated
+   */
+  EReference getStringResourceLink_Link();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink <em>Integer Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Integer Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink
+   * @generated
+   */
+  EClass getIntegerResourceLink();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink#getLink <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink#getLink()
+   * @see #getIntegerResourceLink()
+   * @generated
+   */
+  EReference getIntegerResourceLink_Link();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink <em>Boolean Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink
+   * @generated
+   */
+  EClass getBooleanResourceLink();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink#getLink <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink#getLink()
+   * @see #getBooleanResourceLink()
+   * @generated
+   */
+  EReference getBooleanResourceLink_Link();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink <em>Color Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Color Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink
+   * @generated
+   */
+  EClass getColorResourceLink();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink#getLink <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink#getLink()
+   * @see #getColorResourceLink()
+   * @generated
+   */
+  EReference getColorResourceLink_Link();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink <em>Dimension Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dimension Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink
+   * @generated
+   */
+  EClass getDimensionResourceLink();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink#getLink <em>Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink#getLink()
+   * @see #getDimensionResourceLink()
+   * @generated
+   */
+  EReference getDimensionResourceLink_Link();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot <em>Andro Res Model Root</em>}'.
@@ -3825,15 +6099,15 @@ public interface AndroTextDslPackage extends EPackage
   EClass getDimensionResource();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionResource#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionResource#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionResource#getValue()
    * @see #getDimensionResource()
    * @generated
    */
-  EAttribute getDimensionResource_Value();
+  EReference getDimensionResource_Value();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ArrayResource <em>Array Resource</em>}'.
@@ -4015,6 +6289,38 @@ public interface AndroTextDslPackage extends EPackage
   EReference getTransitionDrawableResource_To();
 
   /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionValue <em>Dimension Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dimension Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionValue
+   * @generated
+   */
+  EClass getDimensionValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionValue#getValue()
+   * @see #getDimensionValue()
+   * @generated
+   */
+  EAttribute getDimensionValue_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionValue#getMetric <em>Metric</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Metric</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionValue#getMetric()
+   * @see #getDimensionValue()
+   * @generated
+   */
+  EAttribute getDimensionValue_Metric();
+
+  /**
    * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.ApiLevel <em>Api Level</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4023,6 +6329,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EEnum getApiLevel();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme <em>Activity Theme</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Activity Theme</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme
+   * @generated
+   */
+  EEnum getActivityTheme();
 
   /**
    * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.DataTypes <em>Data Types</em>}'.
@@ -4035,14 +6351,34 @@ public interface AndroTextDslPackage extends EPackage
   EEnum getDataTypes();
 
   /**
-   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle <em>Layout Style</em>}'.
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind <em>Layout Gravity Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Layout Style</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
+   * @return the meta object for enum '<em>Layout Gravity Kind</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind
    * @generated
    */
-  EEnum getLayoutStyle();
+  EEnum getLayoutGravityKind();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind <em>Layout Dimension Kind</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Layout Dimension Kind</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+   * @generated
+   */
+  EEnum getLayoutDimensionKind();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Dimension Metric</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric
+   * @generated
+   */
+  EEnum getDimensionMetric();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -4268,12 +6604,30 @@ public interface AndroTextDslPackage extends EPackage
     EClass ACTIVITY = eINSTANCE.getActivity();
 
     /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleActivityImpl <em>Simple Activity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleActivityImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSimpleActivity()
+     * @generated
+     */
+    EClass SIMPLE_ACTIVITY = eINSTANCE.getSimpleActivity();
+
+    /**
      * The meta object literal for the '<em><b>Layout</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTIVITY__LAYOUT = eINSTANCE.getActivity_Layout();
+    EReference SIMPLE_ACTIVITY__LAYOUT = eINSTANCE.getSimpleActivity_Layout();
+
+    /**
+     * The meta object literal for the '<em><b>Theme</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_ACTIVITY__THEME = eINSTANCE.getSimpleActivity_Theme();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TabActivityImpl <em>Tab Activity</em>}' class.
@@ -4284,6 +6638,122 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EClass TAB_ACTIVITY = eINSTANCE.getTabActivity();
+
+    /**
+     * The meta object literal for the '<em><b>Tabs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TAB_ACTIVITY__TABS = eINSTANCE.getTabActivity_Tabs();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TabImpl <em>Tab</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TabImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTab()
+     * @generated
+     */
+    EClass TAB = eINSTANCE.getTab();
+
+    /**
+     * The meta object literal for the '<em><b>Tag</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TAB__TAG = eINSTANCE.getTab_Tag();
+
+    /**
+     * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TAB__ACTIVITY = eINSTANCE.getTab_Activity();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListActivityImpl <em>List Activity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ListActivityImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getListActivity()
+     * @generated
+     */
+    EClass LIST_ACTIVITY = eINSTANCE.getListActivity();
+
+    /**
+     * The meta object literal for the '<em><b>Listitem</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_ACTIVITY__LISTITEM = eINSTANCE.getListActivity_Listitem();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceActivityImpl <em>Preference Activity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceActivityImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPreferenceActivity()
+     * @generated
+     */
+    EClass PREFERENCE_ACTIVITY = eINSTANCE.getPreferenceActivity();
+
+    /**
+     * The meta object literal for the '<em><b>Layout</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREFERENCE_ACTIVITY__LAYOUT = eINSTANCE.getPreferenceActivity_Layout();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ActionImpl <em>Action</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ActionImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAction()
+     * @generated
+     */
+    EClass ACTION = eINSTANCE.getAction();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeActivityImpl <em>Invoke Activity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeActivityImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getInvokeActivity()
+     * @generated
+     */
+    EClass INVOKE_ACTIVITY = eINSTANCE.getInvokeActivity();
+
+    /**
+     * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INVOKE_ACTIVITY__ACTIVITY = eINSTANCE.getInvokeActivity_Activity();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeWebUrlImpl <em>Invoke Web Url</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.InvokeWebUrlImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getInvokeWebUrl()
+     * @generated
+     */
+    EClass INVOKE_WEB_URL = eINSTANCE.getInvokeWebUrl();
+
+    /**
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INVOKE_WEB_URL__URL = eINSTANCE.getInvokeWebUrl_Url();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroDataModelRootImpl <em>Andro Data Model Root</em>}' class.
@@ -4420,42 +6890,22 @@ public interface AndroTextDslPackage extends EPackage
     EClass ANDRO_GUI_MODEL_ROOT = eINSTANCE.getAndroGuiModelRoot();
 
     /**
-     * The meta object literal for the '<em><b>Root Layout</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Roots</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT = eINSTANCE.getAndroGuiModelRoot_RootLayout();
+    EReference ANDRO_GUI_MODEL_ROOT__ROOTS = eINSTANCE.getAndroGuiModelRoot_Roots();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.UIElementImpl <em>UI Element</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewImpl <em>View</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.UIElementImpl
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getUIElement()
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getView()
      * @generated
      */
-    EClass UI_ELEMENT = eINSTANCE.getUIElement();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutImpl <em>Layout</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutImpl
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayout()
-     * @generated
-     */
-    EClass LAYOUT = eINSTANCE.getLayout();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RootLayoutImpl <em>Root Layout</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RootLayoutImpl
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRootLayout()
-     * @generated
-     */
-    EClass ROOT_LAYOUT = eINSTANCE.getRootLayout();
+    EClass VIEW = eINSTANCE.getView();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4463,17 +6913,7 @@ public interface AndroTextDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ROOT_LAYOUT__NAME = eINSTANCE.getRootLayout_Name();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BaseLayoutImpl <em>Base Layout</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BaseLayoutImpl
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBaseLayout()
-     * @generated
-     */
-    EClass BASE_LAYOUT = eINSTANCE.getBaseLayout();
+    EAttribute VIEW__NAME = eINSTANCE.getView_Name();
 
     /**
      * The meta object literal for the '<em><b>Layout Style</b></em>' attribute feature.
@@ -4481,15 +6921,133 @@ public interface AndroTextDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BASE_LAYOUT__LAYOUT_STYLE = eINSTANCE.getBaseLayout_LayoutStyle();
+    EAttribute VIEW__LAYOUT_STYLE = eINSTANCE.getView_LayoutStyle();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewGroupImpl <em>View Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ViewGroupImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getViewGroup()
+     * @generated
+     */
+    EClass VIEW_GROUP = eINSTANCE.getViewGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Views</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BASE_LAYOUT__ELEMENTS = eINSTANCE.getBaseLayout_Elements();
+    EReference VIEW_GROUP__VIEWS = eINSTANCE.getViewGroup_Views();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl <em>Layout Params</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutParams()
+     * @generated
+     */
+    EClass LAYOUT_PARAMS = eINSTANCE.getLayoutParams();
+
+    /**
+     * The meta object literal for the '<em><b>Weight</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__WEIGHT = eINSTANCE.getLayoutParams_Weight();
+
+    /**
+     * The meta object literal for the '<em><b>Margin Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__MARGIN_LEFT = eINSTANCE.getLayoutParams_MarginLeft();
+
+    /**
+     * The meta object literal for the '<em><b>Margin Top</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__MARGIN_TOP = eINSTANCE.getLayoutParams_MarginTop();
+
+    /**
+     * The meta object literal for the '<em><b>Margin Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__MARGIN_RIGHT = eINSTANCE.getLayoutParams_MarginRight();
+
+    /**
+     * The meta object literal for the '<em><b>Margin Bottom</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__MARGIN_BOTTOM = eINSTANCE.getLayoutParams_MarginBottom();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__LEFT = eINSTANCE.getLayoutParams_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Top</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__TOP = eINSTANCE.getLayoutParams_Top();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__RIGHT = eINSTANCE.getLayoutParams_Right();
+
+    /**
+     * The meta object literal for the '<em><b>Bottom</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__BOTTOM = eINSTANCE.getLayoutParams_Bottom();
+
+    /**
+     * The meta object literal for the '<em><b>Background Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE = eINSTANCE.getLayoutParams_BackgroundAttribute();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutGravityAttributeImpl <em>Layout Gravity Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutGravityAttributeImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutGravityAttribute()
+     * @generated
+     */
+    EClass LAYOUT_GRAVITY_ATTRIBUTE = eINSTANCE.getLayoutGravityAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Gravity</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LAYOUT_GRAVITY_ATTRIBUTE__GRAVITY = eINSTANCE.getLayoutGravityAttribute_Gravity();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AbsoluteLayoutImpl <em>Absolute Layout</em>}' class.
@@ -4512,12 +7070,46 @@ public interface AndroTextDslPackage extends EPackage
     EClass LINEAR_LAYOUT = eINSTANCE.getLinearLayout();
 
     /**
-     * The meta object literal for the '<em><b>Orientation</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Vertical</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINEAR_LAYOUT__ORIENTATION = eINSTANCE.getLinearLayout_Orientation();
+    EAttribute LINEAR_LAYOUT__VERTICAL = eINSTANCE.getLinearLayout_Vertical();
+
+    /**
+     * The meta object literal for the '<em><b>Layout Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINEAR_LAYOUT__LAYOUT_PARAMS = eINSTANCE.getLinearLayout_LayoutParams();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutParamsImpl <em>Linear Layout Params</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutParamsImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLinearLayoutParams()
+     * @generated
+     */
+    EClass LINEAR_LAYOUT_PARAMS = eINSTANCE.getLinearLayoutParams();
+
+    /**
+     * The meta object literal for the '<em><b>Layout Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINEAR_LAYOUT_PARAMS__LAYOUT_PARAMS = eINSTANCE.getLinearLayoutParams_LayoutParams();
+
+    /**
+     * The meta object literal for the '<em><b>Gravity</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINEAR_LAYOUT_PARAMS__GRAVITY = eINSTANCE.getLinearLayoutParams_Gravity();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FrameLayoutImpl <em>Frame Layout</em>}' class.
@@ -4540,30 +7132,82 @@ public interface AndroTextDslPackage extends EPackage
     EClass RELATIVE_LAYOUT = eINSTANCE.getRelativeLayout();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.WidgetImpl <em>Widget</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GridLayoutImpl <em>Grid Layout</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.WidgetImpl
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getWidget()
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GridLayoutImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGridLayout()
      * @generated
      */
-    EClass WIDGET = eINSTANCE.getWidget();
+    EClass GRID_LAYOUT = eINSTANCE.getGridLayout();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl <em>Table Layout</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTableLayout()
      * @generated
      */
-    EAttribute WIDGET__NAME = eINSTANCE.getWidget_Name();
+    EClass TABLE_LAYOUT = eINSTANCE.getTableLayout();
 
     /**
-     * The meta object literal for the '<em><b>Layout Style</b></em>' attribute feature.
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleViewImpl <em>Simple View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSimpleView()
+     * @generated
+     */
+    EClass SIMPLE_VIEW = eINSTANCE.getSimpleView();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GalleryImpl <em>Gallery</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GalleryImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGallery()
+     * @generated
+     */
+    EClass GALLERY = eINSTANCE.getGallery();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ExpandableListViewImpl <em>Expandable List View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ExpandableListViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getExpandableListView()
+     * @generated
+     */
+    EClass EXPANDABLE_LIST_VIEW = eINSTANCE.getExpandableListView();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.WebViewImpl <em>Web View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.WebViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getWebView()
+     * @generated
+     */
+    EClass WEB_VIEW = eINSTANCE.getWebView();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ImageViewImpl <em>Image View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ImageViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getImageView()
+     * @generated
+     */
+    EClass IMAGE_VIEW = eINSTANCE.getImageView();
+
+    /**
+     * The meta object literal for the '<em><b>Src</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WIDGET__LAYOUT_STYLE = eINSTANCE.getWidget_LayoutStyle();
+    EReference IMAGE_VIEW__SRC = eINSTANCE.getImageView_Src();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextViewImpl <em>Text View</em>}' class.
@@ -4584,6 +7228,84 @@ public interface AndroTextDslPackage extends EPackage
     EAttribute TEXT_VIEW__TEXT = eINSTANCE.getTextView_Text();
 
     /**
+     * The meta object literal for the '<em><b>Gravity Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_VIEW__GRAVITY_ATTRIBUTE = eINSTANCE.getTextView_GravityAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Text Size Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_VIEW__TEXT_SIZE_ATTRIBUTE = eINSTANCE.getTextView_TextSizeAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Layout Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_VIEW__LAYOUT_PARAMS = eINSTANCE.getTextView_LayoutParams();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GravityAttributeImpl <em>Gravity Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GravityAttributeImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGravityAttribute()
+     * @generated
+     */
+    EClass GRAVITY_ATTRIBUTE = eINSTANCE.getGravityAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Gravity</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRAVITY_ATTRIBUTE__GRAVITY = eINSTANCE.getGravityAttribute_Gravity();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextSizeAttributeImpl <em>Text Size Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TextSizeAttributeImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTextSizeAttribute()
+     * @generated
+     */
+    EClass TEXT_SIZE_ATTRIBUTE = eINSTANCE.getTextSizeAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Text Size</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_SIZE_ATTRIBUTE__TEXT_SIZE = eINSTANCE.getTextSizeAttribute_TextSize();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BackgroundAttributeImpl <em>Background Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BackgroundAttributeImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBackgroundAttribute()
+     * @generated
+     */
+    EClass BACKGROUND_ATTRIBUTE = eINSTANCE.getBackgroundAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Background</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BACKGROUND_ATTRIBUTE__BACKGROUND = eINSTANCE.getBackgroundAttribute_Background();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EditTextImpl <em>Edit Text</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4600,6 +7322,30 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EAttribute EDIT_TEXT__TEXT = eINSTANCE.getEditText_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Gravity Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDIT_TEXT__GRAVITY_ATTRIBUTE = eINSTANCE.getEditText_GravityAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Text Size Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDIT_TEXT__TEXT_SIZE_ATTRIBUTE = eINSTANCE.getEditText_TextSizeAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Layout Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDIT_TEXT__LAYOUT_PARAMS = eINSTANCE.getEditText_LayoutParams();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ButtonImpl <em>Button</em>}' class.
@@ -4644,6 +7390,16 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EReference LIST_VIEW__LAYOUT = eINSTANCE.getListView_Layout();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GridViewImpl <em>Grid View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GridViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGridView()
+     * @generated
+     */
+    EClass GRID_VIEW = eINSTANCE.getGridView();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SpinnerImpl <em>Spinner</em>}' class.
@@ -4786,6 +7542,50 @@ public interface AndroTextDslPackage extends EPackage
     EAttribute RADIO_BUTTON__LAYOUT_STYLE = eINSTANCE.getRadioButton_LayoutStyle();
 
     /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckedTextViewImpl <em>Checked Text View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.CheckedTextViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCheckedTextView()
+     * @generated
+     */
+    EClass CHECKED_TEXT_VIEW = eINSTANCE.getCheckedTextView();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHECKED_TEXT_VIEW__TEXT = eINSTANCE.getCheckedTextView_Text();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl <em>Auto Complete Text View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAutoCompleteTextView()
+     * @generated
+     */
+    EClass AUTO_COMPLETE_TEXT_VIEW = eINSTANCE.getAutoCompleteTextView();
+
+    /**
+     * The meta object literal for the '<em><b>Entries</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AUTO_COMPLETE_TEXT_VIEW__ENTRIES = eINSTANCE.getAutoCompleteTextView_Entries();
+
+    /**
+     * The meta object literal for the '<em><b>Is Multi</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AUTO_COMPLETE_TEXT_VIEW__IS_MULTI = eINSTANCE.getAutoCompleteTextView_IsMulti();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AbstractPreferenceImpl <em>Abstract Preference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4814,6 +7614,14 @@ public interface AndroTextDslPackage extends EPackage
     EClass PREFERENCE = eINSTANCE.getPreference();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFERENCE__NAME = eINSTANCE.getPreference_Name();
+
+    /**
      * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4830,6 +7638,14 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EClass PREFERENCE_SCREEN = eINSTANCE.getPreferenceScreen();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFERENCE_SCREEN__NAME = eINSTANCE.getPreferenceScreen_Name();
 
     /**
      * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
@@ -4876,6 +7692,14 @@ public interface AndroTextDslPackage extends EPackage
     EClass EDIT_TEXT_PREFERENCE = eINSTANCE.getEditTextPreference();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDIT_TEXT_PREFERENCE__NAME = eINSTANCE.getEditTextPreference_Name();
+
+    /**
      * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4900,6 +7724,14 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EClass LIST_PREFERENCE = eINSTANCE.getListPreference();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_PREFERENCE__NAME = eINSTANCE.getListPreference_Name();
 
     /**
      * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
@@ -4936,6 +7768,14 @@ public interface AndroTextDslPackage extends EPackage
     EClass CHECK_BOX_PREFERENCE = eINSTANCE.getCheckBoxPreference();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHECK_BOX_PREFERENCE__NAME = eINSTANCE.getCheckBoxPreference_Name();
+
+    /**
      * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4954,6 +7794,14 @@ public interface AndroTextDslPackage extends EPackage
     EClass RINGTONE_PREFENCE = eINSTANCE.getRingtonePrefence();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RINGTONE_PREFENCE__NAME = eINSTANCE.getRingtonePrefence_Name();
+
+    /**
      * The meta object literal for the '<em><b>Preference Attributes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4970,14 +7818,6 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EClass PREFERENCE_ATTRIBUTES = eINSTANCE.getPreferenceAttributes();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PREFERENCE_ATTRIBUTES__KEY = eINSTANCE.getPreferenceAttributes_Key();
 
     /**
      * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
@@ -5054,6 +7894,224 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EReference LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES = eINSTANCE.getListPreferenceAttributes_EntryValues();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PropertyValueImpl <em>Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PropertyValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPropertyValue()
+     * @generated
+     */
+    EClass PROPERTY_VALUE = eINSTANCE.getPropertyValue();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AnyDrawablePropertyValueImpl <em>Any Drawable Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AnyDrawablePropertyValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAnyDrawablePropertyValue()
+     * @generated
+     */
+    EClass ANY_DRAWABLE_PROPERTY_VALUE = eINSTANCE.getAnyDrawablePropertyValue();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.StringPropertyValueImpl <em>String Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.StringPropertyValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringPropertyValue()
+     * @generated
+     */
+    EClass STRING_PROPERTY_VALUE = eINSTANCE.getStringPropertyValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_PROPERTY_VALUE__VALUE = eINSTANCE.getStringPropertyValue_Value();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerPropertyValueImpl <em>Integer Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerPropertyValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerPropertyValue()
+     * @generated
+     */
+    EClass INTEGER_PROPERTY_VALUE = eINSTANCE.getIntegerPropertyValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTEGER_PROPERTY_VALUE__VALUE = eINSTANCE.getIntegerPropertyValue_Value();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanPropertyValueImpl <em>Boolean Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanPropertyValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanPropertyValue()
+     * @generated
+     */
+    EClass BOOLEAN_PROPERTY_VALUE = eINSTANCE.getBooleanPropertyValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOLEAN_PROPERTY_VALUE__VALUE = eINSTANCE.getBooleanPropertyValue_Value();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ColorPropertyValueImpl <em>Color Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ColorPropertyValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorPropertyValue()
+     * @generated
+     */
+    EClass COLOR_PROPERTY_VALUE = eINSTANCE.getColorPropertyValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLOR_PROPERTY_VALUE__VALUE = eINSTANCE.getColorPropertyValue_Value();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionPropertyValueImpl <em>Dimension Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionPropertyValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionPropertyValue()
+     * @generated
+     */
+    EClass DIMENSION_PROPERTY_VALUE = eINSTANCE.getDimensionPropertyValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIMENSION_PROPERTY_VALUE__VALUE = eINSTANCE.getDimensionPropertyValue_Value();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DrawableResourceLinkImpl <em>Drawable Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DrawableResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDrawableResourceLink()
+     * @generated
+     */
+    EClass DRAWABLE_RESOURCE_LINK = eINSTANCE.getDrawableResourceLink();
+
+    /**
+     * The meta object literal for the '<em><b>Link</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DRAWABLE_RESOURCE_LINK__LINK = eINSTANCE.getDrawableResourceLink_Link();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.StringResourceLinkImpl <em>String Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.StringResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringResourceLink()
+     * @generated
+     */
+    EClass STRING_RESOURCE_LINK = eINSTANCE.getStringResourceLink();
+
+    /**
+     * The meta object literal for the '<em><b>Link</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRING_RESOURCE_LINK__LINK = eINSTANCE.getStringResourceLink_Link();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerResourceLinkImpl <em>Integer Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.IntegerResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerResourceLink()
+     * @generated
+     */
+    EClass INTEGER_RESOURCE_LINK = eINSTANCE.getIntegerResourceLink();
+
+    /**
+     * The meta object literal for the '<em><b>Link</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTEGER_RESOURCE_LINK__LINK = eINSTANCE.getIntegerResourceLink_Link();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanResourceLinkImpl <em>Boolean Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BooleanResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanResourceLink()
+     * @generated
+     */
+    EClass BOOLEAN_RESOURCE_LINK = eINSTANCE.getBooleanResourceLink();
+
+    /**
+     * The meta object literal for the '<em><b>Link</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOLEAN_RESOURCE_LINK__LINK = eINSTANCE.getBooleanResourceLink_Link();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ColorResourceLinkImpl <em>Color Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ColorResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorResourceLink()
+     * @generated
+     */
+    EClass COLOR_RESOURCE_LINK = eINSTANCE.getColorResourceLink();
+
+    /**
+     * The meta object literal for the '<em><b>Link</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLOR_RESOURCE_LINK__LINK = eINSTANCE.getColorResourceLink_Link();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionResourceLinkImpl <em>Dimension Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionResourceLink()
+     * @generated
+     */
+    EClass DIMENSION_RESOURCE_LINK = eINSTANCE.getDimensionResourceLink();
+
+    /**
+     * The meta object literal for the '<em><b>Link</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIMENSION_RESOURCE_LINK__LINK = eINSTANCE.getDimensionResourceLink_Link();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroResModelRootImpl <em>Andro Res Model Root</em>}' class.
@@ -5174,12 +8232,12 @@ public interface AndroTextDslPackage extends EPackage
     EClass DIMENSION_RESOURCE = eINSTANCE.getDimensionResource();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIMENSION_RESOURCE__VALUE = eINSTANCE.getDimensionResource_Value();
+    EReference DIMENSION_RESOURCE__VALUE = eINSTANCE.getDimensionResource_Value();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ArrayResourceImpl <em>Array Resource</em>}' class.
@@ -5334,6 +8392,32 @@ public interface AndroTextDslPackage extends EPackage
     EReference TRANSITION_DRAWABLE_RESOURCE__TO = eINSTANCE.getTransitionDrawableResource_To();
 
     /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionValueImpl <em>Dimension Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DimensionValueImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionValue()
+     * @generated
+     */
+    EClass DIMENSION_VALUE = eINSTANCE.getDimensionValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIMENSION_VALUE__VALUE = eINSTANCE.getDimensionValue_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Metric</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIMENSION_VALUE__METRIC = eINSTANCE.getDimensionValue_Metric();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ApiLevel <em>Api Level</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5342,6 +8426,16 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EEnum API_LEVEL = eINSTANCE.getApiLevel();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme <em>Activity Theme</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getActivityTheme()
+     * @generated
+     */
+    EEnum ACTIVITY_THEME = eINSTANCE.getActivityTheme();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DataTypes <em>Data Types</em>}' enum.
@@ -5354,14 +8448,34 @@ public interface AndroTextDslPackage extends EPackage
     EEnum DATA_TYPES = eINSTANCE.getDataTypes();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle <em>Layout Style</em>}' enum.
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind <em>Layout Gravity Kind</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
-     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutStyle()
+     * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutGravityKind()
      * @generated
      */
-    EEnum LAYOUT_STYLE = eINSTANCE.getLayoutStyle();
+    EEnum LAYOUT_GRAVITY_KIND = eINSTANCE.getLayoutGravityKind();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind <em>Layout Dimension Kind</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutDimensionKind()
+     * @generated
+     */
+    EEnum LAYOUT_DIMENSION_KIND = eINSTANCE.getLayoutDimensionKind();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionMetric()
+     * @generated
+     */
+    EEnum DIMENSION_METRIC = eINSTANCE.getDimensionMetric();
 
   }
 

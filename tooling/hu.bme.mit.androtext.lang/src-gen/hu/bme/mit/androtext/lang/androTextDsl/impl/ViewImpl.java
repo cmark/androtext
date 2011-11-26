@@ -7,30 +7,31 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
-import hu.bme.mit.androtext.lang.androTextDsl.Widget;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Widget</b></em>'.
+ * An implementation of the model object '<em><b>View</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.WidgetImpl#getName <em>Name</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.WidgetImpl#getLayoutStyle <em>Layout Style</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewImpl#getLayoutStyle <em>Layout Style</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class WidgetImpl extends UIElementImpl implements Widget
+public class ViewImpl extends MinimalEObjectImpl.Container implements View
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -60,7 +61,7 @@ public class WidgetImpl extends UIElementImpl implements Widget
    * @generated
    * @ordered
    */
-  protected static final LayoutStyle LAYOUT_STYLE_EDEFAULT = LayoutStyle.FILL;
+  protected static final LayoutDimensionKind LAYOUT_STYLE_EDEFAULT = LayoutDimensionKind.FILL;
 
   /**
    * The cached value of the '{@link #getLayoutStyle() <em>Layout Style</em>}' attribute.
@@ -70,14 +71,14 @@ public class WidgetImpl extends UIElementImpl implements Widget
    * @generated
    * @ordered
    */
-  protected LayoutStyle layoutStyle = LAYOUT_STYLE_EDEFAULT;
+  protected LayoutDimensionKind layoutStyle = LAYOUT_STYLE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected WidgetImpl()
+  protected ViewImpl()
   {
     super();
   }
@@ -90,7 +91,7 @@ public class WidgetImpl extends UIElementImpl implements Widget
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.WIDGET;
+    return AndroTextDslPackage.Literals.VIEW;
   }
 
   /**
@@ -113,7 +114,7 @@ public class WidgetImpl extends UIElementImpl implements Widget
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.WIDGET__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW__NAME, oldName, name));
   }
 
   /**
@@ -121,7 +122,7 @@ public class WidgetImpl extends UIElementImpl implements Widget
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutStyle getLayoutStyle()
+  public LayoutDimensionKind getLayoutStyle()
   {
     return layoutStyle;
   }
@@ -131,12 +132,12 @@ public class WidgetImpl extends UIElementImpl implements Widget
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLayoutStyle(LayoutStyle newLayoutStyle)
+  public void setLayoutStyle(LayoutDimensionKind newLayoutStyle)
   {
-    LayoutStyle oldLayoutStyle = layoutStyle;
+    LayoutDimensionKind oldLayoutStyle = layoutStyle;
     layoutStyle = newLayoutStyle == null ? LAYOUT_STYLE_EDEFAULT : newLayoutStyle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.WIDGET__LAYOUT_STYLE, oldLayoutStyle, layoutStyle));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW__LAYOUT_STYLE, oldLayoutStyle, layoutStyle));
   }
 
   /**
@@ -149,9 +150,9 @@ public class WidgetImpl extends UIElementImpl implements Widget
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.WIDGET__NAME:
+      case AndroTextDslPackage.VIEW__NAME:
         return getName();
-      case AndroTextDslPackage.WIDGET__LAYOUT_STYLE:
+      case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
         return getLayoutStyle();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -167,11 +168,11 @@ public class WidgetImpl extends UIElementImpl implements Widget
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.WIDGET__NAME:
+      case AndroTextDslPackage.VIEW__NAME:
         setName((String)newValue);
         return;
-      case AndroTextDslPackage.WIDGET__LAYOUT_STYLE:
-        setLayoutStyle((LayoutStyle)newValue);
+      case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
+        setLayoutStyle((LayoutDimensionKind)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,10 +188,10 @@ public class WidgetImpl extends UIElementImpl implements Widget
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.WIDGET__NAME:
+      case AndroTextDslPackage.VIEW__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AndroTextDslPackage.WIDGET__LAYOUT_STYLE:
+      case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
         setLayoutStyle(LAYOUT_STYLE_EDEFAULT);
         return;
     }
@@ -207,9 +208,9 @@ public class WidgetImpl extends UIElementImpl implements Widget
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.WIDGET__NAME:
+      case AndroTextDslPackage.VIEW__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AndroTextDslPackage.WIDGET__LAYOUT_STYLE:
+      case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
         return layoutStyle != LAYOUT_STYLE_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -234,4 +235,4 @@ public class WidgetImpl extends UIElementImpl implements Widget
     return result.toString();
   }
 
-} //WidgetImpl
+} //ViewImpl

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxPreferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CheckBoxPreferenceImpl#getPreferenceAttributes <em>Preference Attributes</em>}</li>
  * </ul>
  * </p>
@@ -33,6 +34,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class CheckBoxPreferenceImpl extends AbstractPreferenceImpl implements CheckBoxPreference
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getPreferenceAttributes() <em>Preference Attributes</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -62,6 +83,29 @@ public class CheckBoxPreferenceImpl extends AbstractPreferenceImpl implements Ch
   protected EClass eStaticClass()
   {
     return AndroTextDslPackage.Literals.CHECK_BOX_PREFERENCE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.CHECK_BOX_PREFERENCE__NAME, oldName, name));
   }
 
   /**
@@ -138,6 +182,8 @@ public class CheckBoxPreferenceImpl extends AbstractPreferenceImpl implements Ch
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.CHECK_BOX_PREFERENCE__NAME:
+        return getName();
       case AndroTextDslPackage.CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES:
         return getPreferenceAttributes();
     }
@@ -154,6 +200,9 @@ public class CheckBoxPreferenceImpl extends AbstractPreferenceImpl implements Ch
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.CHECK_BOX_PREFERENCE__NAME:
+        setName((String)newValue);
+        return;
       case AndroTextDslPackage.CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)newValue);
         return;
@@ -171,6 +220,9 @@ public class CheckBoxPreferenceImpl extends AbstractPreferenceImpl implements Ch
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.CHECK_BOX_PREFERENCE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroTextDslPackage.CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)null);
         return;
@@ -188,10 +240,29 @@ public class CheckBoxPreferenceImpl extends AbstractPreferenceImpl implements Ch
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.CHECK_BOX_PREFERENCE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES:
         return preferenceAttributes != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //CheckBoxPreferenceImpl

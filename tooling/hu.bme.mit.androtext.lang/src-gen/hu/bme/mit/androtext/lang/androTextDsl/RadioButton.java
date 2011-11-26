@@ -82,7 +82,7 @@ public interface RadioButton extends EObject
 
   /**
    * Returns the value of the '<em><b>Layout Style</b></em>' attribute.
-   * The literals are from the enumeration {@link hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle}.
+   * The literals are from the enumeration {@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Layout Style</em>' attribute isn't clear,
@@ -90,23 +90,23 @@ public interface RadioButton extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Layout Style</em>' attribute.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
-   * @see #setLayoutStyle(LayoutStyle)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+   * @see #setLayoutStyle(LayoutDimensionKind)
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getRadioButton_LayoutStyle()
    * @model
    * @generated
    */
-  LayoutStyle getLayoutStyle();
+  LayoutDimensionKind getLayoutStyle();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getLayoutStyle <em>Layout Style</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Layout Style</em>' attribute.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
    * @see #getLayoutStyle()
    * @generated
    */
-  void setLayoutStyle(LayoutStyle value);
+  void setLayoutStyle(LayoutDimensionKind value);
 
 } // RadioButton

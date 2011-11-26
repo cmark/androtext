@@ -23,7 +23,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface Spinner extends Widget
+public interface Spinner extends SimpleView
 {
   /**
    * Returns the value of the '<em><b>Entries</b></em>' reference.
@@ -34,12 +34,12 @@ public interface Spinner extends Widget
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Entries</em>' reference.
-   * @see #setEntries(Resource)
+   * @see #setEntries(ArrayResource)
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getSpinner_Entries()
    * @model
    * @generated
    */
-  Resource getEntries();
+  ArrayResource getEntries();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.Spinner#getEntries <em>Entries</em>}' reference.
@@ -49,6 +49,6 @@ public interface Spinner extends Widget
    * @see #getEntries()
    * @generated
    */
-  void setEntries(Resource value);
+  void setEntries(ArrayResource value);
 
 } // Spinner

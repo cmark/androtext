@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceScreenImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceScreenImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceScreenImpl#getPreferenceAttributes <em>Preference Attributes</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PreferenceScreenImpl#getPreferences <em>Preferences</em>}</li>
  * </ul>
@@ -41,27 +41,27 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceScreen
+public class PreferenceScreenImpl extends AbstractPreferenceImpl implements PreferenceScreen
 {
   /**
-   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTitle()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String TITLE_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTitle()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String title = TITLE_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPreferenceAttributes() <em>Preference Attributes</em>}' containment reference.
@@ -109,9 +109,9 @@ public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceSc
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTitle()
+  public String getName()
   {
-    return title;
+    return name;
   }
 
   /**
@@ -119,12 +119,12 @@ public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceSc
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTitle(String newTitle)
+  public void setName(String newName)
   {
-    String oldTitle = title;
-    title = newTitle;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.PREFERENCE_SCREEN__TITLE, oldTitle, title));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.PREFERENCE_SCREEN__NAME, oldName, name));
   }
 
   /**
@@ -217,8 +217,8 @@ public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceSc
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_SCREEN__TITLE:
-        return getTitle();
+      case AndroTextDslPackage.PREFERENCE_SCREEN__NAME:
+        return getName();
       case AndroTextDslPackage.PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES:
         return getPreferenceAttributes();
       case AndroTextDslPackage.PREFERENCE_SCREEN__PREFERENCES:
@@ -238,8 +238,8 @@ public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceSc
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_SCREEN__TITLE:
-        setTitle((String)newValue);
+      case AndroTextDslPackage.PREFERENCE_SCREEN__NAME:
+        setName((String)newValue);
         return;
       case AndroTextDslPackage.PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)newValue);
@@ -262,8 +262,8 @@ public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceSc
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_SCREEN__TITLE:
-        setTitle(TITLE_EDEFAULT);
+      case AndroTextDslPackage.PREFERENCE_SCREEN__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case AndroTextDslPackage.PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)null);
@@ -285,8 +285,8 @@ public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceSc
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.PREFERENCE_SCREEN__TITLE:
-        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+      case AndroTextDslPackage.PREFERENCE_SCREEN__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES:
         return preferenceAttributes != null;
       case AndroTextDslPackage.PREFERENCE_SCREEN__PREFERENCES:
@@ -301,51 +301,13 @@ public class PreferenceScreenImpl extends RootLayoutImpl implements PreferenceSc
    * @generated
    */
   @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == AbstractPreference.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case AndroTextDslPackage.PREFERENCE_SCREEN__TITLE: return AndroTextDslPackage.ABSTRACT_PREFERENCE__TITLE;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == AbstractPreference.class)
-    {
-      switch (baseFeatureID)
-      {
-        case AndroTextDslPackage.ABSTRACT_PREFERENCE__TITLE: return AndroTextDslPackage.PREFERENCE_SCREEN__TITLE;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (title: ");
-    result.append(title);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

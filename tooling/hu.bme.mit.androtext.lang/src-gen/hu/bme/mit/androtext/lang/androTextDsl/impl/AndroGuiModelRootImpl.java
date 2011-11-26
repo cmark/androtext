@@ -8,7 +8,7 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.RootLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import java.util.Collection;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGuiModelRootImpl#getRootLayout <em>Root Layout</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGuiModelRootImpl#getRoots <em>Roots</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,14 +38,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiModelRoot
 {
   /**
-   * The cached value of the '{@link #getRootLayout() <em>Root Layout</em>}' containment reference list.
+   * The cached value of the '{@link #getRoots() <em>Roots</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRootLayout()
+   * @see #getRoots()
    * @generated
    * @ordered
    */
-  protected EList<RootLayout> rootLayout;
+  protected EList<View> roots;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<RootLayout> getRootLayout()
+  public EList<View> getRoots()
   {
-    if (rootLayout == null)
+    if (roots == null)
     {
-      rootLayout = new EObjectContainmentEList<RootLayout>(RootLayout.class, this, AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT);
+      roots = new EObjectContainmentEList<View>(View.class, this, AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS);
     }
-    return rootLayout;
+    return roots;
   }
 
   /**
@@ -92,8 +92,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT:
-        return ((InternalEList<?>)getRootLayout()).basicRemove(otherEnd, msgs);
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
+        return ((InternalEList<?>)getRoots()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT:
-        return getRootLayout();
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
+        return getRoots();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT:
-        getRootLayout().clear();
-        getRootLayout().addAll((Collection<? extends RootLayout>)newValue);
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
+        getRoots().clear();
+        getRoots().addAll((Collection<? extends View>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT:
-        getRootLayout().clear();
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
+        getRoots().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOT_LAYOUT:
-        return rootLayout != null && !rootLayout.isEmpty();
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
+        return roots != null && !roots.isEmpty();
     }
     return super.eIsSet(featureID);
   }

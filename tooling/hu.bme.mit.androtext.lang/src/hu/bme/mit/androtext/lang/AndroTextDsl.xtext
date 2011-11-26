@@ -62,11 +62,19 @@ AndroidApplication:
 	'}';
 
 AndroidApplicationModelElement:
-	Activity | TabActivity
+	Activity | PreferenceActivity
 ;
 
 Activity:
-	'activity' name=ID 'layout' layout=[RootLayout | QualifiedName]
+	SimpleActivity | TabActivity | ListActivity
+;
+
+SimpleActivity:
+	'activity' name=ID 'layout' layout=[ViewGroup | QualifiedName] ('theme' theme=ActivityTheme)?
+;
+
+enum ActivityTheme:
+	DIALOG | NOTITLE | FULLSCREEN
 ;
 
 TabActivity:
@@ -79,6 +87,26 @@ Tab:
 	'tab' tag=STRING '{' 
 		'show' activity=[Activity]
 	'}';
+	
+ListActivity:
+	'listactivity' name=ID 'listitem' listitem=[View | QualifiedName]
+;
+	
+PreferenceActivity:
+	'preferences' name=ID 'layout' layout=[PreferenceScreen | QualifiedName]
+;
+
+Action:
+	InvokeActivity | InvokeWebUrl
+;
+
+InvokeActivity:
+	'show' activity=[Activity | QualifiedName]
+;
+
+InvokeWebUrl:
+	'goto' url=STRING
+;
 
 /* End of AndroAppModelRoot and application model elements */
 
@@ -118,89 +146,182 @@ enum DataTypes:
 /* AndroGuiModelRoot and model elements */
 AndroGuiModelRoot:
 	'guimodel' name=ID '{' 
-		rootLayout+=RootLayout*	
+		roots+=View*	
 	'}'
 ;
 
-UIElement:
-	Widget | Layout;
-	
-Layout:
-	RootLayout
+View:
+	SimpleView | ViewGroup;
+
+ViewGroup:
+	LinearLayout | AbsoluteLayout | FrameLayout | RelativeLayout | GridLayout | TableLayout
 ;
 
-RootLayout:
-	BaseLayout | PreferenceScreen
+LayoutParams:
+	('weight' weight=IntegerPropertyValue)?
+	& ('margin' marginLeft=DimensionPropertyValue ',' marginTop=DimensionPropertyValue ',' marginRight=DimensionPropertyValue ',' marginBottom=DimensionPropertyValue)?
+	& ('alignParent' left=BooleanPropertyValue ',' top=BooleanPropertyValue ',' right=BooleanPropertyValue ',' bottom=BooleanPropertyValue)?
+	& (backgroundAttribute=BackgroundAttribute)?
 ;
 
-BaseLayout:
-	LinearLayout | AbsoluteLayout | FrameLayout | RelativeLayout
+LayoutGravityAttribute:
+	'gravity' gravity+=LayoutGravityKind ('|' gravity+=LayoutGravityKind)*
 ;
 
-enum LayoutStyle:
+enum LayoutGravityKind :
+    top | bottom | left | right |
+    center | center_vertical | center_horizontal |
+    fill | fill_vertical | fill_horizontal |
+    clip_vertical | clip_horizontal
+;
+
+enum LayoutDimensionKind:
 	FILL="fill" | WRAP="wrap" | FILL_WRAP="fill&wrap" | WRAP_FILL="wrap&fill";
 
 AbsoluteLayout:
-	"absolutelayout" name=ID layoutStyle=LayoutStyle
+	"absolutelayout" name=ID layoutStyle=LayoutDimensionKind 
 	"{"
-		elements+=UIElement* 
+		views+=View*
 	"}";
 
 LinearLayout:
-	"linearlayout" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle
+	"linearlayout" name=ID (vertical?="vertical"|"horizontal")? layoutStyle=LayoutDimensionKind
 	"{"
-		elements+=UIElement*
+		(layoutParams=LinearLayoutParams)?
+		views+=View*
 	"}";
+	
+LinearLayoutParams:
+	'layoutparams'
+	'{' 
+		(
+			layoutParams=LayoutParams?
+			& (gravity=LayoutGravityAttribute)?
+		) 
+	'}'
+;
 
 FrameLayout:
-	"framelayout" name=ID layoutStyle=LayoutStyle
+	"framelayout" name=ID layoutStyle=LayoutDimensionKind
 	"{"
-		elements+=UIElement*
+		views+=View*
 	"}";
 	
 RelativeLayout:
-	"relativelayout" name=ID layoutStyle=LayoutStyle "{"
-		elements+=UIElement*
+	"relativelayout" name=ID layoutStyle=LayoutDimensionKind 
+	"{"
+		views+=View*
 	"}";
-
-Widget:
-	TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton;
 	
+GridLayout:
+	'girdlayout' name=ID layoutStyle=LayoutDimensionKind 
+	'{'
+		views+=View*
+	'}'
+;
+
+TableLayout:
+	'tablelayout' name=ID layoutStyle=LayoutDimensionKind 
+	'{'
+		views+=View*
+	'}'
+;
+
+SimpleView:
+	Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView;
+
+Gallery:
+	'gallery' name=ID layoutStyle=LayoutDimensionKind
+;
+
+ExpandableListView:
+	'explistview' name=ID layoutStyle=LayoutDimensionKind	
+;
+
+WebView:
+	'webview' name=ID layoutStyle=LayoutDimensionKind
+;
+
+ImageView:
+	'imageview' name=ID src=DrawableResource layoutStyle=LayoutDimensionKind
+;	
+
 TextView:
-	"textview" name=ID text=STRING layoutStyle=LayoutStyle;
+	"textview" name=ID text=STRING layoutStyle=LayoutDimensionKind 
+	(
+	'{' 
+		(
+			(gravityAttribute=GravityAttribute)?
+			& (textSizeAttribute=TextSizeAttribute)?
+			& (layoutParams=LayoutParams)?
+		)
+	'}'
+	)?;
+
+GravityAttribute:
+	'gravity' gravity=LayoutGravityKind
+;
+
+TextSizeAttribute:
+	'textSize' textSize=DimensionPropertyValue
+;
+
+BackgroundAttribute:
+	'background' background=AnyDrawablePropertyValue
+;
 	
 EditText:
-	"edittext" name=ID text=STRING layoutStyle=LayoutStyle;
+	"edittext" name=ID (text=STRING)? layoutStyle=LayoutDimensionKind 
+	(
+	'{'
+		(
+			(gravityAttribute=GravityAttribute)?
+			& (textSizeAttribute=TextSizeAttribute)?
+			& (layoutParams=LayoutParams)?
+		)
+	'}'
+	)?;
 	
 Button:
-	"button" name=ID text=STRING layoutStyle=LayoutStyle;
+	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind;
 	
 ListView:
-	'listview' name=ID layoutStyle=LayoutStyle '{'
+	'listview' name=ID layoutStyle=LayoutDimensionKind '{'
 		('entries' entries=[ArrayResource | QualifiedName])?
-		('listitem' layout=[Layout | QualifiedName])?
+		('listitem' layout=[View | QualifiedName])?
 	'}';
 	
+GridView:
+	'gridview' name=ID layoutStyle=LayoutDimensionKind
+;
+	
 Spinner:
-	"spinner" name=ID ('entries' entries=[Resource | QualifiedName])? layoutStyle=LayoutStyle;
+	"spinner" name=ID ('entries' entries=[ArrayResource | QualifiedName])? layoutStyle=LayoutDimensionKind;
 	
 CheckBox:
-	"checkbox" name=ID text=STRING layoutStyle=LayoutStyle;
+	"checkbox" name=ID text=STRING layoutStyle=LayoutDimensionKind;
 	
 RadioGroup:
-	"radiogroup" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle "{" 
+	"radiogroup" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=LayoutDimensionKind "{" 
 		(radiobuttons+=RadioButton)+
 	"}";
 	
 RatingBar:
-	"ratingbar" name=ID numStars=INT layoutStyle=LayoutStyle;
+	"ratingbar" name=ID numStars=INT layoutStyle=LayoutDimensionKind;
 	
 ToggleButton:
-	"togglebutton" name=ID "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=LayoutStyle;
+	"togglebutton" name=ID "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=LayoutDimensionKind;
 	
 RadioButton:
-	"radiobutton" name=ID text=STRING layoutStyle=LayoutStyle;
+	"radiobutton" name=ID text=STRING layoutStyle=LayoutDimensionKind;
 
+CheckedTextView:
+	'checkedtextview' name=ID text=STRING layoutStyle=LayoutDimensionKind
+;
+
+AutoCompleteTextView:
+	'autocompletetextview' name=ID entries=[StringArrayResource | QualifiedName] layoutStyle=LayoutDimensionKind (isMulti?=BOOL)
+;
 
 /* Preference Framework Elements */
 AbstractPreference:
@@ -208,13 +329,13 @@ AbstractPreference:
 ;
 
 Preference:
-	"preference" title=STRING "{"  
+	"preference" (name=ID)? title=STRING "{"
 		preferenceAttributes = PreferenceAttributes
 	"}"
 ;
 
 PreferenceScreen:
-	"preferencescreen" name=ID title=STRING '{'
+	"preferencescreen" (name=ID)? title=STRING '{'
 		preferenceAttributes = PreferenceAttributes
 		(preferences+=AbstractPreference)*
 	'}'
@@ -226,30 +347,29 @@ PreferenceCategory:
 	"}";
 
 EditTextPreference:
-	"edittextpreference" title=STRING "{"
+	"edittextpreference" name=ID title=STRING "{"
 		preferenceAttributes = PreferenceAttributes
 		dialogPreferenceAttributes = DialogPreferenceAttributes
 	"}";
 	
 ListPreference:
-	"listpreference" title=STRING "{"
+	"listpreference" name=ID title=STRING "{"
 		preferenceAttributes = PreferenceAttributes
 		dialogPreferenceAttributes = DialogPreferenceAttributes
 		listPreferenceAttributes = ListPreferenceAttributes
 	"}";
 	
 CheckBoxPreference:
-	"checkboxpreference" title=STRING "{"
+	"checkboxpreference" name=ID title=STRING "{"
 		preferenceAttributes = PreferenceAttributes
 	"}";
 	
 RingtonePrefence:
-	"ringtonepreference" title=STRING "{"
+	"ringtonepreference" name=ID title=STRING "{"
 		preferenceAttributes = PreferenceAttributes
 	"}";
 
 PreferenceAttributes:
-	"key" key=ID
 	("summary" summary=STRING)?
 	("enabled" enabled=BOOL)?
 	("persistent" persistent=BOOL)?
@@ -263,6 +383,58 @@ DialogPreferenceAttributes:
 ListPreferenceAttributes:
 	"entries" entries=[StringArrayEntry | QualifiedName]
 	"entryValues" entryValues=[StringArrayEntry | QualifiedName]
+;
+
+PropertyValue:
+    StringPropertyValue | IntegerPropertyValue | BooleanPropertyValue | AnyDrawablePropertyValue | DimensionPropertyValue
+;
+
+AnyDrawablePropertyValue:
+    DrawableResourceLink | ColorPropertyValue
+;
+
+StringPropertyValue:
+    StringResourceLink | value=STRING
+;
+
+IntegerPropertyValue:
+    IntegerResourceLink | value=INT
+;
+
+BooleanPropertyValue:
+    BooleanResourceLink | value=BOOL
+;
+
+ColorPropertyValue:
+    ColorResourceLink | value=HEX_COLOR
+;
+
+DimensionPropertyValue:
+    DimensionResourceLink | value=DimensionValue
+;
+
+DrawableResourceLink:
+	link = [DrawableResource | QualifiedName]
+;
+
+StringResourceLink:
+	link = [StringResource | QualifiedName]
+;
+
+IntegerResourceLink:
+	link = [IntegerResource | QualifiedName]
+;
+
+BooleanResourceLink:
+	link = [BooleanResource | QualifiedName]
+;
+
+ColorResourceLink:
+	link = [ColorResource | QualifiedName]
+;
+
+DimensionResourceLink:
+	link = [DimensionResource | QualifiedName]
 ;
 /* End of Preference Framework Elements */
 /* End of AndroGuiModelRoot and gui model elements */
@@ -336,7 +508,11 @@ TransitionDrawableResource:
 ;
 
 DimensionValue:
-    FLOAT ('dp' | 'sp' | 'pt' | 'px' | 'mm' | 'in')
+    value=FLOAT metric=DimensionMetric
+;
+
+enum DimensionMetric:
+	dp | sp | pt | px | mm | in
 ;
 
 BOOL:

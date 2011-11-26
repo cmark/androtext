@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl#getPreferenceAttributes <em>Preference Attributes</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl#getDialogPreferenceAttributes <em>Dialog Preference Attributes</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceImpl#getListPreferenceAttributes <em>List Preference Attributes</em>}</li>
@@ -37,6 +38,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPreference
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getPreferenceAttributes() <em>Preference Attributes</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -86,6 +107,29 @@ public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPr
   protected EClass eStaticClass()
   {
     return AndroTextDslPackage.Literals.LIST_PREFERENCE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LIST_PREFERENCE__NAME, oldName, name));
   }
 
   /**
@@ -262,6 +306,8 @@ public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPr
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.LIST_PREFERENCE__NAME:
+        return getName();
       case AndroTextDslPackage.LIST_PREFERENCE__PREFERENCE_ATTRIBUTES:
         return getPreferenceAttributes();
       case AndroTextDslPackage.LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES:
@@ -282,6 +328,9 @@ public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPr
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.LIST_PREFERENCE__NAME:
+        setName((String)newValue);
+        return;
       case AndroTextDslPackage.LIST_PREFERENCE__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)newValue);
         return;
@@ -305,6 +354,9 @@ public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPr
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.LIST_PREFERENCE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroTextDslPackage.LIST_PREFERENCE__PREFERENCE_ATTRIBUTES:
         setPreferenceAttributes((PreferenceAttributes)null);
         return;
@@ -328,6 +380,8 @@ public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPr
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.LIST_PREFERENCE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.LIST_PREFERENCE__PREFERENCE_ATTRIBUTES:
         return preferenceAttributes != null;
       case AndroTextDslPackage.LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES:
@@ -336,6 +390,23 @@ public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPr
         return listPreferenceAttributes != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ListPreferenceImpl

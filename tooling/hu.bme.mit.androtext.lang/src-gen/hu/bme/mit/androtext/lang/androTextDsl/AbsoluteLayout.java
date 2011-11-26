@@ -17,6 +17,6 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface AbsoluteLayout extends BaseLayout
+public interface AbsoluteLayout extends ViewGroup
 {
 } // AbsoluteLayout
