@@ -20,6 +20,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ApiLevel;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
@@ -51,6 +52,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
+import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Gallery;
 import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
@@ -75,6 +77,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
+import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.ModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.Preference;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
@@ -649,6 +652,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass localDrawableResourceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass externalDrawableResourceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass stringResourceLinkEClass = null;
 
   /**
@@ -825,6 +842,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EEnum layoutDimensionKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum androidDrawableResourceEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1571,7 +1595,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Left()
+  public EReference getLayoutParams_AlignParentleft()
   {
     return (EReference)layoutParamsEClass.getEStructuralFeatures().get(5);
   }
@@ -1581,7 +1605,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Top()
+  public EReference getLayoutParams_AlignParentTop()
   {
     return (EReference)layoutParamsEClass.getEStructuralFeatures().get(6);
   }
@@ -1591,7 +1615,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Right()
+  public EReference getLayoutParams_AlignParentRight()
   {
     return (EReference)layoutParamsEClass.getEStructuralFeatures().get(7);
   }
@@ -1601,7 +1625,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Bottom()
+  public EReference getLayoutParams_AlignParentBottom()
   {
     return (EReference)layoutParamsEClass.getEStructuralFeatures().get(8);
   }
@@ -1611,9 +1635,109 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_BackgroundAttribute()
+  public EReference getLayoutParams_AlignTop()
   {
     return (EReference)layoutParamsEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_AlignBottom()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_AlignLeft()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_Below()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_Above()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(13);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_ToLeftOf()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(14);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_ToRightOf()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(15);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_CenterHorizontal()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(16);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_CenterInParent()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(17);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_CenterVertical()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(18);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_BackgroundAttribute()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(19);
   }
 
   /**
@@ -1984,6 +2108,16 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EAttribute getButton_Text()
   {
     return (EAttribute)buttonEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButton_LayoutParams()
+  {
+    return (EReference)buttonEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2731,9 +2865,39 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDrawableResourceLink_Link()
+  public EClass getLocalDrawableResourceLink()
   {
-    return (EReference)drawableResourceLinkEClass.getEStructuralFeatures().get(0);
+    return localDrawableResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLocalDrawableResourceLink_Link()
+  {
+    return (EReference)localDrawableResourceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExternalDrawableResourceLink()
+  {
+    return externalDrawableResourceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExternalDrawableResourceLink_ExternalResource()
+  {
+    return (EAttribute)externalDrawableResourceLinkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3231,6 +3395,16 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getAndroidDrawableResource()
+  {
+    return androidDrawableResourceEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getDimensionMetric()
   {
     return dimensionMetricEEnum;
@@ -3358,10 +3532,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_TOP);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_RIGHT);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_BOTTOM);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__LEFT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__TOP);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__RIGHT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__BOTTOM);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENTLEFT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_TOP);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_RIGHT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_TOP);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_BOTTOM);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_LEFT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__BELOW);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ABOVE);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__TO_LEFT_OF);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__TO_RIGHT_OF);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_HORIZONTAL);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_IN_PARENT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_VERTICAL);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE);
 
     layoutGravityAttributeEClass = createEClass(LAYOUT_GRAVITY_ATTRIBUTE);
@@ -3419,6 +3603,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     buttonEClass = createEClass(BUTTON);
     createEAttribute(buttonEClass, BUTTON__TEXT);
+    createEReference(buttonEClass, BUTTON__LAYOUT_PARAMS);
 
     listViewEClass = createEClass(LIST_VIEW);
     createEReference(listViewEClass, LIST_VIEW__ENTRIES);
@@ -3522,7 +3707,12 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(dimensionPropertyValueEClass, DIMENSION_PROPERTY_VALUE__VALUE);
 
     drawableResourceLinkEClass = createEClass(DRAWABLE_RESOURCE_LINK);
-    createEReference(drawableResourceLinkEClass, DRAWABLE_RESOURCE_LINK__LINK);
+
+    localDrawableResourceLinkEClass = createEClass(LOCAL_DRAWABLE_RESOURCE_LINK);
+    createEReference(localDrawableResourceLinkEClass, LOCAL_DRAWABLE_RESOURCE_LINK__LINK);
+
+    externalDrawableResourceLinkEClass = createEClass(EXTERNAL_DRAWABLE_RESOURCE_LINK);
+    createEAttribute(externalDrawableResourceLinkEClass, EXTERNAL_DRAWABLE_RESOURCE_LINK__EXTERNAL_RESOURCE);
 
     stringResourceLinkEClass = createEClass(STRING_RESOURCE_LINK);
     createEReference(stringResourceLinkEClass, STRING_RESOURCE_LINK__LINK);
@@ -3595,6 +3785,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     dataTypesEEnum = createEEnum(DATA_TYPES);
     layoutGravityKindEEnum = createEEnum(LAYOUT_GRAVITY_KIND);
     layoutDimensionKindEEnum = createEEnum(LAYOUT_DIMENSION_KIND);
+    androidDrawableResourceEEnum = createEEnum(ANDROID_DRAWABLE_RESOURCE);
     dimensionMetricEEnum = createEEnum(DIMENSION_METRIC);
   }
 
@@ -3678,6 +3869,8 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     colorPropertyValueEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
     dimensionPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
     drawableResourceLinkEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
+    localDrawableResourceLinkEClass.getESuperTypes().add(this.getDrawableResourceLink());
+    externalDrawableResourceLinkEClass.getESuperTypes().add(this.getDrawableResourceLink());
     stringResourceLinkEClass.getESuperTypes().add(this.getStringPropertyValue());
     integerResourceLinkEClass.getESuperTypes().add(this.getIntegerPropertyValue());
     booleanResourceLinkEClass.getESuperTypes().add(this.getBooleanPropertyValue());
@@ -3789,10 +3982,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getLayoutParams_MarginTop(), this.getDimensionPropertyValue(), null, "marginTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_MarginRight(), this.getDimensionPropertyValue(), null, "marginRight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_MarginBottom(), this.getDimensionPropertyValue(), null, "marginBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_Left(), this.getBooleanPropertyValue(), null, "left", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_Top(), this.getBooleanPropertyValue(), null, "top", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_Right(), this.getBooleanPropertyValue(), null, "right", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_Bottom(), this.getBooleanPropertyValue(), null, "bottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignParentleft(), this.getBooleanPropertyValue(), null, "alignParentleft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignParentTop(), this.getBooleanPropertyValue(), null, "alignParentTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignParentRight(), this.getBooleanPropertyValue(), null, "alignParentRight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignParentBottom(), this.getBooleanPropertyValue(), null, "alignParentBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignTop(), this.getView(), null, "alignTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignBottom(), this.getView(), null, "alignBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignLeft(), this.getView(), null, "alignLeft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_Below(), this.getView(), null, "below", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_Above(), this.getView(), null, "above", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_ToLeftOf(), this.getView(), null, "toLeftOf", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_ToRightOf(), this.getView(), null, "toRightOf", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_CenterHorizontal(), this.getBooleanPropertyValue(), null, "centerHorizontal", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_CenterInParent(), this.getBooleanPropertyValue(), null, "centerInParent", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_CenterVertical(), this.getBooleanPropertyValue(), null, "centerVertical", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_BackgroundAttribute(), this.getBackgroundAttribute(), null, "backgroundAttribute", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(layoutGravityAttributeEClass, LayoutGravityAttribute.class, "LayoutGravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3850,6 +4053,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getButton_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listViewEClass, ListView.class, "ListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListView_Entries(), this.getArrayResource(), null, "entries", null, 0, 1, ListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3953,7 +4157,12 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getDimensionPropertyValue_Value(), this.getDimensionValue(), null, "value", null, 0, 1, DimensionPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(drawableResourceLinkEClass, DrawableResourceLink.class, "DrawableResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDrawableResourceLink_Link(), this.getDrawableResource(), null, "link", null, 0, 1, DrawableResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(localDrawableResourceLinkEClass, LocalDrawableResourceLink.class, "LocalDrawableResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLocalDrawableResourceLink_Link(), this.getDrawableResource(), null, "link", null, 0, 1, LocalDrawableResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(externalDrawableResourceLinkEClass, ExternalDrawableResourceLink.class, "ExternalDrawableResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExternalDrawableResourceLink_ExternalResource(), this.getAndroidDrawableResource(), "externalResource", null, 0, 1, ExternalDrawableResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stringResourceLinkEClass, StringResourceLink.class, "StringResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStringResourceLink_Link(), this.getStringResource(), null, "link", null, 0, 1, StringResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4059,6 +4268,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.WRAP);
     addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.FILL_WRAP);
     addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.WRAP_FILL);
+
+    initEEnum(androidDrawableResourceEEnum, AndroidDrawableResource.class, "AndroidDrawableResource");
+    addEEnumLiteral(androidDrawableResourceEEnum, AndroidDrawableResource.ANDROID_EDITBOX_BACKGROUND);
 
     initEEnum(dimensionMetricEEnum, DimensionMetric.class, "DimensionMetric");
     addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.DP);

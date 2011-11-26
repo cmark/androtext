@@ -48,6 +48,9 @@
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//LayoutDimensionKind/FILL_WRAP"/>
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//LayoutDimensionKind/WRAP_FILL"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//AndroidDrawableResource">
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//AndroidDrawableResource/android_editbox_background"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//DimensionMetric">
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//DimensionMetric/dp"/>
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//DimensionMetric/sp"/>
@@ -145,10 +148,20 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/marginTop"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/marginRight"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/marginBottom"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/top"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/right"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/bottom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentleft"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentTop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentRight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentBottom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignTop"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignBottom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignLeft"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/below"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/above"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/toLeftOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/toRightOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/centerHorizontal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/centerInParent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/centerVertical"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/backgroundAttribute"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//LayoutGravityAttribute">
@@ -197,6 +210,7 @@
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//Button">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Button/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Button/layoutParams"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//ListView">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListView/entries"/>
@@ -296,8 +310,12 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//DimensionPropertyValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//DimensionPropertyValue/value"/>
     </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//DrawableResourceLink">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//DrawableResourceLink/link"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//DrawableResourceLink"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//LocalDrawableResourceLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LocalDrawableResourceLink/link"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ExternalDrawableResourceLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//ExternalDrawableResourceLink/externalResource"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//StringResourceLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//StringResourceLink/link"/>

@@ -127,13 +127,26 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="marginBottom" eType="#//DimensionPropertyValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanPropertyValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignParentleft" eType="#//BooleanPropertyValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="top" eType="#//BooleanPropertyValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignParentTop" eType="#//BooleanPropertyValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanPropertyValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignParentRight" eType="#//BooleanPropertyValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bottom" eType="#//BooleanPropertyValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignParentBottom" eType="#//BooleanPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignTop" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignBottom" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignLeft" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="below" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="above" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toLeftOf" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toRightOf" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="centerHorizontal" eType="#//BooleanPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="centerInParent" eType="#//BooleanPropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="centerVertical" eType="#//BooleanPropertyValue"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="backgroundAttribute" eType="#//BackgroundAttribute"
         containment="true"/>
@@ -217,6 +230,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutParams" eType="#//LayoutParams"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListView" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" eType="#//ArrayResource"/>
@@ -329,8 +344,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//DimensionValue"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DrawableResourceLink" eSuperTypes="#//AnyDrawablePropertyValue">
+  <eClassifiers xsi:type="ecore:EClass" name="DrawableResourceLink" eSuperTypes="#//AnyDrawablePropertyValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalDrawableResourceLink" eSuperTypes="#//DrawableResourceLink">
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//DrawableResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalDrawableResourceLink" eSuperTypes="#//DrawableResourceLink">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalResource" eType="#//AndroidDrawableResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AndroidDrawableResource">
+    <eLiterals name="android_editbox_background" literal="android_editbox_background"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringResourceLink" eSuperTypes="#//StringPropertyValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//StringResource"/>

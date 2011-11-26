@@ -159,8 +159,24 @@ ViewGroup:
 
 LayoutParams:
 	('weight' weight=IntegerPropertyValue)?
-	& ('margin' marginLeft=DimensionPropertyValue ',' marginTop=DimensionPropertyValue ',' marginRight=DimensionPropertyValue ',' marginBottom=DimensionPropertyValue)?
-	& ('alignParent' left=BooleanPropertyValue ',' top=BooleanPropertyValue ',' right=BooleanPropertyValue ',' bottom=BooleanPropertyValue)?
+	& ('marginLeft' marginLeft=DimensionPropertyValue)?
+	& ('marginTop' marginTop=DimensionPropertyValue)?
+	& ('marginRight' marginRight=DimensionPropertyValue)?
+	& ('marginBottom' marginBottom=DimensionPropertyValue)?
+	& ('alignParentLeft' alignParentleft=BooleanPropertyValue)?
+	& ('alignParentTop' alignParentTop=BooleanPropertyValue)?
+	& ('alignParentRight' alignParentRight=BooleanPropertyValue)?
+	& ('alignParentBottom' alignParentBottom=BooleanPropertyValue)?
+	& ('alignTop' alignTop=[View])?
+	& ('alignBottom' alignBottom=[View])?
+	& ('alignLeft' alignLeft=[View])?
+	& ('below' below=[View])?
+	& ('above' above=[View])?
+	& ('toLeftOf' toLeftOf=[View])?
+	& ('toRightOf' toRightOf=[View])?
+	& ('centerHorizontal' centerHorizontal=BooleanPropertyValue)? 
+	& ('centerInParent' centerInParent=BooleanPropertyValue)?
+	& ('centerVertical' centerVertical=BooleanPropertyValue)?
 	& (backgroundAttribute=BackgroundAttribute)?
 ;
 
@@ -258,6 +274,8 @@ TextView:
 	'}'
 	)?;
 
+
+
 GravityAttribute:
 	'gravity' gravity=LayoutGravityKind
 ;
@@ -283,7 +301,15 @@ EditText:
 	)?;
 	
 Button:
-	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind;
+	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind
+	(
+	'{'
+		(
+			(layoutParams=LayoutParams)?
+		)	
+	'}'
+	)?	
+;
 	
 ListView:
 	'listview' name=ID layoutStyle=LayoutDimensionKind '{'
@@ -414,8 +440,21 @@ DimensionPropertyValue:
 ;
 
 DrawableResourceLink:
+	LocalDrawableResourceLink | ExternalDrawableResourceLink
+;
+
+LocalDrawableResourceLink:
 	link = [DrawableResource | QualifiedName]
 ;
+
+ExternalDrawableResourceLink:
+	externalResource = AndroidDrawableResource
+;
+
+enum AndroidDrawableResource:
+	android_editbox_background
+;
+
 
 StringResourceLink:
 	link = [StringResource | QualifiedName]

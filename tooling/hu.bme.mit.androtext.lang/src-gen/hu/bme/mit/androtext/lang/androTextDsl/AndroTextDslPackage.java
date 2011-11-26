@@ -1015,40 +1015,130 @@ public interface AndroTextDslPackage extends EPackage
   int LAYOUT_PARAMS__MARGIN_BOTTOM = 4;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The feature id for the '<em><b>Align Parentleft</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYOUT_PARAMS__LEFT = 5;
+  int LAYOUT_PARAMS__ALIGN_PARENTLEFT = 5;
 
   /**
-   * The feature id for the '<em><b>Top</b></em>' containment reference.
+   * The feature id for the '<em><b>Align Parent Top</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYOUT_PARAMS__TOP = 6;
+  int LAYOUT_PARAMS__ALIGN_PARENT_TOP = 6;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>Align Parent Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYOUT_PARAMS__RIGHT = 7;
+  int LAYOUT_PARAMS__ALIGN_PARENT_RIGHT = 7;
 
   /**
-   * The feature id for the '<em><b>Bottom</b></em>' containment reference.
+   * The feature id for the '<em><b>Align Parent Bottom</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYOUT_PARAMS__BOTTOM = 8;
+  int LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM = 8;
+
+  /**
+   * The feature id for the '<em><b>Align Top</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__ALIGN_TOP = 9;
+
+  /**
+   * The feature id for the '<em><b>Align Bottom</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__ALIGN_BOTTOM = 10;
+
+  /**
+   * The feature id for the '<em><b>Align Left</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__ALIGN_LEFT = 11;
+
+  /**
+   * The feature id for the '<em><b>Below</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__BELOW = 12;
+
+  /**
+   * The feature id for the '<em><b>Above</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__ABOVE = 13;
+
+  /**
+   * The feature id for the '<em><b>To Left Of</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__TO_LEFT_OF = 14;
+
+  /**
+   * The feature id for the '<em><b>To Right Of</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__TO_RIGHT_OF = 15;
+
+  /**
+   * The feature id for the '<em><b>Center Horizontal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__CENTER_HORIZONTAL = 16;
+
+  /**
+   * The feature id for the '<em><b>Center In Parent</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__CENTER_IN_PARENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Center Vertical</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT_PARAMS__CENTER_VERTICAL = 18;
 
   /**
    * The feature id for the '<em><b>Background Attribute</b></em>' containment reference.
@@ -1057,7 +1147,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE = 9;
+  int LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE = 19;
 
   /**
    * The number of structural features of the '<em>Layout Params</em>' class.
@@ -1066,7 +1156,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYOUT_PARAMS_FEATURE_COUNT = 10;
+  int LAYOUT_PARAMS_FEATURE_COUNT = 20;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutGravityAttributeImpl <em>Layout Gravity Attribute</em>}' class.
@@ -1889,13 +1979,22 @@ public interface AndroTextDslPackage extends EPackage
   int BUTTON__TEXT = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Layout Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON__LAYOUT_PARAMS = SIMPLE_VIEW_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Button</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BUTTON_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 1;
+  int BUTTON_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListViewImpl <em>List View</em>}' class.
@@ -3070,22 +3169,69 @@ public interface AndroTextDslPackage extends EPackage
   int DRAWABLE_RESOURCE_LINK = 73;
 
   /**
-   * The feature id for the '<em><b>Link</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DRAWABLE_RESOURCE_LINK__LINK = ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>Drawable Resource Link</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DRAWABLE_RESOURCE_LINK_FEATURE_COUNT = ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT + 1;
+  int DRAWABLE_RESOURCE_LINK_FEATURE_COUNT = ANY_DRAWABLE_PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LocalDrawableResourceLinkImpl <em>Local Drawable Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LocalDrawableResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLocalDrawableResourceLink()
+   * @generated
+   */
+  int LOCAL_DRAWABLE_RESOURCE_LINK = 74;
+
+  /**
+   * The feature id for the '<em><b>Link</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_DRAWABLE_RESOURCE_LINK__LINK = DRAWABLE_RESOURCE_LINK_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Local Drawable Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_DRAWABLE_RESOURCE_LINK_FEATURE_COUNT = DRAWABLE_RESOURCE_LINK_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ExternalDrawableResourceLinkImpl <em>External Drawable Resource Link</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ExternalDrawableResourceLinkImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getExternalDrawableResourceLink()
+   * @generated
+   */
+  int EXTERNAL_DRAWABLE_RESOURCE_LINK = 75;
+
+  /**
+   * The feature id for the '<em><b>External Resource</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_DRAWABLE_RESOURCE_LINK__EXTERNAL_RESOURCE = DRAWABLE_RESOURCE_LINK_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>External Drawable Resource Link</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_DRAWABLE_RESOURCE_LINK_FEATURE_COUNT = DRAWABLE_RESOURCE_LINK_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.StringResourceLinkImpl <em>String Resource Link</em>}' class.
@@ -3095,7 +3241,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringResourceLink()
    * @generated
    */
-  int STRING_RESOURCE_LINK = 74;
+  int STRING_RESOURCE_LINK = 76;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3132,7 +3278,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerResourceLink()
    * @generated
    */
-  int INTEGER_RESOURCE_LINK = 75;
+  int INTEGER_RESOURCE_LINK = 77;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3169,7 +3315,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanResourceLink()
    * @generated
    */
-  int BOOLEAN_RESOURCE_LINK = 76;
+  int BOOLEAN_RESOURCE_LINK = 78;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3206,7 +3352,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorResourceLink()
    * @generated
    */
-  int COLOR_RESOURCE_LINK = 77;
+  int COLOR_RESOURCE_LINK = 79;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3243,7 +3389,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionResourceLink()
    * @generated
    */
-  int DIMENSION_RESOURCE_LINK = 78;
+  int DIMENSION_RESOURCE_LINK = 80;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -3280,7 +3426,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroResModelRoot()
    * @generated
    */
-  int ANDRO_RES_MODEL_ROOT = 79;
+  int ANDRO_RES_MODEL_ROOT = 81;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3317,7 +3463,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getResource()
    * @generated
    */
-  int RESOURCE = 80;
+  int RESOURCE = 82;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3345,7 +3491,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringResource()
    * @generated
    */
-  int STRING_RESOURCE = 81;
+  int STRING_RESOURCE = 83;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3382,7 +3528,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerResource()
    * @generated
    */
-  int INTEGER_RESOURCE = 82;
+  int INTEGER_RESOURCE = 84;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3419,7 +3565,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBooleanResource()
    * @generated
    */
-  int BOOLEAN_RESOURCE = 83;
+  int BOOLEAN_RESOURCE = 85;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3456,7 +3602,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorResource()
    * @generated
    */
-  int COLOR_RESOURCE = 84;
+  int COLOR_RESOURCE = 86;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3493,7 +3639,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionResource()
    * @generated
    */
-  int DIMENSION_RESOURCE = 85;
+  int DIMENSION_RESOURCE = 87;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3530,7 +3676,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getArrayResource()
    * @generated
    */
-  int ARRAY_RESOURCE = 86;
+  int ARRAY_RESOURCE = 88;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3558,7 +3704,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerArrayResource()
    * @generated
    */
-  int INTEGER_ARRAY_RESOURCE = 87;
+  int INTEGER_ARRAY_RESOURCE = 89;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3595,7 +3741,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getIntegerArrayEntry()
    * @generated
    */
-  int INTEGER_ARRAY_ENTRY = 88;
+  int INTEGER_ARRAY_ENTRY = 90;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3632,7 +3778,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringArrayResource()
    * @generated
    */
-  int STRING_ARRAY_RESOURCE = 89;
+  int STRING_ARRAY_RESOURCE = 91;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3669,7 +3815,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStringArrayEntry()
    * @generated
    */
-  int STRING_ARRAY_ENTRY = 90;
+  int STRING_ARRAY_ENTRY = 92;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3706,7 +3852,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDrawableResource()
    * @generated
    */
-  int DRAWABLE_RESOURCE = 91;
+  int DRAWABLE_RESOURCE = 93;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3734,7 +3880,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBitmapDrawableResource()
    * @generated
    */
-  int BITMAP_DRAWABLE_RESOURCE = 92;
+  int BITMAP_DRAWABLE_RESOURCE = 94;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3771,7 +3917,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTransitionDrawableResource()
    * @generated
    */
-  int TRANSITION_DRAWABLE_RESOURCE = 93;
+  int TRANSITION_DRAWABLE_RESOURCE = 95;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3817,7 +3963,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionValue()
    * @generated
    */
-  int DIMENSION_VALUE = 94;
+  int DIMENSION_VALUE = 96;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3854,7 +4000,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getApiLevel()
    * @generated
    */
-  int API_LEVEL = 95;
+  int API_LEVEL = 97;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme <em>Activity Theme</em>}' enum.
@@ -3864,7 +4010,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getActivityTheme()
    * @generated
    */
-  int ACTIVITY_THEME = 96;
+  int ACTIVITY_THEME = 98;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DataTypes <em>Data Types</em>}' enum.
@@ -3874,7 +4020,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDataTypes()
    * @generated
    */
-  int DATA_TYPES = 97;
+  int DATA_TYPES = 99;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind <em>Layout Gravity Kind</em>}' enum.
@@ -3884,7 +4030,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutGravityKind()
    * @generated
    */
-  int LAYOUT_GRAVITY_KIND = 98;
+  int LAYOUT_GRAVITY_KIND = 100;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind <em>Layout Dimension Kind</em>}' enum.
@@ -3894,7 +4040,17 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutDimensionKind()
    * @generated
    */
-  int LAYOUT_DIMENSION_KIND = 99;
+  int LAYOUT_DIMENSION_KIND = 101;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource <em>Android Drawable Resource</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroidDrawableResource()
+   * @generated
+   */
+  int ANDROID_DRAWABLE_RESOURCE = 102;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}' enum.
@@ -3904,7 +4060,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionMetric()
    * @generated
    */
-  int DIMENSION_METRIC = 100;
+  int DIMENSION_METRIC = 103;
 
 
   /**
@@ -4619,48 +4775,158 @@ public interface AndroTextDslPackage extends EPackage
   EReference getLayoutParams_MarginBottom();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getLeft <em>Left</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentleft <em>Align Parentleft</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getLeft()
+   * @return the meta object for the containment reference '<em>Align Parentleft</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentleft()
    * @see #getLayoutParams()
    * @generated
    */
-  EReference getLayoutParams_Left();
+  EReference getLayoutParams_AlignParentleft();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getTop <em>Top</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentTop <em>Align Parent Top</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Top</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getTop()
+   * @return the meta object for the containment reference '<em>Align Parent Top</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentTop()
    * @see #getLayoutParams()
    * @generated
    */
-  EReference getLayoutParams_Top();
+  EReference getLayoutParams_AlignParentTop();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getRight <em>Right</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentRight <em>Align Parent Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getRight()
+   * @return the meta object for the containment reference '<em>Align Parent Right</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentRight()
    * @see #getLayoutParams()
    * @generated
    */
-  EReference getLayoutParams_Right();
+  EReference getLayoutParams_AlignParentRight();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBottom <em>Bottom</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentBottom <em>Align Parent Bottom</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bottom</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBottom()
+   * @return the meta object for the containment reference '<em>Align Parent Bottom</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentBottom()
    * @see #getLayoutParams()
    * @generated
    */
-  EReference getLayoutParams_Bottom();
+  EReference getLayoutParams_AlignParentBottom();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignTop <em>Align Top</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Align Top</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignTop()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_AlignTop();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignBottom <em>Align Bottom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Align Bottom</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignBottom()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_AlignBottom();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignLeft <em>Align Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Align Left</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignLeft()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_AlignLeft();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBelow <em>Below</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Below</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBelow()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_Below();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAbove <em>Above</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Above</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAbove()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_Above();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getToLeftOf <em>To Left Of</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>To Left Of</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getToLeftOf()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_ToLeftOf();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getToRightOf <em>To Right Of</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>To Right Of</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getToRightOf()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_ToRightOf();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterHorizontal <em>Center Horizontal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Center Horizontal</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterHorizontal()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_CenterHorizontal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterInParent <em>Center In Parent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Center In Parent</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterInParent()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_CenterInParent();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterVertical <em>Center Vertical</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Center Vertical</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterVertical()
+   * @see #getLayoutParams()
+   * @generated
+   */
+  EReference getLayoutParams_CenterVertical();
 
   /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBackgroundAttribute <em>Background Attribute</em>}'.
@@ -5060,6 +5326,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getButton_Text();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getLayoutParams <em>Layout Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Layout Params</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Button#getLayoutParams()
+   * @see #getButton()
+   * @generated
+   */
+  EReference getButton_LayoutParams();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ListView <em>List View</em>}'.
@@ -5847,15 +6124,46 @@ public interface AndroTextDslPackage extends EPackage
   EClass getDrawableResourceLink();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink#getLink <em>Link</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink <em>Local Drawable Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Local Drawable Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink
+   * @generated
+   */
+  EClass getLocalDrawableResourceLink();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink#getLink <em>Link</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Link</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink#getLink()
-   * @see #getDrawableResourceLink()
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink#getLink()
+   * @see #getLocalDrawableResourceLink()
    * @generated
    */
-  EReference getDrawableResourceLink_Link();
+  EReference getLocalDrawableResourceLink_Link();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink <em>External Drawable Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>External Drawable Resource Link</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
+   * @generated
+   */
+  EClass getExternalDrawableResourceLink();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink#getExternalResource <em>External Resource</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>External Resource</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink#getExternalResource()
+   * @see #getExternalDrawableResourceLink()
+   * @generated
+   */
+  EAttribute getExternalDrawableResourceLink_ExternalResource();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink <em>String Resource Link</em>}'.
@@ -6369,6 +6677,16 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EEnum getLayoutDimensionKind();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource <em>Android Drawable Resource</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Android Drawable Resource</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource
+   * @generated
+   */
+  EEnum getAndroidDrawableResource();
 
   /**
    * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}'.
@@ -6992,36 +7310,116 @@ public interface AndroTextDslPackage extends EPackage
     EReference LAYOUT_PARAMS__MARGIN_BOTTOM = eINSTANCE.getLayoutParams_MarginBottom();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Align Parentleft</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LAYOUT_PARAMS__LEFT = eINSTANCE.getLayoutParams_Left();
+    EReference LAYOUT_PARAMS__ALIGN_PARENTLEFT = eINSTANCE.getLayoutParams_AlignParentleft();
 
     /**
-     * The meta object literal for the '<em><b>Top</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Align Parent Top</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LAYOUT_PARAMS__TOP = eINSTANCE.getLayoutParams_Top();
+    EReference LAYOUT_PARAMS__ALIGN_PARENT_TOP = eINSTANCE.getLayoutParams_AlignParentTop();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Align Parent Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LAYOUT_PARAMS__RIGHT = eINSTANCE.getLayoutParams_Right();
+    EReference LAYOUT_PARAMS__ALIGN_PARENT_RIGHT = eINSTANCE.getLayoutParams_AlignParentRight();
 
     /**
-     * The meta object literal for the '<em><b>Bottom</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Align Parent Bottom</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LAYOUT_PARAMS__BOTTOM = eINSTANCE.getLayoutParams_Bottom();
+    EReference LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM = eINSTANCE.getLayoutParams_AlignParentBottom();
+
+    /**
+     * The meta object literal for the '<em><b>Align Top</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__ALIGN_TOP = eINSTANCE.getLayoutParams_AlignTop();
+
+    /**
+     * The meta object literal for the '<em><b>Align Bottom</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__ALIGN_BOTTOM = eINSTANCE.getLayoutParams_AlignBottom();
+
+    /**
+     * The meta object literal for the '<em><b>Align Left</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__ALIGN_LEFT = eINSTANCE.getLayoutParams_AlignLeft();
+
+    /**
+     * The meta object literal for the '<em><b>Below</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__BELOW = eINSTANCE.getLayoutParams_Below();
+
+    /**
+     * The meta object literal for the '<em><b>Above</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__ABOVE = eINSTANCE.getLayoutParams_Above();
+
+    /**
+     * The meta object literal for the '<em><b>To Left Of</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__TO_LEFT_OF = eINSTANCE.getLayoutParams_ToLeftOf();
+
+    /**
+     * The meta object literal for the '<em><b>To Right Of</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__TO_RIGHT_OF = eINSTANCE.getLayoutParams_ToRightOf();
+
+    /**
+     * The meta object literal for the '<em><b>Center Horizontal</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__CENTER_HORIZONTAL = eINSTANCE.getLayoutParams_CenterHorizontal();
+
+    /**
+     * The meta object literal for the '<em><b>Center In Parent</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__CENTER_IN_PARENT = eINSTANCE.getLayoutParams_CenterInParent();
+
+    /**
+     * The meta object literal for the '<em><b>Center Vertical</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYOUT_PARAMS__CENTER_VERTICAL = eINSTANCE.getLayoutParams_CenterVertical();
 
     /**
      * The meta object literal for the '<em><b>Background Attribute</b></em>' containment reference feature.
@@ -7364,6 +7762,14 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EAttribute BUTTON__TEXT = eINSTANCE.getButton_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Layout Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BUTTON__LAYOUT_PARAMS = eINSTANCE.getButton_LayoutParams();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListViewImpl <em>List View</em>}' class.
@@ -8016,12 +8422,40 @@ public interface AndroTextDslPackage extends EPackage
     EClass DRAWABLE_RESOURCE_LINK = eINSTANCE.getDrawableResourceLink();
 
     /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LocalDrawableResourceLinkImpl <em>Local Drawable Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LocalDrawableResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLocalDrawableResourceLink()
+     * @generated
+     */
+    EClass LOCAL_DRAWABLE_RESOURCE_LINK = eINSTANCE.getLocalDrawableResourceLink();
+
+    /**
      * The meta object literal for the '<em><b>Link</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DRAWABLE_RESOURCE_LINK__LINK = eINSTANCE.getDrawableResourceLink_Link();
+    EReference LOCAL_DRAWABLE_RESOURCE_LINK__LINK = eINSTANCE.getLocalDrawableResourceLink_Link();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ExternalDrawableResourceLinkImpl <em>External Drawable Resource Link</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ExternalDrawableResourceLinkImpl
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getExternalDrawableResourceLink()
+     * @generated
+     */
+    EClass EXTERNAL_DRAWABLE_RESOURCE_LINK = eINSTANCE.getExternalDrawableResourceLink();
+
+    /**
+     * The meta object literal for the '<em><b>External Resource</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTERNAL_DRAWABLE_RESOURCE_LINK__EXTERNAL_RESOURCE = eINSTANCE.getExternalDrawableResourceLink_ExternalResource();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.StringResourceLinkImpl <em>String Resource Link</em>}' class.
@@ -8466,6 +8900,16 @@ public interface AndroTextDslPackage extends EPackage
      * @generated
      */
     EEnum LAYOUT_DIMENSION_KIND = eINSTANCE.getLayoutDimensionKind();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource <em>Android Drawable Resource</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource
+     * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroidDrawableResource()
+     * @generated
+     */
+    EEnum ANDROID_DRAWABLE_RESOURCE = eINSTANCE.getAndroidDrawableResource();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}' enum.

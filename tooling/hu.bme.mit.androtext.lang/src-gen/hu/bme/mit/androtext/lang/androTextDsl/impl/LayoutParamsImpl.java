@@ -12,6 +12,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -34,10 +35,20 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getMarginTop <em>Margin Top</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getMarginRight <em>Margin Right</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getMarginBottom <em>Margin Bottom</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getTop <em>Top</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getRight <em>Right</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getBottom <em>Bottom</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentleft <em>Align Parentleft</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentTop <em>Align Parent Top</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentRight <em>Align Parent Right</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentBottom <em>Align Parent Bottom</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignTop <em>Align Top</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignBottom <em>Align Bottom</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignLeft <em>Align Left</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getBelow <em>Below</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAbove <em>Above</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getToLeftOf <em>To Left Of</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getToRightOf <em>To Right Of</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getCenterHorizontal <em>Center Horizontal</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getCenterInParent <em>Center In Parent</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getCenterVertical <em>Center Vertical</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getBackgroundAttribute <em>Background Attribute</em>}</li>
  * </ul>
  * </p>
@@ -97,44 +108,144 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
   protected DimensionPropertyValue marginBottom;
 
   /**
-   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
+   * The cached value of the '{@link #getAlignParentleft() <em>Align Parentleft</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLeft()
+   * @see #getAlignParentleft()
    * @generated
    * @ordered
    */
-  protected BooleanPropertyValue left;
+  protected BooleanPropertyValue alignParentleft;
 
   /**
-   * The cached value of the '{@link #getTop() <em>Top</em>}' containment reference.
+   * The cached value of the '{@link #getAlignParentTop() <em>Align Parent Top</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTop()
+   * @see #getAlignParentTop()
    * @generated
    * @ordered
    */
-  protected BooleanPropertyValue top;
+  protected BooleanPropertyValue alignParentTop;
 
   /**
-   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
+   * The cached value of the '{@link #getAlignParentRight() <em>Align Parent Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRight()
+   * @see #getAlignParentRight()
    * @generated
    * @ordered
    */
-  protected BooleanPropertyValue right;
+  protected BooleanPropertyValue alignParentRight;
 
   /**
-   * The cached value of the '{@link #getBottom() <em>Bottom</em>}' containment reference.
+   * The cached value of the '{@link #getAlignParentBottom() <em>Align Parent Bottom</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBottom()
+   * @see #getAlignParentBottom()
    * @generated
    * @ordered
    */
-  protected BooleanPropertyValue bottom;
+  protected BooleanPropertyValue alignParentBottom;
+
+  /**
+   * The cached value of the '{@link #getAlignTop() <em>Align Top</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlignTop()
+   * @generated
+   * @ordered
+   */
+  protected View alignTop;
+
+  /**
+   * The cached value of the '{@link #getAlignBottom() <em>Align Bottom</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlignBottom()
+   * @generated
+   * @ordered
+   */
+  protected View alignBottom;
+
+  /**
+   * The cached value of the '{@link #getAlignLeft() <em>Align Left</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlignLeft()
+   * @generated
+   * @ordered
+   */
+  protected View alignLeft;
+
+  /**
+   * The cached value of the '{@link #getBelow() <em>Below</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBelow()
+   * @generated
+   * @ordered
+   */
+  protected View below;
+
+  /**
+   * The cached value of the '{@link #getAbove() <em>Above</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAbove()
+   * @generated
+   * @ordered
+   */
+  protected View above;
+
+  /**
+   * The cached value of the '{@link #getToLeftOf() <em>To Left Of</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getToLeftOf()
+   * @generated
+   * @ordered
+   */
+  protected View toLeftOf;
+
+  /**
+   * The cached value of the '{@link #getToRightOf() <em>To Right Of</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getToRightOf()
+   * @generated
+   * @ordered
+   */
+  protected View toRightOf;
+
+  /**
+   * The cached value of the '{@link #getCenterHorizontal() <em>Center Horizontal</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCenterHorizontal()
+   * @generated
+   * @ordered
+   */
+  protected BooleanPropertyValue centerHorizontal;
+
+  /**
+   * The cached value of the '{@link #getCenterInParent() <em>Center In Parent</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCenterInParent()
+   * @generated
+   * @ordered
+   */
+  protected BooleanPropertyValue centerInParent;
+
+  /**
+   * The cached value of the '{@link #getCenterVertical() <em>Center Vertical</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCenterVertical()
+   * @generated
+   * @ordered
+   */
+  protected BooleanPropertyValue centerVertical;
 
   /**
    * The cached value of the '{@link #getBackgroundAttribute() <em>Background Attribute</em>}' containment reference.
@@ -412,9 +523,9 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanPropertyValue getLeft()
+  public BooleanPropertyValue getAlignParentleft()
   {
-    return left;
+    return alignParentleft;
   }
 
   /**
@@ -422,13 +533,13 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(BooleanPropertyValue newLeft, NotificationChain msgs)
+  public NotificationChain basicSetAlignParentleft(BooleanPropertyValue newAlignParentleft, NotificationChain msgs)
   {
-    BooleanPropertyValue oldLeft = left;
-    left = newLeft;
+    BooleanPropertyValue oldAlignParentleft = alignParentleft;
+    alignParentleft = newAlignParentleft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__LEFT, oldLeft, newLeft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, oldAlignParentleft, newAlignParentleft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -439,20 +550,20 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(BooleanPropertyValue newLeft)
+  public void setAlignParentleft(BooleanPropertyValue newAlignParentleft)
   {
-    if (newLeft != left)
+    if (newAlignParentleft != alignParentleft)
     {
       NotificationChain msgs = null;
-      if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__LEFT, null, msgs);
-      if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__LEFT, null, msgs);
-      msgs = basicSetLeft(newLeft, msgs);
+      if (alignParentleft != null)
+        msgs = ((InternalEObject)alignParentleft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, null, msgs);
+      if (newAlignParentleft != null)
+        msgs = ((InternalEObject)newAlignParentleft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, null, msgs);
+      msgs = basicSetAlignParentleft(newAlignParentleft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__LEFT, newLeft, newLeft));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, newAlignParentleft, newAlignParentleft));
   }
 
   /**
@@ -460,9 +571,9 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanPropertyValue getTop()
+  public BooleanPropertyValue getAlignParentTop()
   {
-    return top;
+    return alignParentTop;
   }
 
   /**
@@ -470,13 +581,13 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTop(BooleanPropertyValue newTop, NotificationChain msgs)
+  public NotificationChain basicSetAlignParentTop(BooleanPropertyValue newAlignParentTop, NotificationChain msgs)
   {
-    BooleanPropertyValue oldTop = top;
-    top = newTop;
+    BooleanPropertyValue oldAlignParentTop = alignParentTop;
+    alignParentTop = newAlignParentTop;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__TOP, oldTop, newTop);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP, oldAlignParentTop, newAlignParentTop);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -487,20 +598,20 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTop(BooleanPropertyValue newTop)
+  public void setAlignParentTop(BooleanPropertyValue newAlignParentTop)
   {
-    if (newTop != top)
+    if (newAlignParentTop != alignParentTop)
     {
       NotificationChain msgs = null;
-      if (top != null)
-        msgs = ((InternalEObject)top).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__TOP, null, msgs);
-      if (newTop != null)
-        msgs = ((InternalEObject)newTop).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__TOP, null, msgs);
-      msgs = basicSetTop(newTop, msgs);
+      if (alignParentTop != null)
+        msgs = ((InternalEObject)alignParentTop).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP, null, msgs);
+      if (newAlignParentTop != null)
+        msgs = ((InternalEObject)newAlignParentTop).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP, null, msgs);
+      msgs = basicSetAlignParentTop(newAlignParentTop, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__TOP, newTop, newTop));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP, newAlignParentTop, newAlignParentTop));
   }
 
   /**
@@ -508,9 +619,9 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanPropertyValue getRight()
+  public BooleanPropertyValue getAlignParentRight()
   {
-    return right;
+    return alignParentRight;
   }
 
   /**
@@ -518,13 +629,13 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRight(BooleanPropertyValue newRight, NotificationChain msgs)
+  public NotificationChain basicSetAlignParentRight(BooleanPropertyValue newAlignParentRight, NotificationChain msgs)
   {
-    BooleanPropertyValue oldRight = right;
-    right = newRight;
+    BooleanPropertyValue oldAlignParentRight = alignParentRight;
+    alignParentRight = newAlignParentRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__RIGHT, oldRight, newRight);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT, oldAlignParentRight, newAlignParentRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -535,20 +646,20 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(BooleanPropertyValue newRight)
+  public void setAlignParentRight(BooleanPropertyValue newAlignParentRight)
   {
-    if (newRight != right)
+    if (newAlignParentRight != alignParentRight)
     {
       NotificationChain msgs = null;
-      if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__RIGHT, null, msgs);
-      if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__RIGHT, null, msgs);
-      msgs = basicSetRight(newRight, msgs);
+      if (alignParentRight != null)
+        msgs = ((InternalEObject)alignParentRight).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT, null, msgs);
+      if (newAlignParentRight != null)
+        msgs = ((InternalEObject)newAlignParentRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT, null, msgs);
+      msgs = basicSetAlignParentRight(newAlignParentRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__RIGHT, newRight, newRight));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT, newAlignParentRight, newAlignParentRight));
   }
 
   /**
@@ -556,9 +667,9 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanPropertyValue getBottom()
+  public BooleanPropertyValue getAlignParentBottom()
   {
-    return bottom;
+    return alignParentBottom;
   }
 
   /**
@@ -566,13 +677,13 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBottom(BooleanPropertyValue newBottom, NotificationChain msgs)
+  public NotificationChain basicSetAlignParentBottom(BooleanPropertyValue newAlignParentBottom, NotificationChain msgs)
   {
-    BooleanPropertyValue oldBottom = bottom;
-    bottom = newBottom;
+    BooleanPropertyValue oldAlignParentBottom = alignParentBottom;
+    alignParentBottom = newAlignParentBottom;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM, oldBottom, newBottom);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM, oldAlignParentBottom, newAlignParentBottom);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -583,20 +694,465 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBottom(BooleanPropertyValue newBottom)
+  public void setAlignParentBottom(BooleanPropertyValue newAlignParentBottom)
   {
-    if (newBottom != bottom)
+    if (newAlignParentBottom != alignParentBottom)
     {
       NotificationChain msgs = null;
-      if (bottom != null)
-        msgs = ((InternalEObject)bottom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM, null, msgs);
-      if (newBottom != null)
-        msgs = ((InternalEObject)newBottom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM, null, msgs);
-      msgs = basicSetBottom(newBottom, msgs);
+      if (alignParentBottom != null)
+        msgs = ((InternalEObject)alignParentBottom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM, null, msgs);
+      if (newAlignParentBottom != null)
+        msgs = ((InternalEObject)newAlignParentBottom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM, null, msgs);
+      msgs = basicSetAlignParentBottom(newAlignParentBottom, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM, newBottom, newBottom));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM, newAlignParentBottom, newAlignParentBottom));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View getAlignTop()
+  {
+    if (alignTop != null && alignTop.eIsProxy())
+    {
+      InternalEObject oldAlignTop = (InternalEObject)alignTop;
+      alignTop = (View)eResolveProxy(oldAlignTop);
+      if (alignTop != oldAlignTop)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_TOP, oldAlignTop, alignTop));
+      }
+    }
+    return alignTop;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetAlignTop()
+  {
+    return alignTop;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAlignTop(View newAlignTop)
+  {
+    View oldAlignTop = alignTop;
+    alignTop = newAlignTop;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_TOP, oldAlignTop, alignTop));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View getAlignBottom()
+  {
+    if (alignBottom != null && alignBottom.eIsProxy())
+    {
+      InternalEObject oldAlignBottom = (InternalEObject)alignBottom;
+      alignBottom = (View)eResolveProxy(oldAlignBottom);
+      if (alignBottom != oldAlignBottom)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_BOTTOM, oldAlignBottom, alignBottom));
+      }
+    }
+    return alignBottom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetAlignBottom()
+  {
+    return alignBottom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAlignBottom(View newAlignBottom)
+  {
+    View oldAlignBottom = alignBottom;
+    alignBottom = newAlignBottom;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_BOTTOM, oldAlignBottom, alignBottom));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View getAlignLeft()
+  {
+    if (alignLeft != null && alignLeft.eIsProxy())
+    {
+      InternalEObject oldAlignLeft = (InternalEObject)alignLeft;
+      alignLeft = (View)eResolveProxy(oldAlignLeft);
+      if (alignLeft != oldAlignLeft)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_LEFT, oldAlignLeft, alignLeft));
+      }
+    }
+    return alignLeft;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetAlignLeft()
+  {
+    return alignLeft;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAlignLeft(View newAlignLeft)
+  {
+    View oldAlignLeft = alignLeft;
+    alignLeft = newAlignLeft;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_LEFT, oldAlignLeft, alignLeft));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View getBelow()
+  {
+    if (below != null && below.eIsProxy())
+    {
+      InternalEObject oldBelow = (InternalEObject)below;
+      below = (View)eResolveProxy(oldBelow);
+      if (below != oldBelow)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LAYOUT_PARAMS__BELOW, oldBelow, below));
+      }
+    }
+    return below;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetBelow()
+  {
+    return below;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBelow(View newBelow)
+  {
+    View oldBelow = below;
+    below = newBelow;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__BELOW, oldBelow, below));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View getAbove()
+  {
+    if (above != null && above.eIsProxy())
+    {
+      InternalEObject oldAbove = (InternalEObject)above;
+      above = (View)eResolveProxy(oldAbove);
+      if (above != oldAbove)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LAYOUT_PARAMS__ABOVE, oldAbove, above));
+      }
+    }
+    return above;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetAbove()
+  {
+    return above;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAbove(View newAbove)
+  {
+    View oldAbove = above;
+    above = newAbove;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ABOVE, oldAbove, above));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View getToLeftOf()
+  {
+    if (toLeftOf != null && toLeftOf.eIsProxy())
+    {
+      InternalEObject oldToLeftOf = (InternalEObject)toLeftOf;
+      toLeftOf = (View)eResolveProxy(oldToLeftOf);
+      if (toLeftOf != oldToLeftOf)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LAYOUT_PARAMS__TO_LEFT_OF, oldToLeftOf, toLeftOf));
+      }
+    }
+    return toLeftOf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetToLeftOf()
+  {
+    return toLeftOf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setToLeftOf(View newToLeftOf)
+  {
+    View oldToLeftOf = toLeftOf;
+    toLeftOf = newToLeftOf;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__TO_LEFT_OF, oldToLeftOf, toLeftOf));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View getToRightOf()
+  {
+    if (toRightOf != null && toRightOf.eIsProxy())
+    {
+      InternalEObject oldToRightOf = (InternalEObject)toRightOf;
+      toRightOf = (View)eResolveProxy(oldToRightOf);
+      if (toRightOf != oldToRightOf)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LAYOUT_PARAMS__TO_RIGHT_OF, oldToRightOf, toRightOf));
+      }
+    }
+    return toRightOf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetToRightOf()
+  {
+    return toRightOf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setToRightOf(View newToRightOf)
+  {
+    View oldToRightOf = toRightOf;
+    toRightOf = newToRightOf;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__TO_RIGHT_OF, oldToRightOf, toRightOf));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanPropertyValue getCenterHorizontal()
+  {
+    return centerHorizontal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCenterHorizontal(BooleanPropertyValue newCenterHorizontal, NotificationChain msgs)
+  {
+    BooleanPropertyValue oldCenterHorizontal = centerHorizontal;
+    centerHorizontal = newCenterHorizontal;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL, oldCenterHorizontal, newCenterHorizontal);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCenterHorizontal(BooleanPropertyValue newCenterHorizontal)
+  {
+    if (newCenterHorizontal != centerHorizontal)
+    {
+      NotificationChain msgs = null;
+      if (centerHorizontal != null)
+        msgs = ((InternalEObject)centerHorizontal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL, null, msgs);
+      if (newCenterHorizontal != null)
+        msgs = ((InternalEObject)newCenterHorizontal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL, null, msgs);
+      msgs = basicSetCenterHorizontal(newCenterHorizontal, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL, newCenterHorizontal, newCenterHorizontal));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanPropertyValue getCenterInParent()
+  {
+    return centerInParent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCenterInParent(BooleanPropertyValue newCenterInParent, NotificationChain msgs)
+  {
+    BooleanPropertyValue oldCenterInParent = centerInParent;
+    centerInParent = newCenterInParent;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT, oldCenterInParent, newCenterInParent);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCenterInParent(BooleanPropertyValue newCenterInParent)
+  {
+    if (newCenterInParent != centerInParent)
+    {
+      NotificationChain msgs = null;
+      if (centerInParent != null)
+        msgs = ((InternalEObject)centerInParent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT, null, msgs);
+      if (newCenterInParent != null)
+        msgs = ((InternalEObject)newCenterInParent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT, null, msgs);
+      msgs = basicSetCenterInParent(newCenterInParent, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT, newCenterInParent, newCenterInParent));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanPropertyValue getCenterVertical()
+  {
+    return centerVertical;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCenterVertical(BooleanPropertyValue newCenterVertical, NotificationChain msgs)
+  {
+    BooleanPropertyValue oldCenterVertical = centerVertical;
+    centerVertical = newCenterVertical;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL, oldCenterVertical, newCenterVertical);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCenterVertical(BooleanPropertyValue newCenterVertical)
+  {
+    if (newCenterVertical != centerVertical)
+    {
+      NotificationChain msgs = null;
+      if (centerVertical != null)
+        msgs = ((InternalEObject)centerVertical).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL, null, msgs);
+      if (newCenterVertical != null)
+        msgs = ((InternalEObject)newCenterVertical).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL, null, msgs);
+      msgs = basicSetCenterVertical(newCenterVertical, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL, newCenterVertical, newCenterVertical));
   }
 
   /**
@@ -667,14 +1223,20 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return basicSetMarginRight(null, msgs);
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         return basicSetMarginBottom(null, msgs);
-      case AndroTextDslPackage.LAYOUT_PARAMS__LEFT:
-        return basicSetLeft(null, msgs);
-      case AndroTextDslPackage.LAYOUT_PARAMS__TOP:
-        return basicSetTop(null, msgs);
-      case AndroTextDslPackage.LAYOUT_PARAMS__RIGHT:
-        return basicSetRight(null, msgs);
-      case AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM:
-        return basicSetBottom(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
+        return basicSetAlignParentleft(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
+        return basicSetAlignParentTop(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:
+        return basicSetAlignParentRight(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM:
+        return basicSetAlignParentBottom(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL:
+        return basicSetCenterHorizontal(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT:
+        return basicSetCenterInParent(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
+        return basicSetCenterVertical(null, msgs);
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         return basicSetBackgroundAttribute(null, msgs);
     }
@@ -701,14 +1263,41 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return getMarginRight();
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         return getMarginBottom();
-      case AndroTextDslPackage.LAYOUT_PARAMS__LEFT:
-        return getLeft();
-      case AndroTextDslPackage.LAYOUT_PARAMS__TOP:
-        return getTop();
-      case AndroTextDslPackage.LAYOUT_PARAMS__RIGHT:
-        return getRight();
-      case AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM:
-        return getBottom();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
+        return getAlignParentleft();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
+        return getAlignParentTop();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:
+        return getAlignParentRight();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM:
+        return getAlignParentBottom();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_TOP:
+        if (resolve) return getAlignTop();
+        return basicGetAlignTop();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_BOTTOM:
+        if (resolve) return getAlignBottom();
+        return basicGetAlignBottom();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_LEFT:
+        if (resolve) return getAlignLeft();
+        return basicGetAlignLeft();
+      case AndroTextDslPackage.LAYOUT_PARAMS__BELOW:
+        if (resolve) return getBelow();
+        return basicGetBelow();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ABOVE:
+        if (resolve) return getAbove();
+        return basicGetAbove();
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_LEFT_OF:
+        if (resolve) return getToLeftOf();
+        return basicGetToLeftOf();
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_RIGHT_OF:
+        if (resolve) return getToRightOf();
+        return basicGetToRightOf();
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL:
+        return getCenterHorizontal();
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT:
+        return getCenterInParent();
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
+        return getCenterVertical();
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         return getBackgroundAttribute();
     }
@@ -740,17 +1329,47 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         setMarginBottom((DimensionPropertyValue)newValue);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__LEFT:
-        setLeft((BooleanPropertyValue)newValue);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
+        setAlignParentleft((BooleanPropertyValue)newValue);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__TOP:
-        setTop((BooleanPropertyValue)newValue);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
+        setAlignParentTop((BooleanPropertyValue)newValue);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__RIGHT:
-        setRight((BooleanPropertyValue)newValue);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:
+        setAlignParentRight((BooleanPropertyValue)newValue);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM:
-        setBottom((BooleanPropertyValue)newValue);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM:
+        setAlignParentBottom((BooleanPropertyValue)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_TOP:
+        setAlignTop((View)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_BOTTOM:
+        setAlignBottom((View)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_LEFT:
+        setAlignLeft((View)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__BELOW:
+        setBelow((View)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ABOVE:
+        setAbove((View)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_LEFT_OF:
+        setToLeftOf((View)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_RIGHT_OF:
+        setToRightOf((View)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL:
+        setCenterHorizontal((BooleanPropertyValue)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT:
+        setCenterInParent((BooleanPropertyValue)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
+        setCenterVertical((BooleanPropertyValue)newValue);
         return;
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         setBackgroundAttribute((BackgroundAttribute)newValue);
@@ -784,17 +1403,47 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         setMarginBottom((DimensionPropertyValue)null);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__LEFT:
-        setLeft((BooleanPropertyValue)null);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
+        setAlignParentleft((BooleanPropertyValue)null);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__TOP:
-        setTop((BooleanPropertyValue)null);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
+        setAlignParentTop((BooleanPropertyValue)null);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__RIGHT:
-        setRight((BooleanPropertyValue)null);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:
+        setAlignParentRight((BooleanPropertyValue)null);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM:
-        setBottom((BooleanPropertyValue)null);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM:
+        setAlignParentBottom((BooleanPropertyValue)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_TOP:
+        setAlignTop((View)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_BOTTOM:
+        setAlignBottom((View)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_LEFT:
+        setAlignLeft((View)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__BELOW:
+        setBelow((View)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ABOVE:
+        setAbove((View)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_LEFT_OF:
+        setToLeftOf((View)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_RIGHT_OF:
+        setToRightOf((View)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL:
+        setCenterHorizontal((BooleanPropertyValue)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT:
+        setCenterInParent((BooleanPropertyValue)null);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
+        setCenterVertical((BooleanPropertyValue)null);
         return;
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         setBackgroundAttribute((BackgroundAttribute)null);
@@ -823,14 +1472,34 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return marginRight != null;
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         return marginBottom != null;
-      case AndroTextDslPackage.LAYOUT_PARAMS__LEFT:
-        return left != null;
-      case AndroTextDslPackage.LAYOUT_PARAMS__TOP:
-        return top != null;
-      case AndroTextDslPackage.LAYOUT_PARAMS__RIGHT:
-        return right != null;
-      case AndroTextDslPackage.LAYOUT_PARAMS__BOTTOM:
-        return bottom != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
+        return alignParentleft != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
+        return alignParentTop != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:
+        return alignParentRight != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM:
+        return alignParentBottom != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_TOP:
+        return alignTop != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_BOTTOM:
+        return alignBottom != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_LEFT:
+        return alignLeft != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__BELOW:
+        return below != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ABOVE:
+        return above != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_LEFT_OF:
+        return toLeftOf != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__TO_RIGHT_OF:
+        return toRightOf != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_HORIZONTAL:
+        return centerHorizontal != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_IN_PARENT:
+        return centerInParent != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
+        return centerVertical != null;
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         return backgroundAttribute != null;
     }

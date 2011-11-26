@@ -18,6 +18,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected AndroTextDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Button___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_EditText___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_LinearLayout_HorizontalKeyword_2_1_q;
 	protected AbstractElementAlias match_RadioGroup_VerticalKeyword_2_1_q;
@@ -26,6 +27,7 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AndroTextDslGrammarAccess) access;
+		match_Button___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getButtonAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getButtonAccess().getRightCurlyBracketKeyword_4_2()));
 		match_EditText___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getEditTextAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getEditTextAccess().getRightCurlyBracketKeyword_4_2()));
 		match_LinearLayout_HorizontalKeyword_2_1_q = new TokenAlias(true, false, grammarAccess.getLinearLayoutAccess().getHorizontalKeyword_2_1());
 		match_RadioGroup_VerticalKeyword_2_1_q = new TokenAlias(true, false, grammarAccess.getRadioGroupAccess().getVerticalKeyword_2_1());
@@ -44,7 +46,9 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_EditText___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
+			if(match_Button___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
+				emit_Button___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_EditText___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
 				emit_EditText___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_LinearLayout_HorizontalKeyword_2_1_q.equals(syntax))
 				emit_LinearLayout_HorizontalKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -56,6 +60,14 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     ('{' '}')?
+	 */
+	protected void emit_Button___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     ('{' '}')?

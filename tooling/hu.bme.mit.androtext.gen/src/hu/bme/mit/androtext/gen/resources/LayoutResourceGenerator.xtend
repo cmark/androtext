@@ -27,6 +27,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink
+import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
 
 class LayoutResourceGenerator implements IGenerator {
 
@@ -145,8 +147,14 @@ class LayoutResourceGenerator implements IGenerator {
 		@color/«valueLink.link.name»
 	'''
 	
-	def dispatch backgroundValue(DrawableResourceLink valueLink) '''
+	def dispatch backgroundValue(DrawableResourceLink valueLink) ''''''
+	
+	def dispatch backgroundValue(LocalDrawableResourceLink valueLink) '''
 		@drawable/«valueLink.link.name»
+	'''
+	
+	def dispatch backgroundValue(ExternalDrawableResourceLink valueLink) '''
+		@android:drawable/«valueLink.externalResource.name.toLowerCase»
 	'''
 	
 	def dispatch dimensionValue(DimensionPropertyValue dimensionPropertyValue) '''

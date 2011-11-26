@@ -693,6 +693,24 @@ public interface AndroTextDslFactory extends EFactory
   DrawableResourceLink createDrawableResourceLink();
 
   /**
+   * Returns a new object of class '<em>Local Drawable Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Local Drawable Resource Link</em>'.
+   * @generated
+   */
+  LocalDrawableResourceLink createLocalDrawableResourceLink();
+
+  /**
+   * Returns a new object of class '<em>External Drawable Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>External Drawable Resource Link</em>'.
+   * @generated
+   */
+  ExternalDrawableResourceLink createExternalDrawableResourceLink();
+
+  /**
    * Returns a new object of class '<em>String Resource Link</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

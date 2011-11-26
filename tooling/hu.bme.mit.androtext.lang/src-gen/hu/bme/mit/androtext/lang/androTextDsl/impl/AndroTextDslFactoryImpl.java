@@ -143,6 +143,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.COLOR_PROPERTY_VALUE: return createColorPropertyValue();
       case AndroTextDslPackage.DIMENSION_PROPERTY_VALUE: return createDimensionPropertyValue();
       case AndroTextDslPackage.DRAWABLE_RESOURCE_LINK: return createDrawableResourceLink();
+      case AndroTextDslPackage.LOCAL_DRAWABLE_RESOURCE_LINK: return createLocalDrawableResourceLink();
+      case AndroTextDslPackage.EXTERNAL_DRAWABLE_RESOURCE_LINK: return createExternalDrawableResourceLink();
       case AndroTextDslPackage.STRING_RESOURCE_LINK: return createStringResourceLink();
       case AndroTextDslPackage.INTEGER_RESOURCE_LINK: return createIntegerResourceLink();
       case AndroTextDslPackage.BOOLEAN_RESOURCE_LINK: return createBooleanResourceLink();
@@ -189,6 +191,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return createLayoutGravityKindFromString(eDataType, initialValue);
       case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
         return createLayoutDimensionKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.ANDROID_DRAWABLE_RESOURCE:
+        return createAndroidDrawableResourceFromString(eDataType, initialValue);
       case AndroTextDslPackage.DIMENSION_METRIC:
         return createDimensionMetricFromString(eDataType, initialValue);
       default:
@@ -216,6 +220,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return convertLayoutGravityKindToString(eDataType, instanceValue);
       case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
         return convertLayoutDimensionKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.ANDROID_DRAWABLE_RESOURCE:
+        return convertAndroidDrawableResourceToString(eDataType, instanceValue);
       case AndroTextDslPackage.DIMENSION_METRIC:
         return convertDimensionMetricToString(eDataType, instanceValue);
       default:
@@ -1042,6 +1048,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public LocalDrawableResourceLink createLocalDrawableResourceLink()
+  {
+    LocalDrawableResourceLinkImpl localDrawableResourceLink = new LocalDrawableResourceLinkImpl();
+    return localDrawableResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExternalDrawableResourceLink createExternalDrawableResourceLink()
+  {
+    ExternalDrawableResourceLinkImpl externalDrawableResourceLink = new ExternalDrawableResourceLinkImpl();
+    return externalDrawableResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public StringResourceLink createStringResourceLink()
   {
     StringResourceLinkImpl stringResourceLink = new StringResourceLinkImpl();
@@ -1374,6 +1402,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * @generated
    */
   public String convertLayoutDimensionKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndroidDrawableResource createAndroidDrawableResourceFromString(EDataType eDataType, String initialValue)
+  {
+    AndroidDrawableResource result = AndroidDrawableResource.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertAndroidDrawableResourceToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

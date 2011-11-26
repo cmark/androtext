@@ -449,6 +449,16 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createDrawableResourceLinkAdapter();
       }
       @Override
+      public Adapter caseLocalDrawableResourceLink(LocalDrawableResourceLink object)
+      {
+        return createLocalDrawableResourceLinkAdapter();
+      }
+      @Override
+      public Adapter caseExternalDrawableResourceLink(ExternalDrawableResourceLink object)
+      {
+        return createExternalDrawableResourceLinkAdapter();
+      }
+      @Override
       public Adapter caseStringResourceLink(StringResourceLink object)
       {
         return createStringResourceLinkAdapter();
@@ -1681,6 +1691,36 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDrawableResourceLinkAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink <em>Local Drawable Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink
+   * @generated
+   */
+  public Adapter createLocalDrawableResourceLinkAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink <em>External Drawable Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
+   * @generated
+   */
+  public Adapter createExternalDrawableResourceLinkAdapter()
   {
     return null;
   }

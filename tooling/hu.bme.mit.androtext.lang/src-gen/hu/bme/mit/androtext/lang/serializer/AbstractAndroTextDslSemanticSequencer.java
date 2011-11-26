@@ -29,12 +29,12 @@ import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionValue;
-import hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.EditText;
 import hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
+import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Gallery;
 import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
@@ -57,6 +57,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
+import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.Preference;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes;
@@ -314,14 +315,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
-			case AndroTextDslPackage.DRAWABLE_RESOURCE_LINK:
-				if(context == grammarAccess.getAnyDrawablePropertyValueRule() ||
-				   context == grammarAccess.getDrawableResourceLinkRule() ||
-				   context == grammarAccess.getPropertyValueRule()) {
-					sequence_DrawableResourceLink(context, (DrawableResourceLink) semanticObject); 
-					return; 
-				}
-				else break;
 			case AndroTextDslPackage.EDIT_TEXT:
 				if(context == grammarAccess.getEditTextRule() ||
 				   context == grammarAccess.getSimpleViewRule() ||
@@ -355,6 +348,15 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getSimpleViewRule() ||
 				   context == grammarAccess.getViewRule()) {
 					sequence_ExpandableListView(context, (ExpandableListView) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.EXTERNAL_DRAWABLE_RESOURCE_LINK:
+				if(context == grammarAccess.getAnyDrawablePropertyValueRule() ||
+				   context == grammarAccess.getDrawableResourceLinkRule() ||
+				   context == grammarAccess.getExternalDrawableResourceLinkRule() ||
+				   context == grammarAccess.getPropertyValueRule()) {
+					sequence_ExternalDrawableResourceLink(context, (ExternalDrawableResourceLink) semanticObject); 
 					return; 
 				}
 				else break;
@@ -512,6 +514,15 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getSimpleViewRule() ||
 				   context == grammarAccess.getViewRule()) {
 					sequence_ListView(context, (ListView) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.LOCAL_DRAWABLE_RESOURCE_LINK:
+				if(context == grammarAccess.getAnyDrawablePropertyValueRule() ||
+				   context == grammarAccess.getDrawableResourceLinkRule() ||
+				   context == grammarAccess.getLocalDrawableResourceLinkRule() ||
+				   context == grammarAccess.getPropertyValueRule()) {
+					sequence_LocalDrawableResourceLink(context, (LocalDrawableResourceLink) semanticObject); 
 					return; 
 				}
 				else break;
@@ -883,23 +894,10 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID text=STRING layoutStyle=LayoutDimensionKind)
+	 *     (name=ID text=STRING layoutStyle=LayoutDimensionKind layoutParams=LayoutParams?)
 	 */
 	protected void sequence_Button(EObject context, Button semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.VIEW__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.VIEW__NAME));
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.VIEW__LAYOUT_STYLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.VIEW__LAYOUT_STYLE));
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.BUTTON__TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.BUTTON__TEXT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getButtonAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
-		feeder.accept(grammarAccess.getButtonAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1103,22 +1101,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     link=[DrawableResource|QualifiedName]
-	 */
-	protected void sequence_DrawableResourceLink(EObject context, DrawableResourceLink semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.DRAWABLE_RESOURCE_LINK__LINK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.DRAWABLE_RESOURCE_LINK__LINK));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDrawableResourceLinkAccess().getLinkDrawableResourceQualifiedNameParserRuleCall_0_1(), semanticObject.getLink());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (name=ID title=STRING preferenceAttributes=PreferenceAttributes dialogPreferenceAttributes=DialogPreferenceAttributes)
 	 */
 	protected void sequence_EditTextPreference(EObject context, EditTextPreference semanticObject) {
@@ -1196,6 +1178,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getExpandableListViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getExpandableListViewAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_2_0(), semanticObject.getLayoutStyle());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     externalResource=AndroidDrawableResource
+	 */
+	protected void sequence_ExternalDrawableResourceLink(EObject context, ExternalDrawableResourceLink semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.EXTERNAL_DRAWABLE_RESOURCE_LINK__EXTERNAL_RESOURCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.EXTERNAL_DRAWABLE_RESOURCE_LINK__EXTERNAL_RESOURCE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExternalDrawableResourceLinkAccess().getExternalResourceAndroidDrawableResourceEnumRuleCall_0(), semanticObject.getExternalResource());
 		feeder.finish();
 	}
 	
@@ -1417,8 +1415,24 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 * Constraint:
 	 *     (
 	 *         weight=IntegerPropertyValue? 
-	 *         (marginLeft=DimensionPropertyValue marginTop=DimensionPropertyValue marginRight=DimensionPropertyValue marginBottom=DimensionPropertyValue)? 
-	 *         (left=BooleanPropertyValue top=BooleanPropertyValue right=BooleanPropertyValue bottom=BooleanPropertyValue)? 
+	 *         marginLeft=DimensionPropertyValue? 
+	 *         marginTop=DimensionPropertyValue? 
+	 *         marginRight=DimensionPropertyValue? 
+	 *         marginBottom=DimensionPropertyValue? 
+	 *         alignParentleft=BooleanPropertyValue? 
+	 *         alignParentTop=BooleanPropertyValue? 
+	 *         alignParentRight=BooleanPropertyValue? 
+	 *         alignParentBottom=BooleanPropertyValue? 
+	 *         alignTop=[View|ID]? 
+	 *         alignBottom=[View|ID]? 
+	 *         alignLeft=[View|ID]? 
+	 *         below=[View|ID]? 
+	 *         above=[View|ID]? 
+	 *         toLeftOf=[View|ID]? 
+	 *         toRightOf=[View|ID]? 
+	 *         centerHorizontal=BooleanPropertyValue? 
+	 *         centerInParent=BooleanPropertyValue? 
+	 *         centerVertical=BooleanPropertyValue? 
 	 *         backgroundAttribute=BackgroundAttribute?
 	 *     )
 	 */
@@ -1523,6 +1537,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_ListView(EObject context, ListView semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     link=[DrawableResource|QualifiedName]
+	 */
+	protected void sequence_LocalDrawableResourceLink(EObject context, LocalDrawableResourceLink semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LOCAL_DRAWABLE_RESOURCE_LINK__LINK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LOCAL_DRAWABLE_RESOURCE_LINK__LINK));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLocalDrawableResourceLinkAccess().getLinkDrawableResourceQualifiedNameParserRuleCall_0_1(), semanticObject.getLink());
+		feeder.finish();
 	}
 	
 	

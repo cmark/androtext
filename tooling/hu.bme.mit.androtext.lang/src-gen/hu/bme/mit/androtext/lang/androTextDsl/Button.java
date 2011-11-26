@@ -16,6 +16,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getText <em>Text</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getLayoutParams <em>Layout Params</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,5 +51,31 @@ public interface Button extends SimpleView
    * @generated
    */
   void setText(String value);
+
+  /**
+   * Returns the value of the '<em><b>Layout Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Layout Params</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Layout Params</em>' containment reference.
+   * @see #setLayoutParams(LayoutParams)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getButton_LayoutParams()
+   * @model containment="true"
+   * @generated
+   */
+  LayoutParams getLayoutParams();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getLayoutParams <em>Layout Params</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Layout Params</em>' containment reference.
+   * @see #getLayoutParams()
+   * @generated
+   */
+  void setLayoutParams(LayoutParams value);
 
 } // Button

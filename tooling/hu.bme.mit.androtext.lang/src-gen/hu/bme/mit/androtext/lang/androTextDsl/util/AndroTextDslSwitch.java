@@ -672,6 +672,26 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AndroTextDslPackage.LOCAL_DRAWABLE_RESOURCE_LINK:
+      {
+        LocalDrawableResourceLink localDrawableResourceLink = (LocalDrawableResourceLink)theEObject;
+        T result = caseLocalDrawableResourceLink(localDrawableResourceLink);
+        if (result == null) result = caseDrawableResourceLink(localDrawableResourceLink);
+        if (result == null) result = caseAnyDrawablePropertyValue(localDrawableResourceLink);
+        if (result == null) result = casePropertyValue(localDrawableResourceLink);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.EXTERNAL_DRAWABLE_RESOURCE_LINK:
+      {
+        ExternalDrawableResourceLink externalDrawableResourceLink = (ExternalDrawableResourceLink)theEObject;
+        T result = caseExternalDrawableResourceLink(externalDrawableResourceLink);
+        if (result == null) result = caseDrawableResourceLink(externalDrawableResourceLink);
+        if (result == null) result = caseAnyDrawablePropertyValue(externalDrawableResourceLink);
+        if (result == null) result = casePropertyValue(externalDrawableResourceLink);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AndroTextDslPackage.STRING_RESOURCE_LINK:
       {
         StringResourceLink stringResourceLink = (StringResourceLink)theEObject;
@@ -2030,6 +2050,38 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDrawableResourceLink(DrawableResourceLink object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Local Drawable Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Local Drawable Resource Link</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocalDrawableResourceLink(LocalDrawableResourceLink object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>External Drawable Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>External Drawable Resource Link</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExternalDrawableResourceLink(ExternalDrawableResourceLink object)
   {
     return null;
   }

@@ -1059,45 +1059,108 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cWeightAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cWeightIntegerPropertyValueParserRuleCall_0_1_0 = (RuleCall)cWeightAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cUnorderedGroup.eContents().get(1);
-		private final Keyword cMarginKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cMarginLeftKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cMarginLeftAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cMarginLeftDimensionPropertyValueParserRuleCall_1_1_0 = (RuleCall)cMarginLeftAssignment_1_1.eContents().get(0);
-		private final Keyword cCommaKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cMarginTopAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cMarginTopDimensionPropertyValueParserRuleCall_1_3_0 = (RuleCall)cMarginTopAssignment_1_3.eContents().get(0);
-		private final Keyword cCommaKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
-		private final Assignment cMarginRightAssignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
-		private final RuleCall cMarginRightDimensionPropertyValueParserRuleCall_1_5_0 = (RuleCall)cMarginRightAssignment_1_5.eContents().get(0);
-		private final Keyword cCommaKeyword_1_6 = (Keyword)cGroup_1.eContents().get(6);
-		private final Assignment cMarginBottomAssignment_1_7 = (Assignment)cGroup_1.eContents().get(7);
-		private final RuleCall cMarginBottomDimensionPropertyValueParserRuleCall_1_7_0 = (RuleCall)cMarginBottomAssignment_1_7.eContents().get(0);
 		private final Group cGroup_2 = (Group)cUnorderedGroup.eContents().get(2);
-		private final Keyword cAlignParentKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cLeftAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cLeftBooleanPropertyValueParserRuleCall_2_1_0 = (RuleCall)cLeftAssignment_2_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Assignment cTopAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
-		private final RuleCall cTopBooleanPropertyValueParserRuleCall_2_3_0 = (RuleCall)cTopAssignment_2_3.eContents().get(0);
-		private final Keyword cCommaKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
-		private final Assignment cRightAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
-		private final RuleCall cRightBooleanPropertyValueParserRuleCall_2_5_0 = (RuleCall)cRightAssignment_2_5.eContents().get(0);
-		private final Keyword cCommaKeyword_2_6 = (Keyword)cGroup_2.eContents().get(6);
-		private final Assignment cBottomAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
-		private final RuleCall cBottomBooleanPropertyValueParserRuleCall_2_7_0 = (RuleCall)cBottomAssignment_2_7.eContents().get(0);
-		private final Assignment cBackgroundAttributeAssignment_3 = (Assignment)cUnorderedGroup.eContents().get(3);
-		private final RuleCall cBackgroundAttributeBackgroundAttributeParserRuleCall_3_0 = (RuleCall)cBackgroundAttributeAssignment_3.eContents().get(0);
+		private final Keyword cMarginTopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cMarginTopAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cMarginTopDimensionPropertyValueParserRuleCall_2_1_0 = (RuleCall)cMarginTopAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cUnorderedGroup.eContents().get(3);
+		private final Keyword cMarginRightKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cMarginRightAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cMarginRightDimensionPropertyValueParserRuleCall_3_1_0 = (RuleCall)cMarginRightAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cUnorderedGroup.eContents().get(4);
+		private final Keyword cMarginBottomKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cMarginBottomAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cMarginBottomDimensionPropertyValueParserRuleCall_4_1_0 = (RuleCall)cMarginBottomAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cUnorderedGroup.eContents().get(5);
+		private final Keyword cAlignParentLeftKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAlignParentleftAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0 = (RuleCall)cAlignParentleftAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cUnorderedGroup.eContents().get(6);
+		private final Keyword cAlignParentTopKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cAlignParentTopAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cAlignParentTopBooleanPropertyValueParserRuleCall_6_1_0 = (RuleCall)cAlignParentTopAssignment_6_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cUnorderedGroup.eContents().get(7);
+		private final Keyword cAlignParentRightKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cAlignParentRightAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cAlignParentRightBooleanPropertyValueParserRuleCall_7_1_0 = (RuleCall)cAlignParentRightAssignment_7_1.eContents().get(0);
+		private final Group cGroup_8 = (Group)cUnorderedGroup.eContents().get(8);
+		private final Keyword cAlignParentBottomKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cAlignParentBottomAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cAlignParentBottomBooleanPropertyValueParserRuleCall_8_1_0 = (RuleCall)cAlignParentBottomAssignment_8_1.eContents().get(0);
+		private final Group cGroup_9 = (Group)cUnorderedGroup.eContents().get(9);
+		private final Keyword cAlignTopKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cAlignTopAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final CrossReference cAlignTopViewCrossReference_9_1_0 = (CrossReference)cAlignTopAssignment_9_1.eContents().get(0);
+		private final RuleCall cAlignTopViewIDTerminalRuleCall_9_1_0_1 = (RuleCall)cAlignTopViewCrossReference_9_1_0.eContents().get(1);
+		private final Group cGroup_10 = (Group)cUnorderedGroup.eContents().get(10);
+		private final Keyword cAlignBottomKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cAlignBottomAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final CrossReference cAlignBottomViewCrossReference_10_1_0 = (CrossReference)cAlignBottomAssignment_10_1.eContents().get(0);
+		private final RuleCall cAlignBottomViewIDTerminalRuleCall_10_1_0_1 = (RuleCall)cAlignBottomViewCrossReference_10_1_0.eContents().get(1);
+		private final Group cGroup_11 = (Group)cUnorderedGroup.eContents().get(11);
+		private final Keyword cAlignLeftKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Assignment cAlignLeftAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
+		private final CrossReference cAlignLeftViewCrossReference_11_1_0 = (CrossReference)cAlignLeftAssignment_11_1.eContents().get(0);
+		private final RuleCall cAlignLeftViewIDTerminalRuleCall_11_1_0_1 = (RuleCall)cAlignLeftViewCrossReference_11_1_0.eContents().get(1);
+		private final Group cGroup_12 = (Group)cUnorderedGroup.eContents().get(12);
+		private final Keyword cBelowKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cBelowAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final CrossReference cBelowViewCrossReference_12_1_0 = (CrossReference)cBelowAssignment_12_1.eContents().get(0);
+		private final RuleCall cBelowViewIDTerminalRuleCall_12_1_0_1 = (RuleCall)cBelowViewCrossReference_12_1_0.eContents().get(1);
+		private final Group cGroup_13 = (Group)cUnorderedGroup.eContents().get(13);
+		private final Keyword cAboveKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cAboveAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final CrossReference cAboveViewCrossReference_13_1_0 = (CrossReference)cAboveAssignment_13_1.eContents().get(0);
+		private final RuleCall cAboveViewIDTerminalRuleCall_13_1_0_1 = (RuleCall)cAboveViewCrossReference_13_1_0.eContents().get(1);
+		private final Group cGroup_14 = (Group)cUnorderedGroup.eContents().get(14);
+		private final Keyword cToLeftOfKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cToLeftOfAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final CrossReference cToLeftOfViewCrossReference_14_1_0 = (CrossReference)cToLeftOfAssignment_14_1.eContents().get(0);
+		private final RuleCall cToLeftOfViewIDTerminalRuleCall_14_1_0_1 = (RuleCall)cToLeftOfViewCrossReference_14_1_0.eContents().get(1);
+		private final Group cGroup_15 = (Group)cUnorderedGroup.eContents().get(15);
+		private final Keyword cToRightOfKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Assignment cToRightOfAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
+		private final CrossReference cToRightOfViewCrossReference_15_1_0 = (CrossReference)cToRightOfAssignment_15_1.eContents().get(0);
+		private final RuleCall cToRightOfViewIDTerminalRuleCall_15_1_0_1 = (RuleCall)cToRightOfViewCrossReference_15_1_0.eContents().get(1);
+		private final Group cGroup_16 = (Group)cUnorderedGroup.eContents().get(16);
+		private final Keyword cCenterHorizontalKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
+		private final Assignment cCenterHorizontalAssignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
+		private final RuleCall cCenterHorizontalBooleanPropertyValueParserRuleCall_16_1_0 = (RuleCall)cCenterHorizontalAssignment_16_1.eContents().get(0);
+		private final Group cGroup_17 = (Group)cUnorderedGroup.eContents().get(17);
+		private final Keyword cCenterInParentKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
+		private final Assignment cCenterInParentAssignment_17_1 = (Assignment)cGroup_17.eContents().get(1);
+		private final RuleCall cCenterInParentBooleanPropertyValueParserRuleCall_17_1_0 = (RuleCall)cCenterInParentAssignment_17_1.eContents().get(0);
+		private final Group cGroup_18 = (Group)cUnorderedGroup.eContents().get(18);
+		private final Keyword cCenterVerticalKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
+		private final Assignment cCenterVerticalAssignment_18_1 = (Assignment)cGroup_18.eContents().get(1);
+		private final RuleCall cCenterVerticalBooleanPropertyValueParserRuleCall_18_1_0 = (RuleCall)cCenterVerticalAssignment_18_1.eContents().get(0);
+		private final Assignment cBackgroundAttributeAssignment_19 = (Assignment)cUnorderedGroup.eContents().get(19);
+		private final RuleCall cBackgroundAttributeBackgroundAttributeParserRuleCall_19_0 = (RuleCall)cBackgroundAttributeAssignment_19.eContents().get(0);
 		
 		//LayoutParams:
-		//	("weight" weight=IntegerPropertyValue)? & ("margin" marginLeft=DimensionPropertyValue ","
-		//	marginTop=DimensionPropertyValue "," marginRight=DimensionPropertyValue "," marginBottom=DimensionPropertyValue)? &
-		//	("alignParent" left=BooleanPropertyValue "," top=BooleanPropertyValue "," right=BooleanPropertyValue ","
-		//	bottom=BooleanPropertyValue)? & backgroundAttribute=BackgroundAttribute?;
+		//	("weight" weight=IntegerPropertyValue)? & ("marginLeft" marginLeft=DimensionPropertyValue)? & ("marginTop"
+		//	marginTop=DimensionPropertyValue)? & ("marginRight" marginRight=DimensionPropertyValue)? & ("marginBottom"
+		//	marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentleft=BooleanPropertyValue)? & ("alignParentTop"
+		//	alignParentTop=BooleanPropertyValue)? & ("alignParentRight" alignParentRight=BooleanPropertyValue)? &
+		//	("alignParentBottom" alignParentBottom=BooleanPropertyValue)? & ("alignTop" alignTop=[View])? & ("alignBottom"
+		//	alignBottom=[View])? & ("alignLeft" alignLeft=[View])? & ("below" below=[View])? & ("above" above=[View])? &
+		//	("toLeftOf" toLeftOf=[View])? & ("toRightOf" toRightOf=[View])? & ("centerHorizontal"
+		//	centerHorizontal=BooleanPropertyValue)? & ("centerInParent" centerInParent=BooleanPropertyValue)? & ("centerVertical"
+		//	centerVertical=BooleanPropertyValue)? & backgroundAttribute=BackgroundAttribute?;
 		public ParserRule getRule() { return rule; }
 
-		//("weight" weight=IntegerPropertyValue)? & ("margin" marginLeft=DimensionPropertyValue ","
-		//marginTop=DimensionPropertyValue "," marginRight=DimensionPropertyValue "," marginBottom=DimensionPropertyValue)? &
-		//("alignParent" left=BooleanPropertyValue "," top=BooleanPropertyValue "," right=BooleanPropertyValue ","
-		//bottom=BooleanPropertyValue)? & backgroundAttribute=BackgroundAttribute?
+		//("weight" weight=IntegerPropertyValue)? & ("marginLeft" marginLeft=DimensionPropertyValue)? & ("marginTop"
+		//marginTop=DimensionPropertyValue)? & ("marginRight" marginRight=DimensionPropertyValue)? & ("marginBottom"
+		//marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentleft=BooleanPropertyValue)? & ("alignParentTop"
+		//alignParentTop=BooleanPropertyValue)? & ("alignParentRight" alignParentRight=BooleanPropertyValue)? &
+		//("alignParentBottom" alignParentBottom=BooleanPropertyValue)? & ("alignTop" alignTop=[View])? & ("alignBottom"
+		//alignBottom=[View])? & ("alignLeft" alignLeft=[View])? & ("below" below=[View])? & ("above" above=[View])? &
+		//("toLeftOf" toLeftOf=[View])? & ("toRightOf" toRightOf=[View])? & ("centerHorizontal"
+		//centerHorizontal=BooleanPropertyValue)? & ("centerInParent" centerInParent=BooleanPropertyValue)? & ("centerVertical"
+		//centerVertical=BooleanPropertyValue)? & backgroundAttribute=BackgroundAttribute?
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 
 		//("weight" weight=IntegerPropertyValue)?
@@ -1112,12 +1175,11 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//IntegerPropertyValue
 		public RuleCall getWeightIntegerPropertyValueParserRuleCall_0_1_0() { return cWeightIntegerPropertyValueParserRuleCall_0_1_0; }
 
-		//("margin" marginLeft=DimensionPropertyValue "," marginTop=DimensionPropertyValue "," marginRight=DimensionPropertyValue
-		//"," marginBottom=DimensionPropertyValue)?
+		//("marginLeft" marginLeft=DimensionPropertyValue)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"margin"
-		public Keyword getMarginKeyword_1_0() { return cMarginKeyword_1_0; }
+		//"marginLeft"
+		public Keyword getMarginLeftKeyword_1_0() { return cMarginLeftKeyword_1_0; }
 
 		//marginLeft=DimensionPropertyValue
 		public Assignment getMarginLeftAssignment_1_1() { return cMarginLeftAssignment_1_1; }
@@ -1125,78 +1187,236 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//DimensionPropertyValue
 		public RuleCall getMarginLeftDimensionPropertyValueParserRuleCall_1_1_0() { return cMarginLeftDimensionPropertyValueParserRuleCall_1_1_0; }
 
-		//","
-		public Keyword getCommaKeyword_1_2() { return cCommaKeyword_1_2; }
-
-		//marginTop=DimensionPropertyValue
-		public Assignment getMarginTopAssignment_1_3() { return cMarginTopAssignment_1_3; }
-
-		//DimensionPropertyValue
-		public RuleCall getMarginTopDimensionPropertyValueParserRuleCall_1_3_0() { return cMarginTopDimensionPropertyValueParserRuleCall_1_3_0; }
-
-		//","
-		public Keyword getCommaKeyword_1_4() { return cCommaKeyword_1_4; }
-
-		//marginRight=DimensionPropertyValue
-		public Assignment getMarginRightAssignment_1_5() { return cMarginRightAssignment_1_5; }
-
-		//DimensionPropertyValue
-		public RuleCall getMarginRightDimensionPropertyValueParserRuleCall_1_5_0() { return cMarginRightDimensionPropertyValueParserRuleCall_1_5_0; }
-
-		//","
-		public Keyword getCommaKeyword_1_6() { return cCommaKeyword_1_6; }
-
-		//marginBottom=DimensionPropertyValue
-		public Assignment getMarginBottomAssignment_1_7() { return cMarginBottomAssignment_1_7; }
-
-		//DimensionPropertyValue
-		public RuleCall getMarginBottomDimensionPropertyValueParserRuleCall_1_7_0() { return cMarginBottomDimensionPropertyValueParserRuleCall_1_7_0; }
-
-		//("alignParent" left=BooleanPropertyValue "," top=BooleanPropertyValue "," right=BooleanPropertyValue ","
-		//bottom=BooleanPropertyValue)?
+		//("marginTop" marginTop=DimensionPropertyValue)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"alignParent"
-		public Keyword getAlignParentKeyword_2_0() { return cAlignParentKeyword_2_0; }
+		//"marginTop"
+		public Keyword getMarginTopKeyword_2_0() { return cMarginTopKeyword_2_0; }
 
-		//left=BooleanPropertyValue
-		public Assignment getLeftAssignment_2_1() { return cLeftAssignment_2_1; }
+		//marginTop=DimensionPropertyValue
+		public Assignment getMarginTopAssignment_2_1() { return cMarginTopAssignment_2_1; }
+
+		//DimensionPropertyValue
+		public RuleCall getMarginTopDimensionPropertyValueParserRuleCall_2_1_0() { return cMarginTopDimensionPropertyValueParserRuleCall_2_1_0; }
+
+		//("marginRight" marginRight=DimensionPropertyValue)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"marginRight"
+		public Keyword getMarginRightKeyword_3_0() { return cMarginRightKeyword_3_0; }
+
+		//marginRight=DimensionPropertyValue
+		public Assignment getMarginRightAssignment_3_1() { return cMarginRightAssignment_3_1; }
+
+		//DimensionPropertyValue
+		public RuleCall getMarginRightDimensionPropertyValueParserRuleCall_3_1_0() { return cMarginRightDimensionPropertyValueParserRuleCall_3_1_0; }
+
+		//("marginBottom" marginBottom=DimensionPropertyValue)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"marginBottom"
+		public Keyword getMarginBottomKeyword_4_0() { return cMarginBottomKeyword_4_0; }
+
+		//marginBottom=DimensionPropertyValue
+		public Assignment getMarginBottomAssignment_4_1() { return cMarginBottomAssignment_4_1; }
+
+		//DimensionPropertyValue
+		public RuleCall getMarginBottomDimensionPropertyValueParserRuleCall_4_1_0() { return cMarginBottomDimensionPropertyValueParserRuleCall_4_1_0; }
+
+		//("alignParentLeft" alignParentleft=BooleanPropertyValue)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"alignParentLeft"
+		public Keyword getAlignParentLeftKeyword_5_0() { return cAlignParentLeftKeyword_5_0; }
+
+		//alignParentleft=BooleanPropertyValue
+		public Assignment getAlignParentleftAssignment_5_1() { return cAlignParentleftAssignment_5_1; }
 
 		//BooleanPropertyValue
-		public RuleCall getLeftBooleanPropertyValueParserRuleCall_2_1_0() { return cLeftBooleanPropertyValueParserRuleCall_2_1_0; }
+		public RuleCall getAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0() { return cAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0; }
 
-		//","
-		public Keyword getCommaKeyword_2_2() { return cCommaKeyword_2_2; }
+		//("alignParentTop" alignParentTop=BooleanPropertyValue)?
+		public Group getGroup_6() { return cGroup_6; }
 
-		//top=BooleanPropertyValue
-		public Assignment getTopAssignment_2_3() { return cTopAssignment_2_3; }
+		//"alignParentTop"
+		public Keyword getAlignParentTopKeyword_6_0() { return cAlignParentTopKeyword_6_0; }
 
-		//BooleanPropertyValue
-		public RuleCall getTopBooleanPropertyValueParserRuleCall_2_3_0() { return cTopBooleanPropertyValueParserRuleCall_2_3_0; }
-
-		//","
-		public Keyword getCommaKeyword_2_4() { return cCommaKeyword_2_4; }
-
-		//right=BooleanPropertyValue
-		public Assignment getRightAssignment_2_5() { return cRightAssignment_2_5; }
+		//alignParentTop=BooleanPropertyValue
+		public Assignment getAlignParentTopAssignment_6_1() { return cAlignParentTopAssignment_6_1; }
 
 		//BooleanPropertyValue
-		public RuleCall getRightBooleanPropertyValueParserRuleCall_2_5_0() { return cRightBooleanPropertyValueParserRuleCall_2_5_0; }
+		public RuleCall getAlignParentTopBooleanPropertyValueParserRuleCall_6_1_0() { return cAlignParentTopBooleanPropertyValueParserRuleCall_6_1_0; }
 
-		//","
-		public Keyword getCommaKeyword_2_6() { return cCommaKeyword_2_6; }
+		//("alignParentRight" alignParentRight=BooleanPropertyValue)?
+		public Group getGroup_7() { return cGroup_7; }
 
-		//bottom=BooleanPropertyValue
-		public Assignment getBottomAssignment_2_7() { return cBottomAssignment_2_7; }
+		//"alignParentRight"
+		public Keyword getAlignParentRightKeyword_7_0() { return cAlignParentRightKeyword_7_0; }
+
+		//alignParentRight=BooleanPropertyValue
+		public Assignment getAlignParentRightAssignment_7_1() { return cAlignParentRightAssignment_7_1; }
 
 		//BooleanPropertyValue
-		public RuleCall getBottomBooleanPropertyValueParserRuleCall_2_7_0() { return cBottomBooleanPropertyValueParserRuleCall_2_7_0; }
+		public RuleCall getAlignParentRightBooleanPropertyValueParserRuleCall_7_1_0() { return cAlignParentRightBooleanPropertyValueParserRuleCall_7_1_0; }
+
+		//("alignParentBottom" alignParentBottom=BooleanPropertyValue)?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//"alignParentBottom"
+		public Keyword getAlignParentBottomKeyword_8_0() { return cAlignParentBottomKeyword_8_0; }
+
+		//alignParentBottom=BooleanPropertyValue
+		public Assignment getAlignParentBottomAssignment_8_1() { return cAlignParentBottomAssignment_8_1; }
+
+		//BooleanPropertyValue
+		public RuleCall getAlignParentBottomBooleanPropertyValueParserRuleCall_8_1_0() { return cAlignParentBottomBooleanPropertyValueParserRuleCall_8_1_0; }
+
+		//("alignTop" alignTop=[View])?
+		public Group getGroup_9() { return cGroup_9; }
+
+		//"alignTop"
+		public Keyword getAlignTopKeyword_9_0() { return cAlignTopKeyword_9_0; }
+
+		//alignTop=[View]
+		public Assignment getAlignTopAssignment_9_1() { return cAlignTopAssignment_9_1; }
+
+		//[View]
+		public CrossReference getAlignTopViewCrossReference_9_1_0() { return cAlignTopViewCrossReference_9_1_0; }
+
+		//ID
+		public RuleCall getAlignTopViewIDTerminalRuleCall_9_1_0_1() { return cAlignTopViewIDTerminalRuleCall_9_1_0_1; }
+
+		//("alignBottom" alignBottom=[View])?
+		public Group getGroup_10() { return cGroup_10; }
+
+		//"alignBottom"
+		public Keyword getAlignBottomKeyword_10_0() { return cAlignBottomKeyword_10_0; }
+
+		//alignBottom=[View]
+		public Assignment getAlignBottomAssignment_10_1() { return cAlignBottomAssignment_10_1; }
+
+		//[View]
+		public CrossReference getAlignBottomViewCrossReference_10_1_0() { return cAlignBottomViewCrossReference_10_1_0; }
+
+		//ID
+		public RuleCall getAlignBottomViewIDTerminalRuleCall_10_1_0_1() { return cAlignBottomViewIDTerminalRuleCall_10_1_0_1; }
+
+		//("alignLeft" alignLeft=[View])?
+		public Group getGroup_11() { return cGroup_11; }
+
+		//"alignLeft"
+		public Keyword getAlignLeftKeyword_11_0() { return cAlignLeftKeyword_11_0; }
+
+		//alignLeft=[View]
+		public Assignment getAlignLeftAssignment_11_1() { return cAlignLeftAssignment_11_1; }
+
+		//[View]
+		public CrossReference getAlignLeftViewCrossReference_11_1_0() { return cAlignLeftViewCrossReference_11_1_0; }
+
+		//ID
+		public RuleCall getAlignLeftViewIDTerminalRuleCall_11_1_0_1() { return cAlignLeftViewIDTerminalRuleCall_11_1_0_1; }
+
+		//("below" below=[View])?
+		public Group getGroup_12() { return cGroup_12; }
+
+		//"below"
+		public Keyword getBelowKeyword_12_0() { return cBelowKeyword_12_0; }
+
+		//below=[View]
+		public Assignment getBelowAssignment_12_1() { return cBelowAssignment_12_1; }
+
+		//[View]
+		public CrossReference getBelowViewCrossReference_12_1_0() { return cBelowViewCrossReference_12_1_0; }
+
+		//ID
+		public RuleCall getBelowViewIDTerminalRuleCall_12_1_0_1() { return cBelowViewIDTerminalRuleCall_12_1_0_1; }
+
+		//("above" above=[View])?
+		public Group getGroup_13() { return cGroup_13; }
+
+		//"above"
+		public Keyword getAboveKeyword_13_0() { return cAboveKeyword_13_0; }
+
+		//above=[View]
+		public Assignment getAboveAssignment_13_1() { return cAboveAssignment_13_1; }
+
+		//[View]
+		public CrossReference getAboveViewCrossReference_13_1_0() { return cAboveViewCrossReference_13_1_0; }
+
+		//ID
+		public RuleCall getAboveViewIDTerminalRuleCall_13_1_0_1() { return cAboveViewIDTerminalRuleCall_13_1_0_1; }
+
+		//("toLeftOf" toLeftOf=[View])?
+		public Group getGroup_14() { return cGroup_14; }
+
+		//"toLeftOf"
+		public Keyword getToLeftOfKeyword_14_0() { return cToLeftOfKeyword_14_0; }
+
+		//toLeftOf=[View]
+		public Assignment getToLeftOfAssignment_14_1() { return cToLeftOfAssignment_14_1; }
+
+		//[View]
+		public CrossReference getToLeftOfViewCrossReference_14_1_0() { return cToLeftOfViewCrossReference_14_1_0; }
+
+		//ID
+		public RuleCall getToLeftOfViewIDTerminalRuleCall_14_1_0_1() { return cToLeftOfViewIDTerminalRuleCall_14_1_0_1; }
+
+		//("toRightOf" toRightOf=[View])?
+		public Group getGroup_15() { return cGroup_15; }
+
+		//"toRightOf"
+		public Keyword getToRightOfKeyword_15_0() { return cToRightOfKeyword_15_0; }
+
+		//toRightOf=[View]
+		public Assignment getToRightOfAssignment_15_1() { return cToRightOfAssignment_15_1; }
+
+		//[View]
+		public CrossReference getToRightOfViewCrossReference_15_1_0() { return cToRightOfViewCrossReference_15_1_0; }
+
+		//ID
+		public RuleCall getToRightOfViewIDTerminalRuleCall_15_1_0_1() { return cToRightOfViewIDTerminalRuleCall_15_1_0_1; }
+
+		//("centerHorizontal" centerHorizontal=BooleanPropertyValue)?
+		public Group getGroup_16() { return cGroup_16; }
+
+		//"centerHorizontal"
+		public Keyword getCenterHorizontalKeyword_16_0() { return cCenterHorizontalKeyword_16_0; }
+
+		//centerHorizontal=BooleanPropertyValue
+		public Assignment getCenterHorizontalAssignment_16_1() { return cCenterHorizontalAssignment_16_1; }
+
+		//BooleanPropertyValue
+		public RuleCall getCenterHorizontalBooleanPropertyValueParserRuleCall_16_1_0() { return cCenterHorizontalBooleanPropertyValueParserRuleCall_16_1_0; }
+
+		//("centerInParent" centerInParent=BooleanPropertyValue)?
+		public Group getGroup_17() { return cGroup_17; }
+
+		//"centerInParent"
+		public Keyword getCenterInParentKeyword_17_0() { return cCenterInParentKeyword_17_0; }
+
+		//centerInParent=BooleanPropertyValue
+		public Assignment getCenterInParentAssignment_17_1() { return cCenterInParentAssignment_17_1; }
+
+		//BooleanPropertyValue
+		public RuleCall getCenterInParentBooleanPropertyValueParserRuleCall_17_1_0() { return cCenterInParentBooleanPropertyValueParserRuleCall_17_1_0; }
+
+		//("centerVertical" centerVertical=BooleanPropertyValue)?
+		public Group getGroup_18() { return cGroup_18; }
+
+		//"centerVertical"
+		public Keyword getCenterVerticalKeyword_18_0() { return cCenterVerticalKeyword_18_0; }
+
+		//centerVertical=BooleanPropertyValue
+		public Assignment getCenterVerticalAssignment_18_1() { return cCenterVerticalAssignment_18_1; }
+
+		//BooleanPropertyValue
+		public RuleCall getCenterVerticalBooleanPropertyValueParserRuleCall_18_1_0() { return cCenterVerticalBooleanPropertyValueParserRuleCall_18_1_0; }
 
 		//backgroundAttribute=BackgroundAttribute?
-		public Assignment getBackgroundAttributeAssignment_3() { return cBackgroundAttributeAssignment_3; }
+		public Assignment getBackgroundAttributeAssignment_19() { return cBackgroundAttributeAssignment_19; }
 
 		//BackgroundAttribute
-		public RuleCall getBackgroundAttributeBackgroundAttributeParserRuleCall_3_0() { return cBackgroundAttributeBackgroundAttributeParserRuleCall_3_0; }
+		public RuleCall getBackgroundAttributeBackgroundAttributeParserRuleCall_19_0() { return cBackgroundAttributeBackgroundAttributeParserRuleCall_19_0; }
 	}
 
 	public class LayoutGravityAttributeElements extends AbstractParserRuleElementFinder {
@@ -2057,12 +2277,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTextSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextAssignment_2.eContents().get(0);
 		private final Assignment cLayoutStyleAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cLayoutStyleLayoutDimensionKindEnumRuleCall_3_0 = (RuleCall)cLayoutStyleAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cLayoutParamsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cLayoutParamsLayoutParamsParserRuleCall_4_1_0 = (RuleCall)cLayoutParamsAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//Button:
-		//	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind;
+		//	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind ("{" layoutParams=LayoutParams? "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//"button" name=ID text=STRING layoutStyle=LayoutDimensionKind
+		//"button" name=ID text=STRING layoutStyle=LayoutDimensionKind ("{" layoutParams=LayoutParams? "}")?
 		public Group getGroup() { return cGroup; }
 
 		//"button"
@@ -2085,6 +2310,21 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//LayoutDimensionKind
 		public RuleCall getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0() { return cLayoutStyleLayoutDimensionKindEnumRuleCall_3_0; }
+
+		//("{" layoutParams=LayoutParams? "}")?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
+
+		//layoutParams=LayoutParams?
+		public Assignment getLayoutParamsAssignment_4_1() { return cLayoutParamsAssignment_4_1; }
+
+		//LayoutParams
+		public RuleCall getLayoutParamsLayoutParamsParserRuleCall_4_1_0() { return cLayoutParamsLayoutParamsParserRuleCall_4_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
 	}
 
 	public class ListViewElements extends AbstractParserRuleElementFinder {
@@ -3318,11 +3558,31 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class DrawableResourceLinkElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DrawableResourceLink");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cLocalDrawableResourceLinkParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cExternalDrawableResourceLinkParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//DrawableResourceLink:
+		//	LocalDrawableResourceLink | ExternalDrawableResourceLink;
+		public ParserRule getRule() { return rule; }
+
+		//LocalDrawableResourceLink | ExternalDrawableResourceLink
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//LocalDrawableResourceLink
+		public RuleCall getLocalDrawableResourceLinkParserRuleCall_0() { return cLocalDrawableResourceLinkParserRuleCall_0; }
+
+		//ExternalDrawableResourceLink
+		public RuleCall getExternalDrawableResourceLinkParserRuleCall_1() { return cExternalDrawableResourceLinkParserRuleCall_1; }
+	}
+
+	public class LocalDrawableResourceLinkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalDrawableResourceLink");
 		private final Assignment cLinkAssignment = (Assignment)rule.eContents().get(1);
 		private final CrossReference cLinkDrawableResourceCrossReference_0 = (CrossReference)cLinkAssignment.eContents().get(0);
 		private final RuleCall cLinkDrawableResourceQualifiedNameParserRuleCall_0_1 = (RuleCall)cLinkDrawableResourceCrossReference_0.eContents().get(1);
 		
-		//DrawableResourceLink:
+		//LocalDrawableResourceLink:
 		//	link=[DrawableResource|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
@@ -3334,6 +3594,22 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//QualifiedName
 		public RuleCall getLinkDrawableResourceQualifiedNameParserRuleCall_0_1() { return cLinkDrawableResourceQualifiedNameParserRuleCall_0_1; }
+	}
+
+	public class ExternalDrawableResourceLinkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalDrawableResourceLink");
+		private final Assignment cExternalResourceAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cExternalResourceAndroidDrawableResourceEnumRuleCall_0 = (RuleCall)cExternalResourceAssignment.eContents().get(0);
+		
+		//ExternalDrawableResourceLink:
+		//	externalResource=AndroidDrawableResource;
+		public ParserRule getRule() { return rule; }
+
+		//externalResource=AndroidDrawableResource
+		public Assignment getExternalResourceAssignment() { return cExternalResourceAssignment; }
+
+		//AndroidDrawableResource
+		public RuleCall getExternalResourceAndroidDrawableResourceEnumRuleCall_0() { return cExternalResourceAndroidDrawableResourceEnumRuleCall_0; }
 	}
 
 	public class StringResourceLinkElements extends AbstractParserRuleElementFinder {
@@ -4364,6 +4640,22 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getWRAP_FILLWrapFillKeyword_3_0() { return cWRAP_FILLWrapFillKeyword_3_0; }
 	}
 
+	public class AndroidDrawableResourceElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AndroidDrawableResource");
+		private final EnumLiteralDeclaration cAndroid_editbox_backgroundEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+		private final Keyword cAndroid_editbox_backgroundAndroid_editbox_backgroundKeyword_0 = (Keyword)cAndroid_editbox_backgroundEnumLiteralDeclaration.eContents().get(0);
+		
+		//enum AndroidDrawableResource:
+		//	android_editbox_background;
+		public EnumRule getRule() { return rule; }
+
+		//android_editbox_background
+		public EnumLiteralDeclaration getAndroid_editbox_backgroundEnumLiteralDeclaration() { return cAndroid_editbox_backgroundEnumLiteralDeclaration; }
+
+		//"android_editbox_background"
+		public Keyword getAndroid_editbox_backgroundAndroid_editbox_backgroundKeyword_0() { return cAndroid_editbox_backgroundAndroid_editbox_backgroundKeyword_0; }
+	}
+
 	public class DimensionMetricElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "DimensionMetric");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4507,6 +4799,9 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private ColorPropertyValueElements pColorPropertyValue;
 	private DimensionPropertyValueElements pDimensionPropertyValue;
 	private DrawableResourceLinkElements pDrawableResourceLink;
+	private LocalDrawableResourceLinkElements pLocalDrawableResourceLink;
+	private ExternalDrawableResourceLinkElements pExternalDrawableResourceLink;
+	private AndroidDrawableResourceElements unknownRuleAndroidDrawableResource;
 	private StringResourceLinkElements pStringResourceLink;
 	private IntegerResourceLinkElements pIntegerResourceLink;
 	private BooleanResourceLinkElements pBooleanResourceLink;
@@ -4880,10 +5175,15 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LayoutParams:
-	//	("weight" weight=IntegerPropertyValue)? & ("margin" marginLeft=DimensionPropertyValue ","
-	//	marginTop=DimensionPropertyValue "," marginRight=DimensionPropertyValue "," marginBottom=DimensionPropertyValue)? &
-	//	("alignParent" left=BooleanPropertyValue "," top=BooleanPropertyValue "," right=BooleanPropertyValue ","
-	//	bottom=BooleanPropertyValue)? & backgroundAttribute=BackgroundAttribute?;
+	//	("weight" weight=IntegerPropertyValue)? & ("marginLeft" marginLeft=DimensionPropertyValue)? & ("marginTop"
+	//	marginTop=DimensionPropertyValue)? & ("marginRight" marginRight=DimensionPropertyValue)? & ("marginBottom"
+	//	marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentleft=BooleanPropertyValue)? & ("alignParentTop"
+	//	alignParentTop=BooleanPropertyValue)? & ("alignParentRight" alignParentRight=BooleanPropertyValue)? &
+	//	("alignParentBottom" alignParentBottom=BooleanPropertyValue)? & ("alignTop" alignTop=[View])? & ("alignBottom"
+	//	alignBottom=[View])? & ("alignLeft" alignLeft=[View])? & ("below" below=[View])? & ("above" above=[View])? &
+	//	("toLeftOf" toLeftOf=[View])? & ("toRightOf" toRightOf=[View])? & ("centerHorizontal"
+	//	centerHorizontal=BooleanPropertyValue)? & ("centerInParent" centerInParent=BooleanPropertyValue)? & ("centerVertical"
+	//	centerVertical=BooleanPropertyValue)? & backgroundAttribute=BackgroundAttribute?;
 	public LayoutParamsElements getLayoutParamsAccess() {
 		return (pLayoutParams != null) ? pLayoutParams : (pLayoutParams = new LayoutParamsElements());
 	}
@@ -5098,7 +5398,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Button:
-	//	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind;
+	//	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind ("{" layoutParams=LayoutParams? "}")?;
 	public ButtonElements getButtonAccess() {
 		return (pButton != null) ? pButton : (pButton = new ButtonElements());
 	}
@@ -5395,13 +5695,43 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DrawableResourceLink:
-	//	link=[DrawableResource|QualifiedName];
+	//	LocalDrawableResourceLink | ExternalDrawableResourceLink;
 	public DrawableResourceLinkElements getDrawableResourceLinkAccess() {
 		return (pDrawableResourceLink != null) ? pDrawableResourceLink : (pDrawableResourceLink = new DrawableResourceLinkElements());
 	}
 	
 	public ParserRule getDrawableResourceLinkRule() {
 		return getDrawableResourceLinkAccess().getRule();
+	}
+
+	//LocalDrawableResourceLink:
+	//	link=[DrawableResource|QualifiedName];
+	public LocalDrawableResourceLinkElements getLocalDrawableResourceLinkAccess() {
+		return (pLocalDrawableResourceLink != null) ? pLocalDrawableResourceLink : (pLocalDrawableResourceLink = new LocalDrawableResourceLinkElements());
+	}
+	
+	public ParserRule getLocalDrawableResourceLinkRule() {
+		return getLocalDrawableResourceLinkAccess().getRule();
+	}
+
+	//ExternalDrawableResourceLink:
+	//	externalResource=AndroidDrawableResource;
+	public ExternalDrawableResourceLinkElements getExternalDrawableResourceLinkAccess() {
+		return (pExternalDrawableResourceLink != null) ? pExternalDrawableResourceLink : (pExternalDrawableResourceLink = new ExternalDrawableResourceLinkElements());
+	}
+	
+	public ParserRule getExternalDrawableResourceLinkRule() {
+		return getExternalDrawableResourceLinkAccess().getRule();
+	}
+
+	//enum AndroidDrawableResource:
+	//	android_editbox_background;
+	public AndroidDrawableResourceElements getAndroidDrawableResourceAccess() {
+		return (unknownRuleAndroidDrawableResource != null) ? unknownRuleAndroidDrawableResource : (unknownRuleAndroidDrawableResource = new AndroidDrawableResourceElements());
+	}
+	
+	public EnumRule getAndroidDrawableResourceRule() {
+		return getAndroidDrawableResourceAccess().getRule();
 	}
 
 	//StringResourceLink:
