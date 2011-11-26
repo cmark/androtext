@@ -10,12 +10,12 @@ import hu.bme.mit.androtext.gen.util.TargetApplicationFinder;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
-import hu.bme.mit.androtext.lang.androTextDsl.BaseLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.Layout;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
+import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.UIElement;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
+import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -297,16 +297,19 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			if (app.getApplication().getDataroot() != null) {
 				uris.add(app.getApplication().getDataroot().eResource().getURI());
 			}
-			uris.add(app.getApplication().getMainActivity().getLayout().eResource().getURI());
+			Activity main = app.getApplication().getMainActivity();
+			if (main instanceof SimpleActivity) {
+				uris.add(((SimpleActivity) main).getLayout().eResource().getURI());
+			}
 			for (AndroidApplicationModelElement ac : app.getApplication().getModelElements()) {
-				if (ac instanceof Activity) {
-					Layout lay = ((Activity) ac).getLayout();
+				if (ac instanceof SimpleActivity) {
+					View lay = ((SimpleActivity) ac).getLayout();
 					URI newURI = lay.eResource().getURI();
 					if (!uris.contains(newURI)) {
 						uris.add(newURI);
 					}
-					if (lay instanceof BaseLayout) {
-						for (UIElement uie : ((BaseLayout) lay).getElements()) {
+					if (lay instanceof ViewGroup) {
+						for (View uie : ((ViewGroup) lay).getViews()) {
 							URI resURI = null;
 							if (uie instanceof ListView) {
 								ArrayResource res = ((ListView) uie).getEntries();

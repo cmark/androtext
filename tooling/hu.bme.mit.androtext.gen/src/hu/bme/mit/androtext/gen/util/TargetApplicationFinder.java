@@ -8,9 +8,9 @@ import hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.ModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.RootLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.UIElement;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
+import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,8 +63,8 @@ public class TargetApplicationFinder {
 		for (hu.bme.mit.androtext.lang.androTextDsl.Resource resource : root.getResources()) {
 			for (EObject eObject : GeneratorUtil.findCrossReferences(resource, context)) {
 				// cover the uielement reference
-				if (eObject instanceof UIElement) {
-					RootLayout rootContainer = getRootLayout(eObject);
+				if (eObject instanceof View) {
+					ViewGroup rootContainer = getRootView(eObject);
 					targetApplications.addAll(findTargetApplications(rootContainer, context));
 				}
 			}
@@ -72,29 +72,31 @@ public class TargetApplicationFinder {
 		return targetApplications;
 	}
 
-	private static RootLayout getRootLayout(EObject eObject) {
+	private static ViewGroup getRootView(EObject eObject) {
 		if (eObject == null) return null;
-		if (eObject instanceof RootLayout) {
-			return (RootLayout) eObject;
+		if (eObject.eContainer() instanceof AndroGuiModelRoot) {
+			return (ViewGroup) eObject;
 		}
 		if (eObject.eContainer() != null) {
-			return getRootLayout(eObject.eContainer());
+			return getRootView(eObject.eContainer());
 		}
 		return null;
 	}
 
 	private static List<TargetApplication> findTargetApplications(
-			AndroGuiModelRoot root, ResourceSet context) {
+			AndroGuiModelRoot modelRoot, ResourceSet context) {
 		List<TargetApplication> targetApplications = new ArrayList<TargetApplication>();
-		for (RootLayout rootLayout : root.getRootLayout()) {
-			targetApplications.addAll(findTargetApplications(rootLayout, context));
+		for (View root : modelRoot.getRoots()) {
+			if (root instanceof ViewGroup) {
+				targetApplications.addAll(findTargetApplications((ViewGroup)root, context));
+			}
 		}
 		return targetApplications;
 	}
 	
-	private static List<TargetApplication> findTargetApplications(RootLayout rootLayout, ResourceSet context) {
+	private static List<TargetApplication> findTargetApplications(ViewGroup root, ResourceSet context) {
 		List<TargetApplication> targetApplications = new ArrayList<TargetApplication>();
-		for (EObject eObject : GeneratorUtil.findCrossReferences(rootLayout, context)) {
+		for (EObject eObject : GeneratorUtil.findCrossReferences(root, context)) {
 			if (eObject instanceof Activity) {
 				targetApplications.addAll(findTargetApplications((AndroidApplication) eObject.eContainer(), context));
 			}

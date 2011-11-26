@@ -1,13 +1,12 @@
 package hu.bme.mit.androtext.gen.util
 
+import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.lang.androTextDsl.Entity
+import hu.bme.mit.androtext.lang.androTextDsl.Property
+import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
+import hu.bme.mit.androtext.lang.androTextDsl.View
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
-import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
-import hu.bme.mit.androtext.lang.androTextDsl.Entity
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
-import hu.bme.mit.androtext.lang.androTextDsl.Layout
-import hu.bme.mit.androtext.lang.androTextDsl.RootLayout
-import hu.bme.mit.androtext.lang.androTextDsl.Property
 
 class GeneratorExtensions {
 	
@@ -69,9 +68,8 @@ class GeneratorExtensions {
 		androidApplication.application.name.toFirstUpper + "Data"
 	}
 	
-	def dispatch layoutName(Layout layout) {}
-	def dispatch layoutName(RootLayout layout) {
-		layout.name.toLowerCase + "_layout"
+	def layoutName(View root) {
+		root.name.toLowerCase + "_layout"
 	}
 	
 //	def columnType(Feature f) {

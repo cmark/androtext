@@ -4,87 +4,173 @@ import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.IGenerator
 import hu.bme.mit.androtext.gen.IGeneratorSlots
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
+import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot
+import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink
+import hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink
+import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams
+import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout
+import hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen
+import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
+import hu.bme.mit.androtext.lang.androTextDsl.TextView
+import hu.bme.mit.androtext.lang.androTextDsl.View
+import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.RootLayout
-import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen
-import hu.bme.mit.androtext.lang.androTextDsl.UIElement
-import hu.bme.mit.androtext.lang.androTextDsl.Layout
-import hu.bme.mit.androtext.lang.androTextDsl.Widget
-import hu.bme.mit.androtext.lang.androTextDsl.BaseLayout
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
 
 class LayoutResourceGenerator implements IGenerator {
 
 	@Inject extension GeneratorExtensions extensions
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (layout : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (RootLayout))).flatten) {
-			if (layout instanceof PreferenceScreen) {
-				fsa.generateFile(layout.layoutName + ".xml", IGeneratorSlots::XML_SLOT, generate(layout))
-			} else {
-				fsa.generateFile(layout.layoutName + ".xml", IGeneratorSlots::LAYOUT_SLOT, generate(layout))	
+		for (guimodel : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (AndroGuiModelRoot))).flatten) {
+			for (root : guimodel.roots) {
+				if (root instanceof PreferenceScreen) {
+					fsa.generateFile(root.layoutName + ".xml", IGeneratorSlots::XML_SLOT, generate(root))
+				} else {
+					fsa.generateFile(root.layoutName + ".xml", IGeneratorSlots::LAYOUT_SLOT, generate(root))	
+				}	
 			}
 		}
 	}
 	
-	def generate(RootLayout gui) '''
-		«gui.xmlHeader»
-		<«gui.eClass.name» «gui.androidSchema» «gui.attributes»>
-			«gui.generateElements»
-		</«gui.eClass.name»>
+	def generate(View root) '''
+		«root.xmlHeader»
+		<«root.eClass.name» «root.androidSchema» «root.attributes.toString.trim»>
+			«root.generateElements»
+		</«root.eClass.name»>
 	'''
 	
-	def uielement(UIElement element) '''
+	def uielement(View element) '''
 		«element.startTag»
+			«element.generateElements»
 		«element.endTag»
 	'''
 	
-	def startTag(UIElement element) '''
-		<«element.eClass.name» «element.attributes»>
+	def startTag(View element) '''
+		<«element.eClass.name» «element.attributes.toString.trim»>
 	'''
 
 //	def startTag(Preference element) '''
 //		<«element.^class.simpleName»«element.attributes»>
 //	'''
 	
-	def dispatch attributes(UIElement layout) '''
+	def attributes(View view) '''
+			«IF !view.name.nullOrEmpty»
+			android:id="@+id/«view.name»" 
+			android:name="«view.name»"
+			«ENDIF»
+			«view.layoutAttributes»
+			«view.specificAttributes»
 	'''
 	
-	def dispatch attributes(Layout layout) '''
+	def dispatch specificAttributes(View view) ''''''
+	def dispatch specificAttributes(LinearLayout linearLayout) '''
+		«IF linearLayout.vertical»
+		android:orientation="vertical"
+		«ELSE»
+		android:orientation="horizontal"
+		«ENDIF»
+		«IF linearLayout.layoutParams != null»
+		«linearLayout.layoutParams.linearLayoutParams»
+		«ENDIF»
 	'''
 	
-	def dispatch attributes(RootLayout layout) '''
-			android:id="@+id/«layout.name»" 
-			android:name="«layout.name»"
-			«layout.layoutAttributes»
+	def linearLayoutParams(LinearLayoutParams params) '''
+		«IF params.gravity != null»
+		android:gravity="«params.gravity.layoutGravity»"
+		«ENDIF»
+		«IF params.layoutParams != null»
+		«params.layoutParams.generate»
+		«ENDIF»
 	'''
 	
-	def dispatch attributes(Widget widget) '''
-			android:id="@+id/«widget.name»"
-			android:name="«widget.name»"
-			«widget.layoutAttributes»
+	def layoutGravity(LayoutGravityAttribute layoutGravityAttribute) '''
+		«FOR g : layoutGravityAttribute.gravity SEPARATOR ' | '»
+			«g.name.toLowerCase»
+		«ENDFOR»
 	'''
 	
-	def dispatch layoutAttributes(BaseLayout layout) '''
-		«layout.layoutStyle.layoutParams»
-	'''
-		
-	def dispatch layoutAttributes(Widget widget) '''
-		«widget.layoutStyle.layoutParams»
+	def dispatch specificAttributes(TextView view) '''
+		«IF view.gravityAttribute != null»
+		android:gravity="«view.gravityAttribute.gravity.name.toLowerCase»"
+		«ENDIF»
+		«IF view.textSizeAttribute != null»
+		«val testSizeValue = view.textSizeAttribute.textSize.dimensionValue»
+		android:textSize="«testSizeValue.toString.trim»"
+		«ENDIF»
+		«IF view.text!=null»
+		android:text="«view.text»"
+		«ENDIF»
+		«IF view.layoutParams != null»
+		«view.layoutParams.generate»
+		«ENDIF»
 	'''
 	
-	def layoutParams(LayoutStyle style) {
+	def generate(LayoutParams params) '''
+		«IF params.backgroundAttribute != null»
+			«val backgroundValue = params.backgroundAttribute.background.backgroundValue»
+			android:background="«backgroundValue.toString.trim»"
+		«ENDIF»
+		«IF params.weight != null»
+			«val weightValue = params.weight.integerValue»
+			android:layout_weight="«weightValue.toString.trim»"
+		«ENDIF»
+	'''
+	
+	def dispatch integerValue(IntegerPropertyValue value) '''
+		«value.value»
+	'''
+	def dispatch integerValue(IntegerResourceLink value) '''
+		@integer/«value.link.name»
+	'''
+	
+	def dispatch backgroundValue(AnyDrawablePropertyValue value) ''''''
+	
+	def dispatch backgroundValue(ColorPropertyValue value) '''
+		«value.value»
+	'''
+	
+	def dispatch backgroundValue(ColorResourceLink valueLink) '''
+		@color/«valueLink.link.name»
+	'''
+	
+	def dispatch backgroundValue(DrawableResourceLink valueLink) '''
+		@drawable/«valueLink.link.name»
+	'''
+	
+	def dispatch dimensionValue(DimensionPropertyValue dimensionPropertyValue) '''
+		«dimensionPropertyValue.value.value»«dimensionPropertyValue.value.metric»
+	'''
+	
+	def dispatch dimensionValue(DimensionResourceLink dimensionResourceLink) '''
+		@dimen/«dimensionResourceLink.link.name»
+	'''
+	
+	def layoutAttributes(View element) '''
+		«IF element.layoutStyle != null»
+		«element.layoutStyle.layoutDimensionKind»
+		«ENDIF»
+	'''
+	
+	def layoutDimensionKind(LayoutDimensionKind style) {
 		switch (style) {
-			case LayoutStyle::FILL : fillLayout
-			case LayoutStyle::WRAP : wrapLayout
-			case LayoutStyle::FILL_WRAP : fillwrapLayout
-			case LayoutStyle::WRAP_FILL : wrapfillLayout
+			case LayoutDimensionKind::FILL : fillLayout
+			case LayoutDimensionKind::WRAP : wrapLayout
+			case LayoutDimensionKind::FILL_WRAP : fillwrapLayout
+			case LayoutDimensionKind::WRAP_FILL : wrapfillLayout
 		}
-	}	
+	}
 	
 	def fillLayout() '''
 		android:layout_width="fill_parent"
@@ -110,14 +196,15 @@ class LayoutResourceGenerator implements IGenerator {
 //		
 //	'''	
 	
-	def endTag(UIElement element) '''
+	def endTag(View element) '''
 		</«element.eClass.name»>
-	'''
-	
-	def dispatch generateElements(Layout layout) '''''' 
+	''' 
 		
-	def dispatch generateElements(BaseLayout layout) '''
-		«FOR e : layout.elements»
+	def dispatch generateElements(View element) '''
+	'''
+		
+	def dispatch generateElements(ViewGroup layout) '''
+		«FOR e : layout.views»
 			«e.uielement»
 		«ENDFOR»
 	'''

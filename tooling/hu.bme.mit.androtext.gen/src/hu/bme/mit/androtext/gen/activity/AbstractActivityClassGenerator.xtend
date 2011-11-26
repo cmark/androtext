@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity
 
 class AbstractActivityClassGenerator implements IGenerator {
 	
@@ -50,7 +51,9 @@ class AbstractActivityClassGenerator implements IGenerator {
 		} 
 	'''
 	
-	def contentViewSet(Activity activity) '''
+	def dispatch contentViewSet(Activity activity) ''''''
+	
+	def dispatch contentViewSet(SimpleActivity activity) '''
 		setContentView(R.layout.«activity.layout.layoutName»);
 	'''
 	
