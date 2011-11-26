@@ -1,0 +1,19 @@
+generator ExampleGenerators {
+	
+	target HelloWorld {
+		
+		project hu.bme.mit.androtext.examples.helloworld
+		platform Android 2.3.3
+		version 1.0
+		
+	}
+	
+	target HelloLinearLayout {
+		
+		project hu.bme.mit.androtext.examples.hellolinearlayout
+		platform Android 2.3.3
+		version 1.0
+		
+	}
+	
+}

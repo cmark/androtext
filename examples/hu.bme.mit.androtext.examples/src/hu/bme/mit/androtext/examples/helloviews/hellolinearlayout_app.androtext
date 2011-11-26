@@ -1,0 +1,5 @@
+application HelloLinearLayout {
+	
+	activity HelloLinearLayoutActivity layout HelloLinearLayoutGui.helloLinearLayoutMain
+	
+}
