@@ -106,13 +106,6 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//PreferenceActivity">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//PreferenceActivity/layout"/>
     </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//Action"/>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//InvokeActivity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//InvokeActivity/activity"/>
-    </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//InvokeWebUrl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//InvokeWebUrl/url"/>
-    </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//AndroDataModelRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroDataModelRoot/entities"/>
     </genClasses>
@@ -148,7 +141,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/marginTop"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/marginRight"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/marginBottom"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentleft"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentLeft"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentTop"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentRight"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//LayoutParams/alignParentBottom"/>

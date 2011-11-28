@@ -694,78 +694,6 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getLayoutPreferenceScreenQualifiedNameParserRuleCall_3_0_1() { return cLayoutPreferenceScreenQualifiedNameParserRuleCall_3_0_1; }
 	}
 
-	public class ActionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Action");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cInvokeActivityParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cInvokeWebUrlParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Action:
-		//	InvokeActivity | InvokeWebUrl;
-		public ParserRule getRule() { return rule; }
-
-		//InvokeActivity | InvokeWebUrl
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//InvokeActivity
-		public RuleCall getInvokeActivityParserRuleCall_0() { return cInvokeActivityParserRuleCall_0; }
-
-		//InvokeWebUrl
-		public RuleCall getInvokeWebUrlParserRuleCall_1() { return cInvokeWebUrlParserRuleCall_1; }
-	}
-
-	public class InvokeActivityElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InvokeActivity");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cShowKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cActivityAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cActivityActivityCrossReference_1_0 = (CrossReference)cActivityAssignment_1.eContents().get(0);
-		private final RuleCall cActivityActivityQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cActivityActivityCrossReference_1_0.eContents().get(1);
-		
-		//InvokeActivity:
-		//	"show" activity=[Activity|QualifiedName];
-		public ParserRule getRule() { return rule; }
-
-		//"show" activity=[Activity|QualifiedName]
-		public Group getGroup() { return cGroup; }
-
-		//"show"
-		public Keyword getShowKeyword_0() { return cShowKeyword_0; }
-
-		//activity=[Activity|QualifiedName]
-		public Assignment getActivityAssignment_1() { return cActivityAssignment_1; }
-
-		//[Activity|QualifiedName]
-		public CrossReference getActivityActivityCrossReference_1_0() { return cActivityActivityCrossReference_1_0; }
-
-		//QualifiedName
-		public RuleCall getActivityActivityQualifiedNameParserRuleCall_1_0_1() { return cActivityActivityQualifiedNameParserRuleCall_1_0_1; }
-	}
-
-	public class InvokeWebUrlElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InvokeWebUrl");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGotoKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cUrlAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cUrlSTRINGTerminalRuleCall_1_0 = (RuleCall)cUrlAssignment_1.eContents().get(0);
-		
-		//InvokeWebUrl:
-		//	"goto" url=STRING;
-		public ParserRule getRule() { return rule; }
-
-		//"goto" url=STRING
-		public Group getGroup() { return cGroup; }
-
-		//"goto"
-		public Keyword getGotoKeyword_0() { return cGotoKeyword_0; }
-
-		//url=STRING
-		public Assignment getUrlAssignment_1() { return cUrlAssignment_1; }
-
-		//STRING
-		public RuleCall getUrlSTRINGTerminalRuleCall_1_0() { return cUrlSTRINGTerminalRuleCall_1_0; }
-	}
-
 	public class AndroDataModelRootElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AndroDataModelRoot");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -777,6 +705,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEntitiesEntityParserRuleCall_3_0 = (RuleCall)cEntitiesAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
+		////Action:
+		////	InvokeActivity | InvokeWebUrl
+		////;
+		////
+		////InvokeActivity:
+		////	'show' activity=[Activity | QualifiedName]
+		////;
+		////
+		////InvokeWebUrl:
+		////	'goto' url=STRING
+		////;
 		/// * End of AndroAppModelRoot and application model elements * / / * AndroDataModelRoot and model elements * /
 		//AndroDataModelRoot:
 		//	"datamodel" name=ID "{" entities+=Entity* "}";
@@ -1076,8 +1015,8 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMarginBottomDimensionPropertyValueParserRuleCall_4_1_0 = (RuleCall)cMarginBottomAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cUnorderedGroup.eContents().get(5);
 		private final Keyword cAlignParentLeftKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cAlignParentleftAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0 = (RuleCall)cAlignParentleftAssignment_5_1.eContents().get(0);
+		private final Assignment cAlignParentLeftAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cAlignParentLeftBooleanPropertyValueParserRuleCall_5_1_0 = (RuleCall)cAlignParentLeftAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cUnorderedGroup.eContents().get(6);
 		private final Keyword cAlignParentTopKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cAlignParentTopAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
@@ -1143,7 +1082,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//LayoutParams:
 		//	("weight" weight=IntegerPropertyValue)? & ("marginLeft" marginLeft=DimensionPropertyValue)? & ("marginTop"
 		//	marginTop=DimensionPropertyValue)? & ("marginRight" marginRight=DimensionPropertyValue)? & ("marginBottom"
-		//	marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentleft=BooleanPropertyValue)? & ("alignParentTop"
+		//	marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentLeft=BooleanPropertyValue)? & ("alignParentTop"
 		//	alignParentTop=BooleanPropertyValue)? & ("alignParentRight" alignParentRight=BooleanPropertyValue)? &
 		//	("alignParentBottom" alignParentBottom=BooleanPropertyValue)? & ("alignTop" alignTop=[View])? & ("alignBottom"
 		//	alignBottom=[View])? & ("alignLeft" alignLeft=[View])? & ("below" below=[View])? & ("above" above=[View])? &
@@ -1154,7 +1093,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//("weight" weight=IntegerPropertyValue)? & ("marginLeft" marginLeft=DimensionPropertyValue)? & ("marginTop"
 		//marginTop=DimensionPropertyValue)? & ("marginRight" marginRight=DimensionPropertyValue)? & ("marginBottom"
-		//marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentleft=BooleanPropertyValue)? & ("alignParentTop"
+		//marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentLeft=BooleanPropertyValue)? & ("alignParentTop"
 		//alignParentTop=BooleanPropertyValue)? & ("alignParentRight" alignParentRight=BooleanPropertyValue)? &
 		//("alignParentBottom" alignParentBottom=BooleanPropertyValue)? & ("alignTop" alignTop=[View])? & ("alignBottom"
 		//alignBottom=[View])? & ("alignLeft" alignLeft=[View])? & ("below" below=[View])? & ("above" above=[View])? &
@@ -1223,17 +1162,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//DimensionPropertyValue
 		public RuleCall getMarginBottomDimensionPropertyValueParserRuleCall_4_1_0() { return cMarginBottomDimensionPropertyValueParserRuleCall_4_1_0; }
 
-		//("alignParentLeft" alignParentleft=BooleanPropertyValue)?
+		//("alignParentLeft" alignParentLeft=BooleanPropertyValue)?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"alignParentLeft"
 		public Keyword getAlignParentLeftKeyword_5_0() { return cAlignParentLeftKeyword_5_0; }
 
-		//alignParentleft=BooleanPropertyValue
-		public Assignment getAlignParentleftAssignment_5_1() { return cAlignParentleftAssignment_5_1; }
+		//alignParentLeft=BooleanPropertyValue
+		public Assignment getAlignParentLeftAssignment_5_1() { return cAlignParentLeftAssignment_5_1; }
 
 		//BooleanPropertyValue
-		public RuleCall getAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0() { return cAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0; }
+		public RuleCall getAlignParentLeftBooleanPropertyValueParserRuleCall_5_1_0() { return cAlignParentLeftBooleanPropertyValueParserRuleCall_5_1_0; }
 
 		//("alignParentTop" alignParentTop=BooleanPropertyValue)?
 		public Group getGroup_6() { return cGroup_6; }
@@ -4735,9 +4674,6 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private TabElements pTab;
 	private ListActivityElements pListActivity;
 	private PreferenceActivityElements pPreferenceActivity;
-	private ActionElements pAction;
-	private InvokeActivityElements pInvokeActivity;
-	private InvokeWebUrlElements pInvokeWebUrl;
 	private AndroDataModelRootElements pAndroDataModelRoot;
 	private EntityElements pEntity;
 	private PropertyElements pProperty;
@@ -5043,36 +4979,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getPreferenceActivityAccess().getRule();
 	}
 
-	//Action:
-	//	InvokeActivity | InvokeWebUrl;
-	public ActionElements getActionAccess() {
-		return (pAction != null) ? pAction : (pAction = new ActionElements());
-	}
-	
-	public ParserRule getActionRule() {
-		return getActionAccess().getRule();
-	}
-
-	//InvokeActivity:
-	//	"show" activity=[Activity|QualifiedName];
-	public InvokeActivityElements getInvokeActivityAccess() {
-		return (pInvokeActivity != null) ? pInvokeActivity : (pInvokeActivity = new InvokeActivityElements());
-	}
-	
-	public ParserRule getInvokeActivityRule() {
-		return getInvokeActivityAccess().getRule();
-	}
-
-	//InvokeWebUrl:
-	//	"goto" url=STRING;
-	public InvokeWebUrlElements getInvokeWebUrlAccess() {
-		return (pInvokeWebUrl != null) ? pInvokeWebUrl : (pInvokeWebUrl = new InvokeWebUrlElements());
-	}
-	
-	public ParserRule getInvokeWebUrlRule() {
-		return getInvokeWebUrlAccess().getRule();
-	}
-
+	////Action:
+	////	InvokeActivity | InvokeWebUrl
+	////;
+	////
+	////InvokeActivity:
+	////	'show' activity=[Activity | QualifiedName]
+	////;
+	////
+	////InvokeWebUrl:
+	////	'goto' url=STRING
+	////;
 	/// * End of AndroAppModelRoot and application model elements * / / * AndroDataModelRoot and model elements * /
 	//AndroDataModelRoot:
 	//	"datamodel" name=ID "{" entities+=Entity* "}";
@@ -5177,7 +5094,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	//LayoutParams:
 	//	("weight" weight=IntegerPropertyValue)? & ("marginLeft" marginLeft=DimensionPropertyValue)? & ("marginTop"
 	//	marginTop=DimensionPropertyValue)? & ("marginRight" marginRight=DimensionPropertyValue)? & ("marginBottom"
-	//	marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentleft=BooleanPropertyValue)? & ("alignParentTop"
+	//	marginBottom=DimensionPropertyValue)? & ("alignParentLeft" alignParentLeft=BooleanPropertyValue)? & ("alignParentTop"
 	//	alignParentTop=BooleanPropertyValue)? & ("alignParentRight" alignParentRight=BooleanPropertyValue)? &
 	//	("alignParentBottom" alignParentBottom=BooleanPropertyValue)? & ("alignTop" alignTop=[View])? & ("alignBottom"
 	//	alignBottom=[View])? & ("alignLeft" alignLeft=[View])? & ("below" below=[View])? & ("above" above=[View])? &

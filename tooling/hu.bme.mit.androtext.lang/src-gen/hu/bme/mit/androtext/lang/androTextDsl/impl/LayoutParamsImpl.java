@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getMarginTop <em>Margin Top</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getMarginRight <em>Margin Right</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getMarginBottom <em>Margin Bottom</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentleft <em>Align Parentleft</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentLeft <em>Align Parent Left</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentTop <em>Align Parent Top</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentRight <em>Align Parent Right</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getAlignParentBottom <em>Align Parent Bottom</em>}</li>
@@ -108,14 +108,14 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
   protected DimensionPropertyValue marginBottom;
 
   /**
-   * The cached value of the '{@link #getAlignParentleft() <em>Align Parentleft</em>}' containment reference.
+   * The cached value of the '{@link #getAlignParentLeft() <em>Align Parent Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAlignParentleft()
+   * @see #getAlignParentLeft()
    * @generated
    * @ordered
    */
-  protected BooleanPropertyValue alignParentleft;
+  protected BooleanPropertyValue alignParentLeft;
 
   /**
    * The cached value of the '{@link #getAlignParentTop() <em>Align Parent Top</em>}' containment reference.
@@ -523,9 +523,9 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanPropertyValue getAlignParentleft()
+  public BooleanPropertyValue getAlignParentLeft()
   {
-    return alignParentleft;
+    return alignParentLeft;
   }
 
   /**
@@ -533,13 +533,13 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAlignParentleft(BooleanPropertyValue newAlignParentleft, NotificationChain msgs)
+  public NotificationChain basicSetAlignParentLeft(BooleanPropertyValue newAlignParentLeft, NotificationChain msgs)
   {
-    BooleanPropertyValue oldAlignParentleft = alignParentleft;
-    alignParentleft = newAlignParentleft;
+    BooleanPropertyValue oldAlignParentLeft = alignParentLeft;
+    alignParentLeft = newAlignParentLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, oldAlignParentleft, newAlignParentleft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT, oldAlignParentLeft, newAlignParentLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -550,20 +550,20 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAlignParentleft(BooleanPropertyValue newAlignParentleft)
+  public void setAlignParentLeft(BooleanPropertyValue newAlignParentLeft)
   {
-    if (newAlignParentleft != alignParentleft)
+    if (newAlignParentLeft != alignParentLeft)
     {
       NotificationChain msgs = null;
-      if (alignParentleft != null)
-        msgs = ((InternalEObject)alignParentleft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, null, msgs);
-      if (newAlignParentleft != null)
-        msgs = ((InternalEObject)newAlignParentleft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, null, msgs);
-      msgs = basicSetAlignParentleft(newAlignParentleft, msgs);
+      if (alignParentLeft != null)
+        msgs = ((InternalEObject)alignParentLeft).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT, null, msgs);
+      if (newAlignParentLeft != null)
+        msgs = ((InternalEObject)newAlignParentLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT, null, msgs);
+      msgs = basicSetAlignParentLeft(newAlignParentLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT, newAlignParentleft, newAlignParentleft));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT, newAlignParentLeft, newAlignParentLeft));
   }
 
   /**
@@ -1223,8 +1223,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return basicSetMarginRight(null, msgs);
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         return basicSetMarginBottom(null, msgs);
-      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
-        return basicSetAlignParentleft(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT:
+        return basicSetAlignParentLeft(null, msgs);
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
         return basicSetAlignParentTop(null, msgs);
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:
@@ -1263,8 +1263,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return getMarginRight();
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         return getMarginBottom();
-      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
-        return getAlignParentleft();
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT:
+        return getAlignParentLeft();
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
         return getAlignParentTop();
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:
@@ -1329,8 +1329,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         setMarginBottom((DimensionPropertyValue)newValue);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
-        setAlignParentleft((BooleanPropertyValue)newValue);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT:
+        setAlignParentLeft((BooleanPropertyValue)newValue);
         return;
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
         setAlignParentTop((BooleanPropertyValue)newValue);
@@ -1403,8 +1403,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         setMarginBottom((DimensionPropertyValue)null);
         return;
-      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
-        setAlignParentleft((BooleanPropertyValue)null);
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT:
+        setAlignParentLeft((BooleanPropertyValue)null);
         return;
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
         setAlignParentTop((BooleanPropertyValue)null);
@@ -1472,8 +1472,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return marginRight != null;
       case AndroTextDslPackage.LAYOUT_PARAMS__MARGIN_BOTTOM:
         return marginBottom != null;
-      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENTLEFT:
-        return alignParentleft != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_LEFT:
+        return alignParentLeft != null;
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_TOP:
         return alignParentTop != null;
       case AndroTextDslPackage.LAYOUT_PARAMS__ALIGN_PARENT_RIGHT:

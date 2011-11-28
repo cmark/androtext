@@ -533,64 +533,6 @@ finally {
 
 
 
-
-
-// Entry rule entryRuleInvokeActivity
-entryRuleInvokeActivity 
-:
-{ before(grammarAccess.getInvokeActivityRule()); }
-	 ruleInvokeActivity
-{ after(grammarAccess.getInvokeActivityRule()); } 
-	 EOF 
-;
-
-// Rule InvokeActivity
-ruleInvokeActivity
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getInvokeActivityAccess().getGroup()); }
-(rule__InvokeActivity__Group__0)
-{ after(grammarAccess.getInvokeActivityAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Entry rule entryRuleInvokeWebUrl
-entryRuleInvokeWebUrl 
-:
-{ before(grammarAccess.getInvokeWebUrlRule()); }
-	 ruleInvokeWebUrl
-{ after(grammarAccess.getInvokeWebUrlRule()); } 
-	 EOF 
-;
-
-// Rule InvokeWebUrl
-ruleInvokeWebUrl
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getInvokeWebUrlAccess().getGroup()); }
-(rule__InvokeWebUrl__Group__0)
-{ after(grammarAccess.getInvokeWebUrlAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Entry rule entryRuleAndroDataModelRoot
 entryRuleAndroDataModelRoot 
 :
@@ -3113,7 +3055,6 @@ rule__Activity__Alternatives
 finally {
 	restoreStackSize(stackSize);
 }
-
 
 rule__TypeRef__Alternatives
     @init {
@@ -6383,132 +6324,6 @@ finally {
 
 
 
-rule__InvokeActivity__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__InvokeActivity__Group__0__Impl
-	rule__InvokeActivity__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__InvokeActivity__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getInvokeActivityAccess().getShowKeyword_0()); }
-
-	'show' 
-
-{ after(grammarAccess.getInvokeActivityAccess().getShowKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__InvokeActivity__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__InvokeActivity__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__InvokeActivity__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getInvokeActivityAccess().getActivityAssignment_1()); }
-(rule__InvokeActivity__ActivityAssignment_1)
-{ after(grammarAccess.getInvokeActivityAccess().getActivityAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-rule__InvokeWebUrl__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__InvokeWebUrl__Group__0__Impl
-	rule__InvokeWebUrl__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__InvokeWebUrl__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getInvokeWebUrlAccess().getGotoKeyword_0()); }
-
-	'goto' 
-
-{ after(grammarAccess.getInvokeWebUrlAccess().getGotoKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__InvokeWebUrl__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__InvokeWebUrl__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__InvokeWebUrl__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getInvokeWebUrlAccess().getUrlAssignment_1()); }
-(rule__InvokeWebUrl__UrlAssignment_1)
-{ after(grammarAccess.getInvokeWebUrlAccess().getUrlAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
 rule__AndroDataModelRoot__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -7540,9 +7355,9 @@ rule__LayoutParams__Group_5__1__Impl
     }
 :
 (
-{ before(grammarAccess.getLayoutParamsAccess().getAlignParentleftAssignment_5_1()); }
-(rule__LayoutParams__AlignParentleftAssignment_5_1)
-{ after(grammarAccess.getLayoutParamsAccess().getAlignParentleftAssignment_5_1()); }
+{ before(grammarAccess.getLayoutParamsAccess().getAlignParentLeftAssignment_5_1()); }
+(rule__LayoutParams__AlignParentLeftAssignment_5_1)
+{ after(grammarAccess.getLayoutParamsAccess().getAlignParentLeftAssignment_5_1()); }
 )
 
 ;
@@ -18271,40 +18086,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__InvokeActivity__ActivityAssignment_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getInvokeActivityAccess().getActivityActivityCrossReference_1_0()); }
-(
-{ before(grammarAccess.getInvokeActivityAccess().getActivityActivityQualifiedNameParserRuleCall_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getInvokeActivityAccess().getActivityActivityQualifiedNameParserRuleCall_1_0_1()); }
-)
-{ after(grammarAccess.getInvokeActivityAccess().getActivityActivityCrossReference_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__InvokeWebUrl__UrlAssignment_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getInvokeWebUrlAccess().getUrlSTRINGTerminalRuleCall_1_0()); }
-	RULE_STRING{ after(grammarAccess.getInvokeWebUrlAccess().getUrlSTRINGTerminalRuleCall_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__AndroDataModelRoot__NameAssignment_1
     @init {
 		int stackSize = keepStackSize();
@@ -18553,14 +18334,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__LayoutParams__AlignParentleftAssignment_5_1
+rule__LayoutParams__AlignParentLeftAssignment_5_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getLayoutParamsAccess().getAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0()); }
-	ruleBooleanPropertyValue{ after(grammarAccess.getLayoutParamsAccess().getAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0()); }
+{ before(grammarAccess.getLayoutParamsAccess().getAlignParentLeftBooleanPropertyValueParserRuleCall_5_1_0()); }
+	ruleBooleanPropertyValue{ after(grammarAccess.getLayoutParamsAccess().getAlignParentLeftBooleanPropertyValueParserRuleCall_5_1_0()); }
 )
 
 ;

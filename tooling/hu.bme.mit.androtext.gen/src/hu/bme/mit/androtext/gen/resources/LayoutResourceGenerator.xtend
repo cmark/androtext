@@ -6,11 +6,16 @@ import hu.bme.mit.androtext.gen.IGeneratorSlots
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot
 import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink
+import hu.bme.mit.androtext.lang.androTextDsl.Button
 import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink
 import hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink
+import hu.bme.mit.androtext.lang.androTextDsl.EditText
+import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
@@ -18,6 +23,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams
+import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import hu.bme.mit.androtext.lang.androTextDsl.TextView
@@ -27,8 +33,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
 
 class LayoutResourceGenerator implements IGenerator {
 
@@ -87,7 +91,7 @@ class LayoutResourceGenerator implements IGenerator {
 		«linearLayout.layoutParams.linearLayoutParams»
 		«ENDIF»
 	'''
-	
+		
 	def linearLayoutParams(LinearLayoutParams params) '''
 		«IF params.gravity != null»
 		android:gravity="«params.gravity.layoutGravity»"
@@ -119,6 +123,31 @@ class LayoutResourceGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
+	def dispatch specificAttributes(EditText view) '''
+		«IF view.gravityAttribute != null»
+		android:gravity="«view.gravityAttribute.gravity.name.toLowerCase»"
+		«ENDIF»
+		«IF view.textSizeAttribute != null»
+		«val testSizeValue = view.textSizeAttribute.textSize.dimensionValue»
+		android:textSize="«testSizeValue.toString.trim»"
+		«ENDIF»
+		«IF view.text!=null»
+		android:text="«view.text»"
+		«ENDIF»
+		«IF view.layoutParams != null»
+		«view.layoutParams.generate»
+		«ENDIF»
+	'''
+	
+	def dispatch specificAttributes(Button view) '''
+		«IF view.layoutParams != null»
+		«view.layoutParams.generate»
+		«ENDIF»
+		«IF view.text!=null»
+		android:text="«view.text»"
+		«ENDIF»
+	'''
+	
 	def generate(LayoutParams params) '''
 		«IF params.backgroundAttribute != null»
 			«val backgroundValue = params.backgroundAttribute.background.backgroundValue»
@@ -128,6 +157,79 @@ class LayoutResourceGenerator implements IGenerator {
 			«val weightValue = params.weight.integerValue»
 			android:layout_weight="«weightValue.toString.trim»"
 		«ENDIF»
+		«IF params.above != null»
+			android:layout_above="@id/«params.above.name»"
+		«ENDIF»
+		«IF params.below != null»
+			android:layout_below="@id/«params.below.name»"
+		«ENDIF»
+		«IF params.alignBottom != null»
+			android:layout_alignBottom="@id/«params.alignBottom.name»"
+		«ENDIF»
+		«IF params.alignLeft != null»
+			android:layout_alignLeft="@id/«params.alignLeft.name»"
+		«ENDIF»
+		«IF params.alignTop != null»
+			android:layout_alignTop="@id/«params.alignTop.name»"
+		«ENDIF»
+		«IF params.alignParentLeft != null»
+			«val aplValue = params.alignParentLeft.booleanValue»
+			android:layout_alignParentLeft="«aplValue.toString.trim»"
+		«ENDIF»
+		«IF params.alignParentTop != null»
+			«val aptValue = params.alignParentTop.booleanValue»
+			android:layout_alignParentTop="«aptValue.toString.trim»"
+		«ENDIF»
+		«IF params.alignParentRight != null»
+			«val aprValue = params.alignParentRight.booleanValue»
+			android:layout_alignParentRight="«aprValue.toString.trim»"
+		«ENDIF»
+		«IF params.alignParentBottom != null»
+			«val apbValue = params.alignParentBottom.booleanValue»
+			android:layout_alignParentBottom="«apbValue.toString.trim»"
+		«ENDIF»
+		«IF params.toLeftOf != null»
+			android:layout_toLeftOf="@id/«params.toLeftOf.name»"
+		«ENDIF»
+		«IF params.toRightOf != null»
+			android:layout_toRightOf="@id/«params.toRightOf.name»"
+		«ENDIF»
+		«IF params.centerHorizontal != null»
+			«val chValue = params.centerHorizontal.booleanValue»
+			android:layout_toLeftOf="@id/«chValue.toString.trim»"
+		«ENDIF»
+		«IF params.centerInParent != null»
+			«val cipValue = params.centerInParent.booleanValue»
+			android:layout_toLeftOf="@id/«cipValue.toString.trim»"
+		«ENDIF»
+		«IF params.centerVertical != null»
+			«val cvValue = params.centerVertical.booleanValue»
+			android:layout_toLeftOf="@id/«cvValue.toString.trim»"
+		«ENDIF»
+		«IF params.marginLeft != null»
+			«val marginValue = params.marginLeft.dimensionValue»
+			android:layout_marginLeft="«marginValue»"
+		«ENDIF»
+		«IF params.marginTop != null»
+			«val marginValue = params.marginTop.dimensionValue»
+			android:layout_marginLeft="«marginValue»"
+		«ENDIF»
+		«IF params.marginRight != null»
+			«val marginValue = params.marginRight.dimensionValue»
+			android:layout_marginLeft="«marginValue»"
+		«ENDIF»
+		«IF params.marginBottom != null»
+			«val marginValue = params.marginBottom.dimensionValue»
+			android:layout_marginLeft="«marginValue»"
+		«ENDIF»
+	'''
+	
+	def dispatch booleanValue(BooleanPropertyValue value) '''
+		«value.value»
+	'''
+	
+	def dispatch booleanValue(BooleanResourceLink value) '''
+		@bool/«value.link.name»
 	'''
 	
 	def dispatch integerValue(IntegerPropertyValue value) '''

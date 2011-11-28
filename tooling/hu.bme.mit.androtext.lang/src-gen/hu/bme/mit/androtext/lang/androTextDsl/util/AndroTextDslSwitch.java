@@ -177,29 +177,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.ACTION:
-      {
-        Action action = (Action)theEObject;
-        T result = caseAction(action);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.INVOKE_ACTIVITY:
-      {
-        InvokeActivity invokeActivity = (InvokeActivity)theEObject;
-        T result = caseInvokeActivity(invokeActivity);
-        if (result == null) result = caseAction(invokeActivity);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.INVOKE_WEB_URL:
-      {
-        InvokeWebUrl invokeWebUrl = (InvokeWebUrl)theEObject;
-        T result = caseInvokeWebUrl(invokeWebUrl);
-        if (result == null) result = caseAction(invokeWebUrl);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AndroTextDslPackage.ANDRO_DATA_MODEL_ROOT:
       {
         AndroDataModelRoot androDataModelRoot = (AndroDataModelRoot)theEObject;
@@ -1074,54 +1051,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePreferenceActivity(PreferenceActivity object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAction(Action object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Invoke Activity</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Invoke Activity</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInvokeActivity(InvokeActivity object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Invoke Web Url</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Invoke Web Url</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInvokeWebUrl(InvokeWebUrl object)
   {
     return null;
   }

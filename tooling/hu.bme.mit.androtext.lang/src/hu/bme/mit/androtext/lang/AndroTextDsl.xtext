@@ -96,17 +96,17 @@ PreferenceActivity:
 	'preferences' name=ID 'layout' layout=[PreferenceScreen | QualifiedName]
 ;
 
-Action:
-	InvokeActivity | InvokeWebUrl
-;
-
-InvokeActivity:
-	'show' activity=[Activity | QualifiedName]
-;
-
-InvokeWebUrl:
-	'goto' url=STRING
-;
+//Action:
+//	InvokeActivity | InvokeWebUrl
+//;
+//
+//InvokeActivity:
+//	'show' activity=[Activity | QualifiedName]
+//;
+//
+//InvokeWebUrl:
+//	'goto' url=STRING
+//;
 
 /* End of AndroAppModelRoot and application model elements */
 
@@ -163,7 +163,7 @@ LayoutParams:
 	& ('marginTop' marginTop=DimensionPropertyValue)?
 	& ('marginRight' marginRight=DimensionPropertyValue)?
 	& ('marginBottom' marginBottom=DimensionPropertyValue)?
-	& ('alignParentLeft' alignParentleft=BooleanPropertyValue)?
+	& ('alignParentLeft' alignParentLeft=BooleanPropertyValue)?
 	& ('alignParentTop' alignParentTop=BooleanPropertyValue)?
 	& ('alignParentRight' alignParentRight=BooleanPropertyValue)?
 	& ('alignParentBottom' alignParentBottom=BooleanPropertyValue)?

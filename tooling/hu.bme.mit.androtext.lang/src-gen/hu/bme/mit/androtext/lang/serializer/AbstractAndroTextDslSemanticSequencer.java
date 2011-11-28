@@ -47,8 +47,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
@@ -445,20 +443,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getIntegerResourceLinkRule() ||
 				   context == grammarAccess.getPropertyValueRule()) {
 					sequence_IntegerResourceLink(context, (IntegerResourceLink) semanticObject); 
-					return; 
-				}
-				else break;
-			case AndroTextDslPackage.INVOKE_ACTIVITY:
-				if(context == grammarAccess.getActionRule() ||
-				   context == grammarAccess.getInvokeActivityRule()) {
-					sequence_InvokeActivity(context, (InvokeActivity) semanticObject); 
-					return; 
-				}
-				else break;
-			case AndroTextDslPackage.INVOKE_WEB_URL:
-				if(context == grammarAccess.getActionRule() ||
-				   context == grammarAccess.getInvokeWebUrlRule()) {
-					sequence_InvokeWebUrl(context, (InvokeWebUrl) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1372,38 +1356,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     activity=[Activity|QualifiedName]
-	 */
-	protected void sequence_InvokeActivity(EObject context, InvokeActivity semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.INVOKE_ACTIVITY__ACTIVITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.INVOKE_ACTIVITY__ACTIVITY));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInvokeActivityAccess().getActivityActivityQualifiedNameParserRuleCall_1_0_1(), semanticObject.getActivity());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     url=STRING
-	 */
-	protected void sequence_InvokeWebUrl(EObject context, InvokeWebUrl semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.INVOKE_WEB_URL__URL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.INVOKE_WEB_URL__URL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInvokeWebUrlAccess().getUrlSTRINGTerminalRuleCall_1_0(), semanticObject.getUrl());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (gravity+=LayoutGravityKind gravity+=LayoutGravityKind*)
 	 */
 	protected void sequence_LayoutGravityAttribute(EObject context, LayoutGravityAttribute semanticObject) {
@@ -1419,7 +1371,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 *         marginTop=DimensionPropertyValue? 
 	 *         marginRight=DimensionPropertyValue? 
 	 *         marginBottom=DimensionPropertyValue? 
-	 *         alignParentleft=BooleanPropertyValue? 
+	 *         alignParentLeft=BooleanPropertyValue? 
 	 *         alignParentTop=BooleanPropertyValue? 
 	 *         alignParentRight=BooleanPropertyValue? 
 	 *         alignParentBottom=BooleanPropertyValue? 

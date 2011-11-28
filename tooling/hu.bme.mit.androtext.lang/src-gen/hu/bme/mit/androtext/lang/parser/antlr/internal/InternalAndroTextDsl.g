@@ -1224,94 +1224,6 @@ rulePreferenceActivity returns [EObject current=null]
 
 
 
-
-
-// Entry rule entryRuleInvokeActivity
-entryRuleInvokeActivity returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getInvokeActivityRule()); }
-	 iv_ruleInvokeActivity=ruleInvokeActivity 
-	 { $current=$iv_ruleInvokeActivity.current; } 
-	 EOF 
-;
-
-// Rule InvokeActivity
-ruleInvokeActivity returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='show' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getInvokeActivityAccess().getShowKeyword_0());
-    }
-(
-(
-		{ 
-		  /* */ 
-		}
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInvokeActivityRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getInvokeActivityAccess().getActivityActivityCrossReference_1_0()); 
-	    }
-		ruleQualifiedName		{ 
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleInvokeWebUrl
-entryRuleInvokeWebUrl returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getInvokeWebUrlRule()); }
-	 iv_ruleInvokeWebUrl=ruleInvokeWebUrl 
-	 { $current=$iv_ruleInvokeWebUrl.current; } 
-	 EOF 
-;
-
-// Rule InvokeWebUrl
-ruleInvokeWebUrl returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='goto' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getInvokeWebUrlAccess().getGotoKeyword_0());
-    }
-(
-(
-		lv_url_1_0=RULE_STRING
-		{
-			newLeafNode(lv_url_1_0, grammarAccess.getInvokeWebUrlAccess().getUrlSTRINGTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInvokeWebUrlRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"url",
-        		lv_url_1_0, 
-        		"STRING");
-	    }
-
-)
-))
-;
-
-
-
-
-
 // Entry rule entryRuleAndroDataModelRoot
 entryRuleAndroDataModelRoot returns [EObject current=null] 
 	:
@@ -2084,16 +1996,16 @@ ruleLayoutParams returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLayoutParamsAccess().getAlignParentleftBooleanPropertyValueParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getLayoutParamsAccess().getAlignParentLeftBooleanPropertyValueParserRuleCall_5_1_0()); 
 	    }
-		lv_alignParentleft_12_0=ruleBooleanPropertyValue		{
+		lv_alignParentLeft_12_0=ruleBooleanPropertyValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLayoutParamsRule());
 	        }
        		set(
        			$current, 
-       			"alignParentleft",
-        		lv_alignParentleft_12_0, 
+       			"alignParentLeft",
+        		lv_alignParentLeft_12_0, 
         		"BooleanPropertyValue");
 	        afterParserOrEnumRuleCall();
 	    }

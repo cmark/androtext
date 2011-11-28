@@ -40,7 +40,6 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelRootAccess().getAlternatives(), "rule__ModelRoot__Alternatives");
 					put(grammarAccess.getAndroidApplicationModelElementAccess().getAlternatives(), "rule__AndroidApplicationModelElement__Alternatives");
 					put(grammarAccess.getActivityAccess().getAlternatives(), "rule__Activity__Alternatives");
-					put(grammarAccess.getActionAccess().getAlternatives(), "rule__Action__Alternatives");
 					put(grammarAccess.getTypeRefAccess().getAlternatives(), "rule__TypeRef__Alternatives");
 					put(grammarAccess.getViewAccess().getAlternatives(), "rule__View__Alternatives");
 					put(grammarAccess.getViewGroupAccess().getAlternatives(), "rule__ViewGroup__Alternatives");
@@ -87,8 +86,6 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTabAccess().getGroup(), "rule__Tab__Group__0");
 					put(grammarAccess.getListActivityAccess().getGroup(), "rule__ListActivity__Group__0");
 					put(grammarAccess.getPreferenceActivityAccess().getGroup(), "rule__PreferenceActivity__Group__0");
-					put(grammarAccess.getInvokeActivityAccess().getGroup(), "rule__InvokeActivity__Group__0");
-					put(grammarAccess.getInvokeWebUrlAccess().getGroup(), "rule__InvokeWebUrl__Group__0");
 					put(grammarAccess.getAndroDataModelRootAccess().getGroup(), "rule__AndroDataModelRoot__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup_2(), "rule__Entity__Group_2__0");
@@ -210,8 +207,6 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getListActivityAccess().getListitemAssignment_3(), "rule__ListActivity__ListitemAssignment_3");
 					put(grammarAccess.getPreferenceActivityAccess().getNameAssignment_1(), "rule__PreferenceActivity__NameAssignment_1");
 					put(grammarAccess.getPreferenceActivityAccess().getLayoutAssignment_3(), "rule__PreferenceActivity__LayoutAssignment_3");
-					put(grammarAccess.getInvokeActivityAccess().getActivityAssignment_1(), "rule__InvokeActivity__ActivityAssignment_1");
-					put(grammarAccess.getInvokeWebUrlAccess().getUrlAssignment_1(), "rule__InvokeWebUrl__UrlAssignment_1");
 					put(grammarAccess.getAndroDataModelRootAccess().getNameAssignment_1(), "rule__AndroDataModelRoot__NameAssignment_1");
 					put(grammarAccess.getAndroDataModelRootAccess().getEntitiesAssignment_3(), "rule__AndroDataModelRoot__EntitiesAssignment_3");
 					put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
@@ -228,7 +223,7 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLayoutParamsAccess().getMarginTopAssignment_2_1(), "rule__LayoutParams__MarginTopAssignment_2_1");
 					put(grammarAccess.getLayoutParamsAccess().getMarginRightAssignment_3_1(), "rule__LayoutParams__MarginRightAssignment_3_1");
 					put(grammarAccess.getLayoutParamsAccess().getMarginBottomAssignment_4_1(), "rule__LayoutParams__MarginBottomAssignment_4_1");
-					put(grammarAccess.getLayoutParamsAccess().getAlignParentleftAssignment_5_1(), "rule__LayoutParams__AlignParentleftAssignment_5_1");
+					put(grammarAccess.getLayoutParamsAccess().getAlignParentLeftAssignment_5_1(), "rule__LayoutParams__AlignParentLeftAssignment_5_1");
 					put(grammarAccess.getLayoutParamsAccess().getAlignParentTopAssignment_6_1(), "rule__LayoutParams__AlignParentTopAssignment_6_1");
 					put(grammarAccess.getLayoutParamsAccess().getAlignParentRightAssignment_7_1(), "rule__LayoutParams__AlignParentRightAssignment_7_1");
 					put(grammarAccess.getLayoutParamsAccess().getAlignParentBottomAssignment_8_1(), "rule__LayoutParams__AlignParentBottomAssignment_8_1");

@@ -82,9 +82,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.TAB: return createTab();
       case AndroTextDslPackage.LIST_ACTIVITY: return createListActivity();
       case AndroTextDslPackage.PREFERENCE_ACTIVITY: return createPreferenceActivity();
-      case AndroTextDslPackage.ACTION: return createAction();
-      case AndroTextDslPackage.INVOKE_ACTIVITY: return createInvokeActivity();
-      case AndroTextDslPackage.INVOKE_WEB_URL: return createInvokeWebUrl();
       case AndroTextDslPackage.ANDRO_DATA_MODEL_ROOT: return createAndroDataModelRoot();
       case AndroTextDslPackage.ENTITY: return createEntity();
       case AndroTextDslPackage.PROPERTY: return createProperty();
@@ -370,39 +367,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     PreferenceActivityImpl preferenceActivity = new PreferenceActivityImpl();
     return preferenceActivity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Action createAction()
-  {
-    ActionImpl action = new ActionImpl();
-    return action;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InvokeActivity createInvokeActivity()
-  {
-    InvokeActivityImpl invokeActivity = new InvokeActivityImpl();
-    return invokeActivity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InvokeWebUrl createInvokeWebUrl()
-  {
-    InvokeWebUrlImpl invokeWebUrl = new InvokeWebUrlImpl();
-    return invokeWebUrl;
   }
 
   /**

@@ -69,13 +69,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="PreferenceActivity" eSuperTypes="#//AndroidApplicationModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//PreferenceScreen"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InvokeActivity" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InvokeWebUrl" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroDataModelRoot" eSuperTypes="#//ModelRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="#//Entity" containment="true"/>
@@ -127,7 +120,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="marginBottom" eType="#//DimensionPropertyValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alignParentleft" eType="#//BooleanPropertyValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alignParentLeft" eType="#//BooleanPropertyValue"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alignParentTop" eType="#//BooleanPropertyValue"
         containment="true"/>

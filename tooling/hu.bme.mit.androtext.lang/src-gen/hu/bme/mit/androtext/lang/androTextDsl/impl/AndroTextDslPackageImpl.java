@@ -8,7 +8,6 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AbsoluteLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
-import hu.bme.mit.androtext.lang.androTextDsl.Action;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
@@ -65,8 +64,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind;
@@ -219,27 +216,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass preferenceActivityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass actionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass invokeActivityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass invokeWebUrlEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1275,56 +1251,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAction()
-  {
-    return actionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getInvokeActivity()
-  {
-    return invokeActivityEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getInvokeActivity_Activity()
-  {
-    return (EReference)invokeActivityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getInvokeWebUrl()
-  {
-    return invokeWebUrlEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getInvokeWebUrl_Url()
-  {
-    return (EAttribute)invokeWebUrlEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getAndroDataModelRoot()
   {
     return androDataModelRootEClass;
@@ -1595,7 +1521,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignParentleft()
+  public EReference getLayoutParams_AlignParentLeft()
   {
     return (EReference)layoutParamsEClass.getEStructuralFeatures().get(5);
   }
@@ -3488,14 +3414,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     preferenceActivityEClass = createEClass(PREFERENCE_ACTIVITY);
     createEReference(preferenceActivityEClass, PREFERENCE_ACTIVITY__LAYOUT);
 
-    actionEClass = createEClass(ACTION);
-
-    invokeActivityEClass = createEClass(INVOKE_ACTIVITY);
-    createEReference(invokeActivityEClass, INVOKE_ACTIVITY__ACTIVITY);
-
-    invokeWebUrlEClass = createEClass(INVOKE_WEB_URL);
-    createEAttribute(invokeWebUrlEClass, INVOKE_WEB_URL__URL);
-
     androDataModelRootEClass = createEClass(ANDRO_DATA_MODEL_ROOT);
     createEReference(androDataModelRootEClass, ANDRO_DATA_MODEL_ROOT__ENTITIES);
 
@@ -3532,7 +3450,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_TOP);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_RIGHT);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_BOTTOM);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENTLEFT);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_LEFT);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_TOP);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_RIGHT);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM);
@@ -3825,8 +3743,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     tabActivityEClass.getESuperTypes().add(this.getActivity());
     listActivityEClass.getESuperTypes().add(this.getActivity());
     preferenceActivityEClass.getESuperTypes().add(this.getAndroidApplicationModelElement());
-    invokeActivityEClass.getESuperTypes().add(this.getAction());
-    invokeWebUrlEClass.getESuperTypes().add(this.getAction());
     androDataModelRootEClass.getESuperTypes().add(this.getModelRoot());
     dataTypesRefEClass.getESuperTypes().add(this.getTypeRef());
     entityTypeRefEClass.getESuperTypes().add(this.getTypeRef());
@@ -3938,14 +3854,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEClass(preferenceActivityEClass, PreferenceActivity.class, "PreferenceActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPreferenceActivity_Layout(), this.getPreferenceScreen(), null, "layout", null, 0, 1, PreferenceActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(invokeActivityEClass, InvokeActivity.class, "InvokeActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInvokeActivity_Activity(), this.getActivity(), null, "activity", null, 0, 1, InvokeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(invokeWebUrlEClass, InvokeWebUrl.class, "InvokeWebUrl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInvokeWebUrl_Url(), ecorePackage.getEString(), "url", null, 0, 1, InvokeWebUrl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(androDataModelRootEClass, AndroDataModelRoot.class, "AndroDataModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAndroDataModelRoot_Entities(), this.getEntity(), null, "entities", null, 0, -1, AndroDataModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3982,7 +3890,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getLayoutParams_MarginTop(), this.getDimensionPropertyValue(), null, "marginTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_MarginRight(), this.getDimensionPropertyValue(), null, "marginRight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_MarginBottom(), this.getDimensionPropertyValue(), null, "marginBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignParentleft(), this.getBooleanPropertyValue(), null, "alignParentleft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_AlignParentLeft(), this.getBooleanPropertyValue(), null, "alignParentLeft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_AlignParentTop(), this.getBooleanPropertyValue(), null, "alignParentTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_AlignParentRight(), this.getBooleanPropertyValue(), null, "alignParentRight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_AlignParentBottom(), this.getBooleanPropertyValue(), null, "alignParentBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

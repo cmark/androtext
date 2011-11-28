@@ -144,21 +144,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createPreferenceActivityAdapter();
       }
       @Override
-      public Adapter caseAction(Action object)
-      {
-        return createActionAdapter();
-      }
-      @Override
-      public Adapter caseInvokeActivity(InvokeActivity object)
-      {
-        return createInvokeActivityAdapter();
-      }
-      @Override
-      public Adapter caseInvokeWebUrl(InvokeWebUrl object)
-      {
-        return createInvokeWebUrlAdapter();
-      }
-      @Override
       public Adapter caseAndroDataModelRoot(AndroDataModelRoot object)
       {
         return createAndroDataModelRootAdapter();
@@ -776,51 +761,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPreferenceActivityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Action <em>Action</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Action
-   * @generated
-   */
-  public Adapter createActionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity <em>Invoke Activity</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity
-   * @generated
-   */
-  public Adapter createInvokeActivityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl <em>Invoke Web Url</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.InvokeWebUrl
-   * @generated
-   */
-  public Adapter createInvokeWebUrlAdapter()
   {
     return null;
   }

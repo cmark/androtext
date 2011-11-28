@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginTop <em>Margin Top</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginRight <em>Margin Right</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getMarginBottom <em>Margin Bottom</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentleft <em>Align Parentleft</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentLeft <em>Align Parent Left</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentTop <em>Align Parent Top</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentRight <em>Align Parent Right</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentBottom <em>Align Parent Bottom</em>}</li>
@@ -176,30 +176,30 @@ public interface LayoutParams extends EObject
   void setMarginBottom(DimensionPropertyValue value);
 
   /**
-   * Returns the value of the '<em><b>Align Parentleft</b></em>' containment reference.
+   * Returns the value of the '<em><b>Align Parent Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Align Parentleft</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Align Parent Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Align Parentleft</em>' containment reference.
-   * @see #setAlignParentleft(BooleanPropertyValue)
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getLayoutParams_AlignParentleft()
+   * @return the value of the '<em>Align Parent Left</em>' containment reference.
+   * @see #setAlignParentLeft(BooleanPropertyValue)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getLayoutParams_AlignParentLeft()
    * @model containment="true"
    * @generated
    */
-  BooleanPropertyValue getAlignParentleft();
+  BooleanPropertyValue getAlignParentLeft();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentleft <em>Align Parentleft</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getAlignParentLeft <em>Align Parent Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Align Parentleft</em>' containment reference.
-   * @see #getAlignParentleft()
+   * @param value the new value of the '<em>Align Parent Left</em>' containment reference.
+   * @see #getAlignParentLeft()
    * @generated
    */
-  void setAlignParentleft(BooleanPropertyValue value);
+  void setAlignParentLeft(BooleanPropertyValue value);
 
   /**
    * Returns the value of the '<em><b>Align Parent Top</b></em>' containment reference.
