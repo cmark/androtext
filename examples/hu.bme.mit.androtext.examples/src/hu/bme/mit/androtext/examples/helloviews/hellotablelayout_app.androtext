@@ -1,0 +1,5 @@
+application HelloTableLayout {
+	
+	activity HelloTableLayoutActivity layout HelloTableLayoutGui.table
+	
+}

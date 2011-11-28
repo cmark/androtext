@@ -93,6 +93,9 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.VIEW_GROUP: return createViewGroup();
       case AndroTextDslPackage.LAYOUT_PARAMS: return createLayoutParams();
       case AndroTextDslPackage.LAYOUT_GRAVITY_ATTRIBUTE: return createLayoutGravityAttribute();
+      case AndroTextDslPackage.LAYOUT_STYLE: return createLayoutStyle();
+      case AndroTextDslPackage.REGULAR_LAYOUT_STYLE: return createRegularLayoutStyle();
+      case AndroTextDslPackage.FAST_LAYOUT_STYLE: return createFastLayoutStyle();
       case AndroTextDslPackage.ABSOLUTE_LAYOUT: return createAbsoluteLayout();
       case AndroTextDslPackage.LINEAR_LAYOUT: return createLinearLayout();
       case AndroTextDslPackage.LINEAR_LAYOUT_PARAMS: return createLinearLayoutParams();
@@ -100,17 +103,16 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.RELATIVE_LAYOUT: return createRelativeLayout();
       case AndroTextDslPackage.GRID_LAYOUT: return createGridLayout();
       case AndroTextDslPackage.TABLE_LAYOUT: return createTableLayout();
+      case AndroTextDslPackage.TABLE_ROW: return createTableRow();
       case AndroTextDslPackage.SIMPLE_VIEW: return createSimpleView();
+      case AndroTextDslPackage.VIEW_ELEMENT: return createViewElement();
+      case AndroTextDslPackage.TEXT_VIEW: return createTextView();
+      case AndroTextDslPackage.EDIT_TEXT: return createEditText();
+      case AndroTextDslPackage.BUTTON: return createButton();
       case AndroTextDslPackage.GALLERY: return createGallery();
       case AndroTextDslPackage.EXPANDABLE_LIST_VIEW: return createExpandableListView();
       case AndroTextDslPackage.WEB_VIEW: return createWebView();
       case AndroTextDslPackage.IMAGE_VIEW: return createImageView();
-      case AndroTextDslPackage.TEXT_VIEW: return createTextView();
-      case AndroTextDslPackage.GRAVITY_ATTRIBUTE: return createGravityAttribute();
-      case AndroTextDslPackage.TEXT_SIZE_ATTRIBUTE: return createTextSizeAttribute();
-      case AndroTextDslPackage.BACKGROUND_ATTRIBUTE: return createBackgroundAttribute();
-      case AndroTextDslPackage.EDIT_TEXT: return createEditText();
-      case AndroTextDslPackage.BUTTON: return createButton();
       case AndroTextDslPackage.LIST_VIEW: return createListView();
       case AndroTextDslPackage.GRID_VIEW: return createGridView();
       case AndroTextDslPackage.SPINNER: return createSpinner();
@@ -121,6 +123,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.RADIO_BUTTON: return createRadioButton();
       case AndroTextDslPackage.CHECKED_TEXT_VIEW: return createCheckedTextView();
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW: return createAutoCompleteTextView();
+      case AndroTextDslPackage.PADDING_ATTRIBUTE: return createPaddingAttribute();
+      case AndroTextDslPackage.GRAVITY_ATTRIBUTE: return createGravityAttribute();
+      case AndroTextDslPackage.TEXT_SIZE_ATTRIBUTE: return createTextSizeAttribute();
+      case AndroTextDslPackage.BACKGROUND_ATTRIBUTE: return createBackgroundAttribute();
       case AndroTextDslPackage.ABSTRACT_PREFERENCE: return createAbstractPreference();
       case AndroTextDslPackage.PREFERENCE: return createPreference();
       case AndroTextDslPackage.PREFERENCE_SCREEN: return createPreferenceScreen();
@@ -132,12 +138,14 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES: return createPreferenceAttributes();
       case AndroTextDslPackage.DIALOG_PREFERENCE_ATTRIBUTES: return createDialogPreferenceAttributes();
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES: return createListPreferenceAttributes();
+      case AndroTextDslPackage.ANDRO_RES_MODEL_ROOT: return createAndroResModelRoot();
       case AndroTextDslPackage.PROPERTY_VALUE: return createPropertyValue();
       case AndroTextDslPackage.ANY_DRAWABLE_PROPERTY_VALUE: return createAnyDrawablePropertyValue();
       case AndroTextDslPackage.STRING_PROPERTY_VALUE: return createStringPropertyValue();
       case AndroTextDslPackage.INTEGER_PROPERTY_VALUE: return createIntegerPropertyValue();
       case AndroTextDslPackage.BOOLEAN_PROPERTY_VALUE: return createBooleanPropertyValue();
       case AndroTextDslPackage.COLOR_PROPERTY_VALUE: return createColorPropertyValue();
+      case AndroTextDslPackage.LAYOUT_DIMENSION_PROPERTY_VALUE: return createLayoutDimensionPropertyValue();
       case AndroTextDslPackage.DIMENSION_PROPERTY_VALUE: return createDimensionPropertyValue();
       case AndroTextDslPackage.DRAWABLE_RESOURCE_LINK: return createDrawableResourceLink();
       case AndroTextDslPackage.LOCAL_DRAWABLE_RESOURCE_LINK: return createLocalDrawableResourceLink();
@@ -147,7 +155,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.BOOLEAN_RESOURCE_LINK: return createBooleanResourceLink();
       case AndroTextDslPackage.COLOR_RESOURCE_LINK: return createColorResourceLink();
       case AndroTextDslPackage.DIMENSION_RESOURCE_LINK: return createDimensionResourceLink();
-      case AndroTextDslPackage.ANDRO_RES_MODEL_ROOT: return createAndroResModelRoot();
       case AndroTextDslPackage.RESOURCE: return createResource();
       case AndroTextDslPackage.STRING_RESOURCE: return createStringResource();
       case AndroTextDslPackage.INTEGER_RESOURCE: return createIntegerResource();
@@ -186,6 +193,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return createDataTypesFromString(eDataType, initialValue);
       case AndroTextDslPackage.LAYOUT_GRAVITY_KIND:
         return createLayoutGravityKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.FAST_LAYOUT_DIMENSION_KIND:
+        return createFastLayoutDimensionKindFromString(eDataType, initialValue);
       case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
         return createLayoutDimensionKindFromString(eDataType, initialValue);
       case AndroTextDslPackage.ANDROID_DRAWABLE_RESOURCE:
@@ -215,6 +224,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return convertDataTypesToString(eDataType, instanceValue);
       case AndroTextDslPackage.LAYOUT_GRAVITY_KIND:
         return convertLayoutGravityKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.FAST_LAYOUT_DIMENSION_KIND:
+        return convertFastLayoutDimensionKindToString(eDataType, instanceValue);
       case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
         return convertLayoutDimensionKindToString(eDataType, instanceValue);
       case AndroTextDslPackage.ANDROID_DRAWABLE_RESOURCE:
@@ -495,6 +506,39 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public LayoutStyle createLayoutStyle()
+  {
+    LayoutStyleImpl layoutStyle = new LayoutStyleImpl();
+    return layoutStyle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RegularLayoutStyle createRegularLayoutStyle()
+  {
+    RegularLayoutStyleImpl regularLayoutStyle = new RegularLayoutStyleImpl();
+    return regularLayoutStyle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FastLayoutStyle createFastLayoutStyle()
+  {
+    FastLayoutStyleImpl fastLayoutStyle = new FastLayoutStyleImpl();
+    return fastLayoutStyle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AbsoluteLayout createAbsoluteLayout()
   {
     AbsoluteLayoutImpl absoluteLayout = new AbsoluteLayoutImpl();
@@ -572,10 +616,65 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public TableRow createTableRow()
+  {
+    TableRowImpl tableRow = new TableRowImpl();
+    return tableRow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SimpleView createSimpleView()
   {
     SimpleViewImpl simpleView = new SimpleViewImpl();
     return simpleView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ViewElement createViewElement()
+  {
+    ViewElementImpl viewElement = new ViewElementImpl();
+    return viewElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextView createTextView()
+  {
+    TextViewImpl textView = new TextViewImpl();
+    return textView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EditText createEditText()
+  {
+    EditTextImpl editText = new EditTextImpl();
+    return editText;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Button createButton()
+  {
+    ButtonImpl button = new ButtonImpl();
+    return button;
   }
 
   /**
@@ -620,72 +719,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     ImageViewImpl imageView = new ImageViewImpl();
     return imageView;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TextView createTextView()
-  {
-    TextViewImpl textView = new TextViewImpl();
-    return textView;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public GravityAttribute createGravityAttribute()
-  {
-    GravityAttributeImpl gravityAttribute = new GravityAttributeImpl();
-    return gravityAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TextSizeAttribute createTextSizeAttribute()
-  {
-    TextSizeAttributeImpl textSizeAttribute = new TextSizeAttributeImpl();
-    return textSizeAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BackgroundAttribute createBackgroundAttribute()
-  {
-    BackgroundAttributeImpl backgroundAttribute = new BackgroundAttributeImpl();
-    return backgroundAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EditText createEditText()
-  {
-    EditTextImpl editText = new EditTextImpl();
-    return editText;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Button createButton()
-  {
-    ButtonImpl button = new ButtonImpl();
-    return button;
   }
 
   /**
@@ -796,6 +829,50 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     AutoCompleteTextViewImpl autoCompleteTextView = new AutoCompleteTextViewImpl();
     return autoCompleteTextView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PaddingAttribute createPaddingAttribute()
+  {
+    PaddingAttributeImpl paddingAttribute = new PaddingAttributeImpl();
+    return paddingAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GravityAttribute createGravityAttribute()
+  {
+    GravityAttributeImpl gravityAttribute = new GravityAttributeImpl();
+    return gravityAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextSizeAttribute createTextSizeAttribute()
+  {
+    TextSizeAttributeImpl textSizeAttribute = new TextSizeAttributeImpl();
+    return textSizeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BackgroundAttribute createBackgroundAttribute()
+  {
+    BackgroundAttributeImpl backgroundAttribute = new BackgroundAttributeImpl();
+    return backgroundAttribute;
   }
 
   /**
@@ -924,6 +1001,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public AndroResModelRoot createAndroResModelRoot()
+  {
+    AndroResModelRootImpl androResModelRoot = new AndroResModelRootImpl();
+    return androResModelRoot;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PropertyValue createPropertyValue()
   {
     PropertyValueImpl propertyValue = new PropertyValueImpl();
@@ -983,6 +1071,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     ColorPropertyValueImpl colorPropertyValue = new ColorPropertyValueImpl();
     return colorPropertyValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LayoutDimensionPropertyValue createLayoutDimensionPropertyValue()
+  {
+    LayoutDimensionPropertyValueImpl layoutDimensionPropertyValue = new LayoutDimensionPropertyValueImpl();
+    return layoutDimensionPropertyValue;
   }
 
   /**
@@ -1082,17 +1181,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     DimensionResourceLinkImpl dimensionResourceLink = new DimensionResourceLinkImpl();
     return dimensionResourceLink;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AndroResModelRoot createAndroResModelRoot()
-  {
-    AndroResModelRootImpl androResModelRoot = new AndroResModelRootImpl();
-    return androResModelRoot;
   }
 
   /**
@@ -1344,6 +1432,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * @generated
    */
   public String convertLayoutGravityKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FastLayoutDimensionKind createFastLayoutDimensionKindFromString(EDataType eDataType, String initialValue)
+  {
+    FastLayoutDimensionKind result = FastLayoutDimensionKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertFastLayoutDimensionKindToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -44,24 +44,14 @@ public enum LayoutDimensionKind implements Enumerator
   WRAP(1, "WRAP", "wrap"),
 
   /**
-   * The '<em><b>FILL WRAP</b></em>' literal object.
+   * The '<em><b>MATCH</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #FILL_WRAP_VALUE
+   * @see #MATCH_VALUE
    * @generated
    * @ordered
    */
-  FILL_WRAP(2, "FILL_WRAP", "fill&wrap"),
-
-  /**
-   * The '<em><b>WRAP FILL</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #WRAP_FILL_VALUE
-   * @generated
-   * @ordered
-   */
-  WRAP_FILL(3, "WRAP_FILL", "wrap&fill");
+  MATCH(2, "MATCH", "match");
 
   /**
    * The '<em><b>FILL</b></em>' literal value.
@@ -94,34 +84,19 @@ public enum LayoutDimensionKind implements Enumerator
   public static final int WRAP_VALUE = 1;
 
   /**
-   * The '<em><b>FILL WRAP</b></em>' literal value.
+   * The '<em><b>MATCH</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>FILL WRAP</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>MATCH</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #FILL_WRAP
-   * @model literal="fill&wrap"
+   * @see #MATCH
+   * @model literal="match"
    * @generated
    * @ordered
    */
-  public static final int FILL_WRAP_VALUE = 2;
-
-  /**
-   * The '<em><b>WRAP FILL</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>WRAP FILL</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @see #WRAP_FILL
-   * @model literal="wrap&fill"
-   * @generated
-   * @ordered
-   */
-  public static final int WRAP_FILL_VALUE = 3;
+  public static final int MATCH_VALUE = 2;
 
   /**
    * An array of all the '<em><b>Layout Dimension Kind</b></em>' enumerators.
@@ -134,8 +109,7 @@ public enum LayoutDimensionKind implements Enumerator
     {
       FILL,
       WRAP,
-      FILL_WRAP,
-      WRAP_FILL,
+      MATCH,
     };
 
   /**
@@ -196,8 +170,7 @@ public enum LayoutDimensionKind implements Enumerator
     {
       case FILL_VALUE: return FILL;
       case WRAP_VALUE: return WRAP;
-      case FILL_WRAP_VALUE: return FILL_WRAP;
-      case WRAP_FILL_VALUE: return WRAP_FILL;
+      case MATCH_VALUE: return MATCH;
     }
     return null;
   }

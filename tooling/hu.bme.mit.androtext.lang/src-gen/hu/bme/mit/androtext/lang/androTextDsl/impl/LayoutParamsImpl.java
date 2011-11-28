@@ -49,6 +49,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getCenterHorizontal <em>Center Horizontal</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getCenterInParent <em>Center In Parent</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getCenterVertical <em>Center Vertical</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getColumn <em>Column</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LayoutParamsImpl#getBackgroundAttribute <em>Background Attribute</em>}</li>
  * </ul>
  * </p>
@@ -246,6 +247,16 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * @ordered
    */
   protected BooleanPropertyValue centerVertical;
+
+  /**
+   * The cached value of the '{@link #getColumn() <em>Column</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getColumn()
+   * @generated
+   * @ordered
+   */
+  protected IntegerPropertyValue column;
 
   /**
    * The cached value of the '{@link #getBackgroundAttribute() <em>Background Attribute</em>}' containment reference.
@@ -1160,6 +1171,54 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
    * <!-- end-user-doc -->
    * @generated
    */
+  public IntegerPropertyValue getColumn()
+  {
+    return column;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetColumn(IntegerPropertyValue newColumn, NotificationChain msgs)
+  {
+    IntegerPropertyValue oldColumn = column;
+    column = newColumn;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__COLUMN, oldColumn, newColumn);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setColumn(IntegerPropertyValue newColumn)
+  {
+    if (newColumn != column)
+    {
+      NotificationChain msgs = null;
+      if (column != null)
+        msgs = ((InternalEObject)column).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__COLUMN, null, msgs);
+      if (newColumn != null)
+        msgs = ((InternalEObject)newColumn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LAYOUT_PARAMS__COLUMN, null, msgs);
+      msgs = basicSetColumn(newColumn, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LAYOUT_PARAMS__COLUMN, newColumn, newColumn));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BackgroundAttribute getBackgroundAttribute()
   {
     return backgroundAttribute;
@@ -1237,6 +1296,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return basicSetCenterInParent(null, msgs);
       case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
         return basicSetCenterVertical(null, msgs);
+      case AndroTextDslPackage.LAYOUT_PARAMS__COLUMN:
+        return basicSetColumn(null, msgs);
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         return basicSetBackgroundAttribute(null, msgs);
     }
@@ -1298,6 +1359,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return getCenterInParent();
       case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
         return getCenterVertical();
+      case AndroTextDslPackage.LAYOUT_PARAMS__COLUMN:
+        return getColumn();
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         return getBackgroundAttribute();
     }
@@ -1370,6 +1433,9 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return;
       case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
         setCenterVertical((BooleanPropertyValue)newValue);
+        return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__COLUMN:
+        setColumn((IntegerPropertyValue)newValue);
         return;
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         setBackgroundAttribute((BackgroundAttribute)newValue);
@@ -1445,6 +1511,9 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
       case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
         setCenterVertical((BooleanPropertyValue)null);
         return;
+      case AndroTextDslPackage.LAYOUT_PARAMS__COLUMN:
+        setColumn((IntegerPropertyValue)null);
+        return;
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         setBackgroundAttribute((BackgroundAttribute)null);
         return;
@@ -1500,6 +1569,8 @@ public class LayoutParamsImpl extends MinimalEObjectImpl.Container implements La
         return centerInParent != null;
       case AndroTextDslPackage.LAYOUT_PARAMS__CENTER_VERTICAL:
         return centerVertical != null;
+      case AndroTextDslPackage.LAYOUT_PARAMS__COLUMN:
+        return column != null;
       case AndroTextDslPackage.LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE:
         return backgroundAttribute != null;
     }

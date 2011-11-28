@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterHorizontal <em>Center Horizontal</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterInParent <em>Center In Parent</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getCenterVertical <em>Center Vertical</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getColumn <em>Column</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getBackgroundAttribute <em>Background Attribute</em>}</li>
  * </ul>
  * </p>
@@ -538,6 +539,32 @@ public interface LayoutParams extends EObject
    * @generated
    */
   void setCenterVertical(BooleanPropertyValue value);
+
+  /**
+   * Returns the value of the '<em><b>Column</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Column</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Column</em>' containment reference.
+   * @see #setColumn(IntegerPropertyValue)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getLayoutParams_Column()
+   * @model containment="true"
+   * @generated
+   */
+  IntegerPropertyValue getColumn();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutParams#getColumn <em>Column</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Column</em>' containment reference.
+   * @see #getColumn()
+   * @generated
+   */
+  void setColumn(IntegerPropertyValue value);
 
   /**
    * Returns the value of the '<em><b>Background Attribute</b></em>' containment reference.

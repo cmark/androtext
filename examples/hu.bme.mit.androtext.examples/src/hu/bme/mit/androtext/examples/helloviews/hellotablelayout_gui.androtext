@@ -1,0 +1,73 @@
+guimodel HelloTableLayoutGui {
+	
+	tablelayout table fill stretch 1 {  
+		
+		tablerow row1 {
+			textview Name "Open..." {
+				column 1
+				padding 3dp
+			}
+			textview Name "Ctrl-O" {
+				gravity right
+				padding 3dp
+			}
+		}
+		
+		tablerow row2 { 
+			textview Name "Save..." {
+				column 1
+				padding 3dp
+			}
+			textview Name "Ctrl-S" {
+				gravity right
+				padding 3dp
+			}
+		}
+		
+		tablerow row3 { 
+			textview Name "Save As..." {
+				column 1
+				padding 3dp
+			}
+			textview Name "Ctrl-Shift-S" {
+				gravity right
+				padding 3dp
+			}
+		}
+		
+		view hr1 height 2dp {
+			background #FF909090
+		}
+		
+		tablerow row4 { 
+			textview Name "X" {
+				padding 3dp
+			}
+			textview Name "Import" {
+				padding 3dp
+			}
+		}
+		
+		tablerow row5 { 
+			textview Name "X" {}
+			textview Name "Export" {}
+			textview Name "Ctrl-E" {
+				gravity right
+				padding 3dp
+			}
+		}
+		
+		view hr2 height 2dp {
+			background #FF909090
+		}
+		
+		tablerow row6 { 
+			textview Name "Quit" {
+				column 1
+				padding 3dp
+			}
+		}
+		
+	}
+	
+}

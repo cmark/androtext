@@ -81,32 +81,29 @@ public interface RadioButton extends EObject
   void setText(String value);
 
   /**
-   * Returns the value of the '<em><b>Layout Style</b></em>' attribute.
-   * The literals are from the enumeration {@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind}.
+   * Returns the value of the '<em><b>Layout Style</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Layout Style</em>' attribute isn't clear,
+   * If the meaning of the '<em>Layout Style</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Layout Style</em>' attribute.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
-   * @see #setLayoutStyle(LayoutDimensionKind)
+   * @return the value of the '<em>Layout Style</em>' containment reference.
+   * @see #setLayoutStyle(LayoutStyle)
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getRadioButton_LayoutStyle()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  LayoutDimensionKind getLayoutStyle();
+  LayoutStyle getLayoutStyle();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getLayoutStyle <em>Layout Style</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getLayoutStyle <em>Layout Style</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Layout Style</em>' attribute.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+   * @param value the new value of the '<em>Layout Style</em>' containment reference.
    * @see #getLayoutStyle()
    * @generated
    */
-  void setLayoutStyle(LayoutDimensionKind value);
+  void setLayoutStyle(LayoutStyle value);
 
 } // RadioButton

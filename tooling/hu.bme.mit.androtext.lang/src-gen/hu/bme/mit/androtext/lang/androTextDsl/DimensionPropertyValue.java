@@ -23,7 +23,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface DimensionPropertyValue extends PropertyValue
+public interface DimensionPropertyValue extends PropertyValue, LayoutDimensionPropertyValue
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.

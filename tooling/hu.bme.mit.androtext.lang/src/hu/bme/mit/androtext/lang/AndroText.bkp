@@ -1,0 +1,619 @@
+grammar hu.bme.mit.androtext.lang.AndroTextDsl with org.eclipse.xtext.common.Terminals
+
+generate androTextDsl "http://www.bme.hu/mit/androtext/lang/AndroTextDsl"
+
+AndroTextModelRoot:
+	('package' name=QualifiedName)?
+	imports+=Import*
+	actualModelRoot=ModelRoot;
+
+ModelRoot:
+	AndroGenModelRoot | AndroidApplication | AndroGuiModelRoot | AndroDataModelRoot | AndroResModelRoot
+;
+
+/* Common language elements */
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCard;
+
+QualifiedName:
+	ID ('.'ID)*;
+
+QualifiedNameWithWildCard :
+	QualifiedName  ('.' '*')?;
+/* End of Common language elements */
+
+/* AndroGenModelRoot and model elements */
+AndroGenModelRoot:
+	'generator' name=ID '{'
+		targetApplications+=TargetApplication*	
+	'}';
+	
+TargetApplication:
+	'target' application=[AndroidApplication | QualifiedName] '{'
+		'project' projectName=QualifiedName
+		('package' packageName=AndroidPackageName)?
+		'platform' target=ApiLevel
+		'version' version=VersionCode
+	'}'
+;
+
+VersionCode: INT'.'INT;
+
+AndroidPackageName:
+	ID ('.'ID)+ 
+;
+
+enum ApiLevel:
+	API8 = 'Android 2.2' | 
+	API9 = 'Android 2.3.1' | 
+	API10 = 'Android 2.3.3' |
+	API11 = 'Android 3.0' |
+	API12 = 'Android 3.1' |
+	API14 = 'Android 4.0'
+;
+/* End of AndroGenModelRoot and generator model elements */
+
+/* AndroAppModelRoot and model elements */
+AndroidApplication:
+	'application' name=ID '{'
+		('datamodel' dataroot=[AndroDataModelRoot|QualifiedName])?
+		mainActivity = Activity
+		modelElements+=AndroidApplicationModelElement*
+	'}';
+
+AndroidApplicationModelElement:
+	Activity //| PreferenceActivity
+;
+
+Activity:
+	SimpleActivity | TabActivity | ListActivity
+;
+
+SimpleActivity:
+	'activity' name=ID 'layout' layout=[ViewGroup | QualifiedName] ('theme' theme=ActivityTheme)?
+;
+
+enum ActivityTheme:
+	DIALOG | NOTITLE | FULLSCREEN
+;
+
+TabActivity:
+	'tabactivity' name=ID '{'
+		(tabs+=Tab)+
+	'}'
+;
+
+Tab:
+	'tab' tag=STRING '{' 
+		'show' activity=[Activity]
+	'}';
+	
+ListActivity:
+	'listactivity' name=ID 'listitem' listitem=[View | QualifiedName]
+;
+	
+//PreferenceActivity:
+//	'preferences' name=ID 'layout' layout=[PreferenceScreen | QualifiedName]
+//;
+
+Action:
+	InvokeActivity | InvokeWebUrl
+;
+
+InvokeActivity:
+	'show' activity=[Activity | QualifiedName]
+;
+
+InvokeWebUrl:
+	'goto' url=STRING
+;
+
+/* End of AndroAppModelRoot and application model elements */
+
+/* AndroDataModelRoot and model elements */
+AndroDataModelRoot:
+	'datamodel' name=ID '{'
+		entities+=Entity*
+	'}'
+;
+
+Entity:
+	'entity' name=ID ('extends' superType=[Entity])? '{'
+		properties+=Property*
+	'}'
+;
+
+Property:
+	name=ID	':' type=TypeRef
+;
+
+TypeRef:
+	DataTypesRef | EntityTypeRef 
+;
+
+DataTypesRef:
+	type = DataTypes
+;
+
+EntityTypeRef:
+	type = [Entity | QualifiedName]
+;
+
+enum DataTypes:
+	STRING="String" | FLOAT="float" | BOOLEAN="boolean" | INT="int";
+/* End of AndroDataModelRoot and data model elements */
+
+/* AndroGuiModelRoot and model elements */
+AndroGuiModelRoot:
+	'guimodel' name=ID '{' 
+		roots+=View*	
+	'}'
+;
+
+View:
+	SimpleView | ViewGroup;
+
+ViewGroup:
+	LinearLayout | AbsoluteLayout | FrameLayout | RelativeLayout | GridLayout | TableLayout //| TableRow
+;
+
+LayoutParams:
+	('weight' weight=IntegerPropertyValue)?
+	& ('marginLeft' marginLeft=DimensionPropertyValue)?
+	& ('marginTop' marginTop=DimensionPropertyValue)?
+	& ('marginRight' marginRight=DimensionPropertyValue)?
+	& ('marginBottom' marginBottom=DimensionPropertyValue)?
+	& ('alignParentLeft' alignParentLeft=BooleanPropertyValue)?
+	& ('alignParentTop' alignParentTop=BooleanPropertyValue)?
+	& ('alignParentRight' alignParentRight=BooleanPropertyValue)?
+	& ('alignParentBottom' alignParentBottom=BooleanPropertyValue)?
+	& ('alignTop' alignTop=[View])?
+	& ('alignBottom' alignBottom=[View])?
+	& ('alignLeft' alignLeft=[View])?
+	& ('below' below=[View])?
+	& ('above' above=[View])?
+	& ('toLeftOf' toLeftOf=[View])?
+	& ('toRightOf' toRightOf=[View])?
+	& ('centerHorizontal' centerHorizontal=BooleanPropertyValue)? 
+	& ('centerInParent' centerInParent=BooleanPropertyValue)?
+	& ('centerVertical' centerVertical=BooleanPropertyValue)?
+//	& ('column' column=IntegerPropertyValue)?
+//	& ('span' span=IntegerPropertyValue)?
+	& (backgroundAttribute=BackgroundAttribute)?
+;
+
+LayoutGravityAttribute:
+	'gravity' gravity+=LayoutGravityKind ('|' gravity+=LayoutGravityKind)*
+;
+
+enum LayoutGravityKind:
+    top | bottom | left | right |
+    center | center_vertical | center_horizontal |
+    fill | fill_vertical | fill_horizontal |
+    clip_vertical | clip_horizontal
+;
+
+//LayoutStyle:
+//	FastLayoutStyle | RegularLayoutStyle
+//;
+//
+//RegularLayoutStyle:
+//	'width' width=LayoutDimensionPropertyValue 'height' height=LayoutDimensionPropertyValue
+//;
+
+//FastLayoutStyle:
+//	value=FastLayoutDimensionKind
+//;
+
+enum FastLayoutDimensionKind:
+	FILL='fill' | WRAP='wrap' | FILL_WRAP='fill&wrap' | WRAP_FILL='wrap&fill'
+;
+
+AbsoluteLayout:
+	"absolutelayout" name=ID layoutStyle=FastLayoutDimensionKind 
+	"{"
+		views+=View*
+	"}";
+
+LinearLayout:
+	"linearlayout" name=ID (vertical?="vertical"|"horizontal")? layoutStyle=FastLayoutDimensionKind
+	"{"
+		(layoutParams=LinearLayoutParams)?
+		views+=View*
+	"}";
+	
+LinearLayoutParams:
+	'layoutparams'
+	'{' 
+		(
+			layoutParams=LayoutParams?
+			& (gravity=LayoutGravityAttribute)?
+		)
+	'}'
+;
+
+//TableRow:
+//	'tablerow' name=ID layoutStyle=FastLayoutDimensionKind
+//	'{'
+//		(views+=View)*		
+//	'}'
+//;
+
+FrameLayout:
+	"framelayout" name=ID layoutStyle=FastLayoutDimensionKind
+	"{"
+		views+=View*
+	"}";
+	
+RelativeLayout:
+	"relativelayout" name=ID layoutStyle=FastLayoutDimensionKind 
+	"{"
+		(layoutParams=LinearLayoutParams)?
+		views+=View*
+	"}";
+	
+GridLayout:
+	'girdlayout' name=ID layoutStyle=FastLayoutDimensionKind 
+	'{'
+		views+=View*
+	'}'
+;
+
+TableLayout:
+	'tablelayout' name=ID layoutStyle=FastLayoutDimensionKind 
+//	('collapse' collapseColumns+=IntegerPropertyValue (',' collapseColumns+=IntegerPropertyValue)?)?
+//	('shrink' shrinkColumns+=IntegerPropertyValue (',' shrinkColumns+=IntegerPropertyValue)?)?
+//	('stretch' stretchColumns+=IntegerPropertyValue (',' stretchColumns+=IntegerPropertyValue)?)?
+	'{'
+		views+=View*
+	'}'
+;
+
+SimpleView:
+	/* JustView |*/ Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView;
+
+//JustView:
+//	'view' name=ID layoutStyle=FastLayoutDimensionKind
+//	(
+//	'{' 
+//		(
+//			(layoutParams=LayoutParams)?
+//		)
+//	'}'
+//	)?
+//;
+
+Gallery:
+	'gallery' name=ID layoutStyle=FastLayoutDimensionKind
+;
+
+ExpandableListView:
+	'explistview' name=ID layoutStyle=FastLayoutDimensionKind	
+;
+
+WebView:
+	'webview' name=ID layoutStyle=FastLayoutDimensionKind
+;
+
+ImageView:
+	'imageview' name=ID src=DrawableResource layoutStyle=FastLayoutDimensionKind
+;	
+
+TextView:
+	"textview" name=ID text=StringPropertyValue layoutStyle=FastLayoutDimensionKind 
+	(
+	'{' 
+		(
+			(gravityAttribute=GravityAttribute)?
+			& (textSizeAttribute=TextSizeAttribute)?
+//			& (paddingAttribute=PaddingAttribute)?
+			& (layoutParams=LayoutParams)?
+		)
+	'}'
+	)?;
+
+GravityAttribute:
+	'gravity' gravity=LayoutGravityKind
+;
+
+TextSizeAttribute:
+	'textSize' textSize=DimensionPropertyValue
+;
+
+BackgroundAttribute:
+	'background' background=AnyDrawablePropertyValue
+;
+
+PaddingAttribute:
+	'padding' padding=IntegerPropertyValue
+;
+	
+EditText:
+	"edittext" name=ID (text=StringPropertyValue)? layoutStyle=FastLayoutDimensionKind 
+	(
+	'{'
+		(
+			(gravityAttribute=GravityAttribute)?
+			& (textSizeAttribute=TextSizeAttribute)?
+			& (layoutParams=LayoutParams)?
+		)
+	'}'
+	)?;
+	
+Button:
+	"button" name=ID text=STRING layoutStyle=FastLayoutDimensionKind
+//	(
+//	'{'
+//		(
+//			(layoutParams=LayoutParams)?
+//		)	
+//	'}'
+//	)?	
+;
+	
+ListView:
+	'listview' name=ID layoutStyle=FastLayoutDimensionKind '{'
+		('entries' entries=[ArrayResource | QualifiedName])?
+		('listitem' layout=[View | QualifiedName])?
+	'}';
+	
+GridView:
+	'gridview' name=ID layoutStyle=FastLayoutDimensionKind
+;
+	
+Spinner:
+	"spinner" name=ID ('entries' entries=[ArrayResource | QualifiedName])? layoutStyle=FastLayoutDimensionKind;
+	
+CheckBox:
+	"checkbox" name=ID text=STRING layoutStyle=FastLayoutDimensionKind;
+	
+RadioGroup:
+	"radiogroup" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=FastLayoutDimensionKind "{" 
+		(radiobuttons+=RadioButton)+
+	"}";
+	
+RatingBar:
+	"ratingbar" name=ID numStars=INT layoutStyle=FastLayoutDimensionKind;
+	
+ToggleButton:
+	"togglebutton" name=ID "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=FastLayoutDimensionKind;
+	
+RadioButton:
+	"radiobutton" name=ID text=STRING layoutStyle=FastLayoutDimensionKind;
+
+CheckedTextView:
+	'checkedtextview' name=ID text=STRING layoutStyle=FastLayoutDimensionKind
+;
+
+AutoCompleteTextView:
+	'autocompletetextview' name=ID entries=[StringArrayResource | QualifiedName] layoutStyle=FastLayoutDimensionKind (isMulti?=BOOL)
+;
+
+/* Preference Framework Elements */
+//AbstractPreference:
+//	Preference | EditTextPreference | ListPreference | CheckBoxPreference | RingtonePrefence | PreferenceCategory | PreferenceScreen
+//;
+//
+//Preference:
+//	"preference" (name=ID)? title=STRING "{"
+//		preferenceAttributes = PreferenceAttributes
+//	"}"
+//;
+//
+//PreferenceScreen:
+//	"preferencescreen" (name=ID)? title=STRING '{'
+//		preferenceAttributes = PreferenceAttributes
+//		(preferences+=AbstractPreference)*
+//	'}'
+//;
+//
+//PreferenceCategory:
+//	"preferencecategery" title=STRING "{"
+//		(preferences+=AbstractPreference)*
+//	"}";
+//
+//EditTextPreference:
+//	"edittextpreference" name=ID title=STRING "{"
+//		preferenceAttributes = PreferenceAttributes
+//		dialogPreferenceAttributes = DialogPreferenceAttributes
+//	"}";
+//	
+//ListPreference:
+//	"listpreference" name=ID title=STRING "{"
+//		preferenceAttributes = PreferenceAttributes
+//		dialogPreferenceAttributes = DialogPreferenceAttributes
+//		listPreferenceAttributes = ListPreferenceAttributes
+//	"}";
+//	
+//CheckBoxPreference:
+//	"checkboxpreference" name=ID title=STRING "{"
+//		preferenceAttributes = PreferenceAttributes
+//	"}";
+//	
+//RingtonePrefence:
+//	"ringtonepreference" name=ID title=STRING "{"
+//		preferenceAttributes = PreferenceAttributes
+//	"}";
+//
+//PreferenceAttributes:
+//	("summary" summary=STRING)?
+//	("enabled" enabled=BOOL)?
+//	("persistent" persistent=BOOL)?
+//;
+//
+//DialogPreferenceAttributes:
+//	("dialogTitle" dialogTitle=STRING)?
+//	("defaultValue" defaultValue=STRING)?
+//;
+//
+//ListPreferenceAttributes:
+//	"entries" entries=[StringArrayEntry | QualifiedName]
+//	"entryValues" entryValues=[StringArrayEntry | QualifiedName]
+//;
+
+/* End of Preference Framework Elements */
+/* End of AndroGuiModelRoot and gui model elements */
+
+/* AndroRes ModelRoot and model elements */
+AndroResModelRoot:
+	'resources' name=ID '{'
+		resources+=Resource*
+	'}'
+;
+
+Resource:
+    StringResource | IntegerResource | BooleanResource
+    | ColorResource | DimensionResource
+    | ArrayResource | DrawableResource
+;
+
+PropertyValue:
+    StringPropertyValue | IntegerPropertyValue | BooleanPropertyValue | AnyDrawablePropertyValue | DimensionPropertyValue //| LayoutDimensionPropertyValue
+;
+
+AnyDrawablePropertyValue:
+    DrawableResourceLink | ColorPropertyValue
+;
+
+StringPropertyValue:
+    StringResourceLink | value=STRING
+;
+
+IntegerPropertyValue:
+    IntegerResourceLink | value=INT
+;
+
+BooleanPropertyValue:
+    BooleanResourceLink | value=BOOL
+;
+
+ColorPropertyValue:
+    ColorResourceLink | value=HEX_COLOR
+;
+
+//LayoutDimensionPropertyValue:
+//	DimensionPropertyValue | constValue=LayoutDimensionKind
+//;
+//
+//enum LayoutDimensionKind:
+//	FILL='fill' | WRAP='wrap' | MATCH='match';
+
+DimensionPropertyValue:
+    DimensionResourceLink | value=DimensionValue
+;
+
+DrawableResourceLink:
+	LocalDrawableResourceLink | ExternalDrawableResourceLink
+;
+
+LocalDrawableResourceLink:
+	link = [DrawableResource | QualifiedName]
+;
+
+ExternalDrawableResourceLink:
+	externalResource = AndroidDrawableResource
+;
+
+enum AndroidDrawableResource:
+	editbox_background
+;
+
+StringResourceLink:
+	link = [StringResource | QualifiedName]
+;
+
+IntegerResourceLink:
+	link = [IntegerResource | QualifiedName]
+;
+
+BooleanResourceLink:
+	link = [BooleanResource | QualifiedName]
+;
+
+ColorResourceLink:
+	link = [ColorResource | QualifiedName]
+;
+
+DimensionResourceLink:
+	link = [DimensionResource | QualifiedName]
+;
+
+StringResource:
+    name=ID '=' value=STRING
+;
+
+IntegerResource:
+    name=ID '=' value=INT
+;
+
+BooleanResource:
+    name=ID '=' value=BOOL
+;
+
+ColorResource:
+    name=ID '=' value=HEX_COLOR
+;
+
+DimensionResource:
+    name=ID '=' value=DimensionValue
+;
+
+ArrayResource:
+    IntegerArrayResource | StringArrayResource
+;
+
+IntegerArrayResource:
+    'intarray' name=ID '{'
+        (entries+=IntegerArrayEntry (',' entries+=IntegerArrayEntry)*) 
+    '}'
+;
+
+IntegerArrayEntry:
+	(name=ID "=")? value=INT
+;
+
+StringArrayResource:
+	"stringarray" name=ID "{" 
+		( entries+=StringArrayEntry (',' entries+=StringArrayEntry)*)
+	"}";
+	
+StringArrayEntry:
+	(name=ID "=")? value=STRING;
+
+DrawableResource:
+    (BitmapDrawableResource | TransitionDrawableResource)
+;
+
+BitmapDrawableResource:
+    name=ID '=' filename=ID
+;
+
+TransitionDrawableResource:
+    name=ID
+        from=[BitmapDrawableResource] '<->' to=[BitmapDrawableResource]
+;
+
+DimensionValue:
+    value=FLOAT metric=DimensionMetric
+;
+
+enum DimensionMetric:
+	dp | sp | pt | px | mm | in
+;
+
+BOOL:
+    'true' | 'false'
+;
+
+FLOAT:
+    INT ('.' INT)?
+;
+
+terminal HEX_COLOR:
+  '#'
+  ('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f')
+  ('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f')
+  ('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f')
+  (('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f'))? 
+;
+/* End of AndroResModelRoot and resource model elements */

@@ -18,6 +18,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getText <em>Text</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getGravityAttribute <em>Gravity Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getTextSizeAttribute <em>Text Size Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getPaddingAttribute <em>Padding Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getLayoutParams <em>Layout Params</em>}</li>
  * </ul>
  * </p>
@@ -105,6 +106,32 @@ public interface TextView extends SimpleView
    * @generated
    */
   void setTextSizeAttribute(TextSizeAttribute value);
+
+  /**
+   * Returns the value of the '<em><b>Padding Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Padding Attribute</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Padding Attribute</em>' containment reference.
+   * @see #setPaddingAttribute(PaddingAttribute)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getTextView_PaddingAttribute()
+   * @model containment="true"
+   * @generated
+   */
+  PaddingAttribute getPaddingAttribute();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.TextView#getPaddingAttribute <em>Padding Attribute</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Padding Attribute</em>' containment reference.
+   * @see #getPaddingAttribute()
+   * @generated
+   */
+  void setPaddingAttribute(PaddingAttribute value);
 
   /**
    * Returns the value of the '<em><b>Layout Params</b></em>' containment reference.

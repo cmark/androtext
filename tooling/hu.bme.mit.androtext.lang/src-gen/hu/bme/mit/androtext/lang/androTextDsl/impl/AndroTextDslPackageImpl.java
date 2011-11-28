@@ -52,6 +52,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
 import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind;
+import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Gallery;
 import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
@@ -65,9 +67,11 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
@@ -76,6 +80,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.ModelRoot;
+import hu.bme.mit.androtext.lang.androTextDsl.PaddingAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.Preference;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes;
@@ -86,6 +91,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
+import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Resource;
 import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
@@ -100,6 +106,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.Tab;
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.TableRow;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.TextView;
@@ -107,6 +114,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.ToggleButton;
 import hu.bme.mit.androtext.lang.androTextDsl.TransitionDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.TypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
+import hu.bme.mit.androtext.lang.androTextDsl.ViewElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.WebView;
 
@@ -299,6 +307,27 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass layoutStyleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass regularLayoutStyleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fastLayoutStyleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass absoluteLayoutEClass = null;
 
   /**
@@ -348,7 +377,42 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass tableRowEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass simpleViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass viewElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass editTextEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -377,48 +441,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass imageViewEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass textViewEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass gravityAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass textSizeAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass backgroundAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass editTextEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass buttonEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -489,6 +511,34 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass autoCompleteTextViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass paddingAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gravityAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textSizeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass backgroundAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -572,6 +622,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass androResModelRootEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass propertyValueEClass = null;
 
   /**
@@ -608,6 +665,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass colorPropertyValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass layoutDimensionPropertyValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -671,13 +735,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass dimensionResourceLinkEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass androResModelRootEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -811,6 +868,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EEnum layoutGravityKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum fastLayoutDimensionKindEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1431,9 +1495,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getView_LayoutStyle()
+  public EReference getView_LayoutStyle()
   {
-    return (EAttribute)viewEClass.getEStructuralFeatures().get(1);
+    return (EReference)viewEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1661,9 +1725,19 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_BackgroundAttribute()
+  public EReference getLayoutParams_Column()
   {
     return (EReference)layoutParamsEClass.getEStructuralFeatures().get(19);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayoutParams_BackgroundAttribute()
+  {
+    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(20);
   }
 
   /**
@@ -1684,6 +1758,66 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EAttribute getLayoutGravityAttribute_Gravity()
   {
     return (EAttribute)layoutGravityAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLayoutStyle()
+  {
+    return layoutStyleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRegularLayoutStyle()
+  {
+    return regularLayoutStyleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRegularLayoutStyle_Width()
+  {
+    return (EReference)regularLayoutStyleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRegularLayoutStyle_Height()
+  {
+    return (EReference)regularLayoutStyleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFastLayoutStyle()
+  {
+    return fastLayoutStyleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFastLayoutStyle_Value()
+  {
+    return (EAttribute)fastLayoutStyleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1801,6 +1935,46 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getTableLayout_CollapseColumns()
+  {
+    return (EReference)tableLayoutEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTableLayout_ShrinkColumns()
+  {
+    return (EReference)tableLayoutEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTableLayout_StretchColumns()
+  {
+    return (EReference)tableLayoutEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTableRow()
+  {
+    return tableRowEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSimpleView()
   {
     return simpleViewEClass;
@@ -1811,9 +1985,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGallery()
+  public EClass getViewElement()
   {
-    return galleryEClass;
+    return viewElementEClass;
   }
 
   /**
@@ -1821,39 +1995,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpandableListView()
+  public EReference getViewElement_LayoutParams()
   {
-    return expandableListViewEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getWebView()
-  {
-    return webViewEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getImageView()
-  {
-    return imageViewEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getImageView_Src()
-  {
-    return (EReference)imageViewEClass.getEStructuralFeatures().get(0);
+    return (EReference)viewElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1901,7 +2045,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTextView_LayoutParams()
+  public EReference getTextView_PaddingAttribute()
   {
     return (EReference)textViewEClass.getEStructuralFeatures().get(3);
   }
@@ -1911,59 +2055,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGravityAttribute()
+  public EReference getTextView_LayoutParams()
   {
-    return gravityAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGravityAttribute_Gravity()
-  {
-    return (EAttribute)gravityAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTextSizeAttribute()
-  {
-    return textSizeAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTextSizeAttribute_TextSize()
-  {
-    return (EReference)textSizeAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getBackgroundAttribute()
-  {
-    return backgroundAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBackgroundAttribute_Background()
-  {
-    return (EReference)backgroundAttributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)textViewEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2044,6 +2138,56 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EReference getButton_LayoutParams()
   {
     return (EReference)buttonEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGallery()
+  {
+    return galleryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpandableListView()
+  {
+    return expandableListViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWebView()
+  {
+    return webViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImageView()
+  {
+    return imageViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_Src()
+  {
+    return (EReference)imageViewEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2241,9 +2385,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRadioButton_LayoutStyle()
+  public EReference getRadioButton_LayoutStyle()
   {
-    return (EAttribute)radioButtonEClass.getEStructuralFeatures().get(2);
+    return (EReference)radioButtonEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2294,6 +2438,86 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EAttribute getAutoCompleteTextView_IsMulti()
   {
     return (EAttribute)autoCompleteTextViewEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPaddingAttribute()
+  {
+    return paddingAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPaddingAttribute_Padding()
+  {
+    return (EReference)paddingAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGravityAttribute()
+  {
+    return gravityAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGravityAttribute_Gravity()
+  {
+    return (EAttribute)gravityAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextSizeAttribute()
+  {
+    return textSizeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextSizeAttribute_TextSize()
+  {
+    return (EReference)textSizeAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBackgroundAttribute()
+  {
+    return backgroundAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBackgroundAttribute_Background()
+  {
+    return (EReference)backgroundAttributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2661,6 +2885,26 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAndroResModelRoot()
+  {
+    return androResModelRootEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAndroResModelRoot_Resources()
+  {
+    return (EReference)androResModelRootEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPropertyValue()
   {
     return propertyValueEClass;
@@ -2754,6 +2998,26 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EAttribute getColorPropertyValue_Value()
   {
     return (EAttribute)colorPropertyValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLayoutDimensionPropertyValue()
+  {
+    return layoutDimensionPropertyValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLayoutDimensionPropertyValue_ConstValue()
+  {
+    return (EAttribute)layoutDimensionPropertyValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2924,26 +3188,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EReference getDimensionResourceLink_Link()
   {
     return (EReference)dimensionResourceLinkEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAndroResModelRoot()
-  {
-    return androResModelRootEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAndroResModelRoot_Resources()
-  {
-    return (EReference)androResModelRootEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3311,6 +3555,16 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getFastLayoutDimensionKind()
+  {
+    return fastLayoutDimensionKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getLayoutDimensionKind()
   {
     return layoutDimensionKindEEnum;
@@ -3439,7 +3693,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     viewEClass = createEClass(VIEW);
     createEAttribute(viewEClass, VIEW__NAME);
-    createEAttribute(viewEClass, VIEW__LAYOUT_STYLE);
+    createEReference(viewEClass, VIEW__LAYOUT_STYLE);
 
     viewGroupEClass = createEClass(VIEW_GROUP);
     createEReference(viewGroupEClass, VIEW_GROUP__VIEWS);
@@ -3464,10 +3718,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_HORIZONTAL);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_IN_PARENT);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_VERTICAL);
+    createEReference(layoutParamsEClass, LAYOUT_PARAMS__COLUMN);
     createEReference(layoutParamsEClass, LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE);
 
     layoutGravityAttributeEClass = createEClass(LAYOUT_GRAVITY_ATTRIBUTE);
     createEAttribute(layoutGravityAttributeEClass, LAYOUT_GRAVITY_ATTRIBUTE__GRAVITY);
+
+    layoutStyleEClass = createEClass(LAYOUT_STYLE);
+
+    regularLayoutStyleEClass = createEClass(REGULAR_LAYOUT_STYLE);
+    createEReference(regularLayoutStyleEClass, REGULAR_LAYOUT_STYLE__WIDTH);
+    createEReference(regularLayoutStyleEClass, REGULAR_LAYOUT_STYLE__HEIGHT);
+
+    fastLayoutStyleEClass = createEClass(FAST_LAYOUT_STYLE);
+    createEAttribute(fastLayoutStyleEClass, FAST_LAYOUT_STYLE__VALUE);
 
     absoluteLayoutEClass = createEClass(ABSOLUTE_LAYOUT);
 
@@ -3486,32 +3750,23 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     gridLayoutEClass = createEClass(GRID_LAYOUT);
 
     tableLayoutEClass = createEClass(TABLE_LAYOUT);
+    createEReference(tableLayoutEClass, TABLE_LAYOUT__COLLAPSE_COLUMNS);
+    createEReference(tableLayoutEClass, TABLE_LAYOUT__SHRINK_COLUMNS);
+    createEReference(tableLayoutEClass, TABLE_LAYOUT__STRETCH_COLUMNS);
+
+    tableRowEClass = createEClass(TABLE_ROW);
 
     simpleViewEClass = createEClass(SIMPLE_VIEW);
 
-    galleryEClass = createEClass(GALLERY);
-
-    expandableListViewEClass = createEClass(EXPANDABLE_LIST_VIEW);
-
-    webViewEClass = createEClass(WEB_VIEW);
-
-    imageViewEClass = createEClass(IMAGE_VIEW);
-    createEReference(imageViewEClass, IMAGE_VIEW__SRC);
+    viewElementEClass = createEClass(VIEW_ELEMENT);
+    createEReference(viewElementEClass, VIEW_ELEMENT__LAYOUT_PARAMS);
 
     textViewEClass = createEClass(TEXT_VIEW);
     createEAttribute(textViewEClass, TEXT_VIEW__TEXT);
     createEReference(textViewEClass, TEXT_VIEW__GRAVITY_ATTRIBUTE);
     createEReference(textViewEClass, TEXT_VIEW__TEXT_SIZE_ATTRIBUTE);
+    createEReference(textViewEClass, TEXT_VIEW__PADDING_ATTRIBUTE);
     createEReference(textViewEClass, TEXT_VIEW__LAYOUT_PARAMS);
-
-    gravityAttributeEClass = createEClass(GRAVITY_ATTRIBUTE);
-    createEAttribute(gravityAttributeEClass, GRAVITY_ATTRIBUTE__GRAVITY);
-
-    textSizeAttributeEClass = createEClass(TEXT_SIZE_ATTRIBUTE);
-    createEReference(textSizeAttributeEClass, TEXT_SIZE_ATTRIBUTE__TEXT_SIZE);
-
-    backgroundAttributeEClass = createEClass(BACKGROUND_ATTRIBUTE);
-    createEReference(backgroundAttributeEClass, BACKGROUND_ATTRIBUTE__BACKGROUND);
 
     editTextEClass = createEClass(EDIT_TEXT);
     createEAttribute(editTextEClass, EDIT_TEXT__TEXT);
@@ -3522,6 +3777,15 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     buttonEClass = createEClass(BUTTON);
     createEAttribute(buttonEClass, BUTTON__TEXT);
     createEReference(buttonEClass, BUTTON__LAYOUT_PARAMS);
+
+    galleryEClass = createEClass(GALLERY);
+
+    expandableListViewEClass = createEClass(EXPANDABLE_LIST_VIEW);
+
+    webViewEClass = createEClass(WEB_VIEW);
+
+    imageViewEClass = createEClass(IMAGE_VIEW);
+    createEReference(imageViewEClass, IMAGE_VIEW__SRC);
 
     listViewEClass = createEClass(LIST_VIEW);
     createEReference(listViewEClass, LIST_VIEW__ENTRIES);
@@ -3549,7 +3813,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     radioButtonEClass = createEClass(RADIO_BUTTON);
     createEAttribute(radioButtonEClass, RADIO_BUTTON__NAME);
     createEAttribute(radioButtonEClass, RADIO_BUTTON__TEXT);
-    createEAttribute(radioButtonEClass, RADIO_BUTTON__LAYOUT_STYLE);
+    createEReference(radioButtonEClass, RADIO_BUTTON__LAYOUT_STYLE);
 
     checkedTextViewEClass = createEClass(CHECKED_TEXT_VIEW);
     createEAttribute(checkedTextViewEClass, CHECKED_TEXT_VIEW__TEXT);
@@ -3557,6 +3821,18 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     autoCompleteTextViewEClass = createEClass(AUTO_COMPLETE_TEXT_VIEW);
     createEReference(autoCompleteTextViewEClass, AUTO_COMPLETE_TEXT_VIEW__ENTRIES);
     createEAttribute(autoCompleteTextViewEClass, AUTO_COMPLETE_TEXT_VIEW__IS_MULTI);
+
+    paddingAttributeEClass = createEClass(PADDING_ATTRIBUTE);
+    createEReference(paddingAttributeEClass, PADDING_ATTRIBUTE__PADDING);
+
+    gravityAttributeEClass = createEClass(GRAVITY_ATTRIBUTE);
+    createEAttribute(gravityAttributeEClass, GRAVITY_ATTRIBUTE__GRAVITY);
+
+    textSizeAttributeEClass = createEClass(TEXT_SIZE_ATTRIBUTE);
+    createEReference(textSizeAttributeEClass, TEXT_SIZE_ATTRIBUTE__TEXT_SIZE);
+
+    backgroundAttributeEClass = createEClass(BACKGROUND_ATTRIBUTE);
+    createEReference(backgroundAttributeEClass, BACKGROUND_ATTRIBUTE__BACKGROUND);
 
     abstractPreferenceEClass = createEClass(ABSTRACT_PREFERENCE);
     createEAttribute(abstractPreferenceEClass, ABSTRACT_PREFERENCE__TITLE);
@@ -3605,6 +3881,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRIES);
     createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES);
 
+    androResModelRootEClass = createEClass(ANDRO_RES_MODEL_ROOT);
+    createEReference(androResModelRootEClass, ANDRO_RES_MODEL_ROOT__RESOURCES);
+
     propertyValueEClass = createEClass(PROPERTY_VALUE);
 
     anyDrawablePropertyValueEClass = createEClass(ANY_DRAWABLE_PROPERTY_VALUE);
@@ -3620,6 +3899,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     colorPropertyValueEClass = createEClass(COLOR_PROPERTY_VALUE);
     createEAttribute(colorPropertyValueEClass, COLOR_PROPERTY_VALUE__VALUE);
+
+    layoutDimensionPropertyValueEClass = createEClass(LAYOUT_DIMENSION_PROPERTY_VALUE);
+    createEAttribute(layoutDimensionPropertyValueEClass, LAYOUT_DIMENSION_PROPERTY_VALUE__CONST_VALUE);
 
     dimensionPropertyValueEClass = createEClass(DIMENSION_PROPERTY_VALUE);
     createEReference(dimensionPropertyValueEClass, DIMENSION_PROPERTY_VALUE__VALUE);
@@ -3646,9 +3928,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     dimensionResourceLinkEClass = createEClass(DIMENSION_RESOURCE_LINK);
     createEReference(dimensionResourceLinkEClass, DIMENSION_RESOURCE_LINK__LINK);
-
-    androResModelRootEClass = createEClass(ANDRO_RES_MODEL_ROOT);
-    createEReference(androResModelRootEClass, ANDRO_RES_MODEL_ROOT__RESOURCES);
 
     resourceEClass = createEClass(RESOURCE);
     createEAttribute(resourceEClass, RESOURCE__NAME);
@@ -3702,6 +3981,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     activityThemeEEnum = createEEnum(ACTIVITY_THEME);
     dataTypesEEnum = createEEnum(DATA_TYPES);
     layoutGravityKindEEnum = createEEnum(LAYOUT_GRAVITY_KIND);
+    fastLayoutDimensionKindEEnum = createEEnum(FAST_LAYOUT_DIMENSION_KIND);
     layoutDimensionKindEEnum = createEEnum(LAYOUT_DIMENSION_KIND);
     androidDrawableResourceEEnum = createEEnum(ANDROID_DRAWABLE_RESOURCE);
     dimensionMetricEEnum = createEEnum(DIMENSION_METRIC);
@@ -3748,20 +4028,24 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     entityTypeRefEClass.getESuperTypes().add(this.getTypeRef());
     androGuiModelRootEClass.getESuperTypes().add(this.getModelRoot());
     viewGroupEClass.getESuperTypes().add(this.getView());
+    regularLayoutStyleEClass.getESuperTypes().add(this.getLayoutStyle());
+    fastLayoutStyleEClass.getESuperTypes().add(this.getLayoutStyle());
     absoluteLayoutEClass.getESuperTypes().add(this.getViewGroup());
     linearLayoutEClass.getESuperTypes().add(this.getViewGroup());
     frameLayoutEClass.getESuperTypes().add(this.getViewGroup());
     relativeLayoutEClass.getESuperTypes().add(this.getViewGroup());
     gridLayoutEClass.getESuperTypes().add(this.getViewGroup());
     tableLayoutEClass.getESuperTypes().add(this.getViewGroup());
+    tableRowEClass.getESuperTypes().add(this.getViewGroup());
     simpleViewEClass.getESuperTypes().add(this.getView());
+    viewElementEClass.getESuperTypes().add(this.getSimpleView());
+    textViewEClass.getESuperTypes().add(this.getSimpleView());
+    editTextEClass.getESuperTypes().add(this.getSimpleView());
+    buttonEClass.getESuperTypes().add(this.getSimpleView());
     galleryEClass.getESuperTypes().add(this.getSimpleView());
     expandableListViewEClass.getESuperTypes().add(this.getSimpleView());
     webViewEClass.getESuperTypes().add(this.getSimpleView());
     imageViewEClass.getESuperTypes().add(this.getSimpleView());
-    textViewEClass.getESuperTypes().add(this.getSimpleView());
-    editTextEClass.getESuperTypes().add(this.getSimpleView());
-    buttonEClass.getESuperTypes().add(this.getSimpleView());
     listViewEClass.getESuperTypes().add(this.getSimpleView());
     gridViewEClass.getESuperTypes().add(this.getSimpleView());
     spinnerEClass.getESuperTypes().add(this.getSimpleView());
@@ -3778,12 +4062,15 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     listPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
     checkBoxPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
     ringtonePrefenceEClass.getESuperTypes().add(this.getAbstractPreference());
+    androResModelRootEClass.getESuperTypes().add(this.getModelRoot());
     anyDrawablePropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
     stringPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
     integerPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
     booleanPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
     colorPropertyValueEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
+    layoutDimensionPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
     dimensionPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
+    dimensionPropertyValueEClass.getESuperTypes().add(this.getLayoutDimensionPropertyValue());
     drawableResourceLinkEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
     localDrawableResourceLinkEClass.getESuperTypes().add(this.getDrawableResourceLink());
     externalDrawableResourceLinkEClass.getESuperTypes().add(this.getDrawableResourceLink());
@@ -3792,7 +4079,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     booleanResourceLinkEClass.getESuperTypes().add(this.getBooleanPropertyValue());
     colorResourceLinkEClass.getESuperTypes().add(this.getColorPropertyValue());
     dimensionResourceLinkEClass.getESuperTypes().add(this.getDimensionPropertyValue());
-    androResModelRootEClass.getESuperTypes().add(this.getModelRoot());
     stringResourceEClass.getESuperTypes().add(this.getResource());
     integerResourceEClass.getESuperTypes().add(this.getResource());
     booleanResourceEClass.getESuperTypes().add(this.getResource());
@@ -3879,7 +4165,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getView_Name(), ecorePackage.getEString(), "name", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getView_LayoutStyle(), this.getLayoutDimensionKind(), "layoutStyle", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getView_LayoutStyle(), this.getLayoutStyle(), null, "layoutStyle", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(viewGroupEClass, ViewGroup.class, "ViewGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getViewGroup_Views(), this.getView(), null, "views", null, 0, -1, ViewGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3904,10 +4190,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getLayoutParams_CenterHorizontal(), this.getBooleanPropertyValue(), null, "centerHorizontal", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_CenterInParent(), this.getBooleanPropertyValue(), null, "centerInParent", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_CenterVertical(), this.getBooleanPropertyValue(), null, "centerVertical", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayoutParams_Column(), this.getIntegerPropertyValue(), null, "column", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayoutParams_BackgroundAttribute(), this.getBackgroundAttribute(), null, "backgroundAttribute", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(layoutGravityAttributeEClass, LayoutGravityAttribute.class, "LayoutGravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLayoutGravityAttribute_Gravity(), this.getLayoutGravityKind(), "gravity", null, 0, -1, LayoutGravityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(layoutStyleEClass, LayoutStyle.class, "LayoutStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(regularLayoutStyleEClass, RegularLayoutStyle.class, "RegularLayoutStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRegularLayoutStyle_Width(), this.getLayoutDimensionPropertyValue(), null, "width", null, 0, 1, RegularLayoutStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRegularLayoutStyle_Height(), this.getLayoutDimensionPropertyValue(), null, "height", null, 0, 1, RegularLayoutStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fastLayoutStyleEClass, FastLayoutStyle.class, "FastLayoutStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFastLayoutStyle_Value(), this.getFastLayoutDimensionKind(), "value", null, 0, 1, FastLayoutStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(absoluteLayoutEClass, AbsoluteLayout.class, "AbsoluteLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3926,32 +4222,23 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEClass(gridLayoutEClass, GridLayout.class, "GridLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(tableLayoutEClass, TableLayout.class, "TableLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTableLayout_CollapseColumns(), this.getIntegerPropertyValue(), null, "collapseColumns", null, 0, -1, TableLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableLayout_ShrinkColumns(), this.getIntegerPropertyValue(), null, "shrinkColumns", null, 0, -1, TableLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableLayout_StretchColumns(), this.getIntegerPropertyValue(), null, "stretchColumns", null, 0, -1, TableLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableRowEClass, TableRow.class, "TableRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(simpleViewEClass, SimpleView.class, "SimpleView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(galleryEClass, Gallery.class, "Gallery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(expandableListViewEClass, ExpandableListView.class, "ExpandableListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(webViewEClass, WebView.class, "WebView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(imageViewEClass, ImageView.class, "ImageView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImageView_Src(), this.getDrawableResource(), null, "src", null, 0, 1, ImageView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(viewElementEClass, ViewElement.class, "ViewElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getViewElement_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, ViewElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textViewEClass, TextView.class, "TextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTextView_Text(), ecorePackage.getEString(), "text", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTextView_GravityAttribute(), this.getGravityAttribute(), null, "gravityAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTextView_TextSizeAttribute(), this.getTextSizeAttribute(), null, "textSizeAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTextView_PaddingAttribute(), this.getPaddingAttribute(), null, "paddingAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTextView_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(gravityAttributeEClass, GravityAttribute.class, "GravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGravityAttribute_Gravity(), this.getLayoutGravityKind(), "gravity", null, 0, 1, GravityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textSizeAttributeEClass, TextSizeAttribute.class, "TextSizeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTextSizeAttribute_TextSize(), this.getDimensionPropertyValue(), null, "textSize", null, 0, 1, TextSizeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(backgroundAttributeEClass, BackgroundAttribute.class, "BackgroundAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBackgroundAttribute_Background(), this.getAnyDrawablePropertyValue(), null, "background", null, 0, 1, BackgroundAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(editTextEClass, EditText.class, "EditText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEditText_Text(), ecorePackage.getEString(), "text", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3962,6 +4249,15 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getButton_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(galleryEClass, Gallery.class, "Gallery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(expandableListViewEClass, ExpandableListView.class, "ExpandableListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(webViewEClass, WebView.class, "WebView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(imageViewEClass, ImageView.class, "ImageView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getImageView_Src(), this.getDrawableResource(), null, "src", null, 0, 1, ImageView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listViewEClass, ListView.class, "ListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListView_Entries(), this.getArrayResource(), null, "entries", null, 0, 1, ListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3989,7 +4285,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEClass(radioButtonEClass, RadioButton.class, "RadioButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRadioButton_Name(), ecorePackage.getEString(), "name", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRadioButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRadioButton_LayoutStyle(), this.getLayoutDimensionKind(), "layoutStyle", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRadioButton_LayoutStyle(), this.getLayoutStyle(), null, "layoutStyle", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(checkedTextViewEClass, CheckedTextView.class, "CheckedTextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCheckedTextView_Text(), ecorePackage.getEString(), "text", null, 0, 1, CheckedTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3997,6 +4293,18 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEClass(autoCompleteTextViewEClass, AutoCompleteTextView.class, "AutoCompleteTextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAutoCompleteTextView_Entries(), this.getStringArrayResource(), null, "entries", null, 0, 1, AutoCompleteTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAutoCompleteTextView_IsMulti(), ecorePackage.getEBoolean(), "isMulti", null, 0, 1, AutoCompleteTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(paddingAttributeEClass, PaddingAttribute.class, "PaddingAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPaddingAttribute_Padding(), this.getDimensionPropertyValue(), null, "padding", null, 0, 1, PaddingAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(gravityAttributeEClass, GravityAttribute.class, "GravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGravityAttribute_Gravity(), this.getLayoutGravityKind(), "gravity", null, 0, 1, GravityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textSizeAttributeEClass, TextSizeAttribute.class, "TextSizeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTextSizeAttribute_TextSize(), this.getDimensionPropertyValue(), null, "textSize", null, 0, 1, TextSizeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(backgroundAttributeEClass, BackgroundAttribute.class, "BackgroundAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBackgroundAttribute_Background(), this.getAnyDrawablePropertyValue(), null, "background", null, 0, 1, BackgroundAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractPreferenceEClass, AbstractPreference.class, "AbstractPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractPreference_Title(), ecorePackage.getEString(), "title", null, 0, 1, AbstractPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4045,6 +4353,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     initEReference(getListPreferenceAttributes_Entries(), this.getStringArrayEntry(), null, "entries", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListPreferenceAttributes_EntryValues(), this.getStringArrayEntry(), null, "entryValues", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(androResModelRootEClass, AndroResModelRoot.class, "AndroResModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAndroResModelRoot_Resources(), this.getResource(), null, "resources", null, 0, -1, AndroResModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(propertyValueEClass, PropertyValue.class, "PropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(anyDrawablePropertyValueEClass, AnyDrawablePropertyValue.class, "AnyDrawablePropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4060,6 +4371,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     initEClass(colorPropertyValueEClass, ColorPropertyValue.class, "ColorPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getColorPropertyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, ColorPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(layoutDimensionPropertyValueEClass, LayoutDimensionPropertyValue.class, "LayoutDimensionPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLayoutDimensionPropertyValue_ConstValue(), this.getLayoutDimensionKind(), "constValue", null, 0, 1, LayoutDimensionPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dimensionPropertyValueEClass, DimensionPropertyValue.class, "DimensionPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDimensionPropertyValue_Value(), this.getDimensionValue(), null, "value", null, 0, 1, DimensionPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4086,9 +4400,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     initEClass(dimensionResourceLinkEClass, DimensionResourceLink.class, "DimensionResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDimensionResourceLink_Link(), this.getDimensionResource(), null, "link", null, 0, 1, DimensionResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(androResModelRootEClass, AndroResModelRoot.class, "AndroResModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAndroResModelRoot_Resources(), this.getResource(), null, "resources", null, 0, -1, AndroResModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4171,11 +4482,16 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CLIP_VERTICAL);
     addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CLIP_HORIZONTAL);
 
+    initEEnum(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.class, "FastLayoutDimensionKind");
+    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.FILL);
+    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.WRAP);
+    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.FILL_WRAP);
+    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.WRAP_FILL);
+
     initEEnum(layoutDimensionKindEEnum, LayoutDimensionKind.class, "LayoutDimensionKind");
     addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.FILL);
     addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.WRAP);
-    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.FILL_WRAP);
-    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.WRAP_FILL);
+    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.MATCH);
 
     initEEnum(androidDrawableResourceEEnum, AndroidDrawableResource.class, "AndroidDrawableResource");
     addEEnumLiteral(androidDrawableResourceEEnum, AndroidDrawableResource.ANDROID_EDITBOX_BACKGROUND);

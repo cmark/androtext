@@ -9,6 +9,7 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
+import hu.bme.mit.androtext.lang.androTextDsl.PaddingAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.TextView;
 
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextViewImpl#getText <em>Text</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextViewImpl#getGravityAttribute <em>Gravity Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextViewImpl#getTextSizeAttribute <em>Text Size Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextViewImpl#getPaddingAttribute <em>Padding Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextViewImpl#getLayoutParams <em>Layout Params</em>}</li>
  * </ul>
  * </p>
@@ -77,6 +79,16 @@ public class TextViewImpl extends SimpleViewImpl implements TextView
    * @ordered
    */
   protected TextSizeAttribute textSizeAttribute;
+
+  /**
+   * The cached value of the '{@link #getPaddingAttribute() <em>Padding Attribute</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPaddingAttribute()
+   * @generated
+   * @ordered
+   */
+  protected PaddingAttribute paddingAttribute;
 
   /**
    * The cached value of the '{@link #getLayoutParams() <em>Layout Params</em>}' containment reference.
@@ -233,6 +245,54 @@ public class TextViewImpl extends SimpleViewImpl implements TextView
    * <!-- end-user-doc -->
    * @generated
    */
+  public PaddingAttribute getPaddingAttribute()
+  {
+    return paddingAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPaddingAttribute(PaddingAttribute newPaddingAttribute, NotificationChain msgs)
+  {
+    PaddingAttribute oldPaddingAttribute = paddingAttribute;
+    paddingAttribute = newPaddingAttribute;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE, oldPaddingAttribute, newPaddingAttribute);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPaddingAttribute(PaddingAttribute newPaddingAttribute)
+  {
+    if (newPaddingAttribute != paddingAttribute)
+    {
+      NotificationChain msgs = null;
+      if (paddingAttribute != null)
+        msgs = ((InternalEObject)paddingAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE, null, msgs);
+      if (newPaddingAttribute != null)
+        msgs = ((InternalEObject)newPaddingAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE, null, msgs);
+      msgs = basicSetPaddingAttribute(newPaddingAttribute, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE, newPaddingAttribute, newPaddingAttribute));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LayoutParams getLayoutParams()
   {
     return layoutParams;
@@ -290,6 +350,8 @@ public class TextViewImpl extends SimpleViewImpl implements TextView
         return basicSetGravityAttribute(null, msgs);
       case AndroTextDslPackage.TEXT_VIEW__TEXT_SIZE_ATTRIBUTE:
         return basicSetTextSizeAttribute(null, msgs);
+      case AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE:
+        return basicSetPaddingAttribute(null, msgs);
       case AndroTextDslPackage.TEXT_VIEW__LAYOUT_PARAMS:
         return basicSetLayoutParams(null, msgs);
     }
@@ -312,6 +374,8 @@ public class TextViewImpl extends SimpleViewImpl implements TextView
         return getGravityAttribute();
       case AndroTextDslPackage.TEXT_VIEW__TEXT_SIZE_ATTRIBUTE:
         return getTextSizeAttribute();
+      case AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE:
+        return getPaddingAttribute();
       case AndroTextDslPackage.TEXT_VIEW__LAYOUT_PARAMS:
         return getLayoutParams();
     }
@@ -336,6 +400,9 @@ public class TextViewImpl extends SimpleViewImpl implements TextView
         return;
       case AndroTextDslPackage.TEXT_VIEW__TEXT_SIZE_ATTRIBUTE:
         setTextSizeAttribute((TextSizeAttribute)newValue);
+        return;
+      case AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE:
+        setPaddingAttribute((PaddingAttribute)newValue);
         return;
       case AndroTextDslPackage.TEXT_VIEW__LAYOUT_PARAMS:
         setLayoutParams((LayoutParams)newValue);
@@ -363,6 +430,9 @@ public class TextViewImpl extends SimpleViewImpl implements TextView
       case AndroTextDslPackage.TEXT_VIEW__TEXT_SIZE_ATTRIBUTE:
         setTextSizeAttribute((TextSizeAttribute)null);
         return;
+      case AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE:
+        setPaddingAttribute((PaddingAttribute)null);
+        return;
       case AndroTextDslPackage.TEXT_VIEW__LAYOUT_PARAMS:
         setLayoutParams((LayoutParams)null);
         return;
@@ -386,6 +456,8 @@ public class TextViewImpl extends SimpleViewImpl implements TextView
         return gravityAttribute != null;
       case AndroTextDslPackage.TEXT_VIEW__TEXT_SIZE_ATTRIBUTE:
         return textSizeAttribute != null;
+      case AndroTextDslPackage.TEXT_VIEW__PADDING_ATTRIBUTE:
+        return paddingAttribute != null;
       case AndroTextDslPackage.TEXT_VIEW__LAYOUT_PARAMS:
         return layoutParams != null;
     }

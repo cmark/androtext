@@ -35,6 +35,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
 import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Gallery;
 import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
@@ -47,6 +48,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
@@ -56,6 +58,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.PaddingAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.Preference;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes;
@@ -65,6 +68,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
+import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
@@ -77,11 +81,13 @@ import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.Tab;
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.TableRow;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.TextView;
 import hu.bme.mit.androtext.lang.androTextDsl.ToggleButton;
 import hu.bme.mit.androtext.lang.androTextDsl.TransitionDrawableResource;
+import hu.bme.mit.androtext.lang.androTextDsl.ViewElement;
 import hu.bme.mit.androtext.lang.androTextDsl.WebView;
 import hu.bme.mit.androtext.lang.services.AndroTextDslGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -287,6 +293,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				else break;
 			case AndroTextDslPackage.DIMENSION_PROPERTY_VALUE:
 				if(context == grammarAccess.getDimensionPropertyValueRule() ||
+				   context == grammarAccess.getLayoutDimensionPropertyValueRule() ||
 				   context == grammarAccess.getPropertyValueRule()) {
 					sequence_DimensionPropertyValue(context, (DimensionPropertyValue) semanticObject); 
 					return; 
@@ -302,6 +309,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 			case AndroTextDslPackage.DIMENSION_RESOURCE_LINK:
 				if(context == grammarAccess.getDimensionPropertyValueRule() ||
 				   context == grammarAccess.getDimensionResourceLinkRule() ||
+				   context == grammarAccess.getLayoutDimensionPropertyValueRule() ||
 				   context == grammarAccess.getPropertyValueRule()) {
 					sequence_DimensionResourceLink(context, (DimensionResourceLink) semanticObject); 
 					return; 
@@ -355,6 +363,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getExternalDrawableResourceLinkRule() ||
 				   context == grammarAccess.getPropertyValueRule()) {
 					sequence_ExternalDrawableResourceLink(context, (ExternalDrawableResourceLink) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.FAST_LAYOUT_STYLE:
+				if(context == grammarAccess.getFastLayoutStyleRule() ||
+				   context == grammarAccess.getLayoutStyleRule()) {
+					sequence_FastLayoutStyle(context, (FastLayoutStyle) semanticObject); 
 					return; 
 				}
 				else break;
@@ -446,6 +461,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.LAYOUT_DIMENSION_PROPERTY_VALUE:
+				if(context == grammarAccess.getLayoutDimensionPropertyValueRule() ||
+				   context == grammarAccess.getPropertyValueRule()) {
+					sequence_LayoutDimensionPropertyValue(context, (LayoutDimensionPropertyValue) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.LAYOUT_GRAVITY_ATTRIBUTE:
 				if(context == grammarAccess.getLayoutGravityAttributeRule()) {
 					sequence_LayoutGravityAttribute(context, (LayoutGravityAttribute) semanticObject); 
@@ -510,6 +532,12 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.PADDING_ATTRIBUTE:
+				if(context == grammarAccess.getPaddingAttributeRule()) {
+					sequence_PaddingAttribute(context, (PaddingAttribute) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.PREFERENCE:
 				if(context == grammarAccess.getAbstractPreferenceRule() ||
 				   context == grammarAccess.getPreferenceRule()) {
@@ -569,6 +597,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getSimpleViewRule() ||
 				   context == grammarAccess.getViewRule()) {
 					sequence_RatingBar(context, (RatingBar) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.REGULAR_LAYOUT_STYLE:
+				if(context == grammarAccess.getLayoutStyleRule() ||
+				   context == grammarAccess.getRegularLayoutStyleRule()) {
+					sequence_RegularLayoutStyle(context, (RegularLayoutStyle) semanticObject); 
 					return; 
 				}
 				else break;
@@ -661,6 +696,14 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.TABLE_ROW:
+				if(context == grammarAccess.getTableRowRule() ||
+				   context == grammarAccess.getViewRule() ||
+				   context == grammarAccess.getViewGroupRule()) {
+					sequence_TableRow(context, (TableRow) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.TARGET_APPLICATION:
 				if(context == grammarAccess.getTargetApplicationRule()) {
 					sequence_TargetApplication(context, (TargetApplication) semanticObject); 
@@ -697,6 +740,14 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.VIEW_ELEMENT:
+				if(context == grammarAccess.getSimpleViewRule() ||
+				   context == grammarAccess.getViewRule() ||
+				   context == grammarAccess.getViewElementRule()) {
+					sequence_ViewElement(context, (ViewElement) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.WEB_VIEW:
 				if(context == grammarAccess.getSimpleViewRule() ||
 				   context == grammarAccess.getViewRule() ||
@@ -711,7 +762,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind views+=View*)
+	 *     (name=ID layoutStyle=LayoutStyle views+=View*)
 	 */
 	protected void sequence_AbsoluteLayout(EObject context, AbsoluteLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -774,7 +825,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID entries=[StringArrayResource|QualifiedName] layoutStyle=LayoutDimensionKind isMulti?=BOOL)
+	 *     (name=ID entries=[StringArrayResource|QualifiedName] layoutStyle=LayoutStyle isMulti?=BOOL)
 	 */
 	protected void sequence_AutoCompleteTextView(EObject context, AutoCompleteTextView semanticObject) {
 		if(errorAcceptor != null) {
@@ -791,7 +842,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getAutoCompleteTextViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getAutoCompleteTextViewAccess().getEntriesStringArrayResourceQualifiedNameParserRuleCall_2_0_1(), semanticObject.getEntries());
-		feeder.accept(grammarAccess.getAutoCompleteTextViewAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getAutoCompleteTextViewAccess().getLayoutStyleLayoutStyleParserRuleCall_3_0(), semanticObject.getLayoutStyle());
 		feeder.accept(grammarAccess.getAutoCompleteTextViewAccess().getIsMultiBOOLParserRuleCall_4_0(), semanticObject.isIsMulti());
 		feeder.finish();
 	}
@@ -878,7 +929,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID text=STRING layoutStyle=LayoutDimensionKind layoutParams=LayoutParams?)
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle layoutParams=LayoutParams?)
 	 */
 	protected void sequence_Button(EObject context, Button semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -909,7 +960,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID text=STRING layoutStyle=LayoutDimensionKind)
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_CheckBox(EObject context, CheckBox semanticObject) {
 		if(errorAcceptor != null) {
@@ -924,14 +975,14 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getCheckBoxAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getCheckBoxAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
-		feeder.accept(grammarAccess.getCheckBoxAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getCheckBoxAccess().getLayoutStyleLayoutStyleParserRuleCall_3_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID text=STRING layoutStyle=LayoutDimensionKind)
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_CheckedTextView(EObject context, CheckedTextView semanticObject) {
 		if(errorAcceptor != null) {
@@ -946,7 +997,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getCheckedTextViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getCheckedTextViewAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
-		feeder.accept(grammarAccess.getCheckedTextViewAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getCheckedTextViewAccess().getLayoutStyleLayoutStyleParserRuleCall_3_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
@@ -1025,14 +1076,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 *     value=DimensionValue
 	 */
 	protected void sequence_DimensionPropertyValue(EObject context, DimensionPropertyValue semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.DIMENSION_PROPERTY_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.DIMENSION_PROPERTY_VALUE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDimensionPropertyValueAccess().getValueDimensionValueParserRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1113,7 +1157,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 *     (
 	 *         name=ID 
 	 *         text=STRING? 
-	 *         layoutStyle=LayoutDimensionKind 
+	 *         layoutStyle=LayoutStyle 
 	 *         (gravityAttribute=GravityAttribute? textSizeAttribute=TextSizeAttribute? layoutParams=LayoutParams?)?
 	 *     )
 	 */
@@ -1149,7 +1193,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind)
+	 *     (name=ID layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_ExpandableListView(EObject context, ExpandableListView semanticObject) {
 		if(errorAcceptor != null) {
@@ -1161,7 +1205,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getExpandableListViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getExpandableListViewAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_2_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getExpandableListViewAccess().getLayoutStyleLayoutStyleParserRuleCall_2_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
@@ -1184,7 +1228,23 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind views+=View*)
+	 *     value=FastLayoutDimensionKind
+	 */
+	protected void sequence_FastLayoutStyle(EObject context, FastLayoutStyle semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.FAST_LAYOUT_STYLE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.FAST_LAYOUT_STYLE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFastLayoutStyleAccess().getValueFastLayoutDimensionKindEnumRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID layoutStyle=LayoutStyle views+=View*)
 	 */
 	protected void sequence_FrameLayout(EObject context, FrameLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1193,7 +1253,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind)
+	 *     (name=ID layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_Gallery(EObject context, Gallery semanticObject) {
 		if(errorAcceptor != null) {
@@ -1205,7 +1265,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getGalleryAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGalleryAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_2_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getGalleryAccess().getLayoutStyleLayoutStyleParserRuleCall_2_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
@@ -1228,7 +1288,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind views+=View*)
+	 *     (name=ID layoutStyle=LayoutStyle views+=View*)
 	 */
 	protected void sequence_GridLayout(EObject context, GridLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1237,7 +1297,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind)
+	 *     (name=ID layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_GridView(EObject context, GridView semanticObject) {
 		if(errorAcceptor != null) {
@@ -1249,14 +1309,14 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getGridViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGridViewAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_2_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getGridViewAccess().getLayoutStyleLayoutStyleParserRuleCall_2_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID src=DrawableResource layoutStyle=LayoutDimensionKind)
+	 *     (name=ID src=DrawableResource layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_ImageView(EObject context, ImageView semanticObject) {
 		if(errorAcceptor != null) {
@@ -1271,7 +1331,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getImageViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getImageViewAccess().getSrcDrawableResourceParserRuleCall_2_0(), semanticObject.getSrc());
-		feeder.accept(grammarAccess.getImageViewAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getImageViewAccess().getLayoutStyleLayoutStyleParserRuleCall_3_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
@@ -1356,6 +1416,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     constValue=LayoutDimensionKind
+	 */
+	protected void sequence_LayoutDimensionPropertyValue(EObject context, LayoutDimensionPropertyValue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LAYOUT_DIMENSION_PROPERTY_VALUE__CONST_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LAYOUT_DIMENSION_PROPERTY_VALUE__CONST_VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLayoutDimensionPropertyValueAccess().getConstValueLayoutDimensionKindEnumRuleCall_1_0(), semanticObject.getConstValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (gravity+=LayoutGravityKind gravity+=LayoutGravityKind*)
 	 */
 	protected void sequence_LayoutGravityAttribute(EObject context, LayoutGravityAttribute semanticObject) {
@@ -1385,6 +1461,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 *         centerHorizontal=BooleanPropertyValue? 
 	 *         centerInParent=BooleanPropertyValue? 
 	 *         centerVertical=BooleanPropertyValue? 
+	 *         column=IntegerPropertyValue? 
 	 *         backgroundAttribute=BackgroundAttribute?
 	 *     )
 	 */
@@ -1404,7 +1481,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID vertical?='vertical'? layoutStyle=LayoutDimensionKind layoutParams=LinearLayoutParams? views+=View*)
+	 *     (name=ID vertical?='vertical'? layoutStyle=LayoutStyle layoutParams=LinearLayoutParams? views+=View*)
 	 */
 	protected void sequence_LinearLayout(EObject context, LinearLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1485,7 +1562,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind entries=[ArrayResource|QualifiedName]? layout=[View|QualifiedName]?)
+	 *     (name=ID layoutStyle=LayoutStyle entries=[ArrayResource|QualifiedName]? layout=[View|QualifiedName]?)
 	 */
 	protected void sequence_ListView(EObject context, ListView semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1504,6 +1581,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getLocalDrawableResourceLinkAccess().getLinkDrawableResourceQualifiedNameParserRuleCall_0_1(), semanticObject.getLink());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     padding=DimensionPropertyValue
+	 */
+	protected void sequence_PaddingAttribute(EObject context, PaddingAttribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.PADDING_ATTRIBUTE__PADDING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.PADDING_ATTRIBUTE__PADDING));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPaddingAttributeAccess().getPaddingDimensionPropertyValueParserRuleCall_1_0(), semanticObject.getPadding());
 		feeder.finish();
 	}
 	
@@ -1584,7 +1677,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID text=STRING layoutStyle=LayoutDimensionKind)
+	 *     (name=ID text=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_RadioButton(EObject context, RadioButton semanticObject) {
 		if(errorAcceptor != null) {
@@ -1599,14 +1692,14 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getRadioButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getRadioButtonAccess().getTextSTRINGTerminalRuleCall_2_0(), semanticObject.getText());
-		feeder.accept(grammarAccess.getRadioButtonAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getRadioButtonAccess().getLayoutStyleLayoutStyleParserRuleCall_3_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID orientation?='horizontal'? layoutStyle=LayoutDimensionKind radiobuttons+=RadioButton+)
+	 *     (name=ID orientation?='horizontal'? layoutStyle=LayoutStyle radiobuttons+=RadioButton+)
 	 */
 	protected void sequence_RadioGroup(EObject context, RadioGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1615,7 +1708,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID numStars=INT layoutStyle=LayoutDimensionKind)
+	 *     (name=ID numStars=INT layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_RatingBar(EObject context, RatingBar semanticObject) {
 		if(errorAcceptor != null) {
@@ -1630,14 +1723,23 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getRatingBarAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getRatingBarAccess().getNumStarsINTTerminalRuleCall_2_0(), semanticObject.getNumStars());
-		feeder.accept(grammarAccess.getRatingBarAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_3_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getRatingBarAccess().getLayoutStyleLayoutStyleParserRuleCall_3_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind views+=View*)
+	 *     (width=LayoutDimensionPropertyValue? height=LayoutDimensionPropertyValue?)
+	 */
+	protected void sequence_RegularLayoutStyle(EObject context, RegularLayoutStyle semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID layoutStyle=LayoutStyle views+=View*)
 	 */
 	protected void sequence_RelativeLayout(EObject context, RelativeLayout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1677,7 +1779,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID entries=[ArrayResource|QualifiedName]? layoutStyle=LayoutDimensionKind)
+	 *     (name=ID entries=[ArrayResource|QualifiedName]? layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_Spinner(EObject context, Spinner semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1776,9 +1878,25 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind views+=View*)
+	 *     (
+	 *         name=ID 
+	 *         layoutStyle=LayoutStyle 
+	 *         (collapseColumns+=IntegerPropertyValue collapseColumns+=IntegerPropertyValue?)? 
+	 *         (shrinkColumns+=IntegerPropertyValue shrinkColumns+=IntegerPropertyValue?)? 
+	 *         (stretchColumns+=IntegerPropertyValue stretchColumns+=IntegerPropertyValue?)? 
+	 *         views+=View*
+	 *     )
 	 */
 	protected void sequence_TableLayout(EObject context, TableLayout semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID layoutStyle=LayoutStyle views+=View*)
+	 */
+	protected void sequence_TableRow(EObject context, TableRow semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1813,8 +1931,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 *     (
 	 *         name=ID 
 	 *         text=STRING 
-	 *         layoutStyle=LayoutDimensionKind 
-	 *         (gravityAttribute=GravityAttribute? textSizeAttribute=TextSizeAttribute? layoutParams=LayoutParams?)?
+	 *         layoutStyle=LayoutStyle 
+	 *         (gravityAttribute=GravityAttribute? textSizeAttribute=TextSizeAttribute? paddingAttribute=PaddingAttribute? layoutParams=LayoutParams?)?
 	 *     )
 	 */
 	protected void sequence_TextView(EObject context, TextView semanticObject) {
@@ -1824,7 +1942,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID textOn=STRING textOff=STRING layoutStyle=LayoutDimensionKind)
+	 *     (name=ID textOn=STRING textOff=STRING layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_ToggleButton(EObject context, ToggleButton semanticObject) {
 		if(errorAcceptor != null) {
@@ -1842,7 +1960,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		feeder.accept(grammarAccess.getToggleButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getToggleButtonAccess().getTextOnSTRINGTerminalRuleCall_3_0(), semanticObject.getTextOn());
 		feeder.accept(grammarAccess.getToggleButtonAccess().getTextOffSTRINGTerminalRuleCall_5_0(), semanticObject.getTextOff());
-		feeder.accept(grammarAccess.getToggleButtonAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_6_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getToggleButtonAccess().getLayoutStyleLayoutStyleParserRuleCall_6_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 	
@@ -1871,7 +1989,16 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID layoutStyle=LayoutDimensionKind)
+	 *     (name=ID layoutStyle=LayoutStyle layoutParams=LayoutParams?)
+	 */
+	protected void sequence_ViewElement(EObject context, ViewElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID layoutStyle=LayoutStyle)
 	 */
 	protected void sequence_WebView(EObject context, WebView semanticObject) {
 		if(errorAcceptor != null) {
@@ -1883,7 +2010,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getWebViewAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getWebViewAccess().getLayoutStyleLayoutDimensionKindEnumRuleCall_2_0(), semanticObject.getLayoutStyle());
+		feeder.accept(grammarAccess.getWebViewAccess().getLayoutStyleLayoutStyleParserRuleCall_2_0(), semanticObject.getLayoutStyle());
 		feeder.finish();
 	}
 }

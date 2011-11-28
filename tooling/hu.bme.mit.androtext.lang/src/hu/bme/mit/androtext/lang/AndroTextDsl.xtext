@@ -154,30 +154,34 @@ View:
 	SimpleView | ViewGroup;
 
 ViewGroup:
-	LinearLayout | AbsoluteLayout | FrameLayout | RelativeLayout | GridLayout | TableLayout
+	LinearLayout | AbsoluteLayout | FrameLayout | RelativeLayout | GridLayout | TableLayout | TableRow
 ;
 
 LayoutParams:
-	('weight' weight=IntegerPropertyValue)?
-	& ('marginLeft' marginLeft=DimensionPropertyValue)?
-	& ('marginTop' marginTop=DimensionPropertyValue)?
-	& ('marginRight' marginRight=DimensionPropertyValue)?
-	& ('marginBottom' marginBottom=DimensionPropertyValue)?
-	& ('alignParentLeft' alignParentLeft=BooleanPropertyValue)?
-	& ('alignParentTop' alignParentTop=BooleanPropertyValue)?
-	& ('alignParentRight' alignParentRight=BooleanPropertyValue)?
-	& ('alignParentBottom' alignParentBottom=BooleanPropertyValue)?
-	& ('alignTop' alignTop=[View])?
-	& ('alignBottom' alignBottom=[View])?
-	& ('alignLeft' alignLeft=[View])?
-	& ('below' below=[View])?
-	& ('above' above=[View])?
-	& ('toLeftOf' toLeftOf=[View])?
-	& ('toRightOf' toRightOf=[View])?
-	& ('centerHorizontal' centerHorizontal=BooleanPropertyValue)? 
-	& ('centerInParent' centerInParent=BooleanPropertyValue)?
-	& ('centerVertical' centerVertical=BooleanPropertyValue)?
-	& (backgroundAttribute=BackgroundAttribute)?
+	(
+		('weight' weight=IntegerPropertyValue)?
+		& ('marginLeft' marginLeft=DimensionPropertyValue)?
+		& ('marginTop' marginTop=DimensionPropertyValue)?
+		& ('marginRight' marginRight=DimensionPropertyValue)?
+		& ('marginBottom' marginBottom=DimensionPropertyValue)?
+		& ('alignParentLeft' alignParentLeft=BooleanPropertyValue)?
+		& ('alignParentTop' alignParentTop=BooleanPropertyValue)?
+		& ('alignParentRight' alignParentRight=BooleanPropertyValue)?
+		& ('alignParentBottom' alignParentBottom=BooleanPropertyValue)?
+		& ('alignTop' alignTop=[View])?
+		& ('alignBottom' alignBottom=[View])?
+		& ('alignLeft' alignLeft=[View])?
+		& ('below' below=[View])?
+		& ('above' above=[View])?
+		& ('toLeftOf' toLeftOf=[View])?
+		& ('toRightOf' toRightOf=[View])?
+		& ('centerHorizontal' centerHorizontal=BooleanPropertyValue)? 
+		& ('centerInParent' centerInParent=BooleanPropertyValue)?
+		& ('centerVertical' centerVertical=BooleanPropertyValue)?
+		& ('column' column=IntegerPropertyValue)?
+//		& ('span' span=IntegerPropertyValue)?
+		& (backgroundAttribute=BackgroundAttribute)?
+	)
 ;
 
 LayoutGravityAttribute:
@@ -191,17 +195,30 @@ enum LayoutGravityKind :
     clip_vertical | clip_horizontal
 ;
 
-enum LayoutDimensionKind:
+LayoutStyle:
+	FastLayoutStyle | RegularLayoutStyle
+;
+
+RegularLayoutStyle:
+	{RegularLayoutStyle}
+	('width' width=LayoutDimensionPropertyValue)? ('height' height=LayoutDimensionPropertyValue)?
+;
+
+FastLayoutStyle:
+	value=FastLayoutDimensionKind
+;
+
+enum FastLayoutDimensionKind:
 	FILL="fill" | WRAP="wrap" | FILL_WRAP="fill&wrap" | WRAP_FILL="wrap&fill";
 
 AbsoluteLayout:
-	"absolutelayout" name=ID layoutStyle=LayoutDimensionKind 
+	"absolutelayout" name=ID layoutStyle=LayoutStyle 
 	"{"
 		views+=View*
 	"}";
 
 LinearLayout:
-	"linearlayout" name=ID (vertical?="vertical"|"horizontal")? layoutStyle=LayoutDimensionKind
+	"linearlayout" name=ID (vertical?="vertical"|"horizontal")? layoutStyle=LayoutStyle
 	"{"
 		(layoutParams=LinearLayoutParams)?
 		views+=View*
@@ -218,63 +235,153 @@ LinearLayoutParams:
 ;
 
 FrameLayout:
-	"framelayout" name=ID layoutStyle=LayoutDimensionKind
+	"framelayout" name=ID layoutStyle=LayoutStyle
 	"{"
 		views+=View*
 	"}";
 	
 RelativeLayout:
-	"relativelayout" name=ID layoutStyle=LayoutDimensionKind 
+	"relativelayout" name=ID layoutStyle=LayoutStyle 
 	"{"
 		views+=View*
 	"}";
 	
 GridLayout:
-	'girdlayout' name=ID layoutStyle=LayoutDimensionKind 
+	'girdlayout' name=ID layoutStyle=LayoutStyle 
 	'{'
 		views+=View*
 	'}'
 ;
 
 TableLayout:
-	'tablelayout' name=ID layoutStyle=LayoutDimensionKind 
+	'tablelayout' 
+	name=ID 
+	layoutStyle=LayoutStyle
+	('collapse' collapseColumns+=IntegerPropertyValue (',' collapseColumns+=IntegerPropertyValue)?)?
+	('shrink' shrinkColumns+=IntegerPropertyValue (',' shrinkColumns+=IntegerPropertyValue)?)?
+	('stretch' stretchColumns+=IntegerPropertyValue (',' stretchColumns+=IntegerPropertyValue)?)? 
 	'{'
 		views+=View*
 	'}'
 ;
 
+TableRow:
+	'tablerow' name=ID layoutStyle=LayoutStyle
+	'{' 
+		views+=View*
+	'}'
+;
+
 SimpleView:
-	Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView;
+	ViewElement | Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView;
 
-Gallery:
-	'gallery' name=ID layoutStyle=LayoutDimensionKind
+ViewElement:
+	'view' name=ID layoutStyle=LayoutStyle
+	(
+	'{'
+		(layoutParams=LayoutParams)?		
+	'}'
+	)?
 ;
-
-ExpandableListView:
-	'explistview' name=ID layoutStyle=LayoutDimensionKind	
-;
-
-WebView:
-	'webview' name=ID layoutStyle=LayoutDimensionKind
-;
-
-ImageView:
-	'imageview' name=ID src=DrawableResource layoutStyle=LayoutDimensionKind
-;	
 
 TextView:
-	"textview" name=ID text=STRING layoutStyle=LayoutDimensionKind 
+	"textview" name=ID text=STRING layoutStyle=LayoutStyle 
 	(
 	'{' 
 		(
 			(gravityAttribute=GravityAttribute)?
 			& (textSizeAttribute=TextSizeAttribute)?
+			& (paddingAttribute=PaddingAttribute)?
 			& (layoutParams=LayoutParams)?
 		)
 	'}'
-	)?;
+	)?
+;
+	
+EditText:
+	"edittext" name=ID (text=STRING)? layoutStyle=LayoutStyle 
+	(
+	'{'
+		(
+			(gravityAttribute=GravityAttribute)?
+			& (textSizeAttribute=TextSizeAttribute)?
+//			& (paddingAttribute=PaddingAttribute)?
+			& (layoutParams=LayoutParams)?
+		)
+	'}'
+	)?
+;
+	
+Button:
+	"button" name=ID text=STRING layoutStyle=LayoutStyle
+	(
+	'{'
+		(
+			(layoutParams=LayoutParams)?
+		)	
+	'}'
+	)?	
+;
 
+Gallery:
+	'gallery' name=ID layoutStyle=LayoutStyle
+;
 
+ExpandableListView:
+	'explistview' name=ID layoutStyle=LayoutStyle	
+;
+
+WebView:
+	'webview' name=ID layoutStyle=LayoutStyle
+;
+
+ImageView:
+	'imageview' name=ID src=DrawableResource layoutStyle=LayoutStyle
+;	
+	
+ListView:
+	'listview' name=ID layoutStyle=LayoutStyle '{'
+		('entries' entries=[ArrayResource | QualifiedName])?
+		('listitem' layout=[View | QualifiedName])?
+	'}';
+	
+GridView:
+	'gridview' name=ID layoutStyle=LayoutStyle
+;
+	
+Spinner:
+	"spinner" name=ID ('entries' entries=[ArrayResource | QualifiedName])? layoutStyle=LayoutStyle;
+	
+CheckBox:
+	"checkbox" name=ID text=STRING layoutStyle=LayoutStyle;
+	
+RadioGroup:
+	"radiogroup" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=LayoutStyle "{" 
+		(radiobuttons+=RadioButton)+
+	"}";
+	
+RatingBar:
+	"ratingbar" name=ID numStars=INT layoutStyle=LayoutStyle;
+	
+ToggleButton:
+	"togglebutton" name=ID "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=LayoutStyle;
+	
+RadioButton:
+	"radiobutton" name=ID text=STRING layoutStyle=LayoutStyle;
+
+CheckedTextView:
+	'checkedtextview' name=ID text=STRING layoutStyle=LayoutStyle
+;
+
+AutoCompleteTextView:
+	'autocompletetextview' name=ID entries=[StringArrayResource | QualifiedName] layoutStyle=LayoutStyle (isMulti?=BOOL)
+;
+
+/* XML Attributes for all View elements */
+
+PaddingAttribute:
+	'padding' padding=DimensionPropertyValue
+;
 
 GravityAttribute:
 	'gravity' gravity=LayoutGravityKind
@@ -286,67 +393,6 @@ TextSizeAttribute:
 
 BackgroundAttribute:
 	'background' background=AnyDrawablePropertyValue
-;
-	
-EditText:
-	"edittext" name=ID (text=STRING)? layoutStyle=LayoutDimensionKind 
-	(
-	'{'
-		(
-			(gravityAttribute=GravityAttribute)?
-			& (textSizeAttribute=TextSizeAttribute)?
-			& (layoutParams=LayoutParams)?
-		)
-	'}'
-	)?;
-	
-Button:
-	"button" name=ID text=STRING layoutStyle=LayoutDimensionKind
-	(
-	'{'
-		(
-			(layoutParams=LayoutParams)?
-		)	
-	'}'
-	)?	
-;
-	
-ListView:
-	'listview' name=ID layoutStyle=LayoutDimensionKind '{'
-		('entries' entries=[ArrayResource | QualifiedName])?
-		('listitem' layout=[View | QualifiedName])?
-	'}';
-	
-GridView:
-	'gridview' name=ID layoutStyle=LayoutDimensionKind
-;
-	
-Spinner:
-	"spinner" name=ID ('entries' entries=[ArrayResource | QualifiedName])? layoutStyle=LayoutDimensionKind;
-	
-CheckBox:
-	"checkbox" name=ID text=STRING layoutStyle=LayoutDimensionKind;
-	
-RadioGroup:
-	"radiogroup" name=ID (orientation?="horizontal"|"vertical")? layoutStyle=LayoutDimensionKind "{" 
-		(radiobuttons+=RadioButton)+
-	"}";
-	
-RatingBar:
-	"ratingbar" name=ID numStars=INT layoutStyle=LayoutDimensionKind;
-	
-ToggleButton:
-	"togglebutton" name=ID "textOn" textOn=STRING "textOff" textOff=STRING layoutStyle=LayoutDimensionKind;
-	
-RadioButton:
-	"radiobutton" name=ID text=STRING layoutStyle=LayoutDimensionKind;
-
-CheckedTextView:
-	'checkedtextview' name=ID text=STRING layoutStyle=LayoutDimensionKind
-;
-
-AutoCompleteTextView:
-	'autocompletetextview' name=ID entries=[StringArrayResource | QualifiedName] layoutStyle=LayoutDimensionKind (isMulti?=BOOL)
 ;
 
 /* Preference Framework Elements */
@@ -411,8 +457,18 @@ ListPreferenceAttributes:
 	"entryValues" entryValues=[StringArrayEntry | QualifiedName]
 ;
 
+/* End of Preference Framework Elements */
+/* End of AndroGuiModelRoot and gui model elements */
+
+/* AndroRes ModelRoot and model elements */
+AndroResModelRoot:
+	'resources' name=ID '{'
+		resources+=Resource*
+	'}'
+;
+
 PropertyValue:
-    StringPropertyValue | IntegerPropertyValue | BooleanPropertyValue | AnyDrawablePropertyValue | DimensionPropertyValue
+    StringPropertyValue | IntegerPropertyValue | BooleanPropertyValue | AnyDrawablePropertyValue | DimensionPropertyValue | LayoutDimensionPropertyValue
 ;
 
 AnyDrawablePropertyValue:
@@ -434,6 +490,13 @@ BooleanPropertyValue:
 ColorPropertyValue:
     ColorResourceLink | value=HEX_COLOR
 ;
+
+LayoutDimensionPropertyValue:
+	DimensionPropertyValue | constValue=LayoutDimensionKind
+;
+
+enum LayoutDimensionKind:
+	FILL='fill' | WRAP='wrap' | MATCH='match';
 
 DimensionPropertyValue:
     DimensionResourceLink | value=DimensionValue
@@ -474,15 +537,6 @@ ColorResourceLink:
 
 DimensionResourceLink:
 	link = [DimensionResource | QualifiedName]
-;
-/* End of Preference Framework Elements */
-/* End of AndroGuiModelRoot and gui model elements */
-
-/* AndroRes ModelRoot and model elements */
-AndroResModelRoot:
-	'resources' name=ID '{'
-		resources+=Resource*
-	'}'
 ;
 
 Resource:

@@ -199,6 +199,21 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createLayoutGravityAttributeAdapter();
       }
       @Override
+      public Adapter caseLayoutStyle(LayoutStyle object)
+      {
+        return createLayoutStyleAdapter();
+      }
+      @Override
+      public Adapter caseRegularLayoutStyle(RegularLayoutStyle object)
+      {
+        return createRegularLayoutStyleAdapter();
+      }
+      @Override
+      public Adapter caseFastLayoutStyle(FastLayoutStyle object)
+      {
+        return createFastLayoutStyleAdapter();
+      }
+      @Override
       public Adapter caseAbsoluteLayout(AbsoluteLayout object)
       {
         return createAbsoluteLayoutAdapter();
@@ -234,9 +249,34 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createTableLayoutAdapter();
       }
       @Override
+      public Adapter caseTableRow(TableRow object)
+      {
+        return createTableRowAdapter();
+      }
+      @Override
       public Adapter caseSimpleView(SimpleView object)
       {
         return createSimpleViewAdapter();
+      }
+      @Override
+      public Adapter caseViewElement(ViewElement object)
+      {
+        return createViewElementAdapter();
+      }
+      @Override
+      public Adapter caseTextView(TextView object)
+      {
+        return createTextViewAdapter();
+      }
+      @Override
+      public Adapter caseEditText(EditText object)
+      {
+        return createEditTextAdapter();
+      }
+      @Override
+      public Adapter caseButton(Button object)
+      {
+        return createButtonAdapter();
       }
       @Override
       public Adapter caseGallery(Gallery object)
@@ -257,36 +297,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseImageView(ImageView object)
       {
         return createImageViewAdapter();
-      }
-      @Override
-      public Adapter caseTextView(TextView object)
-      {
-        return createTextViewAdapter();
-      }
-      @Override
-      public Adapter caseGravityAttribute(GravityAttribute object)
-      {
-        return createGravityAttributeAdapter();
-      }
-      @Override
-      public Adapter caseTextSizeAttribute(TextSizeAttribute object)
-      {
-        return createTextSizeAttributeAdapter();
-      }
-      @Override
-      public Adapter caseBackgroundAttribute(BackgroundAttribute object)
-      {
-        return createBackgroundAttributeAdapter();
-      }
-      @Override
-      public Adapter caseEditText(EditText object)
-      {
-        return createEditTextAdapter();
-      }
-      @Override
-      public Adapter caseButton(Button object)
-      {
-        return createButtonAdapter();
       }
       @Override
       public Adapter caseListView(ListView object)
@@ -337,6 +347,26 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAutoCompleteTextView(AutoCompleteTextView object)
       {
         return createAutoCompleteTextViewAdapter();
+      }
+      @Override
+      public Adapter casePaddingAttribute(PaddingAttribute object)
+      {
+        return createPaddingAttributeAdapter();
+      }
+      @Override
+      public Adapter caseGravityAttribute(GravityAttribute object)
+      {
+        return createGravityAttributeAdapter();
+      }
+      @Override
+      public Adapter caseTextSizeAttribute(TextSizeAttribute object)
+      {
+        return createTextSizeAttributeAdapter();
+      }
+      @Override
+      public Adapter caseBackgroundAttribute(BackgroundAttribute object)
+      {
+        return createBackgroundAttributeAdapter();
       }
       @Override
       public Adapter caseAbstractPreference(AbstractPreference object)
@@ -394,6 +424,11 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createListPreferenceAttributesAdapter();
       }
       @Override
+      public Adapter caseAndroResModelRoot(AndroResModelRoot object)
+      {
+        return createAndroResModelRootAdapter();
+      }
+      @Override
       public Adapter casePropertyValue(PropertyValue object)
       {
         return createPropertyValueAdapter();
@@ -422,6 +457,11 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseColorPropertyValue(ColorPropertyValue object)
       {
         return createColorPropertyValueAdapter();
+      }
+      @Override
+      public Adapter caseLayoutDimensionPropertyValue(LayoutDimensionPropertyValue object)
+      {
+        return createLayoutDimensionPropertyValueAdapter();
       }
       @Override
       public Adapter caseDimensionPropertyValue(DimensionPropertyValue object)
@@ -467,11 +507,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDimensionResourceLink(DimensionResourceLink object)
       {
         return createDimensionResourceLinkAdapter();
-      }
-      @Override
-      public Adapter caseAndroResModelRoot(AndroResModelRoot object)
-      {
-        return createAndroResModelRootAdapter();
       }
       @Override
       public Adapter caseResource(Resource object)
@@ -931,6 +966,51 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle <em>Layout Style</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
+   * @generated
+   */
+  public Adapter createLayoutStyleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle <em>Regular Layout Style</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle
+   * @generated
+   */
+  public Adapter createRegularLayoutStyleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle <em>Fast Layout Style</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle
+   * @generated
+   */
+  public Adapter createFastLayoutStyleAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AbsoluteLayout <em>Absolute Layout</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1036,6 +1116,21 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TableRow <em>Table Row</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TableRow
+   * @generated
+   */
+  public Adapter createTableRowAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleView <em>Simple View</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1046,6 +1141,66 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSimpleViewAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ViewElement <em>View Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ViewElement
+   * @generated
+   */
+  public Adapter createViewElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextView <em>Text View</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextView
+   * @generated
+   */
+  public Adapter createTextViewAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.EditText <em>Edit Text</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EditText
+   * @generated
+   */
+  public Adapter createEditTextAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Button
+   * @generated
+   */
+  public Adapter createButtonAdapter()
   {
     return null;
   }
@@ -1106,96 +1261,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createImageViewAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextView <em>Text View</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.TextView
-   * @generated
-   */
-  public Adapter createTextViewAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute <em>Gravity Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute
-   * @generated
-   */
-  public Adapter createGravityAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute <em>Text Size Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute
-   * @generated
-   */
-  public Adapter createTextSizeAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute <em>Background Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute
-   * @generated
-   */
-  public Adapter createBackgroundAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.EditText <em>Edit Text</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.EditText
-   * @generated
-   */
-  public Adapter createEditTextAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Button <em>Button</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Button
-   * @generated
-   */
-  public Adapter createButtonAdapter()
   {
     return null;
   }
@@ -1346,6 +1411,66 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAutoCompleteTextViewAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.PaddingAttribute <em>Padding Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.PaddingAttribute
+   * @generated
+   */
+  public Adapter createPaddingAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute <em>Gravity Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute
+   * @generated
+   */
+  public Adapter createGravityAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute <em>Text Size Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute
+   * @generated
+   */
+  public Adapter createTextSizeAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute <em>Background Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute
+   * @generated
+   */
+  public Adapter createBackgroundAttributeAdapter()
   {
     return null;
   }
@@ -1516,6 +1641,21 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot <em>Andro Res Model Root</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot
+   * @generated
+   */
+  public Adapter createAndroResModelRootAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.PropertyValue <em>Property Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1601,6 +1741,21 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createColorPropertyValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue <em>Layout Dimension Property Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue
+   * @generated
+   */
+  public Adapter createLayoutDimensionPropertyValueAdapter()
   {
     return null;
   }
@@ -1736,21 +1891,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDimensionResourceLinkAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot <em>Andro Res Model Root</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot
-   * @generated
-   */
-  public Adapter createAndroResModelRootAdapter()
   {
     return null;
   }

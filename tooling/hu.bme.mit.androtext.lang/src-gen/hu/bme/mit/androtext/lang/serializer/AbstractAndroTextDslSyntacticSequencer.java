@@ -23,6 +23,7 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 	protected AbstractElementAlias match_LinearLayout_HorizontalKeyword_2_1_q;
 	protected AbstractElementAlias match_RadioGroup_VerticalKeyword_2_1_q;
 	protected AbstractElementAlias match_TextView___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
+	protected AbstractElementAlias match_ViewElement___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -32,6 +33,7 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 		match_LinearLayout_HorizontalKeyword_2_1_q = new TokenAlias(true, false, grammarAccess.getLinearLayoutAccess().getHorizontalKeyword_2_1());
 		match_RadioGroup_VerticalKeyword_2_1_q = new TokenAlias(true, false, grammarAccess.getRadioGroupAccess().getVerticalKeyword_2_1());
 		match_TextView___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getTextViewAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getTextViewAccess().getRightCurlyBracketKeyword_4_2()));
+		match_ViewElement___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getViewElementAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getViewElementAccess().getRightCurlyBracketKeyword_3_2()));
 	}
 	
 	@Override
@@ -56,6 +58,8 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 				emit_RadioGroup_VerticalKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_TextView___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
 				emit_TextView___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ViewElement___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+				emit_ViewElement___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -97,6 +101,14 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 	 *     ('{' '}')?
 	 */
 	protected void emit_TextView___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('{' '}')?
+	 */
+	protected void emit_ViewElement___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

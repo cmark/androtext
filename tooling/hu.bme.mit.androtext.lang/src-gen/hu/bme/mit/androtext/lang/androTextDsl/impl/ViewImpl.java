@@ -7,12 +7,14 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -54,24 +56,14 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getLayoutStyle() <em>Layout Style</em>}' attribute.
+   * The cached value of the '{@link #getLayoutStyle() <em>Layout Style</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getLayoutStyle()
    * @generated
    * @ordered
    */
-  protected static final LayoutDimensionKind LAYOUT_STYLE_EDEFAULT = LayoutDimensionKind.FILL;
-
-  /**
-   * The cached value of the '{@link #getLayoutStyle() <em>Layout Style</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLayoutStyle()
-   * @generated
-   * @ordered
-   */
-  protected LayoutDimensionKind layoutStyle = LAYOUT_STYLE_EDEFAULT;
+  protected LayoutStyle layoutStyle;
 
   /**
    * <!-- begin-user-doc -->
@@ -122,7 +114,7 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutDimensionKind getLayoutStyle()
+  public LayoutStyle getLayoutStyle()
   {
     return layoutStyle;
   }
@@ -132,12 +124,53 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLayoutStyle(LayoutDimensionKind newLayoutStyle)
+  public NotificationChain basicSetLayoutStyle(LayoutStyle newLayoutStyle, NotificationChain msgs)
   {
-    LayoutDimensionKind oldLayoutStyle = layoutStyle;
-    layoutStyle = newLayoutStyle == null ? LAYOUT_STYLE_EDEFAULT : newLayoutStyle;
+    LayoutStyle oldLayoutStyle = layoutStyle;
+    layoutStyle = newLayoutStyle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW__LAYOUT_STYLE, oldLayoutStyle, layoutStyle));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW__LAYOUT_STYLE, oldLayoutStyle, newLayoutStyle);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLayoutStyle(LayoutStyle newLayoutStyle)
+  {
+    if (newLayoutStyle != layoutStyle)
+    {
+      NotificationChain msgs = null;
+      if (layoutStyle != null)
+        msgs = ((InternalEObject)layoutStyle).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.VIEW__LAYOUT_STYLE, null, msgs);
+      if (newLayoutStyle != null)
+        msgs = ((InternalEObject)newLayoutStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.VIEW__LAYOUT_STYLE, null, msgs);
+      msgs = basicSetLayoutStyle(newLayoutStyle, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW__LAYOUT_STYLE, newLayoutStyle, newLayoutStyle));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
+        return basicSetLayoutStyle(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -172,7 +205,7 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View
         setName((String)newValue);
         return;
       case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
-        setLayoutStyle((LayoutDimensionKind)newValue);
+        setLayoutStyle((LayoutStyle)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -192,7 +225,7 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View
         setName(NAME_EDEFAULT);
         return;
       case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
-        setLayoutStyle(LAYOUT_STYLE_EDEFAULT);
+        setLayoutStyle((LayoutStyle)null);
         return;
     }
     super.eUnset(featureID);
@@ -211,7 +244,7 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View
       case AndroTextDslPackage.VIEW__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.VIEW__LAYOUT_STYLE:
-        return layoutStyle != LAYOUT_STYLE_EDEFAULT;
+        return layoutStyle != null;
     }
     return super.eIsSet(featureID);
   }
@@ -229,8 +262,6 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", layoutStyle: ");
-    result.append(layoutStyle);
     result.append(')');
     return result.toString();
   }

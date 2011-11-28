@@ -33,6 +33,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
+import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind
+import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle
+import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.ViewElement
+import hu.bme.mit.androtext.lang.androTextDsl.TableLayout
 
 class LayoutResourceGenerator implements IGenerator {
 
@@ -63,8 +70,12 @@ class LayoutResourceGenerator implements IGenerator {
 		«element.endTag»
 	'''
 	
-	def startTag(View element) '''
+	def dispatch startTag(View element) '''
 		<«element.eClass.name» «element.attributes.toString.trim»>
+	'''
+	
+	def dispatch startTag(ViewElement element) '''
+		<View «element.attributes.toString.trim»>
 	'''
 
 //	def startTag(Preference element) '''
@@ -107,6 +118,12 @@ class LayoutResourceGenerator implements IGenerator {
 		«ENDFOR»
 	'''
 	
+	def dispatch specificAttributes(TableLayout layout) '''
+		«IF !layout.stretchColumns.nullOrEmpty»
+			android:stretchColumns="«FOR s : layout.stretchColumns SEPARATOR ','»«s.integerValue.toString.trim»«ENDFOR»"
+		«ENDIF»
+	'''
+	
 	def dispatch specificAttributes(TextView view) '''
 		«IF view.gravityAttribute != null»
 		android:gravity="«view.gravityAttribute.gravity.name.toLowerCase»"
@@ -117,6 +134,10 @@ class LayoutResourceGenerator implements IGenerator {
 		«ENDIF»
 		«IF view.text!=null»
 		android:text="«view.text»"
+		«ENDIF»
+		«IF view.paddingAttribute != null»
+		«val paddingValue = view.paddingAttribute.padding.dimensionValue»
+		android:padding="«paddingValue.toString.trim»"
 		«ENDIF»
 		«IF view.layoutParams != null»
 		«view.layoutParams.generate»
@@ -145,6 +166,12 @@ class LayoutResourceGenerator implements IGenerator {
 		«ENDIF»
 		«IF view.text!=null»
 		android:text="«view.text»"
+		«ENDIF»
+	'''
+	
+	def dispatch specificAttributes(ViewElement view) '''
+		«IF view.layoutParams != null»
+		«view.layoutParams.generate»
 		«ENDIF»
 	'''
 	
@@ -208,19 +235,23 @@ class LayoutResourceGenerator implements IGenerator {
 		«ENDIF»
 		«IF params.marginLeft != null»
 			«val marginValue = params.marginLeft.dimensionValue»
-			android:layout_marginLeft="«marginValue»"
+			android:layout_marginLeft="«marginValue.toString.trim»"
 		«ENDIF»
 		«IF params.marginTop != null»
 			«val marginValue = params.marginTop.dimensionValue»
-			android:layout_marginLeft="«marginValue»"
+			android:layout_marginLeft="«marginValue.toString.trim»"
 		«ENDIF»
 		«IF params.marginRight != null»
 			«val marginValue = params.marginRight.dimensionValue»
-			android:layout_marginLeft="«marginValue»"
+			android:layout_marginLeft="«marginValue.toString.trim»"
 		«ENDIF»
 		«IF params.marginBottom != null»
 			«val marginValue = params.marginBottom.dimensionValue»
-			android:layout_marginLeft="«marginValue»"
+			android:layout_marginLeft="«marginValue.toString.trim»"
+		«ENDIF»
+		«IF params.column != null»
+			«val columnValue = params.column.integerValue»
+			android:layout_column="«columnValue.toString.trim»"
 		«ENDIF»
 	'''
 	
@@ -259,6 +290,10 @@ class LayoutResourceGenerator implements IGenerator {
 		@android:drawable/«valueLink.externalResource.name.toLowerCase»
 	'''
 	
+	def dispatch dimensionValue(LayoutDimensionPropertyValue value) '''
+		"«value.constValue.layoutDimensionKind»"
+	'''
+	
 	def dispatch dimensionValue(DimensionPropertyValue dimensionPropertyValue) '''
 		«dimensionPropertyValue.value.value»«dimensionPropertyValue.value.metric»
 	'''
@@ -269,16 +304,39 @@ class LayoutResourceGenerator implements IGenerator {
 	
 	def layoutAttributes(View element) '''
 		«IF element.layoutStyle != null»
-		«element.layoutStyle.layoutDimensionKind»
+		«element.layoutStyle.layoutStyle.toString.trim»
 		«ENDIF»
 	'''
 	
-	def layoutDimensionKind(LayoutDimensionKind style) {
+	def dispatch layoutStyle(LayoutStyle style) '''
+	'''
+	def dispatch layoutStyle(FastLayoutStyle style) '''
+		«style.value.layoutDimensionKind»
+	'''
+	def dispatch layoutStyle(RegularLayoutStyle style) '''
+		«IF style.width != null»
+			android:layout_width="«style.width.dimensionValue»"
+		«ENDIF»
+		«IF style.height != null»
+			android:layout_height="«style.height.dimensionValue»"	
+		«ENDIF»
+	'''
+	
+
+	def layoutDimensionKind(FastLayoutDimensionKind kind) {
+		switch (kind) {
+			case FastLayoutDimensionKind::FILL: fillLayout
+			case FastLayoutDimensionKind::WRAP: wrapLayout
+			case FastLayoutDimensionKind::FILL_WRAP: fillwrapLayout
+			case FastLayoutDimensionKind::WRAP_FILL: wrapfillLayout
+		}
+	}
+	
+	def String layoutDimensionKind(LayoutDimensionKind style) { 
 		switch (style) {
-			case LayoutDimensionKind::FILL : fillLayout
-			case LayoutDimensionKind::WRAP : wrapLayout
-			case LayoutDimensionKind::FILL_WRAP : fillwrapLayout
-			case LayoutDimensionKind::WRAP_FILL : wrapfillLayout
+			case LayoutDimensionKind::FILL : "fill_parent"
+			case LayoutDimensionKind::WRAP : "wrap_content"
+			case LayoutDimensionKind::MATCH : "match_parent"
 		}
 	}
 	
@@ -306,8 +364,12 @@ class LayoutResourceGenerator implements IGenerator {
 //		
 //	'''	
 	
-	def endTag(View element) '''
+	def dispatch endTag(View element) '''
 		</«element.eClass.name»>
+	''' 
+	
+	def dispatch endTag(ViewElement element) '''
+		</View>
 	''' 
 		
 	def dispatch generateElements(View element) '''
