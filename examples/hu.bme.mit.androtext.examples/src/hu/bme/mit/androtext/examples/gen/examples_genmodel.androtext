@@ -16,4 +16,20 @@ generator ExampleGenerators {
 		
 	}
 	
+	target HelloRelativeLayoutExample {
+		
+		project hu.bme.mit.androtext.examples.hellorelativelayout
+		platform Android 2.3.3
+		version 1.0
+		
+	}
+	
+	target HelloTableLayout {
+		
+		project hu.bme.mit.androtext.examples.hellotablelayout
+		platform Android 2.3.3
+		version 1.0
+		
+	}
+	
 }
