@@ -107,9 +107,14 @@
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//ListActivity">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListActivity/listitem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListActivity/contentProvider"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//PreferenceActivity">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//PreferenceActivity/layout"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ContentProvider"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//ResourceContentProvider">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ResourceContentProvider/link"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//AndroDataModelRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroDataModelRoot/entities"/>

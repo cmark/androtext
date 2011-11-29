@@ -144,6 +144,16 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createPreferenceActivityAdapter();
       }
       @Override
+      public Adapter caseContentProvider(ContentProvider object)
+      {
+        return createContentProviderAdapter();
+      }
+      @Override
+      public Adapter caseResourceContentProvider(ResourceContentProvider object)
+      {
+        return createResourceContentProviderAdapter();
+      }
+      @Override
       public Adapter caseAndroDataModelRoot(AndroDataModelRoot object)
       {
         return createAndroDataModelRootAdapter();
@@ -796,6 +806,36 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPreferenceActivityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ContentProvider <em>Content Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
+   * @generated
+   */
+  public Adapter createContentProviderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider <em>Resource Content Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider
+   * @generated
+   */
+  public Adapter createResourceContentProviderAdapter()
   {
     return null;
   }

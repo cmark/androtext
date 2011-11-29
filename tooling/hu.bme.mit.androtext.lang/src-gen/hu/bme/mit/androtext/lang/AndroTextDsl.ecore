@@ -65,9 +65,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListActivity" eSuperTypes="#//Activity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="listitem" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contentProvider" eType="#//ContentProvider"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PreferenceActivity" eSuperTypes="#//AndroidApplicationModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//PreferenceScreen"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContentProvider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceContentProvider" eSuperTypes="#//ContentProvider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//ArrayResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroDataModelRoot" eSuperTypes="#//ModelRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"

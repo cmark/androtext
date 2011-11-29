@@ -144,6 +144,24 @@ public interface AndroTextDslFactory extends EFactory
   PreferenceActivity createPreferenceActivity();
 
   /**
+   * Returns a new object of class '<em>Content Provider</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Content Provider</em>'.
+   * @generated
+   */
+  ContentProvider createContentProvider();
+
+  /**
+   * Returns a new object of class '<em>Resource Content Provider</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resource Content Provider</em>'.
+   * @generated
+   */
+  ResourceContentProvider createResourceContentProvider();
+
+  /**
    * Returns a new object of class '<em>Andro Data Model Root</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -624,12 +624,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cListitemAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cListitemViewCrossReference_3_0 = (CrossReference)cListitemAssignment_3.eContents().get(0);
 		private final RuleCall cListitemViewQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cListitemViewCrossReference_3_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cContentKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cContentProviderAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cContentProviderContentProviderParserRuleCall_6_0 = (RuleCall)cContentProviderAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ListActivity:
-		//	"listactivity" name=ID "listitem" listitem=[View|QualifiedName];
+		//	"listactivity" name=ID "listitem" listitem=[View|QualifiedName] "{" "content" contentProvider=ContentProvider "}";
 		public ParserRule getRule() { return rule; }
 
-		//"listactivity" name=ID "listitem" listitem=[View|QualifiedName]
+		//"listactivity" name=ID "listitem" listitem=[View|QualifiedName] "{" "content" contentProvider=ContentProvider "}"
 		public Group getGroup() { return cGroup; }
 
 		//"listactivity"
@@ -652,6 +657,21 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//QualifiedName
 		public RuleCall getListitemViewQualifiedNameParserRuleCall_3_0_1() { return cListitemViewQualifiedNameParserRuleCall_3_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+
+		//"content"
+		public Keyword getContentKeyword_5() { return cContentKeyword_5; }
+
+		//contentProvider=ContentProvider
+		public Assignment getContentProviderAssignment_6() { return cContentProviderAssignment_6; }
+
+		//ContentProvider
+		public RuleCall getContentProviderContentProviderParserRuleCall_6_0() { return cContentProviderContentProviderParserRuleCall_6_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class PreferenceActivityElements extends AbstractParserRuleElementFinder {
@@ -692,6 +712,38 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//QualifiedName
 		public RuleCall getLayoutPreferenceScreenQualifiedNameParserRuleCall_3_0_1() { return cLayoutPreferenceScreenQualifiedNameParserRuleCall_3_0_1; }
+	}
+
+	public class ContentProviderElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ContentProvider");
+		private final RuleCall cResourceContentProviderParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ContentProvider:
+		//	ResourceContentProvider;
+		public ParserRule getRule() { return rule; }
+
+		//ResourceContentProvider
+		public RuleCall getResourceContentProviderParserRuleCall() { return cResourceContentProviderParserRuleCall; }
+	}
+
+	public class ResourceContentProviderElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ResourceContentProvider");
+		private final Assignment cLinkAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cLinkArrayResourceCrossReference_0 = (CrossReference)cLinkAssignment.eContents().get(0);
+		private final RuleCall cLinkArrayResourceQualifiedNameParserRuleCall_0_1 = (RuleCall)cLinkArrayResourceCrossReference_0.eContents().get(1);
+		
+		//ResourceContentProvider:
+		//	link=[ArrayResource|QualifiedName];
+		public ParserRule getRule() { return rule; }
+
+		//link=[ArrayResource|QualifiedName]
+		public Assignment getLinkAssignment() { return cLinkAssignment; }
+
+		//[ArrayResource|QualifiedName]
+		public CrossReference getLinkArrayResourceCrossReference_0() { return cLinkArrayResourceCrossReference_0; }
+
+		//QualifiedName
+		public RuleCall getLinkArrayResourceQualifiedNameParserRuleCall_0_1() { return cLinkArrayResourceQualifiedNameParserRuleCall_0_1; }
 	}
 
 	public class AndroDataModelRootElements extends AbstractParserRuleElementFinder {
@@ -2170,11 +2222,11 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//TextView:
-		//	"textview" name=ID text=STRING layoutStyle=LayoutStyle ("{" (gravityAttribute=GravityAttribute? &
+		//	"textview" name=ID text=STRING? layoutStyle=LayoutStyle ("{" (gravityAttribute=GravityAttribute? &
 		//	textSizeAttribute=TextSizeAttribute? & paddingAttribute=PaddingAttribute? & layoutParams=LayoutParams?) "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//"textview" name=ID text=STRING layoutStyle=LayoutStyle ("{" (gravityAttribute=GravityAttribute? &
+		//"textview" name=ID text=STRING? layoutStyle=LayoutStyle ("{" (gravityAttribute=GravityAttribute? &
 		//textSizeAttribute=TextSizeAttribute? & paddingAttribute=PaddingAttribute? & layoutParams=LayoutParams?) "}")?
 		public Group getGroup() { return cGroup; }
 
@@ -2187,7 +2239,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//text=STRING
+		//text=STRING?
 		public Assignment getTextAssignment_2() { return cTextAssignment_2; }
 
 		//STRING
@@ -5087,6 +5139,8 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private TabElements pTab;
 	private ListActivityElements pListActivity;
 	private PreferenceActivityElements pPreferenceActivity;
+	private ContentProviderElements pContentProvider;
+	private ResourceContentProviderElements pResourceContentProvider;
 	private AndroDataModelRootElements pAndroDataModelRoot;
 	private EntityElements pEntity;
 	private PropertyElements pProperty;
@@ -5381,7 +5435,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ListActivity:
-	//	"listactivity" name=ID "listitem" listitem=[View|QualifiedName];
+	//	"listactivity" name=ID "listitem" listitem=[View|QualifiedName] "{" "content" contentProvider=ContentProvider "}";
 	public ListActivityElements getListActivityAccess() {
 		return (pListActivity != null) ? pListActivity : (pListActivity = new ListActivityElements());
 	}
@@ -5398,6 +5452,26 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getPreferenceActivityRule() {
 		return getPreferenceActivityAccess().getRule();
+	}
+
+	//ContentProvider:
+	//	ResourceContentProvider;
+	public ContentProviderElements getContentProviderAccess() {
+		return (pContentProvider != null) ? pContentProvider : (pContentProvider = new ContentProviderElements());
+	}
+	
+	public ParserRule getContentProviderRule() {
+		return getContentProviderAccess().getRule();
+	}
+
+	//ResourceContentProvider:
+	//	link=[ArrayResource|QualifiedName];
+	public ResourceContentProviderElements getResourceContentProviderAccess() {
+		return (pResourceContentProvider != null) ? pResourceContentProvider : (pResourceContentProvider = new ResourceContentProviderElements());
+	}
+	
+	public ParserRule getResourceContentProviderRule() {
+		return getResourceContentProviderAccess().getRule();
 	}
 
 	////Action:
@@ -5698,7 +5772,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TextView:
-	//	"textview" name=ID text=STRING layoutStyle=LayoutStyle ("{" (gravityAttribute=GravityAttribute? &
+	//	"textview" name=ID text=STRING? layoutStyle=LayoutStyle ("{" (gravityAttribute=GravityAttribute? &
 	//	textSizeAttribute=TextSizeAttribute? & paddingAttribute=PaddingAttribute? & layoutParams=LayoutParams?) "}")?;
 	public TextViewElements getTextViewAccess() {
 		return (pTextView != null) ? pTextView : (pTextView = new TextViewElements());

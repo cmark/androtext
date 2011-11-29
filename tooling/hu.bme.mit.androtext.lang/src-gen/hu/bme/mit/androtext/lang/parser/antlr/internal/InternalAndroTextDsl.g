@@ -1152,7 +1152,37 @@ ruleListActivity returns [EObject current=null]
 	    }
 
 )
-))
+)	otherlv_4='{' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getListActivityAccess().getLeftCurlyBracketKeyword_4());
+    }
+	otherlv_5='content' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getListActivityAccess().getContentKeyword_5());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getListActivityAccess().getContentProviderContentProviderParserRuleCall_6_0()); 
+	    }
+		lv_contentProvider_6_0=ruleContentProvider		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getListActivityRule());
+	        }
+       		set(
+       			$current, 
+       			"contentProvider",
+        		lv_contentProvider_6_0, 
+        		"ContentProvider");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getListActivityAccess().getRightCurlyBracketKeyword_7());
+    }
+)
 ;
 
 
@@ -1218,6 +1248,78 @@ rulePreferenceActivity returns [EObject current=null]
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleContentProvider
+entryRuleContentProvider returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getContentProviderRule()); }
+	 iv_ruleContentProvider=ruleContentProvider 
+	 { $current=$iv_ruleContentProvider.current; } 
+	 EOF 
+;
+
+// Rule ContentProvider
+ruleContentProvider returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getContentProviderAccess().getResourceContentProviderParserRuleCall()); 
+    }
+    this_ResourceContentProvider_0=ruleResourceContentProvider
+    { 
+        $current = $this_ResourceContentProvider_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+;
+
+
+
+
+
+// Entry rule entryRuleResourceContentProvider
+entryRuleResourceContentProvider returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getResourceContentProviderRule()); }
+	 iv_ruleResourceContentProvider=ruleResourceContentProvider 
+	 { $current=$iv_ruleResourceContentProvider.current; } 
+	 EOF 
+;
+
+// Rule ResourceContentProvider
+ruleResourceContentProvider returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getResourceContentProviderRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getResourceContentProviderAccess().getLinkArrayResourceCrossReference_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
 ;
 
 
@@ -4059,7 +4161,7 @@ ruleTextView returns [EObject current=null]
 	    }
 
 )
-)(
+)?(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getTextViewAccess().getLayoutStyleLayoutStyleParserRuleCall_3_0()); 

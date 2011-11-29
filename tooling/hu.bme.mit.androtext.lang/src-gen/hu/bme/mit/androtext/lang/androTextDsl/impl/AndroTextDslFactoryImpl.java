@@ -82,6 +82,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.TAB: return createTab();
       case AndroTextDslPackage.LIST_ACTIVITY: return createListActivity();
       case AndroTextDslPackage.PREFERENCE_ACTIVITY: return createPreferenceActivity();
+      case AndroTextDslPackage.CONTENT_PROVIDER: return createContentProvider();
+      case AndroTextDslPackage.RESOURCE_CONTENT_PROVIDER: return createResourceContentProvider();
       case AndroTextDslPackage.ANDRO_DATA_MODEL_ROOT: return createAndroDataModelRoot();
       case AndroTextDslPackage.ENTITY: return createEntity();
       case AndroTextDslPackage.PROPERTY: return createProperty();
@@ -378,6 +380,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     PreferenceActivityImpl preferenceActivity = new PreferenceActivityImpl();
     return preferenceActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ContentProvider createContentProvider()
+  {
+    ContentProviderImpl contentProvider = new ContentProviderImpl();
+    return contentProvider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ResourceContentProvider createResourceContentProvider()
+  {
+    ResourceContentProviderImpl resourceContentProvider = new ResourceContentProviderImpl();
+    return resourceContentProvider;
   }
 
   /**

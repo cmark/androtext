@@ -16,6 +16,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.ListActivity#getListitem <em>Listitem</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.ListActivity#getContentProvider <em>Content Provider</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,5 +51,31 @@ public interface ListActivity extends Activity
    * @generated
    */
   void setListitem(View value);
+
+  /**
+   * Returns the value of the '<em><b>Content Provider</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Content Provider</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Content Provider</em>' containment reference.
+   * @see #setContentProvider(ContentProvider)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getListActivity_ContentProvider()
+   * @model containment="true"
+   * @generated
+   */
+  ContentProvider getContentProvider();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ListActivity#getContentProvider <em>Content Provider</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Content Provider</em>' containment reference.
+   * @see #getContentProvider()
+   * @generated
+   */
+  void setContentProvider(ContentProvider value);
 
 } // ListActivity

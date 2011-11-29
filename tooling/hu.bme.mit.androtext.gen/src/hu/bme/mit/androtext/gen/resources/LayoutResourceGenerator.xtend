@@ -132,7 +132,7 @@ class LayoutResourceGenerator implements IGenerator {
 		«val testSizeValue = view.textSizeAttribute.textSize.dimensionValue»
 		android:textSize="«testSizeValue.toString.trim»"
 		«ENDIF»
-		«IF view.text!=null»
+		«IF !view.text.nullOrEmpty»
 		android:text="«view.text»"
 		«ENDIF»
 		«IF view.paddingAttribute != null»
@@ -152,7 +152,7 @@ class LayoutResourceGenerator implements IGenerator {
 		«val testSizeValue = view.textSizeAttribute.textSize.dimensionValue»
 		android:textSize="«testSizeValue.toString.trim»"
 		«ENDIF»
-		«IF view.text!=null»
+		«IF !view.text.nullOrEmpty»
 		android:text="«view.text»"
 		«ENDIF»
 		«IF view.layoutParams != null»

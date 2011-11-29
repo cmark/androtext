@@ -89,12 +89,25 @@ Tab:
 	'}';
 	
 ListActivity:
-	'listactivity' name=ID 'listitem' listitem=[View | QualifiedName]
+	'listactivity' name=ID 'listitem' listitem=[View | QualifiedName] 
+	'{'
+		'content' contentProvider=ContentProvider
+	'}'
 ;
 	
 PreferenceActivity:
 	'preferences' name=ID 'layout' layout=[PreferenceScreen | QualifiedName]
 ;
+
+ContentProvider:
+	ResourceContentProvider
+;
+
+ResourceContentProvider:
+	link=[ArrayResource | QualifiedName]
+;
+
+
 
 //Action:
 //	InvokeActivity | InvokeWebUrl
@@ -285,7 +298,7 @@ ViewElement:
 ;
 
 TextView:
-	"textview" name=ID text=STRING layoutStyle=LayoutStyle 
+	"textview" name=ID (text=STRING)? layoutStyle=LayoutStyle 
 	(
 	'{' 
 		(
@@ -515,7 +528,7 @@ ExternalDrawableResourceLink:
 ;
 
 enum AndroidDrawableResource:
-	android_editbox_background
+	editbox_background
 ;
 
 

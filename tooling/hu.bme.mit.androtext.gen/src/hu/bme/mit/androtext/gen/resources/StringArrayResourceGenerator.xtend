@@ -27,14 +27,14 @@ class StringArrayResourceGenerator implements IGenerator {
 		<resources>
 			<string-array name="«stringArrayResource.name»">
 				«FOR entry : stringArrayResource.entries»
-					«generate(entry)»
+					«entry.generate.toString.trim»
 				«ENDFOR»
 			</string-array>
 		</resources>
 	'''
 	
 	def generate(StringArrayEntry entry) '''
-		«IF (entry.name != null)»
+		«IF !entry.name.nullOrEmpty»
 			<item name="«entry.name»">«entry.value»</item>
 		«ELSE»
 			<item>«entry.value»</item>

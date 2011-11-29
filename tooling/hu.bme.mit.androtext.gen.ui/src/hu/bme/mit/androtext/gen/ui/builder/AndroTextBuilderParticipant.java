@@ -2,6 +2,7 @@ package hu.bme.mit.androtext.gen.ui.builder;
 
 import static com.google.common.collect.Maps.uniqueIndex;
 import static com.google.common.collect.Sets.newLinkedHashSet;
+import static com.google.common.collect.Lists.*;
 import hu.bme.mit.androtext.gen.AndroTextGeneratorMain;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.AndroidProjectUtil;
@@ -10,8 +11,11 @@ import hu.bme.mit.androtext.gen.util.TargetApplicationFinder;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
+import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
+import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
@@ -298,10 +302,22 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 				uris.add(app.getApplication().getDataroot().eResource().getURI());
 			}
 			Activity main = app.getApplication().getMainActivity();
-			if (main instanceof SimpleActivity) {
-				uris.add(((SimpleActivity) main).getLayout().eResource().getURI());
-			}
-			for (AndroidApplicationModelElement ac : app.getApplication().getModelElements()) {
+			List<AndroidApplicationModelElement> activities = new ArrayList<AndroidApplicationModelElement>(app.getApplication().getModelElements());
+			activities.add(main);
+			for (AndroidApplicationModelElement ac : activities) {
+				if (ac instanceof ListActivity) {
+					URI newURI = ((ListActivity) ac).getListitem().eResource().getURI();
+					if (!uris.contains(newURI)) {
+						uris.add(newURI);
+					}
+					ContentProvider cp = ((ListActivity) ac).getContentProvider();
+					if (cp instanceof ResourceContentProvider) {
+						URI newURI2 = ((ResourceContentProvider) cp).getLink().eResource().getURI();
+						if (!uris.contains(newURI2)) {
+							uris.add(newURI2);
+						}
+					}
+				}
 				if (ac instanceof SimpleActivity) {
 					View lay = ((SimpleActivity) ac).getLayout();
 					URI newURI = lay.eResource().getURI();

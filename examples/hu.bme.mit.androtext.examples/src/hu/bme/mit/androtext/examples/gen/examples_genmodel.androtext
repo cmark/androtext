@@ -32,4 +32,12 @@ generator ExampleGenerators {
 		
 	}
 	
+	target HelloListActivityExample {
+		
+		project hu.bme.mit.androtext.examples.hellolistactivity
+		platform Android 2.3.3
+		version 1.0
+		
+	}
+	
 }

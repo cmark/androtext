@@ -36,6 +36,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.CheckedTextView;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorResource;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypes;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
 import hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes;
@@ -94,6 +95,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
 import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.Resource;
+import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleView;
@@ -224,6 +226,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass preferenceActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass contentProviderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass resourceContentProviderEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1295,6 +1311,16 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getListActivity_ContentProvider()
+  {
+    return (EReference)listActivityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPreferenceActivity()
   {
     return preferenceActivityEClass;
@@ -1308,6 +1334,36 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   public EReference getPreferenceActivity_Layout()
   {
     return (EReference)preferenceActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getContentProvider()
+  {
+    return contentProviderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getResourceContentProvider()
+  {
+    return resourceContentProviderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getResourceContentProvider_Link()
+  {
+    return (EReference)resourceContentProviderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3664,9 +3720,15 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     listActivityEClass = createEClass(LIST_ACTIVITY);
     createEReference(listActivityEClass, LIST_ACTIVITY__LISTITEM);
+    createEReference(listActivityEClass, LIST_ACTIVITY__CONTENT_PROVIDER);
 
     preferenceActivityEClass = createEClass(PREFERENCE_ACTIVITY);
     createEReference(preferenceActivityEClass, PREFERENCE_ACTIVITY__LAYOUT);
+
+    contentProviderEClass = createEClass(CONTENT_PROVIDER);
+
+    resourceContentProviderEClass = createEClass(RESOURCE_CONTENT_PROVIDER);
+    createEReference(resourceContentProviderEClass, RESOURCE_CONTENT_PROVIDER__LINK);
 
     androDataModelRootEClass = createEClass(ANDRO_DATA_MODEL_ROOT);
     createEReference(androDataModelRootEClass, ANDRO_DATA_MODEL_ROOT__ENTITIES);
@@ -4023,6 +4085,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
     tabActivityEClass.getESuperTypes().add(this.getActivity());
     listActivityEClass.getESuperTypes().add(this.getActivity());
     preferenceActivityEClass.getESuperTypes().add(this.getAndroidApplicationModelElement());
+    resourceContentProviderEClass.getESuperTypes().add(this.getContentProvider());
     androDataModelRootEClass.getESuperTypes().add(this.getModelRoot());
     dataTypesRefEClass.getESuperTypes().add(this.getTypeRef());
     entityTypeRefEClass.getESuperTypes().add(this.getTypeRef());
@@ -4136,9 +4199,15 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     initEClass(listActivityEClass, ListActivity.class, "ListActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListActivity_Listitem(), this.getView(), null, "listitem", null, 0, 1, ListActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListActivity_ContentProvider(), this.getContentProvider(), null, "contentProvider", null, 0, 1, ListActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preferenceActivityEClass, PreferenceActivity.class, "PreferenceActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPreferenceActivity_Layout(), this.getPreferenceScreen(), null, "layout", null, 0, 1, PreferenceActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(contentProviderEClass, ContentProvider.class, "ContentProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(resourceContentProviderEClass, ResourceContentProvider.class, "ResourceContentProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getResourceContentProvider_Link(), this.getArrayResource(), null, "link", null, 0, 1, ResourceContentProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(androDataModelRootEClass, AndroDataModelRoot.class, "AndroDataModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAndroDataModelRoot_Entities(), this.getEntity(), null, "entities", null, 0, -1, AndroDataModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

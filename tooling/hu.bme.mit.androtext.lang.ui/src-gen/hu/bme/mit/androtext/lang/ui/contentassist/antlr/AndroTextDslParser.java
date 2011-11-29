@@ -222,8 +222,10 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTabAccess().getActivityAssignment_4(), "rule__Tab__ActivityAssignment_4");
 					put(grammarAccess.getListActivityAccess().getNameAssignment_1(), "rule__ListActivity__NameAssignment_1");
 					put(grammarAccess.getListActivityAccess().getListitemAssignment_3(), "rule__ListActivity__ListitemAssignment_3");
+					put(grammarAccess.getListActivityAccess().getContentProviderAssignment_6(), "rule__ListActivity__ContentProviderAssignment_6");
 					put(grammarAccess.getPreferenceActivityAccess().getNameAssignment_1(), "rule__PreferenceActivity__NameAssignment_1");
 					put(grammarAccess.getPreferenceActivityAccess().getLayoutAssignment_3(), "rule__PreferenceActivity__LayoutAssignment_3");
+					put(grammarAccess.getResourceContentProviderAccess().getLinkAssignment(), "rule__ResourceContentProvider__LinkAssignment");
 					put(grammarAccess.getAndroDataModelRootAccess().getNameAssignment_1(), "rule__AndroDataModelRoot__NameAssignment_1");
 					put(grammarAccess.getAndroDataModelRootAccess().getEntitiesAssignment_3(), "rule__AndroDataModelRoot__EntitiesAssignment_3");
 					put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");

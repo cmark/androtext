@@ -70,6 +70,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.RadioGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
 import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Spinner;
@@ -612,6 +613,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				   context == grammarAccess.getViewRule() ||
 				   context == grammarAccess.getViewGroupRule()) {
 					sequence_RelativeLayout(context, (RelativeLayout) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.RESOURCE_CONTENT_PROVIDER:
+				if(context == grammarAccess.getContentProviderRule() ||
+				   context == grammarAccess.getResourceContentProviderRule()) {
+					sequence_ResourceContentProvider(context, (ResourceContentProvider) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1490,7 +1498,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID listitem=[View|QualifiedName])
+	 *     (name=ID listitem=[View|QualifiedName] contentProvider=ContentProvider)
 	 */
 	protected void sequence_ListActivity(EObject context, ListActivity semanticObject) {
 		if(errorAcceptor != null) {
@@ -1498,11 +1506,14 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.ANDROID_APPLICATION_MODEL_ELEMENT__NAME));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LIST_ACTIVITY__LISTITEM) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LIST_ACTIVITY__LISTITEM));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.LIST_ACTIVITY__CONTENT_PROVIDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.LIST_ACTIVITY__CONTENT_PROVIDER));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getListActivityAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getListActivityAccess().getListitemViewQualifiedNameParserRuleCall_3_0_1(), semanticObject.getListitem());
+		feeder.accept(grammarAccess.getListActivityAccess().getContentProviderContentProviderParserRuleCall_6_0(), semanticObject.getContentProvider());
 		feeder.finish();
 	}
 	
@@ -1748,6 +1759,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     link=[ArrayResource|QualifiedName]
+	 */
+	protected void sequence_ResourceContentProvider(EObject context, ResourceContentProvider semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.Literals.RESOURCE_CONTENT_PROVIDER__LINK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.Literals.RESOURCE_CONTENT_PROVIDER__LINK));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getResourceContentProviderAccess().getLinkArrayResourceQualifiedNameParserRuleCall_0_1(), semanticObject.getLink());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID title=STRING preferenceAttributes=PreferenceAttributes)
 	 */
 	protected void sequence_RingtonePrefence(EObject context, RingtonePrefence semanticObject) {
@@ -1930,7 +1957,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         text=STRING 
+	 *         text=STRING? 
 	 *         layoutStyle=LayoutStyle 
 	 *         (gravityAttribute=GravityAttribute? textSizeAttribute=TextSizeAttribute? paddingAttribute=PaddingAttribute? layoutParams=LayoutParams?)?
 	 *     )

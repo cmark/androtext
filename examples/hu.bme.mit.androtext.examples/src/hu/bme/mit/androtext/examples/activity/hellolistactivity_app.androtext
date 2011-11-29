@@ -1,0 +1,7 @@
+application HelloListActivityExample {
+	
+	listactivity HelloListActivity listitem HelloListActivityGui.simple_list_item {
+		content HelloListActivityResources.countries
+	}
+	
+}
