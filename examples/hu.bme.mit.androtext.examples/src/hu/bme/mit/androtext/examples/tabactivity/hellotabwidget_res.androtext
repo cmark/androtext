@@ -1,0 +1,8 @@
+resources HelloTabWidgetRes {
+	
+	drawable ic_tab_artists_grey = ic_tab_artists_grey
+	drawable ic_tab_artists_white = ic_tab_artists_white
+
+	tabdrawable ic_tab_image selected ic_tab_artists_grey unselected ic_tab_artists_white
+	
+}

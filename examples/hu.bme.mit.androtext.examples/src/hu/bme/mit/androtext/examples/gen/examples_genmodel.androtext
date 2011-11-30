@@ -36,4 +36,10 @@ generator ExampleGenerators {
 		version 1.0	
 	}
 	
+	target HelloTabWidget {
+		project hu.bme.mit.androtext.examples.hellotabwidget
+		platform Android 2.3.3
+		version 1.0		
+	}
+	
 }
