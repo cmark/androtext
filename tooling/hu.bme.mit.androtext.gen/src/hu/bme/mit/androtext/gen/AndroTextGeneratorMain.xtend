@@ -12,6 +12,8 @@ import hu.bme.mit.androtext.gen.resources.StringArrayResourceGenerator
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
+import hu.bme.mit.androtext.gen.layout.TabLayoutGenerator
+import hu.bme.mit.androtext.gen.selector.SelectorGenerator
 
 class AndroTextGeneratorMain implements IGenerator {
 	
@@ -31,6 +33,10 @@ class AndroTextGeneratorMain implements IGenerator {
 	
 	@Inject LayoutResourceGenerator layoutGenerator
 	
+	@Inject TabLayoutGenerator tabLayoutGenerator
+	
+	@Inject SelectorGenerator selectorGenerator
+	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication targetApplication) {
 		// generate data related stuff only if datamodel is defined
 		if (targetApplication.application.dataroot != null) {
@@ -43,6 +49,8 @@ class AndroTextGeneratorMain implements IGenerator {
 		abstractActivityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
 		activityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
 		layoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
+		tabLayoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
+		selectorGenerator.doGenerate(resourceSet, fsa, targetApplication);
 	}
 	
 }

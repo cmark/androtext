@@ -709,6 +709,11 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createDrawableResourceLinkAdapter();
       }
       @Override
+      public Adapter caseTabDrawableResourceLink(TabDrawableResourceLink object)
+      {
+        return createTabDrawableResourceLinkAdapter();
+      }
+      @Override
       public Adapter caseExternalDrawableResourceLink(ExternalDrawableResourceLink object)
       {
         return createExternalDrawableResourceLinkAdapter();
@@ -807,6 +812,11 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTransitionDrawableResource(TransitionDrawableResource object)
       {
         return createTransitionDrawableResourceAdapter();
+      }
+      @Override
+      public Adapter caseTabDrawableResource(TabDrawableResource object)
+      {
+        return createTabDrawableResourceAdapter();
       }
       @Override
       public Adapter caseDimensionValue(DimensionValue object)
@@ -2726,6 +2736,21 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResourceLink <em>Tab Drawable Resource Link</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResourceLink
+   * @generated
+   */
+  public Adapter createTabDrawableResourceLinkAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink <em>External Drawable Resource Link</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -3021,6 +3046,21 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTransitionDrawableResourceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResource <em>Tab Drawable Resource</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResource
+   * @generated
+   */
+  public Adapter createTabDrawableResourceAdapter()
   {
     return null;
   }

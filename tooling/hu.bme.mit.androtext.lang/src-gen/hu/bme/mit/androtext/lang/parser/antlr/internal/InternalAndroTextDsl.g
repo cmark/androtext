@@ -998,15 +998,39 @@ ruleTab returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getTabRule());
 	        }
         }
-	otherlv_4=RULE_ID
-	{
-		newLeafNode(otherlv_4, grammarAccess.getTabAccess().getActivityActivityCrossReference_4_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getTabAccess().getActivityActivityCrossReference_4_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
-)	otherlv_5='}' 
+)	otherlv_5='image' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getTabAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getTabAccess().getImageKeyword_5());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTabAccess().getDrawableTabDrawableResourceLinkParserRuleCall_6_0()); 
+	    }
+		lv_drawable_6_0=ruleTabDrawableResourceLink		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTabRule());
+	        }
+       		set(
+       			$current, 
+       			"drawable",
+        		lv_drawable_6_0, 
+        		"TabDrawableResourceLink");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getTabAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;
@@ -10713,16 +10737,16 @@ ruleNumColumnsAttribute returns [EObject current=null]
     }
 ((
 (
-		lv_autofit_1_0=	'autofit' 
+		lv_autofit_1_0=	'auto_fit' 
     {
-        newLeafNode(lv_autofit_1_0, grammarAccess.getNumColumnsAttributeAccess().getAutofitAutofitKeyword_1_0_0());
+        newLeafNode(lv_autofit_1_0, grammarAccess.getNumColumnsAttributeAccess().getAutofitAuto_fitKeyword_1_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getNumColumnsAttributeRule());
 	        }
-       		setWithLastConsumed($current, "autofit", true, "autofit");
+       		setWithLastConsumed($current, "autofit", true, "auto_fit");
 	    }
 
 )
@@ -11524,6 +11548,42 @@ ruleDrawableResourceLink returns [EObject current=null]
 
 
 
+// Entry rule entryRuleTabDrawableResourceLink
+entryRuleTabDrawableResourceLink returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTabDrawableResourceLinkRule()); }
+	 iv_ruleTabDrawableResourceLink=ruleTabDrawableResourceLink 
+	 { $current=$iv_ruleTabDrawableResourceLink.current; } 
+	 EOF 
+;
+
+// Rule TabDrawableResourceLink
+ruleTabDrawableResourceLink returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTabDrawableResourceLinkRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getTabDrawableResourceLinkAccess().getLinkTabDrawableResourceCrossReference_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+;
+
+
+
+
+
 // Entry rule entryRuleExternalDrawableResourceLink
 entryRuleExternalDrawableResourceLink returns [EObject current=null] 
 	:
@@ -11826,6 +11886,16 @@ ruleResource returns [EObject current=null]
         $current = $this_DrawableResource_6.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getResourceAccess().getTabDrawableResourceParserRuleCall_7()); 
+    }
+    this_TabDrawableResource_7=ruleTabDrawableResource
+    { 
+        $current = $this_TabDrawableResource_7.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -11847,11 +11917,15 @@ ruleStringResource returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='string' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getStringResourceAccess().getStringKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getStringResourceAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getStringResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -11860,20 +11934,20 @@ ruleStringResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1='=' 
+)	otherlv_2='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getStringResourceAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getStringResourceAccess().getEqualsSignKeyword_2());
     }
 (
 (
-		lv_value_2_0=RULE_STRING
+		lv_value_3_0=RULE_STRING
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getStringResourceAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+			newLeafNode(lv_value_3_0, grammarAccess.getStringResourceAccess().getValueSTRINGTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -11882,7 +11956,7 @@ ruleStringResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_2_0, 
+        		lv_value_3_0, 
         		"STRING");
 	    }
 
@@ -11908,11 +11982,15 @@ ruleIntegerResource returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='integer' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getIntegerResourceAccess().getIntegerKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getIntegerResourceAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getIntegerResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -11921,20 +11999,20 @@ ruleIntegerResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1='=' 
+)	otherlv_2='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getIntegerResourceAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getIntegerResourceAccess().getEqualsSignKeyword_2());
     }
 (
 (
-		lv_value_2_0=RULE_INT
+		lv_value_3_0=RULE_INT
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getIntegerResourceAccess().getValueINTTerminalRuleCall_2_0()); 
+			newLeafNode(lv_value_3_0, grammarAccess.getIntegerResourceAccess().getValueINTTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -11943,7 +12021,7 @@ ruleIntegerResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_2_0, 
+        		lv_value_3_0, 
         		"INT");
 	    }
 
@@ -11969,11 +12047,15 @@ ruleBooleanResource returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='bool' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getBooleanResourceAccess().getBoolKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getBooleanResourceAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getBooleanResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -11982,28 +12064,28 @@ ruleBooleanResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1='=' 
+)	otherlv_2='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getBooleanResourceAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getBooleanResourceAccess().getEqualsSignKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBooleanResourceAccess().getValueBOOLParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getBooleanResourceAccess().getValueBOOLParserRuleCall_3_0()); 
 	    }
-		lv_value_2_0=ruleBOOL		{
+		lv_value_3_0=ruleBOOL		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBooleanResourceRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_2_0, 
+        		lv_value_3_0, 
         		"BOOL");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -12030,11 +12112,15 @@ ruleColorResource returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='color' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getColorResourceAccess().getColorKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getColorResourceAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getColorResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -12043,20 +12129,20 @@ ruleColorResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1='=' 
+)	otherlv_2='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getColorResourceAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getColorResourceAccess().getEqualsSignKeyword_2());
     }
 (
 (
-		lv_value_2_0=RULE_HEX_COLOR
+		lv_value_3_0=RULE_HEX_COLOR
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getColorResourceAccess().getValueHEX_COLORTerminalRuleCall_2_0()); 
+			newLeafNode(lv_value_3_0, grammarAccess.getColorResourceAccess().getValueHEX_COLORTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -12065,7 +12151,7 @@ ruleColorResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_2_0, 
+        		lv_value_3_0, 
         		"HEX_COLOR");
 	    }
 
@@ -12091,11 +12177,15 @@ ruleDimensionResource returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='dimension' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getDimensionResourceAccess().getDimensionKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getDimensionResourceAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getDimensionResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -12104,28 +12194,28 @@ ruleDimensionResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1='=' 
+)	otherlv_2='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getDimensionResourceAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getDimensionResourceAccess().getEqualsSignKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDimensionResourceAccess().getValueDimensionValueParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getDimensionResourceAccess().getValueDimensionValueParserRuleCall_3_0()); 
 	    }
-		lv_value_2_0=ruleDimensionValue		{
+		lv_value_3_0=ruleDimensionValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDimensionResourceRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_2_0, 
+        		lv_value_3_0, 
         		"DimensionValue");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -12536,11 +12626,15 @@ ruleBitmapDrawableResource returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='drawable' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getBitmapDrawableResourceAccess().getDrawableKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getBitmapDrawableResourceAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getBitmapDrawableResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -12549,20 +12643,20 @@ ruleBitmapDrawableResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1='=' 
+)	otherlv_2='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getBitmapDrawableResourceAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getBitmapDrawableResourceAccess().getEqualsSignKeyword_2());
     }
 (
 (
-		lv_filename_2_0=RULE_ID
+		lv_filename_3_0=RULE_ID
 		{
-			newLeafNode(lv_filename_2_0, grammarAccess.getBitmapDrawableResourceAccess().getFilenameIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_filename_3_0, grammarAccess.getBitmapDrawableResourceAccess().getFilenameIDTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -12571,7 +12665,7 @@ ruleBitmapDrawableResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"filename",
-        		lv_filename_2_0, 
+        		lv_filename_3_0, 
         		"ID");
 	    }
 
@@ -12597,11 +12691,15 @@ ruleTransitionDrawableResource returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='transition' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getTransitionDrawableResourceAccess().getTransitionKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getTransitionDrawableResourceAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getTransitionDrawableResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -12610,7 +12708,7 @@ ruleTransitionDrawableResource returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
@@ -12622,15 +12720,15 @@ ruleTransitionDrawableResource returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getTransitionDrawableResourceRule());
 	        }
         }
-	otherlv_1=RULE_ID
+	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_1, grammarAccess.getTransitionDrawableResourceAccess().getFromBitmapDrawableResourceCrossReference_1_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getTransitionDrawableResourceAccess().getFromBitmapDrawableResourceCrossReference_2_0()); 
 	}
 
 )
-)	otherlv_2='<->' 
+)	otherlv_3='<->' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getTransitionDrawableResourceAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getTransitionDrawableResourceAccess().getLessThanSignHyphenMinusGreaterThanSignKeyword_3());
     }
 (
 (
@@ -12639,9 +12737,86 @@ ruleTransitionDrawableResource returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getTransitionDrawableResourceRule());
 	        }
         }
+	otherlv_4=RULE_ID
+	{
+		newLeafNode(otherlv_4, grammarAccess.getTransitionDrawableResourceAccess().getToBitmapDrawableResourceCrossReference_4_0()); 
+	}
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleTabDrawableResource
+entryRuleTabDrawableResource returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTabDrawableResourceRule()); }
+	 iv_ruleTabDrawableResource=ruleTabDrawableResource 
+	 { $current=$iv_ruleTabDrawableResource.current; } 
+	 EOF 
+;
+
+// Rule TabDrawableResource
+ruleTabDrawableResource returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='tabdrawable' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getTabDrawableResourceAccess().getTabdrawableKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getTabDrawableResourceAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTabDrawableResourceRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='selected' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getTabDrawableResourceAccess().getSelectedKeyword_2());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTabDrawableResourceRule());
+	        }
+        }
 	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getTransitionDrawableResourceAccess().getToBitmapDrawableResourceCrossReference_3_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getTabDrawableResourceAccess().getSelectedBitmapDrawableResourceCrossReference_3_0()); 
+	}
+
+)
+)	otherlv_4='unselected' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getTabDrawableResourceAccess().getUnselectedKeyword_4());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTabDrawableResourceRule());
+	        }
+        }
+	otherlv_5=RULE_ID
+	{
+		newLeafNode(otherlv_5, grammarAccess.getTabDrawableResourceAccess().getUnselectedBitmapDrawableResourceCrossReference_5_0()); 
 	}
 
 )
@@ -12837,10 +13012,10 @@ ruleActivityTheme returns [Enumerator current=null]
         newLeafNode(enumLiteral_0, grammarAccess.getActivityThemeAccess().getDIALOGEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='NOTITLE' 
+    |(	enumLiteral_1='NOTITLEBAR' 
 	{
-        $current = grammarAccess.getActivityThemeAccess().getNOTITLEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getActivityThemeAccess().getNOTITLEEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getActivityThemeAccess().getNOTITLEBAREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getActivityThemeAccess().getNOTITLEBAREnumLiteralDeclaration_1()); 
     }
 )
     |(	enumLiteral_2='FULLSCREEN' 

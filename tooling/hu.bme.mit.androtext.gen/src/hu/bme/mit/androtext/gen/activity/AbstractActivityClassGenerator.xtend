@@ -17,6 +17,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 
 class AbstractActivityClassGenerator implements IGenerator {
 	
@@ -41,7 +42,14 @@ class AbstractActivityClassGenerator implements IGenerator {
 		«ENDFOR»
 		«activity.importActivity.toString.trim»
 		import android.os.Bundle;
+		«IF activity instanceof ListActivity»
 		import android.widget.ArrayAdapter;
+		«ENDIF»
+		«IF activity instanceof TabActivity»
+		import android.widget.TabHost;
+		import android.content.Intent;
+		import android.content.res.Resources;
+		«ENDIF»
 		
 		«body»
 	'''
@@ -67,16 +75,39 @@ class AbstractActivityClassGenerator implements IGenerator {
 		} 
 	'''
 	
-	def contentViewSet(Activity activity) '''
+	def dispatch contentViewSet(Activity activity) '''
 		«IF activity.layout != null»
 		setContentView(R.layout.«activity.layout.layoutName»);
 		«ENDIF»
+	'''
+	
+	def dispatch contentViewSet(TabActivity activity) '''
+		setContentView(R.layout.«activity.tabActivityLayout»);
 	'''
 	
 	def dispatch logic(Activity activity) ''''''
 	def dispatch logic(ListActivity activity) '''
 		«val listItem = activity.listitem.layoutName»
 		«activity.contentProvider.generate(listItem)»
+	'''
+	
+	def dispatch logic(TabActivity activity) '''
+		
+		Resources res = getResources(); // Resource object to get Drawables
+	    TabHost tabHost = getTabHost();  // The activity TabHost
+	    TabHost.TabSpec spec;  // Resusable TabSpec for each tab
+	    Intent intent;  // Reusable Intent for each tab
+	
+		«FOR tab : activity.tabs»
+		intent = new Intent().setClass(this, «tab.activity.className».class);
+		spec = tabHost.newTabSpec("«tab.tag»").setIndicator("«tab.tag.toFirstUpper»",
+						res.getDrawable(R.drawable.«tab.drawable.link.name»))
+						.setContent(intent);
+		tabHost.addTab(spec);
+		
+		«ENDFOR»
+	
+	    tabHost.setCurrentTab(2);
 	'''
 	
 	def dispatch generate(ContentProvider provider, String listItem) ''''''

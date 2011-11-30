@@ -564,14 +564,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cShowKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cActivityAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cActivityActivityCrossReference_4_0 = (CrossReference)cActivityAssignment_4.eContents().get(0);
-		private final RuleCall cActivityActivityIDTerminalRuleCall_4_0_1 = (RuleCall)cActivityActivityCrossReference_4_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final RuleCall cActivityActivityQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cActivityActivityCrossReference_4_0.eContents().get(1);
+		private final Keyword cImageKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDrawableAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cDrawableTabDrawableResourceLinkParserRuleCall_6_0 = (RuleCall)cDrawableAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Tab:
-		//	"tab" tag=STRING "{" "show" activity=[Activity] "}";
+		//	"tab" tag=STRING "{" "show" activity=[Activity|QualifiedName] "image" drawable=TabDrawableResourceLink "}";
 		public ParserRule getRule() { return rule; }
 
-		//"tab" tag=STRING "{" "show" activity=[Activity] "}"
+		//"tab" tag=STRING "{" "show" activity=[Activity|QualifiedName] "image" drawable=TabDrawableResourceLink "}"
 		public Group getGroup() { return cGroup; }
 
 		//"tab"
@@ -589,17 +592,26 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"show"
 		public Keyword getShowKeyword_3() { return cShowKeyword_3; }
 
-		//activity=[Activity]
+		//activity=[Activity|QualifiedName]
 		public Assignment getActivityAssignment_4() { return cActivityAssignment_4; }
 
-		//[Activity]
+		//[Activity|QualifiedName]
 		public CrossReference getActivityActivityCrossReference_4_0() { return cActivityActivityCrossReference_4_0; }
 
-		//ID
-		public RuleCall getActivityActivityIDTerminalRuleCall_4_0_1() { return cActivityActivityIDTerminalRuleCall_4_0_1; }
+		//QualifiedName
+		public RuleCall getActivityActivityQualifiedNameParserRuleCall_4_0_1() { return cActivityActivityQualifiedNameParserRuleCall_4_0_1; }
+
+		//"image"
+		public Keyword getImageKeyword_5() { return cImageKeyword_5; }
+
+		//drawable=TabDrawableResourceLink
+		public Assignment getDrawableAssignment_6() { return cDrawableAssignment_6; }
+
+		//TabDrawableResourceLink
+		public RuleCall getDrawableTabDrawableResourceLinkParserRuleCall_6_0() { return cDrawableTabDrawableResourceLinkParserRuleCall_6_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class ListActivityElements extends AbstractParserRuleElementFinder {
@@ -5628,28 +5640,28 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNumColumnsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cAutofitAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final Keyword cAutofitAutofitKeyword_1_0_0 = (Keyword)cAutofitAssignment_1_0.eContents().get(0);
+		private final Keyword cAutofitAuto_fitKeyword_1_0_0 = (Keyword)cAutofitAssignment_1_0.eContents().get(0);
 		private final Assignment cNumColumnsAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cNumColumnsIntegerPropertyValueParserRuleCall_1_1_0 = (RuleCall)cNumColumnsAssignment_1_1.eContents().get(0);
 		
 		//NumColumnsAttribute:
-		//	"numColumns" (autofit?="autofit" | numColumns=IntegerPropertyValue);
+		//	"numColumns" (autofit?="auto_fit" | numColumns=IntegerPropertyValue);
 		public ParserRule getRule() { return rule; }
 
-		//"numColumns" (autofit?="autofit" | numColumns=IntegerPropertyValue)
+		//"numColumns" (autofit?="auto_fit" | numColumns=IntegerPropertyValue)
 		public Group getGroup() { return cGroup; }
 
 		//"numColumns"
 		public Keyword getNumColumnsKeyword_0() { return cNumColumnsKeyword_0; }
 
-		//autofit?="autofit" | numColumns=IntegerPropertyValue
+		//autofit?="auto_fit" | numColumns=IntegerPropertyValue
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//autofit?="autofit"
+		//autofit?="auto_fit"
 		public Assignment getAutofitAssignment_1_0() { return cAutofitAssignment_1_0; }
 
-		//"autofit"
-		public Keyword getAutofitAutofitKeyword_1_0_0() { return cAutofitAutofitKeyword_1_0_0; }
+		//"auto_fit"
+		public Keyword getAutofitAuto_fitKeyword_1_0_0() { return cAutofitAuto_fitKeyword_1_0_0; }
 
 		//numColumns=IntegerPropertyValue
 		public Assignment getNumColumnsAssignment_1_1() { return cNumColumnsAssignment_1_1; }
@@ -6121,6 +6133,26 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getLinkDrawableResourceQualifiedNameParserRuleCall_0_1() { return cLinkDrawableResourceQualifiedNameParserRuleCall_0_1; }
 	}
 
+	public class TabDrawableResourceLinkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TabDrawableResourceLink");
+		private final Assignment cLinkAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cLinkTabDrawableResourceCrossReference_0 = (CrossReference)cLinkAssignment.eContents().get(0);
+		private final RuleCall cLinkTabDrawableResourceQualifiedNameParserRuleCall_0_1 = (RuleCall)cLinkTabDrawableResourceCrossReference_0.eContents().get(1);
+		
+		//TabDrawableResourceLink:
+		//	link=[TabDrawableResource|QualifiedName];
+		public ParserRule getRule() { return rule; }
+
+		//link=[TabDrawableResource|QualifiedName]
+		public Assignment getLinkAssignment() { return cLinkAssignment; }
+
+		//[TabDrawableResource|QualifiedName]
+		public CrossReference getLinkTabDrawableResourceCrossReference_0() { return cLinkTabDrawableResourceCrossReference_0; }
+
+		//QualifiedName
+		public RuleCall getLinkTabDrawableResourceQualifiedNameParserRuleCall_0_1() { return cLinkTabDrawableResourceQualifiedNameParserRuleCall_0_1; }
+	}
+
 	public class ExternalDrawableResourceLinkElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalDrawableResourceLink");
 		private final Assignment cExternalResourceAssignment = (Assignment)rule.eContents().get(1);
@@ -6247,14 +6279,15 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDimensionResourceParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cArrayResourceParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cDrawableResourceParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cTabDrawableResourceParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//Resource:
 		//	StringResource | IntegerResource | BooleanResource | ColorResource | DimensionResource | ArrayResource |
-		//	DrawableResource;
+		//	DrawableResource | TabDrawableResource;
 		public ParserRule getRule() { return rule; }
 
 		//StringResource | IntegerResource | BooleanResource | ColorResource | DimensionResource | ArrayResource |
-		//DrawableResource
+		//DrawableResource | TabDrawableResource
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//StringResource
@@ -6277,166 +6310,189 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//DrawableResource
 		public RuleCall getDrawableResourceParserRuleCall_6() { return cDrawableResourceParserRuleCall_6; }
+
+		//TabDrawableResource
+		public RuleCall getTabDrawableResourceParserRuleCall_7() { return cTabDrawableResourceParserRuleCall_7; }
 	}
 
 	public class StringResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringResource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Keyword cStringKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueSTRINGTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//StringResource:
-		//	name=ID "=" value=STRING;
+		//	"string" name=ID "=" value=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "=" value=STRING
+		//"string" name=ID "=" value=STRING
 		public Group getGroup() { return cGroup; }
 
+		//"string"
+		public Keyword getStringKeyword_0() { return cStringKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
 		//value=STRING
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_3_0() { return cValueSTRINGTerminalRuleCall_3_0; }
 	}
 
 	public class IntegerResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IntegerResource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueINTTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Keyword cIntegerKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueINTTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//IntegerResource:
-		//	name=ID "=" value=INT;
+		//	"integer" name=ID "=" value=INT;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "=" value=INT
+		//"integer" name=ID "=" value=INT
 		public Group getGroup() { return cGroup; }
 
+		//"integer"
+		public Keyword getIntegerKeyword_0() { return cIntegerKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
 		//value=INT
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_2_0() { return cValueINTTerminalRuleCall_2_0; }
+		public RuleCall getValueINTTerminalRuleCall_3_0() { return cValueINTTerminalRuleCall_3_0; }
 	}
 
 	public class BooleanResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BooleanResource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueBOOLParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Keyword cBoolKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueBOOLParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//BooleanResource:
-		//	name=ID "=" value=BOOL;
+		//	"bool" name=ID "=" value=BOOL;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "=" value=BOOL
+		//"bool" name=ID "=" value=BOOL
 		public Group getGroup() { return cGroup; }
 
+		//"bool"
+		public Keyword getBoolKeyword_0() { return cBoolKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
 		//value=BOOL
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
 		//BOOL
-		public RuleCall getValueBOOLParserRuleCall_2_0() { return cValueBOOLParserRuleCall_2_0; }
+		public RuleCall getValueBOOLParserRuleCall_3_0() { return cValueBOOLParserRuleCall_3_0; }
 	}
 
 	public class ColorResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ColorResource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueHEX_COLORTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Keyword cColorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueHEX_COLORTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//ColorResource:
-		//	name=ID "=" value=HEX_COLOR;
+		//	"color" name=ID "=" value=HEX_COLOR;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "=" value=HEX_COLOR
+		//"color" name=ID "=" value=HEX_COLOR
 		public Group getGroup() { return cGroup; }
 
+		//"color"
+		public Keyword getColorKeyword_0() { return cColorKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
 		//value=HEX_COLOR
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
 		//HEX_COLOR
-		public RuleCall getValueHEX_COLORTerminalRuleCall_2_0() { return cValueHEX_COLORTerminalRuleCall_2_0; }
+		public RuleCall getValueHEX_COLORTerminalRuleCall_3_0() { return cValueHEX_COLORTerminalRuleCall_3_0; }
 	}
 
 	public class DimensionResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DimensionResource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueDimensionValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Keyword cDimensionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueDimensionValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//DimensionResource:
-		//	name=ID "=" value=DimensionValue;
+		//	"dimension" name=ID "=" value=DimensionValue;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "=" value=DimensionValue
+		//"dimension" name=ID "=" value=DimensionValue
 		public Group getGroup() { return cGroup; }
 
+		//"dimension"
+		public Keyword getDimensionKeyword_0() { return cDimensionKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
 		//value=DimensionValue
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
 		//DimensionValue
-		public RuleCall getValueDimensionValueParserRuleCall_2_0() { return cValueDimensionValueParserRuleCall_2_0; }
+		public RuleCall getValueDimensionValueParserRuleCall_3_0() { return cValueDimensionValueParserRuleCall_3_0; }
 	}
 
 	public class ArrayResourceElements extends AbstractParserRuleElementFinder {
@@ -6674,81 +6730,145 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class BitmapDrawableResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BitmapDrawableResource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cFilenameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cFilenameIDTerminalRuleCall_2_0 = (RuleCall)cFilenameAssignment_2.eContents().get(0);
+		private final Keyword cDrawableKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFilenameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFilenameIDTerminalRuleCall_3_0 = (RuleCall)cFilenameAssignment_3.eContents().get(0);
 		
 		//BitmapDrawableResource:
-		//	name=ID "=" filename=ID;
+		//	"drawable" name=ID "=" filename=ID;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "=" filename=ID
+		//"drawable" name=ID "=" filename=ID
 		public Group getGroup() { return cGroup; }
 
+		//"drawable"
+		public Keyword getDrawableKeyword_0() { return cDrawableKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
 		//filename=ID
-		public Assignment getFilenameAssignment_2() { return cFilenameAssignment_2; }
+		public Assignment getFilenameAssignment_3() { return cFilenameAssignment_3; }
 
 		//ID
-		public RuleCall getFilenameIDTerminalRuleCall_2_0() { return cFilenameIDTerminalRuleCall_2_0; }
+		public RuleCall getFilenameIDTerminalRuleCall_3_0() { return cFilenameIDTerminalRuleCall_3_0; }
 	}
 
 	public class TransitionDrawableResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TransitionDrawableResource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cFromAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFromBitmapDrawableResourceCrossReference_1_0 = (CrossReference)cFromAssignment_1.eContents().get(0);
-		private final RuleCall cFromBitmapDrawableResourceIDTerminalRuleCall_1_0_1 = (RuleCall)cFromBitmapDrawableResourceCrossReference_1_0.eContents().get(1);
-		private final Keyword cLessThanSignHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cToAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cToBitmapDrawableResourceCrossReference_3_0 = (CrossReference)cToAssignment_3.eContents().get(0);
-		private final RuleCall cToBitmapDrawableResourceIDTerminalRuleCall_3_0_1 = (RuleCall)cToBitmapDrawableResourceCrossReference_3_0.eContents().get(1);
+		private final Keyword cTransitionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFromAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFromBitmapDrawableResourceCrossReference_2_0 = (CrossReference)cFromAssignment_2.eContents().get(0);
+		private final RuleCall cFromBitmapDrawableResourceIDTerminalRuleCall_2_0_1 = (RuleCall)cFromBitmapDrawableResourceCrossReference_2_0.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cToAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cToBitmapDrawableResourceCrossReference_4_0 = (CrossReference)cToAssignment_4.eContents().get(0);
+		private final RuleCall cToBitmapDrawableResourceIDTerminalRuleCall_4_0_1 = (RuleCall)cToBitmapDrawableResourceCrossReference_4_0.eContents().get(1);
 		
 		//TransitionDrawableResource:
-		//	name=ID from=[BitmapDrawableResource] "<->" to=[BitmapDrawableResource];
+		//	"transition" name=ID from=[BitmapDrawableResource] "<->" to=[BitmapDrawableResource];
 		public ParserRule getRule() { return rule; }
 
-		//name=ID from=[BitmapDrawableResource] "<->" to=[BitmapDrawableResource]
+		//"transition" name=ID from=[BitmapDrawableResource] "<->" to=[BitmapDrawableResource]
 		public Group getGroup() { return cGroup; }
 
+		//"transition"
+		public Keyword getTransitionKeyword_0() { return cTransitionKeyword_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//from=[BitmapDrawableResource]
-		public Assignment getFromAssignment_1() { return cFromAssignment_1; }
+		public Assignment getFromAssignment_2() { return cFromAssignment_2; }
 
 		//[BitmapDrawableResource]
-		public CrossReference getFromBitmapDrawableResourceCrossReference_1_0() { return cFromBitmapDrawableResourceCrossReference_1_0; }
+		public CrossReference getFromBitmapDrawableResourceCrossReference_2_0() { return cFromBitmapDrawableResourceCrossReference_2_0; }
 
 		//ID
-		public RuleCall getFromBitmapDrawableResourceIDTerminalRuleCall_1_0_1() { return cFromBitmapDrawableResourceIDTerminalRuleCall_1_0_1; }
+		public RuleCall getFromBitmapDrawableResourceIDTerminalRuleCall_2_0_1() { return cFromBitmapDrawableResourceIDTerminalRuleCall_2_0_1; }
 
 		//"<->"
-		public Keyword getLessThanSignHyphenMinusGreaterThanSignKeyword_2() { return cLessThanSignHyphenMinusGreaterThanSignKeyword_2; }
+		public Keyword getLessThanSignHyphenMinusGreaterThanSignKeyword_3() { return cLessThanSignHyphenMinusGreaterThanSignKeyword_3; }
 
 		//to=[BitmapDrawableResource]
-		public Assignment getToAssignment_3() { return cToAssignment_3; }
+		public Assignment getToAssignment_4() { return cToAssignment_4; }
 
 		//[BitmapDrawableResource]
-		public CrossReference getToBitmapDrawableResourceCrossReference_3_0() { return cToBitmapDrawableResourceCrossReference_3_0; }
+		public CrossReference getToBitmapDrawableResourceCrossReference_4_0() { return cToBitmapDrawableResourceCrossReference_4_0; }
 
 		//ID
-		public RuleCall getToBitmapDrawableResourceIDTerminalRuleCall_3_0_1() { return cToBitmapDrawableResourceIDTerminalRuleCall_3_0_1; }
+		public RuleCall getToBitmapDrawableResourceIDTerminalRuleCall_4_0_1() { return cToBitmapDrawableResourceIDTerminalRuleCall_4_0_1; }
+	}
+
+	public class TabDrawableResourceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TabDrawableResource");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTabdrawableKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSelectedKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSelectedAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cSelectedBitmapDrawableResourceCrossReference_3_0 = (CrossReference)cSelectedAssignment_3.eContents().get(0);
+		private final RuleCall cSelectedBitmapDrawableResourceIDTerminalRuleCall_3_0_1 = (RuleCall)cSelectedBitmapDrawableResourceCrossReference_3_0.eContents().get(1);
+		private final Keyword cUnselectedKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cUnselectedAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cUnselectedBitmapDrawableResourceCrossReference_5_0 = (CrossReference)cUnselectedAssignment_5.eContents().get(0);
+		private final RuleCall cUnselectedBitmapDrawableResourceIDTerminalRuleCall_5_0_1 = (RuleCall)cUnselectedBitmapDrawableResourceCrossReference_5_0.eContents().get(1);
+		
+		//TabDrawableResource:
+		//	"tabdrawable" name=ID "selected" selected=[BitmapDrawableResource] "unselected" unselected=[BitmapDrawableResource];
+		public ParserRule getRule() { return rule; }
+
+		//"tabdrawable" name=ID "selected" selected=[BitmapDrawableResource] "unselected" unselected=[BitmapDrawableResource]
+		public Group getGroup() { return cGroup; }
+
+		//"tabdrawable"
+		public Keyword getTabdrawableKeyword_0() { return cTabdrawableKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"selected"
+		public Keyword getSelectedKeyword_2() { return cSelectedKeyword_2; }
+
+		//selected=[BitmapDrawableResource]
+		public Assignment getSelectedAssignment_3() { return cSelectedAssignment_3; }
+
+		//[BitmapDrawableResource]
+		public CrossReference getSelectedBitmapDrawableResourceCrossReference_3_0() { return cSelectedBitmapDrawableResourceCrossReference_3_0; }
+
+		//ID
+		public RuleCall getSelectedBitmapDrawableResourceIDTerminalRuleCall_3_0_1() { return cSelectedBitmapDrawableResourceIDTerminalRuleCall_3_0_1; }
+
+		//"unselected"
+		public Keyword getUnselectedKeyword_4() { return cUnselectedKeyword_4; }
+
+		//unselected=[BitmapDrawableResource]
+		public Assignment getUnselectedAssignment_5() { return cUnselectedAssignment_5; }
+
+		//[BitmapDrawableResource]
+		public CrossReference getUnselectedBitmapDrawableResourceCrossReference_5_0() { return cUnselectedBitmapDrawableResourceCrossReference_5_0; }
+
+		//ID
+		public RuleCall getUnselectedBitmapDrawableResourceIDTerminalRuleCall_5_0_1() { return cUnselectedBitmapDrawableResourceIDTerminalRuleCall_5_0_1; }
 	}
 
 	public class DimensionValueElements extends AbstractParserRuleElementFinder {
@@ -6895,16 +7015,16 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cDIALOGEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cDIALOGDIALOGKeyword_0_0 = (Keyword)cDIALOGEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cNOTITLEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cNOTITLENOTITLEKeyword_1_0 = (Keyword)cNOTITLEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cNOTITLEBAREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cNOTITLEBARNOTITLEBARKeyword_1_0 = (Keyword)cNOTITLEBAREnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cFULLSCREENEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cFULLSCREENFULLSCREENKeyword_2_0 = (Keyword)cFULLSCREENEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum ActivityTheme:
-		//	DIALOG | NOTITLE | FULLSCREEN;
+		//	DIALOG | NOTITLEBAR | FULLSCREEN;
 		public EnumRule getRule() { return rule; }
 
-		//DIALOG | NOTITLE | FULLSCREEN
+		//DIALOG | NOTITLEBAR | FULLSCREEN
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//DIALOG
@@ -6913,11 +7033,11 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"DIALOG"
 		public Keyword getDIALOGDIALOGKeyword_0_0() { return cDIALOGDIALOGKeyword_0_0; }
 
-		//NOTITLE
-		public EnumLiteralDeclaration getNOTITLEEnumLiteralDeclaration_1() { return cNOTITLEEnumLiteralDeclaration_1; }
+		//NOTITLEBAR
+		public EnumLiteralDeclaration getNOTITLEBAREnumLiteralDeclaration_1() { return cNOTITLEBAREnumLiteralDeclaration_1; }
 
-		//"NOTITLE"
-		public Keyword getNOTITLENOTITLEKeyword_1_0() { return cNOTITLENOTITLEKeyword_1_0; }
+		//"NOTITLEBAR"
+		public Keyword getNOTITLEBARNOTITLEBARKeyword_1_0() { return cNOTITLEBARNOTITLEBARKeyword_1_0; }
 
 		//FULLSCREEN
 		public EnumLiteralDeclaration getFULLSCREENEnumLiteralDeclaration_2() { return cFULLSCREENEnumLiteralDeclaration_2; }
@@ -7663,6 +7783,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private LayoutDimensionKindElements unknownRuleLayoutDimensionKind;
 	private DimensionPropertyValueElements pDimensionPropertyValue;
 	private DrawableResourceLinkElements pDrawableResourceLink;
+	private TabDrawableResourceLinkElements pTabDrawableResourceLink;
 	private ExternalDrawableResourceLinkElements pExternalDrawableResourceLink;
 	private AndroidDrawableResourceElements unknownRuleAndroidDrawableResource;
 	private StringResourceLinkElements pStringResourceLink;
@@ -7684,6 +7805,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private DrawableResourceElements pDrawableResource;
 	private BitmapDrawableResourceElements pBitmapDrawableResource;
 	private TransitionDrawableResourceElements pTransitionDrawableResource;
+	private TabDrawableResourceElements pTabDrawableResource;
 	private DimensionValueElements pDimensionValue;
 	private DimensionMetricElements unknownRuleDimensionMetric;
 	private BOOLElements pBOOL;
@@ -7846,7 +7968,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ActivityTheme:
-	//	DIALOG | NOTITLE | FULLSCREEN;
+	//	DIALOG | NOTITLEBAR | FULLSCREEN;
 	public ActivityThemeElements getActivityThemeAccess() {
 		return (unknownRuleActivityTheme != null) ? unknownRuleActivityTheme : (unknownRuleActivityTheme = new ActivityThemeElements());
 	}
@@ -7866,7 +7988,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Tab:
-	//	"tab" tag=STRING "{" "show" activity=[Activity] "}";
+	//	"tab" tag=STRING "{" "show" activity=[Activity|QualifiedName] "image" drawable=TabDrawableResourceLink "}";
 	public TabElements getTabAccess() {
 		return (pTab != null) ? pTab : (pTab = new TabElements());
 	}
@@ -9001,7 +9123,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NumColumnsAttribute:
-	//	"numColumns" (autofit?="autofit" | numColumns=IntegerPropertyValue);
+	//	"numColumns" (autofit?="auto_fit" | numColumns=IntegerPropertyValue);
 	public NumColumnsAttributeElements getNumColumnsAttributeAccess() {
 		return (pNumColumnsAttribute != null) ? pNumColumnsAttribute : (pNumColumnsAttribute = new NumColumnsAttributeElements());
 	}
@@ -9213,6 +9335,16 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getDrawableResourceLinkAccess().getRule();
 	}
 
+	//TabDrawableResourceLink:
+	//	link=[TabDrawableResource|QualifiedName];
+	public TabDrawableResourceLinkElements getTabDrawableResourceLinkAccess() {
+		return (pTabDrawableResourceLink != null) ? pTabDrawableResourceLink : (pTabDrawableResourceLink = new TabDrawableResourceLinkElements());
+	}
+	
+	public ParserRule getTabDrawableResourceLinkRule() {
+		return getTabDrawableResourceLinkAccess().getRule();
+	}
+
 	//ExternalDrawableResourceLink:
 	//	externalResource=AndroidDrawableResource;
 	public ExternalDrawableResourceLinkElements getExternalDrawableResourceLinkAccess() {
@@ -9286,7 +9418,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Resource:
 	//	StringResource | IntegerResource | BooleanResource | ColorResource | DimensionResource | ArrayResource |
-	//	DrawableResource;
+	//	DrawableResource | TabDrawableResource;
 	public ResourceElements getResourceAccess() {
 		return (pResource != null) ? pResource : (pResource = new ResourceElements());
 	}
@@ -9296,7 +9428,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StringResource:
-	//	name=ID "=" value=STRING;
+	//	"string" name=ID "=" value=STRING;
 	public StringResourceElements getStringResourceAccess() {
 		return (pStringResource != null) ? pStringResource : (pStringResource = new StringResourceElements());
 	}
@@ -9306,7 +9438,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IntegerResource:
-	//	name=ID "=" value=INT;
+	//	"integer" name=ID "=" value=INT;
 	public IntegerResourceElements getIntegerResourceAccess() {
 		return (pIntegerResource != null) ? pIntegerResource : (pIntegerResource = new IntegerResourceElements());
 	}
@@ -9316,7 +9448,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BooleanResource:
-	//	name=ID "=" value=BOOL;
+	//	"bool" name=ID "=" value=BOOL;
 	public BooleanResourceElements getBooleanResourceAccess() {
 		return (pBooleanResource != null) ? pBooleanResource : (pBooleanResource = new BooleanResourceElements());
 	}
@@ -9326,7 +9458,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ColorResource:
-	//	name=ID "=" value=HEX_COLOR;
+	//	"color" name=ID "=" value=HEX_COLOR;
 	public ColorResourceElements getColorResourceAccess() {
 		return (pColorResource != null) ? pColorResource : (pColorResource = new ColorResourceElements());
 	}
@@ -9336,7 +9468,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DimensionResource:
-	//	name=ID "=" value=DimensionValue;
+	//	"dimension" name=ID "=" value=DimensionValue;
 	public DimensionResourceElements getDimensionResourceAccess() {
 		return (pDimensionResource != null) ? pDimensionResource : (pDimensionResource = new DimensionResourceElements());
 	}
@@ -9406,7 +9538,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BitmapDrawableResource:
-	//	name=ID "=" filename=ID;
+	//	"drawable" name=ID "=" filename=ID;
 	public BitmapDrawableResourceElements getBitmapDrawableResourceAccess() {
 		return (pBitmapDrawableResource != null) ? pBitmapDrawableResource : (pBitmapDrawableResource = new BitmapDrawableResourceElements());
 	}
@@ -9416,13 +9548,23 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TransitionDrawableResource:
-	//	name=ID from=[BitmapDrawableResource] "<->" to=[BitmapDrawableResource];
+	//	"transition" name=ID from=[BitmapDrawableResource] "<->" to=[BitmapDrawableResource];
 	public TransitionDrawableResourceElements getTransitionDrawableResourceAccess() {
 		return (pTransitionDrawableResource != null) ? pTransitionDrawableResource : (pTransitionDrawableResource = new TransitionDrawableResourceElements());
 	}
 	
 	public ParserRule getTransitionDrawableResourceRule() {
 		return getTransitionDrawableResourceAccess().getRule();
+	}
+
+	//TabDrawableResource:
+	//	"tabdrawable" name=ID "selected" selected=[BitmapDrawableResource] "unselected" unselected=[BitmapDrawableResource];
+	public TabDrawableResourceElements getTabDrawableResourceAccess() {
+		return (pTabDrawableResource != null) ? pTabDrawableResource : (pTabDrawableResource = new TabDrawableResourceElements());
+	}
+	
+	public ParserRule getTabDrawableResourceRule() {
+		return getTabDrawableResourceAccess().getRule();
 	}
 
 	//DimensionValue:

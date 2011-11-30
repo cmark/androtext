@@ -51,7 +51,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActivityTheme">
     <eLiterals name="DIALOG" literal="DIALOG"/>
-    <eLiterals name="NOTITLE" value="1" literal="NOTITLE"/>
+    <eLiterals name="NOTITLEBAR" value="1" literal="NOTITLEBAR"/>
     <eLiterals name="FULLSCREEN" value="2" literal="FULLSCREEN"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TabActivity" eSuperTypes="#//Activity">
@@ -61,6 +61,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Tab">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drawable" eType="#//TabDrawableResourceLink"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListActivity" eSuperTypes="#//Activity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="listitem" eType="#//View"/>
@@ -740,6 +742,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="DrawableResourceLink" eSuperTypes="#//AnyDrawablePropertyValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//DrawableResource"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabDrawableResourceLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//TabDrawableResource"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalDrawableResourceLink" eSuperTypes="#//AnyDrawablePropertyValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalResource" eType="#//AndroidDrawableResource"/>
   </eClassifiers>
@@ -808,6 +813,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="TransitionDrawableResource" eSuperTypes="#//DrawableResource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//BitmapDrawableResource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//BitmapDrawableResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabDrawableResource" eSuperTypes="#//Resource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selected" eType="#//BitmapDrawableResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unselected" eType="#//BitmapDrawableResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DimensionValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

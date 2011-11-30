@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Tab#getTag <em>Tag</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Tab#getActivity <em>Activity</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Tab#getDrawable <em>Drawable</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,5 +79,31 @@ public interface Tab extends EObject
    * @generated
    */
   void setActivity(Activity value);
+
+  /**
+   * Returns the value of the '<em><b>Drawable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Drawable</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Drawable</em>' containment reference.
+   * @see #setDrawable(TabDrawableResourceLink)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getTab_Drawable()
+   * @model containment="true"
+   * @generated
+   */
+  TabDrawableResourceLink getDrawable();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.Tab#getDrawable <em>Drawable</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Drawable</em>' containment reference.
+   * @see #getDrawable()
+   * @generated
+   */
+  void setDrawable(TabDrawableResourceLink value);
 
 } // Tab

@@ -9,8 +9,10 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.Tab;
+import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResourceLink;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -27,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TabImpl#getTag <em>Tag</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TabImpl#getActivity <em>Activity</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TabImpl#getDrawable <em>Drawable</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +66,16 @@ public class TabImpl extends MinimalEObjectImpl.Container implements Tab
    * @ordered
    */
   protected Activity activity;
+
+  /**
+   * The cached value of the '{@link #getDrawable() <em>Drawable</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDrawable()
+   * @generated
+   * @ordered
+   */
+  protected TabDrawableResourceLink drawable;
 
   /**
    * <!-- begin-user-doc -->
@@ -156,6 +169,70 @@ public class TabImpl extends MinimalEObjectImpl.Container implements Tab
    * <!-- end-user-doc -->
    * @generated
    */
+  public TabDrawableResourceLink getDrawable()
+  {
+    return drawable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDrawable(TabDrawableResourceLink newDrawable, NotificationChain msgs)
+  {
+    TabDrawableResourceLink oldDrawable = drawable;
+    drawable = newDrawable;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TAB__DRAWABLE, oldDrawable, newDrawable);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDrawable(TabDrawableResourceLink newDrawable)
+  {
+    if (newDrawable != drawable)
+    {
+      NotificationChain msgs = null;
+      if (drawable != null)
+        msgs = ((InternalEObject)drawable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TAB__DRAWABLE, null, msgs);
+      if (newDrawable != null)
+        msgs = ((InternalEObject)newDrawable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TAB__DRAWABLE, null, msgs);
+      msgs = basicSetDrawable(newDrawable, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TAB__DRAWABLE, newDrawable, newDrawable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AndroTextDslPackage.TAB__DRAWABLE:
+        return basicSetDrawable(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -166,6 +243,8 @@ public class TabImpl extends MinimalEObjectImpl.Container implements Tab
       case AndroTextDslPackage.TAB__ACTIVITY:
         if (resolve) return getActivity();
         return basicGetActivity();
+      case AndroTextDslPackage.TAB__DRAWABLE:
+        return getDrawable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -185,6 +264,9 @@ public class TabImpl extends MinimalEObjectImpl.Container implements Tab
         return;
       case AndroTextDslPackage.TAB__ACTIVITY:
         setActivity((Activity)newValue);
+        return;
+      case AndroTextDslPackage.TAB__DRAWABLE:
+        setDrawable((TabDrawableResourceLink)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -206,6 +288,9 @@ public class TabImpl extends MinimalEObjectImpl.Container implements Tab
       case AndroTextDslPackage.TAB__ACTIVITY:
         setActivity((Activity)null);
         return;
+      case AndroTextDslPackage.TAB__DRAWABLE:
+        setDrawable((TabDrawableResourceLink)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -224,6 +309,8 @@ public class TabImpl extends MinimalEObjectImpl.Container implements Tab
         return TAG_EDEFAULT == null ? tag != null : !TAG_EDEFAULT.equals(tag);
       case AndroTextDslPackage.TAB__ACTIVITY:
         return activity != null;
+      case AndroTextDslPackage.TAB__DRAWABLE:
+        return drawable != null;
     }
     return super.eIsSet(featureID);
   }

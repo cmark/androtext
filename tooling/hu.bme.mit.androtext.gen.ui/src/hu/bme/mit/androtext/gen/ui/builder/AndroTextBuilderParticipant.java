@@ -90,6 +90,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 	@Override
 	public void build(final IBuildContext context, final IProgressMonitor monitor)
 			throws CoreException {
+		if (context.getDeltas().isEmpty()) return;
 		final int numberOfDeltas = context.getDeltas().size();
 		// monitor handling
 		if (monitor.isCanceled())
@@ -317,6 +318,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 				}
 				if (ac instanceof Activity) {
 					View lay = ((Activity) ac).getLayout();
+					if (lay == null) continue;
 					URI newURI = lay.eResource().getURI();
 					if (!uris.contains(newURI)) {
 						uris.add(newURI);

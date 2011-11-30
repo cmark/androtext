@@ -7,6 +7,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import hu.bme.mit.androtext.lang.androTextDsl.View
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
+import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 
 class GeneratorExtensions {
 	
@@ -36,6 +37,10 @@ class GeneratorExtensions {
 			Activity : o.name.toFirstUpper
 			default: o.^class.name.toFirstUpper
 		}
+	}
+	
+	def tabActivityLayout(TabActivity activity) {
+		activity.name.toLowerCase+"_layout"
 	}
 	
 	def abstractClassName(Activity activity) {

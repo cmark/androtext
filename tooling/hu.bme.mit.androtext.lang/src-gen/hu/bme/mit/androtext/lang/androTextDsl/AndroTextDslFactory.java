@@ -1161,6 +1161,15 @@ public interface AndroTextDslFactory extends EFactory
   DrawableResourceLink createDrawableResourceLink();
 
   /**
+   * Returns a new object of class '<em>Tab Drawable Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tab Drawable Resource Link</em>'.
+   * @generated
+   */
+  TabDrawableResourceLink createTabDrawableResourceLink();
+
+  /**
    * Returns a new object of class '<em>External Drawable Resource Link</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1339,6 +1348,15 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   TransitionDrawableResource createTransitionDrawableResource();
+
+  /**
+   * Returns a new object of class '<em>Tab Drawable Resource</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tab Drawable Resource</em>'.
+   * @generated
+   */
+  TabDrawableResource createTabDrawableResource();
 
   /**
    * Returns a new object of class '<em>Dimension Value</em>'.

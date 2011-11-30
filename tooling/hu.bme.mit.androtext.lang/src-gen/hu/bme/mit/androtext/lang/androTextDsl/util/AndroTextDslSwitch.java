@@ -1042,6 +1042,13 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AndroTextDslPackage.TAB_DRAWABLE_RESOURCE_LINK:
+      {
+        TabDrawableResourceLink tabDrawableResourceLink = (TabDrawableResourceLink)theEObject;
+        T result = caseTabDrawableResourceLink(tabDrawableResourceLink);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AndroTextDslPackage.EXTERNAL_DRAWABLE_RESOURCE_LINK:
       {
         ExternalDrawableResourceLink externalDrawableResourceLink = (ExternalDrawableResourceLink)theEObject;
@@ -1208,6 +1215,14 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         T result = caseTransitionDrawableResource(transitionDrawableResource);
         if (result == null) result = caseDrawableResource(transitionDrawableResource);
         if (result == null) result = caseResource(transitionDrawableResource);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.TAB_DRAWABLE_RESOURCE:
+      {
+        TabDrawableResource tabDrawableResource = (TabDrawableResource)theEObject;
+        T result = caseTabDrawableResource(tabDrawableResource);
+        if (result == null) result = caseResource(tabDrawableResource);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -3239,6 +3254,22 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Tab Drawable Resource Link</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tab Drawable Resource Link</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTabDrawableResourceLink(TabDrawableResourceLink object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>External Drawable Resource Link</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -3554,6 +3585,22 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTransitionDrawableResource(TransitionDrawableResource object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tab Drawable Resource</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tab Drawable Resource</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTabDrawableResource(TabDrawableResource object)
   {
     return null;
   }

@@ -119,6 +119,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.StringResource;
 import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.Tab;
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResource;
+import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.TableRow;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
@@ -967,6 +969,19 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.TAB_DRAWABLE_RESOURCE:
+				if(context == grammarAccess.getResourceRule() ||
+				   context == grammarAccess.getTabDrawableResourceRule()) {
+					sequence_TabDrawableResource(context, (TabDrawableResource) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.TAB_DRAWABLE_RESOURCE_LINK:
+				if(context == grammarAccess.getTabDrawableResourceLinkRule()) {
+					sequence_TabDrawableResourceLink(context, (TabDrawableResourceLink) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.TABLE_LAYOUT:
 				if(context == grammarAccess.getTableLayoutRule() ||
 				   context == grammarAccess.getViewRule() ||
@@ -1372,8 +1387,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getBitmapDrawableResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBitmapDrawableResourceAccess().getFilenameIDTerminalRuleCall_2_0(), semanticObject.getFilename());
+		feeder.accept(grammarAccess.getBitmapDrawableResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBitmapDrawableResourceAccess().getFilenameIDTerminalRuleCall_3_0(), semanticObject.getFilename());
 		feeder.finish();
 	}
 	
@@ -1416,8 +1431,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getBooleanResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBooleanResourceAccess().getValueBOOLParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getBooleanResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBooleanResourceAccess().getValueBOOLParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1608,8 +1623,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getColorResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getColorResourceAccess().getValueHEX_COLORTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getColorResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getColorResourceAccess().getValueHEX_COLORTerminalRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1718,8 +1733,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDimensionResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDimensionResourceAccess().getValueDimensionValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getDimensionResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDimensionResourceAccess().getValueDimensionValueParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -2129,8 +2144,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getIntegerResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getIntegerResourceAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getIntegerResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getIntegerResourceAccess().getValueINTTerminalRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -2348,7 +2363,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (autofit?='autofit' | numColumns=IntegerPropertyValue)
+	 *     (autofit?='auto_fit' | numColumns=IntegerPropertyValue)
 	 */
 	protected void sequence_NumColumnsAttribute(EObject context, NumColumnsAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2711,8 +2726,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStringResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getStringResourceAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getStringResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getStringResourceAccess().getValueSTRINGTerminalRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -2728,7 +2743,45 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (tag=STRING activity=[Activity|ID])
+	 *     link=[TabDrawableResource|QualifiedName]
+	 */
+	protected void sequence_TabDrawableResourceLink(EObject context, TabDrawableResourceLink semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getTabDrawableResourceLink_Link()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getTabDrawableResourceLink_Link()));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTabDrawableResourceLinkAccess().getLinkTabDrawableResourceQualifiedNameParserRuleCall_0_1(), semanticObject.getLink());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID selected=[BitmapDrawableResource|ID] unselected=[BitmapDrawableResource|ID])
+	 */
+	protected void sequence_TabDrawableResource(EObject context, TabDrawableResource semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getResource_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getResource_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getTabDrawableResource_Selected()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getTabDrawableResource_Selected()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getTabDrawableResource_Unselected()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getTabDrawableResource_Unselected()));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTabDrawableResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTabDrawableResourceAccess().getSelectedBitmapDrawableResourceIDTerminalRuleCall_3_0_1(), semanticObject.getSelected());
+		feeder.accept(grammarAccess.getTabDrawableResourceAccess().getUnselectedBitmapDrawableResourceIDTerminalRuleCall_5_0_1(), semanticObject.getUnselected());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (tag=STRING activity=[Activity|QualifiedName] drawable=TabDrawableResourceLink)
 	 */
 	protected void sequence_Tab(EObject context, Tab semanticObject) {
 		if(errorAcceptor != null) {
@@ -2736,11 +2789,14 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getTab_Tag()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getTab_Activity()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getTab_Activity()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getTab_Drawable()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getTab_Drawable()));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getTabAccess().getTagSTRINGTerminalRuleCall_1_0(), semanticObject.getTag());
-		feeder.accept(grammarAccess.getTabAccess().getActivityActivityIDTerminalRuleCall_4_0_1(), semanticObject.getActivity());
+		feeder.accept(grammarAccess.getTabAccess().getActivityActivityQualifiedNameParserRuleCall_4_0_1(), semanticObject.getActivity());
+		feeder.accept(grammarAccess.getTabAccess().getDrawableTabDrawableResourceLinkParserRuleCall_6_0(), semanticObject.getDrawable());
 		feeder.finish();
 	}
 	
@@ -2913,9 +2969,9 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTransitionDrawableResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getTransitionDrawableResourceAccess().getFromBitmapDrawableResourceIDTerminalRuleCall_1_0_1(), semanticObject.getFrom());
-		feeder.accept(grammarAccess.getTransitionDrawableResourceAccess().getToBitmapDrawableResourceIDTerminalRuleCall_3_0_1(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getTransitionDrawableResourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTransitionDrawableResourceAccess().getFromBitmapDrawableResourceIDTerminalRuleCall_2_0_1(), semanticObject.getFrom());
+		feeder.accept(grammarAccess.getTransitionDrawableResourceAccess().getToBitmapDrawableResourceIDTerminalRuleCall_4_0_1(), semanticObject.getTo());
 		feeder.finish();
 	}
 	

@@ -34,14 +34,14 @@ public enum ActivityTheme implements Enumerator
   DIALOG(0, "DIALOG", "DIALOG"),
 
   /**
-   * The '<em><b>NOTITLE</b></em>' literal object.
+   * The '<em><b>NOTITLEBAR</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #NOTITLE_VALUE
+   * @see #NOTITLEBAR_VALUE
    * @generated
    * @ordered
    */
-  NOTITLE(1, "NOTITLE", "NOTITLE"),
+  NOTITLEBAR(1, "NOTITLEBAR", "NOTITLEBAR"),
 
   /**
    * The '<em><b>FULLSCREEN</b></em>' literal object.
@@ -69,19 +69,19 @@ public enum ActivityTheme implements Enumerator
   public static final int DIALOG_VALUE = 0;
 
   /**
-   * The '<em><b>NOTITLE</b></em>' literal value.
+   * The '<em><b>NOTITLEBAR</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>NOTITLE</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>NOTITLEBAR</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #NOTITLE
+   * @see #NOTITLEBAR
    * @model
    * @generated
    * @ordered
    */
-  public static final int NOTITLE_VALUE = 1;
+  public static final int NOTITLEBAR_VALUE = 1;
 
   /**
    * The '<em><b>FULLSCREEN</b></em>' literal value.
@@ -108,7 +108,7 @@ public enum ActivityTheme implements Enumerator
     new ActivityTheme[]
     {
       DIALOG,
-      NOTITLE,
+      NOTITLEBAR,
       FULLSCREEN,
     };
 
@@ -169,7 +169,7 @@ public enum ActivityTheme implements Enumerator
     switch (value)
     {
       case DIALOG_VALUE: return DIALOG;
-      case NOTITLE_VALUE: return NOTITLE;
+      case NOTITLEBAR_VALUE: return NOTITLEBAR;
       case FULLSCREEN_VALUE: return FULLSCREEN;
     }
     return null;

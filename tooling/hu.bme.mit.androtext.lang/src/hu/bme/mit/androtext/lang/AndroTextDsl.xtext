@@ -67,7 +67,7 @@ Activity:
 ;
 
 enum ActivityTheme:
-	DIALOG | NOTITLE | FULLSCREEN
+	DIALOG | NOTITLEBAR | FULLSCREEN
 ;
 
 TabActivity:
@@ -78,7 +78,8 @@ TabActivity:
 
 Tab:
 	'tab' tag=STRING '{' 
-		'show' activity=[Activity]
+		'show' activity=[Activity | QualifiedName]
+		'image' drawable=TabDrawableResourceLink
 	'}';
 	
 ListActivity:
@@ -813,6 +814,10 @@ DrawableResourceLink:
 	link = [DrawableResource | QualifiedName]
 ;
 
+TabDrawableResourceLink:
+	link = [TabDrawableResource | QualifiedName]
+;
+
 ExternalDrawableResourceLink:
 	externalResource = AndroidDrawableResource
 ;
@@ -844,27 +849,27 @@ DimensionResourceLink:
 Resource:
     StringResource | IntegerResource | BooleanResource
     | ColorResource | DimensionResource
-    | ArrayResource | DrawableResource
+    | ArrayResource | DrawableResource | TabDrawableResource
 ;
 
 StringResource:
-    name=ID '=' value=STRING
+    'string' name=ID '=' value=STRING
 ;
 
 IntegerResource:
-    name=ID '=' value=INT
+    'integer' name=ID '=' value=INT
 ;
 
 BooleanResource:
-    name=ID '=' value=BOOL
+    'bool' name=ID '=' value=BOOL
 ;
 
 ColorResource:
-    name=ID '=' value=HEX_COLOR
+    'color' name=ID '=' value=HEX_COLOR
 ;
 
 DimensionResource:
-    name=ID '=' value=DimensionValue
+    'dimension' name=ID '=' value=DimensionValue
 ;
 
 ArrayResource:
@@ -894,12 +899,16 @@ DrawableResource:
 ;
 
 BitmapDrawableResource:
-    name=ID '=' filename=ID
+    'drawable' name=ID '=' filename=ID
 ;
 
 TransitionDrawableResource:
-    name=ID
+    'transition' name=ID
         from=[BitmapDrawableResource] '<->' to=[BitmapDrawableResource]
+;
+
+TabDrawableResource:
+	'tabdrawable' name=ID 'selected' selected=[BitmapDrawableResource] 'unselected' unselected=[BitmapDrawableResource]
 ;
 
 DimensionValue:

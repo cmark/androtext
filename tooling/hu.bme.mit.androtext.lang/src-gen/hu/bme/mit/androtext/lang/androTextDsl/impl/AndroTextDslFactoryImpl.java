@@ -195,6 +195,7 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.LAYOUT_DIMENSION_PROPERTY_VALUE: return createLayoutDimensionPropertyValue();
       case AndroTextDslPackage.DIMENSION_PROPERTY_VALUE: return createDimensionPropertyValue();
       case AndroTextDslPackage.DRAWABLE_RESOURCE_LINK: return createDrawableResourceLink();
+      case AndroTextDslPackage.TAB_DRAWABLE_RESOURCE_LINK: return createTabDrawableResourceLink();
       case AndroTextDslPackage.EXTERNAL_DRAWABLE_RESOURCE_LINK: return createExternalDrawableResourceLink();
       case AndroTextDslPackage.STRING_RESOURCE_LINK: return createStringResourceLink();
       case AndroTextDslPackage.INTEGER_RESOURCE_LINK: return createIntegerResourceLink();
@@ -215,6 +216,7 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.DRAWABLE_RESOURCE: return createDrawableResource();
       case AndroTextDslPackage.BITMAP_DRAWABLE_RESOURCE: return createBitmapDrawableResource();
       case AndroTextDslPackage.TRANSITION_DRAWABLE_RESOURCE: return createTransitionDrawableResource();
+      case AndroTextDslPackage.TAB_DRAWABLE_RESOURCE: return createTabDrawableResource();
       case AndroTextDslPackage.DIMENSION_VALUE: return createDimensionValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -1698,6 +1700,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public TabDrawableResourceLink createTabDrawableResourceLink()
+  {
+    TabDrawableResourceLinkImpl tabDrawableResourceLink = new TabDrawableResourceLinkImpl();
+    return tabDrawableResourceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ExternalDrawableResourceLink createExternalDrawableResourceLink()
   {
     ExternalDrawableResourceLinkImpl externalDrawableResourceLink = new ExternalDrawableResourceLinkImpl();
@@ -1911,6 +1924,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     TransitionDrawableResourceImpl transitionDrawableResource = new TransitionDrawableResourceImpl();
     return transitionDrawableResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TabDrawableResource createTabDrawableResource()
+  {
+    TabDrawableResourceImpl tabDrawableResource = new TabDrawableResourceImpl();
+    return tabDrawableResource;
   }
 
   /**

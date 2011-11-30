@@ -19,7 +19,7 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//ActivityTheme">
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ActivityTheme/DIALOG"/>
-      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ActivityTheme/NOTITLE"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ActivityTheme/NOTITLEBAR"/>
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ActivityTheme/FULLSCREEN"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//DataTypes">
@@ -141,6 +141,7 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//Tab">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Tab/tag"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Tab/activity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Tab/drawable"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//ListActivity">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListActivity/listitem"/>
@@ -583,6 +584,9 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//DrawableResourceLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//DrawableResourceLink/link"/>
     </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//TabDrawableResourceLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TabDrawableResourceLink/link"/>
+    </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//ExternalDrawableResourceLink">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//ExternalDrawableResourceLink/externalResource"/>
     </genClasses>
@@ -641,6 +645,10 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//TransitionDrawableResource">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TransitionDrawableResource/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TransitionDrawableResource/to"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//TabDrawableResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TabDrawableResource/selected"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//TabDrawableResource/unselected"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//DimensionValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//DimensionValue/value"/>

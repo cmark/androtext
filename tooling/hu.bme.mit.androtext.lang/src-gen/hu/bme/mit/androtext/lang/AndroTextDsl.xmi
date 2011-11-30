@@ -254,8 +254,8 @@
           <literal value="DIALOG"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ActivityTheme/NOTITLE"/>
-          <literal value="NOTITLE"/>
+          <enumLiteral href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ActivityTheme/NOTITLEBAR"/>
+          <literal value="NOTITLEBAR"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
           <enumLiteral href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ActivityTheme/FULLSCREEN"/>
@@ -295,8 +295,12 @@
             <type metamodel="/0/@metamodelDeclarations.0">
               <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Activity"/>
             </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
           </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="image"/>
+        <elements xsi:type="xtext:Assignment" feature="drawable" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.142"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
@@ -1820,13 +1824,13 @@
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="enabled"/>
           <elements xsi:type="xtext:Assignment" feature="enabled" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.165"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.167"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="persistent"/>
           <elements xsi:type="xtext:Assignment" feature="persistent" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.165"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.167"/>
           </elements>
         </elements>
       </alternatives>
@@ -2557,7 +2561,7 @@
         <elements xsi:type="xtext:Keyword" value="numColumns"/>
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Assignment" feature="autofit" operator="?=">
-            <terminal xsi:type="xtext:Keyword" value="autofit"/>
+            <terminal xsi:type="xtext:Keyword" value="auto_fit"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="numColumns" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.135"/>
@@ -2766,7 +2770,7 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="resources" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.149"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.150"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
@@ -2790,7 +2794,7 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.141"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.142"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.143"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.137"/>
       </alternatives>
     </rules>
@@ -2799,7 +2803,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//StringPropertyValue"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.144"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.145"/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
         </elements>
@@ -2810,7 +2814,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//IntegerPropertyValue"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.145"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.146"/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
         </elements>
@@ -2821,9 +2825,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//BooleanPropertyValue"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.146"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.147"/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.165"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.167"/>
         </elements>
       </alternatives>
     </rules>
@@ -2832,9 +2836,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ColorPropertyValue"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.147"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.148"/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.167"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.169"/>
         </elements>
       </alternatives>
     </rules>
@@ -2873,9 +2877,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//DimensionPropertyValue"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.148"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.149"/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.163"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.165"/>
         </elements>
       </alternatives>
     </rules>
@@ -2892,12 +2896,25 @@
         </terminal>
       </alternatives>
     </rules>
+    <rules xsi:type="xtext:ParserRule" name="TabDrawableResourceLink">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//TabDrawableResourceLink"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="link" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//TabDrawableResource"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+        </terminal>
+      </alternatives>
+    </rules>
     <rules xsi:type="xtext:ParserRule" name="ExternalDrawableResourceLink">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ExternalDrawableResourceLink"/>
       </type>
       <alternatives xsi:type="xtext:Assignment" feature="externalResource" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.143"/>
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.144"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:EnumRule" name="AndroidDrawableResource">
@@ -2997,13 +3014,14 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Resource"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.150"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.151"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.152"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.153"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.154"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.155"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.160"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.156"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.161"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.164"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="StringResource">
@@ -3011,6 +3029,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//StringResource"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="string"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
@@ -3025,6 +3044,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//IntegerResource"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="integer"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
@@ -3039,20 +3059,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//BooleanResource"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="="/>
-        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.165"/>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="ColorResource">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ColorResource"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="bool"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
@@ -3062,17 +3069,33 @@
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="DimensionResource">
+    <rules xsi:type="xtext:ParserRule" name="ColorResource">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//DimensionResource"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ColorResource"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="color"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="="/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.163"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.169"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="DimensionResource">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//DimensionResource"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="dimension"/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="="/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.165"/>
         </elements>
       </alternatives>
     </rules>
@@ -3081,8 +3104,8 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ArrayResource"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.156"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.158"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.157"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.159"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="IntegerArrayResource">
@@ -3097,12 +3120,12 @@
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Assignment" feature="entries" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.157"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.158"/>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="*">
             <elements xsi:type="xtext:Keyword" value=","/>
             <elements xsi:type="xtext:Assignment" feature="entries" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.157"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.158"/>
             </elements>
           </elements>
         </elements>
@@ -3137,12 +3160,12 @@
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Assignment" feature="entries" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.159"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.160"/>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="*">
             <elements xsi:type="xtext:Keyword" value=","/>
             <elements xsi:type="xtext:Assignment" feature="entries" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.159"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.160"/>
             </elements>
           </elements>
         </elements>
@@ -3170,8 +3193,8 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//DrawableResource"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.161"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.162"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.163"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="BitmapDrawableResource">
@@ -3179,6 +3202,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//BitmapDrawableResource"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="drawable"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
@@ -3193,6 +3217,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//TransitionDrawableResource"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="transition"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
@@ -3215,16 +3240,45 @@
         </elements>
       </alternatives>
     </rules>
+    <rules xsi:type="xtext:ParserRule" name="TabDrawableResource">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//TabDrawableResource"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="tabdrawable"/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="selected"/>
+        <elements xsi:type="xtext:Assignment" feature="selected" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//BitmapDrawableResource"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="unselected"/>
+        <elements xsi:type="xtext:Assignment" feature="unselected" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//BitmapDrawableResource"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
     <rules xsi:type="xtext:ParserRule" name="DimensionValue">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//DimensionValue"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.166"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="metric" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.164"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.166"/>
         </elements>
       </alternatives>
     </rules>
