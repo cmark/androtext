@@ -8,10 +8,13 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.CheckBox;
+import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -31,24 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
 {
   /**
-   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getText()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getText()
-   * @generated
-   * @ordered
-   */
-  protected String text = TEXT_EDEFAULT;
+  protected StringPropertyValue text;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +61,7 @@ public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.CHECK_BOX;
+    return AndroTextDslPackage.eINSTANCE.getCheckBox();
   }
 
   /**
@@ -76,7 +69,7 @@ public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getText()
+  public StringPropertyValue getText()
   {
     return text;
   }
@@ -86,12 +79,53 @@ public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setText(String newText)
+  public NotificationChain basicSetText(StringPropertyValue newText, NotificationChain msgs)
   {
-    String oldText = text;
+    StringPropertyValue oldText = text;
     text = newText;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.CHECK_BOX__TEXT, oldText, text));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.CHECK_BOX__TEXT, oldText, newText);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setText(StringPropertyValue newText)
+  {
+    if (newText != text)
+    {
+      NotificationChain msgs = null;
+      if (text != null)
+        msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.CHECK_BOX__TEXT, null, msgs);
+      if (newText != null)
+        msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.CHECK_BOX__TEXT, null, msgs);
+      msgs = basicSetText(newText, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.CHECK_BOX__TEXT, newText, newText));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AndroTextDslPackage.CHECK_BOX__TEXT:
+        return basicSetText(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -121,7 +155,7 @@ public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
     switch (featureID)
     {
       case AndroTextDslPackage.CHECK_BOX__TEXT:
-        setText((String)newValue);
+        setText((StringPropertyValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,7 +172,7 @@ public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
     switch (featureID)
     {
       case AndroTextDslPackage.CHECK_BOX__TEXT:
-        setText(TEXT_EDEFAULT);
+        setText((StringPropertyValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -155,26 +189,9 @@ public class CheckBoxImpl extends SimpleViewImpl implements CheckBox
     switch (featureID)
     {
       case AndroTextDslPackage.CHECK_BOX__TEXT:
-        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+        return text != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (text: ");
-    result.append(text);
-    result.append(')');
-    return result.toString();
   }
 
 } //CheckBoxImpl

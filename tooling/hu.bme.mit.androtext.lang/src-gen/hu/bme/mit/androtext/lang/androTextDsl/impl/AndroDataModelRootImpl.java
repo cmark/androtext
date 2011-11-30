@@ -65,7 +65,7 @@ public class AndroDataModelRootImpl extends ModelRootImpl implements AndroDataMo
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ANDRO_DATA_MODEL_ROOT;
+    return AndroTextDslPackage.eINSTANCE.getAndroDataModelRoot();
   }
 
   /**

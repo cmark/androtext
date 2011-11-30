@@ -15,7 +15,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.ViewElement#getLayoutParams <em>Layout Params</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.ViewElement#getBackgroundAttribute <em>Background Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,29 +26,29 @@ package hu.bme.mit.androtext.lang.androTextDsl;
 public interface ViewElement extends SimpleView
 {
   /**
-   * Returns the value of the '<em><b>Layout Params</b></em>' containment reference.
+   * Returns the value of the '<em><b>Background Attribute</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Layout Params</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Background Attribute</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Layout Params</em>' containment reference.
-   * @see #setLayoutParams(LayoutParams)
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getViewElement_LayoutParams()
+   * @return the value of the '<em>Background Attribute</em>' containment reference.
+   * @see #setBackgroundAttribute(BackgroundAttribute)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getViewElement_BackgroundAttribute()
    * @model containment="true"
    * @generated
    */
-  LayoutParams getLayoutParams();
+  BackgroundAttribute getBackgroundAttribute();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ViewElement#getLayoutParams <em>Layout Params</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ViewElement#getBackgroundAttribute <em>Background Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Layout Params</em>' containment reference.
-   * @see #getLayoutParams()
+   * @param value the new value of the '<em>Background Attribute</em>' containment reference.
+   * @see #getBackgroundAttribute()
    * @generated
    */
-  void setLayoutParams(LayoutParams value);
+  void setBackgroundAttribute(BackgroundAttribute value);
 
 } // ViewElement

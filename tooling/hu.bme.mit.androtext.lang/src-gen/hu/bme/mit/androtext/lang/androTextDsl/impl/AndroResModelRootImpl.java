@@ -65,7 +65,7 @@ public class AndroResModelRootImpl extends ModelRootImpl implements AndroResMode
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ANDRO_RES_MODEL_ROOT;
+    return AndroTextDslPackage.eINSTANCE.getAndroResModelRoot();
   }
 
   /**

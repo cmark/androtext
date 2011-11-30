@@ -6,127 +6,28 @@
  */
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
-import hu.bme.mit.androtext.lang.androTextDsl.AbsoluteLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
-import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslFactory;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroTextModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource;
-import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.ApiLevel;
-import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
-import hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView;
-import hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute;
-import hu.bme.mit.androtext.lang.androTextDsl.BitmapDrawableResource;
-import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource;
-import hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.Button;
-import hu.bme.mit.androtext.lang.androTextDsl.CheckBox;
-import hu.bme.mit.androtext.lang.androTextDsl.CheckBoxPreference;
-import hu.bme.mit.androtext.lang.androTextDsl.CheckedTextView;
-import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.ColorResource;
-import hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
-import hu.bme.mit.androtext.lang.androTextDsl.DataTypes;
-import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
-import hu.bme.mit.androtext.lang.androTextDsl.DialogPreferenceAttributes;
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric;
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource;
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionValue;
-import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource;
-import hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.EditText;
-import hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference;
-import hu.bme.mit.androtext.lang.androTextDsl.Entity;
-import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
-import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
-import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind;
-import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle;
-import hu.bme.mit.androtext.lang.androTextDsl.FrameLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.Gallery;
-import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
-import hu.bme.mit.androtext.lang.androTextDsl.GridLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.GridView;
-import hu.bme.mit.androtext.lang.androTextDsl.ImageView;
-import hu.bme.mit.androtext.lang.androTextDsl.Import;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayEntry;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityAttribute;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
-import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams;
-import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
-import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
-import hu.bme.mit.androtext.lang.androTextDsl.ListView;
-import hu.bme.mit.androtext.lang.androTextDsl.LocalDrawableResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.ModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.PaddingAttribute;
-import hu.bme.mit.androtext.lang.androTextDsl.Preference;
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceAttributes;
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceCategory;
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
-import hu.bme.mit.androtext.lang.androTextDsl.Property;
-import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
-import hu.bme.mit.androtext.lang.androTextDsl.RadioGroup;
-import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
-import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle;
-import hu.bme.mit.androtext.lang.androTextDsl.RelativeLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.Resource;
-import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
-import hu.bme.mit.androtext.lang.androTextDsl.RingtonePrefence;
-import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.SimpleView;
-import hu.bme.mit.androtext.lang.androTextDsl.Spinner;
-import hu.bme.mit.androtext.lang.androTextDsl.StringArrayEntry;
-import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource;
-import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.StringResource;
-import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.Tab;
-import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.TableRow;
-import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.TextSizeAttribute;
-import hu.bme.mit.androtext.lang.androTextDsl.TextView;
-import hu.bme.mit.androtext.lang.androTextDsl.ToggleButton;
-import hu.bme.mit.androtext.lang.androTextDsl.TransitionDrawableResource;
-import hu.bme.mit.androtext.lang.androTextDsl.TypeRef;
-import hu.bme.mit.androtext.lang.androTextDsl.View;
-import hu.bme.mit.androtext.lang.androTextDsl.ViewElement;
-import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
-import hu.bme.mit.androtext.lang.androTextDsl.WebView;
+
+import java.io.IOException;
+
+import java.net.URL;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,6 +37,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  */
 public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDslPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected String packageFilename = "androTextDsl.ecore";
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -191,13 +99,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass activityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass simpleActivityEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -309,14 +210,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass layoutParamsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass layoutGravityAttributeEClass = null;
+  private EClass layoutPropertiesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -352,13 +246,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass linearLayoutEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass linearLayoutParamsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -533,34 +420,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass paddingAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass gravityAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass textSizeAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass backgroundAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass abstractPreferenceEClass = null;
 
   /**
@@ -638,6 +497,370 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass spanAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass columnAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass centerVerticalAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass centerInParentAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass centerHorizontalAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass toRightOfAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass toLeftOfAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass aboveAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass belowAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignLeftAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignBottomAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignTopAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignParentLeftAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignParentTopAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignParentRightAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignParentBottomAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass marginBottomAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass marginRightAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass marginTopAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass weightAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass marginLeftAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textStyleAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typefaceAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textColorAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass singleLineAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass phoneNumberAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass passwordAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numericAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass hintAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass editableAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass digitsAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass capitalizeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass autoTextAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass isScrollContainerAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fadeScrollBarsAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass clickableAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass autoLinkAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass widthAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass heightAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass paddingAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gravityAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textSizeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass backgroundAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass columnWidthAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass horizontalSpacingAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numColumnsAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stretchModeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass verticalSpacingAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entriesAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stretchColumnsAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass shrinkColumnsAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass collapseColumnsAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass androResModelRootEClass = null;
 
   /**
@@ -702,13 +925,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass drawableResourceLinkEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass localDrawableResourceLinkEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -883,7 +1099,49 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum layoutGravityKindEEnum = null;
+  private EEnum numericKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum typefaceKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum textStyleKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum capitalizeKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum autoLinkKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum stretchModeKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum gravityKindEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -948,8 +1206,6 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #eNS_URI
-   * @see #createPackageContents()
-   * @see #initializePackageContents()
    * @generated
    */
   public static AndroTextDslPackage init()
@@ -961,11 +1217,11 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
 
     isInited = true;
 
-    // Create package meta-data objects
-    theAndroTextDslPackage.createPackageContents();
+    // Load packages
+    theAndroTextDslPackage.loadPackage();
 
-    // Initialize created meta-data
-    theAndroTextDslPackage.initializePackageContents();
+    // Fix loaded packages
+    theAndroTextDslPackage.fixPackageContents();
 
     // Mark meta-data to indicate it can't be changed
     theAndroTextDslPackage.freeze();
@@ -983,6 +1239,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAndroTextModelRoot()
   {
+    if (androTextModelRootEClass == null)
+    {
+      androTextModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(0);
+    }
     return androTextModelRootEClass;
   }
 
@@ -993,7 +1253,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getAndroTextModelRoot_Name()
   {
-    return (EAttribute)androTextModelRootEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAndroTextModelRoot().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1003,7 +1263,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroTextModelRoot_Imports()
   {
-    return (EReference)androTextModelRootEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAndroTextModelRoot().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1013,7 +1273,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroTextModelRoot_ActualModelRoot()
   {
-    return (EReference)androTextModelRootEClass.getEStructuralFeatures().get(2);
+        return (EReference)getAndroTextModelRoot().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1023,6 +1283,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getModelRoot()
   {
+    if (modelRootEClass == null)
+    {
+      modelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(1);
+    }
     return modelRootEClass;
   }
 
@@ -1033,7 +1297,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getModelRoot_Name()
   {
-    return (EAttribute)modelRootEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getModelRoot().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1043,6 +1307,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getImport()
   {
+    if (importEClass == null)
+    {
+      importEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(2);
+    }
     return importEClass;
   }
 
@@ -1053,7 +1321,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getImport_ImportedNamespace()
   {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImport().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1063,6 +1331,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAndroGenModelRoot()
   {
+    if (androGenModelRootEClass == null)
+    {
+      androGenModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(3);
+    }
     return androGenModelRootEClass;
   }
 
@@ -1073,7 +1345,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroGenModelRoot_TargetApplications()
   {
-    return (EReference)androGenModelRootEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAndroGenModelRoot().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1083,6 +1355,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTargetApplication()
   {
+    if (targetApplicationEClass == null)
+    {
+      targetApplicationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(4);
+    }
     return targetApplicationEClass;
   }
 
@@ -1093,7 +1369,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTargetApplication_Application()
   {
-    return (EReference)targetApplicationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTargetApplication().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1103,7 +1379,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getTargetApplication_ProjectName()
   {
-    return (EAttribute)targetApplicationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getTargetApplication().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1113,7 +1389,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getTargetApplication_PackageName()
   {
-    return (EAttribute)targetApplicationEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getTargetApplication().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1123,7 +1399,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getTargetApplication_Target()
   {
-    return (EAttribute)targetApplicationEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getTargetApplication().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1133,7 +1409,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getTargetApplication_Version()
   {
-    return (EAttribute)targetApplicationEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getTargetApplication().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1143,6 +1419,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAndroidApplication()
   {
+    if (androidApplicationEClass == null)
+    {
+      androidApplicationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(6);
+    }
     return androidApplicationEClass;
   }
 
@@ -1153,7 +1433,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroidApplication_Dataroot()
   {
-    return (EReference)androidApplicationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAndroidApplication().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1163,7 +1443,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroidApplication_MainActivity()
   {
-    return (EReference)androidApplicationEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAndroidApplication().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1173,7 +1453,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroidApplication_ModelElements()
   {
-    return (EReference)androidApplicationEClass.getEStructuralFeatures().get(2);
+        return (EReference)getAndroidApplication().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1183,6 +1463,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAndroidApplicationModelElement()
   {
+    if (androidApplicationModelElementEClass == null)
+    {
+      androidApplicationModelElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(7);
+    }
     return androidApplicationModelElementEClass;
   }
 
@@ -1193,7 +1477,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getAndroidApplicationModelElement_Name()
   {
-    return (EAttribute)androidApplicationModelElementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAndroidApplicationModelElement().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1203,6 +1487,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getActivity()
   {
+    if (activityEClass == null)
+    {
+      activityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(8);
+    }
     return activityEClass;
   }
 
@@ -1211,9 +1499,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSimpleActivity()
+  public EReference getActivity_Layout()
   {
-    return simpleActivityEClass;
+        return (EReference)getActivity().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1221,19 +1509,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSimpleActivity_Layout()
+  public EAttribute getActivity_Theme()
   {
-    return (EReference)simpleActivityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSimpleActivity_Theme()
-  {
-    return (EAttribute)simpleActivityEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getActivity().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1243,6 +1521,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTabActivity()
   {
+    if (tabActivityEClass == null)
+    {
+      tabActivityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(10);
+    }
     return tabActivityEClass;
   }
 
@@ -1253,7 +1535,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTabActivity_Tabs()
   {
-    return (EReference)tabActivityEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTabActivity().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1263,6 +1545,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTab()
   {
+    if (tabEClass == null)
+    {
+      tabEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(11);
+    }
     return tabEClass;
   }
 
@@ -1273,7 +1559,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getTab_Tag()
   {
-    return (EAttribute)tabEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTab().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1283,7 +1569,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTab_Activity()
   {
-    return (EReference)tabEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTab().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1293,6 +1579,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getListActivity()
   {
+    if (listActivityEClass == null)
+    {
+      listActivityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(12);
+    }
     return listActivityEClass;
   }
 
@@ -1303,7 +1593,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getListActivity_Listitem()
   {
-    return (EReference)listActivityEClass.getEStructuralFeatures().get(0);
+        return (EReference)getListActivity().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1313,7 +1603,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getListActivity_ContentProvider()
   {
-    return (EReference)listActivityEClass.getEStructuralFeatures().get(1);
+        return (EReference)getListActivity().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1323,6 +1613,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getPreferenceActivity()
   {
+    if (preferenceActivityEClass == null)
+    {
+      preferenceActivityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(13);
+    }
     return preferenceActivityEClass;
   }
 
@@ -1333,7 +1627,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getPreferenceActivity_Layout()
   {
-    return (EReference)preferenceActivityEClass.getEStructuralFeatures().get(0);
+        return (EReference)getPreferenceActivity().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1343,6 +1637,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getContentProvider()
   {
+    if (contentProviderEClass == null)
+    {
+      contentProviderEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(14);
+    }
     return contentProviderEClass;
   }
 
@@ -1353,6 +1651,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getResourceContentProvider()
   {
+    if (resourceContentProviderEClass == null)
+    {
+      resourceContentProviderEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(15);
+    }
     return resourceContentProviderEClass;
   }
 
@@ -1363,7 +1665,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getResourceContentProvider_Link()
   {
-    return (EReference)resourceContentProviderEClass.getEStructuralFeatures().get(0);
+        return (EReference)getResourceContentProvider().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1373,6 +1675,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAndroDataModelRoot()
   {
+    if (androDataModelRootEClass == null)
+    {
+      androDataModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(16);
+    }
     return androDataModelRootEClass;
   }
 
@@ -1383,7 +1689,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroDataModelRoot_Entities()
   {
-    return (EReference)androDataModelRootEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAndroDataModelRoot().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1393,6 +1699,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getEntity()
   {
+    if (entityEClass == null)
+    {
+      entityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(17);
+    }
     return entityEClass;
   }
 
@@ -1403,7 +1713,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getEntity_Name()
   {
-    return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getEntity().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1413,7 +1723,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEntity_SuperType()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(1);
+        return (EReference)getEntity().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1423,7 +1733,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEntity_Properties()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(2);
+        return (EReference)getEntity().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1433,6 +1743,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getProperty()
   {
+    if (propertyEClass == null)
+    {
+      propertyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(18);
+    }
     return propertyEClass;
   }
 
@@ -1443,7 +1757,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getProperty_Name()
   {
-    return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getProperty().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1453,7 +1767,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getProperty_Type()
   {
-    return (EReference)propertyEClass.getEStructuralFeatures().get(1);
+        return (EReference)getProperty().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1463,6 +1777,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTypeRef()
   {
+    if (typeRefEClass == null)
+    {
+      typeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(19);
+    }
     return typeRefEClass;
   }
 
@@ -1473,6 +1791,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDataTypesRef()
   {
+    if (dataTypesRefEClass == null)
+    {
+      dataTypesRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(20);
+    }
     return dataTypesRefEClass;
   }
 
@@ -1483,7 +1805,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getDataTypesRef_Type()
   {
-    return (EAttribute)dataTypesRefEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDataTypesRef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1493,6 +1815,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getEntityTypeRef()
   {
+    if (entityTypeRefEClass == null)
+    {
+      entityTypeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(21);
+    }
     return entityTypeRefEClass;
   }
 
@@ -1503,7 +1829,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEntityTypeRef_Type()
   {
-    return (EReference)entityTypeRefEClass.getEStructuralFeatures().get(0);
+        return (EReference)getEntityTypeRef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1513,6 +1839,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAndroGuiModelRoot()
   {
+    if (androGuiModelRootEClass == null)
+    {
+      androGuiModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(23);
+    }
     return androGuiModelRootEClass;
   }
 
@@ -1523,7 +1853,17 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroGuiModelRoot_Roots()
   {
-    return (EReference)androGuiModelRootEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAndroGuiModelRoot().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAndroGuiModelRoot_LayoutAttributes()
+  {
+        return (EReference)getAndroGuiModelRoot().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1533,6 +1873,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getView()
   {
+    if (viewEClass == null)
+    {
+      viewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(24);
+    }
     return viewEClass;
   }
 
@@ -1543,7 +1887,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getView_Name()
   {
-    return (EAttribute)viewEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getView().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1553,7 +1897,17 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getView_LayoutStyle()
   {
-    return (EReference)viewEClass.getEStructuralFeatures().get(1);
+        return (EReference)getView().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getView_LayoutProperties()
+  {
+        return (EReference)getView().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1563,6 +1917,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getViewGroup()
   {
+    if (viewGroupEClass == null)
+    {
+      viewGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(25);
+    }
     return viewGroupEClass;
   }
 
@@ -1573,7 +1931,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getViewGroup_Views()
   {
-    return (EReference)viewGroupEClass.getEStructuralFeatures().get(0);
+        return (EReference)getViewGroup().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1581,9 +1939,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLayoutParams()
+  public EClass getLayoutProperties()
   {
-    return layoutParamsEClass;
+    if (layoutPropertiesEClass == null)
+    {
+      layoutPropertiesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(26);
+    }
+    return layoutPropertiesEClass;
   }
 
   /**
@@ -1591,9 +1953,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Weight()
+  public EAttribute getLayoutProperties_Name()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getLayoutProperties().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1601,9 +1963,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_MarginLeft()
+  public EReference getLayoutProperties_WeightAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(1);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1611,9 +1973,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_MarginTop()
+  public EReference getLayoutProperties_MarginLeftAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(2);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1621,9 +1983,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_MarginRight()
+  public EReference getLayoutProperties_MarginTopAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(3);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1631,9 +1993,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_MarginBottom()
+  public EReference getLayoutProperties_MarginRightAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(4);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1641,9 +2003,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignParentLeft()
+  public EReference getLayoutProperties_MarginBottomAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(5);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1651,9 +2013,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignParentTop()
+  public EReference getLayoutProperties_AlignParentLeftAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(6);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1661,9 +2023,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignParentRight()
+  public EReference getLayoutProperties_AlignParentTopAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(7);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1671,9 +2033,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignParentBottom()
+  public EReference getLayoutProperties_AlignParentRightAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(8);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(8);
   }
 
   /**
@@ -1681,9 +2043,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignTop()
+  public EReference getLayoutProperties_AlignParentBottomAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(9);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1691,9 +2053,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignBottom()
+  public EReference getLayoutProperties_AlignTopAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(10);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(10);
   }
 
   /**
@@ -1701,9 +2063,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_AlignLeft()
+  public EReference getLayoutProperties_AlignBottomAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(11);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(11);
   }
 
   /**
@@ -1711,9 +2073,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Below()
+  public EReference getLayoutProperties_AlignLeftAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(12);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(12);
   }
 
   /**
@@ -1721,9 +2083,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Above()
+  public EReference getLayoutProperties_BelowAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(13);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(13);
   }
 
   /**
@@ -1731,9 +2093,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_ToLeftOf()
+  public EReference getLayoutProperties_AboveAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(14);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(14);
   }
 
   /**
@@ -1741,9 +2103,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_ToRightOf()
+  public EReference getLayoutProperties_ToLeftOfAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(15);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(15);
   }
 
   /**
@@ -1751,9 +2113,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_CenterHorizontal()
+  public EReference getLayoutProperties_ToRightOfAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(16);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(16);
   }
 
   /**
@@ -1761,9 +2123,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_CenterInParent()
+  public EReference getLayoutProperties_CenterHorizontalAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(17);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(17);
   }
 
   /**
@@ -1771,9 +2133,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_CenterVertical()
+  public EReference getLayoutProperties_CenterInParentAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(18);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(18);
   }
 
   /**
@@ -1781,9 +2143,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_Column()
+  public EReference getLayoutProperties_CenterVerticalAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(19);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(19);
   }
 
   /**
@@ -1791,9 +2153,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLayoutParams_BackgroundAttribute()
+  public EReference getLayoutProperties_ColumnAttribute()
   {
-    return (EReference)layoutParamsEClass.getEStructuralFeatures().get(20);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(20);
   }
 
   /**
@@ -1801,19 +2163,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLayoutGravityAttribute()
+  public EReference getLayoutProperties_SpanAttribute()
   {
-    return layoutGravityAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLayoutGravityAttribute_Gravity()
-  {
-    return (EAttribute)layoutGravityAttributeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getLayoutProperties().getEStructuralFeatures().get(21);
   }
 
   /**
@@ -1823,6 +2175,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getLayoutStyle()
   {
+    if (layoutStyleEClass == null)
+    {
+      layoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(27);
+    }
     return layoutStyleEClass;
   }
 
@@ -1833,6 +2189,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getRegularLayoutStyle()
   {
+    if (regularLayoutStyleEClass == null)
+    {
+      regularLayoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(28);
+    }
     return regularLayoutStyleEClass;
   }
 
@@ -1843,7 +2203,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getRegularLayoutStyle_Width()
   {
-    return (EReference)regularLayoutStyleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getRegularLayoutStyle().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1853,7 +2213,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getRegularLayoutStyle_Height()
   {
-    return (EReference)regularLayoutStyleEClass.getEStructuralFeatures().get(1);
+        return (EReference)getRegularLayoutStyle().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1863,6 +2223,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getFastLayoutStyle()
   {
+    if (fastLayoutStyleEClass == null)
+    {
+      fastLayoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(29);
+    }
     return fastLayoutStyleEClass;
   }
 
@@ -1873,7 +2237,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getFastLayoutStyle_Value()
   {
-    return (EAttribute)fastLayoutStyleEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getFastLayoutStyle().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1883,6 +2247,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAbsoluteLayout()
   {
+    if (absoluteLayoutEClass == null)
+    {
+      absoluteLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(30);
+    }
     return absoluteLayoutEClass;
   }
 
@@ -1893,6 +2261,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getLinearLayout()
   {
+    if (linearLayoutEClass == null)
+    {
+      linearLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(31);
+    }
     return linearLayoutEClass;
   }
 
@@ -1903,7 +2275,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getLinearLayout_Vertical()
   {
-    return (EAttribute)linearLayoutEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getLinearLayout().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1911,39 +2283,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLinearLayout_LayoutParams()
+  public EReference getLinearLayout_Gravity()
   {
-    return (EReference)linearLayoutEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getLinearLayoutParams()
-  {
-    return linearLayoutParamsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getLinearLayoutParams_LayoutParams()
-  {
-    return (EReference)linearLayoutParamsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getLinearLayoutParams_Gravity()
-  {
-    return (EReference)linearLayoutParamsEClass.getEStructuralFeatures().get(1);
+        return (EReference)getLinearLayout().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1953,6 +2295,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getFrameLayout()
   {
+    if (frameLayoutEClass == null)
+    {
+      frameLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(32);
+    }
     return frameLayoutEClass;
   }
 
@@ -1963,6 +2309,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getRelativeLayout()
   {
+    if (relativeLayoutEClass == null)
+    {
+      relativeLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(33);
+    }
     return relativeLayoutEClass;
   }
 
@@ -1973,6 +2323,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getGridLayout()
   {
+    if (gridLayoutEClass == null)
+    {
+      gridLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(34);
+    }
     return gridLayoutEClass;
   }
 
@@ -1983,6 +2337,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTableLayout()
   {
+    if (tableLayoutEClass == null)
+    {
+      tableLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(35);
+    }
     return tableLayoutEClass;
   }
 
@@ -1991,9 +2349,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTableLayout_CollapseColumns()
+  public EReference getTableLayout_CollapseColumnsAttribute()
   {
-    return (EReference)tableLayoutEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTableLayout().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2001,9 +2359,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTableLayout_ShrinkColumns()
+  public EReference getTableLayout_ShrinkColumnsAttribute()
   {
-    return (EReference)tableLayoutEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTableLayout().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2011,9 +2369,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTableLayout_StretchColumns()
+  public EReference getTableLayout_StretchColumnsAttribute()
   {
-    return (EReference)tableLayoutEClass.getEStructuralFeatures().get(2);
+        return (EReference)getTableLayout().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2023,6 +2381,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTableRow()
   {
+    if (tableRowEClass == null)
+    {
+      tableRowEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(36);
+    }
     return tableRowEClass;
   }
 
@@ -2033,6 +2395,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getSimpleView()
   {
+    if (simpleViewEClass == null)
+    {
+      simpleViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(37);
+    }
     return simpleViewEClass;
   }
 
@@ -2043,6 +2409,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getViewElement()
   {
+    if (viewElementEClass == null)
+    {
+      viewElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(38);
+    }
     return viewElementEClass;
   }
 
@@ -2051,9 +2421,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getViewElement_LayoutParams()
+  public EReference getViewElement_BackgroundAttribute()
   {
-    return (EReference)viewElementEClass.getEStructuralFeatures().get(0);
+        return (EReference)getViewElement().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2063,6 +2433,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTextView()
   {
+    if (textViewEClass == null)
+    {
+      textViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(39);
+    }
     return textViewEClass;
   }
 
@@ -2071,9 +2445,199 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTextView_Text()
+  public EReference getTextView_Text()
   {
-    return (EAttribute)textViewEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTextView().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_WidthAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_HeightAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_BackgroundAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_ClickableAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_FadeScrollBarsAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_IsScrollContainerAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_AutoLinkAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_AutoTextAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_CapitalizeAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_DigitsAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_EditableAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_HintAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_NumericAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(13);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_PasswordAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(14);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_PhoneNumberAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(15);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_SingleLineAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(16);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_TextColorAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(17);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_TypefaceAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(18);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextView_TextStyleAttribute()
+  {
+        return (EReference)getTextView().getEStructuralFeatures().get(19);
   }
 
   /**
@@ -2083,7 +2647,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTextView_GravityAttribute()
   {
-    return (EReference)textViewEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTextView().getEStructuralFeatures().get(20);
   }
 
   /**
@@ -2093,7 +2657,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTextView_TextSizeAttribute()
   {
-    return (EReference)textViewEClass.getEStructuralFeatures().get(2);
+        return (EReference)getTextView().getEStructuralFeatures().get(21);
   }
 
   /**
@@ -2103,17 +2667,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTextView_PaddingAttribute()
   {
-    return (EReference)textViewEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTextView_LayoutParams()
-  {
-    return (EReference)textViewEClass.getEStructuralFeatures().get(4);
+        return (EReference)getTextView().getEStructuralFeatures().get(22);
   }
 
   /**
@@ -2123,6 +2677,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getEditText()
   {
+    if (editTextEClass == null)
+    {
+      editTextEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(40);
+    }
     return editTextEClass;
   }
 
@@ -2131,9 +2689,199 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEditText_Text()
+  public EReference getEditText_Text()
   {
-    return (EAttribute)editTextEClass.getEStructuralFeatures().get(0);
+        return (EReference)getEditText().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_WidthAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_HeightAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_BackgroundAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_ClickableAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_FadeScrollBarsAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_IsScrollContainerAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_AutoLinkAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_AutoTextAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_CapitalizeAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_DigitsAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_EditableAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_HintAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_NumericAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(13);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_PasswordAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(14);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_PhoneNumberAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(15);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_SingleLineAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(16);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_TextColorAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(17);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_TypefaceAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(18);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditText_TextStyleAttribute()
+  {
+        return (EReference)getEditText().getEStructuralFeatures().get(19);
   }
 
   /**
@@ -2143,7 +2891,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEditText_GravityAttribute()
   {
-    return (EReference)editTextEClass.getEStructuralFeatures().get(1);
+        return (EReference)getEditText().getEStructuralFeatures().get(20);
   }
 
   /**
@@ -2153,7 +2901,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEditText_TextSizeAttribute()
   {
-    return (EReference)editTextEClass.getEStructuralFeatures().get(2);
+        return (EReference)getEditText().getEStructuralFeatures().get(21);
   }
 
   /**
@@ -2161,9 +2909,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEditText_LayoutParams()
+  public EReference getEditText_PaddingAttribute()
   {
-    return (EReference)editTextEClass.getEStructuralFeatures().get(3);
+        return (EReference)getEditText().getEStructuralFeatures().get(22);
   }
 
   /**
@@ -2173,6 +2921,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getButton()
   {
+    if (buttonEClass == null)
+    {
+      buttonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(41);
+    }
     return buttonEClass;
   }
 
@@ -2181,9 +2933,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getButton_Text()
+  public EReference getButton_Text()
   {
-    return (EAttribute)buttonEClass.getEStructuralFeatures().get(0);
+        return (EReference)getButton().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2191,9 +2943,49 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getButton_LayoutParams()
+  public EReference getButton_WidthAttribute()
   {
-    return (EReference)buttonEClass.getEStructuralFeatures().get(1);
+        return (EReference)getButton().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButton_HeightAttribute()
+  {
+        return (EReference)getButton().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButton_BackgroundAttribute()
+  {
+        return (EReference)getButton().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButton_ClickableAttribute()
+  {
+        return (EReference)getButton().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButton_HintAttribute()
+  {
+        return (EReference)getButton().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2203,6 +2995,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getGallery()
   {
+    if (galleryEClass == null)
+    {
+      galleryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(42);
+    }
     return galleryEClass;
   }
 
@@ -2213,6 +3009,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getExpandableListView()
   {
+    if (expandableListViewEClass == null)
+    {
+      expandableListViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(43);
+    }
     return expandableListViewEClass;
   }
 
@@ -2223,6 +3023,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getWebView()
   {
+    if (webViewEClass == null)
+    {
+      webViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(44);
+    }
     return webViewEClass;
   }
 
@@ -2233,6 +3037,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getImageView()
   {
+    if (imageViewEClass == null)
+    {
+      imageViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(45);
+    }
     return imageViewEClass;
   }
 
@@ -2243,7 +3051,67 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getImageView_Src()
   {
-    return (EReference)imageViewEClass.getEStructuralFeatures().get(0);
+        return (EReference)getImageView().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_WidthAttribute()
+  {
+        return (EReference)getImageView().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_HeightAttribute()
+  {
+        return (EReference)getImageView().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_BackgroundAttribute()
+  {
+        return (EReference)getImageView().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_ClickableAttribute()
+  {
+        return (EReference)getImageView().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_FadeScrollBarsAttribute()
+  {
+        return (EReference)getImageView().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageView_IsScrollContainerAttribute()
+  {
+        return (EReference)getImageView().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -2253,6 +3121,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getListView()
   {
+    if (listViewEClass == null)
+    {
+      listViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(46);
+    }
     return listViewEClass;
   }
 
@@ -2261,9 +3133,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListView_Entries()
+  public EReference getListView_EntriesAttribute()
   {
-    return (EReference)listViewEClass.getEStructuralFeatures().get(0);
+        return (EReference)getListView().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2273,7 +3145,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getListView_Layout()
   {
-    return (EReference)listViewEClass.getEStructuralFeatures().get(1);
+        return (EReference)getListView().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2283,7 +3155,71 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getGridView()
   {
+    if (gridViewEClass == null)
+    {
+      gridViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(47);
+    }
     return gridViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGridView_ColumnWidthAttribute()
+  {
+        return (EReference)getGridView().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGridView_HorizontalSpacingAttribute()
+  {
+        return (EReference)getGridView().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGridView_VerticalSpacingAttribute()
+  {
+        return (EReference)getGridView().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGridView_NumColumnsAttribute()
+  {
+        return (EReference)getGridView().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGridView_StretchModeAttribute()
+  {
+        return (EReference)getGridView().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGridView_GravityAttribute()
+  {
+        return (EReference)getGridView().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2293,6 +3229,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getSpinner()
   {
+    if (spinnerEClass == null)
+    {
+      spinnerEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(48);
+    }
     return spinnerEClass;
   }
 
@@ -2301,9 +3241,69 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSpinner_Entries()
+  public EReference getSpinner_EntriesAttribute()
   {
-    return (EReference)spinnerEClass.getEStructuralFeatures().get(0);
+        return (EReference)getSpinner().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSpinner_WidthAttribute()
+  {
+        return (EReference)getSpinner().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSpinner_HeightAttribute()
+  {
+        return (EReference)getSpinner().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSpinner_BackgroundAttribute()
+  {
+        return (EReference)getSpinner().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSpinner_ClickableAttribute()
+  {
+        return (EReference)getSpinner().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSpinner_FadeScrollBarsAttribute()
+  {
+        return (EReference)getSpinner().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSpinner_IsScrollContainerAttribute()
+  {
+        return (EReference)getSpinner().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -2313,6 +3313,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getCheckBox()
   {
+    if (checkBoxEClass == null)
+    {
+      checkBoxEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(49);
+    }
     return checkBoxEClass;
   }
 
@@ -2321,9 +3325,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCheckBox_Text()
+  public EReference getCheckBox_Text()
   {
-    return (EAttribute)checkBoxEClass.getEStructuralFeatures().get(0);
+        return (EReference)getCheckBox().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2333,6 +3337,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getRadioGroup()
   {
+    if (radioGroupEClass == null)
+    {
+      radioGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(50);
+    }
     return radioGroupEClass;
   }
 
@@ -2343,7 +3351,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getRadioGroup_Orientation()
   {
-    return (EAttribute)radioGroupEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRadioGroup().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2353,7 +3361,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getRadioGroup_Radiobuttons()
   {
-    return (EReference)radioGroupEClass.getEStructuralFeatures().get(1);
+        return (EReference)getRadioGroup().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2363,6 +3371,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getRatingBar()
   {
+    if (ratingBarEClass == null)
+    {
+      ratingBarEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(51);
+    }
     return ratingBarEClass;
   }
 
@@ -2371,9 +3383,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRatingBar_NumStars()
+  public EReference getRatingBar_NumStars()
   {
-    return (EAttribute)ratingBarEClass.getEStructuralFeatures().get(0);
+        return (EReference)getRatingBar().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2383,6 +3395,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getToggleButton()
   {
+    if (toggleButtonEClass == null)
+    {
+      toggleButtonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(52);
+    }
     return toggleButtonEClass;
   }
 
@@ -2391,9 +3407,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getToggleButton_TextOn()
+  public EReference getToggleButton_TextOn()
   {
-    return (EAttribute)toggleButtonEClass.getEStructuralFeatures().get(0);
+        return (EReference)getToggleButton().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2401,9 +3417,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getToggleButton_TextOff()
+  public EReference getToggleButton_TextOff()
   {
-    return (EAttribute)toggleButtonEClass.getEStructuralFeatures().get(1);
+        return (EReference)getToggleButton().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2413,6 +3429,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getRadioButton()
   {
+    if (radioButtonEClass == null)
+    {
+      radioButtonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(53);
+    }
     return radioButtonEClass;
   }
 
@@ -2423,7 +3443,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getRadioButton_Name()
   {
-    return (EAttribute)radioButtonEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRadioButton().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2433,7 +3453,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getRadioButton_Text()
   {
-    return (EAttribute)radioButtonEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getRadioButton().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2443,7 +3463,17 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getRadioButton_LayoutStyle()
   {
-    return (EReference)radioButtonEClass.getEStructuralFeatures().get(2);
+        return (EReference)getRadioButton().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRadioButton_LayoutProperties()
+  {
+        return (EReference)getRadioButton().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2453,6 +3483,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getCheckedTextView()
   {
+    if (checkedTextViewEClass == null)
+    {
+      checkedTextViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(54);
+    }
     return checkedTextViewEClass;
   }
 
@@ -2463,7 +3497,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getCheckedTextView_Text()
   {
-    return (EAttribute)checkedTextViewEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCheckedTextView().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2473,6 +3507,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAutoCompleteTextView()
   {
+    if (autoCompleteTextViewEClass == null)
+    {
+      autoCompleteTextViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(55);
+    }
     return autoCompleteTextViewEClass;
   }
 
@@ -2481,9 +3519,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAutoCompleteTextView_Entries()
+  public EReference getAutoCompleteTextView_EntriesAttribute()
   {
-    return (EReference)autoCompleteTextViewEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAutoCompleteTextView().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2491,89 +3529,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAutoCompleteTextView_IsMulti()
+  public EReference getAutoCompleteTextView_Multi()
   {
-    return (EAttribute)autoCompleteTextViewEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPaddingAttribute()
-  {
-    return paddingAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPaddingAttribute_Padding()
-  {
-    return (EReference)paddingAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getGravityAttribute()
-  {
-    return gravityAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGravityAttribute_Gravity()
-  {
-    return (EAttribute)gravityAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTextSizeAttribute()
-  {
-    return textSizeAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTextSizeAttribute_TextSize()
-  {
-    return (EReference)textSizeAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getBackgroundAttribute()
-  {
-    return backgroundAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBackgroundAttribute_Background()
-  {
-    return (EReference)backgroundAttributeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAutoCompleteTextView().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2583,6 +3541,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAbstractPreference()
   {
+    if (abstractPreferenceEClass == null)
+    {
+      abstractPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(56);
+    }
     return abstractPreferenceEClass;
   }
 
@@ -2593,7 +3555,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getAbstractPreference_Title()
   {
-    return (EAttribute)abstractPreferenceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAbstractPreference().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2603,6 +3565,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getPreference()
   {
+    if (preferenceEClass == null)
+    {
+      preferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(57);
+    }
     return preferenceEClass;
   }
 
@@ -2613,7 +3579,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getPreference_Name()
   {
-    return (EAttribute)preferenceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getPreference().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2623,7 +3589,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getPreference_PreferenceAttributes()
   {
-    return (EReference)preferenceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getPreference().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2633,6 +3599,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getPreferenceScreen()
   {
+    if (preferenceScreenEClass == null)
+    {
+      preferenceScreenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(58);
+    }
     return preferenceScreenEClass;
   }
 
@@ -2643,7 +3613,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getPreferenceScreen_Name()
   {
-    return (EAttribute)preferenceScreenEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getPreferenceScreen().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2653,7 +3623,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getPreferenceScreen_PreferenceAttributes()
   {
-    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(1);
+        return (EReference)getPreferenceScreen().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2663,7 +3633,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getPreferenceScreen_Preferences()
   {
-    return (EReference)preferenceScreenEClass.getEStructuralFeatures().get(2);
+        return (EReference)getPreferenceScreen().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2673,6 +3643,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getPreferenceCategory()
   {
+    if (preferenceCategoryEClass == null)
+    {
+      preferenceCategoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(59);
+    }
     return preferenceCategoryEClass;
   }
 
@@ -2683,7 +3657,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getPreferenceCategory_Preferences()
   {
-    return (EReference)preferenceCategoryEClass.getEStructuralFeatures().get(0);
+        return (EReference)getPreferenceCategory().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2693,6 +3667,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getEditTextPreference()
   {
+    if (editTextPreferenceEClass == null)
+    {
+      editTextPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(60);
+    }
     return editTextPreferenceEClass;
   }
 
@@ -2703,7 +3681,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getEditTextPreference_Name()
   {
-    return (EAttribute)editTextPreferenceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getEditTextPreference().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2713,7 +3691,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEditTextPreference_PreferenceAttributes()
   {
-    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getEditTextPreference().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2723,7 +3701,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getEditTextPreference_DialogPreferenceAttributes()
   {
-    return (EReference)editTextPreferenceEClass.getEStructuralFeatures().get(2);
+        return (EReference)getEditTextPreference().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2733,6 +3711,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getListPreference()
   {
+    if (listPreferenceEClass == null)
+    {
+      listPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(61);
+    }
     return listPreferenceEClass;
   }
 
@@ -2743,7 +3725,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getListPreference_Name()
   {
-    return (EAttribute)listPreferenceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getListPreference().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2753,7 +3735,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getListPreference_PreferenceAttributes()
   {
-    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getListPreference().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2763,7 +3745,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getListPreference_DialogPreferenceAttributes()
   {
-    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(2);
+        return (EReference)getListPreference().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2773,7 +3755,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getListPreference_ListPreferenceAttributes()
   {
-    return (EReference)listPreferenceEClass.getEStructuralFeatures().get(3);
+        return (EReference)getListPreference().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2783,6 +3765,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getCheckBoxPreference()
   {
+    if (checkBoxPreferenceEClass == null)
+    {
+      checkBoxPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(62);
+    }
     return checkBoxPreferenceEClass;
   }
 
@@ -2793,7 +3779,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getCheckBoxPreference_Name()
   {
-    return (EAttribute)checkBoxPreferenceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCheckBoxPreference().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2803,7 +3789,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getCheckBoxPreference_PreferenceAttributes()
   {
-    return (EReference)checkBoxPreferenceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getCheckBoxPreference().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2813,6 +3799,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getRingtonePrefence()
   {
+    if (ringtonePrefenceEClass == null)
+    {
+      ringtonePrefenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(63);
+    }
     return ringtonePrefenceEClass;
   }
 
@@ -2823,7 +3813,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getRingtonePrefence_Name()
   {
-    return (EAttribute)ringtonePrefenceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRingtonePrefence().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2833,7 +3823,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getRingtonePrefence_PreferenceAttributes()
   {
-    return (EReference)ringtonePrefenceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getRingtonePrefence().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2843,6 +3833,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getPreferenceAttributes()
   {
+    if (preferenceAttributesEClass == null)
+    {
+      preferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(64);
+    }
     return preferenceAttributesEClass;
   }
 
@@ -2853,7 +3847,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getPreferenceAttributes_Summary()
   {
-    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getPreferenceAttributes().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2863,7 +3857,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getPreferenceAttributes_Enabled()
   {
-    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getPreferenceAttributes().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2873,7 +3867,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getPreferenceAttributes_Persistent()
   {
-    return (EAttribute)preferenceAttributesEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getPreferenceAttributes().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2883,6 +3877,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDialogPreferenceAttributes()
   {
+    if (dialogPreferenceAttributesEClass == null)
+    {
+      dialogPreferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(65);
+    }
     return dialogPreferenceAttributesEClass;
   }
 
@@ -2893,7 +3891,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getDialogPreferenceAttributes_DialogTitle()
   {
-    return (EAttribute)dialogPreferenceAttributesEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDialogPreferenceAttributes().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2903,7 +3901,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getDialogPreferenceAttributes_DefaultValue()
   {
-    return (EAttribute)dialogPreferenceAttributesEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getDialogPreferenceAttributes().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2913,6 +3911,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getListPreferenceAttributes()
   {
+    if (listPreferenceAttributesEClass == null)
+    {
+      listPreferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(66);
+    }
     return listPreferenceAttributesEClass;
   }
 
@@ -2921,9 +3923,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListPreferenceAttributes_Entries()
+  public EReference getListPreferenceAttributes_EntriesAttribute()
   {
-    return (EReference)listPreferenceAttributesEClass.getEStructuralFeatures().get(0);
+        return (EReference)getListPreferenceAttributes().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2933,7 +3935,1275 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getListPreferenceAttributes_EntryValues()
   {
-    return (EReference)listPreferenceAttributesEClass.getEStructuralFeatures().get(1);
+        return (EReference)getListPreferenceAttributes().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSpanAttribute()
+  {
+    if (spanAttributeEClass == null)
+    {
+      spanAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(67);
+    }
+    return spanAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSpanAttribute_Span()
+  {
+        return (EReference)getSpanAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getColumnAttribute()
+  {
+    if (columnAttributeEClass == null)
+    {
+      columnAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(68);
+    }
+    return columnAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getColumnAttribute_Column()
+  {
+        return (EReference)getColumnAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCenterVerticalAttribute()
+  {
+    if (centerVerticalAttributeEClass == null)
+    {
+      centerVerticalAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(69);
+    }
+    return centerVerticalAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCenterVerticalAttribute_CenterVertical()
+  {
+        return (EReference)getCenterVerticalAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCenterInParentAttribute()
+  {
+    if (centerInParentAttributeEClass == null)
+    {
+      centerInParentAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(70);
+    }
+    return centerInParentAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCenterInParentAttribute_CenterInParent()
+  {
+        return (EReference)getCenterInParentAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCenterHorizontalAttribute()
+  {
+    if (centerHorizontalAttributeEClass == null)
+    {
+      centerHorizontalAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(71);
+    }
+    return centerHorizontalAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCenterHorizontalAttribute_CenterHorizontal()
+  {
+        return (EReference)getCenterHorizontalAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getToRightOfAttribute()
+  {
+    if (toRightOfAttributeEClass == null)
+    {
+      toRightOfAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(72);
+    }
+    return toRightOfAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getToRightOfAttribute_ToRightOf()
+  {
+        return (EReference)getToRightOfAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getToLeftOfAttribute()
+  {
+    if (toLeftOfAttributeEClass == null)
+    {
+      toLeftOfAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(73);
+    }
+    return toLeftOfAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getToLeftOfAttribute_ToLeftOf()
+  {
+        return (EReference)getToLeftOfAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAboveAttribute()
+  {
+    if (aboveAttributeEClass == null)
+    {
+      aboveAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(74);
+    }
+    return aboveAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAboveAttribute_Above()
+  {
+        return (EReference)getAboveAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBelowAttribute()
+  {
+    if (belowAttributeEClass == null)
+    {
+      belowAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(75);
+    }
+    return belowAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBelowAttribute_Below()
+  {
+        return (EReference)getBelowAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignLeftAttribute()
+  {
+    if (alignLeftAttributeEClass == null)
+    {
+      alignLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(76);
+    }
+    return alignLeftAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAlignLeftAttribute_AlignLeft()
+  {
+        return (EReference)getAlignLeftAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignBottomAttribute()
+  {
+    if (alignBottomAttributeEClass == null)
+    {
+      alignBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(77);
+    }
+    return alignBottomAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAlignBottomAttribute_AlignBottom()
+  {
+        return (EReference)getAlignBottomAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignTopAttribute()
+  {
+    if (alignTopAttributeEClass == null)
+    {
+      alignTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(78);
+    }
+    return alignTopAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAlignTopAttribute_AlignTop()
+  {
+        return (EReference)getAlignTopAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignParentLeftAttribute()
+  {
+    if (alignParentLeftAttributeEClass == null)
+    {
+      alignParentLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(79);
+    }
+    return alignParentLeftAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAlignParentLeftAttribute_AlignParentLeft()
+  {
+        return (EReference)getAlignParentLeftAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignParentTopAttribute()
+  {
+    if (alignParentTopAttributeEClass == null)
+    {
+      alignParentTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(80);
+    }
+    return alignParentTopAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAlignParentTopAttribute_AlignParentTop()
+  {
+        return (EReference)getAlignParentTopAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignParentRightAttribute()
+  {
+    if (alignParentRightAttributeEClass == null)
+    {
+      alignParentRightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(81);
+    }
+    return alignParentRightAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAlignParentRightAttribute_AlignParentRight()
+  {
+        return (EReference)getAlignParentRightAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignParentBottomAttribute()
+  {
+    if (alignParentBottomAttributeEClass == null)
+    {
+      alignParentBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(82);
+    }
+    return alignParentBottomAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAlignParentBottomAttribute_AlignParentBottom()
+  {
+        return (EReference)getAlignParentBottomAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMarginBottomAttribute()
+  {
+    if (marginBottomAttributeEClass == null)
+    {
+      marginBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(83);
+    }
+    return marginBottomAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMarginBottomAttribute_MarginBottom()
+  {
+        return (EReference)getMarginBottomAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMarginRightAttribute()
+  {
+    if (marginRightAttributeEClass == null)
+    {
+      marginRightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(84);
+    }
+    return marginRightAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMarginRightAttribute_MarginRight()
+  {
+        return (EReference)getMarginRightAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMarginTopAttribute()
+  {
+    if (marginTopAttributeEClass == null)
+    {
+      marginTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(85);
+    }
+    return marginTopAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMarginTopAttribute_MarginTop()
+  {
+        return (EReference)getMarginTopAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWeightAttribute()
+  {
+    if (weightAttributeEClass == null)
+    {
+      weightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(86);
+    }
+    return weightAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWeightAttribute_Weight()
+  {
+        return (EReference)getWeightAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMarginLeftAttribute()
+  {
+    if (marginLeftAttributeEClass == null)
+    {
+      marginLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(87);
+    }
+    return marginLeftAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMarginLeftAttribute_MarginLeft()
+  {
+        return (EReference)getMarginLeftAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextStyleAttribute()
+  {
+    if (textStyleAttributeEClass == null)
+    {
+      textStyleAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(88);
+    }
+    return textStyleAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTextStyleAttribute_TextStyle()
+  {
+        return (EAttribute)getTextStyleAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTypefaceAttribute()
+  {
+    if (typefaceAttributeEClass == null)
+    {
+      typefaceAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(89);
+    }
+    return typefaceAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypefaceAttribute_Typeface()
+  {
+        return (EAttribute)getTypefaceAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextColorAttribute()
+  {
+    if (textColorAttributeEClass == null)
+    {
+      textColorAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(90);
+    }
+    return textColorAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextColorAttribute_TextColor()
+  {
+        return (EReference)getTextColorAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSingleLineAttribute()
+  {
+    if (singleLineAttributeEClass == null)
+    {
+      singleLineAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(91);
+    }
+    return singleLineAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingleLineAttribute_SingleLine()
+  {
+        return (EReference)getSingleLineAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPhoneNumberAttribute()
+  {
+    if (phoneNumberAttributeEClass == null)
+    {
+      phoneNumberAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(92);
+    }
+    return phoneNumberAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPhoneNumberAttribute_PhoneNumber()
+  {
+        return (EReference)getPhoneNumberAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPasswordAttribute()
+  {
+    if (passwordAttributeEClass == null)
+    {
+      passwordAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(93);
+    }
+    return passwordAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPasswordAttribute_Password()
+  {
+        return (EReference)getPasswordAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumericAttribute()
+  {
+    if (numericAttributeEClass == null)
+    {
+      numericAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(94);
+    }
+    return numericAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNumericAttribute_Numeric()
+  {
+        return (EAttribute)getNumericAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHintAttribute()
+  {
+    if (hintAttributeEClass == null)
+    {
+      hintAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(96);
+    }
+    return hintAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getHintAttribute_Hint()
+  {
+        return (EReference)getHintAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEditableAttribute()
+  {
+    if (editableAttributeEClass == null)
+    {
+      editableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(99);
+    }
+    return editableAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEditableAttribute_Editable()
+  {
+        return (EReference)getEditableAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDigitsAttribute()
+  {
+    if (digitsAttributeEClass == null)
+    {
+      digitsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(100);
+    }
+    return digitsAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDigitsAttribute_Digits()
+  {
+        return (EReference)getDigitsAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCapitalizeAttribute()
+  {
+    if (capitalizeAttributeEClass == null)
+    {
+      capitalizeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(101);
+    }
+    return capitalizeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCapitalizeAttribute_Capitalize()
+  {
+        return (EAttribute)getCapitalizeAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAutoTextAttribute()
+  {
+    if (autoTextAttributeEClass == null)
+    {
+      autoTextAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(103);
+    }
+    return autoTextAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAutoTextAttribute_AutoText()
+  {
+        return (EReference)getAutoTextAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIsScrollContainerAttribute()
+  {
+    if (isScrollContainerAttributeEClass == null)
+    {
+      isScrollContainerAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(104);
+    }
+    return isScrollContainerAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIsScrollContainerAttribute_IsScrollContainer()
+  {
+        return (EReference)getIsScrollContainerAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFadeScrollBarsAttribute()
+  {
+    if (fadeScrollBarsAttributeEClass == null)
+    {
+      fadeScrollBarsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(105);
+    }
+    return fadeScrollBarsAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFadeScrollBarsAttribute_FadeScrollBars()
+  {
+        return (EReference)getFadeScrollBarsAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClickableAttribute()
+  {
+    if (clickableAttributeEClass == null)
+    {
+      clickableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(106);
+    }
+    return clickableAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getClickableAttribute_Clickable()
+  {
+        return (EReference)getClickableAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAutoLinkAttribute()
+  {
+    if (autoLinkAttributeEClass == null)
+    {
+      autoLinkAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(107);
+    }
+    return autoLinkAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAutoLinkAttribute_All()
+  {
+        return (EAttribute)getAutoLinkAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAutoLinkAttribute_AutoLinkMask()
+  {
+        return (EAttribute)getAutoLinkAttribute().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWidthAttribute()
+  {
+    if (widthAttributeEClass == null)
+    {
+      widthAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(109);
+    }
+    return widthAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWidthAttribute_Width()
+  {
+        return (EReference)getWidthAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHeightAttribute()
+  {
+    if (heightAttributeEClass == null)
+    {
+      heightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(110);
+    }
+    return heightAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getHeightAttribute_Height()
+  {
+        return (EReference)getHeightAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPaddingAttribute()
+  {
+    if (paddingAttributeEClass == null)
+    {
+      paddingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(111);
+    }
+    return paddingAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPaddingAttribute_Padding()
+  {
+        return (EReference)getPaddingAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGravityAttribute()
+  {
+    if (gravityAttributeEClass == null)
+    {
+      gravityAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(112);
+    }
+    return gravityAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGravityAttribute_Gravity()
+  {
+        return (EAttribute)getGravityAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextSizeAttribute()
+  {
+    if (textSizeAttributeEClass == null)
+    {
+      textSizeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(113);
+    }
+    return textSizeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextSizeAttribute_TextSize()
+  {
+        return (EReference)getTextSizeAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBackgroundAttribute()
+  {
+    if (backgroundAttributeEClass == null)
+    {
+      backgroundAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(114);
+    }
+    return backgroundAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBackgroundAttribute_Background()
+  {
+        return (EReference)getBackgroundAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getColumnWidthAttribute()
+  {
+    if (columnWidthAttributeEClass == null)
+    {
+      columnWidthAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(115);
+    }
+    return columnWidthAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getColumnWidthAttribute_ColumnWidth()
+  {
+        return (EReference)getColumnWidthAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHorizontalSpacingAttribute()
+  {
+    if (horizontalSpacingAttributeEClass == null)
+    {
+      horizontalSpacingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(116);
+    }
+    return horizontalSpacingAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getHorizontalSpacingAttribute_HorizontalSpacing()
+  {
+        return (EReference)getHorizontalSpacingAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumColumnsAttribute()
+  {
+    if (numColumnsAttributeEClass == null)
+    {
+      numColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(117);
+    }
+    return numColumnsAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNumColumnsAttribute_Autofit()
+  {
+        return (EAttribute)getNumColumnsAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumColumnsAttribute_NumColumns()
+  {
+        return (EReference)getNumColumnsAttribute().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStretchModeAttribute()
+  {
+    if (stretchModeAttributeEClass == null)
+    {
+      stretchModeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(118);
+    }
+    return stretchModeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStretchModeAttribute_StretchMode()
+  {
+        return (EAttribute)getStretchModeAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVerticalSpacingAttribute()
+  {
+    if (verticalSpacingAttributeEClass == null)
+    {
+      verticalSpacingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(120);
+    }
+    return verticalSpacingAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVerticalSpacingAttribute_VerticalSpacing()
+  {
+        return (EReference)getVerticalSpacingAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEntriesAttribute()
+  {
+    if (entriesAttributeEClass == null)
+    {
+      entriesAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(121);
+    }
+    return entriesAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEntriesAttribute_Entries()
+  {
+        return (EReference)getEntriesAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStretchColumnsAttribute()
+  {
+    if (stretchColumnsAttributeEClass == null)
+    {
+      stretchColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(122);
+    }
+    return stretchColumnsAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStretchColumnsAttribute_StretchColumns()
+  {
+        return (EReference)getStretchColumnsAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getShrinkColumnsAttribute()
+  {
+    if (shrinkColumnsAttributeEClass == null)
+    {
+      shrinkColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(123);
+    }
+    return shrinkColumnsAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getShrinkColumnsAttribute_ShrinkColumns()
+  {
+        return (EReference)getShrinkColumnsAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCollapseColumnsAttribute()
+  {
+    if (collapseColumnsAttributeEClass == null)
+    {
+      collapseColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(124);
+    }
+    return collapseColumnsAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCollapseColumnsAttribute_CollapseColumns()
+  {
+        return (EReference)getCollapseColumnsAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2943,6 +5213,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAndroResModelRoot()
   {
+    if (androResModelRootEClass == null)
+    {
+      androResModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(127);
+    }
     return androResModelRootEClass;
   }
 
@@ -2953,7 +5227,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getAndroResModelRoot_Resources()
   {
-    return (EReference)androResModelRootEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAndroResModelRoot().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2963,6 +5237,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getPropertyValue()
   {
+    if (propertyValueEClass == null)
+    {
+      propertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(128);
+    }
     return propertyValueEClass;
   }
 
@@ -2973,6 +5251,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getAnyDrawablePropertyValue()
   {
+    if (anyDrawablePropertyValueEClass == null)
+    {
+      anyDrawablePropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(129);
+    }
     return anyDrawablePropertyValueEClass;
   }
 
@@ -2983,6 +5265,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getStringPropertyValue()
   {
+    if (stringPropertyValueEClass == null)
+    {
+      stringPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(130);
+    }
     return stringPropertyValueEClass;
   }
 
@@ -2993,7 +5279,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getStringPropertyValue_Value()
   {
-    return (EAttribute)stringPropertyValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getStringPropertyValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3003,6 +5289,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getIntegerPropertyValue()
   {
+    if (integerPropertyValueEClass == null)
+    {
+      integerPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(131);
+    }
     return integerPropertyValueEClass;
   }
 
@@ -3013,7 +5303,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getIntegerPropertyValue_Value()
   {
-    return (EAttribute)integerPropertyValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIntegerPropertyValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3023,6 +5313,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getBooleanPropertyValue()
   {
+    if (booleanPropertyValueEClass == null)
+    {
+      booleanPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(132);
+    }
     return booleanPropertyValueEClass;
   }
 
@@ -3033,7 +5327,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getBooleanPropertyValue_Value()
   {
-    return (EAttribute)booleanPropertyValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getBooleanPropertyValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3043,6 +5337,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getColorPropertyValue()
   {
+    if (colorPropertyValueEClass == null)
+    {
+      colorPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(133);
+    }
     return colorPropertyValueEClass;
   }
 
@@ -3053,7 +5351,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getColorPropertyValue_Value()
   {
-    return (EAttribute)colorPropertyValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getColorPropertyValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3063,6 +5361,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getLayoutDimensionPropertyValue()
   {
+    if (layoutDimensionPropertyValueEClass == null)
+    {
+      layoutDimensionPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(134);
+    }
     return layoutDimensionPropertyValueEClass;
   }
 
@@ -3073,7 +5375,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getLayoutDimensionPropertyValue_ConstValue()
   {
-    return (EAttribute)layoutDimensionPropertyValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getLayoutDimensionPropertyValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3083,6 +5385,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDimensionPropertyValue()
   {
+    if (dimensionPropertyValueEClass == null)
+    {
+      dimensionPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(136);
+    }
     return dimensionPropertyValueEClass;
   }
 
@@ -3093,7 +5399,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getDimensionPropertyValue_Value()
   {
-    return (EReference)dimensionPropertyValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getDimensionPropertyValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3103,6 +5409,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDrawableResourceLink()
   {
+    if (drawableResourceLinkEClass == null)
+    {
+      drawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(137);
+    }
     return drawableResourceLinkEClass;
   }
 
@@ -3111,19 +5421,9 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLocalDrawableResourceLink()
+  public EReference getDrawableResourceLink_Link()
   {
-    return localDrawableResourceLinkEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getLocalDrawableResourceLink_Link()
-  {
-    return (EReference)localDrawableResourceLinkEClass.getEStructuralFeatures().get(0);
+        return (EReference)getDrawableResourceLink().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3133,6 +5433,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getExternalDrawableResourceLink()
   {
+    if (externalDrawableResourceLinkEClass == null)
+    {
+      externalDrawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(138);
+    }
     return externalDrawableResourceLinkEClass;
   }
 
@@ -3143,7 +5447,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getExternalDrawableResourceLink_ExternalResource()
   {
-    return (EAttribute)externalDrawableResourceLinkEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getExternalDrawableResourceLink().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3153,6 +5457,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getStringResourceLink()
   {
+    if (stringResourceLinkEClass == null)
+    {
+      stringResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(140);
+    }
     return stringResourceLinkEClass;
   }
 
@@ -3163,7 +5471,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getStringResourceLink_Link()
   {
-    return (EReference)stringResourceLinkEClass.getEStructuralFeatures().get(0);
+        return (EReference)getStringResourceLink().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3173,6 +5481,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getIntegerResourceLink()
   {
+    if (integerResourceLinkEClass == null)
+    {
+      integerResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(141);
+    }
     return integerResourceLinkEClass;
   }
 
@@ -3183,7 +5495,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getIntegerResourceLink_Link()
   {
-    return (EReference)integerResourceLinkEClass.getEStructuralFeatures().get(0);
+        return (EReference)getIntegerResourceLink().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3193,6 +5505,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getBooleanResourceLink()
   {
+    if (booleanResourceLinkEClass == null)
+    {
+      booleanResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(142);
+    }
     return booleanResourceLinkEClass;
   }
 
@@ -3203,7 +5519,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getBooleanResourceLink_Link()
   {
-    return (EReference)booleanResourceLinkEClass.getEStructuralFeatures().get(0);
+        return (EReference)getBooleanResourceLink().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3213,6 +5529,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getColorResourceLink()
   {
+    if (colorResourceLinkEClass == null)
+    {
+      colorResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(143);
+    }
     return colorResourceLinkEClass;
   }
 
@@ -3223,7 +5543,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getColorResourceLink_Link()
   {
-    return (EReference)colorResourceLinkEClass.getEStructuralFeatures().get(0);
+        return (EReference)getColorResourceLink().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3233,6 +5553,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDimensionResourceLink()
   {
+    if (dimensionResourceLinkEClass == null)
+    {
+      dimensionResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(144);
+    }
     return dimensionResourceLinkEClass;
   }
 
@@ -3243,7 +5567,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getDimensionResourceLink_Link()
   {
-    return (EReference)dimensionResourceLinkEClass.getEStructuralFeatures().get(0);
+        return (EReference)getDimensionResourceLink().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3253,6 +5577,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getResource()
   {
+    if (resourceEClass == null)
+    {
+      resourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(145);
+    }
     return resourceEClass;
   }
 
@@ -3263,7 +5591,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getResource_Name()
   {
-    return (EAttribute)resourceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3273,6 +5601,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getStringResource()
   {
+    if (stringResourceEClass == null)
+    {
+      stringResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(146);
+    }
     return stringResourceEClass;
   }
 
@@ -3283,7 +5615,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getStringResource_Value()
   {
-    return (EAttribute)stringResourceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getStringResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3293,6 +5625,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getIntegerResource()
   {
+    if (integerResourceEClass == null)
+    {
+      integerResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(147);
+    }
     return integerResourceEClass;
   }
 
@@ -3303,7 +5639,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getIntegerResource_Value()
   {
-    return (EAttribute)integerResourceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIntegerResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3313,6 +5649,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getBooleanResource()
   {
+    if (booleanResourceEClass == null)
+    {
+      booleanResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(148);
+    }
     return booleanResourceEClass;
   }
 
@@ -3323,7 +5663,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getBooleanResource_Value()
   {
-    return (EAttribute)booleanResourceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getBooleanResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3333,6 +5673,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getColorResource()
   {
+    if (colorResourceEClass == null)
+    {
+      colorResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(149);
+    }
     return colorResourceEClass;
   }
 
@@ -3343,7 +5687,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getColorResource_Value()
   {
-    return (EAttribute)colorResourceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getColorResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3353,6 +5697,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDimensionResource()
   {
+    if (dimensionResourceEClass == null)
+    {
+      dimensionResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(150);
+    }
     return dimensionResourceEClass;
   }
 
@@ -3363,7 +5711,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getDimensionResource_Value()
   {
-    return (EReference)dimensionResourceEClass.getEStructuralFeatures().get(0);
+        return (EReference)getDimensionResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3373,6 +5721,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getArrayResource()
   {
+    if (arrayResourceEClass == null)
+    {
+      arrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(151);
+    }
     return arrayResourceEClass;
   }
 
@@ -3383,6 +5735,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getIntegerArrayResource()
   {
+    if (integerArrayResourceEClass == null)
+    {
+      integerArrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(152);
+    }
     return integerArrayResourceEClass;
   }
 
@@ -3393,7 +5749,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getIntegerArrayResource_Entries()
   {
-    return (EReference)integerArrayResourceEClass.getEStructuralFeatures().get(0);
+        return (EReference)getIntegerArrayResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3403,6 +5759,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getIntegerArrayEntry()
   {
+    if (integerArrayEntryEClass == null)
+    {
+      integerArrayEntryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(153);
+    }
     return integerArrayEntryEClass;
   }
 
@@ -3413,7 +5773,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getIntegerArrayEntry_Name()
   {
-    return (EAttribute)integerArrayEntryEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIntegerArrayEntry().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3423,7 +5783,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getIntegerArrayEntry_Value()
   {
-    return (EAttribute)integerArrayEntryEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getIntegerArrayEntry().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3433,6 +5793,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getStringArrayResource()
   {
+    if (stringArrayResourceEClass == null)
+    {
+      stringArrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(154);
+    }
     return stringArrayResourceEClass;
   }
 
@@ -3443,7 +5807,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getStringArrayResource_Entries()
   {
-    return (EReference)stringArrayResourceEClass.getEStructuralFeatures().get(0);
+        return (EReference)getStringArrayResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3453,6 +5817,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getStringArrayEntry()
   {
+    if (stringArrayEntryEClass == null)
+    {
+      stringArrayEntryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(155);
+    }
     return stringArrayEntryEClass;
   }
 
@@ -3463,7 +5831,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getStringArrayEntry_Name()
   {
-    return (EAttribute)stringArrayEntryEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getStringArrayEntry().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3473,7 +5841,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getStringArrayEntry_Value()
   {
-    return (EAttribute)stringArrayEntryEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getStringArrayEntry().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3483,6 +5851,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDrawableResource()
   {
+    if (drawableResourceEClass == null)
+    {
+      drawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(156);
+    }
     return drawableResourceEClass;
   }
 
@@ -3493,6 +5865,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getBitmapDrawableResource()
   {
+    if (bitmapDrawableResourceEClass == null)
+    {
+      bitmapDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(157);
+    }
     return bitmapDrawableResourceEClass;
   }
 
@@ -3503,7 +5879,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getBitmapDrawableResource_Filename()
   {
-    return (EAttribute)bitmapDrawableResourceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getBitmapDrawableResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3513,6 +5889,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getTransitionDrawableResource()
   {
+    if (transitionDrawableResourceEClass == null)
+    {
+      transitionDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(158);
+    }
     return transitionDrawableResourceEClass;
   }
 
@@ -3523,7 +5903,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTransitionDrawableResource_From()
   {
-    return (EReference)transitionDrawableResourceEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTransitionDrawableResource().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3533,7 +5913,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EReference getTransitionDrawableResource_To()
   {
-    return (EReference)transitionDrawableResourceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTransitionDrawableResource().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3543,6 +5923,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EClass getDimensionValue()
   {
+    if (dimensionValueEClass == null)
+    {
+      dimensionValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(159);
+    }
     return dimensionValueEClass;
   }
 
@@ -3553,7 +5937,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getDimensionValue_Value()
   {
-    return (EAttribute)dimensionValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDimensionValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3563,7 +5947,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EAttribute getDimensionValue_Metric()
   {
-    return (EAttribute)dimensionValueEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getDimensionValue().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3573,6 +5957,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EEnum getApiLevel()
   {
+    if (apiLevelEEnum == null)
+    {
+      apiLevelEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(5);
+    }
     return apiLevelEEnum;
   }
 
@@ -3583,6 +5971,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EEnum getActivityTheme()
   {
+    if (activityThemeEEnum == null)
+    {
+      activityThemeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(9);
+    }
     return activityThemeEEnum;
   }
 
@@ -3593,6 +5985,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EEnum getDataTypes()
   {
+    if (dataTypesEEnum == null)
+    {
+      dataTypesEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(22);
+    }
     return dataTypesEEnum;
   }
 
@@ -3601,9 +5997,97 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getLayoutGravityKind()
+  public EEnum getNumericKind()
   {
-    return layoutGravityKindEEnum;
+    if (numericKindEEnum == null)
+    {
+      numericKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(95);
+    }
+    return numericKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getTypefaceKind()
+  {
+    if (typefaceKindEEnum == null)
+    {
+      typefaceKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(97);
+    }
+    return typefaceKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getTextStyleKind()
+  {
+    if (textStyleKindEEnum == null)
+    {
+      textStyleKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(98);
+    }
+    return textStyleKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getCapitalizeKind()
+  {
+    if (capitalizeKindEEnum == null)
+    {
+      capitalizeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(102);
+    }
+    return capitalizeKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getAutoLinkKind()
+  {
+    if (autoLinkKindEEnum == null)
+    {
+      autoLinkKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(108);
+    }
+    return autoLinkKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getStretchModeKind()
+  {
+    if (stretchModeKindEEnum == null)
+    {
+      stretchModeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(119);
+    }
+    return stretchModeKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getGravityKind()
+  {
+    if (gravityKindEEnum == null)
+    {
+      gravityKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(125);
+    }
+    return gravityKindEEnum;
   }
 
   /**
@@ -3613,6 +6097,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EEnum getFastLayoutDimensionKind()
   {
+    if (fastLayoutDimensionKindEEnum == null)
+    {
+      fastLayoutDimensionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(126);
+    }
     return fastLayoutDimensionKindEEnum;
   }
 
@@ -3623,6 +6111,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EEnum getLayoutDimensionKind()
   {
+    if (layoutDimensionKindEEnum == null)
+    {
+      layoutDimensionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(135);
+    }
     return layoutDimensionKindEEnum;
   }
 
@@ -3633,6 +6125,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EEnum getAndroidDrawableResource()
   {
+    if (androidDrawableResourceEEnum == null)
+    {
+      androidDrawableResourceEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(139);
+    }
     return androidDrawableResourceEEnum;
   }
 
@@ -3643,6 +6139,10 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    */
   public EEnum getDimensionMetric()
   {
+    if (dimensionMetricEEnum == null)
+    {
+      dimensionMetricEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(160);
+    }
     return dimensionMetricEEnum;
   }
 
@@ -3661,920 +6161,73 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isCreated = false;
+  private boolean isLoaded = false;
 
   /**
-   * Creates the meta-model objects for the package.  This method is
-   * guarded to have no affect on any invocation but its first.
+   * Laods the package and any sub-packages from their serialized form.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public void createPackageContents()
+  public void loadPackage()
   {
-    if (isCreated) return;
-    isCreated = true;
-
-    // Create classes and their features
-    androTextModelRootEClass = createEClass(ANDRO_TEXT_MODEL_ROOT);
-    createEAttribute(androTextModelRootEClass, ANDRO_TEXT_MODEL_ROOT__NAME);
-    createEReference(androTextModelRootEClass, ANDRO_TEXT_MODEL_ROOT__IMPORTS);
-    createEReference(androTextModelRootEClass, ANDRO_TEXT_MODEL_ROOT__ACTUAL_MODEL_ROOT);
-
-    modelRootEClass = createEClass(MODEL_ROOT);
-    createEAttribute(modelRootEClass, MODEL_ROOT__NAME);
-
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
-
-    androGenModelRootEClass = createEClass(ANDRO_GEN_MODEL_ROOT);
-    createEReference(androGenModelRootEClass, ANDRO_GEN_MODEL_ROOT__TARGET_APPLICATIONS);
-
-    targetApplicationEClass = createEClass(TARGET_APPLICATION);
-    createEReference(targetApplicationEClass, TARGET_APPLICATION__APPLICATION);
-    createEAttribute(targetApplicationEClass, TARGET_APPLICATION__PROJECT_NAME);
-    createEAttribute(targetApplicationEClass, TARGET_APPLICATION__PACKAGE_NAME);
-    createEAttribute(targetApplicationEClass, TARGET_APPLICATION__TARGET);
-    createEAttribute(targetApplicationEClass, TARGET_APPLICATION__VERSION);
-
-    androidApplicationEClass = createEClass(ANDROID_APPLICATION);
-    createEReference(androidApplicationEClass, ANDROID_APPLICATION__DATAROOT);
-    createEReference(androidApplicationEClass, ANDROID_APPLICATION__MAIN_ACTIVITY);
-    createEReference(androidApplicationEClass, ANDROID_APPLICATION__MODEL_ELEMENTS);
-
-    androidApplicationModelElementEClass = createEClass(ANDROID_APPLICATION_MODEL_ELEMENT);
-    createEAttribute(androidApplicationModelElementEClass, ANDROID_APPLICATION_MODEL_ELEMENT__NAME);
-
-    activityEClass = createEClass(ACTIVITY);
-
-    simpleActivityEClass = createEClass(SIMPLE_ACTIVITY);
-    createEReference(simpleActivityEClass, SIMPLE_ACTIVITY__LAYOUT);
-    createEAttribute(simpleActivityEClass, SIMPLE_ACTIVITY__THEME);
-
-    tabActivityEClass = createEClass(TAB_ACTIVITY);
-    createEReference(tabActivityEClass, TAB_ACTIVITY__TABS);
-
-    tabEClass = createEClass(TAB);
-    createEAttribute(tabEClass, TAB__TAG);
-    createEReference(tabEClass, TAB__ACTIVITY);
-
-    listActivityEClass = createEClass(LIST_ACTIVITY);
-    createEReference(listActivityEClass, LIST_ACTIVITY__LISTITEM);
-    createEReference(listActivityEClass, LIST_ACTIVITY__CONTENT_PROVIDER);
-
-    preferenceActivityEClass = createEClass(PREFERENCE_ACTIVITY);
-    createEReference(preferenceActivityEClass, PREFERENCE_ACTIVITY__LAYOUT);
-
-    contentProviderEClass = createEClass(CONTENT_PROVIDER);
-
-    resourceContentProviderEClass = createEClass(RESOURCE_CONTENT_PROVIDER);
-    createEReference(resourceContentProviderEClass, RESOURCE_CONTENT_PROVIDER__LINK);
-
-    androDataModelRootEClass = createEClass(ANDRO_DATA_MODEL_ROOT);
-    createEReference(androDataModelRootEClass, ANDRO_DATA_MODEL_ROOT__ENTITIES);
-
-    entityEClass = createEClass(ENTITY);
-    createEAttribute(entityEClass, ENTITY__NAME);
-    createEReference(entityEClass, ENTITY__SUPER_TYPE);
-    createEReference(entityEClass, ENTITY__PROPERTIES);
-
-    propertyEClass = createEClass(PROPERTY);
-    createEAttribute(propertyEClass, PROPERTY__NAME);
-    createEReference(propertyEClass, PROPERTY__TYPE);
-
-    typeRefEClass = createEClass(TYPE_REF);
-
-    dataTypesRefEClass = createEClass(DATA_TYPES_REF);
-    createEAttribute(dataTypesRefEClass, DATA_TYPES_REF__TYPE);
-
-    entityTypeRefEClass = createEClass(ENTITY_TYPE_REF);
-    createEReference(entityTypeRefEClass, ENTITY_TYPE_REF__TYPE);
-
-    androGuiModelRootEClass = createEClass(ANDRO_GUI_MODEL_ROOT);
-    createEReference(androGuiModelRootEClass, ANDRO_GUI_MODEL_ROOT__ROOTS);
-
-    viewEClass = createEClass(VIEW);
-    createEAttribute(viewEClass, VIEW__NAME);
-    createEReference(viewEClass, VIEW__LAYOUT_STYLE);
-
-    viewGroupEClass = createEClass(VIEW_GROUP);
-    createEReference(viewGroupEClass, VIEW_GROUP__VIEWS);
-
-    layoutParamsEClass = createEClass(LAYOUT_PARAMS);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__WEIGHT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_LEFT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_TOP);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_RIGHT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__MARGIN_BOTTOM);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_LEFT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_TOP);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_RIGHT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_PARENT_BOTTOM);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_TOP);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_BOTTOM);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ALIGN_LEFT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__BELOW);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__ABOVE);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__TO_LEFT_OF);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__TO_RIGHT_OF);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_HORIZONTAL);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_IN_PARENT);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__CENTER_VERTICAL);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__COLUMN);
-    createEReference(layoutParamsEClass, LAYOUT_PARAMS__BACKGROUND_ATTRIBUTE);
-
-    layoutGravityAttributeEClass = createEClass(LAYOUT_GRAVITY_ATTRIBUTE);
-    createEAttribute(layoutGravityAttributeEClass, LAYOUT_GRAVITY_ATTRIBUTE__GRAVITY);
-
-    layoutStyleEClass = createEClass(LAYOUT_STYLE);
-
-    regularLayoutStyleEClass = createEClass(REGULAR_LAYOUT_STYLE);
-    createEReference(regularLayoutStyleEClass, REGULAR_LAYOUT_STYLE__WIDTH);
-    createEReference(regularLayoutStyleEClass, REGULAR_LAYOUT_STYLE__HEIGHT);
-
-    fastLayoutStyleEClass = createEClass(FAST_LAYOUT_STYLE);
-    createEAttribute(fastLayoutStyleEClass, FAST_LAYOUT_STYLE__VALUE);
-
-    absoluteLayoutEClass = createEClass(ABSOLUTE_LAYOUT);
-
-    linearLayoutEClass = createEClass(LINEAR_LAYOUT);
-    createEAttribute(linearLayoutEClass, LINEAR_LAYOUT__VERTICAL);
-    createEReference(linearLayoutEClass, LINEAR_LAYOUT__LAYOUT_PARAMS);
-
-    linearLayoutParamsEClass = createEClass(LINEAR_LAYOUT_PARAMS);
-    createEReference(linearLayoutParamsEClass, LINEAR_LAYOUT_PARAMS__LAYOUT_PARAMS);
-    createEReference(linearLayoutParamsEClass, LINEAR_LAYOUT_PARAMS__GRAVITY);
-
-    frameLayoutEClass = createEClass(FRAME_LAYOUT);
-
-    relativeLayoutEClass = createEClass(RELATIVE_LAYOUT);
-
-    gridLayoutEClass = createEClass(GRID_LAYOUT);
-
-    tableLayoutEClass = createEClass(TABLE_LAYOUT);
-    createEReference(tableLayoutEClass, TABLE_LAYOUT__COLLAPSE_COLUMNS);
-    createEReference(tableLayoutEClass, TABLE_LAYOUT__SHRINK_COLUMNS);
-    createEReference(tableLayoutEClass, TABLE_LAYOUT__STRETCH_COLUMNS);
-
-    tableRowEClass = createEClass(TABLE_ROW);
-
-    simpleViewEClass = createEClass(SIMPLE_VIEW);
-
-    viewElementEClass = createEClass(VIEW_ELEMENT);
-    createEReference(viewElementEClass, VIEW_ELEMENT__LAYOUT_PARAMS);
-
-    textViewEClass = createEClass(TEXT_VIEW);
-    createEAttribute(textViewEClass, TEXT_VIEW__TEXT);
-    createEReference(textViewEClass, TEXT_VIEW__GRAVITY_ATTRIBUTE);
-    createEReference(textViewEClass, TEXT_VIEW__TEXT_SIZE_ATTRIBUTE);
-    createEReference(textViewEClass, TEXT_VIEW__PADDING_ATTRIBUTE);
-    createEReference(textViewEClass, TEXT_VIEW__LAYOUT_PARAMS);
-
-    editTextEClass = createEClass(EDIT_TEXT);
-    createEAttribute(editTextEClass, EDIT_TEXT__TEXT);
-    createEReference(editTextEClass, EDIT_TEXT__GRAVITY_ATTRIBUTE);
-    createEReference(editTextEClass, EDIT_TEXT__TEXT_SIZE_ATTRIBUTE);
-    createEReference(editTextEClass, EDIT_TEXT__LAYOUT_PARAMS);
-
-    buttonEClass = createEClass(BUTTON);
-    createEAttribute(buttonEClass, BUTTON__TEXT);
-    createEReference(buttonEClass, BUTTON__LAYOUT_PARAMS);
-
-    galleryEClass = createEClass(GALLERY);
-
-    expandableListViewEClass = createEClass(EXPANDABLE_LIST_VIEW);
-
-    webViewEClass = createEClass(WEB_VIEW);
-
-    imageViewEClass = createEClass(IMAGE_VIEW);
-    createEReference(imageViewEClass, IMAGE_VIEW__SRC);
-
-    listViewEClass = createEClass(LIST_VIEW);
-    createEReference(listViewEClass, LIST_VIEW__ENTRIES);
-    createEReference(listViewEClass, LIST_VIEW__LAYOUT);
-
-    gridViewEClass = createEClass(GRID_VIEW);
-
-    spinnerEClass = createEClass(SPINNER);
-    createEReference(spinnerEClass, SPINNER__ENTRIES);
-
-    checkBoxEClass = createEClass(CHECK_BOX);
-    createEAttribute(checkBoxEClass, CHECK_BOX__TEXT);
-
-    radioGroupEClass = createEClass(RADIO_GROUP);
-    createEAttribute(radioGroupEClass, RADIO_GROUP__ORIENTATION);
-    createEReference(radioGroupEClass, RADIO_GROUP__RADIOBUTTONS);
-
-    ratingBarEClass = createEClass(RATING_BAR);
-    createEAttribute(ratingBarEClass, RATING_BAR__NUM_STARS);
-
-    toggleButtonEClass = createEClass(TOGGLE_BUTTON);
-    createEAttribute(toggleButtonEClass, TOGGLE_BUTTON__TEXT_ON);
-    createEAttribute(toggleButtonEClass, TOGGLE_BUTTON__TEXT_OFF);
-
-    radioButtonEClass = createEClass(RADIO_BUTTON);
-    createEAttribute(radioButtonEClass, RADIO_BUTTON__NAME);
-    createEAttribute(radioButtonEClass, RADIO_BUTTON__TEXT);
-    createEReference(radioButtonEClass, RADIO_BUTTON__LAYOUT_STYLE);
-
-    checkedTextViewEClass = createEClass(CHECKED_TEXT_VIEW);
-    createEAttribute(checkedTextViewEClass, CHECKED_TEXT_VIEW__TEXT);
-
-    autoCompleteTextViewEClass = createEClass(AUTO_COMPLETE_TEXT_VIEW);
-    createEReference(autoCompleteTextViewEClass, AUTO_COMPLETE_TEXT_VIEW__ENTRIES);
-    createEAttribute(autoCompleteTextViewEClass, AUTO_COMPLETE_TEXT_VIEW__IS_MULTI);
-
-    paddingAttributeEClass = createEClass(PADDING_ATTRIBUTE);
-    createEReference(paddingAttributeEClass, PADDING_ATTRIBUTE__PADDING);
-
-    gravityAttributeEClass = createEClass(GRAVITY_ATTRIBUTE);
-    createEAttribute(gravityAttributeEClass, GRAVITY_ATTRIBUTE__GRAVITY);
-
-    textSizeAttributeEClass = createEClass(TEXT_SIZE_ATTRIBUTE);
-    createEReference(textSizeAttributeEClass, TEXT_SIZE_ATTRIBUTE__TEXT_SIZE);
-
-    backgroundAttributeEClass = createEClass(BACKGROUND_ATTRIBUTE);
-    createEReference(backgroundAttributeEClass, BACKGROUND_ATTRIBUTE__BACKGROUND);
-
-    abstractPreferenceEClass = createEClass(ABSTRACT_PREFERENCE);
-    createEAttribute(abstractPreferenceEClass, ABSTRACT_PREFERENCE__TITLE);
-
-    preferenceEClass = createEClass(PREFERENCE);
-    createEAttribute(preferenceEClass, PREFERENCE__NAME);
-    createEReference(preferenceEClass, PREFERENCE__PREFERENCE_ATTRIBUTES);
-
-    preferenceScreenEClass = createEClass(PREFERENCE_SCREEN);
-    createEAttribute(preferenceScreenEClass, PREFERENCE_SCREEN__NAME);
-    createEReference(preferenceScreenEClass, PREFERENCE_SCREEN__PREFERENCE_ATTRIBUTES);
-    createEReference(preferenceScreenEClass, PREFERENCE_SCREEN__PREFERENCES);
-
-    preferenceCategoryEClass = createEClass(PREFERENCE_CATEGORY);
-    createEReference(preferenceCategoryEClass, PREFERENCE_CATEGORY__PREFERENCES);
-
-    editTextPreferenceEClass = createEClass(EDIT_TEXT_PREFERENCE);
-    createEAttribute(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__NAME);
-    createEReference(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__PREFERENCE_ATTRIBUTES);
-    createEReference(editTextPreferenceEClass, EDIT_TEXT_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES);
-
-    listPreferenceEClass = createEClass(LIST_PREFERENCE);
-    createEAttribute(listPreferenceEClass, LIST_PREFERENCE__NAME);
-    createEReference(listPreferenceEClass, LIST_PREFERENCE__PREFERENCE_ATTRIBUTES);
-    createEReference(listPreferenceEClass, LIST_PREFERENCE__DIALOG_PREFERENCE_ATTRIBUTES);
-    createEReference(listPreferenceEClass, LIST_PREFERENCE__LIST_PREFERENCE_ATTRIBUTES);
-
-    checkBoxPreferenceEClass = createEClass(CHECK_BOX_PREFERENCE);
-    createEAttribute(checkBoxPreferenceEClass, CHECK_BOX_PREFERENCE__NAME);
-    createEReference(checkBoxPreferenceEClass, CHECK_BOX_PREFERENCE__PREFERENCE_ATTRIBUTES);
-
-    ringtonePrefenceEClass = createEClass(RINGTONE_PREFENCE);
-    createEAttribute(ringtonePrefenceEClass, RINGTONE_PREFENCE__NAME);
-    createEReference(ringtonePrefenceEClass, RINGTONE_PREFENCE__PREFERENCE_ATTRIBUTES);
-
-    preferenceAttributesEClass = createEClass(PREFERENCE_ATTRIBUTES);
-    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__SUMMARY);
-    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__ENABLED);
-    createEAttribute(preferenceAttributesEClass, PREFERENCE_ATTRIBUTES__PERSISTENT);
-
-    dialogPreferenceAttributesEClass = createEClass(DIALOG_PREFERENCE_ATTRIBUTES);
-    createEAttribute(dialogPreferenceAttributesEClass, DIALOG_PREFERENCE_ATTRIBUTES__DIALOG_TITLE);
-    createEAttribute(dialogPreferenceAttributesEClass, DIALOG_PREFERENCE_ATTRIBUTES__DEFAULT_VALUE);
-
-    listPreferenceAttributesEClass = createEClass(LIST_PREFERENCE_ATTRIBUTES);
-    createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRIES);
-    createEReference(listPreferenceAttributesEClass, LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES);
-
-    androResModelRootEClass = createEClass(ANDRO_RES_MODEL_ROOT);
-    createEReference(androResModelRootEClass, ANDRO_RES_MODEL_ROOT__RESOURCES);
-
-    propertyValueEClass = createEClass(PROPERTY_VALUE);
-
-    anyDrawablePropertyValueEClass = createEClass(ANY_DRAWABLE_PROPERTY_VALUE);
-
-    stringPropertyValueEClass = createEClass(STRING_PROPERTY_VALUE);
-    createEAttribute(stringPropertyValueEClass, STRING_PROPERTY_VALUE__VALUE);
-
-    integerPropertyValueEClass = createEClass(INTEGER_PROPERTY_VALUE);
-    createEAttribute(integerPropertyValueEClass, INTEGER_PROPERTY_VALUE__VALUE);
-
-    booleanPropertyValueEClass = createEClass(BOOLEAN_PROPERTY_VALUE);
-    createEAttribute(booleanPropertyValueEClass, BOOLEAN_PROPERTY_VALUE__VALUE);
-
-    colorPropertyValueEClass = createEClass(COLOR_PROPERTY_VALUE);
-    createEAttribute(colorPropertyValueEClass, COLOR_PROPERTY_VALUE__VALUE);
-
-    layoutDimensionPropertyValueEClass = createEClass(LAYOUT_DIMENSION_PROPERTY_VALUE);
-    createEAttribute(layoutDimensionPropertyValueEClass, LAYOUT_DIMENSION_PROPERTY_VALUE__CONST_VALUE);
-
-    dimensionPropertyValueEClass = createEClass(DIMENSION_PROPERTY_VALUE);
-    createEReference(dimensionPropertyValueEClass, DIMENSION_PROPERTY_VALUE__VALUE);
-
-    drawableResourceLinkEClass = createEClass(DRAWABLE_RESOURCE_LINK);
-
-    localDrawableResourceLinkEClass = createEClass(LOCAL_DRAWABLE_RESOURCE_LINK);
-    createEReference(localDrawableResourceLinkEClass, LOCAL_DRAWABLE_RESOURCE_LINK__LINK);
-
-    externalDrawableResourceLinkEClass = createEClass(EXTERNAL_DRAWABLE_RESOURCE_LINK);
-    createEAttribute(externalDrawableResourceLinkEClass, EXTERNAL_DRAWABLE_RESOURCE_LINK__EXTERNAL_RESOURCE);
-
-    stringResourceLinkEClass = createEClass(STRING_RESOURCE_LINK);
-    createEReference(stringResourceLinkEClass, STRING_RESOURCE_LINK__LINK);
-
-    integerResourceLinkEClass = createEClass(INTEGER_RESOURCE_LINK);
-    createEReference(integerResourceLinkEClass, INTEGER_RESOURCE_LINK__LINK);
-
-    booleanResourceLinkEClass = createEClass(BOOLEAN_RESOURCE_LINK);
-    createEReference(booleanResourceLinkEClass, BOOLEAN_RESOURCE_LINK__LINK);
-
-    colorResourceLinkEClass = createEClass(COLOR_RESOURCE_LINK);
-    createEReference(colorResourceLinkEClass, COLOR_RESOURCE_LINK__LINK);
-
-    dimensionResourceLinkEClass = createEClass(DIMENSION_RESOURCE_LINK);
-    createEReference(dimensionResourceLinkEClass, DIMENSION_RESOURCE_LINK__LINK);
-
-    resourceEClass = createEClass(RESOURCE);
-    createEAttribute(resourceEClass, RESOURCE__NAME);
-
-    stringResourceEClass = createEClass(STRING_RESOURCE);
-    createEAttribute(stringResourceEClass, STRING_RESOURCE__VALUE);
-
-    integerResourceEClass = createEClass(INTEGER_RESOURCE);
-    createEAttribute(integerResourceEClass, INTEGER_RESOURCE__VALUE);
-
-    booleanResourceEClass = createEClass(BOOLEAN_RESOURCE);
-    createEAttribute(booleanResourceEClass, BOOLEAN_RESOURCE__VALUE);
-
-    colorResourceEClass = createEClass(COLOR_RESOURCE);
-    createEAttribute(colorResourceEClass, COLOR_RESOURCE__VALUE);
-
-    dimensionResourceEClass = createEClass(DIMENSION_RESOURCE);
-    createEReference(dimensionResourceEClass, DIMENSION_RESOURCE__VALUE);
-
-    arrayResourceEClass = createEClass(ARRAY_RESOURCE);
-
-    integerArrayResourceEClass = createEClass(INTEGER_ARRAY_RESOURCE);
-    createEReference(integerArrayResourceEClass, INTEGER_ARRAY_RESOURCE__ENTRIES);
-
-    integerArrayEntryEClass = createEClass(INTEGER_ARRAY_ENTRY);
-    createEAttribute(integerArrayEntryEClass, INTEGER_ARRAY_ENTRY__NAME);
-    createEAttribute(integerArrayEntryEClass, INTEGER_ARRAY_ENTRY__VALUE);
-
-    stringArrayResourceEClass = createEClass(STRING_ARRAY_RESOURCE);
-    createEReference(stringArrayResourceEClass, STRING_ARRAY_RESOURCE__ENTRIES);
-
-    stringArrayEntryEClass = createEClass(STRING_ARRAY_ENTRY);
-    createEAttribute(stringArrayEntryEClass, STRING_ARRAY_ENTRY__NAME);
-    createEAttribute(stringArrayEntryEClass, STRING_ARRAY_ENTRY__VALUE);
-
-    drawableResourceEClass = createEClass(DRAWABLE_RESOURCE);
-
-    bitmapDrawableResourceEClass = createEClass(BITMAP_DRAWABLE_RESOURCE);
-    createEAttribute(bitmapDrawableResourceEClass, BITMAP_DRAWABLE_RESOURCE__FILENAME);
-
-    transitionDrawableResourceEClass = createEClass(TRANSITION_DRAWABLE_RESOURCE);
-    createEReference(transitionDrawableResourceEClass, TRANSITION_DRAWABLE_RESOURCE__FROM);
-    createEReference(transitionDrawableResourceEClass, TRANSITION_DRAWABLE_RESOURCE__TO);
-
-    dimensionValueEClass = createEClass(DIMENSION_VALUE);
-    createEAttribute(dimensionValueEClass, DIMENSION_VALUE__VALUE);
-    createEAttribute(dimensionValueEClass, DIMENSION_VALUE__METRIC);
-
-    // Create enums
-    apiLevelEEnum = createEEnum(API_LEVEL);
-    activityThemeEEnum = createEEnum(ACTIVITY_THEME);
-    dataTypesEEnum = createEEnum(DATA_TYPES);
-    layoutGravityKindEEnum = createEEnum(LAYOUT_GRAVITY_KIND);
-    fastLayoutDimensionKindEEnum = createEEnum(FAST_LAYOUT_DIMENSION_KIND);
-    layoutDimensionKindEEnum = createEEnum(LAYOUT_DIMENSION_KIND);
-    androidDrawableResourceEEnum = createEEnum(ANDROID_DRAWABLE_RESOURCE);
-    dimensionMetricEEnum = createEEnum(DIMENSION_METRIC);
+    if (isLoaded) return;
+    isLoaded = true;
+
+    URL url = getClass().getResource(packageFilename);
+    if (url == null)
+    {
+      throw new RuntimeException("Missing serialized package: " + packageFilename);
+    }
+    URI uri = URI.createURI(url.toString());
+    Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
+    try
+    {
+      resource.load(null);
+    }
+    catch (IOException exception)
+    {
+      throw new WrappedException(exception);
+    }
+    initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
+    createResource(eNS_URI);
+  }
+
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private boolean isFixed = false;
+
+  /**
+   * Fixes up the loaded package, to make it appear as if it had been programmatically built.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void fixPackageContents()
+  {
+    if (isFixed) return;
+    isFixed = true;
+    fixEClassifiers();
   }
 
   /**
+   * Sets the instance class on the given classifier.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isInitialized = false;
-
-  /**
-   * Complete the initialization of the package and its meta-model.  This
-   * method is guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void initializePackageContents()
+  @Override
+  protected void fixInstanceClass(EClassifier eClassifier)
   {
-    if (isInitialized) return;
-    isInitialized = true;
-
-    // Initialize package
-    setName(eNAME);
-    setNsPrefix(eNS_PREFIX);
-    setNsURI(eNS_URI);
-
-    // Create type parameters
-
-    // Set bounds for type parameters
-
-    // Add supertypes to classes
-    androGenModelRootEClass.getESuperTypes().add(this.getModelRoot());
-    androidApplicationEClass.getESuperTypes().add(this.getModelRoot());
-    activityEClass.getESuperTypes().add(this.getAndroidApplicationModelElement());
-    simpleActivityEClass.getESuperTypes().add(this.getActivity());
-    tabActivityEClass.getESuperTypes().add(this.getActivity());
-    listActivityEClass.getESuperTypes().add(this.getActivity());
-    preferenceActivityEClass.getESuperTypes().add(this.getAndroidApplicationModelElement());
-    resourceContentProviderEClass.getESuperTypes().add(this.getContentProvider());
-    androDataModelRootEClass.getESuperTypes().add(this.getModelRoot());
-    dataTypesRefEClass.getESuperTypes().add(this.getTypeRef());
-    entityTypeRefEClass.getESuperTypes().add(this.getTypeRef());
-    androGuiModelRootEClass.getESuperTypes().add(this.getModelRoot());
-    viewGroupEClass.getESuperTypes().add(this.getView());
-    regularLayoutStyleEClass.getESuperTypes().add(this.getLayoutStyle());
-    fastLayoutStyleEClass.getESuperTypes().add(this.getLayoutStyle());
-    absoluteLayoutEClass.getESuperTypes().add(this.getViewGroup());
-    linearLayoutEClass.getESuperTypes().add(this.getViewGroup());
-    frameLayoutEClass.getESuperTypes().add(this.getViewGroup());
-    relativeLayoutEClass.getESuperTypes().add(this.getViewGroup());
-    gridLayoutEClass.getESuperTypes().add(this.getViewGroup());
-    tableLayoutEClass.getESuperTypes().add(this.getViewGroup());
-    tableRowEClass.getESuperTypes().add(this.getViewGroup());
-    simpleViewEClass.getESuperTypes().add(this.getView());
-    viewElementEClass.getESuperTypes().add(this.getSimpleView());
-    textViewEClass.getESuperTypes().add(this.getSimpleView());
-    editTextEClass.getESuperTypes().add(this.getSimpleView());
-    buttonEClass.getESuperTypes().add(this.getSimpleView());
-    galleryEClass.getESuperTypes().add(this.getSimpleView());
-    expandableListViewEClass.getESuperTypes().add(this.getSimpleView());
-    webViewEClass.getESuperTypes().add(this.getSimpleView());
-    imageViewEClass.getESuperTypes().add(this.getSimpleView());
-    listViewEClass.getESuperTypes().add(this.getSimpleView());
-    gridViewEClass.getESuperTypes().add(this.getSimpleView());
-    spinnerEClass.getESuperTypes().add(this.getSimpleView());
-    checkBoxEClass.getESuperTypes().add(this.getSimpleView());
-    radioGroupEClass.getESuperTypes().add(this.getSimpleView());
-    ratingBarEClass.getESuperTypes().add(this.getSimpleView());
-    toggleButtonEClass.getESuperTypes().add(this.getSimpleView());
-    checkedTextViewEClass.getESuperTypes().add(this.getSimpleView());
-    autoCompleteTextViewEClass.getESuperTypes().add(this.getSimpleView());
-    preferenceEClass.getESuperTypes().add(this.getAbstractPreference());
-    preferenceScreenEClass.getESuperTypes().add(this.getAbstractPreference());
-    preferenceCategoryEClass.getESuperTypes().add(this.getAbstractPreference());
-    editTextPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
-    listPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
-    checkBoxPreferenceEClass.getESuperTypes().add(this.getAbstractPreference());
-    ringtonePrefenceEClass.getESuperTypes().add(this.getAbstractPreference());
-    androResModelRootEClass.getESuperTypes().add(this.getModelRoot());
-    anyDrawablePropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
-    stringPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
-    integerPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
-    booleanPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
-    colorPropertyValueEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
-    layoutDimensionPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
-    dimensionPropertyValueEClass.getESuperTypes().add(this.getPropertyValue());
-    dimensionPropertyValueEClass.getESuperTypes().add(this.getLayoutDimensionPropertyValue());
-    drawableResourceLinkEClass.getESuperTypes().add(this.getAnyDrawablePropertyValue());
-    localDrawableResourceLinkEClass.getESuperTypes().add(this.getDrawableResourceLink());
-    externalDrawableResourceLinkEClass.getESuperTypes().add(this.getDrawableResourceLink());
-    stringResourceLinkEClass.getESuperTypes().add(this.getStringPropertyValue());
-    integerResourceLinkEClass.getESuperTypes().add(this.getIntegerPropertyValue());
-    booleanResourceLinkEClass.getESuperTypes().add(this.getBooleanPropertyValue());
-    colorResourceLinkEClass.getESuperTypes().add(this.getColorPropertyValue());
-    dimensionResourceLinkEClass.getESuperTypes().add(this.getDimensionPropertyValue());
-    stringResourceEClass.getESuperTypes().add(this.getResource());
-    integerResourceEClass.getESuperTypes().add(this.getResource());
-    booleanResourceEClass.getESuperTypes().add(this.getResource());
-    colorResourceEClass.getESuperTypes().add(this.getResource());
-    dimensionResourceEClass.getESuperTypes().add(this.getResource());
-    arrayResourceEClass.getESuperTypes().add(this.getResource());
-    integerArrayResourceEClass.getESuperTypes().add(this.getArrayResource());
-    stringArrayResourceEClass.getESuperTypes().add(this.getArrayResource());
-    drawableResourceEClass.getESuperTypes().add(this.getResource());
-    bitmapDrawableResourceEClass.getESuperTypes().add(this.getDrawableResource());
-    transitionDrawableResourceEClass.getESuperTypes().add(this.getDrawableResource());
-
-    // Initialize classes and features; add operations and parameters
-    initEClass(androTextModelRootEClass, AndroTextModelRoot.class, "AndroTextModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAndroTextModelRoot_Name(), ecorePackage.getEString(), "name", null, 0, 1, AndroTextModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAndroTextModelRoot_Imports(), this.getImport(), null, "imports", null, 0, -1, AndroTextModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAndroTextModelRoot_ActualModelRoot(), this.getModelRoot(), null, "actualModelRoot", null, 0, 1, AndroTextModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(modelRootEClass, ModelRoot.class, "ModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getModelRoot_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(androGenModelRootEClass, AndroGenModelRoot.class, "AndroGenModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAndroGenModelRoot_TargetApplications(), this.getTargetApplication(), null, "targetApplications", null, 0, -1, AndroGenModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(targetApplicationEClass, TargetApplication.class, "TargetApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTargetApplication_Application(), this.getAndroidApplication(), null, "application", null, 0, 1, TargetApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTargetApplication_ProjectName(), ecorePackage.getEString(), "projectName", null, 0, 1, TargetApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTargetApplication_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1, TargetApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTargetApplication_Target(), this.getApiLevel(), "target", null, 0, 1, TargetApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTargetApplication_Version(), ecorePackage.getEString(), "version", null, 0, 1, TargetApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(androidApplicationEClass, AndroidApplication.class, "AndroidApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAndroidApplication_Dataroot(), this.getAndroDataModelRoot(), null, "dataroot", null, 0, 1, AndroidApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAndroidApplication_MainActivity(), this.getActivity(), null, "mainActivity", null, 0, 1, AndroidApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAndroidApplication_ModelElements(), this.getAndroidApplicationModelElement(), null, "modelElements", null, 0, -1, AndroidApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(androidApplicationModelElementEClass, AndroidApplicationModelElement.class, "AndroidApplicationModelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAndroidApplicationModelElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AndroidApplicationModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(simpleActivityEClass, SimpleActivity.class, "SimpleActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSimpleActivity_Layout(), this.getViewGroup(), null, "layout", null, 0, 1, SimpleActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSimpleActivity_Theme(), this.getActivityTheme(), "theme", null, 0, 1, SimpleActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(tabActivityEClass, TabActivity.class, "TabActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTabActivity_Tabs(), this.getTab(), null, "tabs", null, 0, -1, TabActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(tabEClass, Tab.class, "Tab", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTab_Tag(), ecorePackage.getEString(), "tag", null, 0, 1, Tab.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTab_Activity(), this.getActivity(), null, "activity", null, 0, 1, Tab.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(listActivityEClass, ListActivity.class, "ListActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListActivity_Listitem(), this.getView(), null, "listitem", null, 0, 1, ListActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListActivity_ContentProvider(), this.getContentProvider(), null, "contentProvider", null, 0, 1, ListActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(preferenceActivityEClass, PreferenceActivity.class, "PreferenceActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPreferenceActivity_Layout(), this.getPreferenceScreen(), null, "layout", null, 0, 1, PreferenceActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(contentProviderEClass, ContentProvider.class, "ContentProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(resourceContentProviderEClass, ResourceContentProvider.class, "ResourceContentProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getResourceContentProvider_Link(), this.getArrayResource(), null, "link", null, 0, 1, ResourceContentProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(androDataModelRootEClass, AndroDataModelRoot.class, "AndroDataModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAndroDataModelRoot_Entities(), this.getEntity(), null, "entities", null, 0, -1, AndroDataModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntity_SuperType(), this.getEntity(), null, "superType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntity_Properties(), this.getProperty(), null, "properties", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProperty_Type(), this.getTypeRef(), null, "type", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(typeRefEClass, TypeRef.class, "TypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(dataTypesRefEClass, DataTypesRef.class, "DataTypesRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataTypesRef_Type(), this.getDataTypes(), "type", null, 0, 1, DataTypesRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(entityTypeRefEClass, EntityTypeRef.class, "EntityTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntityTypeRef_Type(), this.getEntity(), null, "type", null, 0, 1, EntityTypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(androGuiModelRootEClass, AndroGuiModelRoot.class, "AndroGuiModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAndroGuiModelRoot_Roots(), this.getView(), null, "roots", null, 0, -1, AndroGuiModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getView_Name(), ecorePackage.getEString(), "name", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getView_LayoutStyle(), this.getLayoutStyle(), null, "layoutStyle", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(viewGroupEClass, ViewGroup.class, "ViewGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getViewGroup_Views(), this.getView(), null, "views", null, 0, -1, ViewGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(layoutParamsEClass, LayoutParams.class, "LayoutParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLayoutParams_Weight(), this.getIntegerPropertyValue(), null, "weight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_MarginLeft(), this.getDimensionPropertyValue(), null, "marginLeft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_MarginTop(), this.getDimensionPropertyValue(), null, "marginTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_MarginRight(), this.getDimensionPropertyValue(), null, "marginRight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_MarginBottom(), this.getDimensionPropertyValue(), null, "marginBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignParentLeft(), this.getBooleanPropertyValue(), null, "alignParentLeft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignParentTop(), this.getBooleanPropertyValue(), null, "alignParentTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignParentRight(), this.getBooleanPropertyValue(), null, "alignParentRight", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignParentBottom(), this.getBooleanPropertyValue(), null, "alignParentBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignTop(), this.getView(), null, "alignTop", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignBottom(), this.getView(), null, "alignBottom", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_AlignLeft(), this.getView(), null, "alignLeft", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_Below(), this.getView(), null, "below", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_Above(), this.getView(), null, "above", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_ToLeftOf(), this.getView(), null, "toLeftOf", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_ToRightOf(), this.getView(), null, "toRightOf", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_CenterHorizontal(), this.getBooleanPropertyValue(), null, "centerHorizontal", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_CenterInParent(), this.getBooleanPropertyValue(), null, "centerInParent", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_CenterVertical(), this.getBooleanPropertyValue(), null, "centerVertical", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_Column(), this.getIntegerPropertyValue(), null, "column", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLayoutParams_BackgroundAttribute(), this.getBackgroundAttribute(), null, "backgroundAttribute", null, 0, 1, LayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(layoutGravityAttributeEClass, LayoutGravityAttribute.class, "LayoutGravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLayoutGravityAttribute_Gravity(), this.getLayoutGravityKind(), "gravity", null, 0, -1, LayoutGravityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(layoutStyleEClass, LayoutStyle.class, "LayoutStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(regularLayoutStyleEClass, RegularLayoutStyle.class, "RegularLayoutStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRegularLayoutStyle_Width(), this.getLayoutDimensionPropertyValue(), null, "width", null, 0, 1, RegularLayoutStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRegularLayoutStyle_Height(), this.getLayoutDimensionPropertyValue(), null, "height", null, 0, 1, RegularLayoutStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(fastLayoutStyleEClass, FastLayoutStyle.class, "FastLayoutStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFastLayoutStyle_Value(), this.getFastLayoutDimensionKind(), "value", null, 0, 1, FastLayoutStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(absoluteLayoutEClass, AbsoluteLayout.class, "AbsoluteLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(linearLayoutEClass, LinearLayout.class, "LinearLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLinearLayout_Vertical(), ecorePackage.getEBoolean(), "vertical", null, 0, 1, LinearLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLinearLayout_LayoutParams(), this.getLinearLayoutParams(), null, "layoutParams", null, 0, 1, LinearLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(linearLayoutParamsEClass, LinearLayoutParams.class, "LinearLayoutParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLinearLayoutParams_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, LinearLayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLinearLayoutParams_Gravity(), this.getLayoutGravityAttribute(), null, "gravity", null, 0, 1, LinearLayoutParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(frameLayoutEClass, FrameLayout.class, "FrameLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(relativeLayoutEClass, RelativeLayout.class, "RelativeLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(gridLayoutEClass, GridLayout.class, "GridLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(tableLayoutEClass, TableLayout.class, "TableLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTableLayout_CollapseColumns(), this.getIntegerPropertyValue(), null, "collapseColumns", null, 0, -1, TableLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTableLayout_ShrinkColumns(), this.getIntegerPropertyValue(), null, "shrinkColumns", null, 0, -1, TableLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTableLayout_StretchColumns(), this.getIntegerPropertyValue(), null, "stretchColumns", null, 0, -1, TableLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(tableRowEClass, TableRow.class, "TableRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(simpleViewEClass, SimpleView.class, "SimpleView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(viewElementEClass, ViewElement.class, "ViewElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getViewElement_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, ViewElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textViewEClass, TextView.class, "TextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextView_Text(), ecorePackage.getEString(), "text", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTextView_GravityAttribute(), this.getGravityAttribute(), null, "gravityAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTextView_TextSizeAttribute(), this.getTextSizeAttribute(), null, "textSizeAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTextView_PaddingAttribute(), this.getPaddingAttribute(), null, "paddingAttribute", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTextView_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, TextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(editTextEClass, EditText.class, "EditText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEditText_Text(), ecorePackage.getEString(), "text", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEditText_GravityAttribute(), this.getGravityAttribute(), null, "gravityAttribute", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEditText_TextSizeAttribute(), this.getTextSizeAttribute(), null, "textSizeAttribute", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEditText_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, EditText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getButton_LayoutParams(), this.getLayoutParams(), null, "layoutParams", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(galleryEClass, Gallery.class, "Gallery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(expandableListViewEClass, ExpandableListView.class, "ExpandableListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(webViewEClass, WebView.class, "WebView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(imageViewEClass, ImageView.class, "ImageView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImageView_Src(), this.getDrawableResource(), null, "src", null, 0, 1, ImageView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(listViewEClass, ListView.class, "ListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListView_Entries(), this.getArrayResource(), null, "entries", null, 0, 1, ListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListView_Layout(), this.getView(), null, "layout", null, 0, 1, ListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(gridViewEClass, GridView.class, "GridView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(spinnerEClass, Spinner.class, "Spinner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSpinner_Entries(), this.getArrayResource(), null, "entries", null, 0, 1, Spinner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCheckBox_Text(), ecorePackage.getEString(), "text", null, 0, 1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(radioGroupEClass, RadioGroup.class, "RadioGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRadioGroup_Orientation(), ecorePackage.getEBoolean(), "orientation", null, 0, 1, RadioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRadioGroup_Radiobuttons(), this.getRadioButton(), null, "radiobuttons", null, 0, -1, RadioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ratingBarEClass, RatingBar.class, "RatingBar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRatingBar_NumStars(), ecorePackage.getEInt(), "numStars", null, 0, 1, RatingBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(toggleButtonEClass, ToggleButton.class, "ToggleButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getToggleButton_TextOn(), ecorePackage.getEString(), "textOn", null, 0, 1, ToggleButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getToggleButton_TextOff(), ecorePackage.getEString(), "textOff", null, 0, 1, ToggleButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(radioButtonEClass, RadioButton.class, "RadioButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRadioButton_Name(), ecorePackage.getEString(), "name", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRadioButton_Text(), ecorePackage.getEString(), "text", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRadioButton_LayoutStyle(), this.getLayoutStyle(), null, "layoutStyle", null, 0, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(checkedTextViewEClass, CheckedTextView.class, "CheckedTextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCheckedTextView_Text(), ecorePackage.getEString(), "text", null, 0, 1, CheckedTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(autoCompleteTextViewEClass, AutoCompleteTextView.class, "AutoCompleteTextView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAutoCompleteTextView_Entries(), this.getStringArrayResource(), null, "entries", null, 0, 1, AutoCompleteTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAutoCompleteTextView_IsMulti(), ecorePackage.getEBoolean(), "isMulti", null, 0, 1, AutoCompleteTextView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(paddingAttributeEClass, PaddingAttribute.class, "PaddingAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPaddingAttribute_Padding(), this.getDimensionPropertyValue(), null, "padding", null, 0, 1, PaddingAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(gravityAttributeEClass, GravityAttribute.class, "GravityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGravityAttribute_Gravity(), this.getLayoutGravityKind(), "gravity", null, 0, 1, GravityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textSizeAttributeEClass, TextSizeAttribute.class, "TextSizeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTextSizeAttribute_TextSize(), this.getDimensionPropertyValue(), null, "textSize", null, 0, 1, TextSizeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(backgroundAttributeEClass, BackgroundAttribute.class, "BackgroundAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBackgroundAttribute_Background(), this.getAnyDrawablePropertyValue(), null, "background", null, 0, 1, BackgroundAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(abstractPreferenceEClass, AbstractPreference.class, "AbstractPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAbstractPreference_Title(), ecorePackage.getEString(), "title", null, 0, 1, AbstractPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(preferenceEClass, Preference.class, "Preference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, Preference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, Preference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(preferenceScreenEClass, PreferenceScreen.class, "PreferenceScreen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPreferenceScreen_Name(), ecorePackage.getEString(), "name", null, 0, 1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPreferenceScreen_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPreferenceScreen_Preferences(), this.getAbstractPreference(), null, "preferences", null, 0, -1, PreferenceScreen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(preferenceCategoryEClass, PreferenceCategory.class, "PreferenceCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPreferenceCategory_Preferences(), this.getAbstractPreference(), null, "preferences", null, 0, -1, PreferenceCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(editTextPreferenceEClass, EditTextPreference.class, "EditTextPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEditTextPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEditTextPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEditTextPreference_DialogPreferenceAttributes(), this.getDialogPreferenceAttributes(), null, "dialogPreferenceAttributes", null, 0, 1, EditTextPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(listPreferenceEClass, ListPreference.class, "ListPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getListPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListPreference_DialogPreferenceAttributes(), this.getDialogPreferenceAttributes(), null, "dialogPreferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListPreference_ListPreferenceAttributes(), this.getListPreferenceAttributes(), null, "listPreferenceAttributes", null, 0, 1, ListPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(checkBoxPreferenceEClass, CheckBoxPreference.class, "CheckBoxPreference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCheckBoxPreference_Name(), ecorePackage.getEString(), "name", null, 0, 1, CheckBoxPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCheckBoxPreference_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, CheckBoxPreference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ringtonePrefenceEClass, RingtonePrefence.class, "RingtonePrefence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRingtonePrefence_Name(), ecorePackage.getEString(), "name", null, 0, 1, RingtonePrefence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRingtonePrefence_PreferenceAttributes(), this.getPreferenceAttributes(), null, "preferenceAttributes", null, 0, 1, RingtonePrefence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(preferenceAttributesEClass, PreferenceAttributes.class, "PreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPreferenceAttributes_Summary(), ecorePackage.getEString(), "summary", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPreferenceAttributes_Enabled(), ecorePackage.getEString(), "enabled", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPreferenceAttributes_Persistent(), ecorePackage.getEString(), "persistent", null, 0, 1, PreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dialogPreferenceAttributesEClass, DialogPreferenceAttributes.class, "DialogPreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDialogPreferenceAttributes_DialogTitle(), ecorePackage.getEString(), "dialogTitle", null, 0, 1, DialogPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDialogPreferenceAttributes_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, DialogPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(listPreferenceAttributesEClass, ListPreferenceAttributes.class, "ListPreferenceAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListPreferenceAttributes_Entries(), this.getStringArrayEntry(), null, "entries", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListPreferenceAttributes_EntryValues(), this.getStringArrayEntry(), null, "entryValues", null, 0, 1, ListPreferenceAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(androResModelRootEClass, AndroResModelRoot.class, "AndroResModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAndroResModelRoot_Resources(), this.getResource(), null, "resources", null, 0, -1, AndroResModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(propertyValueEClass, PropertyValue.class, "PropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(anyDrawablePropertyValueEClass, AnyDrawablePropertyValue.class, "AnyDrawablePropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(stringPropertyValueEClass, StringPropertyValue.class, "StringPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringPropertyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(integerPropertyValueEClass, IntegerPropertyValue.class, "IntegerPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntegerPropertyValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(booleanPropertyValueEClass, BooleanPropertyValue.class, "BooleanPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBooleanPropertyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(colorPropertyValueEClass, ColorPropertyValue.class, "ColorPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getColorPropertyValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, ColorPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(layoutDimensionPropertyValueEClass, LayoutDimensionPropertyValue.class, "LayoutDimensionPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLayoutDimensionPropertyValue_ConstValue(), this.getLayoutDimensionKind(), "constValue", null, 0, 1, LayoutDimensionPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dimensionPropertyValueEClass, DimensionPropertyValue.class, "DimensionPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDimensionPropertyValue_Value(), this.getDimensionValue(), null, "value", null, 0, 1, DimensionPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(drawableResourceLinkEClass, DrawableResourceLink.class, "DrawableResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(localDrawableResourceLinkEClass, LocalDrawableResourceLink.class, "LocalDrawableResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLocalDrawableResourceLink_Link(), this.getDrawableResource(), null, "link", null, 0, 1, LocalDrawableResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(externalDrawableResourceLinkEClass, ExternalDrawableResourceLink.class, "ExternalDrawableResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExternalDrawableResourceLink_ExternalResource(), this.getAndroidDrawableResource(), "externalResource", null, 0, 1, ExternalDrawableResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stringResourceLinkEClass, StringResourceLink.class, "StringResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStringResourceLink_Link(), this.getStringResource(), null, "link", null, 0, 1, StringResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(integerResourceLinkEClass, IntegerResourceLink.class, "IntegerResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIntegerResourceLink_Link(), this.getIntegerResource(), null, "link", null, 0, 1, IntegerResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(booleanResourceLinkEClass, BooleanResourceLink.class, "BooleanResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBooleanResourceLink_Link(), this.getBooleanResource(), null, "link", null, 0, 1, BooleanResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(colorResourceLinkEClass, ColorResourceLink.class, "ColorResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getColorResourceLink_Link(), this.getColorResource(), null, "link", null, 0, 1, ColorResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dimensionResourceLinkEClass, DimensionResourceLink.class, "DimensionResourceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDimensionResourceLink_Link(), this.getDimensionResource(), null, "link", null, 0, 1, DimensionResourceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stringResourceEClass, StringResource.class, "StringResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringResource_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(integerResourceEClass, IntegerResource.class, "IntegerResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntegerResource_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(booleanResourceEClass, BooleanResource.class, "BooleanResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBooleanResource_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(colorResourceEClass, ColorResource.class, "ColorResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getColorResource_Value(), ecorePackage.getEString(), "value", null, 0, 1, ColorResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dimensionResourceEClass, DimensionResource.class, "DimensionResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDimensionResource_Value(), this.getDimensionValue(), null, "value", null, 0, 1, DimensionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(arrayResourceEClass, ArrayResource.class, "ArrayResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(integerArrayResourceEClass, IntegerArrayResource.class, "IntegerArrayResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIntegerArrayResource_Entries(), this.getIntegerArrayEntry(), null, "entries", null, 0, -1, IntegerArrayResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(integerArrayEntryEClass, IntegerArrayEntry.class, "IntegerArrayEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntegerArrayEntry_Name(), ecorePackage.getEString(), "name", null, 0, 1, IntegerArrayEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIntegerArrayEntry_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerArrayEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stringArrayResourceEClass, StringArrayResource.class, "StringArrayResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStringArrayResource_Entries(), this.getStringArrayEntry(), null, "entries", null, 0, -1, StringArrayResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stringArrayEntryEClass, StringArrayEntry.class, "StringArrayEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringArrayEntry_Name(), ecorePackage.getEString(), "name", null, 0, 1, StringArrayEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getStringArrayEntry_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringArrayEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(drawableResourceEClass, DrawableResource.class, "DrawableResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(bitmapDrawableResourceEClass, BitmapDrawableResource.class, "BitmapDrawableResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBitmapDrawableResource_Filename(), ecorePackage.getEString(), "filename", null, 0, 1, BitmapDrawableResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(transitionDrawableResourceEClass, TransitionDrawableResource.class, "TransitionDrawableResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTransitionDrawableResource_From(), this.getBitmapDrawableResource(), null, "from", null, 0, 1, TransitionDrawableResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTransitionDrawableResource_To(), this.getBitmapDrawableResource(), null, "to", null, 0, 1, TransitionDrawableResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dimensionValueEClass, DimensionValue.class, "DimensionValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDimensionValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, DimensionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDimensionValue_Metric(), this.getDimensionMetric(), "metric", null, 0, 1, DimensionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(apiLevelEEnum, ApiLevel.class, "ApiLevel");
-    addEEnumLiteral(apiLevelEEnum, ApiLevel.API8);
-    addEEnumLiteral(apiLevelEEnum, ApiLevel.API9);
-    addEEnumLiteral(apiLevelEEnum, ApiLevel.API10);
-    addEEnumLiteral(apiLevelEEnum, ApiLevel.API11);
-    addEEnumLiteral(apiLevelEEnum, ApiLevel.API12);
-    addEEnumLiteral(apiLevelEEnum, ApiLevel.API14);
-
-    initEEnum(activityThemeEEnum, ActivityTheme.class, "ActivityTheme");
-    addEEnumLiteral(activityThemeEEnum, ActivityTheme.DIALOG);
-    addEEnumLiteral(activityThemeEEnum, ActivityTheme.NOTITLE);
-    addEEnumLiteral(activityThemeEEnum, ActivityTheme.FULLSCREEN);
-
-    initEEnum(dataTypesEEnum, DataTypes.class, "DataTypes");
-    addEEnumLiteral(dataTypesEEnum, DataTypes.STRING);
-    addEEnumLiteral(dataTypesEEnum, DataTypes.FLOAT);
-    addEEnumLiteral(dataTypesEEnum, DataTypes.BOOLEAN);
-    addEEnumLiteral(dataTypesEEnum, DataTypes.INT);
-
-    initEEnum(layoutGravityKindEEnum, LayoutGravityKind.class, "LayoutGravityKind");
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.TOP);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.BOTTOM);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.LEFT);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.RIGHT);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CENTER);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CENTER_VERTICAL);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CENTER_HORIZONTAL);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.FILL);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.FILL_VERTICAL);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.FILL_HORIZONTAL);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CLIP_VERTICAL);
-    addEEnumLiteral(layoutGravityKindEEnum, LayoutGravityKind.CLIP_HORIZONTAL);
-
-    initEEnum(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.class, "FastLayoutDimensionKind");
-    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.FILL);
-    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.WRAP);
-    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.FILL_WRAP);
-    addEEnumLiteral(fastLayoutDimensionKindEEnum, FastLayoutDimensionKind.WRAP_FILL);
-
-    initEEnum(layoutDimensionKindEEnum, LayoutDimensionKind.class, "LayoutDimensionKind");
-    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.FILL);
-    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.WRAP);
-    addEEnumLiteral(layoutDimensionKindEEnum, LayoutDimensionKind.MATCH);
-
-    initEEnum(androidDrawableResourceEEnum, AndroidDrawableResource.class, "AndroidDrawableResource");
-    addEEnumLiteral(androidDrawableResourceEEnum, AndroidDrawableResource.ANDROID_EDITBOX_BACKGROUND);
-
-    initEEnum(dimensionMetricEEnum, DimensionMetric.class, "DimensionMetric");
-    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.DP);
-    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.SP);
-    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.PT);
-    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.PX);
-    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.MM);
-    addEEnumLiteral(dimensionMetricEEnum, DimensionMetric.IN);
-
-    // Create resource
-    createResource(eNS_URI);
+    if (eClassifier.getInstanceClassName() == null)
+    {
+      eClassifier.setInstanceClassName("hu.bme.mit.androtext.lang.androTextDsl." + eClassifier.getName());
+      setGeneratedClassName(eClassifier);
+    }
   }
 
 } //AndroTextDslPackageImpl

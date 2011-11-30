@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntries <em>Entries</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntriesAttribute <em>Entries Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntryValues <em>Entry Values</em>}</li>
  * </ul>
  * </p>
@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ListPreferenceAttributes extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Entries</b></em>' reference.
+   * Returns the value of the '<em><b>Entries Attribute</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Entries</em>' reference isn't clear,
+   * If the meaning of the '<em>Entries Attribute</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Entries</em>' reference.
-   * @see #setEntries(StringArrayEntry)
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getListPreferenceAttributes_Entries()
-   * @model
+   * @return the value of the '<em>Entries Attribute</em>' containment reference.
+   * @see #setEntriesAttribute(EntriesAttribute)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getListPreferenceAttributes_EntriesAttribute()
+   * @model containment="true"
    * @generated
    */
-  StringArrayEntry getEntries();
+  EntriesAttribute getEntriesAttribute();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntries <em>Entries</em>}' reference.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes#getEntriesAttribute <em>Entries Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Entries</em>' reference.
-   * @see #getEntries()
+   * @param value the new value of the '<em>Entries Attribute</em>' containment reference.
+   * @see #getEntriesAttribute()
    * @generated
    */
-  void setEntries(StringArrayEntry value);
+  void setEntriesAttribute(EntriesAttribute value);
 
   /**
    * Returns the value of the '<em><b>Entry Values</b></em>' reference.

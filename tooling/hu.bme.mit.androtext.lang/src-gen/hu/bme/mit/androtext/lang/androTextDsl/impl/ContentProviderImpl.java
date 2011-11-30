@@ -42,7 +42,7 @@ public class ContentProviderImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.CONTENT_PROVIDER;
+    return AndroTextDslPackage.eINSTANCE.getContentProvider();
   }
 
 } //ContentProviderImpl

@@ -72,7 +72,7 @@ public class RegularLayoutStyleImpl extends LayoutStyleImpl implements RegularLa
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.REGULAR_LAYOUT_STYLE;
+    return AndroTextDslPackage.eINSTANCE.getRegularLayoutStyle();
   }
 
   /**

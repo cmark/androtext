@@ -42,7 +42,7 @@ public class LayoutStyleImpl extends MinimalEObjectImpl.Container implements Lay
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.LAYOUT_STYLE;
+    return AndroTextDslPackage.eINSTANCE.getLayoutStyle();
   }
 
 } //LayoutStyleImpl

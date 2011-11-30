@@ -13,9 +13,6 @@ Workflow {
     bean = StandaloneSetup {
         scanClassPath = true
         platformUri = "${runtimeProject}/.."
-        // The following two lines ca be removed, if Xbase is not used.
-//        registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
-//        registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
     }
 
     component = DirectoryCleaner {
@@ -62,12 +59,13 @@ Workflow {
 
             // The antlr parser generator fragment.
             fragment = parser.antlr.XtextAntlrGeneratorFragment {
-				options = {
-					backtrack = true
-				}
+//				options = {
+//					backtrack = true
+//					classSplitting = true
+//				}
 				//http://www.antlr.org/pipermail/antlr-interest/2007-March/020014.html
 				//http://20000frames.blogspot.com/2010/09/dealing-with-could-not-even-do-k1-for.html
-	        	antlrParam = "-Xconversiontimeout" antlrParam = "10000"
+	        	antlrParam = "-Xconversiontimeout" antlrParam = "60000"
             }
 
             // java-based API for validation
@@ -110,11 +108,12 @@ Workflow {
             // generates a more lightweight Antlr parser and lexer tailored for content assist
             fragment = parser.antlr.XtextAntlrUiGeneratorFragment {
             	options = {
-            		backtrack = true
+//            		backtrack = true
+            		classSplitting = true
             	}
 				//http://www.antlr.org/pipermail/antlr-interest/2007-March/020014.html
 				//http://20000frames.blogspot.com/2010/09/dealing-with-could-not-even-do-k1-for.html
-	        	antlrParam = "-Xconversiontimeout" antlrParam = "10000"
+	        	antlrParam = "-Xconversiontimeout" antlrParam = "60000"
             }
 
             // generates junit test support classes into Generator#pathTestProject

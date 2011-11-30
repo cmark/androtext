@@ -60,7 +60,7 @@ public class EntityTypeRefImpl extends TypeRefImpl implements EntityTypeRef
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ENTITY_TYPE_REF;
+    return AndroTextDslPackage.eINSTANCE.getEntityTypeRef();
   }
 
   /**

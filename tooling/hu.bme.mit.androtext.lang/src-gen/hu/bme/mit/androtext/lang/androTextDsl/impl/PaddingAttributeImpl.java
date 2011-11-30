@@ -62,7 +62,7 @@ public class PaddingAttributeImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PADDING_ATTRIBUTE;
+    return AndroTextDslPackage.eINSTANCE.getPaddingAttribute();
   }
 
   /**

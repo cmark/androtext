@@ -40,7 +40,7 @@ public class RelativeLayoutImpl extends ViewGroupImpl implements RelativeLayout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.RELATIVE_LAYOUT;
+    return AndroTextDslPackage.eINSTANCE.getRelativeLayout();
   }
 
 } //RelativeLayoutImpl

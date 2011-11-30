@@ -68,7 +68,7 @@ public class StringResourceImpl extends ResourceImpl implements StringResource
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.STRING_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getStringResource();
   }
 
   /**

@@ -60,7 +60,7 @@ public class StringResourceLinkImpl extends StringPropertyValueImpl implements S
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.STRING_RESOURCE_LINK;
+    return AndroTextDslPackage.eINSTANCE.getStringResourceLink();
   }
 
   /**

@@ -92,7 +92,7 @@ public class AndroidApplicationImpl extends ModelRootImpl implements AndroidAppl
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ANDROID_APPLICATION;
+    return AndroTextDslPackage.eINSTANCE.getAndroidApplication();
   }
 
   /**

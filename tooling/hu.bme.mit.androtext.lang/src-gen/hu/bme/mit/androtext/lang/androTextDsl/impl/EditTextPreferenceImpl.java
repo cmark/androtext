@@ -94,7 +94,7 @@ public class EditTextPreferenceImpl extends AbstractPreferenceImpl implements Ed
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.EDIT_TEXT_PREFERENCE;
+    return AndroTextDslPackage.eINSTANCE.getEditTextPreference();
   }
 
   /**

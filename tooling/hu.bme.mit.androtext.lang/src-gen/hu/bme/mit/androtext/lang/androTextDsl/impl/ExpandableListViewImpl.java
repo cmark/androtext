@@ -40,7 +40,7 @@ public class ExpandableListViewImpl extends SimpleViewImpl implements Expandable
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.EXPANDABLE_LIST_VIEW;
+    return AndroTextDslPackage.eINSTANCE.getExpandableListView();
   }
 
 } //ExpandableListViewImpl

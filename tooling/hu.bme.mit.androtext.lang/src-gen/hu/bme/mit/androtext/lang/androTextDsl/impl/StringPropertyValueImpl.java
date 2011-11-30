@@ -68,7 +68,7 @@ public class StringPropertyValueImpl extends PropertyValueImpl implements String
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.STRING_PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getStringPropertyValue();
   }
 
   /**

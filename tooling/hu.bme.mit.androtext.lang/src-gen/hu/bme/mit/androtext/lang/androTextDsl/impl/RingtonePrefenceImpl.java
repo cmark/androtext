@@ -82,7 +82,7 @@ public class RingtonePrefenceImpl extends AbstractPreferenceImpl implements Ring
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.RINGTONE_PREFENCE;
+    return AndroTextDslPackage.eINSTANCE.getRingtonePrefence();
   }
 
   /**

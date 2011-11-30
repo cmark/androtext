@@ -68,7 +68,7 @@ public class BooleanPropertyValueImpl extends PropertyValueImpl implements Boole
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.BOOLEAN_PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getBooleanPropertyValue();
   }
 
   /**

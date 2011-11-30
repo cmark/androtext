@@ -60,7 +60,7 @@ public class PreferenceActivityImpl extends AndroidApplicationModelElementImpl i
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PREFERENCE_ACTIVITY;
+    return AndroTextDslPackage.eINSTANCE.getPreferenceActivity();
   }
 
   /**

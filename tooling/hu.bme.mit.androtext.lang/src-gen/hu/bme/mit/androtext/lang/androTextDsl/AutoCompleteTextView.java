@@ -15,8 +15,8 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getEntries <em>Entries</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#isIsMulti <em>Is Multi</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getEntriesAttribute <em>Entries Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,55 +27,55 @@ package hu.bme.mit.androtext.lang.androTextDsl;
 public interface AutoCompleteTextView extends SimpleView
 {
   /**
-   * Returns the value of the '<em><b>Entries</b></em>' reference.
+   * Returns the value of the '<em><b>Entries Attribute</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Entries</em>' reference isn't clear,
+   * If the meaning of the '<em>Entries Attribute</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Entries</em>' reference.
-   * @see #setEntries(StringArrayResource)
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAutoCompleteTextView_Entries()
-   * @model
+   * @return the value of the '<em>Entries Attribute</em>' containment reference.
+   * @see #setEntriesAttribute(EntriesAttribute)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAutoCompleteTextView_EntriesAttribute()
+   * @model containment="true"
    * @generated
    */
-  StringArrayResource getEntries();
+  EntriesAttribute getEntriesAttribute();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getEntries <em>Entries</em>}' reference.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getEntriesAttribute <em>Entries Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Entries</em>' reference.
-   * @see #getEntries()
+   * @param value the new value of the '<em>Entries Attribute</em>' containment reference.
+   * @see #getEntriesAttribute()
    * @generated
    */
-  void setEntries(StringArrayResource value);
+  void setEntriesAttribute(EntriesAttribute value);
 
   /**
-   * Returns the value of the '<em><b>Is Multi</b></em>' attribute.
+   * Returns the value of the '<em><b>Multi</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Is Multi</em>' attribute isn't clear,
+   * If the meaning of the '<em>Multi</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Multi</em>' attribute.
-   * @see #setIsMulti(boolean)
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAutoCompleteTextView_IsMulti()
-   * @model
+   * @return the value of the '<em>Multi</em>' containment reference.
+   * @see #setMulti(BooleanPropertyValue)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAutoCompleteTextView_Multi()
+   * @model containment="true"
    * @generated
    */
-  boolean isIsMulti();
+  BooleanPropertyValue getMulti();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#isIsMulti <em>Is Multi</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getMulti <em>Multi</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Multi</em>' attribute.
-   * @see #isIsMulti()
+   * @param value the new value of the '<em>Multi</em>' containment reference.
+   * @see #getMulti()
    * @generated
    */
-  void setIsMulti(boolean value);
+  void setMulti(BooleanPropertyValue value);
 
 } // AutoCompleteTextView

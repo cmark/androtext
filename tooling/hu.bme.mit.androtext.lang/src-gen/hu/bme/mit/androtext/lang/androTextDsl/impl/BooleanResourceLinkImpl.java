@@ -60,7 +60,7 @@ public class BooleanResourceLinkImpl extends BooleanPropertyValueImpl implements
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.BOOLEAN_RESOURCE_LINK;
+    return AndroTextDslPackage.eINSTANCE.getBooleanResourceLink();
   }
 
   /**

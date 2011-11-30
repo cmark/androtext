@@ -40,7 +40,7 @@ public class FrameLayoutImpl extends ViewGroupImpl implements FrameLayout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.FRAME_LAYOUT;
+    return AndroTextDslPackage.eINSTANCE.getFrameLayout();
   }
 
 } //FrameLayoutImpl

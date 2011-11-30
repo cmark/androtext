@@ -89,7 +89,7 @@ public class RadioGroupImpl extends SimpleViewImpl implements RadioGroup
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.RADIO_GROUP;
+    return AndroTextDslPackage.eINSTANCE.getRadioGroup();
   }
 
   /**

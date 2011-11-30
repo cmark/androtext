@@ -2,7 +2,6 @@ package hu.bme.mit.androtext.gen.ui.builder;
 
 import static com.google.common.collect.Maps.uniqueIndex;
 import static com.google.common.collect.Sets.newLinkedHashSet;
-import static com.google.common.collect.Lists.*;
 import hu.bme.mit.androtext.gen.AndroTextGeneratorMain;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.AndroidProjectUtil;
@@ -16,7 +15,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
-import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
@@ -122,7 +120,6 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 //			refreshOutputFolders(context, outputConfigurations, subMonitor);
 			// delete derived resources
 			for (OutputConfiguration config : outputConfigurations.values()) {
-				// skip project slot be
 				if (config.isCleanUpDerivedResources()) {
 					if (config.getName().equals(IGeneratorSlots.PROJECT_SLOT)) {
 						List<IFile> resources = derivedResourceMarkers.findDerivedResources(project, uri);
@@ -318,8 +315,8 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 						}
 					}
 				}
-				if (ac instanceof SimpleActivity) {
-					View lay = ((SimpleActivity) ac).getLayout();
+				if (ac instanceof Activity) {
+					View lay = ((Activity) ac).getLayout();
 					URI newURI = lay.eResource().getURI();
 					if (!uris.contains(newURI)) {
 						uris.add(newURI);
@@ -328,9 +325,11 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 						for (View uie : ((ViewGroup) lay).getViews()) {
 							URI resURI = null;
 							if (uie instanceof ListView) {
-								ArrayResource res = ((ListView) uie).getEntries();
-								if (res != null) {
-									resURI = res.eResource().getURI();
+								if (((ListView) uie).getEntriesAttribute() != null) {
+									ArrayResource res = ((ListView) uie).getEntriesAttribute().getEntries();
+									if (res != null) {
+										resURI = res.eResource().getURI();
+									}
 								}
 							}
 							// TODO add more instanceof if needed, or maybe a good abstraction of resource usage

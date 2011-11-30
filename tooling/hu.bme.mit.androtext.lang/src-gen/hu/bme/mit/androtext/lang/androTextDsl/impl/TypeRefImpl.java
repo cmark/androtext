@@ -42,7 +42,7 @@ public class TypeRefImpl extends MinimalEObjectImpl.Container implements TypeRef
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TYPE_REF;
+    return AndroTextDslPackage.eINSTANCE.getTypeRef();
   }
 
 } //TypeRefImpl

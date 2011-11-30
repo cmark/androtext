@@ -40,7 +40,7 @@ public class TableRowImpl extends ViewGroupImpl implements TableRow
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TABLE_ROW;
+    return AndroTextDslPackage.eINSTANCE.getTableRow();
   }
 
 } //TableRowImpl

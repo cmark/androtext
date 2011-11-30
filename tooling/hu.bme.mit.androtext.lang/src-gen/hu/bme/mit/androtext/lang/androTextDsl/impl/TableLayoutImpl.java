@@ -7,20 +7,18 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.CollapseColumnsAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.ShrinkColumnsAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.StretchColumnsAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,9 +27,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl#getCollapseColumns <em>Collapse Columns</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl#getShrinkColumns <em>Shrink Columns</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl#getStretchColumns <em>Stretch Columns</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl#getCollapseColumnsAttribute <em>Collapse Columns Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl#getShrinkColumnsAttribute <em>Shrink Columns Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TableLayoutImpl#getStretchColumnsAttribute <em>Stretch Columns Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,34 +38,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
 {
   /**
-   * The cached value of the '{@link #getCollapseColumns() <em>Collapse Columns</em>}' containment reference list.
+   * The cached value of the '{@link #getCollapseColumnsAttribute() <em>Collapse Columns Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCollapseColumns()
+   * @see #getCollapseColumnsAttribute()
    * @generated
    * @ordered
    */
-  protected EList<IntegerPropertyValue> collapseColumns;
+  protected CollapseColumnsAttribute collapseColumnsAttribute;
 
   /**
-   * The cached value of the '{@link #getShrinkColumns() <em>Shrink Columns</em>}' containment reference list.
+   * The cached value of the '{@link #getShrinkColumnsAttribute() <em>Shrink Columns Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getShrinkColumns()
+   * @see #getShrinkColumnsAttribute()
    * @generated
    * @ordered
    */
-  protected EList<IntegerPropertyValue> shrinkColumns;
+  protected ShrinkColumnsAttribute shrinkColumnsAttribute;
 
   /**
-   * The cached value of the '{@link #getStretchColumns() <em>Stretch Columns</em>}' containment reference list.
+   * The cached value of the '{@link #getStretchColumnsAttribute() <em>Stretch Columns Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStretchColumns()
+   * @see #getStretchColumnsAttribute()
    * @generated
    * @ordered
    */
-  protected EList<IntegerPropertyValue> stretchColumns;
+  protected StretchColumnsAttribute stretchColumnsAttribute;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,7 +85,7 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TABLE_LAYOUT;
+    return AndroTextDslPackage.eINSTANCE.getTableLayout();
   }
 
   /**
@@ -95,13 +93,9 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<IntegerPropertyValue> getCollapseColumns()
+  public CollapseColumnsAttribute getCollapseColumnsAttribute()
   {
-    if (collapseColumns == null)
-    {
-      collapseColumns = new EObjectContainmentEList<IntegerPropertyValue>(IntegerPropertyValue.class, this, AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS);
-    }
-    return collapseColumns;
+    return collapseColumnsAttribute;
   }
 
   /**
@@ -109,13 +103,16 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<IntegerPropertyValue> getShrinkColumns()
+  public NotificationChain basicSetCollapseColumnsAttribute(CollapseColumnsAttribute newCollapseColumnsAttribute, NotificationChain msgs)
   {
-    if (shrinkColumns == null)
+    CollapseColumnsAttribute oldCollapseColumnsAttribute = collapseColumnsAttribute;
+    collapseColumnsAttribute = newCollapseColumnsAttribute;
+    if (eNotificationRequired())
     {
-      shrinkColumns = new EObjectContainmentEList<IntegerPropertyValue>(IntegerPropertyValue.class, this, AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE, oldCollapseColumnsAttribute, newCollapseColumnsAttribute);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return shrinkColumns;
+    return msgs;
   }
 
   /**
@@ -123,13 +120,116 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<IntegerPropertyValue> getStretchColumns()
+  public void setCollapseColumnsAttribute(CollapseColumnsAttribute newCollapseColumnsAttribute)
   {
-    if (stretchColumns == null)
+    if (newCollapseColumnsAttribute != collapseColumnsAttribute)
     {
-      stretchColumns = new EObjectContainmentEList<IntegerPropertyValue>(IntegerPropertyValue.class, this, AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS);
+      NotificationChain msgs = null;
+      if (collapseColumnsAttribute != null)
+        msgs = ((InternalEObject)collapseColumnsAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE, null, msgs);
+      if (newCollapseColumnsAttribute != null)
+        msgs = ((InternalEObject)newCollapseColumnsAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE, null, msgs);
+      msgs = basicSetCollapseColumnsAttribute(newCollapseColumnsAttribute, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return stretchColumns;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE, newCollapseColumnsAttribute, newCollapseColumnsAttribute));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ShrinkColumnsAttribute getShrinkColumnsAttribute()
+  {
+    return shrinkColumnsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetShrinkColumnsAttribute(ShrinkColumnsAttribute newShrinkColumnsAttribute, NotificationChain msgs)
+  {
+    ShrinkColumnsAttribute oldShrinkColumnsAttribute = shrinkColumnsAttribute;
+    shrinkColumnsAttribute = newShrinkColumnsAttribute;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE, oldShrinkColumnsAttribute, newShrinkColumnsAttribute);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setShrinkColumnsAttribute(ShrinkColumnsAttribute newShrinkColumnsAttribute)
+  {
+    if (newShrinkColumnsAttribute != shrinkColumnsAttribute)
+    {
+      NotificationChain msgs = null;
+      if (shrinkColumnsAttribute != null)
+        msgs = ((InternalEObject)shrinkColumnsAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE, null, msgs);
+      if (newShrinkColumnsAttribute != null)
+        msgs = ((InternalEObject)newShrinkColumnsAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE, null, msgs);
+      msgs = basicSetShrinkColumnsAttribute(newShrinkColumnsAttribute, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE, newShrinkColumnsAttribute, newShrinkColumnsAttribute));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StretchColumnsAttribute getStretchColumnsAttribute()
+  {
+    return stretchColumnsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStretchColumnsAttribute(StretchColumnsAttribute newStretchColumnsAttribute, NotificationChain msgs)
+  {
+    StretchColumnsAttribute oldStretchColumnsAttribute = stretchColumnsAttribute;
+    stretchColumnsAttribute = newStretchColumnsAttribute;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE, oldStretchColumnsAttribute, newStretchColumnsAttribute);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStretchColumnsAttribute(StretchColumnsAttribute newStretchColumnsAttribute)
+  {
+    if (newStretchColumnsAttribute != stretchColumnsAttribute)
+    {
+      NotificationChain msgs = null;
+      if (stretchColumnsAttribute != null)
+        msgs = ((InternalEObject)stretchColumnsAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE, null, msgs);
+      if (newStretchColumnsAttribute != null)
+        msgs = ((InternalEObject)newStretchColumnsAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE, null, msgs);
+      msgs = basicSetStretchColumnsAttribute(newStretchColumnsAttribute, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE, newStretchColumnsAttribute, newStretchColumnsAttribute));
   }
 
   /**
@@ -142,12 +242,12 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS:
-        return ((InternalEList<?>)getCollapseColumns()).basicRemove(otherEnd, msgs);
-      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS:
-        return ((InternalEList<?>)getShrinkColumns()).basicRemove(otherEnd, msgs);
-      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS:
-        return ((InternalEList<?>)getStretchColumns()).basicRemove(otherEnd, msgs);
+      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE:
+        return basicSetCollapseColumnsAttribute(null, msgs);
+      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE:
+        return basicSetShrinkColumnsAttribute(null, msgs);
+      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE:
+        return basicSetStretchColumnsAttribute(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -162,12 +262,12 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS:
-        return getCollapseColumns();
-      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS:
-        return getShrinkColumns();
-      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS:
-        return getStretchColumns();
+      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE:
+        return getCollapseColumnsAttribute();
+      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE:
+        return getShrinkColumnsAttribute();
+      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE:
+        return getStretchColumnsAttribute();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -177,23 +277,19 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS:
-        getCollapseColumns().clear();
-        getCollapseColumns().addAll((Collection<? extends IntegerPropertyValue>)newValue);
+      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE:
+        setCollapseColumnsAttribute((CollapseColumnsAttribute)newValue);
         return;
-      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS:
-        getShrinkColumns().clear();
-        getShrinkColumns().addAll((Collection<? extends IntegerPropertyValue>)newValue);
+      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE:
+        setShrinkColumnsAttribute((ShrinkColumnsAttribute)newValue);
         return;
-      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS:
-        getStretchColumns().clear();
-        getStretchColumns().addAll((Collection<? extends IntegerPropertyValue>)newValue);
+      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE:
+        setStretchColumnsAttribute((StretchColumnsAttribute)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -209,14 +305,14 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS:
-        getCollapseColumns().clear();
+      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE:
+        setCollapseColumnsAttribute((CollapseColumnsAttribute)null);
         return;
-      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS:
-        getShrinkColumns().clear();
+      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE:
+        setShrinkColumnsAttribute((ShrinkColumnsAttribute)null);
         return;
-      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS:
-        getStretchColumns().clear();
+      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE:
+        setStretchColumnsAttribute((StretchColumnsAttribute)null);
         return;
     }
     super.eUnset(featureID);
@@ -232,12 +328,12 @@ public class TableLayoutImpl extends ViewGroupImpl implements TableLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS:
-        return collapseColumns != null && !collapseColumns.isEmpty();
-      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS:
-        return shrinkColumns != null && !shrinkColumns.isEmpty();
-      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS:
-        return stretchColumns != null && !stretchColumns.isEmpty();
+      case AndroTextDslPackage.TABLE_LAYOUT__COLLAPSE_COLUMNS_ATTRIBUTE:
+        return collapseColumnsAttribute != null;
+      case AndroTextDslPackage.TABLE_LAYOUT__SHRINK_COLUMNS_ATTRIBUTE:
+        return shrinkColumnsAttribute != null;
+      case AndroTextDslPackage.TABLE_LAYOUT__STRETCH_COLUMNS_ATTRIBUTE:
+        return stretchColumnsAttribute != null;
     }
     return super.eIsSet(featureID);
   }

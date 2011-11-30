@@ -4,21 +4,19 @@ import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.IGenerator
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
+import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.SimpleActivity
-import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
-import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
-import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
-import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider
-import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource
-import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource
 
 class AbstractActivityClassGenerator implements IGenerator {
 	
@@ -69,10 +67,10 @@ class AbstractActivityClassGenerator implements IGenerator {
 		} 
 	'''
 	
-	def dispatch contentViewSet(Activity activity) ''''''
-	
-	def dispatch contentViewSet(SimpleActivity activity) '''
+	def contentViewSet(Activity activity) '''
+		«IF activity.layout != null»
 		setContentView(R.layout.«activity.layout.layoutName»);
+		«ENDIF»
 	'''
 	
 	def dispatch logic(Activity activity) ''''''

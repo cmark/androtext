@@ -6,6 +6,8 @@
  */
 package hu.bme.mit.androtext.lang.androTextDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -27,32 +29,21 @@ import org.eclipse.emf.ecore.EObject;
 public interface GravityAttribute extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Gravity</b></em>' attribute.
-   * The literals are from the enumeration {@link hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind}.
+   * Returns the value of the '<em><b>Gravity</b></em>' attribute list.
+   * The list contents are of type {@link hu.bme.mit.androtext.lang.androTextDsl.GravityKind}.
+   * The literals are from the enumeration {@link hu.bme.mit.androtext.lang.androTextDsl.GravityKind}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Gravity</em>' attribute isn't clear,
+   * If the meaning of the '<em>Gravity</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Gravity</em>' attribute.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind
-   * @see #setGravity(LayoutGravityKind)
+   * @return the value of the '<em>Gravity</em>' attribute list.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GravityKind
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getGravityAttribute_Gravity()
-   * @model
+   * @model unique="false"
    * @generated
    */
-  LayoutGravityKind getGravity();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute#getGravity <em>Gravity</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Gravity</em>' attribute.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind
-   * @see #getGravity()
-   * @generated
-   */
-  void setGravity(LayoutGravityKind value);
+  EList<GravityKind> getGravity();
 
 } // GravityAttribute

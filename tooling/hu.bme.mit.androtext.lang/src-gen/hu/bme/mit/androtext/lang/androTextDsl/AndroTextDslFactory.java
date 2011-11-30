@@ -99,15 +99,6 @@ public interface AndroTextDslFactory extends EFactory
   Activity createActivity();
 
   /**
-   * Returns a new object of class '<em>Simple Activity</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Simple Activity</em>'.
-   * @generated
-   */
-  SimpleActivity createSimpleActivity();
-
-  /**
    * Returns a new object of class '<em>Tab Activity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -243,22 +234,13 @@ public interface AndroTextDslFactory extends EFactory
   ViewGroup createViewGroup();
 
   /**
-   * Returns a new object of class '<em>Layout Params</em>'.
+   * Returns a new object of class '<em>Layout Properties</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Layout Params</em>'.
+   * @return a new object of class '<em>Layout Properties</em>'.
    * @generated
    */
-  LayoutParams createLayoutParams();
-
-  /**
-   * Returns a new object of class '<em>Layout Gravity Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Layout Gravity Attribute</em>'.
-   * @generated
-   */
-  LayoutGravityAttribute createLayoutGravityAttribute();
+  LayoutProperties createLayoutProperties();
 
   /**
    * Returns a new object of class '<em>Layout Style</em>'.
@@ -304,15 +286,6 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   LinearLayout createLinearLayout();
-
-  /**
-   * Returns a new object of class '<em>Linear Layout Params</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Linear Layout Params</em>'.
-   * @generated
-   */
-  LinearLayoutParams createLinearLayoutParams();
 
   /**
    * Returns a new object of class '<em>Frame Layout</em>'.
@@ -531,42 +504,6 @@ public interface AndroTextDslFactory extends EFactory
   AutoCompleteTextView createAutoCompleteTextView();
 
   /**
-   * Returns a new object of class '<em>Padding Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Padding Attribute</em>'.
-   * @generated
-   */
-  PaddingAttribute createPaddingAttribute();
-
-  /**
-   * Returns a new object of class '<em>Gravity Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Gravity Attribute</em>'.
-   * @generated
-   */
-  GravityAttribute createGravityAttribute();
-
-  /**
-   * Returns a new object of class '<em>Text Size Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Size Attribute</em>'.
-   * @generated
-   */
-  TextSizeAttribute createTextSizeAttribute();
-
-  /**
-   * Returns a new object of class '<em>Background Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Background Attribute</em>'.
-   * @generated
-   */
-  BackgroundAttribute createBackgroundAttribute();
-
-  /**
    * Returns a new object of class '<em>Abstract Preference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -666,6 +603,474 @@ public interface AndroTextDslFactory extends EFactory
   ListPreferenceAttributes createListPreferenceAttributes();
 
   /**
+   * Returns a new object of class '<em>Span Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Span Attribute</em>'.
+   * @generated
+   */
+  SpanAttribute createSpanAttribute();
+
+  /**
+   * Returns a new object of class '<em>Column Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Column Attribute</em>'.
+   * @generated
+   */
+  ColumnAttribute createColumnAttribute();
+
+  /**
+   * Returns a new object of class '<em>Center Vertical Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Center Vertical Attribute</em>'.
+   * @generated
+   */
+  CenterVerticalAttribute createCenterVerticalAttribute();
+
+  /**
+   * Returns a new object of class '<em>Center In Parent Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Center In Parent Attribute</em>'.
+   * @generated
+   */
+  CenterInParentAttribute createCenterInParentAttribute();
+
+  /**
+   * Returns a new object of class '<em>Center Horizontal Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Center Horizontal Attribute</em>'.
+   * @generated
+   */
+  CenterHorizontalAttribute createCenterHorizontalAttribute();
+
+  /**
+   * Returns a new object of class '<em>To Right Of Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>To Right Of Attribute</em>'.
+   * @generated
+   */
+  ToRightOfAttribute createToRightOfAttribute();
+
+  /**
+   * Returns a new object of class '<em>To Left Of Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>To Left Of Attribute</em>'.
+   * @generated
+   */
+  ToLeftOfAttribute createToLeftOfAttribute();
+
+  /**
+   * Returns a new object of class '<em>Above Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Above Attribute</em>'.
+   * @generated
+   */
+  AboveAttribute createAboveAttribute();
+
+  /**
+   * Returns a new object of class '<em>Below Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Below Attribute</em>'.
+   * @generated
+   */
+  BelowAttribute createBelowAttribute();
+
+  /**
+   * Returns a new object of class '<em>Align Left Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Align Left Attribute</em>'.
+   * @generated
+   */
+  AlignLeftAttribute createAlignLeftAttribute();
+
+  /**
+   * Returns a new object of class '<em>Align Bottom Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Align Bottom Attribute</em>'.
+   * @generated
+   */
+  AlignBottomAttribute createAlignBottomAttribute();
+
+  /**
+   * Returns a new object of class '<em>Align Top Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Align Top Attribute</em>'.
+   * @generated
+   */
+  AlignTopAttribute createAlignTopAttribute();
+
+  /**
+   * Returns a new object of class '<em>Align Parent Left Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Align Parent Left Attribute</em>'.
+   * @generated
+   */
+  AlignParentLeftAttribute createAlignParentLeftAttribute();
+
+  /**
+   * Returns a new object of class '<em>Align Parent Top Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Align Parent Top Attribute</em>'.
+   * @generated
+   */
+  AlignParentTopAttribute createAlignParentTopAttribute();
+
+  /**
+   * Returns a new object of class '<em>Align Parent Right Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Align Parent Right Attribute</em>'.
+   * @generated
+   */
+  AlignParentRightAttribute createAlignParentRightAttribute();
+
+  /**
+   * Returns a new object of class '<em>Align Parent Bottom Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Align Parent Bottom Attribute</em>'.
+   * @generated
+   */
+  AlignParentBottomAttribute createAlignParentBottomAttribute();
+
+  /**
+   * Returns a new object of class '<em>Margin Bottom Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Margin Bottom Attribute</em>'.
+   * @generated
+   */
+  MarginBottomAttribute createMarginBottomAttribute();
+
+  /**
+   * Returns a new object of class '<em>Margin Right Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Margin Right Attribute</em>'.
+   * @generated
+   */
+  MarginRightAttribute createMarginRightAttribute();
+
+  /**
+   * Returns a new object of class '<em>Margin Top Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Margin Top Attribute</em>'.
+   * @generated
+   */
+  MarginTopAttribute createMarginTopAttribute();
+
+  /**
+   * Returns a new object of class '<em>Weight Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Weight Attribute</em>'.
+   * @generated
+   */
+  WeightAttribute createWeightAttribute();
+
+  /**
+   * Returns a new object of class '<em>Margin Left Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Margin Left Attribute</em>'.
+   * @generated
+   */
+  MarginLeftAttribute createMarginLeftAttribute();
+
+  /**
+   * Returns a new object of class '<em>Text Style Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Style Attribute</em>'.
+   * @generated
+   */
+  TextStyleAttribute createTextStyleAttribute();
+
+  /**
+   * Returns a new object of class '<em>Typeface Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Typeface Attribute</em>'.
+   * @generated
+   */
+  TypefaceAttribute createTypefaceAttribute();
+
+  /**
+   * Returns a new object of class '<em>Text Color Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Color Attribute</em>'.
+   * @generated
+   */
+  TextColorAttribute createTextColorAttribute();
+
+  /**
+   * Returns a new object of class '<em>Single Line Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single Line Attribute</em>'.
+   * @generated
+   */
+  SingleLineAttribute createSingleLineAttribute();
+
+  /**
+   * Returns a new object of class '<em>Phone Number Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Phone Number Attribute</em>'.
+   * @generated
+   */
+  PhoneNumberAttribute createPhoneNumberAttribute();
+
+  /**
+   * Returns a new object of class '<em>Password Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Password Attribute</em>'.
+   * @generated
+   */
+  PasswordAttribute createPasswordAttribute();
+
+  /**
+   * Returns a new object of class '<em>Numeric Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Numeric Attribute</em>'.
+   * @generated
+   */
+  NumericAttribute createNumericAttribute();
+
+  /**
+   * Returns a new object of class '<em>Hint Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hint Attribute</em>'.
+   * @generated
+   */
+  HintAttribute createHintAttribute();
+
+  /**
+   * Returns a new object of class '<em>Editable Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Editable Attribute</em>'.
+   * @generated
+   */
+  EditableAttribute createEditableAttribute();
+
+  /**
+   * Returns a new object of class '<em>Digits Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Digits Attribute</em>'.
+   * @generated
+   */
+  DigitsAttribute createDigitsAttribute();
+
+  /**
+   * Returns a new object of class '<em>Capitalize Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Capitalize Attribute</em>'.
+   * @generated
+   */
+  CapitalizeAttribute createCapitalizeAttribute();
+
+  /**
+   * Returns a new object of class '<em>Auto Text Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Auto Text Attribute</em>'.
+   * @generated
+   */
+  AutoTextAttribute createAutoTextAttribute();
+
+  /**
+   * Returns a new object of class '<em>Is Scroll Container Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Is Scroll Container Attribute</em>'.
+   * @generated
+   */
+  IsScrollContainerAttribute createIsScrollContainerAttribute();
+
+  /**
+   * Returns a new object of class '<em>Fade Scroll Bars Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fade Scroll Bars Attribute</em>'.
+   * @generated
+   */
+  FadeScrollBarsAttribute createFadeScrollBarsAttribute();
+
+  /**
+   * Returns a new object of class '<em>Clickable Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Clickable Attribute</em>'.
+   * @generated
+   */
+  ClickableAttribute createClickableAttribute();
+
+  /**
+   * Returns a new object of class '<em>Auto Link Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Auto Link Attribute</em>'.
+   * @generated
+   */
+  AutoLinkAttribute createAutoLinkAttribute();
+
+  /**
+   * Returns a new object of class '<em>Width Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Width Attribute</em>'.
+   * @generated
+   */
+  WidthAttribute createWidthAttribute();
+
+  /**
+   * Returns a new object of class '<em>Height Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Height Attribute</em>'.
+   * @generated
+   */
+  HeightAttribute createHeightAttribute();
+
+  /**
+   * Returns a new object of class '<em>Padding Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Padding Attribute</em>'.
+   * @generated
+   */
+  PaddingAttribute createPaddingAttribute();
+
+  /**
+   * Returns a new object of class '<em>Gravity Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gravity Attribute</em>'.
+   * @generated
+   */
+  GravityAttribute createGravityAttribute();
+
+  /**
+   * Returns a new object of class '<em>Text Size Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Size Attribute</em>'.
+   * @generated
+   */
+  TextSizeAttribute createTextSizeAttribute();
+
+  /**
+   * Returns a new object of class '<em>Background Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Background Attribute</em>'.
+   * @generated
+   */
+  BackgroundAttribute createBackgroundAttribute();
+
+  /**
+   * Returns a new object of class '<em>Column Width Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Column Width Attribute</em>'.
+   * @generated
+   */
+  ColumnWidthAttribute createColumnWidthAttribute();
+
+  /**
+   * Returns a new object of class '<em>Horizontal Spacing Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Horizontal Spacing Attribute</em>'.
+   * @generated
+   */
+  HorizontalSpacingAttribute createHorizontalSpacingAttribute();
+
+  /**
+   * Returns a new object of class '<em>Num Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Num Columns Attribute</em>'.
+   * @generated
+   */
+  NumColumnsAttribute createNumColumnsAttribute();
+
+  /**
+   * Returns a new object of class '<em>Stretch Mode Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stretch Mode Attribute</em>'.
+   * @generated
+   */
+  StretchModeAttribute createStretchModeAttribute();
+
+  /**
+   * Returns a new object of class '<em>Vertical Spacing Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Vertical Spacing Attribute</em>'.
+   * @generated
+   */
+  VerticalSpacingAttribute createVerticalSpacingAttribute();
+
+  /**
+   * Returns a new object of class '<em>Entries Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entries Attribute</em>'.
+   * @generated
+   */
+  EntriesAttribute createEntriesAttribute();
+
+  /**
+   * Returns a new object of class '<em>Stretch Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stretch Columns Attribute</em>'.
+   * @generated
+   */
+  StretchColumnsAttribute createStretchColumnsAttribute();
+
+  /**
+   * Returns a new object of class '<em>Shrink Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Shrink Columns Attribute</em>'.
+   * @generated
+   */
+  ShrinkColumnsAttribute createShrinkColumnsAttribute();
+
+  /**
+   * Returns a new object of class '<em>Collapse Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Collapse Columns Attribute</em>'.
+   * @generated
+   */
+  CollapseColumnsAttribute createCollapseColumnsAttribute();
+
+  /**
    * Returns a new object of class '<em>Andro Res Model Root</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -754,15 +1159,6 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   DrawableResourceLink createDrawableResourceLink();
-
-  /**
-   * Returns a new object of class '<em>Local Drawable Resource Link</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Local Drawable Resource Link</em>'.
-   * @generated
-   */
-  LocalDrawableResourceLink createLocalDrawableResourceLink();
 
   /**
    * Returns a new object of class '<em>External Drawable Resource Link</em>'.

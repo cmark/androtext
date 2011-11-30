@@ -82,7 +82,7 @@ public class PreferenceImpl extends AbstractPreferenceImpl implements Preference
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PREFERENCE;
+    return AndroTextDslPackage.eINSTANCE.getPreference();
   }
 
   /**

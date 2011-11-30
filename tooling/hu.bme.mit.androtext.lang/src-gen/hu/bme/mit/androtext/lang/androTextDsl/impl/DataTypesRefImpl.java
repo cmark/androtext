@@ -69,7 +69,7 @@ public class DataTypesRefImpl extends TypeRefImpl implements DataTypesRef
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.DATA_TYPES_REF;
+    return AndroTextDslPackage.eINSTANCE.getDataTypesRef();
   }
 
   /**

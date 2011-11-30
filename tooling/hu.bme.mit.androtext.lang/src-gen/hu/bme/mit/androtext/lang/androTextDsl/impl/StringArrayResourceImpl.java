@@ -65,7 +65,7 @@ public class StringArrayResourceImpl extends ArrayResourceImpl implements String
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.STRING_ARRAY_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getStringArrayResource();
   }
 
   /**

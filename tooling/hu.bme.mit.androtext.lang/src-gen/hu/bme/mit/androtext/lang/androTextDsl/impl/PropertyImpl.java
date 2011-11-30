@@ -83,7 +83,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PROPERTY;
+    return AndroTextDslPackage.eINSTANCE.getProperty();
   }
 
   /**

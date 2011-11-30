@@ -7,11 +7,14 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
+import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ToggleButton;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -32,44 +35,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
 {
   /**
-   * The default value of the '{@link #getTextOn() <em>Text On</em>}' attribute.
+   * The cached value of the '{@link #getTextOn() <em>Text On</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTextOn()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_ON_EDEFAULT = null;
+  protected StringPropertyValue textOn;
 
   /**
-   * The cached value of the '{@link #getTextOn() <em>Text On</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTextOn()
-   * @generated
-   * @ordered
-   */
-  protected String textOn = TEXT_ON_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTextOff() <em>Text Off</em>}' attribute.
+   * The cached value of the '{@link #getTextOff() <em>Text Off</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTextOff()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_OFF_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTextOff() <em>Text Off</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTextOff()
-   * @generated
-   * @ordered
-   */
-  protected String textOff = TEXT_OFF_EDEFAULT;
+  protected StringPropertyValue textOff;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,7 +72,7 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TOGGLE_BUTTON;
+    return AndroTextDslPackage.eINSTANCE.getToggleButton();
   }
 
   /**
@@ -97,7 +80,7 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTextOn()
+  public StringPropertyValue getTextOn()
   {
     return textOn;
   }
@@ -107,12 +90,16 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTextOn(String newTextOn)
+  public NotificationChain basicSetTextOn(StringPropertyValue newTextOn, NotificationChain msgs)
   {
-    String oldTextOn = textOn;
+    StringPropertyValue oldTextOn = textOn;
     textOn = newTextOn;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON, oldTextOn, textOn));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON, oldTextOn, newTextOn);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -120,7 +107,28 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTextOff()
+  public void setTextOn(StringPropertyValue newTextOn)
+  {
+    if (newTextOn != textOn)
+    {
+      NotificationChain msgs = null;
+      if (textOn != null)
+        msgs = ((InternalEObject)textOn).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON, null, msgs);
+      if (newTextOn != null)
+        msgs = ((InternalEObject)newTextOn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON, null, msgs);
+      msgs = basicSetTextOn(newTextOn, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON, newTextOn, newTextOn));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringPropertyValue getTextOff()
   {
     return textOff;
   }
@@ -130,12 +138,55 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTextOff(String newTextOff)
+  public NotificationChain basicSetTextOff(StringPropertyValue newTextOff, NotificationChain msgs)
   {
-    String oldTextOff = textOff;
+    StringPropertyValue oldTextOff = textOff;
     textOff = newTextOff;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF, oldTextOff, textOff));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF, oldTextOff, newTextOff);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTextOff(StringPropertyValue newTextOff)
+  {
+    if (newTextOff != textOff)
+    {
+      NotificationChain msgs = null;
+      if (textOff != null)
+        msgs = ((InternalEObject)textOff).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF, null, msgs);
+      if (newTextOff != null)
+        msgs = ((InternalEObject)newTextOff).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF, null, msgs);
+      msgs = basicSetTextOff(newTextOff, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF, newTextOff, newTextOff));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON:
+        return basicSetTextOn(null, msgs);
+      case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF:
+        return basicSetTextOff(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -167,10 +218,10 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
     switch (featureID)
     {
       case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON:
-        setTextOn((String)newValue);
+        setTextOn((StringPropertyValue)newValue);
         return;
       case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF:
-        setTextOff((String)newValue);
+        setTextOff((StringPropertyValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,10 +238,10 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
     switch (featureID)
     {
       case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON:
-        setTextOn(TEXT_ON_EDEFAULT);
+        setTextOn((StringPropertyValue)null);
         return;
       case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF:
-        setTextOff(TEXT_OFF_EDEFAULT);
+        setTextOff((StringPropertyValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -207,30 +258,11 @@ public class ToggleButtonImpl extends SimpleViewImpl implements ToggleButton
     switch (featureID)
     {
       case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_ON:
-        return TEXT_ON_EDEFAULT == null ? textOn != null : !TEXT_ON_EDEFAULT.equals(textOn);
+        return textOn != null;
       case AndroTextDslPackage.TOGGLE_BUTTON__TEXT_OFF:
-        return TEXT_OFF_EDEFAULT == null ? textOff != null : !TEXT_OFF_EDEFAULT.equals(textOff);
+        return textOff != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (textOn: ");
-    result.append(textOn);
-    result.append(", textOff: ");
-    result.append(textOff);
-    result.append(')');
-    return result.toString();
   }
 
 } //ToggleButtonImpl

@@ -62,7 +62,7 @@ public class BackgroundAttributeImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.BACKGROUND_ATTRIBUTE;
+    return AndroTextDslPackage.eINSTANCE.getBackgroundAttribute();
   }
 
   /**

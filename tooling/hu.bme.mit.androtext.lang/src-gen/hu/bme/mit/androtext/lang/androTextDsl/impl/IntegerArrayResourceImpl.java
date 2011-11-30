@@ -65,7 +65,7 @@ public class IntegerArrayResourceImpl extends ArrayResourceImpl implements Integ
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.INTEGER_ARRAY_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getIntegerArrayResource();
   }
 
   /**

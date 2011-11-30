@@ -82,7 +82,7 @@ public class TabImpl extends MinimalEObjectImpl.Container implements Tab
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TAB;
+    return AndroTextDslPackage.eINSTANCE.getTab();
   }
 
   /**

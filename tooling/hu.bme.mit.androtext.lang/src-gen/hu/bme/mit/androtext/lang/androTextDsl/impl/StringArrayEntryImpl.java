@@ -90,7 +90,7 @@ public class StringArrayEntryImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.STRING_ARRAY_ENTRY;
+    return AndroTextDslPackage.eINSTANCE.getStringArrayEntry();
   }
 
   /**

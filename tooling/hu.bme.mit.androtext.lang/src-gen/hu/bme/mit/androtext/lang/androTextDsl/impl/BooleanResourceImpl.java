@@ -68,7 +68,7 @@ public class BooleanResourceImpl extends ResourceImpl implements BooleanResource
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.BOOLEAN_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getBooleanResource();
   }
 
   /**

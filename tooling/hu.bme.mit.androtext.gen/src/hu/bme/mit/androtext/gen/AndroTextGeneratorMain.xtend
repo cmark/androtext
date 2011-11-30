@@ -6,8 +6,8 @@ import hu.bme.mit.androtext.gen.activity.ActivityClassGenerator
 import hu.bme.mit.androtext.gen.application.AndroidManifestGenerator
 import hu.bme.mit.androtext.gen.entity.EntityClassGenerator
 import hu.bme.mit.androtext.gen.entity.EntityTableGenerator
+import hu.bme.mit.androtext.gen.layout.LayoutResourceGenerator
 import hu.bme.mit.androtext.gen.resources.BasicAndroidInformationValuesGenerator
-import hu.bme.mit.androtext.gen.resources.LayoutResourceGenerator
 import hu.bme.mit.androtext.gen.resources.StringArrayResourceGenerator
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet

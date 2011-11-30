@@ -65,7 +65,7 @@ public class ViewGroupImpl extends ViewImpl implements ViewGroup
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.VIEW_GROUP;
+    return AndroTextDslPackage.eINSTANCE.getViewGroup();
   }
 
   /**

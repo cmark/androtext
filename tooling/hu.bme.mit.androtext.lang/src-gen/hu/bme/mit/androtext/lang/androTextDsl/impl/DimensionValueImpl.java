@@ -91,7 +91,7 @@ public class DimensionValueImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.DIMENSION_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getDimensionValue();
   }
 
   /**

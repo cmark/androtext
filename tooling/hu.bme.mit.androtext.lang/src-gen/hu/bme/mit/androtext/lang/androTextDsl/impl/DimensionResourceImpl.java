@@ -61,7 +61,7 @@ public class DimensionResourceImpl extends ResourceImpl implements DimensionReso
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.DIMENSION_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getDimensionResource();
   }
 
   /**

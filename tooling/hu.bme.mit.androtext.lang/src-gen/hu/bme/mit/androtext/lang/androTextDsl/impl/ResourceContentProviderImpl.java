@@ -60,7 +60,7 @@ public class ResourceContentProviderImpl extends ContentProviderImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.RESOURCE_CONTENT_PROVIDER;
+    return AndroTextDslPackage.eINSTANCE.getResourceContentProvider();
   }
 
   /**

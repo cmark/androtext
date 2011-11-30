@@ -7,6 +7,7 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutProperties;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
 import hu.bme.mit.androtext.lang.androTextDsl.RadioButton;
 
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RadioButtonImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RadioButtonImpl#getText <em>Text</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RadioButtonImpl#getLayoutStyle <em>Layout Style</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RadioButtonImpl#getLayoutProperties <em>Layout Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,6 +89,16 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
   protected LayoutStyle layoutStyle;
 
   /**
+   * The cached value of the '{@link #getLayoutProperties() <em>Layout Properties</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLayoutProperties()
+   * @generated
+   * @ordered
+   */
+  protected LayoutProperties layoutProperties;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -104,7 +116,7 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.RADIO_BUTTON;
+    return AndroTextDslPackage.eINSTANCE.getRadioButton();
   }
 
   /**
@@ -206,6 +218,49 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
    * <!-- end-user-doc -->
    * @generated
    */
+  public LayoutProperties getLayoutProperties()
+  {
+    if (layoutProperties != null && layoutProperties.eIsProxy())
+    {
+      InternalEObject oldLayoutProperties = (InternalEObject)layoutProperties;
+      layoutProperties = (LayoutProperties)eResolveProxy(oldLayoutProperties);
+      if (layoutProperties != oldLayoutProperties)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.RADIO_BUTTON__LAYOUT_PROPERTIES, oldLayoutProperties, layoutProperties));
+      }
+    }
+    return layoutProperties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LayoutProperties basicGetLayoutProperties()
+  {
+    return layoutProperties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLayoutProperties(LayoutProperties newLayoutProperties)
+  {
+    LayoutProperties oldLayoutProperties = layoutProperties;
+    layoutProperties = newLayoutProperties;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.RADIO_BUTTON__LAYOUT_PROPERTIES, oldLayoutProperties, layoutProperties));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -233,6 +288,9 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
         return getText();
       case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_STYLE:
         return getLayoutStyle();
+      case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_PROPERTIES:
+        if (resolve) return getLayoutProperties();
+        return basicGetLayoutProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -255,6 +313,9 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
         return;
       case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_STYLE:
         setLayoutStyle((LayoutStyle)newValue);
+        return;
+      case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_PROPERTIES:
+        setLayoutProperties((LayoutProperties)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -279,6 +340,9 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
       case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_STYLE:
         setLayoutStyle((LayoutStyle)null);
         return;
+      case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_PROPERTIES:
+        setLayoutProperties((LayoutProperties)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -299,6 +363,8 @@ public class RadioButtonImpl extends MinimalEObjectImpl.Container implements Rad
         return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
       case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_STYLE:
         return layoutStyle != null;
+      case AndroTextDslPackage.RADIO_BUTTON__LAYOUT_PROPERTIES:
+        return layoutProperties != null;
     }
     return super.eIsSet(featureID);
   }

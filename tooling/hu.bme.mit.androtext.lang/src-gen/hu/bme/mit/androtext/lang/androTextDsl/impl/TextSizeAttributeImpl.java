@@ -62,7 +62,7 @@ public class TextSizeAttributeImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TEXT_SIZE_ATTRIBUTE;
+    return AndroTextDslPackage.eINSTANCE.getTextSizeAttribute();
   }
 
   /**

@@ -82,7 +82,7 @@ public class CheckBoxPreferenceImpl extends AbstractPreferenceImpl implements Ch
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.CHECK_BOX_PREFERENCE;
+    return AndroTextDslPackage.eINSTANCE.getCheckBoxPreference();
   }
 
   /**

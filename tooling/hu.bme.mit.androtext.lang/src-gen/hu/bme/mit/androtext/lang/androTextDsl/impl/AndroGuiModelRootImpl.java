@@ -8,6 +8,7 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutProperties;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import java.util.Collection;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGuiModelRootImpl#getRoots <em>Roots</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGuiModelRootImpl#getLayoutAttributes <em>Layout Attributes</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +48,16 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
    * @ordered
    */
   protected EList<View> roots;
+
+  /**
+   * The cached value of the '{@link #getLayoutAttributes() <em>Layout Attributes</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLayoutAttributes()
+   * @generated
+   * @ordered
+   */
+  protected EList<LayoutProperties> layoutAttributes;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +77,7 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ANDRO_GUI_MODEL_ROOT;
+    return AndroTextDslPackage.eINSTANCE.getAndroGuiModelRoot();
   }
 
   /**
@@ -87,6 +99,20 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<LayoutProperties> getLayoutAttributes()
+  {
+    if (layoutAttributes == null)
+    {
+      layoutAttributes = new EObjectContainmentEList<LayoutProperties>(LayoutProperties.class, this, AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES);
+    }
+    return layoutAttributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -94,6 +120,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
     {
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         return ((InternalEList<?>)getRoots()).basicRemove(otherEnd, msgs);
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES:
+        return ((InternalEList<?>)getLayoutAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -110,6 +138,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
     {
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         return getRoots();
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES:
+        return getLayoutAttributes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,6 +159,10 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
         getRoots().clear();
         getRoots().addAll((Collection<? extends View>)newValue);
         return;
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES:
+        getLayoutAttributes().clear();
+        getLayoutAttributes().addAll((Collection<? extends LayoutProperties>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -146,6 +180,9 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         getRoots().clear();
         return;
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES:
+        getLayoutAttributes().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -162,6 +199,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
     {
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         return roots != null && !roots.isEmpty();
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES:
+        return layoutAttributes != null && !layoutAttributes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

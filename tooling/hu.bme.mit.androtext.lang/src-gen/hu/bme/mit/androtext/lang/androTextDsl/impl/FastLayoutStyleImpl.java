@@ -69,7 +69,7 @@ public class FastLayoutStyleImpl extends LayoutStyleImpl implements FastLayoutSt
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.FAST_LAYOUT_STYLE;
+    return AndroTextDslPackage.eINSTANCE.getFastLayoutStyle();
   }
 
   /**

@@ -69,7 +69,7 @@ public class AbstractPreferenceImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ABSTRACT_PREFERENCE;
+    return AndroTextDslPackage.eINSTANCE.getAbstractPreference();
   }
 
   /**

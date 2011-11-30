@@ -40,7 +40,7 @@ public class GridLayoutImpl extends ViewGroupImpl implements GridLayout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.GRID_LAYOUT;
+    return AndroTextDslPackage.eINSTANCE.getGridLayout();
   }
 
 } //GridLayoutImpl

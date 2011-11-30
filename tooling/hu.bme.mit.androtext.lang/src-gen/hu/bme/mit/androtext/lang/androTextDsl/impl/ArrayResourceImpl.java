@@ -40,7 +40,7 @@ public class ArrayResourceImpl extends ResourceImpl implements ArrayResource
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ARRAY_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getArrayResource();
   }
 
 } //ArrayResourceImpl

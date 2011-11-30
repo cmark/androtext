@@ -27,55 +27,55 @@ package hu.bme.mit.androtext.lang.androTextDsl;
 public interface ToggleButton extends SimpleView
 {
   /**
-   * Returns the value of the '<em><b>Text On</b></em>' attribute.
+   * Returns the value of the '<em><b>Text On</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Text On</em>' attribute isn't clear,
+   * If the meaning of the '<em>Text On</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Text On</em>' attribute.
-   * @see #setTextOn(String)
+   * @return the value of the '<em>Text On</em>' containment reference.
+   * @see #setTextOn(StringPropertyValue)
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getToggleButton_TextOn()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getTextOn();
+  StringPropertyValue getTextOn();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ToggleButton#getTextOn <em>Text On</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ToggleButton#getTextOn <em>Text On</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Text On</em>' attribute.
+   * @param value the new value of the '<em>Text On</em>' containment reference.
    * @see #getTextOn()
    * @generated
    */
-  void setTextOn(String value);
+  void setTextOn(StringPropertyValue value);
 
   /**
-   * Returns the value of the '<em><b>Text Off</b></em>' attribute.
+   * Returns the value of the '<em><b>Text Off</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Text Off</em>' attribute isn't clear,
+   * If the meaning of the '<em>Text Off</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Text Off</em>' attribute.
-   * @see #setTextOff(String)
+   * @return the value of the '<em>Text Off</em>' containment reference.
+   * @see #setTextOff(StringPropertyValue)
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getToggleButton_TextOff()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getTextOff();
+  StringPropertyValue getTextOff();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ToggleButton#getTextOff <em>Text Off</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.ToggleButton#getTextOff <em>Text Off</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Text Off</em>' attribute.
+   * @param value the new value of the '<em>Text Off</em>' containment reference.
    * @see #getTextOff()
    * @generated
    */
-  void setTextOff(String value);
+  void setTextOff(StringPropertyValue value);
 
 } // ToggleButton

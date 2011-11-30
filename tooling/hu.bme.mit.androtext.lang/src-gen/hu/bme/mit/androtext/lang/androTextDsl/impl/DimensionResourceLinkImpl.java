@@ -60,7 +60,7 @@ public class DimensionResourceLinkImpl extends DimensionPropertyValueImpl implem
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.DIMENSION_RESOURCE_LINK;
+    return AndroTextDslPackage.eINSTANCE.getDimensionResourceLink();
   }
 
   /**

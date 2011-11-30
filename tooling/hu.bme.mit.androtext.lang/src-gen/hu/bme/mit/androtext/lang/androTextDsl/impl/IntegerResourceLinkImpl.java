@@ -60,7 +60,7 @@ public class IntegerResourceLinkImpl extends IntegerPropertyValueImpl implements
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.INTEGER_RESOURCE_LINK;
+    return AndroTextDslPackage.eINSTANCE.getIntegerResourceLink();
   }
 
   /**

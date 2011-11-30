@@ -135,15 +135,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.SIMPLE_ACTIVITY:
-      {
-        SimpleActivity simpleActivity = (SimpleActivity)theEObject;
-        T result = caseSimpleActivity(simpleActivity);
-        if (result == null) result = caseActivity(simpleActivity);
-        if (result == null) result = caseAndroidApplicationModelElement(simpleActivity);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AndroTextDslPackage.TAB_ACTIVITY:
       {
         TabActivity tabActivity = (TabActivity)theEObject;
@@ -260,17 +251,10 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.LAYOUT_PARAMS:
+      case AndroTextDslPackage.LAYOUT_PROPERTIES:
       {
-        LayoutParams layoutParams = (LayoutParams)theEObject;
-        T result = caseLayoutParams(layoutParams);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.LAYOUT_GRAVITY_ATTRIBUTE:
-      {
-        LayoutGravityAttribute layoutGravityAttribute = (LayoutGravityAttribute)theEObject;
-        T result = caseLayoutGravityAttribute(layoutGravityAttribute);
+        LayoutProperties layoutProperties = (LayoutProperties)theEObject;
+        T result = caseLayoutProperties(layoutProperties);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -312,13 +296,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         T result = caseLinearLayout(linearLayout);
         if (result == null) result = caseViewGroup(linearLayout);
         if (result == null) result = caseView(linearLayout);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.LINEAR_LAYOUT_PARAMS:
-      {
-        LinearLayoutParams linearLayoutParams = (LinearLayoutParams)theEObject;
-        T result = caseLinearLayoutParams(linearLayoutParams);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -535,34 +512,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.PADDING_ATTRIBUTE:
-      {
-        PaddingAttribute paddingAttribute = (PaddingAttribute)theEObject;
-        T result = casePaddingAttribute(paddingAttribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.GRAVITY_ATTRIBUTE:
-      {
-        GravityAttribute gravityAttribute = (GravityAttribute)theEObject;
-        T result = caseGravityAttribute(gravityAttribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.TEXT_SIZE_ATTRIBUTE:
-      {
-        TextSizeAttribute textSizeAttribute = (TextSizeAttribute)theEObject;
-        T result = caseTextSizeAttribute(textSizeAttribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.BACKGROUND_ATTRIBUTE:
-      {
-        BackgroundAttribute backgroundAttribute = (BackgroundAttribute)theEObject;
-        T result = caseBackgroundAttribute(backgroundAttribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AndroTextDslPackage.ABSTRACT_PREFERENCE:
       {
         AbstractPreference abstractPreference = (AbstractPreference)theEObject;
@@ -644,6 +593,370 @@ public class AndroTextDslSwitch<T> extends Switch<T>
       {
         ListPreferenceAttributes listPreferenceAttributes = (ListPreferenceAttributes)theEObject;
         T result = caseListPreferenceAttributes(listPreferenceAttributes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.SPAN_ATTRIBUTE:
+      {
+        SpanAttribute spanAttribute = (SpanAttribute)theEObject;
+        T result = caseSpanAttribute(spanAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.COLUMN_ATTRIBUTE:
+      {
+        ColumnAttribute columnAttribute = (ColumnAttribute)theEObject;
+        T result = caseColumnAttribute(columnAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.CENTER_VERTICAL_ATTRIBUTE:
+      {
+        CenterVerticalAttribute centerVerticalAttribute = (CenterVerticalAttribute)theEObject;
+        T result = caseCenterVerticalAttribute(centerVerticalAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.CENTER_IN_PARENT_ATTRIBUTE:
+      {
+        CenterInParentAttribute centerInParentAttribute = (CenterInParentAttribute)theEObject;
+        T result = caseCenterInParentAttribute(centerInParentAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.CENTER_HORIZONTAL_ATTRIBUTE:
+      {
+        CenterHorizontalAttribute centerHorizontalAttribute = (CenterHorizontalAttribute)theEObject;
+        T result = caseCenterHorizontalAttribute(centerHorizontalAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.TO_RIGHT_OF_ATTRIBUTE:
+      {
+        ToRightOfAttribute toRightOfAttribute = (ToRightOfAttribute)theEObject;
+        T result = caseToRightOfAttribute(toRightOfAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.TO_LEFT_OF_ATTRIBUTE:
+      {
+        ToLeftOfAttribute toLeftOfAttribute = (ToLeftOfAttribute)theEObject;
+        T result = caseToLeftOfAttribute(toLeftOfAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ABOVE_ATTRIBUTE:
+      {
+        AboveAttribute aboveAttribute = (AboveAttribute)theEObject;
+        T result = caseAboveAttribute(aboveAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.BELOW_ATTRIBUTE:
+      {
+        BelowAttribute belowAttribute = (BelowAttribute)theEObject;
+        T result = caseBelowAttribute(belowAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ALIGN_LEFT_ATTRIBUTE:
+      {
+        AlignLeftAttribute alignLeftAttribute = (AlignLeftAttribute)theEObject;
+        T result = caseAlignLeftAttribute(alignLeftAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ALIGN_BOTTOM_ATTRIBUTE:
+      {
+        AlignBottomAttribute alignBottomAttribute = (AlignBottomAttribute)theEObject;
+        T result = caseAlignBottomAttribute(alignBottomAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ALIGN_TOP_ATTRIBUTE:
+      {
+        AlignTopAttribute alignTopAttribute = (AlignTopAttribute)theEObject;
+        T result = caseAlignTopAttribute(alignTopAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ALIGN_PARENT_LEFT_ATTRIBUTE:
+      {
+        AlignParentLeftAttribute alignParentLeftAttribute = (AlignParentLeftAttribute)theEObject;
+        T result = caseAlignParentLeftAttribute(alignParentLeftAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ALIGN_PARENT_TOP_ATTRIBUTE:
+      {
+        AlignParentTopAttribute alignParentTopAttribute = (AlignParentTopAttribute)theEObject;
+        T result = caseAlignParentTopAttribute(alignParentTopAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ALIGN_PARENT_RIGHT_ATTRIBUTE:
+      {
+        AlignParentRightAttribute alignParentRightAttribute = (AlignParentRightAttribute)theEObject;
+        T result = caseAlignParentRightAttribute(alignParentRightAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ALIGN_PARENT_BOTTOM_ATTRIBUTE:
+      {
+        AlignParentBottomAttribute alignParentBottomAttribute = (AlignParentBottomAttribute)theEObject;
+        T result = caseAlignParentBottomAttribute(alignParentBottomAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.MARGIN_BOTTOM_ATTRIBUTE:
+      {
+        MarginBottomAttribute marginBottomAttribute = (MarginBottomAttribute)theEObject;
+        T result = caseMarginBottomAttribute(marginBottomAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.MARGIN_RIGHT_ATTRIBUTE:
+      {
+        MarginRightAttribute marginRightAttribute = (MarginRightAttribute)theEObject;
+        T result = caseMarginRightAttribute(marginRightAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.MARGIN_TOP_ATTRIBUTE:
+      {
+        MarginTopAttribute marginTopAttribute = (MarginTopAttribute)theEObject;
+        T result = caseMarginTopAttribute(marginTopAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.WEIGHT_ATTRIBUTE:
+      {
+        WeightAttribute weightAttribute = (WeightAttribute)theEObject;
+        T result = caseWeightAttribute(weightAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.MARGIN_LEFT_ATTRIBUTE:
+      {
+        MarginLeftAttribute marginLeftAttribute = (MarginLeftAttribute)theEObject;
+        T result = caseMarginLeftAttribute(marginLeftAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.TEXT_STYLE_ATTRIBUTE:
+      {
+        TextStyleAttribute textStyleAttribute = (TextStyleAttribute)theEObject;
+        T result = caseTextStyleAttribute(textStyleAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.TYPEFACE_ATTRIBUTE:
+      {
+        TypefaceAttribute typefaceAttribute = (TypefaceAttribute)theEObject;
+        T result = caseTypefaceAttribute(typefaceAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.TEXT_COLOR_ATTRIBUTE:
+      {
+        TextColorAttribute textColorAttribute = (TextColorAttribute)theEObject;
+        T result = caseTextColorAttribute(textColorAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.SINGLE_LINE_ATTRIBUTE:
+      {
+        SingleLineAttribute singleLineAttribute = (SingleLineAttribute)theEObject;
+        T result = caseSingleLineAttribute(singleLineAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.PHONE_NUMBER_ATTRIBUTE:
+      {
+        PhoneNumberAttribute phoneNumberAttribute = (PhoneNumberAttribute)theEObject;
+        T result = casePhoneNumberAttribute(phoneNumberAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.PASSWORD_ATTRIBUTE:
+      {
+        PasswordAttribute passwordAttribute = (PasswordAttribute)theEObject;
+        T result = casePasswordAttribute(passwordAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.NUMERIC_ATTRIBUTE:
+      {
+        NumericAttribute numericAttribute = (NumericAttribute)theEObject;
+        T result = caseNumericAttribute(numericAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.HINT_ATTRIBUTE:
+      {
+        HintAttribute hintAttribute = (HintAttribute)theEObject;
+        T result = caseHintAttribute(hintAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.EDITABLE_ATTRIBUTE:
+      {
+        EditableAttribute editableAttribute = (EditableAttribute)theEObject;
+        T result = caseEditableAttribute(editableAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.DIGITS_ATTRIBUTE:
+      {
+        DigitsAttribute digitsAttribute = (DigitsAttribute)theEObject;
+        T result = caseDigitsAttribute(digitsAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.CAPITALIZE_ATTRIBUTE:
+      {
+        CapitalizeAttribute capitalizeAttribute = (CapitalizeAttribute)theEObject;
+        T result = caseCapitalizeAttribute(capitalizeAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.AUTO_TEXT_ATTRIBUTE:
+      {
+        AutoTextAttribute autoTextAttribute = (AutoTextAttribute)theEObject;
+        T result = caseAutoTextAttribute(autoTextAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.IS_SCROLL_CONTAINER_ATTRIBUTE:
+      {
+        IsScrollContainerAttribute isScrollContainerAttribute = (IsScrollContainerAttribute)theEObject;
+        T result = caseIsScrollContainerAttribute(isScrollContainerAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.FADE_SCROLL_BARS_ATTRIBUTE:
+      {
+        FadeScrollBarsAttribute fadeScrollBarsAttribute = (FadeScrollBarsAttribute)theEObject;
+        T result = caseFadeScrollBarsAttribute(fadeScrollBarsAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.CLICKABLE_ATTRIBUTE:
+      {
+        ClickableAttribute clickableAttribute = (ClickableAttribute)theEObject;
+        T result = caseClickableAttribute(clickableAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.AUTO_LINK_ATTRIBUTE:
+      {
+        AutoLinkAttribute autoLinkAttribute = (AutoLinkAttribute)theEObject;
+        T result = caseAutoLinkAttribute(autoLinkAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.WIDTH_ATTRIBUTE:
+      {
+        WidthAttribute widthAttribute = (WidthAttribute)theEObject;
+        T result = caseWidthAttribute(widthAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.HEIGHT_ATTRIBUTE:
+      {
+        HeightAttribute heightAttribute = (HeightAttribute)theEObject;
+        T result = caseHeightAttribute(heightAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.PADDING_ATTRIBUTE:
+      {
+        PaddingAttribute paddingAttribute = (PaddingAttribute)theEObject;
+        T result = casePaddingAttribute(paddingAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.GRAVITY_ATTRIBUTE:
+      {
+        GravityAttribute gravityAttribute = (GravityAttribute)theEObject;
+        T result = caseGravityAttribute(gravityAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.TEXT_SIZE_ATTRIBUTE:
+      {
+        TextSizeAttribute textSizeAttribute = (TextSizeAttribute)theEObject;
+        T result = caseTextSizeAttribute(textSizeAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.BACKGROUND_ATTRIBUTE:
+      {
+        BackgroundAttribute backgroundAttribute = (BackgroundAttribute)theEObject;
+        T result = caseBackgroundAttribute(backgroundAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.COLUMN_WIDTH_ATTRIBUTE:
+      {
+        ColumnWidthAttribute columnWidthAttribute = (ColumnWidthAttribute)theEObject;
+        T result = caseColumnWidthAttribute(columnWidthAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.HORIZONTAL_SPACING_ATTRIBUTE:
+      {
+        HorizontalSpacingAttribute horizontalSpacingAttribute = (HorizontalSpacingAttribute)theEObject;
+        T result = caseHorizontalSpacingAttribute(horizontalSpacingAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.NUM_COLUMNS_ATTRIBUTE:
+      {
+        NumColumnsAttribute numColumnsAttribute = (NumColumnsAttribute)theEObject;
+        T result = caseNumColumnsAttribute(numColumnsAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.STRETCH_MODE_ATTRIBUTE:
+      {
+        StretchModeAttribute stretchModeAttribute = (StretchModeAttribute)theEObject;
+        T result = caseStretchModeAttribute(stretchModeAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.VERTICAL_SPACING_ATTRIBUTE:
+      {
+        VerticalSpacingAttribute verticalSpacingAttribute = (VerticalSpacingAttribute)theEObject;
+        T result = caseVerticalSpacingAttribute(verticalSpacingAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.ENTRIES_ATTRIBUTE:
+      {
+        EntriesAttribute entriesAttribute = (EntriesAttribute)theEObject;
+        T result = caseEntriesAttribute(entriesAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.STRETCH_COLUMNS_ATTRIBUTE:
+      {
+        StretchColumnsAttribute stretchColumnsAttribute = (StretchColumnsAttribute)theEObject;
+        T result = caseStretchColumnsAttribute(stretchColumnsAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.SHRINK_COLUMNS_ATTRIBUTE:
+      {
+        ShrinkColumnsAttribute shrinkColumnsAttribute = (ShrinkColumnsAttribute)theEObject;
+        T result = caseShrinkColumnsAttribute(shrinkColumnsAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.COLLAPSE_COLUMNS_ATTRIBUTE:
+      {
+        CollapseColumnsAttribute collapseColumnsAttribute = (CollapseColumnsAttribute)theEObject;
+        T result = caseCollapseColumnsAttribute(collapseColumnsAttribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -729,21 +1042,10 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.LOCAL_DRAWABLE_RESOURCE_LINK:
-      {
-        LocalDrawableResourceLink localDrawableResourceLink = (LocalDrawableResourceLink)theEObject;
-        T result = caseLocalDrawableResourceLink(localDrawableResourceLink);
-        if (result == null) result = caseDrawableResourceLink(localDrawableResourceLink);
-        if (result == null) result = caseAnyDrawablePropertyValue(localDrawableResourceLink);
-        if (result == null) result = casePropertyValue(localDrawableResourceLink);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AndroTextDslPackage.EXTERNAL_DRAWABLE_RESOURCE_LINK:
       {
         ExternalDrawableResourceLink externalDrawableResourceLink = (ExternalDrawableResourceLink)theEObject;
         T result = caseExternalDrawableResourceLink(externalDrawableResourceLink);
-        if (result == null) result = caseDrawableResourceLink(externalDrawableResourceLink);
         if (result == null) result = caseAnyDrawablePropertyValue(externalDrawableResourceLink);
         if (result == null) result = casePropertyValue(externalDrawableResourceLink);
         if (result == null) result = defaultCase(theEObject);
@@ -1049,22 +1351,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Simple Activity</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Simple Activity</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSimpleActivity(SimpleActivity object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Tab Activity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1305,33 +1591,17 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Layout Params</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Layout Properties</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Layout Params</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Layout Properties</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLayoutParams(LayoutParams object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Layout Gravity Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Layout Gravity Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLayoutGravityAttribute(LayoutGravityAttribute object)
+  public T caseLayoutProperties(LayoutProperties object)
   {
     return null;
   }
@@ -1412,22 +1682,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLinearLayout(LinearLayout object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Linear Layout Params</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Linear Layout Params</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLinearLayoutParams(LinearLayoutParams object)
   {
     return null;
   }
@@ -1817,70 +2071,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Padding Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Padding Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePaddingAttribute(PaddingAttribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Gravity Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Gravity Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGravityAttribute(GravityAttribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Size Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Size Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTextSizeAttribute(TextSizeAttribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Background Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Background Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBackgroundAttribute(BackgroundAttribute object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Abstract Preference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2057,6 +2247,838 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Span Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Span Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpanAttribute(SpanAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Column Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Column Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColumnAttribute(ColumnAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Center Vertical Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Center Vertical Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCenterVerticalAttribute(CenterVerticalAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Center In Parent Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Center In Parent Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCenterInParentAttribute(CenterInParentAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Center Horizontal Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Center Horizontal Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCenterHorizontalAttribute(CenterHorizontalAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>To Right Of Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>To Right Of Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseToRightOfAttribute(ToRightOfAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>To Left Of Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>To Left Of Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseToLeftOfAttribute(ToLeftOfAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Above Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Above Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAboveAttribute(AboveAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Below Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Below Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBelowAttribute(BelowAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Align Left Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Align Left Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignLeftAttribute(AlignLeftAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Align Bottom Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Align Bottom Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignBottomAttribute(AlignBottomAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Align Top Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Align Top Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignTopAttribute(AlignTopAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Align Parent Left Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Align Parent Left Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignParentLeftAttribute(AlignParentLeftAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Align Parent Top Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Align Parent Top Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignParentTopAttribute(AlignParentTopAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Align Parent Right Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Align Parent Right Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignParentRightAttribute(AlignParentRightAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Align Parent Bottom Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Align Parent Bottom Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignParentBottomAttribute(AlignParentBottomAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Margin Bottom Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Margin Bottom Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMarginBottomAttribute(MarginBottomAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Margin Right Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Margin Right Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMarginRightAttribute(MarginRightAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Margin Top Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Margin Top Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMarginTopAttribute(MarginTopAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Weight Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Weight Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWeightAttribute(WeightAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Margin Left Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Margin Left Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMarginLeftAttribute(MarginLeftAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text Style Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text Style Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextStyleAttribute(TextStyleAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Typeface Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Typeface Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypefaceAttribute(TypefaceAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text Color Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text Color Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextColorAttribute(TextColorAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Single Line Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Single Line Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSingleLineAttribute(SingleLineAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Phone Number Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Phone Number Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePhoneNumberAttribute(PhoneNumberAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Password Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Password Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePasswordAttribute(PasswordAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Numeric Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Numeric Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumericAttribute(NumericAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hint Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hint Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHintAttribute(HintAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Editable Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Editable Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEditableAttribute(EditableAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Digits Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Digits Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDigitsAttribute(DigitsAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Capitalize Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Capitalize Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCapitalizeAttribute(CapitalizeAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Auto Text Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Auto Text Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAutoTextAttribute(AutoTextAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Is Scroll Container Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Is Scroll Container Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIsScrollContainerAttribute(IsScrollContainerAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Fade Scroll Bars Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Fade Scroll Bars Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFadeScrollBarsAttribute(FadeScrollBarsAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Clickable Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Clickable Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClickableAttribute(ClickableAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Auto Link Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Auto Link Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAutoLinkAttribute(AutoLinkAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Width Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Width Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWidthAttribute(WidthAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Height Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Height Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHeightAttribute(HeightAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Padding Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Padding Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePaddingAttribute(PaddingAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Gravity Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Gravity Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGravityAttribute(GravityAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text Size Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text Size Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextSizeAttribute(TextSizeAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Background Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Background Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBackgroundAttribute(BackgroundAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Column Width Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Column Width Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColumnWidthAttribute(ColumnWidthAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Horizontal Spacing Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Horizontal Spacing Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHorizontalSpacingAttribute(HorizontalSpacingAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Num Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Num Columns Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumColumnsAttribute(NumColumnsAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stretch Mode Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stretch Mode Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStretchModeAttribute(StretchModeAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Vertical Spacing Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Vertical Spacing Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerticalSpacingAttribute(VerticalSpacingAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entries Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entries Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntriesAttribute(EntriesAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stretch Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stretch Columns Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStretchColumnsAttribute(StretchColumnsAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Shrink Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Shrink Columns Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseShrinkColumnsAttribute(ShrinkColumnsAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Collapse Columns Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Collapse Columns Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCollapseColumnsAttribute(CollapseColumnsAttribute object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Andro Res Model Root</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2212,22 +3234,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDrawableResourceLink(DrawableResourceLink object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Local Drawable Resource Link</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Local Drawable Resource Link</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLocalDrawableResourceLink(LocalDrawableResourceLink object)
   {
     return null;
   }

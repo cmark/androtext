@@ -90,7 +90,7 @@ public class DialogPreferenceAttributesImpl extends MinimalEObjectImpl.Container
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.DIALOG_PREFERENCE_ATTRIBUTES;
+    return AndroTextDslPackage.eINSTANCE.getDialogPreferenceAttributes();
   }
 
   /**

@@ -68,7 +68,7 @@ public class ColorResourceImpl extends ResourceImpl implements ColorResource
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.COLOR_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getColorResource();
   }
 
   /**

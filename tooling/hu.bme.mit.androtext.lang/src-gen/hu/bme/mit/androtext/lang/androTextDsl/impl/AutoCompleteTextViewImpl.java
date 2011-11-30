@@ -8,9 +8,11 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView;
-import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource;
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.EntriesAttribute;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -24,8 +26,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl#getEntries <em>Entries</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl#isIsMulti <em>Is Multi</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl#getEntriesAttribute <em>Entries Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl#getMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,34 +36,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoCompleteTextView
 {
   /**
-   * The cached value of the '{@link #getEntries() <em>Entries</em>}' reference.
+   * The cached value of the '{@link #getEntriesAttribute() <em>Entries Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEntries()
+   * @see #getEntriesAttribute()
    * @generated
    * @ordered
    */
-  protected StringArrayResource entries;
+  protected EntriesAttribute entriesAttribute;
 
   /**
-   * The default value of the '{@link #isIsMulti() <em>Is Multi</em>}' attribute.
+   * The cached value of the '{@link #getMulti() <em>Multi</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIsMulti()
+   * @see #getMulti()
    * @generated
    * @ordered
    */
-  protected static final boolean IS_MULTI_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsMulti() <em>Is Multi</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsMulti()
-   * @generated
-   * @ordered
-   */
-  protected boolean isMulti = IS_MULTI_EDEFAULT;
+  protected BooleanPropertyValue multi;
 
   /**
    * <!-- begin-user-doc -->
@@ -81,7 +73,7 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.AUTO_COMPLETE_TEXT_VIEW;
+    return AndroTextDslPackage.eINSTANCE.getAutoCompleteTextView();
   }
 
   /**
@@ -89,19 +81,26 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringArrayResource getEntries()
+  public EntriesAttribute getEntriesAttribute()
   {
-    if (entries != null && entries.eIsProxy())
+    return entriesAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEntriesAttribute(EntriesAttribute newEntriesAttribute, NotificationChain msgs)
+  {
+    EntriesAttribute oldEntriesAttribute = entriesAttribute;
+    entriesAttribute = newEntriesAttribute;
+    if (eNotificationRequired())
     {
-      InternalEObject oldEntries = (InternalEObject)entries;
-      entries = (StringArrayResource)eResolveProxy(oldEntries);
-      if (entries != oldEntries)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES, oldEntries, entries));
-      }
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE, oldEntriesAttribute, newEntriesAttribute);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return entries;
+    return msgs;
   }
 
   /**
@@ -109,9 +108,20 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringArrayResource basicGetEntries()
+  public void setEntriesAttribute(EntriesAttribute newEntriesAttribute)
   {
-    return entries;
+    if (newEntriesAttribute != entriesAttribute)
+    {
+      NotificationChain msgs = null;
+      if (entriesAttribute != null)
+        msgs = ((InternalEObject)entriesAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE, null, msgs);
+      if (newEntriesAttribute != null)
+        msgs = ((InternalEObject)newEntriesAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE, null, msgs);
+      msgs = basicSetEntriesAttribute(newEntriesAttribute, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE, newEntriesAttribute, newEntriesAttribute));
   }
 
   /**
@@ -119,12 +129,26 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEntries(StringArrayResource newEntries)
+  public BooleanPropertyValue getMulti()
   {
-    StringArrayResource oldEntries = entries;
-    entries = newEntries;
+    return multi;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMulti(BooleanPropertyValue newMulti, NotificationChain msgs)
+  {
+    BooleanPropertyValue oldMulti = multi;
+    multi = newMulti;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES, oldEntries, entries));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI, oldMulti, newMulti);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -132,9 +156,20 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isIsMulti()
+  public void setMulti(BooleanPropertyValue newMulti)
   {
-    return isMulti;
+    if (newMulti != multi)
+    {
+      NotificationChain msgs = null;
+      if (multi != null)
+        msgs = ((InternalEObject)multi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI, null, msgs);
+      if (newMulti != null)
+        msgs = ((InternalEObject)newMulti).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI, null, msgs);
+      msgs = basicSetMulti(newMulti, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI, newMulti, newMulti));
   }
 
   /**
@@ -142,12 +177,17 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIsMulti(boolean newIsMulti)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    boolean oldIsMulti = isMulti;
-    isMulti = newIsMulti;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__IS_MULTI, oldIsMulti, isMulti));
+    switch (featureID)
+    {
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
+        return basicSetEntriesAttribute(null, msgs);
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
+        return basicSetMulti(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -160,11 +200,10 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES:
-        if (resolve) return getEntries();
-        return basicGetEntries();
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__IS_MULTI:
-        return isIsMulti();
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
+        return getEntriesAttribute();
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
+        return getMulti();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -179,11 +218,11 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES:
-        setEntries((StringArrayResource)newValue);
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
+        setEntriesAttribute((EntriesAttribute)newValue);
         return;
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__IS_MULTI:
-        setIsMulti((Boolean)newValue);
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
+        setMulti((BooleanPropertyValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -199,11 +238,11 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES:
-        setEntries((StringArrayResource)null);
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
+        setEntriesAttribute((EntriesAttribute)null);
         return;
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__IS_MULTI:
-        setIsMulti(IS_MULTI_EDEFAULT);
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
+        setMulti((BooleanPropertyValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -219,29 +258,12 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES:
-        return entries != null;
-      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__IS_MULTI:
-        return isMulti != IS_MULTI_EDEFAULT;
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
+        return entriesAttribute != null;
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
+        return multi != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (isMulti: ");
-    result.append(isMulti);
-    result.append(')');
-    return result.toString();
   }
 
 } //AutoCompleteTextViewImpl

@@ -65,7 +65,7 @@ public class AndroGenModelRootImpl extends ModelRootImpl implements AndroGenMode
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ANDRO_GEN_MODEL_ROOT;
+    return AndroTextDslPackage.eINSTANCE.getAndroGenModelRoot();
   }
 
   /**

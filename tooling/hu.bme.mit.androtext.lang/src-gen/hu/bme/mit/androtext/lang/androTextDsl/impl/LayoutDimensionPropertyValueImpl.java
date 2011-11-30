@@ -69,7 +69,7 @@ public class LayoutDimensionPropertyValueImpl extends PropertyValueImpl implemen
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.LAYOUT_DIMENSION_PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getLayoutDimensionPropertyValue();
   }
 
   /**

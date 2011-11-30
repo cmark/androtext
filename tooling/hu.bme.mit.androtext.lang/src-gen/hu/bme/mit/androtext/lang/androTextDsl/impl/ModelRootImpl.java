@@ -69,7 +69,7 @@ public class ModelRootImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.MODEL_ROOT;
+    return AndroTextDslPackage.eINSTANCE.getModelRoot();
   }
 
   /**

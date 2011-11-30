@@ -68,7 +68,7 @@ public class CheckedTextViewImpl extends SimpleViewImpl implements CheckedTextVi
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.CHECKED_TEXT_VIEW;
+    return AndroTextDslPackage.eINSTANCE.getCheckedTextView();
   }
 
   /**

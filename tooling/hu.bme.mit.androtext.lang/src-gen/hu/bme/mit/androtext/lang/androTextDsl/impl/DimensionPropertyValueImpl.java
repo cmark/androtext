@@ -84,7 +84,7 @@ public class DimensionPropertyValueImpl extends PropertyValueImpl implements Dim
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.DIMENSION_PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getDimensionPropertyValue();
   }
 
   /**

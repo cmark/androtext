@@ -68,7 +68,7 @@ public class ColorPropertyValueImpl extends AnyDrawablePropertyValueImpl impleme
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.COLOR_PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getColorPropertyValue();
   }
 
   /**

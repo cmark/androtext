@@ -40,7 +40,7 @@ public class DrawableResourceImpl extends ResourceImpl implements DrawableResour
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.DRAWABLE_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getDrawableResource();
   }
 
 } //DrawableResourceImpl

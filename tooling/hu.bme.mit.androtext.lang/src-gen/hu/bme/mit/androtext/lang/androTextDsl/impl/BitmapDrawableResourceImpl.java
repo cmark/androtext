@@ -68,7 +68,7 @@ public class BitmapDrawableResourceImpl extends DrawableResourceImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.BITMAP_DRAWABLE_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getBitmapDrawableResource();
   }
 
   /**

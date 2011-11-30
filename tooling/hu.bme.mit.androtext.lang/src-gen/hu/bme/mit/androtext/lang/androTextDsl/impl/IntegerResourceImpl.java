@@ -68,7 +68,7 @@ public class IntegerResourceImpl extends ResourceImpl implements IntegerResource
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.INTEGER_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getIntegerResource();
   }
 
   /**

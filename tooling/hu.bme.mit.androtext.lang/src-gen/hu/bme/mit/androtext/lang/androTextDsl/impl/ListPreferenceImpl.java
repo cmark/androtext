@@ -106,7 +106,7 @@ public class ListPreferenceImpl extends AbstractPreferenceImpl implements ListPr
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.LIST_PREFERENCE;
+    return AndroTextDslPackage.eINSTANCE.getListPreference();
   }
 
   /**

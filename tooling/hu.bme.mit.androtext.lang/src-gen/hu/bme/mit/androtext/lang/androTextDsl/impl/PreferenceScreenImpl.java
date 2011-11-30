@@ -101,7 +101,7 @@ public class PreferenceScreenImpl extends AbstractPreferenceImpl implements Pref
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PREFERENCE_SCREEN;
+    return AndroTextDslPackage.eINSTANCE.getPreferenceScreen();
   }
 
   /**

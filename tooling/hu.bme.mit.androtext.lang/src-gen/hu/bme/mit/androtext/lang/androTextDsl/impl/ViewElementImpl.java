@@ -7,7 +7,7 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutParams;
+import hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewElement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewElementImpl#getLayoutParams <em>Layout Params</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewElementImpl#getBackgroundAttribute <em>Background Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ViewElementImpl extends SimpleViewImpl implements ViewElement
 {
   /**
-   * The cached value of the '{@link #getLayoutParams() <em>Layout Params</em>}' containment reference.
+   * The cached value of the '{@link #getBackgroundAttribute() <em>Background Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLayoutParams()
+   * @see #getBackgroundAttribute()
    * @generated
    * @ordered
    */
-  protected LayoutParams layoutParams;
+  protected BackgroundAttribute backgroundAttribute;
 
   /**
    * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.VIEW_ELEMENT;
+    return AndroTextDslPackage.eINSTANCE.getViewElement();
   }
 
   /**
@@ -69,9 +69,9 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutParams getLayoutParams()
+  public BackgroundAttribute getBackgroundAttribute()
   {
-    return layoutParams;
+    return backgroundAttribute;
   }
 
   /**
@@ -79,13 +79,13 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLayoutParams(LayoutParams newLayoutParams, NotificationChain msgs)
+  public NotificationChain basicSetBackgroundAttribute(BackgroundAttribute newBackgroundAttribute, NotificationChain msgs)
   {
-    LayoutParams oldLayoutParams = layoutParams;
-    layoutParams = newLayoutParams;
+    BackgroundAttribute oldBackgroundAttribute = backgroundAttribute;
+    backgroundAttribute = newBackgroundAttribute;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS, oldLayoutParams, newLayoutParams);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE, oldBackgroundAttribute, newBackgroundAttribute);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLayoutParams(LayoutParams newLayoutParams)
+  public void setBackgroundAttribute(BackgroundAttribute newBackgroundAttribute)
   {
-    if (newLayoutParams != layoutParams)
+    if (newBackgroundAttribute != backgroundAttribute)
     {
       NotificationChain msgs = null;
-      if (layoutParams != null)
-        msgs = ((InternalEObject)layoutParams).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS, null, msgs);
-      if (newLayoutParams != null)
-        msgs = ((InternalEObject)newLayoutParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS, null, msgs);
-      msgs = basicSetLayoutParams(newLayoutParams, msgs);
+      if (backgroundAttribute != null)
+        msgs = ((InternalEObject)backgroundAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE, null, msgs);
+      if (newBackgroundAttribute != null)
+        msgs = ((InternalEObject)newBackgroundAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE, null, msgs);
+      msgs = basicSetBackgroundAttribute(newBackgroundAttribute, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS, newLayoutParams, newLayoutParams));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE, newBackgroundAttribute, newBackgroundAttribute));
   }
 
   /**
@@ -122,8 +122,8 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS:
-        return basicSetLayoutParams(null, msgs);
+      case AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE:
+        return basicSetBackgroundAttribute(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS:
-        return getLayoutParams();
+      case AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE:
+        return getBackgroundAttribute();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS:
-        setLayoutParams((LayoutParams)newValue);
+      case AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE:
+        setBackgroundAttribute((BackgroundAttribute)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS:
-        setLayoutParams((LayoutParams)null);
+      case AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE:
+        setBackgroundAttribute((BackgroundAttribute)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,8 +188,8 @@ public class ViewElementImpl extends SimpleViewImpl implements ViewElement
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.VIEW_ELEMENT__LAYOUT_PARAMS:
-        return layoutParams != null;
+      case AndroTextDslPackage.VIEW_ELEMENT__BACKGROUND_ATTRIBUTE:
+        return backgroundAttribute != null;
     }
     return super.eIsSet(featureID);
   }

@@ -65,7 +65,7 @@ public class PreferenceCategoryImpl extends AbstractPreferenceImpl implements Pr
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PREFERENCE_CATEGORY;
+    return AndroTextDslPackage.eINSTANCE.getPreferenceCategory();
   }
 
   /**

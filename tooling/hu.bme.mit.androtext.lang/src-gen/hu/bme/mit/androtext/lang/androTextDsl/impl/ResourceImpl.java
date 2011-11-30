@@ -69,7 +69,7 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getResource();
   }
 
   /**

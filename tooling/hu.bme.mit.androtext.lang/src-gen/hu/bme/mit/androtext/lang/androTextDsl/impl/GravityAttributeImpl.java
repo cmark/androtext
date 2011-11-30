@@ -8,14 +8,17 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutGravityKind;
+import hu.bme.mit.androtext.lang.androTextDsl.GravityKind;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,24 +36,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class GravityAttributeImpl extends MinimalEObjectImpl.Container implements GravityAttribute
 {
   /**
-   * The default value of the '{@link #getGravity() <em>Gravity</em>}' attribute.
+   * The cached value of the '{@link #getGravity() <em>Gravity</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getGravity()
    * @generated
    * @ordered
    */
-  protected static final LayoutGravityKind GRAVITY_EDEFAULT = LayoutGravityKind.TOP;
-
-  /**
-   * The cached value of the '{@link #getGravity() <em>Gravity</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGravity()
-   * @generated
-   * @ordered
-   */
-  protected LayoutGravityKind gravity = GRAVITY_EDEFAULT;
+  protected EList<GravityKind> gravity;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,7 +63,7 @@ public class GravityAttributeImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.GRAVITY_ATTRIBUTE;
+    return AndroTextDslPackage.eINSTANCE.getGravityAttribute();
   }
 
   /**
@@ -78,22 +71,13 @@ public class GravityAttributeImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutGravityKind getGravity()
+  public EList<GravityKind> getGravity()
   {
+    if (gravity == null)
+    {
+      gravity = new EDataTypeEList<GravityKind>(GravityKind.class, this, AndroTextDslPackage.GRAVITY_ATTRIBUTE__GRAVITY);
+    }
     return gravity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setGravity(LayoutGravityKind newGravity)
-  {
-    LayoutGravityKind oldGravity = gravity;
-    gravity = newGravity == null ? GRAVITY_EDEFAULT : newGravity;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.GRAVITY_ATTRIBUTE__GRAVITY, oldGravity, gravity));
   }
 
   /**
@@ -117,13 +101,15 @@ public class GravityAttributeImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case AndroTextDslPackage.GRAVITY_ATTRIBUTE__GRAVITY:
-        setGravity((LayoutGravityKind)newValue);
+        getGravity().clear();
+        getGravity().addAll((Collection<? extends GravityKind>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,7 +126,7 @@ public class GravityAttributeImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case AndroTextDslPackage.GRAVITY_ATTRIBUTE__GRAVITY:
-        setGravity(GRAVITY_EDEFAULT);
+        getGravity().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,7 +143,7 @@ public class GravityAttributeImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case AndroTextDslPackage.GRAVITY_ATTRIBUTE__GRAVITY:
-        return gravity != GRAVITY_EDEFAULT;
+        return gravity != null && !gravity.isEmpty();
     }
     return super.eIsSet(featureID);
   }

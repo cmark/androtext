@@ -40,7 +40,7 @@ public class GalleryImpl extends SimpleViewImpl implements Gallery
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.GALLERY;
+    return AndroTextDslPackage.eINSTANCE.getGallery();
   }
 
 } //GalleryImpl

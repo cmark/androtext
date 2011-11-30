@@ -16,7 +16,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#isVertical <em>Vertical</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#getLayoutParams <em>Layout Params</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#getGravity <em>Gravity</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,29 +53,29 @@ public interface LinearLayout extends ViewGroup
   void setVertical(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Layout Params</b></em>' containment reference.
+   * Returns the value of the '<em><b>Gravity</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Layout Params</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Gravity</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Layout Params</em>' containment reference.
-   * @see #setLayoutParams(LinearLayoutParams)
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getLinearLayout_LayoutParams()
+   * @return the value of the '<em>Gravity</em>' containment reference.
+   * @see #setGravity(GravityAttribute)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getLinearLayout_Gravity()
    * @model containment="true"
    * @generated
    */
-  LinearLayoutParams getLayoutParams();
+  GravityAttribute getGravity();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#getLayoutParams <em>Layout Params</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.LinearLayout#getGravity <em>Gravity</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Layout Params</em>' containment reference.
-   * @see #getLayoutParams()
+   * @param value the new value of the '<em>Gravity</em>' containment reference.
+   * @see #getGravity()
    * @generated
    */
-  void setLayoutParams(LinearLayoutParams value);
+  void setGravity(GravityAttribute value);
 
 } // LinearLayout

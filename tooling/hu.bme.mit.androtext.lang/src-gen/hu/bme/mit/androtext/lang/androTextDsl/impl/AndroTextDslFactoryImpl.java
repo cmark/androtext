@@ -77,7 +77,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.ANDROID_APPLICATION: return createAndroidApplication();
       case AndroTextDslPackage.ANDROID_APPLICATION_MODEL_ELEMENT: return createAndroidApplicationModelElement();
       case AndroTextDslPackage.ACTIVITY: return createActivity();
-      case AndroTextDslPackage.SIMPLE_ACTIVITY: return createSimpleActivity();
       case AndroTextDslPackage.TAB_ACTIVITY: return createTabActivity();
       case AndroTextDslPackage.TAB: return createTab();
       case AndroTextDslPackage.LIST_ACTIVITY: return createListActivity();
@@ -93,14 +92,12 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT: return createAndroGuiModelRoot();
       case AndroTextDslPackage.VIEW: return createView();
       case AndroTextDslPackage.VIEW_GROUP: return createViewGroup();
-      case AndroTextDslPackage.LAYOUT_PARAMS: return createLayoutParams();
-      case AndroTextDslPackage.LAYOUT_GRAVITY_ATTRIBUTE: return createLayoutGravityAttribute();
+      case AndroTextDslPackage.LAYOUT_PROPERTIES: return createLayoutProperties();
       case AndroTextDslPackage.LAYOUT_STYLE: return createLayoutStyle();
       case AndroTextDslPackage.REGULAR_LAYOUT_STYLE: return createRegularLayoutStyle();
       case AndroTextDslPackage.FAST_LAYOUT_STYLE: return createFastLayoutStyle();
       case AndroTextDslPackage.ABSOLUTE_LAYOUT: return createAbsoluteLayout();
       case AndroTextDslPackage.LINEAR_LAYOUT: return createLinearLayout();
-      case AndroTextDslPackage.LINEAR_LAYOUT_PARAMS: return createLinearLayoutParams();
       case AndroTextDslPackage.FRAME_LAYOUT: return createFrameLayout();
       case AndroTextDslPackage.RELATIVE_LAYOUT: return createRelativeLayout();
       case AndroTextDslPackage.GRID_LAYOUT: return createGridLayout();
@@ -125,10 +122,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.RADIO_BUTTON: return createRadioButton();
       case AndroTextDslPackage.CHECKED_TEXT_VIEW: return createCheckedTextView();
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW: return createAutoCompleteTextView();
-      case AndroTextDslPackage.PADDING_ATTRIBUTE: return createPaddingAttribute();
-      case AndroTextDslPackage.GRAVITY_ATTRIBUTE: return createGravityAttribute();
-      case AndroTextDslPackage.TEXT_SIZE_ATTRIBUTE: return createTextSizeAttribute();
-      case AndroTextDslPackage.BACKGROUND_ATTRIBUTE: return createBackgroundAttribute();
       case AndroTextDslPackage.ABSTRACT_PREFERENCE: return createAbstractPreference();
       case AndroTextDslPackage.PREFERENCE: return createPreference();
       case AndroTextDslPackage.PREFERENCE_SCREEN: return createPreferenceScreen();
@@ -140,6 +133,58 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES: return createPreferenceAttributes();
       case AndroTextDslPackage.DIALOG_PREFERENCE_ATTRIBUTES: return createDialogPreferenceAttributes();
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES: return createListPreferenceAttributes();
+      case AndroTextDslPackage.SPAN_ATTRIBUTE: return createSpanAttribute();
+      case AndroTextDslPackage.COLUMN_ATTRIBUTE: return createColumnAttribute();
+      case AndroTextDslPackage.CENTER_VERTICAL_ATTRIBUTE: return createCenterVerticalAttribute();
+      case AndroTextDslPackage.CENTER_IN_PARENT_ATTRIBUTE: return createCenterInParentAttribute();
+      case AndroTextDslPackage.CENTER_HORIZONTAL_ATTRIBUTE: return createCenterHorizontalAttribute();
+      case AndroTextDslPackage.TO_RIGHT_OF_ATTRIBUTE: return createToRightOfAttribute();
+      case AndroTextDslPackage.TO_LEFT_OF_ATTRIBUTE: return createToLeftOfAttribute();
+      case AndroTextDslPackage.ABOVE_ATTRIBUTE: return createAboveAttribute();
+      case AndroTextDslPackage.BELOW_ATTRIBUTE: return createBelowAttribute();
+      case AndroTextDslPackage.ALIGN_LEFT_ATTRIBUTE: return createAlignLeftAttribute();
+      case AndroTextDslPackage.ALIGN_BOTTOM_ATTRIBUTE: return createAlignBottomAttribute();
+      case AndroTextDslPackage.ALIGN_TOP_ATTRIBUTE: return createAlignTopAttribute();
+      case AndroTextDslPackage.ALIGN_PARENT_LEFT_ATTRIBUTE: return createAlignParentLeftAttribute();
+      case AndroTextDslPackage.ALIGN_PARENT_TOP_ATTRIBUTE: return createAlignParentTopAttribute();
+      case AndroTextDslPackage.ALIGN_PARENT_RIGHT_ATTRIBUTE: return createAlignParentRightAttribute();
+      case AndroTextDslPackage.ALIGN_PARENT_BOTTOM_ATTRIBUTE: return createAlignParentBottomAttribute();
+      case AndroTextDslPackage.MARGIN_BOTTOM_ATTRIBUTE: return createMarginBottomAttribute();
+      case AndroTextDslPackage.MARGIN_RIGHT_ATTRIBUTE: return createMarginRightAttribute();
+      case AndroTextDslPackage.MARGIN_TOP_ATTRIBUTE: return createMarginTopAttribute();
+      case AndroTextDslPackage.WEIGHT_ATTRIBUTE: return createWeightAttribute();
+      case AndroTextDslPackage.MARGIN_LEFT_ATTRIBUTE: return createMarginLeftAttribute();
+      case AndroTextDslPackage.TEXT_STYLE_ATTRIBUTE: return createTextStyleAttribute();
+      case AndroTextDslPackage.TYPEFACE_ATTRIBUTE: return createTypefaceAttribute();
+      case AndroTextDslPackage.TEXT_COLOR_ATTRIBUTE: return createTextColorAttribute();
+      case AndroTextDslPackage.SINGLE_LINE_ATTRIBUTE: return createSingleLineAttribute();
+      case AndroTextDslPackage.PHONE_NUMBER_ATTRIBUTE: return createPhoneNumberAttribute();
+      case AndroTextDslPackage.PASSWORD_ATTRIBUTE: return createPasswordAttribute();
+      case AndroTextDslPackage.NUMERIC_ATTRIBUTE: return createNumericAttribute();
+      case AndroTextDslPackage.HINT_ATTRIBUTE: return createHintAttribute();
+      case AndroTextDslPackage.EDITABLE_ATTRIBUTE: return createEditableAttribute();
+      case AndroTextDslPackage.DIGITS_ATTRIBUTE: return createDigitsAttribute();
+      case AndroTextDslPackage.CAPITALIZE_ATTRIBUTE: return createCapitalizeAttribute();
+      case AndroTextDslPackage.AUTO_TEXT_ATTRIBUTE: return createAutoTextAttribute();
+      case AndroTextDslPackage.IS_SCROLL_CONTAINER_ATTRIBUTE: return createIsScrollContainerAttribute();
+      case AndroTextDslPackage.FADE_SCROLL_BARS_ATTRIBUTE: return createFadeScrollBarsAttribute();
+      case AndroTextDslPackage.CLICKABLE_ATTRIBUTE: return createClickableAttribute();
+      case AndroTextDslPackage.AUTO_LINK_ATTRIBUTE: return createAutoLinkAttribute();
+      case AndroTextDslPackage.WIDTH_ATTRIBUTE: return createWidthAttribute();
+      case AndroTextDslPackage.HEIGHT_ATTRIBUTE: return createHeightAttribute();
+      case AndroTextDslPackage.PADDING_ATTRIBUTE: return createPaddingAttribute();
+      case AndroTextDslPackage.GRAVITY_ATTRIBUTE: return createGravityAttribute();
+      case AndroTextDslPackage.TEXT_SIZE_ATTRIBUTE: return createTextSizeAttribute();
+      case AndroTextDslPackage.BACKGROUND_ATTRIBUTE: return createBackgroundAttribute();
+      case AndroTextDslPackage.COLUMN_WIDTH_ATTRIBUTE: return createColumnWidthAttribute();
+      case AndroTextDslPackage.HORIZONTAL_SPACING_ATTRIBUTE: return createHorizontalSpacingAttribute();
+      case AndroTextDslPackage.NUM_COLUMNS_ATTRIBUTE: return createNumColumnsAttribute();
+      case AndroTextDslPackage.STRETCH_MODE_ATTRIBUTE: return createStretchModeAttribute();
+      case AndroTextDslPackage.VERTICAL_SPACING_ATTRIBUTE: return createVerticalSpacingAttribute();
+      case AndroTextDslPackage.ENTRIES_ATTRIBUTE: return createEntriesAttribute();
+      case AndroTextDslPackage.STRETCH_COLUMNS_ATTRIBUTE: return createStretchColumnsAttribute();
+      case AndroTextDslPackage.SHRINK_COLUMNS_ATTRIBUTE: return createShrinkColumnsAttribute();
+      case AndroTextDslPackage.COLLAPSE_COLUMNS_ATTRIBUTE: return createCollapseColumnsAttribute();
       case AndroTextDslPackage.ANDRO_RES_MODEL_ROOT: return createAndroResModelRoot();
       case AndroTextDslPackage.PROPERTY_VALUE: return createPropertyValue();
       case AndroTextDslPackage.ANY_DRAWABLE_PROPERTY_VALUE: return createAnyDrawablePropertyValue();
@@ -150,7 +195,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.LAYOUT_DIMENSION_PROPERTY_VALUE: return createLayoutDimensionPropertyValue();
       case AndroTextDslPackage.DIMENSION_PROPERTY_VALUE: return createDimensionPropertyValue();
       case AndroTextDslPackage.DRAWABLE_RESOURCE_LINK: return createDrawableResourceLink();
-      case AndroTextDslPackage.LOCAL_DRAWABLE_RESOURCE_LINK: return createLocalDrawableResourceLink();
       case AndroTextDslPackage.EXTERNAL_DRAWABLE_RESOURCE_LINK: return createExternalDrawableResourceLink();
       case AndroTextDslPackage.STRING_RESOURCE_LINK: return createStringResourceLink();
       case AndroTextDslPackage.INTEGER_RESOURCE_LINK: return createIntegerResourceLink();
@@ -193,8 +237,20 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return createActivityThemeFromString(eDataType, initialValue);
       case AndroTextDslPackage.DATA_TYPES:
         return createDataTypesFromString(eDataType, initialValue);
-      case AndroTextDslPackage.LAYOUT_GRAVITY_KIND:
-        return createLayoutGravityKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.NUMERIC_KIND:
+        return createNumericKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.TYPEFACE_KIND:
+        return createTypefaceKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.TEXT_STYLE_KIND:
+        return createTextStyleKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.CAPITALIZE_KIND:
+        return createCapitalizeKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.AUTO_LINK_KIND:
+        return createAutoLinkKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.STRETCH_MODE_KIND:
+        return createStretchModeKindFromString(eDataType, initialValue);
+      case AndroTextDslPackage.GRAVITY_KIND:
+        return createGravityKindFromString(eDataType, initialValue);
       case AndroTextDslPackage.FAST_LAYOUT_DIMENSION_KIND:
         return createFastLayoutDimensionKindFromString(eDataType, initialValue);
       case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
@@ -224,8 +280,20 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return convertActivityThemeToString(eDataType, instanceValue);
       case AndroTextDslPackage.DATA_TYPES:
         return convertDataTypesToString(eDataType, instanceValue);
-      case AndroTextDslPackage.LAYOUT_GRAVITY_KIND:
-        return convertLayoutGravityKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.NUMERIC_KIND:
+        return convertNumericKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.TYPEFACE_KIND:
+        return convertTypefaceKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.TEXT_STYLE_KIND:
+        return convertTextStyleKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.CAPITALIZE_KIND:
+        return convertCapitalizeKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.AUTO_LINK_KIND:
+        return convertAutoLinkKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.STRETCH_MODE_KIND:
+        return convertStretchModeKindToString(eDataType, instanceValue);
+      case AndroTextDslPackage.GRAVITY_KIND:
+        return convertGravityKindToString(eDataType, instanceValue);
       case AndroTextDslPackage.FAST_LAYOUT_DIMENSION_KIND:
         return convertFastLayoutDimensionKindToString(eDataType, instanceValue);
       case AndroTextDslPackage.LAYOUT_DIMENSION_KIND:
@@ -325,17 +393,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     ActivityImpl activity = new ActivityImpl();
     return activity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SimpleActivity createSimpleActivity()
-  {
-    SimpleActivityImpl simpleActivity = new SimpleActivityImpl();
-    return simpleActivity;
   }
 
   /**
@@ -508,21 +565,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutParams createLayoutParams()
+  public LayoutProperties createLayoutProperties()
   {
-    LayoutParamsImpl layoutParams = new LayoutParamsImpl();
-    return layoutParams;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LayoutGravityAttribute createLayoutGravityAttribute()
-  {
-    LayoutGravityAttributeImpl layoutGravityAttribute = new LayoutGravityAttributeImpl();
-    return layoutGravityAttribute;
+    LayoutPropertiesImpl layoutProperties = new LayoutPropertiesImpl();
+    return layoutProperties;
   }
 
   /**
@@ -578,17 +624,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     LinearLayoutImpl linearLayout = new LinearLayoutImpl();
     return linearLayout;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LinearLayoutParams createLinearLayoutParams()
-  {
-    LinearLayoutParamsImpl linearLayoutParams = new LinearLayoutParamsImpl();
-    return linearLayoutParams;
   }
 
   /**
@@ -860,50 +895,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public PaddingAttribute createPaddingAttribute()
-  {
-    PaddingAttributeImpl paddingAttribute = new PaddingAttributeImpl();
-    return paddingAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public GravityAttribute createGravityAttribute()
-  {
-    GravityAttributeImpl gravityAttribute = new GravityAttributeImpl();
-    return gravityAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TextSizeAttribute createTextSizeAttribute()
-  {
-    TextSizeAttributeImpl textSizeAttribute = new TextSizeAttributeImpl();
-    return textSizeAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BackgroundAttribute createBackgroundAttribute()
-  {
-    BackgroundAttributeImpl backgroundAttribute = new BackgroundAttributeImpl();
-    return backgroundAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public AbstractPreference createAbstractPreference()
   {
     AbstractPreferenceImpl abstractPreference = new AbstractPreferenceImpl();
@@ -1025,6 +1016,578 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public SpanAttribute createSpanAttribute()
+  {
+    SpanAttributeImpl spanAttribute = new SpanAttributeImpl();
+    return spanAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ColumnAttribute createColumnAttribute()
+  {
+    ColumnAttributeImpl columnAttribute = new ColumnAttributeImpl();
+    return columnAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CenterVerticalAttribute createCenterVerticalAttribute()
+  {
+    CenterVerticalAttributeImpl centerVerticalAttribute = new CenterVerticalAttributeImpl();
+    return centerVerticalAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CenterInParentAttribute createCenterInParentAttribute()
+  {
+    CenterInParentAttributeImpl centerInParentAttribute = new CenterInParentAttributeImpl();
+    return centerInParentAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CenterHorizontalAttribute createCenterHorizontalAttribute()
+  {
+    CenterHorizontalAttributeImpl centerHorizontalAttribute = new CenterHorizontalAttributeImpl();
+    return centerHorizontalAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToRightOfAttribute createToRightOfAttribute()
+  {
+    ToRightOfAttributeImpl toRightOfAttribute = new ToRightOfAttributeImpl();
+    return toRightOfAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToLeftOfAttribute createToLeftOfAttribute()
+  {
+    ToLeftOfAttributeImpl toLeftOfAttribute = new ToLeftOfAttributeImpl();
+    return toLeftOfAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AboveAttribute createAboveAttribute()
+  {
+    AboveAttributeImpl aboveAttribute = new AboveAttributeImpl();
+    return aboveAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BelowAttribute createBelowAttribute()
+  {
+    BelowAttributeImpl belowAttribute = new BelowAttributeImpl();
+    return belowAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignLeftAttribute createAlignLeftAttribute()
+  {
+    AlignLeftAttributeImpl alignLeftAttribute = new AlignLeftAttributeImpl();
+    return alignLeftAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignBottomAttribute createAlignBottomAttribute()
+  {
+    AlignBottomAttributeImpl alignBottomAttribute = new AlignBottomAttributeImpl();
+    return alignBottomAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignTopAttribute createAlignTopAttribute()
+  {
+    AlignTopAttributeImpl alignTopAttribute = new AlignTopAttributeImpl();
+    return alignTopAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignParentLeftAttribute createAlignParentLeftAttribute()
+  {
+    AlignParentLeftAttributeImpl alignParentLeftAttribute = new AlignParentLeftAttributeImpl();
+    return alignParentLeftAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignParentTopAttribute createAlignParentTopAttribute()
+  {
+    AlignParentTopAttributeImpl alignParentTopAttribute = new AlignParentTopAttributeImpl();
+    return alignParentTopAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignParentRightAttribute createAlignParentRightAttribute()
+  {
+    AlignParentRightAttributeImpl alignParentRightAttribute = new AlignParentRightAttributeImpl();
+    return alignParentRightAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignParentBottomAttribute createAlignParentBottomAttribute()
+  {
+    AlignParentBottomAttributeImpl alignParentBottomAttribute = new AlignParentBottomAttributeImpl();
+    return alignParentBottomAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MarginBottomAttribute createMarginBottomAttribute()
+  {
+    MarginBottomAttributeImpl marginBottomAttribute = new MarginBottomAttributeImpl();
+    return marginBottomAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MarginRightAttribute createMarginRightAttribute()
+  {
+    MarginRightAttributeImpl marginRightAttribute = new MarginRightAttributeImpl();
+    return marginRightAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MarginTopAttribute createMarginTopAttribute()
+  {
+    MarginTopAttributeImpl marginTopAttribute = new MarginTopAttributeImpl();
+    return marginTopAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WeightAttribute createWeightAttribute()
+  {
+    WeightAttributeImpl weightAttribute = new WeightAttributeImpl();
+    return weightAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MarginLeftAttribute createMarginLeftAttribute()
+  {
+    MarginLeftAttributeImpl marginLeftAttribute = new MarginLeftAttributeImpl();
+    return marginLeftAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextStyleAttribute createTextStyleAttribute()
+  {
+    TextStyleAttributeImpl textStyleAttribute = new TextStyleAttributeImpl();
+    return textStyleAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypefaceAttribute createTypefaceAttribute()
+  {
+    TypefaceAttributeImpl typefaceAttribute = new TypefaceAttributeImpl();
+    return typefaceAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextColorAttribute createTextColorAttribute()
+  {
+    TextColorAttributeImpl textColorAttribute = new TextColorAttributeImpl();
+    return textColorAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SingleLineAttribute createSingleLineAttribute()
+  {
+    SingleLineAttributeImpl singleLineAttribute = new SingleLineAttributeImpl();
+    return singleLineAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PhoneNumberAttribute createPhoneNumberAttribute()
+  {
+    PhoneNumberAttributeImpl phoneNumberAttribute = new PhoneNumberAttributeImpl();
+    return phoneNumberAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PasswordAttribute createPasswordAttribute()
+  {
+    PasswordAttributeImpl passwordAttribute = new PasswordAttributeImpl();
+    return passwordAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumericAttribute createNumericAttribute()
+  {
+    NumericAttributeImpl numericAttribute = new NumericAttributeImpl();
+    return numericAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HintAttribute createHintAttribute()
+  {
+    HintAttributeImpl hintAttribute = new HintAttributeImpl();
+    return hintAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EditableAttribute createEditableAttribute()
+  {
+    EditableAttributeImpl editableAttribute = new EditableAttributeImpl();
+    return editableAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DigitsAttribute createDigitsAttribute()
+  {
+    DigitsAttributeImpl digitsAttribute = new DigitsAttributeImpl();
+    return digitsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CapitalizeAttribute createCapitalizeAttribute()
+  {
+    CapitalizeAttributeImpl capitalizeAttribute = new CapitalizeAttributeImpl();
+    return capitalizeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AutoTextAttribute createAutoTextAttribute()
+  {
+    AutoTextAttributeImpl autoTextAttribute = new AutoTextAttributeImpl();
+    return autoTextAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IsScrollContainerAttribute createIsScrollContainerAttribute()
+  {
+    IsScrollContainerAttributeImpl isScrollContainerAttribute = new IsScrollContainerAttributeImpl();
+    return isScrollContainerAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FadeScrollBarsAttribute createFadeScrollBarsAttribute()
+  {
+    FadeScrollBarsAttributeImpl fadeScrollBarsAttribute = new FadeScrollBarsAttributeImpl();
+    return fadeScrollBarsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClickableAttribute createClickableAttribute()
+  {
+    ClickableAttributeImpl clickableAttribute = new ClickableAttributeImpl();
+    return clickableAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AutoLinkAttribute createAutoLinkAttribute()
+  {
+    AutoLinkAttributeImpl autoLinkAttribute = new AutoLinkAttributeImpl();
+    return autoLinkAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WidthAttribute createWidthAttribute()
+  {
+    WidthAttributeImpl widthAttribute = new WidthAttributeImpl();
+    return widthAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HeightAttribute createHeightAttribute()
+  {
+    HeightAttributeImpl heightAttribute = new HeightAttributeImpl();
+    return heightAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PaddingAttribute createPaddingAttribute()
+  {
+    PaddingAttributeImpl paddingAttribute = new PaddingAttributeImpl();
+    return paddingAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GravityAttribute createGravityAttribute()
+  {
+    GravityAttributeImpl gravityAttribute = new GravityAttributeImpl();
+    return gravityAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextSizeAttribute createTextSizeAttribute()
+  {
+    TextSizeAttributeImpl textSizeAttribute = new TextSizeAttributeImpl();
+    return textSizeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BackgroundAttribute createBackgroundAttribute()
+  {
+    BackgroundAttributeImpl backgroundAttribute = new BackgroundAttributeImpl();
+    return backgroundAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ColumnWidthAttribute createColumnWidthAttribute()
+  {
+    ColumnWidthAttributeImpl columnWidthAttribute = new ColumnWidthAttributeImpl();
+    return columnWidthAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HorizontalSpacingAttribute createHorizontalSpacingAttribute()
+  {
+    HorizontalSpacingAttributeImpl horizontalSpacingAttribute = new HorizontalSpacingAttributeImpl();
+    return horizontalSpacingAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumColumnsAttribute createNumColumnsAttribute()
+  {
+    NumColumnsAttributeImpl numColumnsAttribute = new NumColumnsAttributeImpl();
+    return numColumnsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StretchModeAttribute createStretchModeAttribute()
+  {
+    StretchModeAttributeImpl stretchModeAttribute = new StretchModeAttributeImpl();
+    return stretchModeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerticalSpacingAttribute createVerticalSpacingAttribute()
+  {
+    VerticalSpacingAttributeImpl verticalSpacingAttribute = new VerticalSpacingAttributeImpl();
+    return verticalSpacingAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EntriesAttribute createEntriesAttribute()
+  {
+    EntriesAttributeImpl entriesAttribute = new EntriesAttributeImpl();
+    return entriesAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StretchColumnsAttribute createStretchColumnsAttribute()
+  {
+    StretchColumnsAttributeImpl stretchColumnsAttribute = new StretchColumnsAttributeImpl();
+    return stretchColumnsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ShrinkColumnsAttribute createShrinkColumnsAttribute()
+  {
+    ShrinkColumnsAttributeImpl shrinkColumnsAttribute = new ShrinkColumnsAttributeImpl();
+    return shrinkColumnsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CollapseColumnsAttribute createCollapseColumnsAttribute()
+  {
+    CollapseColumnsAttributeImpl collapseColumnsAttribute = new CollapseColumnsAttributeImpl();
+    return collapseColumnsAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AndroResModelRoot createAndroResModelRoot()
   {
     AndroResModelRootImpl androResModelRoot = new AndroResModelRootImpl();
@@ -1128,17 +1691,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     DrawableResourceLinkImpl drawableResourceLink = new DrawableResourceLinkImpl();
     return drawableResourceLink;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LocalDrawableResourceLink createLocalDrawableResourceLink()
-  {
-    LocalDrawableResourceLinkImpl localDrawableResourceLink = new LocalDrawableResourceLinkImpl();
-    return localDrawableResourceLink;
   }
 
   /**
@@ -1443,9 +1995,9 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public LayoutGravityKind createLayoutGravityKindFromString(EDataType eDataType, String initialValue)
+  public NumericKind createNumericKindFromString(EDataType eDataType, String initialValue)
   {
-    LayoutGravityKind result = LayoutGravityKind.get(initialValue);
+    NumericKind result = NumericKind.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -1455,7 +2007,139 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertLayoutGravityKindToString(EDataType eDataType, Object instanceValue)
+  public String convertNumericKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypefaceKind createTypefaceKindFromString(EDataType eDataType, String initialValue)
+  {
+    TypefaceKind result = TypefaceKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTypefaceKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextStyleKind createTextStyleKindFromString(EDataType eDataType, String initialValue)
+  {
+    TextStyleKind result = TextStyleKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTextStyleKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CapitalizeKind createCapitalizeKindFromString(EDataType eDataType, String initialValue)
+  {
+    CapitalizeKind result = CapitalizeKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertCapitalizeKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AutoLinkKind createAutoLinkKindFromString(EDataType eDataType, String initialValue)
+  {
+    AutoLinkKind result = AutoLinkKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertAutoLinkKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StretchModeKind createStretchModeKindFromString(EDataType eDataType, String initialValue)
+  {
+    StretchModeKind result = StretchModeKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertStretchModeKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GravityKind createGravityKindFromString(EDataType eDataType, String initialValue)
+  {
+    GravityKind result = GravityKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertGravityKindToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

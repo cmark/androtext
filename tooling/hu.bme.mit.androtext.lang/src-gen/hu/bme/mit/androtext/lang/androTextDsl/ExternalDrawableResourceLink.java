@@ -23,7 +23,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface ExternalDrawableResourceLink extends DrawableResourceLink
+public interface ExternalDrawableResourceLink extends AnyDrawablePropertyValue
 {
   /**
    * Returns the value of the '<em><b>External Resource</b></em>' attribute.

@@ -68,7 +68,7 @@ public class IntegerPropertyValueImpl extends PropertyValueImpl implements Integ
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.INTEGER_PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getIntegerPropertyValue();
   }
 
   /**

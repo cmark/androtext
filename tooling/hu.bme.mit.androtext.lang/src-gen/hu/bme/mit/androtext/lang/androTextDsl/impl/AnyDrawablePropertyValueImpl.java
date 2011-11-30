@@ -40,7 +40,7 @@ public class AnyDrawablePropertyValueImpl extends PropertyValueImpl implements A
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ANY_DRAWABLE_PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getAnyDrawablePropertyValue();
   }
 
 } //AnyDrawablePropertyValueImpl

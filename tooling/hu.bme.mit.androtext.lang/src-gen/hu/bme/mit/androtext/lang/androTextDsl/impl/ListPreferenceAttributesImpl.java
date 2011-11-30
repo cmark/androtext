@@ -7,10 +7,12 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
+import hu.bme.mit.androtext.lang.androTextDsl.EntriesAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreferenceAttributes;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayEntry;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -25,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceAttributesImpl#getEntries <em>Entries</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceAttributesImpl#getEntriesAttribute <em>Entries Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListPreferenceAttributesImpl#getEntryValues <em>Entry Values</em>}</li>
  * </ul>
  * </p>
@@ -35,14 +37,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container implements ListPreferenceAttributes
 {
   /**
-   * The cached value of the '{@link #getEntries() <em>Entries</em>}' reference.
+   * The cached value of the '{@link #getEntriesAttribute() <em>Entries Attribute</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEntries()
+   * @see #getEntriesAttribute()
    * @generated
    * @ordered
    */
-  protected StringArrayEntry entries;
+  protected EntriesAttribute entriesAttribute;
 
   /**
    * The cached value of the '{@link #getEntryValues() <em>Entry Values</em>}' reference.
@@ -72,7 +74,7 @@ public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container i
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.LIST_PREFERENCE_ATTRIBUTES;
+    return AndroTextDslPackage.eINSTANCE.getListPreferenceAttributes();
   }
 
   /**
@@ -80,19 +82,9 @@ public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringArrayEntry getEntries()
+  public EntriesAttribute getEntriesAttribute()
   {
-    if (entries != null && entries.eIsProxy())
-    {
-      InternalEObject oldEntries = (InternalEObject)entries;
-      entries = (StringArrayEntry)eResolveProxy(oldEntries);
-      if (entries != oldEntries)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES, oldEntries, entries));
-      }
-    }
-    return entries;
+    return entriesAttribute;
   }
 
   /**
@@ -100,22 +92,37 @@ public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringArrayEntry basicGetEntries()
+  public NotificationChain basicSetEntriesAttribute(EntriesAttribute newEntriesAttribute, NotificationChain msgs)
   {
-    return entries;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEntries(StringArrayEntry newEntries)
-  {
-    StringArrayEntry oldEntries = entries;
-    entries = newEntries;
+    EntriesAttribute oldEntriesAttribute = entriesAttribute;
+    entriesAttribute = newEntriesAttribute;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES, oldEntries, entries));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE, oldEntriesAttribute, newEntriesAttribute);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEntriesAttribute(EntriesAttribute newEntriesAttribute)
+  {
+    if (newEntriesAttribute != entriesAttribute)
+    {
+      NotificationChain msgs = null;
+      if (entriesAttribute != null)
+        msgs = ((InternalEObject)entriesAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE, null, msgs);
+      if (newEntriesAttribute != null)
+        msgs = ((InternalEObject)newEntriesAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE, null, msgs);
+      msgs = basicSetEntriesAttribute(newEntriesAttribute, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE, newEntriesAttribute, newEntriesAttribute));
   }
 
   /**
@@ -167,13 +174,28 @@ public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container i
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE:
+        return basicSetEntriesAttribute(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES:
-        if (resolve) return getEntries();
-        return basicGetEntries();
+      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE:
+        return getEntriesAttribute();
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES:
         if (resolve) return getEntryValues();
         return basicGetEntryValues();
@@ -191,8 +213,8 @@ public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES:
-        setEntries((StringArrayEntry)newValue);
+      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE:
+        setEntriesAttribute((EntriesAttribute)newValue);
         return;
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES:
         setEntryValues((StringArrayEntry)newValue);
@@ -211,8 +233,8 @@ public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES:
-        setEntries((StringArrayEntry)null);
+      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE:
+        setEntriesAttribute((EntriesAttribute)null);
         return;
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES:
         setEntryValues((StringArrayEntry)null);
@@ -231,8 +253,8 @@ public class ListPreferenceAttributesImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES:
-        return entries != null;
+      case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRIES_ATTRIBUTE:
+        return entriesAttribute != null;
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES__ENTRY_VALUES:
         return entryValues != null;
     }

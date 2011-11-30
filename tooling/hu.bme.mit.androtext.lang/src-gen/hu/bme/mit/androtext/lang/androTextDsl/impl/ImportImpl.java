@@ -69,7 +69,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.IMPORT;
+    return AndroTextDslPackage.eINSTANCE.getImport();
   }
 
   /**

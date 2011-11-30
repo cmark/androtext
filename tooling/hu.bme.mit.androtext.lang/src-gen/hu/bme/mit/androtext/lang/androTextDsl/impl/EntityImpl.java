@@ -101,7 +101,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ENTITY;
+    return AndroTextDslPackage.eINSTANCE.getEntity();
   }
 
   /**

@@ -40,7 +40,7 @@ public class AbsoluteLayoutImpl extends ViewGroupImpl implements AbsoluteLayout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ABSOLUTE_LAYOUT;
+    return AndroTextDslPackage.eINSTANCE.getAbsoluteLayout();
   }
 
 } //AbsoluteLayoutImpl

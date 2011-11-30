@@ -69,7 +69,7 @@ public class AndroidApplicationModelElementImpl extends MinimalEObjectImpl.Conta
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.ANDROID_APPLICATION_MODEL_ELEMENT;
+    return AndroTextDslPackage.eINSTANCE.getAndroidApplicationModelElement();
   }
 
   /**

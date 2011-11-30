@@ -111,7 +111,7 @@ public class PreferenceAttributesImpl extends MinimalEObjectImpl.Container imple
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PREFERENCE_ATTRIBUTES;
+    return AndroTextDslPackage.eINSTANCE.getPreferenceAttributes();
   }
 
   /**

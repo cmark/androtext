@@ -71,7 +71,7 @@ public class TransitionDrawableResourceImpl extends DrawableResourceImpl impleme
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TRANSITION_DRAWABLE_RESOURCE;
+    return AndroTextDslPackage.eINSTANCE.getTransitionDrawableResource();
   }
 
   /**

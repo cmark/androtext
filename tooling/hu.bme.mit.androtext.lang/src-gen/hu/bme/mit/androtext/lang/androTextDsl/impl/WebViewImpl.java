@@ -40,7 +40,7 @@ public class WebViewImpl extends SimpleViewImpl implements WebView
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.WEB_VIEW;
+    return AndroTextDslPackage.eINSTANCE.getWebView();
   }
 
 } //WebViewImpl

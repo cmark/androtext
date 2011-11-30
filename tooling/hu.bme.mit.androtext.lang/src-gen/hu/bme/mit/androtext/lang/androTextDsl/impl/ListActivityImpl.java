@@ -73,7 +73,7 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.LIST_ACTIVITY;
+    return AndroTextDslPackage.eINSTANCE.getListActivity();
   }
 
   /**

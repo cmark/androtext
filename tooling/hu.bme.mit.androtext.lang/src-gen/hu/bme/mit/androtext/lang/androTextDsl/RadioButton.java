@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getText <em>Text</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getLayoutStyle <em>Layout Style</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getLayoutProperties <em>Layout Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -105,5 +106,31 @@ public interface RadioButton extends EObject
    * @generated
    */
   void setLayoutStyle(LayoutStyle value);
+
+  /**
+   * Returns the value of the '<em><b>Layout Properties</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Layout Properties</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Layout Properties</em>' reference.
+   * @see #setLayoutProperties(LayoutProperties)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getRadioButton_LayoutProperties()
+   * @model
+   * @generated
+   */
+  LayoutProperties getLayoutProperties();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.RadioButton#getLayoutProperties <em>Layout Properties</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Layout Properties</em>' reference.
+   * @see #getLayoutProperties()
+   * @generated
+   */
+  void setLayoutProperties(LayoutProperties value);
 
 } // RadioButton

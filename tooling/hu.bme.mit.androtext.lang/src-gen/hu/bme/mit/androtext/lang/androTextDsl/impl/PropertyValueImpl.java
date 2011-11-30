@@ -42,7 +42,7 @@ public class PropertyValueImpl extends MinimalEObjectImpl.Container implements P
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.PROPERTY_VALUE;
+    return AndroTextDslPackage.eINSTANCE.getPropertyValue();
   }
 
 } //PropertyValueImpl

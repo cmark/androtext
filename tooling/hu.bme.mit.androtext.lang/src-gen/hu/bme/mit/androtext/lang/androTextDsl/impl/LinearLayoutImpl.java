@@ -7,8 +7,8 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
+import hu.bme.mit.androtext.lang.androTextDsl.GravityAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
-import hu.bme.mit.androtext.lang.androTextDsl.LinearLayoutParams;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutImpl#isVertical <em>Vertical</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutImpl#getLayoutParams <em>Layout Params</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LinearLayoutImpl#getGravity <em>Gravity</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,14 +55,14 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
   protected boolean vertical = VERTICAL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getLayoutParams() <em>Layout Params</em>}' containment reference.
+   * The cached value of the '{@link #getGravity() <em>Gravity</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLayoutParams()
+   * @see #getGravity()
    * @generated
    * @ordered
    */
-  protected LinearLayoutParams layoutParams;
+  protected GravityAttribute gravity;
 
   /**
    * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.LINEAR_LAYOUT;
+    return AndroTextDslPackage.eINSTANCE.getLinearLayout();
   }
 
   /**
@@ -113,9 +113,9 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public LinearLayoutParams getLayoutParams()
+  public GravityAttribute getGravity()
   {
-    return layoutParams;
+    return gravity;
   }
 
   /**
@@ -123,13 +123,13 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLayoutParams(LinearLayoutParams newLayoutParams, NotificationChain msgs)
+  public NotificationChain basicSetGravity(GravityAttribute newGravity, NotificationChain msgs)
   {
-    LinearLayoutParams oldLayoutParams = layoutParams;
-    layoutParams = newLayoutParams;
+    GravityAttribute oldGravity = gravity;
+    gravity = newGravity;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS, oldLayoutParams, newLayoutParams);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY, oldGravity, newGravity);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -140,20 +140,20 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLayoutParams(LinearLayoutParams newLayoutParams)
+  public void setGravity(GravityAttribute newGravity)
   {
-    if (newLayoutParams != layoutParams)
+    if (newGravity != gravity)
     {
       NotificationChain msgs = null;
-      if (layoutParams != null)
-        msgs = ((InternalEObject)layoutParams).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS, null, msgs);
-      if (newLayoutParams != null)
-        msgs = ((InternalEObject)newLayoutParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS, null, msgs);
-      msgs = basicSetLayoutParams(newLayoutParams, msgs);
+      if (gravity != null)
+        msgs = ((InternalEObject)gravity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY, null, msgs);
+      if (newGravity != null)
+        msgs = ((InternalEObject)newGravity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY, null, msgs);
+      msgs = basicSetGravity(newGravity, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS, newLayoutParams, newLayoutParams));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY, newGravity, newGravity));
   }
 
   /**
@@ -166,8 +166,8 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
   {
     switch (featureID)
     {
-      case AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS:
-        return basicSetLayoutParams(null, msgs);
+      case AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY:
+        return basicSetGravity(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -184,8 +184,8 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
     {
       case AndroTextDslPackage.LINEAR_LAYOUT__VERTICAL:
         return isVertical();
-      case AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS:
-        return getLayoutParams();
+      case AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY:
+        return getGravity();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -203,8 +203,8 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
       case AndroTextDslPackage.LINEAR_LAYOUT__VERTICAL:
         setVertical((Boolean)newValue);
         return;
-      case AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS:
-        setLayoutParams((LinearLayoutParams)newValue);
+      case AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY:
+        setGravity((GravityAttribute)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -223,8 +223,8 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
       case AndroTextDslPackage.LINEAR_LAYOUT__VERTICAL:
         setVertical(VERTICAL_EDEFAULT);
         return;
-      case AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS:
-        setLayoutParams((LinearLayoutParams)null);
+      case AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY:
+        setGravity((GravityAttribute)null);
         return;
     }
     super.eUnset(featureID);
@@ -242,8 +242,8 @@ public class LinearLayoutImpl extends ViewGroupImpl implements LinearLayout
     {
       case AndroTextDslPackage.LINEAR_LAYOUT__VERTICAL:
         return vertical != VERTICAL_EDEFAULT;
-      case AndroTextDslPackage.LINEAR_LAYOUT__LAYOUT_PARAMS:
-        return layoutParams != null;
+      case AndroTextDslPackage.LINEAR_LAYOUT__GRAVITY:
+        return gravity != null;
     }
     return super.eIsSet(featureID);
   }

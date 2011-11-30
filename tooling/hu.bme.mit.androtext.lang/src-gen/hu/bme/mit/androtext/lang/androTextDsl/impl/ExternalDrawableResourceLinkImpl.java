@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ExternalDrawableResourceLinkImpl extends DrawableResourceLinkImpl implements ExternalDrawableResourceLink
+public class ExternalDrawableResourceLinkImpl extends AnyDrawablePropertyValueImpl implements ExternalDrawableResourceLink
 {
   /**
    * The default value of the '{@link #getExternalResource() <em>External Resource</em>}' attribute.
@@ -39,7 +39,7 @@ public class ExternalDrawableResourceLinkImpl extends DrawableResourceLinkImpl i
    * @generated
    * @ordered
    */
-  protected static final AndroidDrawableResource EXTERNAL_RESOURCE_EDEFAULT = AndroidDrawableResource.ANDROID_EDITBOX_BACKGROUND;
+  protected static final AndroidDrawableResource EXTERNAL_RESOURCE_EDEFAULT = AndroidDrawableResource.EDIT_TEXT;
 
   /**
    * The cached value of the '{@link #getExternalResource() <em>External Resource</em>}' attribute.
@@ -69,7 +69,7 @@ public class ExternalDrawableResourceLinkImpl extends DrawableResourceLinkImpl i
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.EXTERNAL_DRAWABLE_RESOURCE_LINK;
+    return AndroTextDslPackage.eINSTANCE.getExternalDrawableResourceLink();
   }
 
   /**

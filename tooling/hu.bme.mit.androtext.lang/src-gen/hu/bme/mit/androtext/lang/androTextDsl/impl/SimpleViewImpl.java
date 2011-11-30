@@ -40,7 +40,7 @@ public class SimpleViewImpl extends ViewImpl implements SimpleView
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.SIMPLE_VIEW;
+    return AndroTextDslPackage.eINSTANCE.getSimpleView();
   }
 
 } //SimpleViewImpl

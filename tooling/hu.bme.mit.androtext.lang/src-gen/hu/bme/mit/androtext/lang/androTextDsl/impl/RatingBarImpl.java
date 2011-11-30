@@ -7,11 +7,14 @@
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
+import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.RatingBar;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -31,24 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class RatingBarImpl extends SimpleViewImpl implements RatingBar
 {
   /**
-   * The default value of the '{@link #getNumStars() <em>Num Stars</em>}' attribute.
+   * The cached value of the '{@link #getNumStars() <em>Num Stars</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNumStars()
    * @generated
    * @ordered
    */
-  protected static final int NUM_STARS_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getNumStars() <em>Num Stars</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNumStars()
-   * @generated
-   * @ordered
-   */
-  protected int numStars = NUM_STARS_EDEFAULT;
+  protected IntegerPropertyValue numStars;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +61,7 @@ public class RatingBarImpl extends SimpleViewImpl implements RatingBar
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.RATING_BAR;
+    return AndroTextDslPackage.eINSTANCE.getRatingBar();
   }
 
   /**
@@ -76,7 +69,7 @@ public class RatingBarImpl extends SimpleViewImpl implements RatingBar
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getNumStars()
+  public IntegerPropertyValue getNumStars()
   {
     return numStars;
   }
@@ -86,12 +79,53 @@ public class RatingBarImpl extends SimpleViewImpl implements RatingBar
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNumStars(int newNumStars)
+  public NotificationChain basicSetNumStars(IntegerPropertyValue newNumStars, NotificationChain msgs)
   {
-    int oldNumStars = numStars;
+    IntegerPropertyValue oldNumStars = numStars;
     numStars = newNumStars;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.RATING_BAR__NUM_STARS, oldNumStars, numStars));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.RATING_BAR__NUM_STARS, oldNumStars, newNumStars);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNumStars(IntegerPropertyValue newNumStars)
+  {
+    if (newNumStars != numStars)
+    {
+      NotificationChain msgs = null;
+      if (numStars != null)
+        msgs = ((InternalEObject)numStars).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.RATING_BAR__NUM_STARS, null, msgs);
+      if (newNumStars != null)
+        msgs = ((InternalEObject)newNumStars).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.RATING_BAR__NUM_STARS, null, msgs);
+      msgs = basicSetNumStars(newNumStars, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.RATING_BAR__NUM_STARS, newNumStars, newNumStars));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AndroTextDslPackage.RATING_BAR__NUM_STARS:
+        return basicSetNumStars(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -121,7 +155,7 @@ public class RatingBarImpl extends SimpleViewImpl implements RatingBar
     switch (featureID)
     {
       case AndroTextDslPackage.RATING_BAR__NUM_STARS:
-        setNumStars((Integer)newValue);
+        setNumStars((IntegerPropertyValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,7 +172,7 @@ public class RatingBarImpl extends SimpleViewImpl implements RatingBar
     switch (featureID)
     {
       case AndroTextDslPackage.RATING_BAR__NUM_STARS:
-        setNumStars(NUM_STARS_EDEFAULT);
+        setNumStars((IntegerPropertyValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -155,26 +189,9 @@ public class RatingBarImpl extends SimpleViewImpl implements RatingBar
     switch (featureID)
     {
       case AndroTextDslPackage.RATING_BAR__NUM_STARS:
-        return numStars != NUM_STARS_EDEFAULT;
+        return numStars != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (numStars: ");
-    result.append(numStars);
-    result.append(')');
-    return result.toString();
   }
 
 } //RatingBarImpl

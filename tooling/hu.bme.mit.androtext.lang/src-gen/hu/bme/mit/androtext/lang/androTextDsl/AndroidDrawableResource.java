@@ -24,29 +24,129 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum AndroidDrawableResource implements Enumerator
 {
   /**
-   * The '<em><b>Android editbox background</b></em>' literal object.
+   * The '<em><b>Edit text</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #ANDROID_EDITBOX_BACKGROUND_VALUE
+   * @see #EDIT_TEXT_VALUE
    * @generated
    * @ordered
    */
-  ANDROID_EDITBOX_BACKGROUND(0, "android_editbox_background", "android_editbox_background");
+  EDIT_TEXT(0, "edit_text", "edit_text"),
 
   /**
-   * The '<em><b>Android editbox background</b></em>' literal value.
+   * The '<em><b>Editbox background</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_BACKGROUND_VALUE
+   * @generated
+   * @ordered
+   */
+  EDITBOX_BACKGROUND(1, "editbox_background", "editbox_background"),
+
+  /**
+   * The '<em><b>Editbox background normal</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_BACKGROUND_NORMAL_VALUE
+   * @generated
+   * @ordered
+   */
+  EDITBOX_BACKGROUND_NORMAL(2, "editbox_background_normal", "editbox_background_normal"),
+
+  /**
+   * The '<em><b>Editbox dropdown dark frame</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_DROPDOWN_DARK_FRAME_VALUE
+   * @generated
+   * @ordered
+   */
+  EDITBOX_DROPDOWN_DARK_FRAME(3, "editbox_dropdown_dark_frame", "editbox_dropdown_dark_frame"),
+
+  /**
+   * The '<em><b>Editbox dropdown light frame</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_DROPDOWN_LIGHT_FRAME_VALUE
+   * @generated
+   * @ordered
+   */
+  EDITBOX_DROPDOWN_LIGHT_FRAME(4, "editbox_dropdown_light_frame", "editbox_dropdown_light_frame");
+
+  /**
+   * The '<em><b>Edit text</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Android editbox background</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>Edit text</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #ANDROID_EDITBOX_BACKGROUND
-   * @model name="android_editbox_background"
+   * @see #EDIT_TEXT
+   * @model name="edit_text"
    * @generated
    * @ordered
    */
-  public static final int ANDROID_EDITBOX_BACKGROUND_VALUE = 0;
+  public static final int EDIT_TEXT_VALUE = 0;
+
+  /**
+   * The '<em><b>Editbox background</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Editbox background</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_BACKGROUND
+   * @model name="editbox_background"
+   * @generated
+   * @ordered
+   */
+  public static final int EDITBOX_BACKGROUND_VALUE = 1;
+
+  /**
+   * The '<em><b>Editbox background normal</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Editbox background normal</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_BACKGROUND_NORMAL
+   * @model name="editbox_background_normal"
+   * @generated
+   * @ordered
+   */
+  public static final int EDITBOX_BACKGROUND_NORMAL_VALUE = 2;
+
+  /**
+   * The '<em><b>Editbox dropdown dark frame</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Editbox dropdown dark frame</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_DROPDOWN_DARK_FRAME
+   * @model name="editbox_dropdown_dark_frame"
+   * @generated
+   * @ordered
+   */
+  public static final int EDITBOX_DROPDOWN_DARK_FRAME_VALUE = 3;
+
+  /**
+   * The '<em><b>Editbox dropdown light frame</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Editbox dropdown light frame</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #EDITBOX_DROPDOWN_LIGHT_FRAME
+   * @model name="editbox_dropdown_light_frame"
+   * @generated
+   * @ordered
+   */
+  public static final int EDITBOX_DROPDOWN_LIGHT_FRAME_VALUE = 4;
 
   /**
    * An array of all the '<em><b>Android Drawable Resource</b></em>' enumerators.
@@ -57,7 +157,11 @@ public enum AndroidDrawableResource implements Enumerator
   private static final AndroidDrawableResource[] VALUES_ARRAY =
     new AndroidDrawableResource[]
     {
-      ANDROID_EDITBOX_BACKGROUND,
+      EDIT_TEXT,
+      EDITBOX_BACKGROUND,
+      EDITBOX_BACKGROUND_NORMAL,
+      EDITBOX_DROPDOWN_DARK_FRAME,
+      EDITBOX_DROPDOWN_LIGHT_FRAME,
     };
 
   /**
@@ -116,7 +220,11 @@ public enum AndroidDrawableResource implements Enumerator
   {
     switch (value)
     {
-      case ANDROID_EDITBOX_BACKGROUND_VALUE: return ANDROID_EDITBOX_BACKGROUND;
+      case EDIT_TEXT_VALUE: return EDIT_TEXT;
+      case EDITBOX_BACKGROUND_VALUE: return EDITBOX_BACKGROUND;
+      case EDITBOX_BACKGROUND_NORMAL_VALUE: return EDITBOX_BACKGROUND_NORMAL;
+      case EDITBOX_DROPDOWN_DARK_FRAME_VALUE: return EDITBOX_DROPDOWN_DARK_FRAME;
+      case EDITBOX_DROPDOWN_LIGHT_FRAME_VALUE: return EDITBOX_DROPDOWN_LIGHT_FRAME;
     }
     return null;
   }

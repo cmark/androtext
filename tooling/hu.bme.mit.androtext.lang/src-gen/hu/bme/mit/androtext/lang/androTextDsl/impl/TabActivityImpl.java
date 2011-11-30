@@ -65,7 +65,7 @@ public class TabActivityImpl extends ActivityImpl implements TabActivity
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TAB_ACTIVITY;
+    return AndroTextDslPackage.eINSTANCE.getTabActivity();
   }
 
   /**

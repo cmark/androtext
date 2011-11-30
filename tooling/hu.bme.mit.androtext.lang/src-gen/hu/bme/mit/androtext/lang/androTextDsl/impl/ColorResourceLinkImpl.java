@@ -60,7 +60,7 @@ public class ColorResourceLinkImpl extends ColorPropertyValueImpl implements Col
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.COLOR_RESOURCE_LINK;
+    return AndroTextDslPackage.eINSTANCE.getColorResourceLink();
   }
 
   /**

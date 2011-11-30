@@ -146,7 +146,7 @@ public class TargetApplicationImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return AndroTextDslPackage.Literals.TARGET_APPLICATION;
+    return AndroTextDslPackage.eINSTANCE.getTargetApplication();
   }
 
   /**
