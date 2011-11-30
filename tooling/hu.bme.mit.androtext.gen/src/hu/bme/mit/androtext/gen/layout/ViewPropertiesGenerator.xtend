@@ -55,7 +55,7 @@ class ViewPropertiesGenerator {
 	
 	def generate(BackgroundAttribute attribute) '''
 		«IF attribute != null»
-		android:background="«attribute.background.backgroundValue»"
+		android:background="«attribute.background.backgroundValue.toString.trim»"
 		«ENDIF»
 	'''
 	
