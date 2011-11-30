@@ -2,26 +2,30 @@ guimodel HelloRelativeLayoutExampleGui {
 	
 	relativelayout relativeLayout fill {
 		
-		textview label "Type here:" fill&wrap
+		textview label "Type here:" fill&wrap {}
 		
 		edittext entry fill&wrap {
-			background android_editbox_background
-			below label
+			background editbox_background
 		}
 		
-		button ok "OK" wrap 
-		{
-			marginLeft 10dp
-			alignParentRight true
-			below entry
-		}
+		button ok "OK" wrap  {}		
+		button cancel "Cancel" wrap {}
 		
-		button cancel "Cancel" wrap 
-		{
-			toLeftOf ok 
-			alignTop ok	
-		}
-		
+	}
+	
+	layoutProperties entryLayout {
+		below relativeLayout.label
+	}
+	
+	layoutProperties okLayout {
+		marginLeft 10dp
+		alignParentRight true
+		below relativeLayout.entry
+	}
+	
+	layoutProperties cancelLayout {
+		toLeftOf relativeLayout.ok
+		alignTop relativeLayout.ok
 	}
 	
 }

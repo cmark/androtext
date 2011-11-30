@@ -1,0 +1,12 @@
+guimodel HelloGridViewGui {
+	
+	gridview gridView fill {
+		numColumns autofit
+		horizontalSpacing 10dp
+		verticalSpacing 10dp
+		columnWidth 90dp
+		stretchMode columnWidth
+		gravity center
+	}
+	
+}

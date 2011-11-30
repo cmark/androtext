@@ -1,0 +1,7 @@
+application HelloGridView {
+	
+	activity HelloGridViewActivity layout HelloGridViewGui.gridView
+	// in the generated class HelloGridViewActivity load the GridView contents, like in the Hello GridView article
+	// http://developer.android.com/guide/tutorials/views/hello-gridview.html
+	
+}

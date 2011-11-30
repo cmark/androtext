@@ -1,43 +1,39 @@
 generator ExampleGenerators {
 	
 	target HelloWorld {
-		
 		project hu.bme.mit.androtext.examples.helloworld
 		platform Android 2.3.3
 		version 1.0
-		
 	}
 	
 	target HelloLinearLayout {
-		
 		project hu.bme.mit.androtext.examples.hellolinearlayout
 		platform Android 2.3.3
 		version 1.0
-		
 	}
 	
 	target HelloRelativeLayoutExample {
-		
 		project hu.bme.mit.androtext.examples.hellorelativelayout
 		platform Android 2.3.3
 		version 1.0
-		
 	}
 	
 	target HelloTableLayout {
-		
 		project hu.bme.mit.androtext.examples.hellotablelayout
 		platform Android 2.3.3
 		version 1.0
-		
 	}
 	
 	target HelloListActivityExample {
-		
 		project hu.bme.mit.androtext.examples.hellolistactivity
 		platform Android 2.3.3
 		version 1.0
-		
+	}
+	
+	target HelloGridView {
+		project hu.bme.mit.androtext.examples.hellogridview
+		platform Android 2.3.3
+		version 1.0	
 	}
 	
 }

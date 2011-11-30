@@ -3,8 +3,7 @@ guimodel HelloTableLayoutGui {
 	tablelayout table fill stretch 1 {  
 		
 		tablerow row1 {
-			textview Name "Open..." {
-				column 1
+			textview Name "Open..." layout columnOneLayout {
 				padding 3dp
 			}
 			textview Name "Ctrl-O" {
@@ -14,8 +13,7 @@ guimodel HelloTableLayoutGui {
 		}
 		
 		tablerow row2 { 
-			textview Name "Save..." {
-				column 1
+			textview Name "Save..." layout columnOneLayout {
 				padding 3dp
 			}
 			textview Name "Ctrl-S" {
@@ -25,8 +23,7 @@ guimodel HelloTableLayoutGui {
 		}
 		
 		tablerow row3 { 
-			textview Name "Save As..." {
-				column 1
+			textview Name "Save As..." layout columnOneLayout {
 				padding 3dp
 			}
 			textview Name "Ctrl-Shift-S" {
@@ -62,12 +59,15 @@ guimodel HelloTableLayoutGui {
 		}
 		
 		tablerow row6 { 
-			textview Name "Quit" {
-				column 1
+			textview Name "Quit" layout columnOneLayout {
 				padding 3dp
 			}
 		}
 		
+	}
+	
+	layoutProperties columnOneLayout {
+		column 1
 	}
 	
 }
