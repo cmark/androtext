@@ -16,6 +16,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getEntriesAttribute <em>Entries Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getListItem <em>List Item</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
@@ -51,6 +52,32 @@ public interface AutoCompleteTextView extends SimpleView
    * @generated
    */
   void setEntriesAttribute(EntriesAttribute value);
+
+  /**
+   * Returns the value of the '<em><b>List Item</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List Item</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List Item</em>' reference.
+   * @see #setListItem(View)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAutoCompleteTextView_ListItem()
+   * @model
+   * @generated
+   */
+  View getListItem();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getListItem <em>List Item</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List Item</em>' reference.
+   * @see #getListItem()
+   * @generated
+   */
+  void setListItem(View value);
 
   /**
    * Returns the value of the '<em><b>Multi</b></em>' containment reference.

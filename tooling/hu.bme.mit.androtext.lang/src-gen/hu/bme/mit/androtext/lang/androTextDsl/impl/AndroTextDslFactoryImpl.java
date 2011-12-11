@@ -218,6 +218,61 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.TRANSITION_DRAWABLE_RESOURCE: return createTransitionDrawableResource();
       case AndroTextDslPackage.TAB_DRAWABLE_RESOURCE: return createTabDrawableResource();
       case AndroTextDslPackage.DIMENSION_VALUE: return createDimensionValue();
+      case AndroTextDslPackage.BASE_GAME_ACTIVITY: return createBaseGameActivity();
+      case AndroTextDslPackage.ANDRO_GAME_ROOT: return createAndroGameRoot();
+      case AndroTextDslPackage.ANDRO_GAME_COMPONENT: return createAndroGameComponent();
+      case AndroTextDslPackage.ANDRO_GAME_GUI: return createAndroGameGui();
+      case AndroTextDslPackage.ANDRO_GAME_LOGIC: return createAndroGameLogic();
+      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC: return createAndroGameBox2DLogic();
+      case AndroTextDslPackage.BOX2_DOPTIONS: return createBox2DOptions();
+      case AndroTextDslPackage.BOX2_DCOMPONENT: return createBox2DComponent();
+      case AndroTextDslPackage.JOINT: return createJoint();
+      case AndroTextDslPackage.REVOLUTE_JOINT: return createRevoluteJoint();
+      case AndroTextDslPackage.DISTANCE_JOINT: return createDistanceJoint();
+      case AndroTextDslPackage.BODY: return createBody();
+      case AndroTextDslPackage.LINE_BODY: return createLineBody();
+      case AndroTextDslPackage.CIRCLE_BODY: return createCircleBody();
+      case AndroTextDslPackage.BOX_BODY: return createBoxBody();
+      case AndroTextDslPackage.FIXTURE: return createFixture();
+      case AndroTextDslPackage.LOGIC_COMPONENT: return createLogicComponent();
+      case AndroTextDslPackage.LOGIC: return createLogic();
+      case AndroTextDslPackage.GAME_ELEMENT: return createGameElement();
+      case AndroTextDslPackage.SCENE: return createScene();
+      case AndroTextDslPackage.MENU_SCENE: return createMenuScene();
+      case AndroTextDslPackage.GAME_BACKGROUND: return createGameBackground();
+      case AndroTextDslPackage.GAME_MENU_ITEM: return createGameMenuItem();
+      case AndroTextDslPackage.GAME_ENTITY: return createGameEntity();
+      case AndroTextDslPackage.SIMPLE_ENTITY: return createSimpleEntity();
+      case AndroTextDslPackage.MODIFIER_BINDING: return createModifierBinding();
+      case AndroTextDslPackage.ENTITY_MODIFIER: return createEntityModifier();
+      case AndroTextDslPackage.SEQUENCE_ENTITY_MODIFIER: return createSequenceEntityModifier();
+      case AndroTextDslPackage.LOOP_ENTITY_MODIFIER: return createLoopEntityModifier();
+      case AndroTextDslPackage.MOVE_MODIFIER: return createMoveModifier();
+      case AndroTextDslPackage.MOVE_BY_MODIFIER: return createMoveByModifier();
+      case AndroTextDslPackage.SCALE_MODIFIER: return createScaleModifier();
+      case AndroTextDslPackage.ALPHA_MODIFIER: return createAlphaModifier();
+      case AndroTextDslPackage.ROTATION_BY_MODIFIER: return createRotationByModifier();
+      case AndroTextDslPackage.ROTATION_MODIFIER: return createRotationModifier();
+      case AndroTextDslPackage.COLOR_MODIFIER: return createColorModifier();
+      case AndroTextDslPackage.TO_TRIPLE: return createToTriple();
+      case AndroTextDslPackage.FROM_TRIPLE: return createFromTriple();
+      case AndroTextDslPackage.TO_DOUBLE: return createToDouble();
+      case AndroTextDslPackage.FROM_DOUBLE: return createFromDouble();
+      case AndroTextDslPackage.TO_SINGLE: return createToSingle();
+      case AndroTextDslPackage.FROM_SINGLE: return createFromSingle();
+      case AndroTextDslPackage.BY_DOUBLE: return createByDouble();
+      case AndroTextDslPackage.BY_SINGLE: return createBySingle();
+      case AndroTextDslPackage.LINE: return createLine();
+      case AndroTextDslPackage.TEXT: return createText();
+      case AndroTextDslPackage.RECTANGLE: return createRectangle();
+      case AndroTextDslPackage.SPRITE: return createSprite();
+      case AndroTextDslPackage.ANIMATED_SPRITE: return createAnimatedSprite();
+      case AndroTextDslPackage.COLOR: return createColor();
+      case AndroTextDslPackage.POSITION: return createPosition();
+      case AndroTextDslPackage.SIZE: return createSize();
+      case AndroTextDslPackage.TEXTURE_REGION: return createTextureRegion();
+      case AndroTextDslPackage.TILED: return createTiled();
+      case AndroTextDslPackage.FONT: return createFont();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -261,6 +316,16 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return createAndroidDrawableResourceFromString(eDataType, initialValue);
       case AndroTextDslPackage.DIMENSION_METRIC:
         return createDimensionMetricFromString(eDataType, initialValue);
+      case AndroTextDslPackage.BODY_TYPE:
+        return createBodyTypeFromString(eDataType, initialValue);
+      case AndroTextDslPackage.CONSTANT_COLOR:
+        return createConstantColorFromString(eDataType, initialValue);
+      case AndroTextDslPackage.HORIZONTAL_ALIGN:
+        return createHorizontalAlignFromString(eDataType, initialValue);
+      case AndroTextDslPackage.FONT_TYPE:
+        return createFontTypeFromString(eDataType, initialValue);
+      case AndroTextDslPackage.SCREEN_ORIENTATION:
+        return createScreenOrientationFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -304,6 +369,16 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return convertAndroidDrawableResourceToString(eDataType, instanceValue);
       case AndroTextDslPackage.DIMENSION_METRIC:
         return convertDimensionMetricToString(eDataType, instanceValue);
+      case AndroTextDslPackage.BODY_TYPE:
+        return convertBodyTypeToString(eDataType, instanceValue);
+      case AndroTextDslPackage.CONSTANT_COLOR:
+        return convertConstantColorToString(eDataType, instanceValue);
+      case AndroTextDslPackage.HORIZONTAL_ALIGN:
+        return convertHorizontalAlignToString(eDataType, instanceValue);
+      case AndroTextDslPackage.FONT_TYPE:
+        return convertFontTypeToString(eDataType, instanceValue);
+      case AndroTextDslPackage.SCREEN_ORIENTATION:
+        return convertScreenOrientationToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -1953,6 +2028,611 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public BaseGameActivity createBaseGameActivity()
+  {
+    BaseGameActivityImpl baseGameActivity = new BaseGameActivityImpl();
+    return baseGameActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndroGameRoot createAndroGameRoot()
+  {
+    AndroGameRootImpl androGameRoot = new AndroGameRootImpl();
+    return androGameRoot;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndroGameComponent createAndroGameComponent()
+  {
+    AndroGameComponentImpl androGameComponent = new AndroGameComponentImpl();
+    return androGameComponent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndroGameGui createAndroGameGui()
+  {
+    AndroGameGuiImpl androGameGui = new AndroGameGuiImpl();
+    return androGameGui;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndroGameLogic createAndroGameLogic()
+  {
+    AndroGameLogicImpl androGameLogic = new AndroGameLogicImpl();
+    return androGameLogic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndroGameBox2DLogic createAndroGameBox2DLogic()
+  {
+    AndroGameBox2DLogicImpl androGameBox2DLogic = new AndroGameBox2DLogicImpl();
+    return androGameBox2DLogic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Box2DOptions createBox2DOptions()
+  {
+    Box2DOptionsImpl box2DOptions = new Box2DOptionsImpl();
+    return box2DOptions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Box2DComponent createBox2DComponent()
+  {
+    Box2DComponentImpl box2DComponent = new Box2DComponentImpl();
+    return box2DComponent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Joint createJoint()
+  {
+    JointImpl joint = new JointImpl();
+    return joint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RevoluteJoint createRevoluteJoint()
+  {
+    RevoluteJointImpl revoluteJoint = new RevoluteJointImpl();
+    return revoluteJoint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DistanceJoint createDistanceJoint()
+  {
+    DistanceJointImpl distanceJoint = new DistanceJointImpl();
+    return distanceJoint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Body createBody()
+  {
+    BodyImpl body = new BodyImpl();
+    return body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LineBody createLineBody()
+  {
+    LineBodyImpl lineBody = new LineBodyImpl();
+    return lineBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CircleBody createCircleBody()
+  {
+    CircleBodyImpl circleBody = new CircleBodyImpl();
+    return circleBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BoxBody createBoxBody()
+  {
+    BoxBodyImpl boxBody = new BoxBodyImpl();
+    return boxBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Fixture createFixture()
+  {
+    FixtureImpl fixture = new FixtureImpl();
+    return fixture;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LogicComponent createLogicComponent()
+  {
+    LogicComponentImpl logicComponent = new LogicComponentImpl();
+    return logicComponent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Logic createLogic()
+  {
+    LogicImpl logic = new LogicImpl();
+    return logic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GameElement createGameElement()
+  {
+    GameElementImpl gameElement = new GameElementImpl();
+    return gameElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Scene createScene()
+  {
+    SceneImpl scene = new SceneImpl();
+    return scene;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MenuScene createMenuScene()
+  {
+    MenuSceneImpl menuScene = new MenuSceneImpl();
+    return menuScene;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GameBackground createGameBackground()
+  {
+    GameBackgroundImpl gameBackground = new GameBackgroundImpl();
+    return gameBackground;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GameMenuItem createGameMenuItem()
+  {
+    GameMenuItemImpl gameMenuItem = new GameMenuItemImpl();
+    return gameMenuItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GameEntity createGameEntity()
+  {
+    GameEntityImpl gameEntity = new GameEntityImpl();
+    return gameEntity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleEntity createSimpleEntity()
+  {
+    SimpleEntityImpl simpleEntity = new SimpleEntityImpl();
+    return simpleEntity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModifierBinding createModifierBinding()
+  {
+    ModifierBindingImpl modifierBinding = new ModifierBindingImpl();
+    return modifierBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EntityModifier createEntityModifier()
+  {
+    EntityModifierImpl entityModifier = new EntityModifierImpl();
+    return entityModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SequenceEntityModifier createSequenceEntityModifier()
+  {
+    SequenceEntityModifierImpl sequenceEntityModifier = new SequenceEntityModifierImpl();
+    return sequenceEntityModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LoopEntityModifier createLoopEntityModifier()
+  {
+    LoopEntityModifierImpl loopEntityModifier = new LoopEntityModifierImpl();
+    return loopEntityModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MoveModifier createMoveModifier()
+  {
+    MoveModifierImpl moveModifier = new MoveModifierImpl();
+    return moveModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MoveByModifier createMoveByModifier()
+  {
+    MoveByModifierImpl moveByModifier = new MoveByModifierImpl();
+    return moveByModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScaleModifier createScaleModifier()
+  {
+    ScaleModifierImpl scaleModifier = new ScaleModifierImpl();
+    return scaleModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlphaModifier createAlphaModifier()
+  {
+    AlphaModifierImpl alphaModifier = new AlphaModifierImpl();
+    return alphaModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RotationByModifier createRotationByModifier()
+  {
+    RotationByModifierImpl rotationByModifier = new RotationByModifierImpl();
+    return rotationByModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RotationModifier createRotationModifier()
+  {
+    RotationModifierImpl rotationModifier = new RotationModifierImpl();
+    return rotationModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ColorModifier createColorModifier()
+  {
+    ColorModifierImpl colorModifier = new ColorModifierImpl();
+    return colorModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToTriple createToTriple()
+  {
+    ToTripleImpl toTriple = new ToTripleImpl();
+    return toTriple;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FromTriple createFromTriple()
+  {
+    FromTripleImpl fromTriple = new FromTripleImpl();
+    return fromTriple;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToDouble createToDouble()
+  {
+    ToDoubleImpl toDouble = new ToDoubleImpl();
+    return toDouble;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FromDouble createFromDouble()
+  {
+    FromDoubleImpl fromDouble = new FromDoubleImpl();
+    return fromDouble;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToSingle createToSingle()
+  {
+    ToSingleImpl toSingle = new ToSingleImpl();
+    return toSingle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FromSingle createFromSingle()
+  {
+    FromSingleImpl fromSingle = new FromSingleImpl();
+    return fromSingle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ByDouble createByDouble()
+  {
+    ByDoubleImpl byDouble = new ByDoubleImpl();
+    return byDouble;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BySingle createBySingle()
+  {
+    BySingleImpl bySingle = new BySingleImpl();
+    return bySingle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Line createLine()
+  {
+    LineImpl line = new LineImpl();
+    return line;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Text createText()
+  {
+    TextImpl text = new TextImpl();
+    return text;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Rectangle createRectangle()
+  {
+    RectangleImpl rectangle = new RectangleImpl();
+    return rectangle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Sprite createSprite()
+  {
+    SpriteImpl sprite = new SpriteImpl();
+    return sprite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AnimatedSprite createAnimatedSprite()
+  {
+    AnimatedSpriteImpl animatedSprite = new AnimatedSpriteImpl();
+    return animatedSprite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Color createColor()
+  {
+    ColorImpl color = new ColorImpl();
+    return color;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Position createPosition()
+  {
+    PositionImpl position = new PositionImpl();
+    return position;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Size createSize()
+  {
+    SizeImpl size = new SizeImpl();
+    return size;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextureRegion createTextureRegion()
+  {
+    TextureRegionImpl textureRegion = new TextureRegionImpl();
+    return textureRegion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Tiled createTiled()
+  {
+    TiledImpl tiled = new TiledImpl();
+    return tiled;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Font createFont()
+  {
+    FontImpl font = new FontImpl();
+    return font;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ApiLevel createApiLevelFromString(EDataType eDataType, String initialValue)
   {
     ApiLevel result = ApiLevel.get(initialValue);
@@ -2252,6 +2932,116 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * @generated
    */
   public String convertDimensionMetricToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BodyType createBodyTypeFromString(EDataType eDataType, String initialValue)
+  {
+    BodyType result = BodyType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertBodyTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConstantColor createConstantColorFromString(EDataType eDataType, String initialValue)
+  {
+    ConstantColor result = ConstantColor.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertConstantColorToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HorizontalAlign createHorizontalAlignFromString(EDataType eDataType, String initialValue)
+  {
+    HorizontalAlign result = HorizontalAlign.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertHorizontalAlignToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FontType createFontTypeFromString(EDataType eDataType, String initialValue)
+  {
+    FontType result = FontType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertFontTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScreenOrientation createScreenOrientationFromString(EDataType eDataType, String initialValue)
+  {
+    ScreenOrientation result = ScreenOrientation.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertScreenOrientationToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

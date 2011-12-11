@@ -118,22 +118,13 @@ public interface AndroTextDslPackage extends EPackage
   int MODEL_ROOT = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL_ROOT__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>Model Root</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_ROOT_FEATURE_COUNT = 1;
+  int MODEL_ROOT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ImportImpl <em>Import</em>}' class.
@@ -180,7 +171,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_GEN_MODEL_ROOT__NAME = MODEL_ROOT__NAME;
+  int ANDRO_GEN_MODEL_ROOT__NAME = MODEL_ROOT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Target Applications</b></em>' containment reference list.
@@ -189,7 +180,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_GEN_MODEL_ROOT__TARGET_APPLICATIONS = MODEL_ROOT_FEATURE_COUNT + 0;
+  int ANDRO_GEN_MODEL_ROOT__TARGET_APPLICATIONS = MODEL_ROOT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Andro Gen Model Root</em>' class.
@@ -198,7 +189,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_GEN_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 1;
+  int ANDRO_GEN_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TargetApplicationImpl <em>Target Application</em>}' class.
@@ -281,7 +272,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_APPLICATION__NAME = MODEL_ROOT__NAME;
+  int ANDROID_APPLICATION__NAME = MODEL_ROOT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Dataroot</b></em>' reference.
@@ -290,7 +281,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_APPLICATION__DATAROOT = MODEL_ROOT_FEATURE_COUNT + 0;
+  int ANDROID_APPLICATION__DATAROOT = MODEL_ROOT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Main Activity</b></em>' containment reference.
@@ -299,7 +290,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_APPLICATION__MAIN_ACTIVITY = MODEL_ROOT_FEATURE_COUNT + 1;
+  int ANDROID_APPLICATION__MAIN_ACTIVITY = MODEL_ROOT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Model Elements</b></em>' containment reference list.
@@ -308,7 +299,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_APPLICATION__MODEL_ELEMENTS = MODEL_ROOT_FEATURE_COUNT + 2;
+  int ANDROID_APPLICATION__MODEL_ELEMENTS = MODEL_ROOT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Android Application</em>' class.
@@ -317,7 +308,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_APPLICATION_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 3;
+  int ANDROID_APPLICATION_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroidApplicationModelElementImpl <em>Android Application Model Element</em>}' class.
@@ -659,7 +650,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_DATA_MODEL_ROOT__NAME = MODEL_ROOT__NAME;
+  int ANDRO_DATA_MODEL_ROOT__NAME = MODEL_ROOT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Entities</b></em>' containment reference list.
@@ -668,7 +659,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_DATA_MODEL_ROOT__ENTITIES = MODEL_ROOT_FEATURE_COUNT + 0;
+  int ANDRO_DATA_MODEL_ROOT__ENTITIES = MODEL_ROOT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Andro Data Model Root</em>' class.
@@ -677,7 +668,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_DATA_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 1;
+  int ANDRO_DATA_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EntityImpl <em>Entity</em>}' class.
@@ -854,7 +845,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_GUI_MODEL_ROOT__NAME = MODEL_ROOT__NAME;
+  int ANDRO_GUI_MODEL_ROOT__NAME = MODEL_ROOT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Roots</b></em>' containment reference list.
@@ -863,7 +854,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_GUI_MODEL_ROOT__ROOTS = MODEL_ROOT_FEATURE_COUNT + 0;
+  int ANDRO_GUI_MODEL_ROOT__ROOTS = MODEL_ROOT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Layout Attributes</b></em>' containment reference list.
@@ -872,7 +863,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES = MODEL_ROOT_FEATURE_COUNT + 1;
+  int ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES = MODEL_ROOT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Andro Gui Model Root</em>' class.
@@ -881,7 +872,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_GUI_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 2;
+  int ANDRO_GUI_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ViewImpl <em>View</em>}' class.
@@ -3337,13 +3328,22 @@ public interface AndroTextDslPackage extends EPackage
   int AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE = SIMPLE_VIEW_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>List Item</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTO_COMPLETE_TEXT_VIEW__LIST_ITEM = SIMPLE_VIEW_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Multi</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AUTO_COMPLETE_TEXT_VIEW__MULTI = SIMPLE_VIEW_FEATURE_COUNT + 1;
+  int AUTO_COMPLETE_TEXT_VIEW__MULTI = SIMPLE_VIEW_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Auto Complete Text View</em>' class.
@@ -3352,7 +3352,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AUTO_COMPLETE_TEXT_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 2;
+  int AUTO_COMPLETE_TEXT_VIEW_FEATURE_COUNT = SIMPLE_VIEW_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AbstractPreferenceImpl <em>Abstract Preference</em>}' class.
@@ -5342,7 +5342,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_RES_MODEL_ROOT__NAME = MODEL_ROOT__NAME;
+  int ANDRO_RES_MODEL_ROOT__NAME = MODEL_ROOT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -5351,7 +5351,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_RES_MODEL_ROOT__RESOURCES = MODEL_ROOT_FEATURE_COUNT + 0;
+  int ANDRO_RES_MODEL_ROOT__RESOURCES = MODEL_ROOT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Andro Res Model Root</em>' class.
@@ -5360,7 +5360,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDRO_RES_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 1;
+  int ANDRO_RES_MODEL_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PropertyValueImpl <em>Property Value</em>}' class.
@@ -6439,6 +6439,2446 @@ public interface AndroTextDslPackage extends EPackage
   int DIMENSION_VALUE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BaseGameActivityImpl <em>Base Game Activity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BaseGameActivityImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBaseGameActivity()
+   * @generated
+   */
+  int BASE_GAME_ACTIVITY = 149;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_GAME_ACTIVITY__NAME = ACTIVITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Layout</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_GAME_ACTIVITY__LAYOUT = ACTIVITY__LAYOUT;
+
+  /**
+   * The feature id for the '<em><b>Theme</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_GAME_ACTIVITY__THEME = ACTIVITY__THEME;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_GAME_ACTIVITY__SIZE = ACTIVITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Orientation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_GAME_ACTIVITY__ORIENTATION = ACTIVITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Scene</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_GAME_ACTIVITY__SCENE = ACTIVITY_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Base Game Activity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASE_GAME_ACTIVITY_FEATURE_COUNT = ACTIVITY_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameRootImpl <em>Andro Game Root</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameRootImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroGameRoot()
+   * @generated
+   */
+  int ANDRO_GAME_ROOT = 150;
+
+  /**
+   * The feature id for the '<em><b>Andro Game Components</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_ROOT__ANDRO_GAME_COMPONENTS = MODEL_ROOT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Andro Game Root</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_ROOT_FEATURE_COUNT = MODEL_ROOT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameComponentImpl <em>Andro Game Component</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameComponentImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroGameComponent()
+   * @generated
+   */
+  int ANDRO_GAME_COMPONENT = 151;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_COMPONENT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Andro Game Component</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_COMPONENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameGuiImpl <em>Andro Game Gui</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameGuiImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroGameGui()
+   * @generated
+   */
+  int ANDRO_GAME_GUI = 152;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_GUI__NAME = ANDRO_GAME_COMPONENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Game Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_GUI__GAME_ELEMENTS = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Andro Game Gui</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_GUI_FEATURE_COUNT = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameLogicImpl <em>Andro Game Logic</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameLogicImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroGameLogic()
+   * @generated
+   */
+  int ANDRO_GAME_LOGIC = 153;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_LOGIC__NAME = ANDRO_GAME_COMPONENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Logic Component</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_LOGIC__LOGIC_COMPONENT = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Andro Game Logic</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_LOGIC_FEATURE_COUNT = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameBox2DLogicImpl <em>Andro Game Box2 DLogic</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameBox2DLogicImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroGameBox2DLogic()
+   * @generated
+   */
+  int ANDRO_GAME_BOX2_DLOGIC = 154;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_BOX2_DLOGIC__NAME = ANDRO_GAME_COMPONENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Options</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_BOX2_DLOGIC__OPTIONS = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Box2d Component</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Andro Game Box2 DLogic</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDRO_GAME_BOX2_DLOGIC_FEATURE_COUNT = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.Box2DOptionsImpl <em>Box2 DOptions</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.Box2DOptionsImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBox2DOptions()
+   * @generated
+   */
+  int BOX2_DOPTIONS = 155;
+
+  /**
+   * The feature id for the '<em><b>Gravity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX2_DOPTIONS__GRAVITY = 0;
+
+  /**
+   * The number of structural features of the '<em>Box2 DOptions</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX2_DOPTIONS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.Box2DComponentImpl <em>Box2 DComponent</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.Box2DComponentImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBox2DComponent()
+   * @generated
+   */
+  int BOX2_DCOMPONENT = 156;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX2_DCOMPONENT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Box2 DComponent</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX2_DCOMPONENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.JointImpl <em>Joint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.JointImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getJoint()
+   * @generated
+   */
+  int JOINT = 157;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JOINT__NAME = BOX2_DCOMPONENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>First</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JOINT__FIRST = BOX2_DCOMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Second</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JOINT__SECOND = BOX2_DCOMPONENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Joint</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JOINT_FEATURE_COUNT = BOX2_DCOMPONENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RevoluteJointImpl <em>Revolute Joint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RevoluteJointImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRevoluteJoint()
+   * @generated
+   */
+  int REVOLUTE_JOINT = 158;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REVOLUTE_JOINT__NAME = JOINT__NAME;
+
+  /**
+   * The feature id for the '<em><b>First</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REVOLUTE_JOINT__FIRST = JOINT__FIRST;
+
+  /**
+   * The feature id for the '<em><b>Second</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REVOLUTE_JOINT__SECOND = JOINT__SECOND;
+
+  /**
+   * The number of structural features of the '<em>Revolute Joint</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REVOLUTE_JOINT_FEATURE_COUNT = JOINT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.DistanceJointImpl <em>Distance Joint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.DistanceJointImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDistanceJoint()
+   * @generated
+   */
+  int DISTANCE_JOINT = 159;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTANCE_JOINT__NAME = JOINT__NAME;
+
+  /**
+   * The feature id for the '<em><b>First</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTANCE_JOINT__FIRST = JOINT__FIRST;
+
+  /**
+   * The feature id for the '<em><b>Second</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTANCE_JOINT__SECOND = JOINT__SECOND;
+
+  /**
+   * The number of structural features of the '<em>Distance Joint</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTANCE_JOINT_FEATURE_COUNT = JOINT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BodyImpl <em>Body</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BodyImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBody()
+   * @generated
+   */
+  int BODY = 160;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__NAME = BOX2_DCOMPONENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__BODY_TYPE = BOX2_DCOMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Fixture</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__FIXTURE = BOX2_DCOMPONENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Body</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY_FEATURE_COUNT = BOX2_DCOMPONENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LineBodyImpl <em>Line Body</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LineBodyImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLineBody()
+   * @generated
+   */
+  int LINE_BODY = 161;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE_BODY__NAME = BODY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE_BODY__BODY_TYPE = BODY__BODY_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Fixture</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE_BODY__FIXTURE = BODY__FIXTURE;
+
+  /**
+   * The number of structural features of the '<em>Line Body</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE_BODY_FEATURE_COUNT = BODY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.CircleBodyImpl <em>Circle Body</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.CircleBodyImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCircleBody()
+   * @generated
+   */
+  int CIRCLE_BODY = 162;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CIRCLE_BODY__NAME = BODY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CIRCLE_BODY__BODY_TYPE = BODY__BODY_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Fixture</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CIRCLE_BODY__FIXTURE = BODY__FIXTURE;
+
+  /**
+   * The number of structural features of the '<em>Circle Body</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CIRCLE_BODY_FEATURE_COUNT = BODY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BoxBodyImpl <em>Box Body</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BoxBodyImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBoxBody()
+   * @generated
+   */
+  int BOX_BODY = 163;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX_BODY__NAME = BODY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX_BODY__BODY_TYPE = BODY__BODY_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Fixture</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX_BODY__FIXTURE = BODY__FIXTURE;
+
+  /**
+   * The number of structural features of the '<em>Box Body</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX_BODY_FEATURE_COUNT = BODY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FixtureImpl <em>Fixture</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.FixtureImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFixture()
+   * @generated
+   */
+  int FIXTURE = 164;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIXTURE__NAME = BOX2_DCOMPONENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Density</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIXTURE__DENSITY = BOX2_DCOMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Friction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIXTURE__FRICTION = BOX2_DCOMPONENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Restitution</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIXTURE__RESTITUTION = BOX2_DCOMPONENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Fixture</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIXTURE_FEATURE_COUNT = BOX2_DCOMPONENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LogicComponentImpl <em>Logic Component</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LogicComponentImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLogicComponent()
+   * @generated
+   */
+  int LOGIC_COMPONENT = 165;
+
+  /**
+   * The number of structural features of the '<em>Logic Component</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGIC_COMPONENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LogicImpl <em>Logic</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LogicImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLogic()
+   * @generated
+   */
+  int LOGIC = 166;
+
+  /**
+   * The number of structural features of the '<em>Logic</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGIC_FEATURE_COUNT = LOGIC_COMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GameElementImpl <em>Game Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GameElementImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGameElement()
+   * @generated
+   */
+  int GAME_ELEMENT = 167;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_ELEMENT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Game Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_ELEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SceneImpl <em>Scene</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SceneImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getScene()
+   * @generated
+   */
+  int SCENE = 168;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__NAME = GAME_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Game Background</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__GAME_BACKGROUND = GAME_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Entities</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__ENTITIES = GAME_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Scene</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE_FEATURE_COUNT = GAME_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.MenuSceneImpl <em>Menu Scene</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.MenuSceneImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getMenuScene()
+   * @generated
+   */
+  int MENU_SCENE = 169;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENU_SCENE__NAME = SCENE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Game Background</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENU_SCENE__GAME_BACKGROUND = SCENE__GAME_BACKGROUND;
+
+  /**
+   * The feature id for the '<em><b>Entities</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENU_SCENE__ENTITIES = SCENE__ENTITIES;
+
+  /**
+   * The feature id for the '<em><b>Menu Items</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENU_SCENE__MENU_ITEMS = SCENE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Menu Scene</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENU_SCENE_FEATURE_COUNT = SCENE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GameBackgroundImpl <em>Game Background</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GameBackgroundImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGameBackground()
+   * @generated
+   */
+  int GAME_BACKGROUND = 170;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_BACKGROUND__COLOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Texture Region</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_BACKGROUND__TEXTURE_REGION = 1;
+
+  /**
+   * The number of structural features of the '<em>Game Background</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_BACKGROUND_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GameMenuItemImpl <em>Game Menu Item</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GameMenuItemImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGameMenuItem()
+   * @generated
+   */
+  int GAME_MENU_ITEM = 171;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_MENU_ITEM__TEXT = 0;
+
+  /**
+   * The feature id for the '<em><b>Texture Region</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_MENU_ITEM__TEXTURE_REGION = 1;
+
+  /**
+   * The number of structural features of the '<em>Game Menu Item</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_MENU_ITEM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GameEntityImpl <em>Game Entity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.GameEntityImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGameEntity()
+   * @generated
+   */
+  int GAME_ENTITY = 172;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_ENTITY__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_ENTITY__COLOR = 1;
+
+  /**
+   * The number of structural features of the '<em>Game Entity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_ENTITY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleEntityImpl <em>Simple Entity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SimpleEntityImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSimpleEntity()
+   * @generated
+   */
+  int SIMPLE_ENTITY = 173;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ENTITY__NAME = GAME_ENTITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ENTITY__COLOR = GAME_ENTITY__COLOR;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ENTITY__POSITION = GAME_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ENTITY__SIZE = GAME_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Children</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ENTITY__CHILDREN = GAME_ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Simple Entity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_ENTITY_FEATURE_COUNT = GAME_ENTITY_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ModifierBindingImpl <em>Modifier Binding</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ModifierBindingImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getModifierBinding()
+   * @generated
+   */
+  int MODIFIER_BINDING = 174;
+
+  /**
+   * The feature id for the '<em><b>Modifier</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFIER_BINDING__MODIFIER = LOGIC_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Game Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFIER_BINDING__GAME_ENTITY = LOGIC_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Modifier Binding</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFIER_BINDING_FEATURE_COUNT = LOGIC_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EntityModifierImpl <em>Entity Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.EntityModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEntityModifier()
+   * @generated
+   */
+  int ENTITY_MODIFIER = 175;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MODIFIER__NAME = LOGIC_COMPONENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Entity Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MODIFIER_FEATURE_COUNT = LOGIC_COMPONENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SequenceEntityModifierImpl <em>Sequence Entity Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SequenceEntityModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSequenceEntityModifier()
+   * @generated
+   */
+  int SEQUENCE_ENTITY_MODIFIER = 176;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEQUENCE_ENTITY_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Modifiers</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEQUENCE_ENTITY_MODIFIER__MODIFIERS = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Sequence Entity Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEQUENCE_ENTITY_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LoopEntityModifierImpl <em>Loop Entity Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LoopEntityModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLoopEntityModifier()
+   * @generated
+   */
+  int LOOP_ENTITY_MODIFIER = 177;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOOP_ENTITY_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Modifiers</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOOP_ENTITY_MODIFIER__MODIFIERS = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOOP_ENTITY_MODIFIER__COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Loop Entity Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOOP_ENTITY_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.MoveModifierImpl <em>Move Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.MoveModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getMoveModifier()
+   * @generated
+   */
+  int MOVE_MODIFIER = 178;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_MODIFIER__DURATION = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_MODIFIER__FROM = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_MODIFIER__TO = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Move Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.MoveByModifierImpl <em>Move By Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.MoveByModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getMoveByModifier()
+   * @generated
+   */
+  int MOVE_BY_MODIFIER = 179;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_BY_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_BY_MODIFIER__DURATION = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>By</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_BY_MODIFIER__BY = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Move By Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_BY_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ScaleModifierImpl <em>Scale Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ScaleModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getScaleModifier()
+   * @generated
+   */
+  int SCALE_MODIFIER = 180;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALE_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALE_MODIFIER__DURATION = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALE_MODIFIER__FROM = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALE_MODIFIER__TO = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Scale Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCALE_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AlphaModifierImpl <em>Alpha Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AlphaModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAlphaModifier()
+   * @generated
+   */
+  int ALPHA_MODIFIER = 181;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALPHA_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALPHA_MODIFIER__DURATION = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALPHA_MODIFIER__FROM = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALPHA_MODIFIER__TO = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Alpha Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALPHA_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RotationByModifierImpl <em>Rotation By Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RotationByModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRotationByModifier()
+   * @generated
+   */
+  int ROTATION_BY_MODIFIER = 182;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_BY_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_BY_MODIFIER__DURATION = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>By</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_BY_MODIFIER__BY = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Rotation By Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_BY_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RotationModifierImpl <em>Rotation Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RotationModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRotationModifier()
+   * @generated
+   */
+  int ROTATION_MODIFIER = 183;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_MODIFIER__DURATION = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_MODIFIER__FROM = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_MODIFIER__TO = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Rotation Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATION_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ColorModifierImpl <em>Color Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ColorModifierImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorModifier()
+   * @generated
+   */
+  int COLOR_MODIFIER = 184;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_MODIFIER__NAME = ENTITY_MODIFIER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_MODIFIER__DURATION = ENTITY_MODIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_MODIFIER__FROM = ENTITY_MODIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_MODIFIER__TO = ENTITY_MODIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Color Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_MODIFIER_FEATURE_COUNT = ENTITY_MODIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ToTripleImpl <em>To Triple</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ToTripleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getToTriple()
+   * @generated
+   */
+  int TO_TRIPLE = 185;
+
+  /**
+   * The feature id for the '<em><b>First</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_TRIPLE__FIRST = 0;
+
+  /**
+   * The feature id for the '<em><b>Second</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_TRIPLE__SECOND = 1;
+
+  /**
+   * The feature id for the '<em><b>Third</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_TRIPLE__THIRD = 2;
+
+  /**
+   * The number of structural features of the '<em>To Triple</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_TRIPLE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FromTripleImpl <em>From Triple</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.FromTripleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFromTriple()
+   * @generated
+   */
+  int FROM_TRIPLE = 186;
+
+  /**
+   * The feature id for the '<em><b>First</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TRIPLE__FIRST = 0;
+
+  /**
+   * The feature id for the '<em><b>Second</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TRIPLE__SECOND = 1;
+
+  /**
+   * The feature id for the '<em><b>Third</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TRIPLE__THIRD = 2;
+
+  /**
+   * The number of structural features of the '<em>From Triple</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_TRIPLE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ToDoubleImpl <em>To Double</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ToDoubleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getToDouble()
+   * @generated
+   */
+  int TO_DOUBLE = 187;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_DOUBLE__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_DOUBLE__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>To Double</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_DOUBLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FromDoubleImpl <em>From Double</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.FromDoubleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFromDouble()
+   * @generated
+   */
+  int FROM_DOUBLE = 188;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_DOUBLE__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_DOUBLE__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>From Double</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_DOUBLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ToSingleImpl <em>To Single</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ToSingleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getToSingle()
+   * @generated
+   */
+  int TO_SINGLE = 189;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_SINGLE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>To Single</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_SINGLE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FromSingleImpl <em>From Single</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.FromSingleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFromSingle()
+   * @generated
+   */
+  int FROM_SINGLE = 190;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_SINGLE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>From Single</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FROM_SINGLE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ByDoubleImpl <em>By Double</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ByDoubleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getByDouble()
+   * @generated
+   */
+  int BY_DOUBLE = 191;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BY_DOUBLE__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BY_DOUBLE__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>By Double</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BY_DOUBLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.BySingleImpl <em>By Single</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.BySingleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBySingle()
+   * @generated
+   */
+  int BY_SINGLE = 192;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BY_SINGLE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>By Single</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BY_SINGLE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.LineImpl <em>Line</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.LineImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLine()
+   * @generated
+   */
+  int LINE = 193;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE__NAME = GAME_ENTITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE__COLOR = GAME_ENTITY__COLOR;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE__FROM = GAME_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE__TO = GAME_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Line Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE__LINE_WIDTH = GAME_ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Line</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINE_FEATURE_COUNT = GAME_ENTITY_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextImpl <em>Text</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TextImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getText()
+   * @generated
+   */
+  int TEXT = 194;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__NAME = GAME_ENTITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__COLOR = GAME_ENTITY__COLOR;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__TEXT = GAME_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__POSITION = GAME_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Font</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__FONT = GAME_ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Halign</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__HALIGN = GAME_ENTITY_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Text</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_FEATURE_COUNT = GAME_ENTITY_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.RectangleImpl <em>Rectangle</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.RectangleImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRectangle()
+   * @generated
+   */
+  int RECTANGLE = 195;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE__NAME = GAME_ENTITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE__COLOR = GAME_ENTITY__COLOR;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE__POSITION = GAME_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE__SIZE = GAME_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Rectangle</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE_FEATURE_COUNT = GAME_ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SpriteImpl <em>Sprite</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SpriteImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSprite()
+   * @generated
+   */
+  int SPRITE = 196;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE__NAME = GAME_ENTITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE__COLOR = GAME_ENTITY__COLOR;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE__POSITION = GAME_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE__SIZE = GAME_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Texture Region</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE__TEXTURE_REGION = GAME_ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Sprite</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE_FEATURE_COUNT = GAME_ENTITY_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AnimatedSpriteImpl <em>Animated Sprite</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AnimatedSpriteImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAnimatedSprite()
+   * @generated
+   */
+  int ANIMATED_SPRITE = 197;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANIMATED_SPRITE__NAME = GAME_ENTITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANIMATED_SPRITE__COLOR = GAME_ENTITY__COLOR;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANIMATED_SPRITE__POSITION = GAME_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANIMATED_SPRITE__SIZE = GAME_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Texture Region</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANIMATED_SPRITE__TEXTURE_REGION = GAME_ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Animate</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANIMATED_SPRITE__ANIMATE = GAME_ENTITY_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Animated Sprite</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANIMATED_SPRITE_FEATURE_COUNT = GAME_ENTITY_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ColorImpl <em>Color</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.ColorImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColor()
+   * @generated
+   */
+  int COLOR = 198;
+
+  /**
+   * The feature id for the '<em><b>R</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR__R = 0;
+
+  /**
+   * The feature id for the '<em><b>G</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR__G = 1;
+
+  /**
+   * The feature id for the '<em><b>B</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR__B = 2;
+
+  /**
+   * The feature id for the '<em><b>A</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR__A = 3;
+
+  /**
+   * The feature id for the '<em><b>Constant Color</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR__CONSTANT_COLOR = 4;
+
+  /**
+   * The number of structural features of the '<em>Color</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.PositionImpl <em>Position</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.PositionImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPosition()
+   * @generated
+   */
+  int POSITION = 199;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>Position</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SizeImpl <em>Size</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SizeImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSize()
+   * @generated
+   */
+  int SIZE = 200;
+
+  /**
+   * The feature id for the '<em><b>W</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIZE__W = 0;
+
+  /**
+   * The feature id for the '<em><b>H</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIZE__H = 1;
+
+  /**
+   * The number of structural features of the '<em>Size</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIZE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TextureRegionImpl <em>Texture Region</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TextureRegionImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTextureRegion()
+   * @generated
+   */
+  int TEXTURE_REGION = 201;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTURE_REGION__NAME = GAME_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>File Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTURE_REGION__FILE_NAME = GAME_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Tiled</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTURE_REGION__TILED = GAME_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Texture Region</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTURE_REGION_FEATURE_COUNT = GAME_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.TiledImpl <em>Tiled</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.TiledImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTiled()
+   * @generated
+   */
+  int TILED = 202;
+
+  /**
+   * The feature id for the '<em><b>Column</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TILED__COLUMN = 0;
+
+  /**
+   * The feature id for the '<em><b>Row</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TILED__ROW = 1;
+
+  /**
+   * The number of structural features of the '<em>Tiled</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TILED_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FontImpl <em>Font</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.FontImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFont()
+   * @generated
+   */
+  int FONT = 203;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT__NAME = GAME_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT__TYPE = GAME_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT__SIZE = GAME_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT__COLOR = GAME_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Antialias</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT__ANTIALIAS = GAME_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Font</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT_FEATURE_COUNT = GAME_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ApiLevel <em>Api Level</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6446,7 +8886,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getApiLevel()
    * @generated
    */
-  int API_LEVEL = 149;
+  int API_LEVEL = 204;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme <em>Activity Theme</em>}' enum.
@@ -6456,7 +8896,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getActivityTheme()
    * @generated
    */
-  int ACTIVITY_THEME = 150;
+  int ACTIVITY_THEME = 205;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DataTypes <em>Data Types</em>}' enum.
@@ -6466,7 +8906,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDataTypes()
    * @generated
    */
-  int DATA_TYPES = 151;
+  int DATA_TYPES = 206;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.NumericKind <em>Numeric Kind</em>}' enum.
@@ -6476,7 +8916,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getNumericKind()
    * @generated
    */
-  int NUMERIC_KIND = 152;
+  int NUMERIC_KIND = 207;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.TypefaceKind <em>Typeface Kind</em>}' enum.
@@ -6486,7 +8926,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTypefaceKind()
    * @generated
    */
-  int TYPEFACE_KIND = 153;
+  int TYPEFACE_KIND = 208;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.TextStyleKind <em>Text Style Kind</em>}' enum.
@@ -6496,7 +8936,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTextStyleKind()
    * @generated
    */
-  int TEXT_STYLE_KIND = 154;
+  int TEXT_STYLE_KIND = 209;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.CapitalizeKind <em>Capitalize Kind</em>}' enum.
@@ -6506,7 +8946,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCapitalizeKind()
    * @generated
    */
-  int CAPITALIZE_KIND = 155;
+  int CAPITALIZE_KIND = 210;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoLinkKind <em>Auto Link Kind</em>}' enum.
@@ -6516,7 +8956,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAutoLinkKind()
    * @generated
    */
-  int AUTO_LINK_KIND = 156;
+  int AUTO_LINK_KIND = 211;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.StretchModeKind <em>Stretch Mode Kind</em>}' enum.
@@ -6526,7 +8966,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStretchModeKind()
    * @generated
    */
-  int STRETCH_MODE_KIND = 157;
+  int STRETCH_MODE_KIND = 212;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.GravityKind <em>Gravity Kind</em>}' enum.
@@ -6536,7 +8976,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGravityKind()
    * @generated
    */
-  int GRAVITY_KIND = 158;
+  int GRAVITY_KIND = 213;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind <em>Fast Layout Dimension Kind</em>}' enum.
@@ -6546,7 +8986,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFastLayoutDimensionKind()
    * @generated
    */
-  int FAST_LAYOUT_DIMENSION_KIND = 159;
+  int FAST_LAYOUT_DIMENSION_KIND = 214;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind <em>Layout Dimension Kind</em>}' enum.
@@ -6556,7 +8996,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutDimensionKind()
    * @generated
    */
-  int LAYOUT_DIMENSION_KIND = 160;
+  int LAYOUT_DIMENSION_KIND = 215;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource <em>Android Drawable Resource</em>}' enum.
@@ -6566,7 +9006,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroidDrawableResource()
    * @generated
    */
-  int ANDROID_DRAWABLE_RESOURCE = 161;
+  int ANDROID_DRAWABLE_RESOURCE = 216;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}' enum.
@@ -6576,7 +9016,57 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionMetric()
    * @generated
    */
-  int DIMENSION_METRIC = 162;
+  int DIMENSION_METRIC = 217;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.BodyType <em>Body Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BodyType
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBodyType()
+   * @generated
+   */
+  int BODY_TYPE = 218;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ConstantColor <em>Constant Color</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ConstantColor
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getConstantColor()
+   * @generated
+   */
+  int CONSTANT_COLOR = 219;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.HorizontalAlign <em>Horizontal Align</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.HorizontalAlign
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getHorizontalAlign()
+   * @generated
+   */
+  int HORIZONTAL_ALIGN = 220;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.FontType <em>Font Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FontType
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFontType()
+   * @generated
+   */
+  int FONT_TYPE = 221;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ScreenOrientation <em>Screen Orientation</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ScreenOrientation
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getScreenOrientation()
+   * @generated
+   */
+  int SCREEN_ORIENTATION = 222;
 
 
   /**
@@ -6633,17 +9123,6 @@ public interface AndroTextDslPackage extends EPackage
   EClass getModelRoot();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ModelRoot#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.ModelRoot#getName()
-   * @see #getModelRoot()
-   * @generated
-   */
-  EAttribute getModelRoot_Name();
-
-  /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6673,6 +9152,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EClass getAndroGenModelRoot();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot#getName()
+   * @see #getAndroGenModelRoot()
+   * @generated
+   */
+  EAttribute getAndroGenModelRoot_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot#getTargetApplications <em>Target Applications</em>}'.
@@ -6759,6 +9249,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EClass getAndroidApplication();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication#getName()
+   * @see #getAndroidApplication()
+   * @generated
+   */
+  EAttribute getAndroidApplication_Name();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication#getDataroot <em>Dataroot</em>}'.
@@ -7005,6 +9506,17 @@ public interface AndroTextDslPackage extends EPackage
   EClass getAndroDataModelRoot();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot#getName()
+   * @see #getAndroDataModelRoot()
+   * @generated
+   */
+  EAttribute getAndroDataModelRoot_Name();
+
+  /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot#getEntities <em>Entities</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7151,6 +9663,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EClass getAndroGuiModelRoot();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getName()
+   * @see #getAndroGuiModelRoot()
+   * @generated
+   */
+  EAttribute getAndroGuiModelRoot_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot#getRoots <em>Roots</em>}'.
@@ -8826,6 +11349,17 @@ public interface AndroTextDslPackage extends EPackage
   EReference getAutoCompleteTextView_EntriesAttribute();
 
   /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getListItem <em>List Item</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>List Item</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getListItem()
+   * @see #getAutoCompleteTextView()
+   * @generated
+   */
+  EReference getAutoCompleteTextView_ListItem();
+
+  /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView#getMulti <em>Multi</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10346,6 +12880,17 @@ public interface AndroTextDslPackage extends EPackage
   EClass getAndroResModelRoot();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot#getName()
+   * @see #getAndroResModelRoot()
+   * @generated
+   */
+  EAttribute getAndroResModelRoot_Name();
+
+  /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot#getResources <em>Resources</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11040,6 +13585,1700 @@ public interface AndroTextDslPackage extends EPackage
   EAttribute getDimensionValue_Metric();
 
   /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity <em>Base Game Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Base Game Activity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
+   * @generated
+   */
+  EClass getBaseGameActivity();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity#getSize()
+   * @see #getBaseGameActivity()
+   * @generated
+   */
+  EReference getBaseGameActivity_Size();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity#getOrientation <em>Orientation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Orientation</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity#getOrientation()
+   * @see #getBaseGameActivity()
+   * @generated
+   */
+  EAttribute getBaseGameActivity_Orientation();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity#getScene <em>Scene</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Scene</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity#getScene()
+   * @see #getBaseGameActivity()
+   * @generated
+   */
+  EReference getBaseGameActivity_Scene();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameRoot <em>Andro Game Root</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Andro Game Root</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameRoot
+   * @generated
+   */
+  EClass getAndroGameRoot();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameRoot#getAndroGameComponents <em>Andro Game Components</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Andro Game Components</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameRoot#getAndroGameComponents()
+   * @see #getAndroGameRoot()
+   * @generated
+   */
+  EReference getAndroGameRoot_AndroGameComponents();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameComponent <em>Andro Game Component</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Andro Game Component</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameComponent
+   * @generated
+   */
+  EClass getAndroGameComponent();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameComponent#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameComponent#getName()
+   * @see #getAndroGameComponent()
+   * @generated
+   */
+  EAttribute getAndroGameComponent_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui <em>Andro Game Gui</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Andro Game Gui</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui
+   * @generated
+   */
+  EClass getAndroGameGui();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui#getGameElements <em>Game Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Game Elements</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui#getGameElements()
+   * @see #getAndroGameGui()
+   * @generated
+   */
+  EReference getAndroGameGui_GameElements();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic <em>Andro Game Logic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Andro Game Logic</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
+   * @generated
+   */
+  EClass getAndroGameLogic();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic#getLogicComponent <em>Logic Component</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Logic Component</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic#getLogicComponent()
+   * @see #getAndroGameLogic()
+   * @generated
+   */
+  EReference getAndroGameLogic_LogicComponent();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic <em>Andro Game Box2 DLogic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Andro Game Box2 DLogic</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic
+   * @generated
+   */
+  EClass getAndroGameBox2DLogic();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getOptions <em>Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Options</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getOptions()
+   * @see #getAndroGameBox2DLogic()
+   * @generated
+   */
+  EReference getAndroGameBox2DLogic_Options();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponent <em>Box2d Component</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Box2d Component</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponent()
+   * @see #getAndroGameBox2DLogic()
+   * @generated
+   */
+  EReference getAndroGameBox2DLogic_Box2dComponent();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions <em>Box2 DOptions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Box2 DOptions</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions
+   * @generated
+   */
+  EClass getBox2DOptions();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions#getGravity <em>Gravity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Gravity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions#getGravity()
+   * @see #getBox2DOptions()
+   * @generated
+   */
+  EAttribute getBox2DOptions_Gravity();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent <em>Box2 DComponent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Box2 DComponent</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent
+   * @generated
+   */
+  EClass getBox2DComponent();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent#getName()
+   * @see #getBox2DComponent()
+   * @generated
+   */
+  EAttribute getBox2DComponent_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Joint <em>Joint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Joint</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Joint
+   * @generated
+   */
+  EClass getJoint();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Joint#getFirst <em>First</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>First</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Joint#getFirst()
+   * @see #getJoint()
+   * @generated
+   */
+  EReference getJoint_First();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Joint#getSecond <em>Second</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Second</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Joint#getSecond()
+   * @see #getJoint()
+   * @generated
+   */
+  EReference getJoint_Second();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.RevoluteJoint <em>Revolute Joint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Revolute Joint</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RevoluteJoint
+   * @generated
+   */
+  EClass getRevoluteJoint();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.DistanceJoint <em>Distance Joint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Distance Joint</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DistanceJoint
+   * @generated
+   */
+  EClass getDistanceJoint();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Body <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Body</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Body
+   * @generated
+   */
+  EClass getBody();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Body#getBodyType <em>Body Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Body Type</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Body#getBodyType()
+   * @see #getBody()
+   * @generated
+   */
+  EAttribute getBody_BodyType();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Body#getFixture <em>Fixture</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Fixture</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Body#getFixture()
+   * @see #getBody()
+   * @generated
+   */
+  EReference getBody_Fixture();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.LineBody <em>Line Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Line Body</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LineBody
+   * @generated
+   */
+  EClass getLineBody();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.CircleBody <em>Circle Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Circle Body</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CircleBody
+   * @generated
+   */
+  EClass getCircleBody();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.BoxBody <em>Box Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Box Body</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BoxBody
+   * @generated
+   */
+  EClass getBoxBody();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture <em>Fixture</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Fixture</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Fixture
+   * @generated
+   */
+  EClass getFixture();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getDensity <em>Density</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Density</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Fixture#getDensity()
+   * @see #getFixture()
+   * @generated
+   */
+  EAttribute getFixture_Density();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getFriction <em>Friction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Friction</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Fixture#getFriction()
+   * @see #getFixture()
+   * @generated
+   */
+  EAttribute getFixture_Friction();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getRestitution <em>Restitution</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Restitution</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Fixture#getRestitution()
+   * @see #getFixture()
+   * @generated
+   */
+  EAttribute getFixture_Restitution();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.LogicComponent <em>Logic Component</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Logic Component</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LogicComponent
+   * @generated
+   */
+  EClass getLogicComponent();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Logic <em>Logic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Logic</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Logic
+   * @generated
+   */
+  EClass getLogic();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameElement <em>Game Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Game Element</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameElement
+   * @generated
+   */
+  EClass getGameElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.GameElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameElement#getName()
+   * @see #getGameElement()
+   * @generated
+   */
+  EAttribute getGameElement_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Scene <em>Scene</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scene</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Scene
+   * @generated
+   */
+  EClass getScene();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Scene#getGameBackground <em>Game Background</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Game Background</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Scene#getGameBackground()
+   * @see #getScene()
+   * @generated
+   */
+  EReference getScene_GameBackground();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.Scene#getEntities <em>Entities</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entities</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Scene#getEntities()
+   * @see #getScene()
+   * @generated
+   */
+  EReference getScene_Entities();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.MenuScene <em>Menu Scene</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Menu Scene</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MenuScene
+   * @generated
+   */
+  EClass getMenuScene();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.MenuScene#getMenuItems <em>Menu Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Menu Items</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MenuScene#getMenuItems()
+   * @see #getMenuScene()
+   * @generated
+   */
+  EReference getMenuScene_MenuItems();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameBackground <em>Game Background</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Game Background</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameBackground
+   * @generated
+   */
+  EClass getGameBackground();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.GameBackground#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Color</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameBackground#getColor()
+   * @see #getGameBackground()
+   * @generated
+   */
+  EReference getGameBackground_Color();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.GameBackground#getTextureRegion <em>Texture Region</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Texture Region</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameBackground#getTextureRegion()
+   * @see #getGameBackground()
+   * @generated
+   */
+  EReference getGameBackground_TextureRegion();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem <em>Game Menu Item</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Game Menu Item</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
+   * @generated
+   */
+  EClass getGameMenuItem();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getText()
+   * @see #getGameMenuItem()
+   * @generated
+   */
+  EAttribute getGameMenuItem_Text();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getTextureRegion <em>Texture Region</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Texture Region</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getTextureRegion()
+   * @see #getGameMenuItem()
+   * @generated
+   */
+  EReference getGameMenuItem_TextureRegion();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameEntity <em>Game Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Game Entity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameEntity
+   * @generated
+   */
+  EClass getGameEntity();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.GameEntity#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameEntity#getName()
+   * @see #getGameEntity()
+   * @generated
+   */
+  EAttribute getGameEntity_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.GameEntity#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Color</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameEntity#getColor()
+   * @see #getGameEntity()
+   * @generated
+   */
+  EReference getGameEntity_Color();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity <em>Simple Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Entity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
+   * @generated
+   */
+  EClass getSimpleEntity();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Position</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity#getPosition()
+   * @see #getSimpleEntity()
+   * @generated
+   */
+  EReference getSimpleEntity_Position();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity#getSize()
+   * @see #getSimpleEntity()
+   * @generated
+   */
+  EReference getSimpleEntity_Size();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity#getChildren <em>Children</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Children</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity#getChildren()
+   * @see #getSimpleEntity()
+   * @generated
+   */
+  EReference getSimpleEntity_Children();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding <em>Modifier Binding</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Modifier Binding</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding
+   * @generated
+   */
+  EClass getModifierBinding();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding#getModifier <em>Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding#getModifier()
+   * @see #getModifierBinding()
+   * @generated
+   */
+  EReference getModifierBinding_Modifier();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding#getGameEntity <em>Game Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Game Entity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding#getGameEntity()
+   * @see #getModifierBinding()
+   * @generated
+   */
+  EReference getModifierBinding_GameEntity();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.EntityModifier <em>Entity Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entity Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EntityModifier
+   * @generated
+   */
+  EClass getEntityModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.EntityModifier#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EntityModifier#getName()
+   * @see #getEntityModifier()
+   * @generated
+   */
+  EAttribute getEntityModifier_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.SequenceEntityModifier <em>Sequence Entity Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sequence Entity Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SequenceEntityModifier
+   * @generated
+   */
+  EClass getSequenceEntityModifier();
+
+  /**
+   * Returns the meta object for the reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.SequenceEntityModifier#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Modifiers</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SequenceEntityModifier#getModifiers()
+   * @see #getSequenceEntityModifier()
+   * @generated
+   */
+  EReference getSequenceEntityModifier_Modifiers();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier <em>Loop Entity Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Loop Entity Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier
+   * @generated
+   */
+  EClass getLoopEntityModifier();
+
+  /**
+   * Returns the meta object for the reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Modifiers</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier#getModifiers()
+   * @see #getLoopEntityModifier()
+   * @generated
+   */
+  EReference getLoopEntityModifier_Modifiers();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier#getCount <em>Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Count</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier#getCount()
+   * @see #getLoopEntityModifier()
+   * @generated
+   */
+  EAttribute getLoopEntityModifier_Count();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveModifier <em>Move Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Move Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveModifier
+   * @generated
+   */
+  EClass getMoveModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveModifier#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveModifier#getDuration()
+   * @see #getMoveModifier()
+   * @generated
+   */
+  EAttribute getMoveModifier_Duration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveModifier#getFrom <em>From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>From</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveModifier#getFrom()
+   * @see #getMoveModifier()
+   * @generated
+   */
+  EReference getMoveModifier_From();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveModifier#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>To</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveModifier#getTo()
+   * @see #getMoveModifier()
+   * @generated
+   */
+  EReference getMoveModifier_To();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier <em>Move By Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Move By Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier
+   * @generated
+   */
+  EClass getMoveByModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier#getDuration()
+   * @see #getMoveByModifier()
+   * @generated
+   */
+  EAttribute getMoveByModifier_Duration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier#getBy <em>By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>By</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier#getBy()
+   * @see #getMoveByModifier()
+   * @generated
+   */
+  EReference getMoveByModifier_By();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier <em>Scale Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scale Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier
+   * @generated
+   */
+  EClass getScaleModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier#getDuration()
+   * @see #getScaleModifier()
+   * @generated
+   */
+  EAttribute getScaleModifier_Duration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier#getFrom <em>From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>From</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier#getFrom()
+   * @see #getScaleModifier()
+   * @generated
+   */
+  EReference getScaleModifier_From();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>To</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier#getTo()
+   * @see #getScaleModifier()
+   * @generated
+   */
+  EReference getScaleModifier_To();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier <em>Alpha Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alpha Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier
+   * @generated
+   */
+  EClass getAlphaModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier#getDuration()
+   * @see #getAlphaModifier()
+   * @generated
+   */
+  EAttribute getAlphaModifier_Duration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier#getFrom <em>From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>From</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier#getFrom()
+   * @see #getAlphaModifier()
+   * @generated
+   */
+  EReference getAlphaModifier_From();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>To</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier#getTo()
+   * @see #getAlphaModifier()
+   * @generated
+   */
+  EReference getAlphaModifier_To();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier <em>Rotation By Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rotation By Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier
+   * @generated
+   */
+  EClass getRotationByModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier#getDuration()
+   * @see #getRotationByModifier()
+   * @generated
+   */
+  EAttribute getRotationByModifier_Duration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier#getBy <em>By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>By</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier#getBy()
+   * @see #getRotationByModifier()
+   * @generated
+   */
+  EReference getRotationByModifier_By();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationModifier <em>Rotation Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rotation Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationModifier
+   * @generated
+   */
+  EClass getRotationModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationModifier#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationModifier#getDuration()
+   * @see #getRotationModifier()
+   * @generated
+   */
+  EAttribute getRotationModifier_Duration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationModifier#getFrom <em>From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>From</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationModifier#getFrom()
+   * @see #getRotationModifier()
+   * @generated
+   */
+  EReference getRotationModifier_From();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationModifier#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>To</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationModifier#getTo()
+   * @see #getRotationModifier()
+   * @generated
+   */
+  EReference getRotationModifier_To();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorModifier <em>Color Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Color Modifier</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorModifier
+   * @generated
+   */
+  EClass getColorModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorModifier#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorModifier#getDuration()
+   * @see #getColorModifier()
+   * @generated
+   */
+  EAttribute getColorModifier_Duration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorModifier#getFrom <em>From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>From</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorModifier#getFrom()
+   * @see #getColorModifier()
+   * @generated
+   */
+  EReference getColorModifier_From();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorModifier#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>To</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorModifier#getTo()
+   * @see #getColorModifier()
+   * @generated
+   */
+  EReference getColorModifier_To();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ToTriple <em>To Triple</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>To Triple</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToTriple
+   * @generated
+   */
+  EClass getToTriple();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ToTriple#getFirst <em>First</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>First</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToTriple#getFirst()
+   * @see #getToTriple()
+   * @generated
+   */
+  EAttribute getToTriple_First();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ToTriple#getSecond <em>Second</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Second</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToTriple#getSecond()
+   * @see #getToTriple()
+   * @generated
+   */
+  EAttribute getToTriple_Second();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ToTriple#getThird <em>Third</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Third</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToTriple#getThird()
+   * @see #getToTriple()
+   * @generated
+   */
+  EAttribute getToTriple_Third();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.FromTriple <em>From Triple</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Triple</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromTriple
+   * @generated
+   */
+  EClass getFromTriple();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.FromTriple#getFirst <em>First</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>First</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromTriple#getFirst()
+   * @see #getFromTriple()
+   * @generated
+   */
+  EAttribute getFromTriple_First();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.FromTriple#getSecond <em>Second</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Second</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromTriple#getSecond()
+   * @see #getFromTriple()
+   * @generated
+   */
+  EAttribute getFromTriple_Second();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.FromTriple#getThird <em>Third</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Third</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromTriple#getThird()
+   * @see #getFromTriple()
+   * @generated
+   */
+  EAttribute getFromTriple_Third();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ToDouble <em>To Double</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>To Double</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToDouble
+   * @generated
+   */
+  EClass getToDouble();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ToDouble#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToDouble#getX()
+   * @see #getToDouble()
+   * @generated
+   */
+  EAttribute getToDouble_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ToDouble#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToDouble#getY()
+   * @see #getToDouble()
+   * @generated
+   */
+  EAttribute getToDouble_Y();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.FromDouble <em>From Double</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Double</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromDouble
+   * @generated
+   */
+  EClass getFromDouble();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.FromDouble#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromDouble#getX()
+   * @see #getFromDouble()
+   * @generated
+   */
+  EAttribute getFromDouble_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.FromDouble#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromDouble#getY()
+   * @see #getFromDouble()
+   * @generated
+   */
+  EAttribute getFromDouble_Y();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ToSingle <em>To Single</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>To Single</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToSingle
+   * @generated
+   */
+  EClass getToSingle();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ToSingle#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToSingle#getValue()
+   * @see #getToSingle()
+   * @generated
+   */
+  EAttribute getToSingle_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.FromSingle <em>From Single</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>From Single</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromSingle
+   * @generated
+   */
+  EClass getFromSingle();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.FromSingle#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromSingle#getValue()
+   * @see #getFromSingle()
+   * @generated
+   */
+  EAttribute getFromSingle_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.ByDouble <em>By Double</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>By Double</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ByDouble
+   * @generated
+   */
+  EClass getByDouble();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ByDouble#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ByDouble#getX()
+   * @see #getByDouble()
+   * @generated
+   */
+  EAttribute getByDouble_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.ByDouble#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ByDouble#getY()
+   * @see #getByDouble()
+   * @generated
+   */
+  EAttribute getByDouble_Y();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.BySingle <em>By Single</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>By Single</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BySingle
+   * @generated
+   */
+  EClass getBySingle();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.BySingle#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BySingle#getValue()
+   * @see #getBySingle()
+   * @generated
+   */
+  EAttribute getBySingle_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Line <em>Line</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Line</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Line
+   * @generated
+   */
+  EClass getLine();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Line#getFrom <em>From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>From</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Line#getFrom()
+   * @see #getLine()
+   * @generated
+   */
+  EReference getLine_From();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Line#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>To</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Line#getTo()
+   * @see #getLine()
+   * @generated
+   */
+  EReference getLine_To();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Line#getLineWidth <em>Line Width</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Line Width</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Line#getLineWidth()
+   * @see #getLine()
+   * @generated
+   */
+  EAttribute getLine_LineWidth();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Text <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Text
+   * @generated
+   */
+  EClass getText();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Text#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Text#getText()
+   * @see #getText()
+   * @generated
+   */
+  EAttribute getText_Text();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Text#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Position</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Text#getPosition()
+   * @see #getText()
+   * @generated
+   */
+  EReference getText_Position();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Text#getFont <em>Font</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Font</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Text#getFont()
+   * @see #getText()
+   * @generated
+   */
+  EReference getText_Font();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Text#getHalign <em>Halign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Halign</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Text#getHalign()
+   * @see #getText()
+   * @generated
+   */
+  EAttribute getText_Halign();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Rectangle <em>Rectangle</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rectangle</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Rectangle
+   * @generated
+   */
+  EClass getRectangle();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Rectangle#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Position</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Rectangle#getPosition()
+   * @see #getRectangle()
+   * @generated
+   */
+  EReference getRectangle_Position();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Rectangle#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Rectangle#getSize()
+   * @see #getRectangle()
+   * @generated
+   */
+  EReference getRectangle_Size();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Sprite <em>Sprite</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sprite</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Sprite
+   * @generated
+   */
+  EClass getSprite();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Sprite#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Position</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Sprite#getPosition()
+   * @see #getSprite()
+   * @generated
+   */
+  EReference getSprite_Position();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Sprite#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Sprite#getSize()
+   * @see #getSprite()
+   * @generated
+   */
+  EReference getSprite_Size();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Sprite#getTextureRegion <em>Texture Region</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Texture Region</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Sprite#getTextureRegion()
+   * @see #getSprite()
+   * @generated
+   */
+  EReference getSprite_TextureRegion();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite <em>Animated Sprite</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Animated Sprite</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite
+   * @generated
+   */
+  EClass getAnimatedSprite();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Position</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getPosition()
+   * @see #getAnimatedSprite()
+   * @generated
+   */
+  EReference getAnimatedSprite_Position();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getSize()
+   * @see #getAnimatedSprite()
+   * @generated
+   */
+  EReference getAnimatedSprite_Size();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getTextureRegion <em>Texture Region</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Texture Region</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getTextureRegion()
+   * @see #getAnimatedSprite()
+   * @generated
+   */
+  EReference getAnimatedSprite_TextureRegion();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getAnimate <em>Animate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Animate</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite#getAnimate()
+   * @see #getAnimatedSprite()
+   * @generated
+   */
+  EAttribute getAnimatedSprite_Animate();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Color <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Color</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Color
+   * @generated
+   */
+  EClass getColor();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Color#getR <em>R</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>R</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Color#getR()
+   * @see #getColor()
+   * @generated
+   */
+  EAttribute getColor_R();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Color#getG <em>G</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>G</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Color#getG()
+   * @see #getColor()
+   * @generated
+   */
+  EAttribute getColor_G();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Color#getB <em>B</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>B</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Color#getB()
+   * @see #getColor()
+   * @generated
+   */
+  EAttribute getColor_B();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Color#getA <em>A</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>A</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Color#getA()
+   * @see #getColor()
+   * @generated
+   */
+  EAttribute getColor_A();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Color#getConstantColor <em>Constant Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Constant Color</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Color#getConstantColor()
+   * @see #getColor()
+   * @generated
+   */
+  EAttribute getColor_ConstantColor();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Position <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Position</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Position
+   * @generated
+   */
+  EClass getPosition();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Position#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Position#getX()
+   * @see #getPosition()
+   * @generated
+   */
+  EAttribute getPosition_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Position#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Position#getY()
+   * @see #getPosition()
+   * @generated
+   */
+  EAttribute getPosition_Y();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Size <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Size
+   * @generated
+   */
+  EClass getSize();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Size#getW <em>W</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>W</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Size#getW()
+   * @see #getSize()
+   * @generated
+   */
+  EAttribute getSize_W();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Size#getH <em>H</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>H</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Size#getH()
+   * @see #getSize()
+   * @generated
+   */
+  EAttribute getSize_H();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextureRegion <em>Texture Region</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Texture Region</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
+   * @generated
+   */
+  EClass getTextureRegion();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.TextureRegion#getFileName <em>File Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>File Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextureRegion#getFileName()
+   * @see #getTextureRegion()
+   * @generated
+   */
+  EAttribute getTextureRegion_FileName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.TextureRegion#getTiled <em>Tiled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tiled</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextureRegion#getTiled()
+   * @see #getTextureRegion()
+   * @generated
+   */
+  EReference getTextureRegion_Tiled();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Tiled <em>Tiled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tiled</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Tiled
+   * @generated
+   */
+  EClass getTiled();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Tiled#getColumn <em>Column</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Column</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Tiled#getColumn()
+   * @see #getTiled()
+   * @generated
+   */
+  EAttribute getTiled_Column();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Tiled#getRow <em>Row</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Row</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Tiled#getRow()
+   * @see #getTiled()
+   * @generated
+   */
+  EAttribute getTiled_Row();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Font <em>Font</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Font</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Font
+   * @generated
+   */
+  EClass getFont();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Font#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Font#getType()
+   * @see #getFont()
+   * @generated
+   */
+  EAttribute getFont_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Font#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Font#getSize()
+   * @see #getFont()
+   * @generated
+   */
+  EAttribute getFont_Size();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Font#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Color</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Font#getColor()
+   * @see #getFont()
+   * @generated
+   */
+  EReference getFont_Color();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.Font#isAntialias <em>Antialias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Antialias</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Font#isAntialias()
+   * @see #getFont()
+   * @generated
+   */
+  EAttribute getFont_Antialias();
+
+  /**
    * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.ApiLevel <em>Api Level</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11178,6 +15417,56 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EEnum getDimensionMetric();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.BodyType <em>Body Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Body Type</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BodyType
+   * @generated
+   */
+  EEnum getBodyType();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.ConstantColor <em>Constant Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Constant Color</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ConstantColor
+   * @generated
+   */
+  EEnum getConstantColor();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.HorizontalAlign <em>Horizontal Align</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Horizontal Align</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.HorizontalAlign
+   * @generated
+   */
+  EEnum getHorizontalAlign();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.FontType <em>Font Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Font Type</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FontType
+   * @generated
+   */
+  EEnum getFontType();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.ScreenOrientation <em>Screen Orientation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Screen Orientation</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ScreenOrientation
+   * @generated
+   */
+  EEnum getScreenOrientation();
 
   /**
    * Returns the factory that creates the instances of the model.

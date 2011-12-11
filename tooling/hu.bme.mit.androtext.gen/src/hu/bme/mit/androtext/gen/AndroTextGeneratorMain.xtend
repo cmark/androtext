@@ -15,7 +15,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import hu.bme.mit.androtext.gen.layout.TabLayoutGenerator
 import hu.bme.mit.androtext.gen.selector.SelectorGenerator
 
-class AndroTextGeneratorMain implements IGenerator {
+class AndroTextGeneratorMain implements IMainGenerator {
 	
 	@Inject EntityClassGenerator entityClassGenerator
 	

@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -16,13 +17,17 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.osgi.framework.Bundle;
 
 import com.android.ide.eclipse.adt.AdtConstants;
 import com.android.ide.eclipse.adt.AdtPlugin;
@@ -52,16 +57,10 @@ public class AndroidProjectUtil {
 		try {
 			IWorkspace ws = ResourcesPlugin.getWorkspace();
 			IProjectDescription projectDescription = ws.newProjectDescription(project.getName());
-			
-			if (project.exists()) {
-				project.delete(true, new SubProgressMonitor(monitor, 10));
-				// TODO: regeneration, just empty the src-gen folder, and check if the base classes is missing or not
-			}
 			Sdk sdk = AndroidSdkUtil.getAndroidSdk();
 			if (sdk == null) {
 				throw new RuntimeException("SDKfolder is null, enter the SDK folder name in the !");
 			}
-			// FIXME android target only Google API 8, use the built in android project wizard
 			IAndroidTarget target = AndroidSdkUtil.getTarget(sdk, targetNumber, isGoogleVendor);
 			boolean legacy = target.getVersion().getApiLevel() < 4;
 			// create the main android project
@@ -292,6 +291,53 @@ public class AndroidProjectUtil {
 								.readEmbeddedFile(AndroidConstants2.TEMPLATES_DIRECTORY
 										+ AndroidConstants2.ICON_LDPI), monitor);
 			}
+		}
+	}
+	
+	public static final void addGameJars(IProject project) {
+		IJavaProject javaProject = JavaCore.create(project);
+		if (javaProject == null) throw new IllegalArgumentException("Project is'nt a java project!");
+		// add library jar andengine, box2d if GameActivity is used
+		IFile andEngine = project.getFile(new Path("lib/andengine.jar"));
+		IFile andEngineBox2d = project.getFile(new Path("lib/andenginephysicsbox2dextension.jar"));
+	    IFile libsoFile = project.getFile(new Path("libs/armeabi/libandenginephysicsbox2dextension.so"));
+	    IFolder lib = project.getFolder("lib");
+	    IFolder libs = project.getFolder("libs");
+	    IFolder armeabi = project.getFolder("libs/armeabi");
+	    if (andEngine.exists()) return;
+		try {
+			Bundle bundle = Platform.getBundle("hu.bme.mit.androtext.gen");
+	        URL andengineJar = bundle.getResource("lib/andengine.jar");
+	        URL box2dJar = bundle.getResource("lib/andenginephysicsbox2dextension.jar");
+	        URL libso = bundle.getResource("libs/armeabi/libandenginephysicsbox2dextension.so");
+	        InputStream andEngineStream = andengineJar.openStream();
+	        InputStream box2dStream = box2dJar.openStream();
+	        InputStream libsoStream = libso.openStream();
+	        // create the destination files in the project
+	        if (!lib.exists()) {
+	        	lib.create(false, false, null);
+	        }
+	        if (!libs.exists()) {
+	        	libs.create(false, false, null);
+	        }
+	        if (!armeabi.exists()) {
+	        	armeabi.create(false, false, null);
+	        }
+	        andEngine.create(andEngineStream, false, null);
+	        andEngineBox2d.create(box2dStream, false, null);
+	        libsoFile.create(libsoStream, false, null);
+	        IPath andEnginePath = andEngine.getFullPath();
+	        IPath andEngineBox2dPath = andEngineBox2d.getFullPath();
+	        // add libs to project class path
+	        // get the list of entries.
+			IClasspathEntry[] entries = javaProject.getRawClasspath();
+			entries = ProjectHelper.addEntryToClasspath(entries,
+					JavaCore.newLibraryEntry(andEnginePath, null, null));
+	        entries = ProjectHelper.addEntryToClasspath(entries, 
+	        		JavaCore.newLibraryEntry(andEngineBox2dPath, null, null));
+			javaProject.setRawClasspath(entries, null);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	

@@ -824,6 +824,281 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createDimensionValueAdapter();
       }
       @Override
+      public Adapter caseBaseGameActivity(BaseGameActivity object)
+      {
+        return createBaseGameActivityAdapter();
+      }
+      @Override
+      public Adapter caseAndroGameRoot(AndroGameRoot object)
+      {
+        return createAndroGameRootAdapter();
+      }
+      @Override
+      public Adapter caseAndroGameComponent(AndroGameComponent object)
+      {
+        return createAndroGameComponentAdapter();
+      }
+      @Override
+      public Adapter caseAndroGameGui(AndroGameGui object)
+      {
+        return createAndroGameGuiAdapter();
+      }
+      @Override
+      public Adapter caseAndroGameLogic(AndroGameLogic object)
+      {
+        return createAndroGameLogicAdapter();
+      }
+      @Override
+      public Adapter caseAndroGameBox2DLogic(AndroGameBox2DLogic object)
+      {
+        return createAndroGameBox2DLogicAdapter();
+      }
+      @Override
+      public Adapter caseBox2DOptions(Box2DOptions object)
+      {
+        return createBox2DOptionsAdapter();
+      }
+      @Override
+      public Adapter caseBox2DComponent(Box2DComponent object)
+      {
+        return createBox2DComponentAdapter();
+      }
+      @Override
+      public Adapter caseJoint(Joint object)
+      {
+        return createJointAdapter();
+      }
+      @Override
+      public Adapter caseRevoluteJoint(RevoluteJoint object)
+      {
+        return createRevoluteJointAdapter();
+      }
+      @Override
+      public Adapter caseDistanceJoint(DistanceJoint object)
+      {
+        return createDistanceJointAdapter();
+      }
+      @Override
+      public Adapter caseBody(Body object)
+      {
+        return createBodyAdapter();
+      }
+      @Override
+      public Adapter caseLineBody(LineBody object)
+      {
+        return createLineBodyAdapter();
+      }
+      @Override
+      public Adapter caseCircleBody(CircleBody object)
+      {
+        return createCircleBodyAdapter();
+      }
+      @Override
+      public Adapter caseBoxBody(BoxBody object)
+      {
+        return createBoxBodyAdapter();
+      }
+      @Override
+      public Adapter caseFixture(Fixture object)
+      {
+        return createFixtureAdapter();
+      }
+      @Override
+      public Adapter caseLogicComponent(LogicComponent object)
+      {
+        return createLogicComponentAdapter();
+      }
+      @Override
+      public Adapter caseLogic(Logic object)
+      {
+        return createLogicAdapter();
+      }
+      @Override
+      public Adapter caseGameElement(GameElement object)
+      {
+        return createGameElementAdapter();
+      }
+      @Override
+      public Adapter caseScene(Scene object)
+      {
+        return createSceneAdapter();
+      }
+      @Override
+      public Adapter caseMenuScene(MenuScene object)
+      {
+        return createMenuSceneAdapter();
+      }
+      @Override
+      public Adapter caseGameBackground(GameBackground object)
+      {
+        return createGameBackgroundAdapter();
+      }
+      @Override
+      public Adapter caseGameMenuItem(GameMenuItem object)
+      {
+        return createGameMenuItemAdapter();
+      }
+      @Override
+      public Adapter caseGameEntity(GameEntity object)
+      {
+        return createGameEntityAdapter();
+      }
+      @Override
+      public Adapter caseSimpleEntity(SimpleEntity object)
+      {
+        return createSimpleEntityAdapter();
+      }
+      @Override
+      public Adapter caseModifierBinding(ModifierBinding object)
+      {
+        return createModifierBindingAdapter();
+      }
+      @Override
+      public Adapter caseEntityModifier(EntityModifier object)
+      {
+        return createEntityModifierAdapter();
+      }
+      @Override
+      public Adapter caseSequenceEntityModifier(SequenceEntityModifier object)
+      {
+        return createSequenceEntityModifierAdapter();
+      }
+      @Override
+      public Adapter caseLoopEntityModifier(LoopEntityModifier object)
+      {
+        return createLoopEntityModifierAdapter();
+      }
+      @Override
+      public Adapter caseMoveModifier(MoveModifier object)
+      {
+        return createMoveModifierAdapter();
+      }
+      @Override
+      public Adapter caseMoveByModifier(MoveByModifier object)
+      {
+        return createMoveByModifierAdapter();
+      }
+      @Override
+      public Adapter caseScaleModifier(ScaleModifier object)
+      {
+        return createScaleModifierAdapter();
+      }
+      @Override
+      public Adapter caseAlphaModifier(AlphaModifier object)
+      {
+        return createAlphaModifierAdapter();
+      }
+      @Override
+      public Adapter caseRotationByModifier(RotationByModifier object)
+      {
+        return createRotationByModifierAdapter();
+      }
+      @Override
+      public Adapter caseRotationModifier(RotationModifier object)
+      {
+        return createRotationModifierAdapter();
+      }
+      @Override
+      public Adapter caseColorModifier(ColorModifier object)
+      {
+        return createColorModifierAdapter();
+      }
+      @Override
+      public Adapter caseToTriple(ToTriple object)
+      {
+        return createToTripleAdapter();
+      }
+      @Override
+      public Adapter caseFromTriple(FromTriple object)
+      {
+        return createFromTripleAdapter();
+      }
+      @Override
+      public Adapter caseToDouble(ToDouble object)
+      {
+        return createToDoubleAdapter();
+      }
+      @Override
+      public Adapter caseFromDouble(FromDouble object)
+      {
+        return createFromDoubleAdapter();
+      }
+      @Override
+      public Adapter caseToSingle(ToSingle object)
+      {
+        return createToSingleAdapter();
+      }
+      @Override
+      public Adapter caseFromSingle(FromSingle object)
+      {
+        return createFromSingleAdapter();
+      }
+      @Override
+      public Adapter caseByDouble(ByDouble object)
+      {
+        return createByDoubleAdapter();
+      }
+      @Override
+      public Adapter caseBySingle(BySingle object)
+      {
+        return createBySingleAdapter();
+      }
+      @Override
+      public Adapter caseLine(Line object)
+      {
+        return createLineAdapter();
+      }
+      @Override
+      public Adapter caseText(Text object)
+      {
+        return createTextAdapter();
+      }
+      @Override
+      public Adapter caseRectangle(Rectangle object)
+      {
+        return createRectangleAdapter();
+      }
+      @Override
+      public Adapter caseSprite(Sprite object)
+      {
+        return createSpriteAdapter();
+      }
+      @Override
+      public Adapter caseAnimatedSprite(AnimatedSprite object)
+      {
+        return createAnimatedSpriteAdapter();
+      }
+      @Override
+      public Adapter caseColor(Color object)
+      {
+        return createColorAdapter();
+      }
+      @Override
+      public Adapter casePosition(Position object)
+      {
+        return createPositionAdapter();
+      }
+      @Override
+      public Adapter caseSize(Size object)
+      {
+        return createSizeAdapter();
+      }
+      @Override
+      public Adapter caseTextureRegion(TextureRegion object)
+      {
+        return createTextureRegionAdapter();
+      }
+      @Override
+      public Adapter caseTiled(Tiled object)
+      {
+        return createTiledAdapter();
+      }
+      @Override
+      public Adapter caseFont(Font object)
+      {
+        return createFontAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -3076,6 +3351,831 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDimensionValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity <em>Base Game Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
+   * @generated
+   */
+  public Adapter createBaseGameActivityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameRoot <em>Andro Game Root</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameRoot
+   * @generated
+   */
+  public Adapter createAndroGameRootAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameComponent <em>Andro Game Component</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameComponent
+   * @generated
+   */
+  public Adapter createAndroGameComponentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui <em>Andro Game Gui</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui
+   * @generated
+   */
+  public Adapter createAndroGameGuiAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic <em>Andro Game Logic</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
+   * @generated
+   */
+  public Adapter createAndroGameLogicAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic <em>Andro Game Box2 DLogic</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic
+   * @generated
+   */
+  public Adapter createAndroGameBox2DLogicAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions <em>Box2 DOptions</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions
+   * @generated
+   */
+  public Adapter createBox2DOptionsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent <em>Box2 DComponent</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent
+   * @generated
+   */
+  public Adapter createBox2DComponentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Joint <em>Joint</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Joint
+   * @generated
+   */
+  public Adapter createJointAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.RevoluteJoint <em>Revolute Joint</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RevoluteJoint
+   * @generated
+   */
+  public Adapter createRevoluteJointAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.DistanceJoint <em>Distance Joint</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.DistanceJoint
+   * @generated
+   */
+  public Adapter createDistanceJointAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Body <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Body
+   * @generated
+   */
+  public Adapter createBodyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.LineBody <em>Line Body</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LineBody
+   * @generated
+   */
+  public Adapter createLineBodyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.CircleBody <em>Circle Body</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.CircleBody
+   * @generated
+   */
+  public Adapter createCircleBodyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.BoxBody <em>Box Body</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BoxBody
+   * @generated
+   */
+  public Adapter createBoxBodyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture <em>Fixture</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Fixture
+   * @generated
+   */
+  public Adapter createFixtureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.LogicComponent <em>Logic Component</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LogicComponent
+   * @generated
+   */
+  public Adapter createLogicComponentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Logic <em>Logic</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Logic
+   * @generated
+   */
+  public Adapter createLogicAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameElement <em>Game Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameElement
+   * @generated
+   */
+  public Adapter createGameElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Scene <em>Scene</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Scene
+   * @generated
+   */
+  public Adapter createSceneAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.MenuScene <em>Menu Scene</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MenuScene
+   * @generated
+   */
+  public Adapter createMenuSceneAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameBackground <em>Game Background</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameBackground
+   * @generated
+   */
+  public Adapter createGameBackgroundAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem <em>Game Menu Item</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
+   * @generated
+   */
+  public Adapter createGameMenuItemAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameEntity <em>Game Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameEntity
+   * @generated
+   */
+  public Adapter createGameEntityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity <em>Simple Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
+   * @generated
+   */
+  public Adapter createSimpleEntityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding <em>Modifier Binding</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding
+   * @generated
+   */
+  public Adapter createModifierBindingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.EntityModifier <em>Entity Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EntityModifier
+   * @generated
+   */
+  public Adapter createEntityModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.SequenceEntityModifier <em>Sequence Entity Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SequenceEntityModifier
+   * @generated
+   */
+  public Adapter createSequenceEntityModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier <em>Loop Entity Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier
+   * @generated
+   */
+  public Adapter createLoopEntityModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveModifier <em>Move Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveModifier
+   * @generated
+   */
+  public Adapter createMoveModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier <em>Move By Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier
+   * @generated
+   */
+  public Adapter createMoveByModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier <em>Scale Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier
+   * @generated
+   */
+  public Adapter createScaleModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier <em>Alpha Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier
+   * @generated
+   */
+  public Adapter createAlphaModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier <em>Rotation By Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier
+   * @generated
+   */
+  public Adapter createRotationByModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.RotationModifier <em>Rotation Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.RotationModifier
+   * @generated
+   */
+  public Adapter createRotationModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ColorModifier <em>Color Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ColorModifier
+   * @generated
+   */
+  public Adapter createColorModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ToTriple <em>To Triple</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToTriple
+   * @generated
+   */
+  public Adapter createToTripleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.FromTriple <em>From Triple</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromTriple
+   * @generated
+   */
+  public Adapter createFromTripleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ToDouble <em>To Double</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToDouble
+   * @generated
+   */
+  public Adapter createToDoubleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.FromDouble <em>From Double</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromDouble
+   * @generated
+   */
+  public Adapter createFromDoubleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ToSingle <em>To Single</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ToSingle
+   * @generated
+   */
+  public Adapter createToSingleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.FromSingle <em>From Single</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.FromSingle
+   * @generated
+   */
+  public Adapter createFromSingleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ByDouble <em>By Double</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.ByDouble
+   * @generated
+   */
+  public Adapter createByDoubleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.BySingle <em>By Single</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BySingle
+   * @generated
+   */
+  public Adapter createBySingleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Line <em>Line</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Line
+   * @generated
+   */
+  public Adapter createLineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Text <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Text
+   * @generated
+   */
+  public Adapter createTextAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Rectangle <em>Rectangle</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Rectangle
+   * @generated
+   */
+  public Adapter createRectangleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Sprite <em>Sprite</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Sprite
+   * @generated
+   */
+  public Adapter createSpriteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite <em>Animated Sprite</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite
+   * @generated
+   */
+  public Adapter createAnimatedSpriteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Color <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Color
+   * @generated
+   */
+  public Adapter createColorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Position <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Position
+   * @generated
+   */
+  public Adapter createPositionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Size <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Size
+   * @generated
+   */
+  public Adapter createSizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.TextureRegion <em>Texture Region</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
+   * @generated
+   */
+  public Adapter createTextureRegionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Tiled <em>Tiled</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Tiled
+   * @generated
+   */
+  public Adapter createTiledAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Font <em>Font</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Font
+   * @generated
+   */
+  public Adapter createFontAdapter()
   {
     return null;
   }

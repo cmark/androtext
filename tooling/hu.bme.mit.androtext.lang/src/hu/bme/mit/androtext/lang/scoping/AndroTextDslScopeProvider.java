@@ -3,7 +3,18 @@
  */
 package hu.bme.mit.androtext.lang.scoping;
 
+import java.lang.reflect.Method;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import org.eclipse.xtext.scoping.impl.FilteringScope;
+import org.eclipse.xtext.util.PolymorphicDispatcher;
+
+import com.google.common.base.Predicate;
 
 /**
  * This class contains custom scoping description.
@@ -13,5 +24,33 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
  *
  */
 public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider {
+	
+	private Predicate<IEObjectDescription> rootLayoutFilterPredicate = new Predicate<IEObjectDescription>() {
+		@Override
+		public boolean apply(IEObjectDescription input) {
+			if (input != null && input.getName() != null && input.getName().getSegmentCount() == 2) {
+				return true;
+			}
+			return false;
+		}
+	};
+	
+	protected IScope scope_Activity_layout(EObject context, EReference reference) {
+		IScope scope = delegateGetScope(context, reference);
+		// show only the second level in qualified names (one dot, two segment)
+		return new FilteringScope(scope, rootLayoutFilterPredicate);
+	}
+	
+	protected Predicate<Method> getPredicate(EObject context, EClass type) {
+		String methodName = "scope_" + type.getName();
+		System.out.println(methodName);
+		return PolymorphicDispatcher.Predicates.forName(methodName, 2);
+	}
 
+	protected Predicate<Method> getPredicate(EObject context, EReference reference) {
+		String methodName = "scope_" + reference.getEContainingClass().getName() + "_" + reference.getName();
+		System.out.println(methodName);
+		return PolymorphicDispatcher.Predicates.forName(methodName, 2);
+	}
+	
 }

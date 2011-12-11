@@ -2,14 +2,15 @@ package hu.bme.mit.androtext.gen.ui.builder;
 
 import static com.google.common.collect.Maps.uniqueIndex;
 import static com.google.common.collect.Sets.newLinkedHashSet;
-import hu.bme.mit.androtext.gen.AndroTextGeneratorMain;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
+import hu.bme.mit.androtext.gen.IMainGenerator;
 import hu.bme.mit.androtext.gen.util.AndroidProjectUtil;
 import hu.bme.mit.androtext.gen.util.GeneratorUtil;
 import hu.bme.mit.androtext.gen.util.TargetApplicationFinder;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
@@ -61,31 +62,28 @@ import com.google.inject.Provider;
 
 public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 
-	private final List<String> fileExtensions = new ArrayList<String>();
+	private List<String> fileExtensions;
 	
 	@Inject
-	private Provider<EclipseResourceFileSystemAccess3> fileSystemAccessProvider;
+	protected Provider<EclipseResourceFileSystemAccess3> fileSystemAccessProvider;
 	
 	@Inject
-	private AndroTextGeneratorMain mainGenerator;
+	protected IMainGenerator mainGenerator;
 	
 	@Inject
-	private IResourceServiceProvider resourceServiceProvider;
+	protected IResourceServiceProvider resourceServiceProvider;
 	
 	@Inject
-	private ResourceDescriptionsProvider resourceDescriptionsProvider;
+	protected ResourceDescriptionsProvider resourceDescriptionsProvider;
 	
 	@Inject
-	private IStorage2UriMapper storage2UriMapper;
+	protected IStorage2UriMapper storage2UriMapper;
 	
 	@Inject
-	private DerivedResourceMarkers derivedResourceMarkers;
+	protected DerivedResourceMarkers derivedResourceMarkers;
 	
-	private BasicAndroidOutputConfigurationProvider outputConfigurationProvider = new BasicAndroidOutputConfigurationProvider();
-	
-	public AndroTextBuilderParticipant() {
-		fileExtensions.add("androtext");
-	}
+	@Inject
+	protected BasicAndroidOutputConfigurationProvider outputConfigurationProvider;
 	
 	@Override
 	public void build(final IBuildContext context, final IProgressMonitor monitor)
@@ -98,6 +96,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, numberOfDeltas + 3);
 		// this file system access reused for the next couple of generations
 		EclipseResourceFileSystemAccess3 access = fileSystemAccessProvider.get();
+//		printResourceInformation(context);
 		System.out.println("====================Build=======================");
 		Map<TargetApplication, ResourceSet> targetApps = findTargetApplications(context);
 		Delta delta = context.getDeltas().get(0);
@@ -191,6 +190,29 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 		
 	}
 	
+	private void printResourceInformation(IBuildContext context) {
+		System.out.println("============PRINT INFO=============");
+		for (Delta d : context.getDeltas()) {
+			final URI deltaURI = d.getUri();
+//			System.out.println("Delta URI: " + deltaURI);
+			Resource deltaRes = context.getResourceSet().getResource(deltaURI, true);
+			System.out.println(deltaRes);
+			if (d.getOld() != null) {
+				final URI oldURI = d.getOld().getURI();
+//				System.out.println("Old URI: " + oldURI);
+				Resource res = context.getResourceSet().getResource(oldURI, true);
+				System.out.println(res);
+			}
+			if (d.getNew() != null) {
+				final URI newURI = d.getNew().getURI();
+//				System.out.println("New URI: " + newURI);
+				Resource res = context.getResourceSet().getResource(newURI, true);
+				System.out.println(res);
+			}
+		}
+		System.out.println("============END PRINT INFO=============");
+	}
+
 	protected void handleChangedContents(Delta delta, IBuildContext context, IFileSystemAccess fileSystemAccess, IProject project, TargetApplication targetApplication, ResourceSet set) throws CoreException {
 		if (!canHandle(delta.getUri().fileExtension()))
 			return;
@@ -211,7 +233,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 	}
 
 	protected boolean canHandle(String fileExtension) {
-		return fileExtensions.contains(fileExtension);
+		return getFileExtensions().contains(fileExtension);
 	}
 	
 	protected boolean shouldGenerate(Resource resource, IBuildContext context) {
@@ -228,20 +250,34 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 		}
 	}
 	
-	protected void refreshOutputFolders(IBuildContext ctx, Map<String, OutputConfiguration> outputConfigurations, IProgressMonitor monitor) throws CoreException {
-		SubMonitor subMonitor = SubMonitor.convert(monitor, outputConfigurations.size());
-		for (OutputConfiguration config : outputConfigurations.values()) {
-			SubMonitor child = subMonitor.newChild(1);
-			final IProject project = ctx.getBuiltProject();
-			IFolder folder = project.getFolder(config.getOutputDirectory());
-			folder.refreshLocal(IResource.DEPTH_INFINITE, child);
-		}
-	}
+//	protected void refreshOutputFolders(IBuildContext ctx, Map<String, OutputConfiguration> outputConfigurations, IProgressMonitor monitor) throws CoreException {
+//		SubMonitor subMonitor = SubMonitor.convert(monitor, outputConfigurations.size());
+//		for (OutputConfiguration config : outputConfigurations.values()) {
+//			SubMonitor child = subMonitor.newChild(1);
+//			final IProject project = ctx.getBuiltProject();
+//			IFolder folder = project.getFolder(config.getOutputDirectory());
+//			folder.refreshLocal(IResource.DEPTH_INFINITE, child);
+//		}
+//	}
 	
 	private void findOrCreateProject(IProject project, SubMonitor monitor, TargetApplication target, OutputConfiguration srcGenConfig) throws CoreException {
 		if (!project.exists()) {
 			// create the project
 			AndroidProjectUtil.createEclipseProject(monitor, project, GeneratorUtil.getTarget(target), false);
+			boolean addGameJar = false;
+			if (target.getApplication().getMainActivity() instanceof BaseGameActivity) {
+				addGameJar = true;
+			} else {
+				for (AndroidApplicationModelElement me : target.getApplication().getModelElements()) {
+					if (me instanceof BaseGameActivity) {
+						addGameJar = true;
+						break;
+					}
+				}
+			}
+			if (addGameJar) {
+				AndroidProjectUtil.addGameJars(project);
+			}
 		} else {
 			// clean only the src-gen folder, if the project exists
 			cleanOutput(project, srcGenConfig, monitor);
@@ -394,6 +430,14 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 				}
 			}
 		}
+	}
+	
+	protected List<String> getFileExtensions() {
+		if (fileExtensions == null) {
+			fileExtensions = new ArrayList<String>();
+			fileExtensions.add("androtext");
+		}
+		return fileExtensions;
 	}
 	
 }

@@ -10,6 +10,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.EntriesAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl#getEntriesAttribute <em>Entries Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl#getListItem <em>List Item</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AutoCompleteTextViewImpl#getMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
@@ -44,6 +46,16 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
    * @ordered
    */
   protected EntriesAttribute entriesAttribute;
+
+  /**
+   * The cached value of the '{@link #getListItem() <em>List Item</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getListItem()
+   * @generated
+   * @ordered
+   */
+  protected View listItem;
 
   /**
    * The cached value of the '{@link #getMulti() <em>Multi</em>}' containment reference.
@@ -129,6 +141,49 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
    * <!-- end-user-doc -->
    * @generated
    */
+  public View getListItem()
+  {
+    if (listItem != null && listItem.eIsProxy())
+    {
+      InternalEObject oldListItem = (InternalEObject)listItem;
+      listItem = (View)eResolveProxy(oldListItem);
+      if (listItem != oldListItem)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__LIST_ITEM, oldListItem, listItem));
+      }
+    }
+    return listItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View basicGetListItem()
+  {
+    return listItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setListItem(View newListItem)
+  {
+    View oldListItem = listItem;
+    listItem = newListItem;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__LIST_ITEM, oldListItem, listItem));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BooleanPropertyValue getMulti()
   {
     return multi;
@@ -202,6 +257,9 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
     {
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
         return getEntriesAttribute();
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__LIST_ITEM:
+        if (resolve) return getListItem();
+        return basicGetListItem();
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
         return getMulti();
     }
@@ -220,6 +278,9 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
     {
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
         setEntriesAttribute((EntriesAttribute)newValue);
+        return;
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__LIST_ITEM:
+        setListItem((View)newValue);
         return;
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
         setMulti((BooleanPropertyValue)newValue);
@@ -241,6 +302,9 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
         setEntriesAttribute((EntriesAttribute)null);
         return;
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__LIST_ITEM:
+        setListItem((View)null);
+        return;
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
         setMulti((BooleanPropertyValue)null);
         return;
@@ -260,6 +324,8 @@ public class AutoCompleteTextViewImpl extends SimpleViewImpl implements AutoComp
     {
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__ENTRIES_ATTRIBUTE:
         return entriesAttribute != null;
+      case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__LIST_ITEM:
+        return listItem != null;
       case AndroTextDslPackage.AUTO_COMPLETE_TEXT_VIEW__MULTI:
         return multi != null;
     }

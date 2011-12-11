@@ -36,12 +36,12 @@ public interface DimensionValue extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
+   * @see #setValue(float)
    * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getDimensionValue_Value()
    * @model
    * @generated
    */
-  String getValue();
+  float getValue();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionValue#getValue <em>Value</em>}' attribute.
@@ -51,7 +51,7 @@ public interface DimensionValue extends EObject
    * @see #getValue()
    * @generated
    */
-  void setValue(String value);
+  void setValue(float value);
 
   /**
    * Returns the value of the '<em><b>Metric</b></em>' attribute.

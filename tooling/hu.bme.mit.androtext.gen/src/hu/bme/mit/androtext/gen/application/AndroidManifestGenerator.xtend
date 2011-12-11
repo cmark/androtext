@@ -26,6 +26,7 @@ class AndroidManifestGenerator implements IGenerator {
 			package="«androidApplication.findPackageName»"
 			android:versionCode="1"
 			android:versionName="1.0">
+			<uses-permission android:name="android.permission.WAKE_LOCK"/>
 			<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
 				«application.mainActivity.generateMainActivity»
 				«FOR activity : application.modelElements.filter(typeof (Activity))» 

@@ -1368,6 +1368,501 @@ public interface AndroTextDslFactory extends EFactory
   DimensionValue createDimensionValue();
 
   /**
+   * Returns a new object of class '<em>Base Game Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Base Game Activity</em>'.
+   * @generated
+   */
+  BaseGameActivity createBaseGameActivity();
+
+  /**
+   * Returns a new object of class '<em>Andro Game Root</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Andro Game Root</em>'.
+   * @generated
+   */
+  AndroGameRoot createAndroGameRoot();
+
+  /**
+   * Returns a new object of class '<em>Andro Game Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Andro Game Component</em>'.
+   * @generated
+   */
+  AndroGameComponent createAndroGameComponent();
+
+  /**
+   * Returns a new object of class '<em>Andro Game Gui</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Andro Game Gui</em>'.
+   * @generated
+   */
+  AndroGameGui createAndroGameGui();
+
+  /**
+   * Returns a new object of class '<em>Andro Game Logic</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Andro Game Logic</em>'.
+   * @generated
+   */
+  AndroGameLogic createAndroGameLogic();
+
+  /**
+   * Returns a new object of class '<em>Andro Game Box2 DLogic</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Andro Game Box2 DLogic</em>'.
+   * @generated
+   */
+  AndroGameBox2DLogic createAndroGameBox2DLogic();
+
+  /**
+   * Returns a new object of class '<em>Box2 DOptions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Box2 DOptions</em>'.
+   * @generated
+   */
+  Box2DOptions createBox2DOptions();
+
+  /**
+   * Returns a new object of class '<em>Box2 DComponent</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Box2 DComponent</em>'.
+   * @generated
+   */
+  Box2DComponent createBox2DComponent();
+
+  /**
+   * Returns a new object of class '<em>Joint</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Joint</em>'.
+   * @generated
+   */
+  Joint createJoint();
+
+  /**
+   * Returns a new object of class '<em>Revolute Joint</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Revolute Joint</em>'.
+   * @generated
+   */
+  RevoluteJoint createRevoluteJoint();
+
+  /**
+   * Returns a new object of class '<em>Distance Joint</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Distance Joint</em>'.
+   * @generated
+   */
+  DistanceJoint createDistanceJoint();
+
+  /**
+   * Returns a new object of class '<em>Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Body</em>'.
+   * @generated
+   */
+  Body createBody();
+
+  /**
+   * Returns a new object of class '<em>Line Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Line Body</em>'.
+   * @generated
+   */
+  LineBody createLineBody();
+
+  /**
+   * Returns a new object of class '<em>Circle Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Circle Body</em>'.
+   * @generated
+   */
+  CircleBody createCircleBody();
+
+  /**
+   * Returns a new object of class '<em>Box Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Box Body</em>'.
+   * @generated
+   */
+  BoxBody createBoxBody();
+
+  /**
+   * Returns a new object of class '<em>Fixture</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fixture</em>'.
+   * @generated
+   */
+  Fixture createFixture();
+
+  /**
+   * Returns a new object of class '<em>Logic Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logic Component</em>'.
+   * @generated
+   */
+  LogicComponent createLogicComponent();
+
+  /**
+   * Returns a new object of class '<em>Logic</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logic</em>'.
+   * @generated
+   */
+  Logic createLogic();
+
+  /**
+   * Returns a new object of class '<em>Game Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Game Element</em>'.
+   * @generated
+   */
+  GameElement createGameElement();
+
+  /**
+   * Returns a new object of class '<em>Scene</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scene</em>'.
+   * @generated
+   */
+  Scene createScene();
+
+  /**
+   * Returns a new object of class '<em>Menu Scene</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Menu Scene</em>'.
+   * @generated
+   */
+  MenuScene createMenuScene();
+
+  /**
+   * Returns a new object of class '<em>Game Background</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Game Background</em>'.
+   * @generated
+   */
+  GameBackground createGameBackground();
+
+  /**
+   * Returns a new object of class '<em>Game Menu Item</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Game Menu Item</em>'.
+   * @generated
+   */
+  GameMenuItem createGameMenuItem();
+
+  /**
+   * Returns a new object of class '<em>Game Entity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Game Entity</em>'.
+   * @generated
+   */
+  GameEntity createGameEntity();
+
+  /**
+   * Returns a new object of class '<em>Simple Entity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Entity</em>'.
+   * @generated
+   */
+  SimpleEntity createSimpleEntity();
+
+  /**
+   * Returns a new object of class '<em>Modifier Binding</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Modifier Binding</em>'.
+   * @generated
+   */
+  ModifierBinding createModifierBinding();
+
+  /**
+   * Returns a new object of class '<em>Entity Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Modifier</em>'.
+   * @generated
+   */
+  EntityModifier createEntityModifier();
+
+  /**
+   * Returns a new object of class '<em>Sequence Entity Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sequence Entity Modifier</em>'.
+   * @generated
+   */
+  SequenceEntityModifier createSequenceEntityModifier();
+
+  /**
+   * Returns a new object of class '<em>Loop Entity Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Loop Entity Modifier</em>'.
+   * @generated
+   */
+  LoopEntityModifier createLoopEntityModifier();
+
+  /**
+   * Returns a new object of class '<em>Move Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Move Modifier</em>'.
+   * @generated
+   */
+  MoveModifier createMoveModifier();
+
+  /**
+   * Returns a new object of class '<em>Move By Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Move By Modifier</em>'.
+   * @generated
+   */
+  MoveByModifier createMoveByModifier();
+
+  /**
+   * Returns a new object of class '<em>Scale Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scale Modifier</em>'.
+   * @generated
+   */
+  ScaleModifier createScaleModifier();
+
+  /**
+   * Returns a new object of class '<em>Alpha Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alpha Modifier</em>'.
+   * @generated
+   */
+  AlphaModifier createAlphaModifier();
+
+  /**
+   * Returns a new object of class '<em>Rotation By Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rotation By Modifier</em>'.
+   * @generated
+   */
+  RotationByModifier createRotationByModifier();
+
+  /**
+   * Returns a new object of class '<em>Rotation Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rotation Modifier</em>'.
+   * @generated
+   */
+  RotationModifier createRotationModifier();
+
+  /**
+   * Returns a new object of class '<em>Color Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Color Modifier</em>'.
+   * @generated
+   */
+  ColorModifier createColorModifier();
+
+  /**
+   * Returns a new object of class '<em>To Triple</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>To Triple</em>'.
+   * @generated
+   */
+  ToTriple createToTriple();
+
+  /**
+   * Returns a new object of class '<em>From Triple</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>From Triple</em>'.
+   * @generated
+   */
+  FromTriple createFromTriple();
+
+  /**
+   * Returns a new object of class '<em>To Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>To Double</em>'.
+   * @generated
+   */
+  ToDouble createToDouble();
+
+  /**
+   * Returns a new object of class '<em>From Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>From Double</em>'.
+   * @generated
+   */
+  FromDouble createFromDouble();
+
+  /**
+   * Returns a new object of class '<em>To Single</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>To Single</em>'.
+   * @generated
+   */
+  ToSingle createToSingle();
+
+  /**
+   * Returns a new object of class '<em>From Single</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>From Single</em>'.
+   * @generated
+   */
+  FromSingle createFromSingle();
+
+  /**
+   * Returns a new object of class '<em>By Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>By Double</em>'.
+   * @generated
+   */
+  ByDouble createByDouble();
+
+  /**
+   * Returns a new object of class '<em>By Single</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>By Single</em>'.
+   * @generated
+   */
+  BySingle createBySingle();
+
+  /**
+   * Returns a new object of class '<em>Line</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Line</em>'.
+   * @generated
+   */
+  Line createLine();
+
+  /**
+   * Returns a new object of class '<em>Text</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text</em>'.
+   * @generated
+   */
+  Text createText();
+
+  /**
+   * Returns a new object of class '<em>Rectangle</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rectangle</em>'.
+   * @generated
+   */
+  Rectangle createRectangle();
+
+  /**
+   * Returns a new object of class '<em>Sprite</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sprite</em>'.
+   * @generated
+   */
+  Sprite createSprite();
+
+  /**
+   * Returns a new object of class '<em>Animated Sprite</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Animated Sprite</em>'.
+   * @generated
+   */
+  AnimatedSprite createAnimatedSprite();
+
+  /**
+   * Returns a new object of class '<em>Color</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Color</em>'.
+   * @generated
+   */
+  Color createColor();
+
+  /**
+   * Returns a new object of class '<em>Position</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Position</em>'.
+   * @generated
+   */
+  Position createPosition();
+
+  /**
+   * Returns a new object of class '<em>Size</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Size</em>'.
+   * @generated
+   */
+  Size createSize();
+
+  /**
+   * Returns a new object of class '<em>Texture Region</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Texture Region</em>'.
+   * @generated
+   */
+  TextureRegion createTextureRegion();
+
+  /**
+   * Returns a new object of class '<em>Tiled</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tiled</em>'.
+   * @generated
+   */
+  Tiled createTiled();
+
+  /**
+   * Returns a new object of class '<em>Font</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Font</em>'.
+   * @generated
+   */
+  Font createFont();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

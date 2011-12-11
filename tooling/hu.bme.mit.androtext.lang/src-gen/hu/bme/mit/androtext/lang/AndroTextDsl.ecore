@@ -10,13 +10,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="actualModelRoot" eType="#//ModelRoot"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelRoot">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelRoot"/>
   <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroGenModelRoot" eSuperTypes="#//ModelRoot">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetApplications" upperBound="-1"
         eType="#//TargetApplication" containment="true"/>
   </eClassifiers>
@@ -36,6 +35,7 @@
     <eLiterals name="API14" value="5" literal="Android 4.0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroidApplication" eSuperTypes="#//ModelRoot">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataroot" eType="#//AndroDataModelRoot"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mainActivity" eType="#//Activity"
         containment="true"/>
@@ -77,6 +77,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//ArrayResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroDataModelRoot" eSuperTypes="#//ModelRoot">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="#//Entity" containment="true"/>
   </eClassifiers>
@@ -105,6 +106,7 @@
     <eLiterals name="INT" value="3" literal="int"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroGuiModelRoot" eSuperTypes="#//ModelRoot">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roots" upperBound="-1"
         eType="#//View" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="layoutAttributes" upperBound="-1"
@@ -394,6 +396,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AutoCompleteTextView" eSuperTypes="#//SimpleView">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entriesAttribute" eType="#//EntriesAttribute"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listItem" eType="#//View"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="multi" eType="#//BooleanPropertyValue"
         containment="true"/>
   </eClassifiers>
@@ -710,6 +713,7 @@
     <eLiterals name="WRAP_FILL" value="3" literal="wrap&amp;fill"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroResModelRoot" eSuperTypes="#//ModelRoot">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
         eType="#//Resource" containment="true"/>
   </eClassifiers>
@@ -819,7 +823,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="unselected" eType="#//BitmapDrawableResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DimensionValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metric" eType="#//DimensionMetric"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DimensionMetric">
@@ -829,5 +833,273 @@
     <eLiterals name="px" value="3" literal="px"/>
     <eLiterals name="mm" value="4" literal="mm"/>
     <eLiterals name="in" value="5" literal="in"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseGameActivity" eSuperTypes="#//Activity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="#//ScreenOrientation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scene" eType="#//Scene"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndroGameRoot" eSuperTypes="#//ModelRoot">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="androGameComponents" upperBound="-1"
+        eType="#//AndroGameComponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndroGameComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndroGameGui" eSuperTypes="#//AndroGameComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gameElements" upperBound="-1"
+        eType="#//GameElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndroGameLogic" eSuperTypes="#//AndroGameComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicComponent" upperBound="-1"
+        eType="#//LogicComponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndroGameBox2DLogic" eSuperTypes="#//AndroGameComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="options" eType="#//Box2DOptions"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="box2dComponent" upperBound="-1"
+        eType="#//Box2DComponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Box2DOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gravity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Box2DComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Joint" eSuperTypes="#//Box2DComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="second" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RevoluteJoint" eSuperTypes="#//Joint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DistanceJoint" eSuperTypes="#//Joint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//Box2DComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bodyType" eType="#//BodyType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixture" eType="#//Fixture"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LineBody" eSuperTypes="#//Body"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CircleBody" eSuperTypes="#//Body"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BoxBody" eSuperTypes="#//Body"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fixture" eSuperTypes="#//Box2DComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="density" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="friction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="restitution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BodyType">
+    <eLiterals name="static" literal="static"/>
+    <eLiterals name="kinetic" value="1" literal="kinetic"/>
+    <eLiterals name="dynamic" value="2" literal="dynamic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Logic" eSuperTypes="#//LogicComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scene" eSuperTypes="#//GameElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gameBackground" eType="#//GameBackground"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="#//GameEntity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MenuScene" eSuperTypes="#//Scene">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="menuItems" upperBound="-1"
+        eType="#//GameMenuItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameBackground">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="#//Color"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textureRegion" eType="#//TextureRegion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameMenuItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textureRegion" eType="#//TextureRegion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameEntity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="#//Color"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleEntity" eSuperTypes="#//GameEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//Position"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//GameEntity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifierBinding" eSuperTypes="#//Logic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modifier" eType="#//EntityModifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gameEntity" eType="#//GameEntity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityModifier" eSuperTypes="#//LogicComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceEntityModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modifiers" unique="false"
+        upperBound="-1" eType="#//EntityModifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoopEntityModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modifiers" unique="false"
+        upperBound="-1" eType="#//EntityModifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MoveModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FromDouble"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ToDouble"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MoveByModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="by" eType="#//ByDouble"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScaleModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FromSingle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ToSingle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlphaModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FromSingle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ToSingle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RotationByModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="by" eType="#//BySingle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RotationModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FromSingle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ToSingle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColorModifier" eSuperTypes="#//EntityModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FromTriple"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ToTriple"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToTriple">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="third" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FromTriple">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="third" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToDouble">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FromDouble">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToSingle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FromSingle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ByDouble">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BySingle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//GameEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//FromDouble"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ToDouble"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//GameEntity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//Position"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="font" eType="#//Font"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="halign" eType="#//HorizontalAlign"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rectangle" eSuperTypes="#//GameEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//Position"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sprite" eSuperTypes="#//GameEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//Position"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textureRegion" eType="#//TextureRegion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnimatedSprite" eSuperTypes="#//GameEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//Position"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textureRegion" eType="#//TextureRegion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="animate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Color">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="g" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="b" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="a" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constantColor" eType="#//ConstantColor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Position">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Size">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="w" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="h" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextureRegion" eSuperTypes="#//GameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tiled" eType="#//Tiled"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tiled">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="column" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Font" eSuperTypes="#//GameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FontType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="#//Color"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="antialias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConstantColor">
+    <eLiterals name="BLACK" literal="BLACK"/>
+    <eLiterals name="WHITE" value="1" literal="WHITE"/>
+    <eLiterals name="RED" value="2" literal="RED"/>
+    <eLiterals name="GREEN" value="3" literal="GREEN"/>
+    <eLiterals name="BLUE" value="4" literal="BLUE"/>
+    <eLiterals name="YELLOW" value="5" literal="YELLOW"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HorizontalAlign">
+    <eLiterals name="LEFT" literal="LEFT"/>
+    <eLiterals name="RIGHT" value="1" literal="RIGHT"/>
+    <eLiterals name="CENTER" value="2" literal="CENTER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FontType">
+    <eLiterals name="BOLD" literal="BOLD"/>
+    <eLiterals name="ITALIC" value="1" literal="ITALIC"/>
+    <eLiterals name="BOLD_ITALIC" value="2" literal="BOLD_ITALIC"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScreenOrientation">
+    <eLiterals name="landscape" literal="landscape"/>
+    <eLiterals name="portrait" value="1" literal="portrait"/>
   </eClassifiers>
 </ecore:EPackage>

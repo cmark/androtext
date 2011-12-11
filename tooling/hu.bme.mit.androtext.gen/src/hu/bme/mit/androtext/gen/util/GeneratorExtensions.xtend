@@ -8,6 +8,10 @@ import hu.bme.mit.androtext.lang.androTextDsl.View
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
+import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
+import hu.bme.mit.androtext.lang.androTextDsl.Font
+import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
+import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
 
 class GeneratorExtensions {
 	
@@ -76,6 +80,26 @@ class GeneratorExtensions {
 	def layoutName(View root) {
 		root.name.toLowerCase + "_layout"
 	}
+	
+	def textureRegionFieldName(TextureRegion region) '''
+		m«region.name.toFirstUpper»TextureRegion
+	'''
+	
+	def fontFieldName(Font font) '''
+		m«font.name.toFirstUpper»Font
+	'''
+	
+	def entityFieldName(GameEntity entity) '''
+		m«entity.name.toFirstUpper»Entity
+	'''
+	
+	def dispatch type(GameEntity entity) '''
+		«entity.eClass.name»
+	'''
+	
+	def dispatch type(SimpleEntity entity) '''
+		Entity
+	'''
 	
 //	def columnType(Feature f) {
 //		val t = f.type;

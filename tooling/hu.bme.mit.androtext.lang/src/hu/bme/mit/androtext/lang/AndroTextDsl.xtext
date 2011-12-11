@@ -2,13 +2,15 @@ grammar hu.bme.mit.androtext.lang.AndroTextDsl with org.eclipse.xtext.common.Ter
 
 generate androTextDsl "http://www.bme.hu/mit/androtext/lang/AndroTextDsl"
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
 AndroTextModelRoot:
 	('package' name=QualifiedName)?
 	imports+=Import*
 	actualModelRoot=ModelRoot;
 
 ModelRoot:
-	AndroGenModelRoot | AndroidApplication | AndroGuiModelRoot | AndroDataModelRoot | AndroResModelRoot
+	AndroGenModelRoot | AndroidApplication | AndroGuiModelRoot | AndroDataModelRoot | AndroResModelRoot | AndroGameRoot
 ;
 
 /* Common language elements */
@@ -63,7 +65,7 @@ AndroidApplicationModelElement:
 
 Activity:
 	'activity' name=ID 'layout' layout=[View | QualifiedName] ('theme' theme=ActivityTheme)? 
-	| TabActivity | ListActivity
+	| TabActivity | ListActivity | BaseGameActivity
 ;
 
 enum ActivityTheme:
@@ -445,7 +447,8 @@ CheckedTextView:
 
 AutoCompleteTextView:
 	'autocompletetextview' name=ID 
-	(entriesAttribute=EntriesAttribute)? 
+	(entriesAttribute=EntriesAttribute)?
+	('listitem' listItem=[View | QualifiedName])?
 	(layoutStyle=LayoutStyle)?
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	('multi' multi=BooleanPropertyValue)? 
@@ -923,7 +926,7 @@ BOOL:
     'true' | 'false'
 ;
 
-FLOAT:
+FLOAT returns ecore::EFloat:
     INT ('.' INT)?
 ;
 
@@ -935,3 +938,269 @@ terminal HEX_COLOR:
   (('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f'))? 
 ;
 /* End of AndroResModelRoot and resource model elements */
+
+/* AndroGameModelRoot and game model elements based on AndEngine www.andengine.org */
+BaseGameActivity:
+	'gameactivity' name=ID '{'
+		'camera' size=Size
+		'orientation' orientation=ScreenOrientation
+		'scene' scene=[Scene | QualifiedName]
+	'}'
+;
+
+AndroGameRoot:
+	{AndroGameRoot}
+	androGameComponents+=(AndroGameComponent)*
+;
+
+AndroGameComponent:
+	AndroGameGui | AndroGameLogic | AndroGameBox2DLogic
+;
+
+AndroGameGui:
+	'gamegui' name=ID '{' 
+		(gameElements+=GameElement)*
+	'}'
+;
+
+AndroGameLogic:
+	'gamelogic' name=ID '{'
+		logicComponent+=LogicComponent*
+	'}'
+;
+
+AndroGameBox2DLogic:
+	'box2d' name=ID '{'
+		(options=Box2DOptions)?
+		box2dComponent+=Box2DComponent*
+	'}'	
+;
+
+Box2DOptions:
+	'options' '{'
+		'gravity' gravity=FLOAT
+	'}'
+;
+
+Box2DComponent:
+	Body | Joint | Fixture
+;
+
+Joint:
+	DistanceJoint | RevoluteJoint	
+;
+
+RevoluteJoint:
+	'revolutejoint' name=ID 'between' first=[Body | QualifiedName] ',' second=[Body | QualifiedName]
+;
+
+DistanceJoint:
+	'distancejoint' name=ID 'between' first=[Body | QualifiedName] ',' second=[Body | QualifiedName]
+;
+
+Body:
+	BoxBody | CircleBody | LineBody
+;
+
+LineBody:
+	'linebody' name=ID bodyType=BodyType 'fixture' fixture=[Fixture | QualifiedName]
+;
+
+CircleBody:
+	'circlebody' name=ID bodyType=BodyType 'fixture' fixture=[Fixture | QualifiedName]
+;
+
+BoxBody:
+	'boxbody' name=ID bodyType=BodyType 'fixture' fixture=[Fixture | QualifiedName]
+;
+
+Fixture:
+	'fixture' name=ID 'density' density=FLOAT 'friction' friction=FLOAT 'restitution' restitution=FLOAT
+;
+
+enum BodyType:
+	static | kinetic | dynamic	
+;
+
+LogicComponent:
+	Logic | EntityModifier
+;
+
+Logic:
+	ModifierBinding
+;
+
+GameElement:
+	Scene | TextureRegion | Font
+;
+
+Scene:
+	'scene'	name=ID (gameBackground=GameBackground)? '{'
+		(entities+=GameEntity)*
+	'}' | MenuScene
+;
+
+MenuScene:
+	'menu' name=ID (gameBackground=GameBackground)? '{'
+		 (menuItems+=GameMenuItem)+
+	'}'
+;
+
+GameBackground:
+	'background' (color=Color | textureRegion=[TextureRegion | QualifiedName]) 
+;
+
+GameMenuItem:
+	'menuitem' (text=STRING | textureRegion=[TextureRegion | QualifiedName])
+;
+
+GameEntity:
+	SimpleEntity | Line | Text | Rectangle | Sprite | AnimatedSprite
+;
+
+SimpleEntity:
+	'entity' (name=ID)? position=Position (size=Size)? (color=Color)? '{'
+		children+=GameEntity*
+	'}'
+;
+
+ModifierBinding:
+	'bind' modifier=[EntityModifier | QualifiedName] 'to' gameEntity=[GameEntity | QualifiedName]
+;
+
+EntityModifier:
+	MoveModifier | MoveByModifier | ScaleModifier | AlphaModifier | RotationByModifier | RotationModifier | ColorModifier | LoopEntityModifier | SequenceEntityModifier 
+;
+
+SequenceEntityModifier:
+	'sequence' name=ID modifiers+=[EntityModifier] (',' modifiers+=[EntityModifier])*
+;
+
+LoopEntityModifier:
+	'loop' name=ID modifiers+=[EntityModifier] (',' modifiers+=[EntityModifier])* ('count' count=INT)?
+;
+
+MoveModifier:
+	'move' name=ID duration=FLOAT from=FromDouble to=ToDouble
+;
+
+MoveByModifier:
+	'moveby' name=ID duration=FLOAT by=ByDouble
+;
+
+ScaleModifier:
+	'scale' name=ID duration=FLOAT from=FromSingle to=ToSingle
+;
+
+AlphaModifier:
+	'alphamodifier' name=ID duration=FLOAT from=FromSingle to=ToSingle
+;
+
+RotationByModifier:
+	'rotateby' name=ID duration=FLOAT by=BySingle
+;
+
+RotationModifier:
+	'rotate' name=ID duration=FLOAT from=FromSingle to=ToSingle
+;
+
+ColorModifier: 
+	'colormodifier' name=ID duration=FLOAT from=FromTriple to=ToTriple
+;
+
+ToTriple:
+	'to''('first=FLOAT second=FLOAT third=FLOAT')'
+;
+
+FromTriple:
+	'from''('first=FLOAT second=FLOAT third=FLOAT')'
+;
+
+ToDouble:
+	'to''('x=FLOAT y=FLOAT')'
+;
+
+FromDouble:
+	'from''('x=FLOAT y=FLOAT')'
+;
+
+ToSingle:
+	'to' '('value=FLOAT')'
+;
+
+FromSingle:
+	'from''('value=FLOAT')'
+;
+
+ByDouble:
+	'by''('x=FLOAT y=FLOAT')'	
+;
+
+BySingle:
+	'by''('value=FLOAT')'
+;
+
+Line:
+	'line' (name=ID)? from=FromDouble to=ToDouble (color=Color)? ('lineWidth''('lineWidth=FLOAT')')?
+;
+
+Text:
+	'text' (name=ID)? text=STRING position=Position (color=Color)? font=[Font | QualifiedName] (halign=HorizontalAlign)?
+;
+
+Rectangle:
+	'rect' (name=ID)? position=Position size=Size color=Color
+;
+
+Sprite:
+	'sprite' (name=ID)? position=Position (size=Size)? (color=Color)? textureRegion=[TextureRegion | QualifiedName] 
+;
+
+AnimatedSprite:
+	'animsprite' (name=ID)? position=Position (size=Size)? (color=Color)? textureRegion=[TextureRegion | QualifiedName] animate=INT 
+;
+
+Color:
+	'color''('(r=FLOAT g=FLOAT b=FLOAT (a=FLOAT)? | constantColor=ConstantColor)')'
+;
+
+Position:
+	'pos''('x=SignedFloat y=SignedFloat')'
+;
+
+Size:
+	'size''('w=SignedFloat h=SignedFloat')'
+;
+
+TextureRegion:
+	'texture' name=ID fileName=STRING (tiled=Tiled)?
+;
+
+Tiled:
+	'tiled''('column=INT row=INT')'
+;
+
+Font:
+	'font' name=ID (type=FontType)? size=INT color=Color antialias?='antialias'
+;
+
+enum ConstantColor:
+	BLACK | WHITE | RED | GREEN | BLUE | YELLOW
+;
+
+enum HorizontalAlign:
+	LEFT | RIGHT | CENTER
+;
+
+enum FontType:
+	BOLD | ITALIC | BOLD_ITALIC
+;
+
+enum ScreenOrientation:
+	landscape | portrait
+;
+
+SignedFloat returns ecore::EFloat:
+	'-'? FLOAT
+;
+/* End of AndroGameModelRoot and game model elements */

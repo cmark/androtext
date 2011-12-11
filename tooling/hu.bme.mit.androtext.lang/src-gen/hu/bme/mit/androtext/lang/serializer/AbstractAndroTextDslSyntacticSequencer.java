@@ -23,8 +23,8 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AndroTextDslGrammarAccess) access;
-		match_LinearLayout_HorizontalKeyword_2_1_q = new TokenAlias(true, false, grammarAccess.getLinearLayoutAccess().getHorizontalKeyword_2_1());
-		match_RadioGroup_VerticalKeyword_2_1_q = new TokenAlias(true, false, grammarAccess.getRadioGroupAccess().getVerticalKeyword_2_1());
+		match_LinearLayout_HorizontalKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getLinearLayoutAccess().getHorizontalKeyword_2_1());
+		match_RadioGroup_VerticalKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getRadioGroupAccess().getVerticalKeyword_2_1());
 	}
 	
 	@Override

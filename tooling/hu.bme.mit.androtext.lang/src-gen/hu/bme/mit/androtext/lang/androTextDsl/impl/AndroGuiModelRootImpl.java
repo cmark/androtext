@@ -13,12 +13,15 @@ import hu.bme.mit.androtext.lang.androTextDsl.View;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGuiModelRootImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGuiModelRootImpl#getRoots <em>Roots</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGuiModelRootImpl#getLayoutAttributes <em>Layout Attributes</em>}</li>
  * </ul>
@@ -39,6 +43,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiModelRoot
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getRoots() <em>Roots</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -78,6 +102,29 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   protected EClass eStaticClass()
   {
     return AndroTextDslPackage.eINSTANCE.getAndroGuiModelRoot();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__NAME, oldName, name));
   }
 
   /**
@@ -136,6 +183,8 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__NAME:
+        return getName();
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         return getRoots();
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES:
@@ -155,6 +204,9 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__NAME:
+        setName((String)newValue);
+        return;
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         getRoots().clear();
         getRoots().addAll((Collection<? extends View>)newValue);
@@ -177,6 +229,9 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         getRoots().clear();
         return;
@@ -197,12 +252,31 @@ public class AndroGuiModelRootImpl extends ModelRootImpl implements AndroGuiMode
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__ROOTS:
         return roots != null && !roots.isEmpty();
       case AndroTextDslPackage.ANDRO_GUI_MODEL_ROOT__LAYOUT_ATTRIBUTES:
         return layoutAttributes != null && !layoutAttributes.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //AndroGuiModelRootImpl

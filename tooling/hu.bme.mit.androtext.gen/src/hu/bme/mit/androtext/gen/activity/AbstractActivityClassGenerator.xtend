@@ -1,27 +1,30 @@
 package hu.bme.mit.androtext.gen.activity
 
 import com.google.inject.Inject
-import hu.bme.mit.androtext.gen.IGenerator
+import hu.bme.mit.androtext.gen.IAbstractActivityGenerator
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 
-class AbstractActivityClassGenerator implements IGenerator {
+class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	
-	@Inject extension GeneratorExtensions extensions
+	@Inject extension GeneratorExtensions
+	@Inject extension AbstractActivityFieldGenerator
+	@Inject extension AbstractActivityMethodGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
 		for (activity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (Activity))).flatten) {
@@ -40,22 +43,50 @@ class AbstractActivityClassGenerator implements IGenerator {
 		«FOR i : importManager.imports»
 			import «i»;
 		«ENDFOR»
-		«activity.importActivity.toString.trim»
 		import android.os.Bundle;
-		«IF activity instanceof ListActivity»
-		import android.widget.ArrayAdapter;
-		«ENDIF»
-		«IF activity instanceof TabActivity»
-		import android.widget.TabHost;
-		import android.content.Intent;
-		import android.content.res.Resources;
-		«ENDIF»
+		«activity.importActivity.toString.trim»
+		«activity.extraImports.toString.trim»
 		
 		«body»
 	'''
 	
+	def dispatch extraImports(Activity activity) ''''''
+	
+	def dispatch extraImports(ListActivity activity) '''
+		import android.widget.ArrayAdapter;
+	'''
+	
+	def dispatch extraImports(TabActivity activity) '''
+		import android.widget.TabHost;
+		import android.content.Intent;
+		import android.content.res.Resources;
+	'''
+	
+	def dispatch extraImports(BaseGameActivity activity) '''
+		import org.anddev.andengine.engine.Engine;
+		import org.anddev.andengine.engine.options.EngineOptions;
+		import org.anddev.andengine.engine.options.EngineOptions.ScreenOrientation;
+		import org.anddev.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
+		import org.anddev.andengine.entity.Entity;
+		import org.anddev.andengine.entity.sprite.Sprite;
+		import org.anddev.andengine.entity.scene.Scene;
+		import org.anddev.andengine.entity.scene.background.*;
+		import org.anddev.andengine.engine.camera.Camera;
+		import org.anddev.andengine.util.HorizontalAlign;
+		import org.anddev.andengine.entity.primitive.*;
+		import org.anddev.andengine.opengl.font.Font;
+		import org.anddev.andengine.opengl.texture.*;
+		import org.anddev.andengine.opengl.texture.region.*;
+		import org.anddev.andengine.opengl.texture.atlas.bitmap.*;
+		import org.anddev.andengine.entity.modifier.*;
+	'''
+	
 	def dispatch importActivity(Activity a) '''
 		import android.app.«a.eClass.name»;
+	'''
+	
+	def dispatch importActivity(BaseGameActivity activity) '''
+		import org.anddev.andengine.ui.activity.BaseGameActivity;
 	'''
 	
 	def dispatch importActivity(PreferenceActivity a) '''
@@ -65,12 +96,16 @@ class AbstractActivityClassGenerator implements IGenerator {
 	def body(Activity activity, ImportManager manager) '''
 		public abstract class «activity.abstractClassName» extends «activity.eClass.name» {
 			
+			«activity.generateFields»
+			
 			@Override
 			protected void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
 				«activity.contentViewSet»
 				«activity.logic»
 			}
+			
+			«activity.generateMethods»
 			
 		} 
 	'''
@@ -92,12 +127,10 @@ class AbstractActivityClassGenerator implements IGenerator {
 	'''
 	
 	def dispatch logic(TabActivity activity) '''
-		
 		Resources res = getResources(); // Resource object to get Drawables
-	    TabHost tabHost = getTabHost();  // The activity TabHost
-	    TabHost.TabSpec spec;  // Resusable TabSpec for each tab
-	    Intent intent;  // Reusable Intent for each tab
-	
+		TabHost tabHost = getTabHost();  // The activity TabHost
+		TabHost.TabSpec spec;  // Resusable TabSpec for each tab
+		Intent intent;  // Reusable Intent for each tab
 		«FOR tab : activity.tabs»
 		intent = new Intent().setClass(this, «tab.activity.className».class);
 		spec = tabHost.newTabSpec("«tab.tag»").setIndicator("«tab.tag.toFirstUpper»",
@@ -106,8 +139,8 @@ class AbstractActivityClassGenerator implements IGenerator {
 		tabHost.addTab(spec);
 		
 		«ENDFOR»
-	
-	    tabHost.setCurrentTab(2);
+		
+		tabHost.setCurrentTab(2);
 	'''
 	
 	def dispatch generate(ContentProvider provider, String listItem) ''''''
@@ -118,8 +151,8 @@ class AbstractActivityClassGenerator implements IGenerator {
 	def dispatch generateContentSet(ArrayResource resource, String listItem) '''
 	'''
 	def dispatch generateContentSet(StringArrayResource resource, String listItem) '''
-		String[] countries = getResources().getStringArray(R.array.«resource.name»);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.«listItem», countries));
+		String[] «resource.name» = getResources().getStringArray(R.array.«resource.name»);
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.«listItem», «resource.name»));
 	'''
 	def dispatch generateContentSet(IntegerArrayResource resource, String listItem) '''
 	'''

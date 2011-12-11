@@ -20,6 +20,7 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: hu.bme.mit.androtext.lang.ui,
+ hu.bme.mit.androtext.lang.ui.contentassist,
  hu.bme.mit.androtext.lang.ui.contentassist.antlr,
  hu.bme.mit.androtext.lang.ui.internal
 Bundle-Activator: hu.bme.mit.androtext.lang.ui.internal.AndroTextDslActivator

@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroidApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroidApplicationImpl#getDataroot <em>Dataroot</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroidApplicationImpl#getMainActivity <em>Main Activity</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroidApplicationImpl#getModelElements <em>Model Elements</em>}</li>
@@ -44,6 +45,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AndroidApplicationImpl extends ModelRootImpl implements AndroidApplication
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getDataroot() <em>Dataroot</em>}' reference.
    * <!-- begin-user-doc -->
@@ -93,6 +114,29 @@ public class AndroidApplicationImpl extends ModelRootImpl implements AndroidAppl
   protected EClass eStaticClass()
   {
     return AndroTextDslPackage.eINSTANCE.getAndroidApplication();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.ANDROID_APPLICATION__NAME, oldName, name));
   }
 
   /**
@@ -228,6 +272,8 @@ public class AndroidApplicationImpl extends ModelRootImpl implements AndroidAppl
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDROID_APPLICATION__NAME:
+        return getName();
       case AndroTextDslPackage.ANDROID_APPLICATION__DATAROOT:
         if (resolve) return getDataroot();
         return basicGetDataroot();
@@ -250,6 +296,9 @@ public class AndroidApplicationImpl extends ModelRootImpl implements AndroidAppl
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDROID_APPLICATION__NAME:
+        setName((String)newValue);
+        return;
       case AndroTextDslPackage.ANDROID_APPLICATION__DATAROOT:
         setDataroot((AndroDataModelRoot)newValue);
         return;
@@ -274,6 +323,9 @@ public class AndroidApplicationImpl extends ModelRootImpl implements AndroidAppl
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDROID_APPLICATION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroTextDslPackage.ANDROID_APPLICATION__DATAROOT:
         setDataroot((AndroDataModelRoot)null);
         return;
@@ -297,6 +349,8 @@ public class AndroidApplicationImpl extends ModelRootImpl implements AndroidAppl
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.ANDROID_APPLICATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.ANDROID_APPLICATION__DATAROOT:
         return dataroot != null;
       case AndroTextDslPackage.ANDROID_APPLICATION__MAIN_ACTIVITY:
@@ -305,6 +359,23 @@ public class AndroidApplicationImpl extends ModelRootImpl implements AndroidAppl
         return modelElements != null && !modelElements.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //AndroidApplicationImpl

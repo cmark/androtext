@@ -41,7 +41,7 @@ public class DimensionValueImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
+  protected static final float VALUE_EDEFAULT = 0.0F;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -51,7 +51,7 @@ public class DimensionValueImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected String value = VALUE_EDEFAULT;
+  protected float value = VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMetric() <em>Metric</em>}' attribute.
@@ -99,7 +99,7 @@ public class DimensionValueImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public float getValue()
   {
     return value;
   }
@@ -109,9 +109,9 @@ public class DimensionValueImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public void setValue(float newValue)
   {
-    String oldValue = value;
+    float oldValue = value;
     value = newValue;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.DIMENSION_VALUE__VALUE, oldValue, value));
@@ -169,7 +169,7 @@ public class DimensionValueImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case AndroTextDslPackage.DIMENSION_VALUE__VALUE:
-        setValue((String)newValue);
+        setValue((Float)newValue);
         return;
       case AndroTextDslPackage.DIMENSION_VALUE__METRIC:
         setMetric((DimensionMetric)newValue);
@@ -209,7 +209,7 @@ public class DimensionValueImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case AndroTextDslPackage.DIMENSION_VALUE__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        return value != VALUE_EDEFAULT;
       case AndroTextDslPackage.DIMENSION_VALUE__METRIC:
         return metric != METRIC_EDEFAULT;
     }
