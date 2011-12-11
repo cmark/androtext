@@ -16,7 +16,7 @@ application HelloTabWidget {
 			show SongsActivity
 			image HelloTabWidgetRes.ic_tab_image
 		}
-		
+	    	
 	}
 	
 	activity ArtistsActivity layout HelloTabWidgetGui.artistsText

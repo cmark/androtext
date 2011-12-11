@@ -1,0 +1,9 @@
+application LineExample {
+	
+	gameactivity LineExampleActivity {
+		camera size(720 480)
+		orientation landscape
+		scene LineExampleGui.lineScene
+	}
+	
+}

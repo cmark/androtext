@@ -1,0 +1,11 @@
+gamegui TextExampleGui {
+	
+	font simpleFont BOLD 32 color(BLACK) antialias 
+	
+	scene textScene background color(0.09804 0.6274 0.8784) {
+		text "Hello AndroGame!\nYou can even have multilined text!" pos(100 60) simpleFont CENTER
+		text "Also left aligned!\nLorem ipsum dolor sit amat..." pos(100 200) simpleFont LEFT
+		text "And right aligned!\nLorem ipsum dolor sit amat..." pos(100 340) simpleFont RIGHT
+	}
+	
+}

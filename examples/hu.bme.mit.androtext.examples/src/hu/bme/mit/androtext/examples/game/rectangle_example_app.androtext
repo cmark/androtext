@@ -1,0 +1,9 @@
+application RectangleExampleApp {
+	
+	gameactivity RectangleExample {
+		camera size(720 480)
+		orientation landscape
+		scene RectangleExampleGui.rectangles
+	}
+	
+}
