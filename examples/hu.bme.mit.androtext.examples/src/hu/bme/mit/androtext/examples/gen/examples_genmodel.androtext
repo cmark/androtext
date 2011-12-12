@@ -60,4 +60,17 @@ generator ExampleGenerators {
 		version 1.0
 	}
 	
+	target TextExample {
+		project hu.bme.mit.androtext.examples.game.textexample
+		platform Android 2.3.3
+		version 1.0
+	}
+	
+	target PhysicsExample {
+		project hu.bme.mit.androtext.examples.game.physicsexample
+		platform Android 2.3.3
+		version 1.0
+	}
+	
+	
 }

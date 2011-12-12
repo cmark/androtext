@@ -1,0 +1,53 @@
+gamegui PhysicsExampleGui {
+	
+	texture boxFace "face_box.png"
+	
+	scene PhysicsScene background color(0 0 0 1) {
+		
+		rect ground pos(0 478) size(720 2) color(1 0 0 1)
+		rect roof pos(0 0) size(720 2) color(1 0 0 1)
+		rect leftWall pos(0 0) size(2 480) color(1 0 0 1)
+		rect rightWall pos(718 0) size(2 480) color(1 0 0 1)
+		
+		sprite face1 pos(100 100) boxFace
+		sprite face2 pos(200 100) boxFace
+		sprite face3 pos(300 100) boxFace
+		sprite face4 pos(400 100) boxFace
+		sprite face5 pos(500 100) boxFace
+		sprite face6 pos(100 50) boxFace
+		sprite face7 pos(100 100) boxFace
+		sprite face8 pos(100 150) boxFace
+		sprite face9 pos(100 200) boxFace
+		sprite face10 pos(100 250) boxFace
+		
+	}
+	
+}
+
+gamelogic PhysicsExampleLogic {
+	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.roof
+	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.ground
+	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.leftWall
+	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.rightWall
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face1
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face2
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face3
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face4
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face5
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face6
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face7
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face8
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face9
+	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face10
+	bindsensor accelerometer to gravity
+}
+
+box2d SimpleBox2DWorld {
+	
+	fixture wallFixture density 0.0 friction 0.5 restitution 0.5
+	fixture faceFixture density 1.0 friction 0.5 restitution 0.5
+		
+	boxbody wall static fixture wallFixture
+	boxbody face dynamic fixture faceFixture
+	
+}
