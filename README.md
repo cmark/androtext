@@ -32,9 +32,12 @@ RoadMap Date: 2011. 11. 19.
 1. Get Eclipse with Xtext 2.1
 2. Get AndroText from Github as Zip or Clone the repository
 3. Start Eclipse and import all project from the *tooling* directory into your workspace
-4. Start a Runtime Eclipse with the newly imported plugins.
-5. Create a simple Java project (later a AndroText project), and create *.androtext files.
-6. See the example project in the *examples* folder.
+4. IMPORTANT: create the following empty folders (!Git not adding empty folders to Git index!). 
+4.1. hu.bme.mit.androtext.gen/xtend-gen
+4.2. hu.bme.mit.androtext.lang/xtend-gen
+5. Start a Runtime Eclipse with the newly imported plugins.
+6. Create a simple Java project (later a AndroText project), and create *.androtext files.
+7. See the example project in the *examples* folder.
 
 ## License ##
 
