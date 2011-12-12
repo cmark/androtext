@@ -1,15 +1,15 @@
 gamegui RectangleExampleGui {
 	
 	scene rectangles background color(0 0 0) {
-		rect rect1 pos(10 10) size(100 100) color(1 0 0 1)
-//		entity container pos(360 240) {
-//			
-//			rect rect1 pos(-180 -180) size(180 180) color(1 0 0 1) 
-//			rect rect2 pos(0 -180) size(180 180) color(0 1 0 1)
-//			rect rect3 pos(-180 0) size(180 180) color(0 0 1 1)
-//			rect rect4 pos(0 0) size(180 180) color(1 1 0 1)
-//			
-//		}
+//		rect rect1 pos(10 10) size(100 100) color(1 0 0 1)
+		entity container pos(360 240) {
+			
+			rect rect1 pos(-180 -180) size(180 180) color(1 0 0 1) 
+			rect rect2 pos(0 -180) size(180 180) color(0 1 0 1)
+			rect rect3 pos(-180 0) size(180 180) color(0 0 1 1)
+			rect rect4 pos(0 0) size(180 180) color(1 1 0 1)
+			
+		}
 	}
 	
 }
@@ -22,6 +22,6 @@ gamelogic RectangleMovement {
 	
 	sequence simpleSeq simpleMove1, simpleRotate1, simpleMove2
 	
-	bind simpleSeq to RectangleExampleGui.rectangles.rect1
+	bindmodifier simpleSeq to RectangleExampleGui.rectangles.container.rect1
 	
 }
