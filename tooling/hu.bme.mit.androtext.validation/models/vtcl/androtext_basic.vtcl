@@ -1,0 +1,32 @@
+import nemf.ecore;
+import nemf.ecore.datatypes;
+import nemf.packages.androTextDsl;
+
+machine androtext
+{
+	
+	pattern applicationMainActivityIsTabActivity(Application, Activity) = {
+		TabActivity(Activity);
+		AndroidApplication(Application);
+		AndroidApplication.mainActivity(Ref, Application, Activity);
+	}
+	
+	pattern applicationModelElementHasName(Named, Name) = {
+		AndroidApplicationModelElement(Named);
+		AndroidApplicationModelElement.name(Ref, Named, Name);
+		EString(Name);
+	}
+	
+	pattern entityHasName(Named, Name) = {
+		Entity(Named);
+		Entity.name(Ref, Named, Name);
+		EString(Name);
+	}
+	
+	@Constraint(mode="problem", message="Not unique name for application component!")
+	pattern uniqueApplicationModelElementName(Element1, Element2, Name) = {
+		find applicationModelElementHasName(Element1, Name);
+		find applicationModelElementHasName(Element2, Name);
+	}
+	
+}

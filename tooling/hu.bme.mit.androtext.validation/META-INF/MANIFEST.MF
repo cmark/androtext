@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.androtext.incquery
+Bundle-SymbolicName: hu.bme.mit.androtext.validation;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: patternmatchers.androtext,
+ signatures.androtext
+Require-Bundle: org.eclipse.pde.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction;visibility:=reexport,
+ org.eclipse.viatra2.emf.incquery.runtime;visibility:=reexport,
+ org.eclipse.pde.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction;visibility:=reexport,
+ org.eclipse.viatra2.emf.incquery.runtime;visibility:=reexport,
+ hu.bme.mit.androtext.lang;visibility:=reexport

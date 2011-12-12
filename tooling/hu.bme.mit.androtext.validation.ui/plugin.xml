@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            targetID="hu.bme.mit.androtext.lang.AndroTextDsl"
+            id="hu.bme.mit.androtext.incquery.validation.sample.androTextDsl.editorContribution">
+         <action
+               label="EMF-IncQuery Validation for androTextDsl"
+               style="push"
+               class="actions.InitValidationActionDelegate"
+               toolbarPath="file/export"
+               id="hu.bme.mit.androtext.incquery.validation.sample.androTextDsl.action">
+         </action>
+      </editorContribution>
+   </extension>
+   <extension
+         id=""
+         point="org.eclipse.viatra2.emf.incquery.validation.constraint">
+      <constraint
+            class="handlers.ActivityConstraint"
+            name="Application Has Main Activity Pattern">
+      </constraint>
+      <constraint
+            class="handlers.UniqueApplicationModelElementNameConstraint"
+            name="Unique Name Constraint">
+      </constraint>
+   </extension>
+
+</plugin>

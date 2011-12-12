@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.androtext.incquery.validation.sample
+Bundle-SymbolicName: hu.bme.mit.androtext.validation.ui;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: handlers.Activator
+Require-Bundle: org.eclipse.pde.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.viatra2.emf.incquery.validation.ui;visibility:=reexport,
+ hu.bme.mit.androtext.validation;visibility:=reexport,
+ org.eclipse.xtext.ui;bundle-version="2.1.0",
+ org.eclipse.xtext.xtext.ui;bundle-version="2.1.0"

@@ -1,0 +1,26 @@
+#Mon Dec 12 10:04:28 CET 2011
+eclipse.preferences.version=1
+encoding//src-gen/patternbuilders/androtext/PatternBuilderForapplicationMainActivityIsTabActivity.java=UTF-8
+encoding//src-gen/patternbuilders/androtext/PatternBuilderForapplicationModelElementHasName.java=UTF-8
+encoding//src-gen/patternbuilders/androtext/PatternBuilderForentityHasName.java=UTF-8
+encoding//src-gen/patternbuilders/androtext/PatternBuilderForuniqueApplicationModelElementName.java=UTF-8
+encoding//src-gen/patternbuilders/androtext_basic/PatternBuilderForapplicationMainActivityIsTabActivity.java=UTF-8
+encoding//src-gen/patternbuilders/androtext_basic/PatternBuilderForapplicationModelElementHasName.java=UTF-8
+encoding//src-gen/patternbuilders/androtext_basic/PatternBuilderForentityHasName.java=UTF-8
+encoding//src-gen/patternbuilders/androtext_basic/PatternBuilderForuniqueApplicationModelElementName.java=UTF-8
+encoding//src-gen/patternmatchers/androtext/ApplicationMainActivityIsTabActivityMatcher.java=UTF-8
+encoding//src-gen/patternmatchers/androtext/ApplicationModelElementHasNameMatcher.java=UTF-8
+encoding//src-gen/patternmatchers/androtext/EntityHasNameMatcher.java=UTF-8
+encoding//src-gen/patternmatchers/androtext/UniqueApplicationModelElementNameMatcher.java=UTF-8
+encoding//src-gen/patternmatchers/androtext_basic/ApplicationMainActivityIsTabActivityMatcher.java=UTF-8
+encoding//src-gen/patternmatchers/androtext_basic/ApplicationModelElementHasNameMatcher.java=UTF-8
+encoding//src-gen/patternmatchers/androtext_basic/EntityHasNameMatcher.java=UTF-8
+encoding//src-gen/patternmatchers/androtext_basic/UniqueApplicationModelElementNameMatcher.java=UTF-8
+encoding//src-gen/signatures/androtext/ApplicationMainActivityIsTabActivitySignature.java=UTF-8
+encoding//src-gen/signatures/androtext/ApplicationModelElementHasNameSignature.java=UTF-8
+encoding//src-gen/signatures/androtext/EntityHasNameSignature.java=UTF-8
+encoding//src-gen/signatures/androtext/UniqueApplicationModelElementNameSignature.java=UTF-8
+encoding//src-gen/signatures/androtext_basic/ApplicationMainActivityIsTabActivitySignature.java=UTF-8
+encoding//src-gen/signatures/androtext_basic/ApplicationModelElementHasNameSignature.java=UTF-8
+encoding//src-gen/signatures/androtext_basic/EntityHasNameSignature.java=UTF-8
+encoding//src-gen/signatures/androtext_basic/UniqueApplicationModelElementNameSignature.java=UTF-8
