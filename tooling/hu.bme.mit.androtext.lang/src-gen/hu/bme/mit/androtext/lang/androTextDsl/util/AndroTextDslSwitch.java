@@ -1441,6 +1441,24 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AndroTextDslPackage.BOX2_DBINDING:
+      {
+        Box2DBinding box2DBinding = (Box2DBinding)theEObject;
+        T result = caseBox2DBinding(box2DBinding);
+        if (result == null) result = caseLogic(box2DBinding);
+        if (result == null) result = caseLogicComponent(box2DBinding);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.SENSOR_BINDING:
+      {
+        SensorBinding sensorBinding = (SensorBinding)theEObject;
+        T result = caseSensorBinding(sensorBinding);
+        if (result == null) result = caseLogic(sensorBinding);
+        if (result == null) result = caseLogicComponent(sensorBinding);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AndroTextDslPackage.ENTITY_MODIFIER:
       {
         EntityModifier entityModifier = (EntityModifier)theEObject;
@@ -4470,6 +4488,38 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModifierBinding(ModifierBinding object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Box2 DBinding</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Box2 DBinding</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBox2DBinding(Box2DBinding object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sensor Binding</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sensor Binding</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSensorBinding(SensorBinding object)
   {
     return null;
   }

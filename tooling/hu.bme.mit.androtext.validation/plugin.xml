@@ -2,27 +2,6 @@
 <plugin>
 
    <extension
-         id="hu.bme.mit.androtext.validation.hu.bme.mit.androtext.incquery.generatedContribution"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
-      <pattern-builder
-            build-class="patternbuilders.androtext_basic.PatternBuilderForentityHasName"
-            pattern-fqn="androtext_basic.entityHasName">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext_basic.PatternBuilderForuniqueApplicationModelElementName"
-            pattern-fqn="androtext_basic.uniqueApplicationModelElementName">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext_basic.PatternBuilderForapplicationMainActivityIsTabActivity"
-            pattern-fqn="androtext_basic.applicationMainActivityIsTabActivity">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext_basic.PatternBuilderForapplicationModelElementHasName"
-            pattern-fqn="androtext_basic.applicationModelElementHasName">
-      </pattern-builder>
-   </extension>
-   <extension
          id="hu.bme.mit.androtext.validation.generatedContribution"
          point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
       <pattern-builder

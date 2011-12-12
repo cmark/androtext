@@ -244,6 +244,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.GAME_ENTITY: return createGameEntity();
       case AndroTextDslPackage.SIMPLE_ENTITY: return createSimpleEntity();
       case AndroTextDslPackage.MODIFIER_BINDING: return createModifierBinding();
+      case AndroTextDslPackage.BOX2_DBINDING: return createBox2DBinding();
+      case AndroTextDslPackage.SENSOR_BINDING: return createSensorBinding();
       case AndroTextDslPackage.ENTITY_MODIFIER: return createEntityModifier();
       case AndroTextDslPackage.SEQUENCE_ENTITY_MODIFIER: return createSequenceEntityModifier();
       case AndroTextDslPackage.LOOP_ENTITY_MODIFIER: return createLoopEntityModifier();
@@ -318,6 +320,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return createDimensionMetricFromString(eDataType, initialValue);
       case AndroTextDslPackage.BODY_TYPE:
         return createBodyTypeFromString(eDataType, initialValue);
+      case AndroTextDslPackage.SENSOR_TARGET:
+        return createSensorTargetFromString(eDataType, initialValue);
+      case AndroTextDslPackage.SENSOR_TYPE:
+        return createSensorTypeFromString(eDataType, initialValue);
       case AndroTextDslPackage.CONSTANT_COLOR:
         return createConstantColorFromString(eDataType, initialValue);
       case AndroTextDslPackage.HORIZONTAL_ALIGN:
@@ -371,6 +377,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return convertDimensionMetricToString(eDataType, instanceValue);
       case AndroTextDslPackage.BODY_TYPE:
         return convertBodyTypeToString(eDataType, instanceValue);
+      case AndroTextDslPackage.SENSOR_TARGET:
+        return convertSensorTargetToString(eDataType, instanceValue);
+      case AndroTextDslPackage.SENSOR_TYPE:
+        return convertSensorTypeToString(eDataType, instanceValue);
       case AndroTextDslPackage.CONSTANT_COLOR:
         return convertConstantColorToString(eDataType, instanceValue);
       case AndroTextDslPackage.HORIZONTAL_ALIGN:
@@ -2314,6 +2324,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public Box2DBinding createBox2DBinding()
+  {
+    Box2DBindingImpl box2DBinding = new Box2DBindingImpl();
+    return box2DBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SensorBinding createSensorBinding()
+  {
+    SensorBindingImpl sensorBinding = new SensorBindingImpl();
+    return sensorBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EntityModifier createEntityModifier()
   {
     EntityModifierImpl entityModifier = new EntityModifierImpl();
@@ -2954,6 +2986,50 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * @generated
    */
   public String convertBodyTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SensorTarget createSensorTargetFromString(EDataType eDataType, String initialValue)
+  {
+    SensorTarget result = SensorTarget.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSensorTargetToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SensorType createSensorTypeFromString(EDataType eDataType, String initialValue)
+  {
+    SensorType result = SensorType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSensorTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

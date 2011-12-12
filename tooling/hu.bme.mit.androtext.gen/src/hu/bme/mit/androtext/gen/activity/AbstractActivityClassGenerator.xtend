@@ -63,22 +63,34 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	'''
 	
 	def dispatch extraImports(BaseGameActivity activity) '''
+		import android.graphics.Color;
+		import android.graphics.Typeface;
+		import android.hardware.SensorManager;
 		import org.anddev.andengine.engine.Engine;
 		import org.anddev.andengine.engine.options.EngineOptions;
 		import org.anddev.andengine.engine.options.EngineOptions.ScreenOrientation;
 		import org.anddev.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
 		import org.anddev.andengine.entity.Entity;
+		import org.anddev.andengine.entity.text.Text;
 		import org.anddev.andengine.entity.sprite.Sprite;
 		import org.anddev.andengine.entity.scene.Scene;
 		import org.anddev.andengine.entity.scene.background.*;
 		import org.anddev.andengine.engine.camera.Camera;
 		import org.anddev.andengine.util.HorizontalAlign;
 		import org.anddev.andengine.entity.primitive.*;
-		import org.anddev.andengine.opengl.font.Font;
+		import org.anddev.andengine.opengl.font.*;
 		import org.anddev.andengine.opengl.texture.*;
 		import org.anddev.andengine.opengl.texture.region.*;
 		import org.anddev.andengine.opengl.texture.atlas.bitmap.*;
 		import org.anddev.andengine.entity.modifier.*;
+		import org.anddev.andengine.extension.physics.box2d.*;
+		import com.badlogic.gdx.math.*;
+		import com.badlogic.gdx.physics.box2d.*;
+		import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
+		import com.badlogic.gdx.physics.box2d.joints.*;
+		import org.anddev.andengine.extension.physics.box2d.util.Vector2Pool;
+		import org.anddev.andengine.sensor.accelerometer.AccelerometerData;
+		import org.anddev.andengine.sensor.accelerometer.IAccelerometerListener;
 	'''
 	
 	def dispatch importActivity(Activity a) '''
@@ -94,7 +106,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	''' 
 	
 	def body(Activity activity, ImportManager manager) '''
-		public abstract class «activity.abstractClassName» extends «activity.eClass.name» {
+		public abstract class «activity.abstractClassName» extends «activity.eClass.name» «activity.interfaces» {
 			
 			«activity.generateFields»
 			
@@ -108,6 +120,11 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 			«activity.generateMethods»
 			
 		} 
+	'''
+	
+	def dispatch interfaces(Activity activity) ''''''
+	def dispatch interfaces(BaseGameActivity activity) '''
+		«IF activity.findSensorUsage»implements IAccelerometerListener«ENDIF»
 	'''
 	
 	def dispatch contentViewSet(Activity activity) '''

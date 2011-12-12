@@ -10,6 +10,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.Font
 import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
+import hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic
 
 class AbstractActivityFieldGenerator {
 	
@@ -29,6 +30,9 @@ class AbstractActivityFieldGenerator {
 		«ENDFOR»
 		«FOR e : activity.scene.eResource.allContentsIterable.filter(typeof(GameEntity))»
 		protected «e.type.toString.trim» «e.entityFieldName.toString.trim»;
+		«ENDFOR»
+		«FOR t : activity.scene.eResource.allContentsIterable.filter(typeof(AndroGameBox2DLogic))»
+		protected PhysicsWorld mPhysicsWorld;
 		«ENDFOR»
 	'''
 	

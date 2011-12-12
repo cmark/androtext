@@ -7191,15 +7191,15 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cOptionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cOptionsBox2DOptionsParserRuleCall_3_0 = (RuleCall)cOptionsAssignment_3.eContents().get(0);
-		private final Assignment cBox2dComponentAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBox2dComponentBox2DComponentParserRuleCall_4_0 = (RuleCall)cBox2dComponentAssignment_4.eContents().get(0);
+		private final Assignment cBox2dComponentsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cBox2dComponentsBox2DComponentParserRuleCall_4_0 = (RuleCall)cBox2dComponentsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//AndroGameBox2DLogic:
-		//	"box2d" name=ID "{" options=Box2DOptions? box2dComponent+=Box2DComponent* "}";
+		//	"box2d" name=ID "{" options=Box2DOptions? box2dComponents+=Box2DComponent* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"box2d" name=ID "{" options=Box2DOptions? box2dComponent+=Box2DComponent* "}"
+		//"box2d" name=ID "{" options=Box2DOptions? box2dComponents+=Box2DComponent* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"box2d"
@@ -7220,11 +7220,11 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Box2DOptions
 		public RuleCall getOptionsBox2DOptionsParserRuleCall_3_0() { return cOptionsBox2DOptionsParserRuleCall_3_0; }
 
-		//box2dComponent+=Box2DComponent*
-		public Assignment getBox2dComponentAssignment_4() { return cBox2dComponentAssignment_4; }
+		//box2dComponents+=Box2DComponent*
+		public Assignment getBox2dComponentsAssignment_4() { return cBox2dComponentsAssignment_4; }
 
 		//Box2DComponent
-		public RuleCall getBox2dComponentBox2DComponentParserRuleCall_4_0() { return cBox2dComponentBox2DComponentParserRuleCall_4_0; }
+		public RuleCall getBox2dComponentsBox2DComponentParserRuleCall_4_0() { return cBox2dComponentsBox2DComponentParserRuleCall_4_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
@@ -7672,14 +7672,26 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class LogicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Logic");
-		private final RuleCall cModifierBindingParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cModifierBindingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBox2DBindingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSensorBindingParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Logic:
-		//	ModifierBinding;
+		//	ModifierBinding | Box2DBinding | SensorBinding;
 		public ParserRule getRule() { return rule; }
 
+		//ModifierBinding | Box2DBinding | SensorBinding
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//ModifierBinding
-		public RuleCall getModifierBindingParserRuleCall() { return cModifierBindingParserRuleCall; }
+		public RuleCall getModifierBindingParserRuleCall_0() { return cModifierBindingParserRuleCall_0; }
+
+		//Box2DBinding
+		public RuleCall getBox2DBindingParserRuleCall_1() { return cBox2DBindingParserRuleCall_1; }
+
+		//SensorBinding
+		public RuleCall getSensorBindingParserRuleCall_2() { return cSensorBindingParserRuleCall_2; }
 	}
 
 	public class GameElementElements extends AbstractParserRuleElementFinder {
@@ -7993,7 +8005,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModifierBindingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModifierBinding");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cBindmodifierKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cModifierAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cModifierEntityModifierCrossReference_1_0 = (CrossReference)cModifierAssignment_1.eContents().get(0);
 		private final RuleCall cModifierEntityModifierQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cModifierEntityModifierCrossReference_1_0.eContents().get(1);
@@ -8003,14 +8015,14 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cGameEntityGameEntityCrossReference_3_0.eContents().get(1);
 		
 		//ModifierBinding:
-		//	"bind" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
+		//	"bindmodifier" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"bind" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName]
+		//"bindmodifier" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
-		//"bind"
-		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
+		//"bindmodifier"
+		public Keyword getBindmodifierKeyword_0() { return cBindmodifierKeyword_0; }
 
 		//modifier=[EntityModifier|QualifiedName]
 		public Assignment getModifierAssignment_1() { return cModifierAssignment_1; }
@@ -8032,6 +8044,86 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//QualifiedName
 		public RuleCall getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1() { return cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1; }
+	}
+
+	public class Box2DBindingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Box2DBinding");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBindbodyKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cBodyAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cBodyBodyCrossReference_1_0 = (CrossReference)cBodyAssignment_1.eContents().get(0);
+		private final RuleCall cBodyBodyQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cBodyBodyCrossReference_1_0.eContents().get(1);
+		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cGameEntityAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cGameEntityGameEntityCrossReference_3_0 = (CrossReference)cGameEntityAssignment_3.eContents().get(0);
+		private final RuleCall cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cGameEntityGameEntityCrossReference_3_0.eContents().get(1);
+		
+		//Box2DBinding:
+		//	"bindbody" body=[Body|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
+		public ParserRule getRule() { return rule; }
+
+		//"bindbody" body=[Body|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName]
+		public Group getGroup() { return cGroup; }
+
+		//"bindbody"
+		public Keyword getBindbodyKeyword_0() { return cBindbodyKeyword_0; }
+
+		//body=[Body|QualifiedName]
+		public Assignment getBodyAssignment_1() { return cBodyAssignment_1; }
+
+		//[Body|QualifiedName]
+		public CrossReference getBodyBodyCrossReference_1_0() { return cBodyBodyCrossReference_1_0; }
+
+		//QualifiedName
+		public RuleCall getBodyBodyQualifiedNameParserRuleCall_1_0_1() { return cBodyBodyQualifiedNameParserRuleCall_1_0_1; }
+
+		//"to"
+		public Keyword getToKeyword_2() { return cToKeyword_2; }
+
+		//gameEntity=[GameEntity|QualifiedName]
+		public Assignment getGameEntityAssignment_3() { return cGameEntityAssignment_3; }
+
+		//[GameEntity|QualifiedName]
+		public CrossReference getGameEntityGameEntityCrossReference_3_0() { return cGameEntityGameEntityCrossReference_3_0; }
+
+		//QualifiedName
+		public RuleCall getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1() { return cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1; }
+	}
+
+	public class SensorBindingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SensorBinding");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBindsensorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSensorTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSensorTypeSensorTypeEnumRuleCall_1_0 = (RuleCall)cSensorTypeAssignment_1.eContents().get(0);
+		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cToAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cToSensorTargetEnumRuleCall_3_0 = (RuleCall)cToAssignment_3.eContents().get(0);
+		
+		//SensorBinding:
+		//	"bindsensor" sensorType=SensorType "to" to=SensorTarget;
+		public ParserRule getRule() { return rule; }
+
+		//"bindsensor" sensorType=SensorType "to" to=SensorTarget
+		public Group getGroup() { return cGroup; }
+
+		//"bindsensor"
+		public Keyword getBindsensorKeyword_0() { return cBindsensorKeyword_0; }
+
+		//sensorType=SensorType
+		public Assignment getSensorTypeAssignment_1() { return cSensorTypeAssignment_1; }
+
+		//SensorType
+		public RuleCall getSensorTypeSensorTypeEnumRuleCall_1_0() { return cSensorTypeSensorTypeEnumRuleCall_1_0; }
+
+		//"to"
+		public Keyword getToKeyword_2() { return cToKeyword_2; }
+
+		//to=SensorTarget
+		public Assignment getToAssignment_3() { return cToAssignment_3; }
+
+		//SensorTarget
+		public RuleCall getToSensorTargetEnumRuleCall_3_0() { return cToSensorTargetEnumRuleCall_3_0; }
 	}
 
 	public class EntityModifierElements extends AbstractParserRuleElementFinder {
@@ -10199,6 +10291,62 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getDynamicDynamicKeyword_2_0() { return cDynamicDynamicKeyword_2_0; }
 	}
 
+	public class SensorTargetElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SensorTarget");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cGravityEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cGravityGravityKeyword_0_0 = (Keyword)cGravityEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cEntityEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cEntityEntityKeyword_1_0 = (Keyword)cEntityEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum SensorTarget:
+		//	gravity | entity;
+		public EnumRule getRule() { return rule; }
+
+		//gravity | entity
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//gravity
+		public EnumLiteralDeclaration getGravityEnumLiteralDeclaration_0() { return cGravityEnumLiteralDeclaration_0; }
+
+		//"gravity"
+		public Keyword getGravityGravityKeyword_0_0() { return cGravityGravityKeyword_0_0; }
+
+		//entity
+		public EnumLiteralDeclaration getEntityEnumLiteralDeclaration_1() { return cEntityEnumLiteralDeclaration_1; }
+
+		//"entity"
+		public Keyword getEntityEntityKeyword_1_0() { return cEntityEntityKeyword_1_0; }
+	}
+
+	public class SensorTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SensorType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cAccelerometerEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cAccelerometerAccelerometerKeyword_0_0 = (Keyword)cAccelerometerEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cOrientationEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cOrientationOrientationKeyword_1_0 = (Keyword)cOrientationEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum SensorType:
+		//	accelerometer | orientation;
+		public EnumRule getRule() { return rule; }
+
+		//accelerometer | orientation
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//accelerometer
+		public EnumLiteralDeclaration getAccelerometerEnumLiteralDeclaration_0() { return cAccelerometerEnumLiteralDeclaration_0; }
+
+		//"accelerometer"
+		public Keyword getAccelerometerAccelerometerKeyword_0_0() { return cAccelerometerAccelerometerKeyword_0_0; }
+
+		//orientation
+		public EnumLiteralDeclaration getOrientationEnumLiteralDeclaration_1() { return cOrientationEnumLiteralDeclaration_1; }
+
+		//"orientation"
+		public Keyword getOrientationOrientationKeyword_1_0() { return cOrientationOrientationKeyword_1_0; }
+	}
+
 	public class ConstantColorElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ConstantColor");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -10556,6 +10704,10 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private GameEntityElements pGameEntity;
 	private SimpleEntityElements pSimpleEntity;
 	private ModifierBindingElements pModifierBinding;
+	private Box2DBindingElements pBox2DBinding;
+	private SensorBindingElements pSensorBinding;
+	private SensorTargetElements unknownRuleSensorTarget;
+	private SensorTypeElements unknownRuleSensorType;
 	private EntityModifierElements pEntityModifier;
 	private SequenceEntityModifierElements pSequenceEntityModifier;
 	private LoopEntityModifierElements pLoopEntityModifier;
@@ -12449,7 +12601,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AndroGameBox2DLogic:
-	//	"box2d" name=ID "{" options=Box2DOptions? box2dComponent+=Box2DComponent* "}";
+	//	"box2d" name=ID "{" options=Box2DOptions? box2dComponents+=Box2DComponent* "}";
 	public AndroGameBox2DLogicElements getAndroGameBox2DLogicAccess() {
 		return (pAndroGameBox2DLogic != null) ? pAndroGameBox2DLogic : (pAndroGameBox2DLogic = new AndroGameBox2DLogicElements());
 	}
@@ -12579,7 +12731,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Logic:
-	//	ModifierBinding;
+	//	ModifierBinding | Box2DBinding | SensorBinding;
 	public LogicElements getLogicAccess() {
 		return (pLogic != null) ? pLogic : (pLogic = new LogicElements());
 	}
@@ -12659,13 +12811,53 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ModifierBinding:
-	//	"bind" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
+	//	"bindmodifier" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
 	public ModifierBindingElements getModifierBindingAccess() {
 		return (pModifierBinding != null) ? pModifierBinding : (pModifierBinding = new ModifierBindingElements());
 	}
 	
 	public ParserRule getModifierBindingRule() {
 		return getModifierBindingAccess().getRule();
+	}
+
+	//Box2DBinding:
+	//	"bindbody" body=[Body|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
+	public Box2DBindingElements getBox2DBindingAccess() {
+		return (pBox2DBinding != null) ? pBox2DBinding : (pBox2DBinding = new Box2DBindingElements());
+	}
+	
+	public ParserRule getBox2DBindingRule() {
+		return getBox2DBindingAccess().getRule();
+	}
+
+	//SensorBinding:
+	//	"bindsensor" sensorType=SensorType "to" to=SensorTarget;
+	public SensorBindingElements getSensorBindingAccess() {
+		return (pSensorBinding != null) ? pSensorBinding : (pSensorBinding = new SensorBindingElements());
+	}
+	
+	public ParserRule getSensorBindingRule() {
+		return getSensorBindingAccess().getRule();
+	}
+
+	//enum SensorTarget:
+	//	gravity | entity;
+	public SensorTargetElements getSensorTargetAccess() {
+		return (unknownRuleSensorTarget != null) ? unknownRuleSensorTarget : (unknownRuleSensorTarget = new SensorTargetElements());
+	}
+	
+	public EnumRule getSensorTargetRule() {
+		return getSensorTargetAccess().getRule();
+	}
+
+	//enum SensorType:
+	//	accelerometer | orientation;
+	public SensorTypeElements getSensorTypeAccess() {
+		return (unknownRuleSensorType != null) ? unknownRuleSensorType : (unknownRuleSensorType = new SensorTypeElements());
+	}
+	
+	public EnumRule getSensorTypeRule() {
+		return getSensorTypeAccess().getRule();
 	}
 
 	//EntityModifier:

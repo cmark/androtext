@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameBox2DLogicImpl#getOptions <em>Options</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameBox2DLogicImpl#getBox2dComponent <em>Box2d Component</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.AndroGameBox2DLogicImpl#getBox2dComponents <em>Box2d Components</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,14 +53,14 @@ public class AndroGameBox2DLogicImpl extends AndroGameComponentImpl implements A
   protected Box2DOptions options;
 
   /**
-   * The cached value of the '{@link #getBox2dComponent() <em>Box2d Component</em>}' containment reference list.
+   * The cached value of the '{@link #getBox2dComponents() <em>Box2d Components</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBox2dComponent()
+   * @see #getBox2dComponents()
    * @generated
    * @ordered
    */
-  protected EList<Box2DComponent> box2dComponent;
+  protected EList<Box2DComponent> box2dComponents;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,13 +136,13 @@ public class AndroGameBox2DLogicImpl extends AndroGameComponentImpl implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Box2DComponent> getBox2dComponent()
+  public EList<Box2DComponent> getBox2dComponents()
   {
-    if (box2dComponent == null)
+    if (box2dComponents == null)
     {
-      box2dComponent = new EObjectContainmentEList<Box2DComponent>(Box2DComponent.class, this, AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT);
+      box2dComponents = new EObjectContainmentEList<Box2DComponent>(Box2DComponent.class, this, AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENTS);
     }
-    return box2dComponent;
+    return box2dComponents;
   }
 
   /**
@@ -157,8 +157,8 @@ public class AndroGameBox2DLogicImpl extends AndroGameComponentImpl implements A
     {
       case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__OPTIONS:
         return basicSetOptions(null, msgs);
-      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT:
-        return ((InternalEList<?>)getBox2dComponent()).basicRemove(otherEnd, msgs);
+      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENTS:
+        return ((InternalEList<?>)getBox2dComponents()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -175,8 +175,8 @@ public class AndroGameBox2DLogicImpl extends AndroGameComponentImpl implements A
     {
       case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__OPTIONS:
         return getOptions();
-      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT:
-        return getBox2dComponent();
+      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENTS:
+        return getBox2dComponents();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -195,9 +195,9 @@ public class AndroGameBox2DLogicImpl extends AndroGameComponentImpl implements A
       case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__OPTIONS:
         setOptions((Box2DOptions)newValue);
         return;
-      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT:
-        getBox2dComponent().clear();
-        getBox2dComponent().addAll((Collection<? extends Box2DComponent>)newValue);
+      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENTS:
+        getBox2dComponents().clear();
+        getBox2dComponents().addAll((Collection<? extends Box2DComponent>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -216,8 +216,8 @@ public class AndroGameBox2DLogicImpl extends AndroGameComponentImpl implements A
       case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__OPTIONS:
         setOptions((Box2DOptions)null);
         return;
-      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT:
-        getBox2dComponent().clear();
+      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENTS:
+        getBox2dComponents().clear();
         return;
     }
     super.eUnset(featureID);
@@ -235,8 +235,8 @@ public class AndroGameBox2DLogicImpl extends AndroGameComponentImpl implements A
     {
       case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__OPTIONS:
         return options != null;
-      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT:
-        return box2dComponent != null && !box2dComponent.isEmpty();
+      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENTS:
+        return box2dComponents != null && !box2dComponents.isEmpty();
     }
     return super.eIsSet(featureID);
   }

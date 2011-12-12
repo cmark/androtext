@@ -857,7 +857,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AndroGameBox2DLogic" eSuperTypes="#//AndroGameComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" eType="#//Box2DOptions"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="box2dComponent" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="box2dComponents" upperBound="-1"
         eType="#//Box2DComponent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Box2DOptions">
@@ -928,6 +928,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="ModifierBinding" eSuperTypes="#//Logic">
     <eStructuralFeatures xsi:type="ecore:EReference" name="modifier" eType="#//EntityModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gameEntity" eType="#//GameEntity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Box2DBinding" eSuperTypes="#//Logic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gameEntity" eType="#//GameEntity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorBinding" eSuperTypes="#//Logic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensorType" eType="#//SensorType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="to" eType="#//SensorTarget"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SensorTarget">
+    <eLiterals name="gravity" literal="gravity"/>
+    <eLiterals name="entity" value="1" literal="entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SensorType">
+    <eLiterals name="accelerometer" literal="accelerometer"/>
+    <eLiterals name="orientation" value="1" literal="orientation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityModifier" eSuperTypes="#//LogicComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

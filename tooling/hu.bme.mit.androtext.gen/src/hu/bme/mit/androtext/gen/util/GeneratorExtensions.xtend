@@ -12,6 +12,10 @@ import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 import hu.bme.mit.androtext.lang.androTextDsl.Font
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
+import hu.bme.mit.androtext.lang.androTextDsl.SensorBinding
+import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.SensorTarget
 
 class GeneratorExtensions {
 	
@@ -89,6 +93,10 @@ class GeneratorExtensions {
 		m«font.name.toFirstUpper»Font
 	'''
 	
+	def textureVariableName(Font font) '''
+		«font.name.toFirstLower»Texture
+	'''
+	
 	def entityFieldName(GameEntity entity) '''
 		m«entity.name.toFirstUpper»Entity
 	'''
@@ -100,6 +108,15 @@ class GeneratorExtensions {
 	def dispatch type(SimpleEntity entity) '''
 		Entity
 	'''
+	
+	def boolean findSensorUsage(BaseGameActivity activity) {
+		for (sb : activity.scene.eResource.allContentsIterable.filter(typeof (SensorBinding))) {
+			if (sb.to == SensorTarget::GRAVITY) {
+				return true
+			}
+		}
+		return false
+	}
 	
 //	def columnType(Feature f) {
 //		val t = f.type;

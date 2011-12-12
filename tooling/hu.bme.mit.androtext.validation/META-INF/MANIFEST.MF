@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.androtext.incquery
 Bundle-SymbolicName: hu.bme.mit.androtext.validation;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: patternmatchers.androtext,
+Export-Package: patternbuilders.androtext,
+ patternmatchers.androtext,
  signatures.androtext
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,

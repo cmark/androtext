@@ -67,6 +67,7 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJointAccess().getAlternatives(), "rule__Joint__Alternatives");
 					put(grammarAccess.getBodyAccess().getAlternatives(), "rule__Body__Alternatives");
 					put(grammarAccess.getLogicComponentAccess().getAlternatives(), "rule__LogicComponent__Alternatives");
+					put(grammarAccess.getLogicAccess().getAlternatives(), "rule__Logic__Alternatives");
 					put(grammarAccess.getGameElementAccess().getAlternatives(), "rule__GameElement__Alternatives");
 					put(grammarAccess.getSceneAccess().getAlternatives(), "rule__Scene__Alternatives");
 					put(grammarAccess.getGameBackgroundAccess().getAlternatives_1(), "rule__GameBackground__Alternatives_1");
@@ -89,6 +90,8 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAndroidDrawableResourceAccess().getAlternatives(), "rule__AndroidDrawableResource__Alternatives");
 					put(grammarAccess.getDimensionMetricAccess().getAlternatives(), "rule__DimensionMetric__Alternatives");
 					put(grammarAccess.getBodyTypeAccess().getAlternatives(), "rule__BodyType__Alternatives");
+					put(grammarAccess.getSensorTargetAccess().getAlternatives(), "rule__SensorTarget__Alternatives");
+					put(grammarAccess.getSensorTypeAccess().getAlternatives(), "rule__SensorType__Alternatives");
 					put(grammarAccess.getConstantColorAccess().getAlternatives(), "rule__ConstantColor__Alternatives");
 					put(grammarAccess.getHorizontalAlignAccess().getAlternatives(), "rule__HorizontalAlign__Alternatives");
 					put(grammarAccess.getFontTypeAccess().getAlternatives(), "rule__FontType__Alternatives");
@@ -290,6 +293,8 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGameMenuItemAccess().getGroup(), "rule__GameMenuItem__Group__0");
 					put(grammarAccess.getSimpleEntityAccess().getGroup(), "rule__SimpleEntity__Group__0");
 					put(grammarAccess.getModifierBindingAccess().getGroup(), "rule__ModifierBinding__Group__0");
+					put(grammarAccess.getBox2DBindingAccess().getGroup(), "rule__Box2DBinding__Group__0");
+					put(grammarAccess.getSensorBindingAccess().getGroup(), "rule__SensorBinding__Group__0");
 					put(grammarAccess.getSequenceEntityModifierAccess().getGroup(), "rule__SequenceEntityModifier__Group__0");
 					put(grammarAccess.getSequenceEntityModifierAccess().getGroup_3(), "rule__SequenceEntityModifier__Group_3__0");
 					put(grammarAccess.getLoopEntityModifierAccess().getGroup(), "rule__LoopEntityModifier__Group__0");
@@ -712,7 +717,7 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAndroGameLogicAccess().getLogicComponentAssignment_3(), "rule__AndroGameLogic__LogicComponentAssignment_3");
 					put(grammarAccess.getAndroGameBox2DLogicAccess().getNameAssignment_1(), "rule__AndroGameBox2DLogic__NameAssignment_1");
 					put(grammarAccess.getAndroGameBox2DLogicAccess().getOptionsAssignment_3(), "rule__AndroGameBox2DLogic__OptionsAssignment_3");
-					put(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentAssignment_4(), "rule__AndroGameBox2DLogic__Box2dComponentAssignment_4");
+					put(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsAssignment_4(), "rule__AndroGameBox2DLogic__Box2dComponentsAssignment_4");
 					put(grammarAccess.getBox2DOptionsAccess().getGravityAssignment_3(), "rule__Box2DOptions__GravityAssignment_3");
 					put(grammarAccess.getRevoluteJointAccess().getNameAssignment_1(), "rule__RevoluteJoint__NameAssignment_1");
 					put(grammarAccess.getRevoluteJointAccess().getFirstAssignment_3(), "rule__RevoluteJoint__FirstAssignment_3");
@@ -750,6 +755,10 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimpleEntityAccess().getChildrenAssignment_6(), "rule__SimpleEntity__ChildrenAssignment_6");
 					put(grammarAccess.getModifierBindingAccess().getModifierAssignment_1(), "rule__ModifierBinding__ModifierAssignment_1");
 					put(grammarAccess.getModifierBindingAccess().getGameEntityAssignment_3(), "rule__ModifierBinding__GameEntityAssignment_3");
+					put(grammarAccess.getBox2DBindingAccess().getBodyAssignment_1(), "rule__Box2DBinding__BodyAssignment_1");
+					put(grammarAccess.getBox2DBindingAccess().getGameEntityAssignment_3(), "rule__Box2DBinding__GameEntityAssignment_3");
+					put(grammarAccess.getSensorBindingAccess().getSensorTypeAssignment_1(), "rule__SensorBinding__SensorTypeAssignment_1");
+					put(grammarAccess.getSensorBindingAccess().getToAssignment_3(), "rule__SensorBinding__ToAssignment_3");
 					put(grammarAccess.getSequenceEntityModifierAccess().getNameAssignment_1(), "rule__SequenceEntityModifier__NameAssignment_1");
 					put(grammarAccess.getSequenceEntityModifierAccess().getModifiersAssignment_2(), "rule__SequenceEntityModifier__ModifiersAssignment_2");
 					put(grammarAccess.getSequenceEntityModifierAccess().getModifiersAssignment_3_1(), "rule__SequenceEntityModifier__ModifiersAssignment_3_1");

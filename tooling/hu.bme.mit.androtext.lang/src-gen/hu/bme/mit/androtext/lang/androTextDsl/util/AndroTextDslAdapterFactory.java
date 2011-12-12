@@ -954,6 +954,16 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createModifierBindingAdapter();
       }
       @Override
+      public Adapter caseBox2DBinding(Box2DBinding object)
+      {
+        return createBox2DBindingAdapter();
+      }
+      @Override
+      public Adapter caseSensorBinding(SensorBinding object)
+      {
+        return createSensorBindingAdapter();
+      }
+      @Override
       public Adapter caseEntityModifier(EntityModifier object)
       {
         return createEntityModifierAdapter();
@@ -3741,6 +3751,36 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModifierBindingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding <em>Box2 DBinding</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding
+   * @generated
+   */
+  public Adapter createBox2DBindingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorBinding <em>Sensor Binding</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorBinding
+   * @generated
+   */
+  public Adapter createSensorBindingAdapter()
   {
     return null;
   }

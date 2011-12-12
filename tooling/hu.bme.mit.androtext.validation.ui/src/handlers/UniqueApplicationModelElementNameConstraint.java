@@ -26,7 +26,7 @@ public class UniqueApplicationModelElementNameConstraint extends Constraint<Uniq
 	
 	@Override
 	public String getMessage(UniqueApplicationModelElementNameSignature signature) {
-		String message = "Not unique name for application component!";
+		String message = "Not unique name at application component $Element1$!";
 		
 		StringTokenizer st = new StringTokenizer(message, "$");
 		StringBuilder messageBuilder = new StringBuilder();
@@ -68,7 +68,7 @@ public class UniqueApplicationModelElementNameConstraint extends Constraint<Uniq
 
 	@Override
 	public EObject getLocationObject(UniqueApplicationModelElementNameSignature signature) {
-		Object location = signature.get("#location-param-name#");
+		Object location = signature.getValueOfElement1();
 		if(location instanceof EObject){
 			return (EObject) location;
 		}

@@ -4862,9 +4862,9 @@ ruleLogic
     }
 	:
 (
-{ before(grammarAccess.getLogicAccess().getModifierBindingParserRuleCall()); }
-	ruleModifierBinding
-{ after(grammarAccess.getLogicAccess().getModifierBindingParserRuleCall()); }
+{ before(grammarAccess.getLogicAccess().getAlternatives()); }
+(rule__Logic__Alternatives)
+{ after(grammarAccess.getLogicAccess().getAlternatives()); }
 )
 
 ;
@@ -5089,6 +5089,62 @@ ruleModifierBinding
 { before(grammarAccess.getModifierBindingAccess().getGroup()); }
 (rule__ModifierBinding__Group__0)
 { after(grammarAccess.getModifierBindingAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleBox2DBinding
+entryRuleBox2DBinding 
+:
+{ before(grammarAccess.getBox2DBindingRule()); }
+	 ruleBox2DBinding
+{ after(grammarAccess.getBox2DBindingRule()); } 
+	 EOF 
+;
+
+// Rule Box2DBinding
+ruleBox2DBinding
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getBox2DBindingAccess().getGroup()); }
+(rule__Box2DBinding__Group__0)
+{ after(grammarAccess.getBox2DBindingAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleSensorBinding
+entryRuleSensorBinding 
+:
+{ before(grammarAccess.getSensorBindingRule()); }
+	 ruleSensorBinding
+{ after(grammarAccess.getSensorBindingRule()); } 
+	 EOF 
+;
+
+// Rule SensorBinding
+ruleSensorBinding
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getSensorBindingAccess().getGroup()); }
+(rule__SensorBinding__Group__0)
+{ after(grammarAccess.getSensorBindingAccess().getGroup()); }
 )
 
 ;
@@ -6224,6 +6280,44 @@ finally {
 
 
 
+// Rule SensorTarget
+ruleSensorTarget
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorTargetAccess().getAlternatives()); }
+(rule__SensorTarget__Alternatives)
+{ after(grammarAccess.getSensorTargetAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Rule SensorType
+ruleSensorType
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorTypeAccess().getAlternatives()); }
+(rule__SensorType__Alternatives)
+{ after(grammarAccess.getSensorTypeAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Rule ConstantColor
 ruleConstantColor
     @init {
@@ -7193,6 +7287,34 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Logic__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getLogicAccess().getModifierBindingParserRuleCall_0()); }
+	ruleModifierBinding
+{ after(grammarAccess.getLogicAccess().getModifierBindingParserRuleCall_0()); }
+)
+
+    |(
+{ before(grammarAccess.getLogicAccess().getBox2DBindingParserRuleCall_1()); }
+	ruleBox2DBinding
+{ after(grammarAccess.getLogicAccess().getBox2DBindingParserRuleCall_1()); }
+)
+
+    |(
+{ before(grammarAccess.getLogicAccess().getSensorBindingParserRuleCall_2()); }
+	ruleSensorBinding
+{ after(grammarAccess.getLogicAccess().getSensorBindingParserRuleCall_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__GameElement__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -8038,6 +8160,54 @@ rule__BodyType__Alternatives
 (	'dynamic' 
 )
 { after(grammarAccess.getBodyTypeAccess().getDynamicEnumLiteralDeclaration_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorTarget__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorTargetAccess().getGravityEnumLiteralDeclaration_0()); }
+(	'gravity' 
+)
+{ after(grammarAccess.getSensorTargetAccess().getGravityEnumLiteralDeclaration_0()); }
+)
+
+    |(
+{ before(grammarAccess.getSensorTargetAccess().getEntityEnumLiteralDeclaration_1()); }
+(	'entity' 
+)
+{ after(grammarAccess.getSensorTargetAccess().getEntityEnumLiteralDeclaration_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorType__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorTypeAccess().getAccelerometerEnumLiteralDeclaration_0()); }
+(	'accelerometer' 
+)
+{ after(grammarAccess.getSensorTypeAccess().getAccelerometerEnumLiteralDeclaration_0()); }
+)
+
+    |(
+{ before(grammarAccess.getSensorTypeAccess().getOrientationEnumLiteralDeclaration_1()); }
+(	'orientation' 
+)
+{ after(grammarAccess.getSensorTypeAccess().getOrientationEnumLiteralDeclaration_1()); }
 )
 
 ;
@@ -28482,9 +28652,9 @@ rule__AndroGameBox2DLogic__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentAssignment_4()); }
-(rule__AndroGameBox2DLogic__Box2dComponentAssignment_4)*
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentAssignment_4()); }
+{ before(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsAssignment_4()); }
+(rule__AndroGameBox2DLogic__Box2dComponentsAssignment_4)*
+{ after(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsAssignment_4()); }
 )
 
 ;
@@ -30594,11 +30764,11 @@ rule__ModifierBinding__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getModifierBindingAccess().getBindKeyword_0()); }
+{ before(grammarAccess.getModifierBindingAccess().getBindmodifierKeyword_0()); }
 
-	'bind' 
+	'bindmodifier' 
 
-{ after(grammarAccess.getModifierBindingAccess().getBindKeyword_0()); }
+{ after(grammarAccess.getModifierBindingAccess().getBindmodifierKeyword_0()); }
 )
 
 ;
@@ -30687,6 +30857,260 @@ rule__ModifierBinding__Group__3__Impl
 { before(grammarAccess.getModifierBindingAccess().getGameEntityAssignment_3()); }
 (rule__ModifierBinding__GameEntityAssignment_3)
 { after(grammarAccess.getModifierBindingAccess().getGameEntityAssignment_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+rule__Box2DBinding__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Box2DBinding__Group__0__Impl
+	rule__Box2DBinding__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Box2DBinding__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBox2DBindingAccess().getBindbodyKeyword_0()); }
+
+	'bindbody' 
+
+{ after(grammarAccess.getBox2DBindingAccess().getBindbodyKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Box2DBinding__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Box2DBinding__Group__1__Impl
+	rule__Box2DBinding__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Box2DBinding__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBox2DBindingAccess().getBodyAssignment_1()); }
+(rule__Box2DBinding__BodyAssignment_1)
+{ after(grammarAccess.getBox2DBindingAccess().getBodyAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Box2DBinding__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Box2DBinding__Group__2__Impl
+	rule__Box2DBinding__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Box2DBinding__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBox2DBindingAccess().getToKeyword_2()); }
+
+	'to' 
+
+{ after(grammarAccess.getBox2DBindingAccess().getToKeyword_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Box2DBinding__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Box2DBinding__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Box2DBinding__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBox2DBindingAccess().getGameEntityAssignment_3()); }
+(rule__Box2DBinding__GameEntityAssignment_3)
+{ after(grammarAccess.getBox2DBindingAccess().getGameEntityAssignment_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+rule__SensorBinding__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__SensorBinding__Group__0__Impl
+	rule__SensorBinding__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorBinding__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorBindingAccess().getBindsensorKeyword_0()); }
+
+	'bindsensor' 
+
+{ after(grammarAccess.getSensorBindingAccess().getBindsensorKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__SensorBinding__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__SensorBinding__Group__1__Impl
+	rule__SensorBinding__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorBinding__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorBindingAccess().getSensorTypeAssignment_1()); }
+(rule__SensorBinding__SensorTypeAssignment_1)
+{ after(grammarAccess.getSensorBindingAccess().getSensorTypeAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__SensorBinding__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__SensorBinding__Group__2__Impl
+	rule__SensorBinding__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorBinding__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorBindingAccess().getToKeyword_2()); }
+
+	'to' 
+
+{ after(grammarAccess.getSensorBindingAccess().getToKeyword_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__SensorBinding__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__SensorBinding__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorBinding__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorBindingAccess().getToAssignment_3()); }
+(rule__SensorBinding__ToAssignment_3)
+{ after(grammarAccess.getSensorBindingAccess().getToAssignment_3()); }
 )
 
 ;
@@ -44872,14 +45296,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AndroGameBox2DLogic__Box2dComponentAssignment_4
+rule__AndroGameBox2DLogic__Box2dComponentsAssignment_4
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentBox2DComponentParserRuleCall_4_0()); }
-	ruleBox2DComponent{ after(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentBox2DComponentParserRuleCall_4_0()); }
+{ before(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsBox2DComponentParserRuleCall_4_0()); }
+	ruleBox2DComponent{ after(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsBox2DComponentParserRuleCall_4_0()); }
 )
 
 ;
@@ -45479,6 +45903,74 @@ rule__ModifierBinding__GameEntityAssignment_3
 	ruleQualifiedName{ after(grammarAccess.getModifierBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1()); }
 )
 { after(grammarAccess.getModifierBindingAccess().getGameEntityGameEntityCrossReference_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Box2DBinding__BodyAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBox2DBindingAccess().getBodyBodyCrossReference_1_0()); }
+(
+{ before(grammarAccess.getBox2DBindingAccess().getBodyBodyQualifiedNameParserRuleCall_1_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getBox2DBindingAccess().getBodyBodyQualifiedNameParserRuleCall_1_0_1()); }
+)
+{ after(grammarAccess.getBox2DBindingAccess().getBodyBodyCrossReference_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Box2DBinding__GameEntityAssignment_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityCrossReference_3_0()); }
+(
+{ before(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1()); }
+)
+{ after(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityCrossReference_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorBinding__SensorTypeAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorBindingAccess().getSensorTypeSensorTypeEnumRuleCall_1_0()); }
+	ruleSensorType{ after(grammarAccess.getSensorBindingAccess().getSensorTypeSensorTypeEnumRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorBinding__ToAssignment_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getSensorBindingAccess().getToSensorTargetEnumRuleCall_3_0()); }
+	ruleSensorTarget{ after(grammarAccess.getSensorBindingAccess().getToSensorTargetEnumRuleCall_3_0()); }
 )
 
 ;

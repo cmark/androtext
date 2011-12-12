@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getOptions <em>Options</em>}</li>
- *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponent <em>Box2d Component</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponents <em>Box2d Components</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,19 +54,19 @@ public interface AndroGameBox2DLogic extends AndroGameComponent
   void setOptions(Box2DOptions value);
 
   /**
-   * Returns the value of the '<em><b>Box2d Component</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Box2d Components</b></em>' containment reference list.
    * The list contents are of type {@link hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Box2d Component</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Box2d Components</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Box2d Component</em>' containment reference list.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAndroGameBox2DLogic_Box2dComponent()
+   * @return the value of the '<em>Box2d Components</em>' containment reference list.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getAndroGameBox2DLogic_Box2dComponents()
    * @model containment="true"
    * @generated
    */
-  EList<Box2DComponent> getBox2dComponent();
+  EList<Box2DComponent> getBox2dComponents();
 
 } // AndroGameBox2DLogic

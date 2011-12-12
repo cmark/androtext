@@ -23,7 +23,6 @@ machine androtext
 		EString(Name);
 	}
 	
-	@Constraint(mode="problem", message="Not unique name for application component!")
 	pattern uniqueApplicationModelElementName(Element1, Element2, Name) = {
 		find applicationModelElementHasName(Element1, Name);
 		find applicationModelElementHasName(Element2, Name);

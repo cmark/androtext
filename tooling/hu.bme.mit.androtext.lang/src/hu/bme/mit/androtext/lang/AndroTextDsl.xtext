@@ -972,7 +972,7 @@ AndroGameLogic:
 AndroGameBox2DLogic:
 	'box2d' name=ID '{'
 		(options=Box2DOptions)?
-		box2dComponent+=Box2DComponent*
+		box2dComponents+=Box2DComponent*
 	'}'	
 ;
 
@@ -1027,7 +1027,7 @@ LogicComponent:
 ;
 
 Logic:
-	ModifierBinding
+	ModifierBinding | Box2DBinding | SensorBinding
 ;
 
 GameElement:
@@ -1065,8 +1065,25 @@ SimpleEntity:
 ;
 
 ModifierBinding:
-	'bind' modifier=[EntityModifier | QualifiedName] 'to' gameEntity=[GameEntity | QualifiedName]
+	'bindmodifier' modifier=[EntityModifier | QualifiedName] 'to' gameEntity=[GameEntity | QualifiedName]
 ;
+
+Box2DBinding:
+	'bindbody' body=[Body | QualifiedName] 'to' gameEntity=[GameEntity | QualifiedName]
+;
+
+SensorBinding:
+	'bindsensor' sensorType=SensorType 'to' to=SensorTarget  
+;
+
+enum SensorTarget:
+	gravity | entity
+;
+
+enum SensorType:
+	accelerometer | orientation
+;
+
 
 EntityModifier:
 	MoveModifier | MoveByModifier | ScaleModifier | AlphaModifier | RotationByModifier | RotationModifier | ColorModifier | LoopEntityModifier | SequenceEntityModifier 

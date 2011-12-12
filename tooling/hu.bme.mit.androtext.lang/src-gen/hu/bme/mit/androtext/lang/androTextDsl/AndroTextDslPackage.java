@@ -6670,13 +6670,13 @@ public interface AndroTextDslPackage extends EPackage
   int ANDRO_GAME_BOX2_DLOGIC__OPTIONS = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Box2d Component</b></em>' containment reference list.
+   * The feature id for the '<em><b>Box2d Components</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENT = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 1;
+  int ANDRO_GAME_BOX2_DLOGIC__BOX2D_COMPONENTS = ANDRO_GAME_COMPONENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Andro Game Box2 DLogic</em>' class.
@@ -7500,6 +7500,80 @@ public interface AndroTextDslPackage extends EPackage
   int MODIFIER_BINDING_FEATURE_COUNT = LOGIC_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.Box2DBindingImpl <em>Box2 DBinding</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.Box2DBindingImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBox2DBinding()
+   * @generated
+   */
+  int BOX2_DBINDING = 175;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX2_DBINDING__BODY = LOGIC_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Game Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX2_DBINDING__GAME_ENTITY = LOGIC_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Box2 DBinding</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOX2_DBINDING_FEATURE_COUNT = LOGIC_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.SensorBindingImpl <em>Sensor Binding</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.SensorBindingImpl
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSensorBinding()
+   * @generated
+   */
+  int SENSOR_BINDING = 176;
+
+  /**
+   * The feature id for the '<em><b>Sensor Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENSOR_BINDING__SENSOR_TYPE = LOGIC_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENSOR_BINDING__TO = LOGIC_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Sensor Binding</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENSOR_BINDING_FEATURE_COUNT = LOGIC_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.EntityModifierImpl <em>Entity Modifier</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7507,7 +7581,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getEntityModifier()
    * @generated
    */
-  int ENTITY_MODIFIER = 175;
+  int ENTITY_MODIFIER = 177;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7535,7 +7609,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSequenceEntityModifier()
    * @generated
    */
-  int SEQUENCE_ENTITY_MODIFIER = 176;
+  int SEQUENCE_ENTITY_MODIFIER = 178;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7572,7 +7646,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLoopEntityModifier()
    * @generated
    */
-  int LOOP_ENTITY_MODIFIER = 177;
+  int LOOP_ENTITY_MODIFIER = 179;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7618,7 +7692,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getMoveModifier()
    * @generated
    */
-  int MOVE_MODIFIER = 178;
+  int MOVE_MODIFIER = 180;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7673,7 +7747,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getMoveByModifier()
    * @generated
    */
-  int MOVE_BY_MODIFIER = 179;
+  int MOVE_BY_MODIFIER = 181;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7719,7 +7793,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getScaleModifier()
    * @generated
    */
-  int SCALE_MODIFIER = 180;
+  int SCALE_MODIFIER = 182;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7774,7 +7848,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAlphaModifier()
    * @generated
    */
-  int ALPHA_MODIFIER = 181;
+  int ALPHA_MODIFIER = 183;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7829,7 +7903,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRotationByModifier()
    * @generated
    */
-  int ROTATION_BY_MODIFIER = 182;
+  int ROTATION_BY_MODIFIER = 184;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7875,7 +7949,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRotationModifier()
    * @generated
    */
-  int ROTATION_MODIFIER = 183;
+  int ROTATION_MODIFIER = 185;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7930,7 +8004,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColorModifier()
    * @generated
    */
-  int COLOR_MODIFIER = 184;
+  int COLOR_MODIFIER = 186;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7985,7 +8059,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getToTriple()
    * @generated
    */
-  int TO_TRIPLE = 185;
+  int TO_TRIPLE = 187;
 
   /**
    * The feature id for the '<em><b>First</b></em>' attribute.
@@ -8031,7 +8105,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFromTriple()
    * @generated
    */
-  int FROM_TRIPLE = 186;
+  int FROM_TRIPLE = 188;
 
   /**
    * The feature id for the '<em><b>First</b></em>' attribute.
@@ -8077,7 +8151,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getToDouble()
    * @generated
    */
-  int TO_DOUBLE = 187;
+  int TO_DOUBLE = 189;
 
   /**
    * The feature id for the '<em><b>X</b></em>' attribute.
@@ -8114,7 +8188,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFromDouble()
    * @generated
    */
-  int FROM_DOUBLE = 188;
+  int FROM_DOUBLE = 190;
 
   /**
    * The feature id for the '<em><b>X</b></em>' attribute.
@@ -8151,7 +8225,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getToSingle()
    * @generated
    */
-  int TO_SINGLE = 189;
+  int TO_SINGLE = 191;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -8179,7 +8253,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFromSingle()
    * @generated
    */
-  int FROM_SINGLE = 190;
+  int FROM_SINGLE = 192;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -8207,7 +8281,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getByDouble()
    * @generated
    */
-  int BY_DOUBLE = 191;
+  int BY_DOUBLE = 193;
 
   /**
    * The feature id for the '<em><b>X</b></em>' attribute.
@@ -8244,7 +8318,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBySingle()
    * @generated
    */
-  int BY_SINGLE = 192;
+  int BY_SINGLE = 194;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -8272,7 +8346,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLine()
    * @generated
    */
-  int LINE = 193;
+  int LINE = 195;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8336,7 +8410,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getText()
    * @generated
    */
-  int TEXT = 194;
+  int TEXT = 196;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8409,7 +8483,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getRectangle()
    * @generated
    */
-  int RECTANGLE = 195;
+  int RECTANGLE = 197;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8464,7 +8538,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSprite()
    * @generated
    */
-  int SPRITE = 196;
+  int SPRITE = 198;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8528,7 +8602,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAnimatedSprite()
    * @generated
    */
-  int ANIMATED_SPRITE = 197;
+  int ANIMATED_SPRITE = 199;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8601,7 +8675,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getColor()
    * @generated
    */
-  int COLOR = 198;
+  int COLOR = 200;
 
   /**
    * The feature id for the '<em><b>R</b></em>' attribute.
@@ -8665,7 +8739,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getPosition()
    * @generated
    */
-  int POSITION = 199;
+  int POSITION = 201;
 
   /**
    * The feature id for the '<em><b>X</b></em>' attribute.
@@ -8702,7 +8776,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSize()
    * @generated
    */
-  int SIZE = 200;
+  int SIZE = 202;
 
   /**
    * The feature id for the '<em><b>W</b></em>' attribute.
@@ -8739,7 +8813,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTextureRegion()
    * @generated
    */
-  int TEXTURE_REGION = 201;
+  int TEXTURE_REGION = 203;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8785,7 +8859,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTiled()
    * @generated
    */
-  int TILED = 202;
+  int TILED = 204;
 
   /**
    * The feature id for the '<em><b>Column</b></em>' attribute.
@@ -8822,7 +8896,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFont()
    * @generated
    */
-  int FONT = 203;
+  int FONT = 205;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8886,7 +8960,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getApiLevel()
    * @generated
    */
-  int API_LEVEL = 204;
+  int API_LEVEL = 206;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme <em>Activity Theme</em>}' enum.
@@ -8896,7 +8970,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getActivityTheme()
    * @generated
    */
-  int ACTIVITY_THEME = 205;
+  int ACTIVITY_THEME = 207;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DataTypes <em>Data Types</em>}' enum.
@@ -8906,7 +8980,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDataTypes()
    * @generated
    */
-  int DATA_TYPES = 206;
+  int DATA_TYPES = 208;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.NumericKind <em>Numeric Kind</em>}' enum.
@@ -8916,7 +8990,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getNumericKind()
    * @generated
    */
-  int NUMERIC_KIND = 207;
+  int NUMERIC_KIND = 209;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.TypefaceKind <em>Typeface Kind</em>}' enum.
@@ -8926,7 +9000,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTypefaceKind()
    * @generated
    */
-  int TYPEFACE_KIND = 208;
+  int TYPEFACE_KIND = 210;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.TextStyleKind <em>Text Style Kind</em>}' enum.
@@ -8936,7 +9010,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getTextStyleKind()
    * @generated
    */
-  int TEXT_STYLE_KIND = 209;
+  int TEXT_STYLE_KIND = 211;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.CapitalizeKind <em>Capitalize Kind</em>}' enum.
@@ -8946,7 +9020,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getCapitalizeKind()
    * @generated
    */
-  int CAPITALIZE_KIND = 210;
+  int CAPITALIZE_KIND = 212;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.AutoLinkKind <em>Auto Link Kind</em>}' enum.
@@ -8956,7 +9030,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAutoLinkKind()
    * @generated
    */
-  int AUTO_LINK_KIND = 211;
+  int AUTO_LINK_KIND = 213;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.StretchModeKind <em>Stretch Mode Kind</em>}' enum.
@@ -8966,7 +9040,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getStretchModeKind()
    * @generated
    */
-  int STRETCH_MODE_KIND = 212;
+  int STRETCH_MODE_KIND = 214;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.GravityKind <em>Gravity Kind</em>}' enum.
@@ -8976,7 +9050,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getGravityKind()
    * @generated
    */
-  int GRAVITY_KIND = 213;
+  int GRAVITY_KIND = 215;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind <em>Fast Layout Dimension Kind</em>}' enum.
@@ -8986,7 +9060,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFastLayoutDimensionKind()
    * @generated
    */
-  int FAST_LAYOUT_DIMENSION_KIND = 214;
+  int FAST_LAYOUT_DIMENSION_KIND = 216;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind <em>Layout Dimension Kind</em>}' enum.
@@ -8996,7 +9070,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getLayoutDimensionKind()
    * @generated
    */
-  int LAYOUT_DIMENSION_KIND = 215;
+  int LAYOUT_DIMENSION_KIND = 217;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource <em>Android Drawable Resource</em>}' enum.
@@ -9006,7 +9080,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getAndroidDrawableResource()
    * @generated
    */
-  int ANDROID_DRAWABLE_RESOURCE = 216;
+  int ANDROID_DRAWABLE_RESOURCE = 218;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric <em>Dimension Metric</em>}' enum.
@@ -9016,7 +9090,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getDimensionMetric()
    * @generated
    */
-  int DIMENSION_METRIC = 217;
+  int DIMENSION_METRIC = 219;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.BodyType <em>Body Type</em>}' enum.
@@ -9026,7 +9100,27 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getBodyType()
    * @generated
    */
-  int BODY_TYPE = 218;
+  int BODY_TYPE = 220;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorTarget <em>Sensor Target</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorTarget
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSensorTarget()
+   * @generated
+   */
+  int SENSOR_TARGET = 221;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorType <em>Sensor Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorType
+   * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getSensorType()
+   * @generated
+   */
+  int SENSOR_TYPE = 222;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ConstantColor <em>Constant Color</em>}' enum.
@@ -9036,7 +9130,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getConstantColor()
    * @generated
    */
-  int CONSTANT_COLOR = 219;
+  int CONSTANT_COLOR = 223;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.HorizontalAlign <em>Horizontal Align</em>}' enum.
@@ -9046,7 +9140,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getHorizontalAlign()
    * @generated
    */
-  int HORIZONTAL_ALIGN = 220;
+  int HORIZONTAL_ALIGN = 224;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.FontType <em>Font Type</em>}' enum.
@@ -9056,7 +9150,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getFontType()
    * @generated
    */
-  int FONT_TYPE = 221;
+  int FONT_TYPE = 225;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.ScreenOrientation <em>Screen Orientation</em>}' enum.
@@ -9066,7 +9160,7 @@ public interface AndroTextDslPackage extends EPackage
    * @see hu.bme.mit.androtext.lang.androTextDsl.impl.AndroTextDslPackageImpl#getScreenOrientation()
    * @generated
    */
-  int SCREEN_ORIENTATION = 222;
+  int SCREEN_ORIENTATION = 226;
 
 
   /**
@@ -13733,15 +13827,15 @@ public interface AndroTextDslPackage extends EPackage
   EReference getAndroGameBox2DLogic_Options();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponent <em>Box2d Component</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponents <em>Box2d Components</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Box2d Component</em>'.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponent()
+   * @return the meta object for the containment reference list '<em>Box2d Components</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic#getBox2dComponents()
    * @see #getAndroGameBox2DLogic()
    * @generated
    */
-  EReference getAndroGameBox2DLogic_Box2dComponent();
+  EReference getAndroGameBox2DLogic_Box2dComponents();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions <em>Box2 DOptions</em>}'.
@@ -14206,6 +14300,70 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EReference getModifierBinding_GameEntity();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding <em>Box2 DBinding</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Box2 DBinding</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding
+   * @generated
+   */
+  EClass getBox2DBinding();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Body</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding#getBody()
+   * @see #getBox2DBinding()
+   * @generated
+   */
+  EReference getBox2DBinding_Body();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding#getGameEntity <em>Game Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Game Entity</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding#getGameEntity()
+   * @see #getBox2DBinding()
+   * @generated
+   */
+  EReference getBox2DBinding_GameEntity();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorBinding <em>Sensor Binding</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sensor Binding</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorBinding
+   * @generated
+   */
+  EClass getSensorBinding();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorBinding#getSensorType <em>Sensor Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sensor Type</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorBinding#getSensorType()
+   * @see #getSensorBinding()
+   * @generated
+   */
+  EAttribute getSensorBinding_SensorType();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorBinding#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>To</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorBinding#getTo()
+   * @see #getSensorBinding()
+   * @generated
+   */
+  EAttribute getSensorBinding_To();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.androtext.lang.androTextDsl.EntityModifier <em>Entity Modifier</em>}'.
@@ -15427,6 +15585,26 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EEnum getBodyType();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorTarget <em>Sensor Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Sensor Target</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorTarget
+   * @generated
+   */
+  EEnum getSensorTarget();
+
+  /**
+   * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorType <em>Sensor Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Sensor Type</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorType
+   * @generated
+   */
+  EEnum getSensorType();
 
   /**
    * Returns the meta object for enum '{@link hu.bme.mit.androtext.lang.androTextDsl.ConstantColor <em>Constant Color</em>}'.

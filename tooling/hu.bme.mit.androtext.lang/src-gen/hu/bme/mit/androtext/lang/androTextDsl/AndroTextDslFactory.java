@@ -1602,6 +1602,24 @@ public interface AndroTextDslFactory extends EFactory
   ModifierBinding createModifierBinding();
 
   /**
+   * Returns a new object of class '<em>Box2 DBinding</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Box2 DBinding</em>'.
+   * @generated
+   */
+  Box2DBinding createBox2DBinding();
+
+  /**
+   * Returns a new object of class '<em>Sensor Binding</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sensor Binding</em>'.
+   * @generated
+   */
+  SensorBinding createSensorBinding();
+
+  /**
    * Returns a new object of class '<em>Entity Modifier</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
