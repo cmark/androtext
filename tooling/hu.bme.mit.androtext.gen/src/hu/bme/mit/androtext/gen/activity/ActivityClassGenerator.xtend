@@ -45,8 +45,6 @@ class ActivityClassGenerator implements IGenerator {
 			protected void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
 			}
-			
-		} 
 	'''
 	
 }

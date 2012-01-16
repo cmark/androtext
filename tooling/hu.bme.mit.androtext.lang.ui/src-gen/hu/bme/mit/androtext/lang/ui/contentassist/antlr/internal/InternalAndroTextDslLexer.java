@@ -5319,10 +5319,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__251;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:250:8: ( 'sequence' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:250:10: 'sequence'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:250:8: ( 'text' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:250:10: 'text'
             {
-            match("sequence"); 
+            match("text"); 
 
 
             }
@@ -5340,10 +5340,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__252;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:251:8: ( 'loop' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:251:10: 'loop'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:251:8: ( 'font' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:251:10: 'font'
             {
-            match("loop"); 
+            match("font"); 
 
 
             }
@@ -5361,10 +5361,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__253;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:252:8: ( 'count' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:252:10: 'count'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:252:8: ( 'texture' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:252:10: 'texture'
             {
-            match("count"); 
+            match("texture"); 
 
 
             }
@@ -5382,10 +5382,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__254;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:253:8: ( 'move' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:253:10: 'move'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:253:8: ( 'sequence' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:253:10: 'sequence'
             {
-            match("move"); 
+            match("sequence"); 
 
 
             }
@@ -5403,10 +5403,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__255;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:254:8: ( 'moveby' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:254:10: 'moveby'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:254:8: ( 'loop' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:254:10: 'loop'
             {
-            match("moveby"); 
+            match("loop"); 
 
 
             }
@@ -5424,10 +5424,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__256;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:255:8: ( 'scale' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:255:10: 'scale'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:255:8: ( 'count' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:255:10: 'count'
             {
-            match("scale"); 
+            match("count"); 
 
 
             }
@@ -5445,10 +5445,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__257;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:256:8: ( 'alphamodifier' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:256:10: 'alphamodifier'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:256:8: ( 'move' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:256:10: 'move'
             {
-            match("alphamodifier"); 
+            match("move"); 
 
 
             }
@@ -5466,10 +5466,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__258;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:257:8: ( 'rotateby' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:257:10: 'rotateby'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:257:8: ( 'moveby' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:257:10: 'moveby'
             {
-            match("rotateby"); 
+            match("moveby"); 
 
 
             }
@@ -5487,10 +5487,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__259;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:258:8: ( 'rotate' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:258:10: 'rotate'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:258:8: ( 'scale' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:258:10: 'scale'
             {
-            match("rotate"); 
+            match("scale"); 
 
 
             }
@@ -5508,10 +5508,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__260;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:259:8: ( 'colormodifier' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:259:10: 'colormodifier'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:259:8: ( 'alphamodifier' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:259:10: 'alphamodifier'
             {
-            match("colormodifier"); 
+            match("alphamodifier"); 
 
 
             }
@@ -5529,10 +5529,11 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__261;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:260:8: ( '(' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:260:10: '('
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:260:8: ( 'rotateby' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:260:10: 'rotateby'
             {
-            match('('); 
+            match("rotateby"); 
+
 
             }
 
@@ -5549,10 +5550,11 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__262;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:261:8: ( ')' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:261:10: ')'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:261:8: ( 'rotate' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:261:10: 'rotate'
             {
-            match(')'); 
+            match("rotate"); 
+
 
             }
 
@@ -5569,10 +5571,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__263;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:262:8: ( 'from' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:262:10: 'from'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:262:8: ( 'colormodifier' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:262:10: 'colormodifier'
             {
-            match("from"); 
+            match("colormodifier"); 
 
 
             }
@@ -5590,11 +5592,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__264;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:263:8: ( 'by' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:263:10: 'by'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:263:8: ( '(' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:263:10: '('
             {
-            match("by"); 
-
+            match('('); 
 
             }
 
@@ -5611,11 +5612,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__265;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:264:8: ( 'line' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:264:10: 'line'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:264:8: ( ')' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:264:10: ')'
             {
-            match("line"); 
-
+            match(')'); 
 
             }
 
@@ -5632,10 +5632,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__266;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:265:8: ( 'lineWidth' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:265:10: 'lineWidth'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:265:8: ( 'from' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:265:10: 'from'
             {
-            match("lineWidth"); 
+            match("from"); 
 
 
             }
@@ -5653,10 +5653,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__267;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:266:8: ( 'text' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:266:10: 'text'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:266:8: ( 'by' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:266:10: 'by'
             {
-            match("text"); 
+            match("by"); 
 
 
             }
@@ -5674,10 +5674,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__268;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:267:8: ( 'rect' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:267:10: 'rect'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:267:8: ( 'line' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:267:10: 'line'
             {
-            match("rect"); 
+            match("line"); 
 
 
             }
@@ -5695,10 +5695,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__269;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:268:8: ( 'sprite' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:268:10: 'sprite'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:268:8: ( 'lineWidth' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:268:10: 'lineWidth'
             {
-            match("sprite"); 
+            match("lineWidth"); 
 
 
             }
@@ -5716,10 +5716,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__270;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:269:8: ( 'animsprite' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:269:10: 'animsprite'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:269:8: ( 'rect' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:269:10: 'rect'
             {
-            match("animsprite"); 
+            match("rect"); 
 
 
             }
@@ -5737,10 +5737,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__271;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:270:8: ( 'pos' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:270:10: 'pos'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:270:8: ( 'sprite' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:270:10: 'sprite'
             {
-            match("pos"); 
+            match("sprite"); 
 
 
             }
@@ -5758,10 +5758,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__272;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:271:8: ( 'size' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:271:10: 'size'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:271:8: ( 'animsprite' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:271:10: 'animsprite'
             {
-            match("size"); 
+            match("animsprite"); 
 
 
             }
@@ -5779,10 +5779,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__273;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:272:8: ( 'texture' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:272:10: 'texture'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:272:8: ( 'pos' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:272:10: 'pos'
             {
-            match("texture"); 
+            match("pos"); 
 
 
             }
@@ -5800,10 +5800,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__274;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:273:8: ( 'tiled' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:273:10: 'tiled'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:273:8: ( 'size' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:273:10: 'size'
             {
-            match("tiled"); 
+            match("size"); 
 
 
             }
@@ -5821,10 +5821,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__275;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:274:8: ( 'font' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:274:10: 'font'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:274:8: ( 'tiled' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:274:10: 'tiled'
             {
-            match("font"); 
+            match("tiled"); 
 
 
             }
@@ -5925,8 +5925,8 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_HEX_COLOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46746:16: ( '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )? )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46746:18: '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47047:16: ( '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )? )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47047:18: '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
             {
             match('#'); 
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -5983,7 +5983,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46746:196: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47047:196: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -5992,7 +5992,7 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46746:197: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47047:197: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )
                     {
                     if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                         input.consume();
@@ -6034,10 +6034,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46748:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46748:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47049:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47049:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46748:11: ( '^' )?
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47049:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -6046,7 +6046,7 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46748:11: '^'
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47049:11: '^'
                     {
                     match('^'); 
 
@@ -6064,7 +6064,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46748:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47049:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -6113,10 +6113,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46750:10: ( ( '0' .. '9' )+ )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46750:12: ( '0' .. '9' )+
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47051:10: ( ( '0' .. '9' )+ )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47051:12: ( '0' .. '9' )+
             {
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46750:12: ( '0' .. '9' )+
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47051:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -6130,7 +6130,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46750:13: '0' .. '9'
+            	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47051:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -6162,10 +6162,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -6183,10 +6183,10 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -6202,7 +6202,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -6218,7 +6218,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -6243,10 +6243,10 @@ public class InternalAndroTextDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -6262,7 +6262,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -6278,7 +6278,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46752:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47053:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -6321,12 +6321,12 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46754:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46754:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47055:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47055:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46754:24: ( options {greedy=false; } : . )*
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47055:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -6351,7 +6351,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46754:52: .
+            	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47055:52: .
             	    {
             	    matchAny(); 
 
@@ -6381,12 +6381,12 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -6399,7 +6399,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -6419,7 +6419,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:40: ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -6428,9 +6428,9 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:41: ( '\\r' )? '\\n'
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:41: ( '\\r' )? '\\n'
                     {
-                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:41: ( '\\r' )?
+                    // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -6439,7 +6439,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46756:41: '\\r'
+                            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47057:41: '\\r'
                             {
                             match('\r'); 
 
@@ -6471,10 +6471,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46758:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46758:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47059:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47059:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46758:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47059:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -6528,8 +6528,8 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46760:16: ( . )
-            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:46760:18: .
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47061:16: ( . )
+            // ../hu.bme.mit.androtext.lang.ui/src-gen/hu/bme/mit/androtext/lang/ui/contentassist/antlr/internal/InternalAndroTextDsl.g:47061:18: .
             {
             matchAny(); 
 
@@ -8880,57 +8880,57 @@ public class InternalAndroTextDslLexer extends Lexer {
         "\1\141\1\uffff\1\145\1\155\1\172\1\145\1\uffff\1\172\1\uffff";
     static final String DFA13_acceptS =
         "\37\uffff\1\124\1\125\1\uffff\1\127\1\130\1\uffff\1\154\1\u00b0"+
-        "\1\u00ca\1\u00cf\3\uffff\1\u00fa\1\u00fb\1\u0109\2\uffff\1\u010e"+
+        "\1\u00ca\1\u00cf\3\uffff\1\u00fd\1\u00fe\1\u0109\2\uffff\1\u010e"+
         "\1\u010f\3\uffff\1\u0113\1\u0114\3\uffff\1\u010e\133\uffff\1\124"+
         "\1\125\5\uffff\1\127\1\130\6\uffff\1\154\1\u00b0\1\u00ca\1\u00cf"+
-        "\1\u00d7\2\uffff\1\u00fa\1\u00fb\1\u0109\1\u010d\1\u010f\1\u0110"+
-        "\1\u0111\1\u0112\1\u0113\13\uffff\1\u00ed\35\uffff\1\u00fd\1\uffff"+
+        "\1\u00d7\2\uffff\1\u00fd\1\u00fe\1\u0109\1\u010d\1\u010f\1\u0110"+
+        "\1\u0111\1\u0112\1\u0113\13\uffff\1\u00ed\35\uffff\1\u0100\1\uffff"+
         "\1\100\17\uffff\1\74\12\uffff\1\73\17\uffff\1\77\30\uffff\1\75\1"+
         "\76\77\uffff\1\46\7\uffff\1\143\36\uffff\1\21\50\uffff\1\42\6\uffff"+
-        "\1\37\31\uffff\1\u0104\34\uffff\1\106\24\uffff\1\u010a\6\uffff\1"+
-        "\u00b7\2\uffff\1\170\1\3\16\uffff\1\u0100\6\uffff\1\63\1\55\3\uffff"+
-        "\1\u00fc\1\u0108\6\uffff\1\u00d0\1\31\7\uffff\1\u00ec\10\uffff\1"+
-        "\u0105\1\26\5\uffff\1\u009a\5\uffff\1\144\17\uffff\1\33\4\uffff"+
-        "\1\u00f3\4\uffff\1\u00ee\3\uffff\1\64\1\62\42\uffff\1\50\11\uffff"+
-        "\1\u00fe\1\u00f1\6\uffff\1\u0101\5\uffff\1\110\1\uffff\1\115\4\uffff"+
-        "\1\112\46\uffff\1\141\10\uffff\1\u0107\1\4\1\uffff\1\17\17\uffff"+
-        "\1\u00a2\7\uffff\1\145\3\uffff\1\27\13\uffff\1\u00de\1\u00f5\17"+
+        "\1\37\31\uffff\1\u0106\34\uffff\1\106\24\uffff\1\u010a\6\uffff\1"+
+        "\u00b7\2\uffff\1\170\1\3\16\uffff\1\u00f0\6\uffff\1\63\1\55\3\uffff"+
+        "\1\u00ff\1\u00f1\6\uffff\1\u00d0\1\31\7\uffff\1\u00ec\10\uffff\1"+
+        "\u0107\1\26\5\uffff\1\u009a\5\uffff\1\144\17\uffff\1\33\4\uffff"+
+        "\1\u00f6\4\uffff\1\u00ee\3\uffff\1\64\1\62\42\uffff\1\50\11\uffff"+
+        "\1\u0101\1\u00f4\6\uffff\1\u0103\5\uffff\1\110\1\uffff\1\115\4\uffff"+
+        "\1\112\46\uffff\1\141\10\uffff\1\u0108\1\4\1\uffff\1\17\17\uffff"+
+        "\1\u00a2\7\uffff\1\145\3\uffff\1\27\13\uffff\1\u00de\1\u00f8\17"+
         "\uffff\1\65\1\uffff\1\u008c\1\uffff\1\35\2\uffff\1\160\6\uffff\1"+
-        "\u00d1\1\uffff\1\u00f2\7\uffff\1\40\13\uffff\1\41\21\uffff\1\51"+
+        "\u00d1\1\uffff\1\u00f5\7\uffff\1\40\13\uffff\1\41\21\uffff\1\51"+
         "\12\uffff\1\104\1\uffff\1\105\1\113\1\107\17\uffff\1\u00a1\16\uffff"+
         "\1\157\6\uffff\1\131\5\uffff\1\u0087\15\uffff\1\13\2\uffff\1\16"+
         "\1\uffff\1\47\2\uffff\1\173\4\uffff\1\32\1\123\2\uffff\1\23\6\uffff"+
-        "\1\u0102\1\101\2\uffff\1\u00ce\1\u00cb\7\uffff\1\u00b9\3\uffff\1"+
-        "\25\3\uffff\1\u00f4\6\uffff\1\u00ad\4\uffff\1\u009b\7\uffff\1\52"+
-        "\4\uffff\1\u00dc\5\uffff\1\152\20\uffff\1\140\20\uffff\1\u00f8\2"+
+        "\1\u0104\1\101\2\uffff\1\u00ce\1\u00cb\7\uffff\1\u00b9\3\uffff\1"+
+        "\25\3\uffff\1\u00f7\6\uffff\1\u00ad\4\uffff\1\u009b\7\uffff\1\52"+
+        "\4\uffff\1\u00dc\5\uffff\1\152\20\uffff\1\140\20\uffff\1\u00fb\2"+
         "\uffff\1\111\1\114\1\116\33\uffff\1\134\11\uffff\1\u0088\3\uffff"+
-        "\1\u0106\4\uffff\1\u00e6\5\uffff\1\20\1\uffff\1\u00e8\1\u00e3\1"+
+        "\1\u00f2\4\uffff\1\u00e6\5\uffff\1\20\1\uffff\1\u00e8\1\u00e3\1"+
         "\uffff\1\22\10\uffff\1\u0082\1\uffff\1\u00c9\1\uffff\1\u0094\1\24"+
         "\1\uffff\1\u00e9\1\103\5\uffff\1\u00b6\7\uffff\1\176\6\uffff\1\150"+
         "\17\uffff\1\u00c8\1\u0095\1\153\3\uffff\1\122\1\uffff\1\u00c0\1"+
         "\132\25\uffff\1\102\4\uffff\1\174\1\uffff\1\u00df\2\uffff\1\u00c1"+
         "\22\uffff\1\2\3\uffff\1\u00a0\2\uffff\1\167\1\uffff\1\171\1\uffff"+
         "\1\u00c2\1\uffff\1\u00b1\4\uffff\1\u00ea\2\uffff\1\12\4\uffff\1"+
-        "\u00d3\4\uffff\1\u00d9\1\u00f0\10\uffff\1\u00d5\6\uffff\1\u00ef"+
+        "\u00d3\4\uffff\1\u00d9\1\u00f3\10\uffff\1\u00d5\6\uffff\1\u00ef"+
         "\2\uffff\1\u0083\2\uffff\1\u00cc\17\uffff\1\172\1\u00b8\3\uffff"+
         "\1\121\1\u00b5\1\uffff\1\133\4\uffff\1\147\1\u0080\2\uffff\1\u00e5"+
-        "\11\uffff\1\u00f7\2\uffff\1\155\3\uffff\1\u0081\1\uffff\1\137\2"+
+        "\11\uffff\1\u00fa\2\uffff\1\155\3\uffff\1\u0081\1\uffff\1\137\2"+
         "\uffff\1\u00bb\1\u00bf\1\u010b\2\uffff\1\u00a5\12\uffff\1\u009f"+
         "\3\uffff\1\u00af\1\u00b2\12\uffff\1\177\2\uffff\1\34\4\uffff\1\136"+
         "\1\uffff\1\u00d2\2\uffff\1\30\2\uffff\1\u00ac\15\uffff\1\u00be\2"+
-        "\uffff\1\66\10\uffff\1\120\4\uffff\1\u00ff\2\uffff\1\u00cd\4\uffff"+
+        "\uffff\1\66\10\uffff\1\120\4\uffff\1\u0102\2\uffff\1\u00cd\4\uffff"+
         "\1\u0085\1\uffff\1\126\2\uffff\1\u00e0\3\uffff\1\u00a3\4\uffff\1"+
         "\u010c\3\uffff\1\1\1\uffff\1\u00d6\10\uffff\1\5\1\uffff\1\10\1\11"+
         "\1\14\1\15\1\uffff\1\u00c3\1\uffff\1\u00b3\6\uffff\1\u00c5\2\uffff"+
         "\1\u00ae\1\36\13\uffff\1\u00ba\1\u00e7\10\uffff\1\u008d\1\u0096"+
-        "\10\uffff\1\u0084\2\uffff\1\165\7\uffff\1\u0103\1\u00da\4\uffff"+
+        "\10\uffff\1\u0084\2\uffff\1\165\7\uffff\1\u0105\1\u00da\4\uffff"+
         "\1\142\1\166\1\u00d8\3\uffff\1\163\4\uffff\1\u00c6\1\u00d4\1\uffff"+
         "\1\u0097\2\uffff\1\u00ab\2\uffff\1\44\13\uffff\1\u0099\1\175\1\u00b4"+
         "\1\uffff\1\151\7\uffff\1\u00eb\1\uffff\1\u0089\1\117\1\uffff\1\135"+
         "\2\uffff\1\u00a4\5\uffff\1\u00dd\2\uffff\1\u0086\3\uffff\1\6\1\7"+
         "\1\u00e1\2\uffff\1\43\1\u0098\1\uffff\1\u00aa\20\uffff\1\146\1\uffff"+
-        "\1\162\3\uffff\1\u00db\12\uffff\1\56\3\uffff\1\u00e4\2\uffff\1\u00f9"+
-        "\5\uffff\1\60\12\uffff\1\u00e2\6\uffff\1\u00f6\2\uffff\1\u00bd\7"+
+        "\1\162\3\uffff\1\u00db\12\uffff\1\56\3\uffff\1\u00e4\2\uffff\1\u00fc"+
+        "\5\uffff\1\60\12\uffff\1\u00e2\6\uffff\1\u00f9\2\uffff\1\u00bd\7"+
         "\uffff\1\u009c\1\u009d\10\uffff\1\u0091\1\uffff\1\164\1\161\2\uffff"+
         "\1\u00a7\3\uffff\1\u00c7\1\57\3\uffff\1\u008a\1\53\2\uffff\1\61"+
         "\10\uffff\1\u00a6\7\uffff\1\u009e\3\uffff\1\u008e\1\uffff\1\156"+

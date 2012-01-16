@@ -14394,9 +14394,27 @@ ruleMenuScene returns [EObject current=null]
 	    }
 
 )
-)+	otherlv_5='}' 
+)+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMenuSceneAccess().getEntitiesGameEntityParserRuleCall_5_0()); 
+	    }
+		lv_entities_5_0=ruleGameEntity		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMenuSceneRule());
+	        }
+       		add(
+       			$current, 
+       			"entities",
+        		lv_entities_5_0, 
+        		"GameEntity");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_6='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getMenuSceneAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_6, grammarAccess.getMenuSceneAccess().getRightCurlyBracketKeyword_6());
     }
 )
 ;
@@ -14482,11 +14500,33 @@ ruleGameMenuItem returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getGameMenuItemAccess().getMenuitemKeyword_0());
     }
-((
 (
-		lv_text_1_0=RULE_STRING
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_text_1_0, grammarAccess.getGameMenuItemAccess().getTextSTRINGTerminalRuleCall_1_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getGameMenuItemAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGameMenuItemRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)((	otherlv_2='text' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getGameMenuItemAccess().getTextKeyword_2_0_0());
+    }
+(
+(
+		lv_text_3_0=RULE_STRING
+		{
+			newLeafNode(lv_text_3_0, grammarAccess.getGameMenuItemAccess().getTextSTRINGTerminalRuleCall_2_0_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -14495,13 +14535,16 @@ ruleGameMenuItem returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"text",
-        		lv_text_1_0, 
+        		lv_text_3_0, 
         		"STRING");
 	    }
 
 )
-)
-    |(
+)	otherlv_4='font' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getGameMenuItemAccess().getFontKeyword_2_0_2());
+    }
+(
 (
 		{
 			if ($current==null) {
@@ -14509,14 +14552,34 @@ ruleGameMenuItem returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getGameMenuItemAccess().getTextureRegionTextureRegionCrossReference_1_1_0()); 
+	        newCompositeNode(grammarAccess.getGameMenuItemAccess().getFontFontCrossReference_2_0_3_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)))
+))
+    |(	otherlv_6='texture' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getGameMenuItemAccess().getTextureKeyword_2_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGameMenuItemRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getGameMenuItemAccess().getTextureRegionTextureRegionCrossReference_2_1_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))))
 ;
 
 

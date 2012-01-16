@@ -14,6 +14,11 @@ import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 import hu.bme.mit.androtext.lang.androTextDsl.View
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
+import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
+import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
+import java.util.ArrayList
+import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
 
 class GeneratorExtensions {
 	
@@ -44,6 +49,26 @@ class GeneratorExtensions {
 			default: o.^class.name.toFirstUpper
 		}
 	}
+	
+	def findAllGameMenuItems(BaseGameActivity activity) {
+		var menuItems = new ArrayList<GameMenuItem>();
+		for (item : activity.scene.eResource.allContentsIterable.filter(typeof (GameMenuItem))) {
+			menuItems.add(item)
+		}
+		return menuItems
+	}
+	
+	def menuSceneFieldName(MenuScene menu) '''
+		mMenuScene«menu.name.toFirstUpper»
+	'''
+	
+	def createMenuMethodName(MenuScene menu) '''
+		createMenuScene«menu.name.toFirstUpper»
+	'''
+	
+	def variableName(GameMenuItem item) '''
+		«item.name.toFirstLower»MenuItem
+	'''
 	
 	def tabActivityLayout(TabActivity activity) {
 		activity.name.toLowerCase+"_layout"

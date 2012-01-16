@@ -19,6 +19,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 
 class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	
@@ -74,6 +75,10 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import org.anddev.andengine.entity.text.Text;
 		import org.anddev.andengine.entity.sprite.Sprite;
 		import org.anddev.andengine.entity.scene.Scene;
+		import org.anddev.andengine.entity.scene.menu.MenuScene;
+		import org.anddev.andengine.entity.scene.menu.MenuScene.IOnMenuItemClickListener;
+		import org.anddev.andengine.entity.scene.menu.item.SpriteMenuItem;
+		import org.anddev.andengine.entity.scene.menu.item.TextMenuItem;
 		import org.anddev.andengine.entity.scene.background.*;
 		import org.anddev.andengine.engine.camera.Camera;
 		import org.anddev.andengine.util.HorizontalAlign;
@@ -91,6 +96,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import org.anddev.andengine.extension.physics.box2d.util.Vector2Pool;
 		import org.anddev.andengine.sensor.accelerometer.AccelerometerData;
 		import org.anddev.andengine.sensor.accelerometer.IAccelerometerListener;
+		import javax.microedition.khronos.opengles.GL10;
 	'''
 	
 	def dispatch importActivity(Activity a) '''
@@ -106,7 +112,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	''' 
 	
 	def body(Activity activity, ImportManager manager) '''
-		public abstract class «activity.abstractClassName» extends «activity.eClass.name» «activity.interfaces» {
+		public abstract class «activity.abstractClassName» extends «activity.eClass.name» «activity.interfaces.toString.trim» {
 			
 			«activity.generateFields»
 			
@@ -125,6 +131,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	def dispatch interfaces(Activity activity) ''''''
 	def dispatch interfaces(BaseGameActivity activity) '''
 «««		«IF activity.findSensorUsage»implements IAccelerometerListener«ENDIF»
+		«IF activity.scene instanceof MenuScene»implements IOnMenuItemClickListener«ENDIF»
 	'''
 	
 	def dispatch contentViewSet(Activity activity) '''

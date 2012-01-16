@@ -39,6 +39,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 import hu.bme.mit.androtext.lang.androTextDsl.ToDouble
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
+import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
 
 class BaseGameActivityMethodGenerator {
 	
@@ -78,6 +80,18 @@ class BaseGameActivityMethodGenerator {
 			«activity.scene.initializeBox2D»
 		}
 		
+		«FOR menu : activity.scene.eResource.allContentsIterable.filter(typeof(MenuScene))»
+		private void «menu.createMenuMethodName.toString.trim»() {
+			«val menuFieldName = menu.menuSceneFieldName.toString.trim»
+			this.«menuFieldName» = new MenuScene(this.mCamera);
+			«activity.scene.generateMenuItems»
+			this.«menuFieldName».buildAnimations();
+			this.«menuFieldName».setBackgroundEnabled(false);
+			this.«menuFieldName».setOnMenuItemClickListener(this);
+		}
+		«ENDFOR»
+		
+		
 «««		@Override
 «««		public void onResumeGame() {
 «««			super.onResumeGame();
@@ -105,12 +119,35 @@ class BaseGameActivityMethodGenerator {
 		
 	'''
 	
+	def dispatch generateMenuItems(Scene scene) ''''''
+	def dispatch generateMenuItems(MenuScene scene) '''
+		«FOR item : scene.menuItems»
+		«val menuItemType = item.type.toString.trim»
+		final «menuItemType»MenuItem «item.variableName.toString.trim» = new «menuItemType»MenuItem(«item.name.toUpperCase», «item.ctrParameters.toString.trim»);
+		«item.variableName.toString.trim».setBlendFunction(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		this.«scene.menuSceneFieldName.toString.trim».addMenuItem(«item.variableName.toString.trim»);
+		«ENDFOR»
+	'''
+	
+	def type(GameMenuItem item) '''
+		«IF item.text != null»
+		Text
+		«ELSEIF item.textureRegion != null»
+		Sprite
+		«ELSE»
+		Wrong model state at GameMenuItem!!!
+		«ENDIF»
+	'''
+	
+	
 	def initializeBox2D(Scene scene) '''
 		«FOR logic : scene.eResource.allContentsIterable.filter(typeof(AndroGameLogic))»
+		«IF logic.containsBox2DObject»
 		this.mPhysicsWorld = new PhysicsWorld(new Vector2(0, «IF logic.box2dOptions == null»SensorManager.GRAVITY_EARTH«ELSE»«logic.box2dOptions.gravity»«ENDIF»), false);
 		// create box2d components
 		«logic.generateBox2DComponents»
 		this.mScene.registerUpdateHandler(this.mPhysicsWorld);
+		«ENDIF»
 		«ENDFOR»
 	'''
 	
@@ -162,7 +199,7 @@ class BaseGameActivityMethodGenerator {
 		«var Iterable<TextureRegion> regions = activity.scene.eResource.allContentsIterable.filter(typeof (TextureRegion))»
 		«var Iterable<Font> fonts = activity.scene.eResource.allContentsIterable.filter(typeof (Font))»
 		«FOR texture : regions»
-		BitmapTextureAtlas «texture.name» = new BitmapTextureAtlas(64, 64, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+		BitmapTextureAtlas «texture.name» = new BitmapTextureAtlas(256, 64, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
 		this.«texture.textureRegionFieldName.toString.trim» = BitmapTextureAtlasTextureRegionFactory.createFromAsset(«texture.name», this, "«texture.fileName»", 0, 0);
 		«ENDFOR»
 		getEngine().getTextureManager().loadTextures(«FOR texture : regions SEPARATOR ', '»«texture.name»«ENDFOR»);
@@ -200,10 +237,17 @@ class BaseGameActivityMethodGenerator {
 	'''
 	
 	def initializeScene(Scene scene) '''
+		// create menus, submenus
+		«scene.createMenuScenes»
 		«FOR e : scene.entities»
 			«e.generate(null).toString.trim»
 			scene.attachChild(this.«e.entityFieldName.toString.trim»);
 		«ENDFOR»
+	'''
+	
+	def dispatch createMenuScenes(Scene scene) ''''''
+	def dispatch createMenuScenes(MenuScene scene) '''
+		this.«scene.createMenuMethodName.toString.trim»();
 	'''
 	
 	def generate(GameEntity e, GameEntity parent) '''
@@ -289,8 +333,13 @@ class BaseGameActivityMethodGenerator {
 	
 	def generate(Binding logic) '''
 		«IF logic.bindable instanceof EntityModifier»
-		this.«logic.bindingTarget.toString.trim».registerEntityModifier(«logic.bindable.name.toString.trim»);
+		this.«logic.bindingTarget.generate.toString.trim».registerEntityModifier(«logic.bindable.name.toString.trim»);
 		«ENDIF»
+	'''
+	
+	def dispatch generate(BindingTarget target) ''''''
+	def dispatch generate(EntityBindingTarget target) '''
+		«target.entity.entityFieldName.toString.trim»
 	'''
 	
 	def name(Bindable bindable) ''''''
@@ -333,6 +382,10 @@ class BaseGameActivityMethodGenerator {
 	
 	def dispatch ctrParameters(SequenceEntityModifier modifier) '''
 		«FOR m : modifier.modifiers SEPARATOR ','»«m.name»«ENDFOR»
+	'''
+	
+	def dispatch ctrParameters(GameMenuItem item) '''
+		«IF item.text != null»«item.font.name», «item.text»«ELSEIF item.textureRegion != null»this.«item.textureRegion.textureRegionFieldName.toString.trim»«ELSE»Wrong model state at GameMenuItem!!!«ENDIF»
 	'''
 	
 }

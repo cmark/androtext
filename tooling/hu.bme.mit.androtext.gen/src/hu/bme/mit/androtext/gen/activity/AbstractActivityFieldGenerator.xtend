@@ -12,6 +12,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
+import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
 
 class AbstractActivityFieldGenerator {
 	
@@ -37,6 +39,32 @@ class AbstractActivityFieldGenerator {
 		protected PhysicsWorld mPhysicsWorld;
 		«ENDIF»
 		«ENDFOR»
+		«FOR menu : activity.scene.eResource.allContentsIterable.filter(typeof(MenuScene))»
+		protected MenuScene «menu.menuSceneFieldName.toString.trim»;
+		«ENDFOR»
+		«activity.menuItemFields.toString.trim»
 	'''
+	
+	def menuItemFields(BaseGameActivity activity) {
+		var buffer = new StringBuffer()
+		var GameMenuItem prev = null
+		for(item : activity.findAllGameMenuItems) {
+			if (prev == null) {
+				buffer.append(item.firstMenuItem)
+			} else {
+				buffer.append(item.afterFirstMenuItem(prev))
+			}
+			prev = item
+		}
+		return buffer.toString
+	}
+	
+	def firstMenuItem(GameMenuItem item) '''
+		public static final int «item.name.toUpperCase» = 0;
+	'''
+	
+	def afterFirstMenuItem(GameMenuItem item, GameMenuItem prev) '''
+		public static final int «item.name.toUpperCase» = «prev.name.toUpperCase» + 1;
+	''' 
 	
 }

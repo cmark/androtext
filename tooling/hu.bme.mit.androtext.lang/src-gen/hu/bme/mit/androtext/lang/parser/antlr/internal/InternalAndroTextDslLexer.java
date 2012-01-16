@@ -3786,10 +3786,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__178;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:177:8: ( 'sequence' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:177:10: 'sequence'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:177:8: ( 'text' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:177:10: 'text'
             {
-            match("sequence"); 
+            match("text"); 
 
 
             }
@@ -3807,10 +3807,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__179;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:178:8: ( 'loop' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:178:10: 'loop'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:178:8: ( 'font' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:178:10: 'font'
             {
-            match("loop"); 
+            match("font"); 
 
 
             }
@@ -3828,10 +3828,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__180;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:179:8: ( 'count' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:179:10: 'count'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:179:8: ( 'texture' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:179:10: 'texture'
             {
-            match("count"); 
+            match("texture"); 
 
 
             }
@@ -3849,10 +3849,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__181;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:180:8: ( 'move' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:180:10: 'move'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:180:8: ( 'sequence' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:180:10: 'sequence'
             {
-            match("move"); 
+            match("sequence"); 
 
 
             }
@@ -3870,10 +3870,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__182;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:181:8: ( 'moveby' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:181:10: 'moveby'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:181:8: ( 'loop' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:181:10: 'loop'
             {
-            match("moveby"); 
+            match("loop"); 
 
 
             }
@@ -3891,10 +3891,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__183;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:182:8: ( 'scale' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:182:10: 'scale'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:182:8: ( 'count' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:182:10: 'count'
             {
-            match("scale"); 
+            match("count"); 
 
 
             }
@@ -3912,10 +3912,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__184;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:183:8: ( 'alphamodifier' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:183:10: 'alphamodifier'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:183:8: ( 'move' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:183:10: 'move'
             {
-            match("alphamodifier"); 
+            match("move"); 
 
 
             }
@@ -3933,10 +3933,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__185;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:184:8: ( 'rotateby' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:184:10: 'rotateby'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:184:8: ( 'moveby' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:184:10: 'moveby'
             {
-            match("rotateby"); 
+            match("moveby"); 
 
 
             }
@@ -3954,10 +3954,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__186;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:185:8: ( 'rotate' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:185:10: 'rotate'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:185:8: ( 'scale' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:185:10: 'scale'
             {
-            match("rotate"); 
+            match("scale"); 
 
 
             }
@@ -3975,10 +3975,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__187;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:186:8: ( 'colormodifier' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:186:10: 'colormodifier'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:186:8: ( 'alphamodifier' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:186:10: 'alphamodifier'
             {
-            match("colormodifier"); 
+            match("alphamodifier"); 
 
 
             }
@@ -3996,10 +3996,11 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__188;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:187:8: ( '(' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:187:10: '('
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:187:8: ( 'rotateby' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:187:10: 'rotateby'
             {
-            match('('); 
+            match("rotateby"); 
+
 
             }
 
@@ -4016,10 +4017,11 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__189;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:188:8: ( ')' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:188:10: ')'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:188:8: ( 'rotate' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:188:10: 'rotate'
             {
-            match(')'); 
+            match("rotate"); 
+
 
             }
 
@@ -4036,10 +4038,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__190;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:189:8: ( 'from' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:189:10: 'from'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:189:8: ( 'colormodifier' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:189:10: 'colormodifier'
             {
-            match("from"); 
+            match("colormodifier"); 
 
 
             }
@@ -4057,11 +4059,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__191;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:190:8: ( 'by' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:190:10: 'by'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:190:8: ( '(' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:190:10: '('
             {
-            match("by"); 
-
+            match('('); 
 
             }
 
@@ -4078,11 +4079,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__192;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:191:8: ( 'line' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:191:10: 'line'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:191:8: ( ')' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:191:10: ')'
             {
-            match("line"); 
-
+            match(')'); 
 
             }
 
@@ -4099,10 +4099,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__193;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:192:8: ( 'lineWidth' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:192:10: 'lineWidth'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:192:8: ( 'from' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:192:10: 'from'
             {
-            match("lineWidth"); 
+            match("from"); 
 
 
             }
@@ -4120,10 +4120,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__194;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:193:8: ( 'text' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:193:10: 'text'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:193:8: ( 'by' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:193:10: 'by'
             {
-            match("text"); 
+            match("by"); 
 
 
             }
@@ -4141,10 +4141,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__195;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:194:8: ( 'rect' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:194:10: 'rect'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:194:8: ( 'line' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:194:10: 'line'
             {
-            match("rect"); 
+            match("line"); 
 
 
             }
@@ -4162,10 +4162,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__196;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:195:8: ( 'sprite' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:195:10: 'sprite'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:195:8: ( 'lineWidth' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:195:10: 'lineWidth'
             {
-            match("sprite"); 
+            match("lineWidth"); 
 
 
             }
@@ -4183,10 +4183,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__197;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:196:8: ( 'animsprite' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:196:10: 'animsprite'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:196:8: ( 'rect' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:196:10: 'rect'
             {
-            match("animsprite"); 
+            match("rect"); 
 
 
             }
@@ -4204,10 +4204,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__198;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:197:8: ( 'pos' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:197:10: 'pos'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:197:8: ( 'sprite' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:197:10: 'sprite'
             {
-            match("pos"); 
+            match("sprite"); 
 
 
             }
@@ -4225,10 +4225,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__199;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:198:8: ( 'size' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:198:10: 'size'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:198:8: ( 'animsprite' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:198:10: 'animsprite'
             {
-            match("size"); 
+            match("animsprite"); 
 
 
             }
@@ -4246,10 +4246,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__200;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:199:8: ( 'texture' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:199:10: 'texture'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:199:8: ( 'pos' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:199:10: 'pos'
             {
-            match("texture"); 
+            match("pos"); 
 
 
             }
@@ -4267,10 +4267,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__201;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:200:8: ( 'tiled' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:200:10: 'tiled'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:200:8: ( 'size' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:200:10: 'size'
             {
-            match("tiled"); 
+            match("size"); 
 
 
             }
@@ -4288,10 +4288,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = T__202;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:201:8: ( 'font' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:201:10: 'font'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:201:8: ( 'tiled' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:201:10: 'tiled'
             {
-            match("font"); 
+            match("tiled"); 
 
 
             }
@@ -5925,8 +5925,8 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_HEX_COLOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18031:16: ( '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )? )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18031:18: '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18094:16: ( '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )? )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18094:18: '#' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
             {
             match('#'); 
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -5983,7 +5983,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18031:196: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18094:196: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -5992,7 +5992,7 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18031:197: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18094:197: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )
                     {
                     if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                         input.consume();
@@ -6034,10 +6034,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18033:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18033:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18096:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18096:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18033:11: ( '^' )?
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18096:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -6046,7 +6046,7 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18033:11: '^'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18096:11: '^'
                     {
                     match('^'); 
 
@@ -6064,7 +6064,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18033:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18096:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -6113,10 +6113,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18035:10: ( ( '0' .. '9' )+ )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18035:12: ( '0' .. '9' )+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18098:10: ( ( '0' .. '9' )+ )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18098:12: ( '0' .. '9' )+
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18035:12: ( '0' .. '9' )+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18098:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -6130,7 +6130,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18035:13: '0' .. '9'
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18098:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -6162,10 +6162,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -6183,10 +6183,10 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -6202,7 +6202,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -6218,7 +6218,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -6243,10 +6243,10 @@ public class InternalAndroTextDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -6262,7 +6262,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -6278,7 +6278,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18037:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18100:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -6321,12 +6321,12 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18039:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18039:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18102:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18102:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18039:24: ( options {greedy=false; } : . )*
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18102:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -6351,7 +6351,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18039:52: .
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18102:52: .
             	    {
             	    matchAny(); 
 
@@ -6381,12 +6381,12 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -6399,7 +6399,7 @@ public class InternalAndroTextDslLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -6419,7 +6419,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:40: ( ( '\\r' )? '\\n' )?
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -6428,9 +6428,9 @@ public class InternalAndroTextDslLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:41: ( '\\r' )? '\\n'
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:41: ( '\\r' )? '\\n'
                     {
-                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:41: ( '\\r' )?
+                    // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -6439,7 +6439,7 @@ public class InternalAndroTextDslLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18041:41: '\\r'
+                            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18104:41: '\\r'
                             {
                             match('\r'); 
 
@@ -6471,10 +6471,10 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18043:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18043:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18106:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18106:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18043:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18106:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -6528,8 +6528,8 @@ public class InternalAndroTextDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18045:16: ( . )
-            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18045:18: .
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18108:16: ( . )
+            // ../hu.bme.mit.androtext.lang/src-gen/hu/bme/mit/androtext/lang/parser/antlr/internal/InternalAndroTextDsl.g:18108:18: .
             {
             matchAny(); 
 
@@ -8890,33 +8890,33 @@ public class InternalAndroTextDslLexer extends Lexer {
         "\1\172\1\uffff";
     static final String DFA13_acceptS =
         "\3\uffff\1\3\1\4\1\uffff\1\6\1\7\10\uffff\1\33\6\uffff\1\141\1"+
-        "\uffff\1\176\1\u0083\3\uffff\1\u00b1\1\u00b2\1\u00c1\20\uffff\1"+
+        "\uffff\1\176\1\u0083\3\uffff\1\u00b4\1\u00b5\1\u00c1\20\uffff\1"+
         "\u010e\1\u010f\3\uffff\1\u0113\1\u0114\10\uffff\1\u010e\4\uffff"+
         "\1\3\1\4\5\uffff\1\6\1\7\53\uffff\1\33\33\uffff\1\141\2\uffff\1"+
-        "\176\1\u0083\1\u008c\2\uffff\1\u00b1\1\u00b2\1\u00c1\20\uffff\1"+
+        "\176\1\u0083\1\u008c\2\uffff\1\u00b4\1\u00b5\1\u00c1\20\uffff\1"+
         "\u010d\1\u010f\1\u0110\1\u0111\1\u0112\1\u0113\12\uffff\1\u00f8"+
         "\1\u00f9\4\uffff\1\u00fb\20\uffff\1\u00a4\31\uffff\1\u00f6\14\uffff"+
-        "\1\u00f7\100\uffff\1\u00b4\7\uffff\1\u00fa\36\uffff\1\u00bb\6\uffff"+
+        "\1\u00f7\100\uffff\1\u00b7\7\uffff\1\u00fa\36\uffff\1\u00bd\6\uffff"+
         "\1\u00ce\14\uffff\1\22\5\uffff\1\u00e1\15\uffff\1\161\75\uffff\1"+
-        "\u00db\45\uffff\1\u00de\24\uffff\1\u0101\50\uffff\1\u00b7\5\uffff"+
-        "\1\u0090\3\uffff\1\51\37\uffff\1\u00b5\1\u00a8\1\u00e3\1\23\2\uffff"+
-        "\1\113\4\uffff\1\u00bc\12\uffff\1\u00d2\34\uffff\1\u00ef\1\u00ed"+
-        "\2\uffff\1\150\2\uffff\1\u00b3\4\uffff\1\u00ee\1\u00e8\1\u00bf\5"+
-        "\uffff\1\u00b8\12\uffff\1\u0085\2\uffff\1\u00d5\1\uffff\1\u00a3"+
-        "\4\uffff\1\u00a5\1\uffff\1\u00aa\4\uffff\1\u00d7\11\uffff\1\u0103"+
+        "\u00db\45\uffff\1\u00de\24\uffff\1\u0101\50\uffff\1\u00a7\5\uffff"+
+        "\1\u0090\3\uffff\1\51\37\uffff\1\u00b8\1\u00ab\1\u00e3\1\23\2\uffff"+
+        "\1\113\4\uffff\1\u00be\12\uffff\1\u00d2\34\uffff\1\u00ef\1\u00ed"+
+        "\2\uffff\1\150\2\uffff\1\u00b6\4\uffff\1\u00ee\1\u00e8\1\u00a8\5"+
+        "\uffff\1\u00ba\12\uffff\1\u0085\2\uffff\1\u00d5\1\uffff\1\u00a3"+
+        "\4\uffff\1\u00a5\1\uffff\1\u00ad\4\uffff\1\u00d7\11\uffff\1\u0103"+
         "\1\uffff\1\u0108\4\uffff\1\u0105\12\uffff\1\u00dd\3\uffff\1\24\22"+
-        "\uffff\1\20\14\uffff\1\u00be\5\uffff\1\122\52\uffff\1\u00d3\1\uffff"+
-        "\1\u0095\1\u00ac\4\uffff\1\u0086\1\u00a9\24\uffff\1\u00dc\1\36\2"+
+        "\uffff\1\20\14\uffff\1\u00bf\5\uffff\1\122\52\uffff\1\u00d3\1\uffff"+
+        "\1\u0095\1\u00af\4\uffff\1\u0086\1\u00ac\24\uffff\1\u00dc\1\36\2"+
         "\uffff\1\u00d9\5\uffff\1\u0091\3\uffff\1\u00cc\10\uffff\1\u00e4"+
         "\2\uffff\1\123\6\uffff\1\75\1\uffff\1\u00f0\16\uffff\1\u00ff\1\uffff"+
         "\1\u0100\1\u0106\1\u0102\14\uffff\1\2\4\uffff\1\u00d6\11\uffff\1"+
         "\10\5\uffff\1\70\34\uffff\1\152\10\uffff\1\17\10\uffff\1\177\2\uffff"+
-        "\1\u00b9\2\uffff\1\u00cf\2\uffff\1\u0082\1\u00fc\5\uffff\1\114\11"+
+        "\1\u00bb\2\uffff\1\u00cf\2\uffff\1\u0082\1\u00fc\5\uffff\1\114\11"+
         "\uffff\1\u00e5\1\uffff\1\u0093\4\uffff\1\31\12\uffff\1\136\1\37"+
-        "\20\uffff\1\u00af\1\54\5\uffff\1\u00e2\5\uffff\1\u00ab\3\uffff\1"+
+        "\20\uffff\1\u00b2\1\54\5\uffff\1\u00e2\5\uffff\1\u00ae\3\uffff\1"+
         "\u00d1\3\uffff\1\u00c8\2\uffff\1\u00cb\2\uffff\1\u0104\1\u0107\1"+
         "\u0109\1\1\1\uffff\1\162\1\11\7\uffff\1\u0084\4\uffff\1\55\1\uffff"+
-        "\1\u0096\2\uffff\1\163\5\uffff\1\71\3\uffff\1\u00bd\5\uffff\1\13"+
+        "\1\u0096\2\uffff\1\163\5\uffff\1\71\3\uffff\1\u00a9\5\uffff\1\13"+
         "\24\uffff\1\u00a0\1\u00d0\1\uffff\1\u00fe\11\uffff\1\63\1\uffff"+
         "\1\105\2\uffff\1\175\4\uffff\1\27\21\uffff\1\174\1\106\1\32\5\uffff"+
         "\1\57\4\uffff\1\u009d\13\uffff\1\u009a\1\uffff\1\u00cd\1\uffff\1"+
@@ -8924,14 +8924,14 @@ public class InternalAndroTextDslLexer extends Lexer {
         "\2\uffff\1\u010c\2\uffff\1\u0088\1\uffff\1\34\3\uffff\1\62\2\uffff"+
         "\1\50\1\uffff\1\52\1\uffff\1\164\3\uffff\1\121\1\142\2\uffff\1\42"+
         "\1\uffff\1\16\2\uffff\1\154\1\160\1\171\2\uffff\1\126\11\uffff\1"+
-        "\u008a\3\uffff\1\26\1\61\2\uffff\1\u009c\5\uffff\1\u008e\1\u00a7"+
+        "\u008a\3\uffff\1\26\1\61\2\uffff\1\u009c\5\uffff\1\u008e\1\u00aa"+
         "\2\uffff\1\u0080\2\uffff\1\64\17\uffff\1\53\1\151\5\uffff\1\u00a1"+
-        "\13\uffff\1\u00ae\6\uffff\1\u00a6\6\uffff\1\u00c7\6\uffff\1\60\1"+
+        "\13\uffff\1\u00b1\6\uffff\1\u00a6\6\uffff\1\u00c7\6\uffff\1\60\1"+
         "\uffff\1\5\2\uffff\1\u0097\3\uffff\1\140\1\143\1\uffff\1\120\5\uffff"+
         "\1\124\4\uffff\1\u00c0\1\15\1\uffff\1\u0087\3\uffff\1\u010b\3\uffff"+
-        "\1\u00b6\4\uffff\1\u00d8\13\uffff\1\157\6\uffff\1\u00f1\10\uffff"+
+        "\1\u00b9\4\uffff\1\u00d8\13\uffff\1\157\6\uffff\1\u00f1\10\uffff"+
         "\1\u0081\4\uffff\1\66\5\uffff\1\135\1\uffff\1\u00d4\12\uffff\1\76"+
-        "\1\107\2\uffff\1\46\5\uffff\1\u008b\7\uffff\1\u00ba\10\uffff\1\144"+
+        "\1\107\2\uffff\1\46\5\uffff\1\u008b\7\uffff\1\u00bc\10\uffff\1\144"+
         "\6\uffff\1\u00da\5\uffff\1\153\2\uffff\1\u009e\6\uffff\1\43\7\uffff"+
         "\1\65\2\uffff\1\165\3\uffff\1\137\1\170\1\u008f\1\uffff\1\u00c2"+
         "\1\uffff\1\u00c5\1\u00c6\1\u00c9\1\u00ca\2\uffff\1\30\1\uffff\1"+
@@ -8940,7 +8940,7 @@ public class InternalAndroTextDslLexer extends Lexer {
         "\44\4\uffff\1\u00a2\1\uffff\1\72\3\uffff\1\134\1\u0094\1\uffff\1"+
         "\u010a\3\uffff\1\u0092\1\67\11\uffff\1\111\1\uffff\1\25\1\uffff"+
         "\1\41\1\uffff\1\u00df\24\uffff\1\u0098\1\133\1\u00c3\1\u00c4\12"+
-        "\uffff\1\u00ad\1\u009b\3\uffff\1\u00b0\7\uffff\1\u00eb\6\uffff\1"+
+        "\uffff\1\u00b0\1\u009b\3\uffff\1\u00b3\7\uffff\1\u00eb\6\uffff\1"+
         "\u00e9\2\uffff\1\u0099\5\uffff\1\40\2\uffff\1\130\3\uffff\1\102"+
         "\3\uffff\1\115\1\116\10\uffff\1\156\1\uffff\1\45\4\uffff\1\173\1"+
         "\uffff\1\127\5\uffff\1\73\1\uffff\1\u00e6\1\uffff\1\u00ec\4\uffff"+

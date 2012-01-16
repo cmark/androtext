@@ -70,7 +70,7 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGameComponentAccess().getAlternatives(), "rule__GameComponent__Alternatives");
 					put(grammarAccess.getSceneAccess().getAlternatives(), "rule__Scene__Alternatives");
 					put(grammarAccess.getGameBackgroundAccess().getAlternatives_1(), "rule__GameBackground__Alternatives_1");
-					put(grammarAccess.getGameMenuItemAccess().getAlternatives_1(), "rule__GameMenuItem__Alternatives_1");
+					put(grammarAccess.getGameMenuItemAccess().getAlternatives_2(), "rule__GameMenuItem__Alternatives_2");
 					put(grammarAccess.getGameEntityAccess().getAlternatives(), "rule__GameEntity__Alternatives");
 					put(grammarAccess.getEntityModifierAccess().getAlternatives(), "rule__EntityModifier__Alternatives");
 					put(grammarAccess.getColorAccess().getAlternatives_2(), "rule__Color__Alternatives_2");
@@ -288,6 +288,8 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMenuSceneAccess().getGroup(), "rule__MenuScene__Group__0");
 					put(grammarAccess.getGameBackgroundAccess().getGroup(), "rule__GameBackground__Group__0");
 					put(grammarAccess.getGameMenuItemAccess().getGroup(), "rule__GameMenuItem__Group__0");
+					put(grammarAccess.getGameMenuItemAccess().getGroup_2_0(), "rule__GameMenuItem__Group_2_0__0");
+					put(grammarAccess.getGameMenuItemAccess().getGroup_2_1(), "rule__GameMenuItem__Group_2_1__0");
 					put(grammarAccess.getSimpleEntityAccess().getGroup(), "rule__SimpleEntity__Group__0");
 					put(grammarAccess.getSequenceEntityModifierAccess().getGroup(), "rule__SequenceEntityModifier__Group__0");
 					put(grammarAccess.getSequenceEntityModifierAccess().getGroup_3(), "rule__SequenceEntityModifier__Group_3__0");
@@ -738,10 +740,13 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMenuSceneAccess().getNameAssignment_1(), "rule__MenuScene__NameAssignment_1");
 					put(grammarAccess.getMenuSceneAccess().getGameBackgroundAssignment_2(), "rule__MenuScene__GameBackgroundAssignment_2");
 					put(grammarAccess.getMenuSceneAccess().getMenuItemsAssignment_4(), "rule__MenuScene__MenuItemsAssignment_4");
+					put(grammarAccess.getMenuSceneAccess().getEntitiesAssignment_5(), "rule__MenuScene__EntitiesAssignment_5");
 					put(grammarAccess.getGameBackgroundAccess().getColorAssignment_1_0(), "rule__GameBackground__ColorAssignment_1_0");
 					put(grammarAccess.getGameBackgroundAccess().getTextureRegionAssignment_1_1(), "rule__GameBackground__TextureRegionAssignment_1_1");
-					put(grammarAccess.getGameMenuItemAccess().getTextAssignment_1_0(), "rule__GameMenuItem__TextAssignment_1_0");
-					put(grammarAccess.getGameMenuItemAccess().getTextureRegionAssignment_1_1(), "rule__GameMenuItem__TextureRegionAssignment_1_1");
+					put(grammarAccess.getGameMenuItemAccess().getNameAssignment_1(), "rule__GameMenuItem__NameAssignment_1");
+					put(grammarAccess.getGameMenuItemAccess().getTextAssignment_2_0_1(), "rule__GameMenuItem__TextAssignment_2_0_1");
+					put(grammarAccess.getGameMenuItemAccess().getFontAssignment_2_0_3(), "rule__GameMenuItem__FontAssignment_2_0_3");
+					put(grammarAccess.getGameMenuItemAccess().getTextureRegionAssignment_2_1_1(), "rule__GameMenuItem__TextureRegionAssignment_2_1_1");
 					put(grammarAccess.getSimpleEntityAccess().getNameAssignment_1(), "rule__SimpleEntity__NameAssignment_1");
 					put(grammarAccess.getSimpleEntityAccess().getPositionAssignment_2(), "rule__SimpleEntity__PositionAssignment_2");
 					put(grammarAccess.getSimpleEntityAccess().getSizeAssignment_3(), "rule__SimpleEntity__SizeAssignment_3");

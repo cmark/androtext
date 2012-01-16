@@ -7085,7 +7085,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGameMenuItem_Text()
+  public EAttribute getGameMenuItem_Name()
   {
         return (EAttribute)getGameMenuItem().getEStructuralFeatures().get(0);
   }
@@ -7095,9 +7095,29 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getGameMenuItem_Text()
+  {
+        return (EAttribute)getGameMenuItem().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGameMenuItem_Font()
+  {
+        return (EReference)getGameMenuItem().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getGameMenuItem_TextureRegion()
   {
-        return (EReference)getGameMenuItem().getEStructuralFeatures().get(1);
+        return (EReference)getGameMenuItem().getEStructuralFeatures().get(3);
   }
 
   /**

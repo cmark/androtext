@@ -7316,13 +7316,31 @@ public interface AndroTextDslPackage extends EPackage
   int GAME_MENU_ITEM = 170;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_MENU_ITEM__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GAME_MENU_ITEM__TEXT = 0;
+  int GAME_MENU_ITEM__TEXT = 1;
+
+  /**
+   * The feature id for the '<em><b>Font</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAME_MENU_ITEM__FONT = 2;
 
   /**
    * The feature id for the '<em><b>Texture Region</b></em>' reference.
@@ -7331,7 +7349,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GAME_MENU_ITEM__TEXTURE_REGION = 1;
+  int GAME_MENU_ITEM__TEXTURE_REGION = 3;
 
   /**
    * The number of structural features of the '<em>Game Menu Item</em>' class.
@@ -7340,7 +7358,7 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GAME_MENU_ITEM_FEATURE_COUNT = 2;
+  int GAME_MENU_ITEM_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.androtext.lang.androTextDsl.impl.GameEntityImpl <em>Game Entity</em>}' class.
@@ -14093,6 +14111,17 @@ public interface AndroTextDslPackage extends EPackage
   EClass getGameMenuItem();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getName()
+   * @see #getGameMenuItem()
+   * @generated
+   */
+  EAttribute getGameMenuItem_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getText <em>Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -14102,6 +14131,17 @@ public interface AndroTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getGameMenuItem_Text();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getFont <em>Font</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Font</em>'.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getFont()
+   * @see #getGameMenuItem()
+   * @generated
+   */
+  EReference getGameMenuItem_Font();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem#getTextureRegion <em>Texture Region</em>}'.

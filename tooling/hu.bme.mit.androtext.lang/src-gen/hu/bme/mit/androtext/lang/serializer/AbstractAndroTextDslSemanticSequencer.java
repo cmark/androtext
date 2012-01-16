@@ -2714,7 +2714,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (text=STRING | textureRegion=[TextureRegion|QualifiedName])
+	 *     (name=ID ((text=STRING font=[Font|QualifiedName]) | textureRegion=[TextureRegion|QualifiedName]))
 	 */
 	protected void sequence_GameMenuItem(EObject context, GameMenuItem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -3157,7 +3157,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID gameBackground=GameBackground? menuItems+=GameMenuItem+)
+	 *     (name=ID gameBackground=GameBackground? menuItems+=GameMenuItem+ entities+=GameEntity*)
 	 */
 	protected void sequence_MenuScene(EObject context, MenuScene semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

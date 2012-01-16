@@ -1036,7 +1036,8 @@ Scene:
 
 MenuScene:
 	'menu' name=ID (gameBackground=GameBackground)? '{'
-		 (menuItems+=GameMenuItem)+
+		(menuItems+=GameMenuItem)+
+		(entities+=GameEntity)*
 	'}'
 ;
 
@@ -1045,7 +1046,7 @@ GameBackground:
 ;
 
 GameMenuItem:
-	'menuitem' (text=STRING | textureRegion=[TextureRegion | QualifiedName])
+	'menuitem' name=ID ('text' text=STRING 'font' font=[Font | QualifiedName]  | 'texture' textureRegion=[TextureRegion | QualifiedName])
 ;
 
 GameEntity:

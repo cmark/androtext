@@ -7764,13 +7764,15 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cMenuItemsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cMenuItemsGameMenuItemParserRuleCall_4_0 = (RuleCall)cMenuItemsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cEntitiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cEntitiesGameEntityParserRuleCall_5_0 = (RuleCall)cEntitiesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//MenuScene:
-		//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ "}";
+		//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ entities+=GameEntity* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ "}"
+		//"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ entities+=GameEntity* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"menu"
@@ -7797,8 +7799,14 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//GameMenuItem
 		public RuleCall getMenuItemsGameMenuItemParserRuleCall_4_0() { return cMenuItemsGameMenuItemParserRuleCall_4_0; }
 
+		//entities+=GameEntity*
+		public Assignment getEntitiesAssignment_5() { return cEntitiesAssignment_5; }
+
+		//GameEntity
+		public RuleCall getEntitiesGameEntityParserRuleCall_5_0() { return cEntitiesGameEntityParserRuleCall_5_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class GameBackgroundElements extends AbstractParserRuleElementFinder {
@@ -7845,40 +7853,82 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GameMenuItem");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMenuitemKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cTextAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cTextSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cTextAssignment_1_0.eContents().get(0);
-		private final Assignment cTextureRegionAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final CrossReference cTextureRegionTextureRegionCrossReference_1_1_0 = (CrossReference)cTextureRegionAssignment_1_1.eContents().get(0);
-		private final RuleCall cTextureRegionTextureRegionQualifiedNameParserRuleCall_1_1_0_1 = (RuleCall)cTextureRegionTextureRegionCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Keyword cTextKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+		private final Assignment cTextAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_2_0_1_0 = (RuleCall)cTextAssignment_2_0_1.eContents().get(0);
+		private final Keyword cFontKeyword_2_0_2 = (Keyword)cGroup_2_0.eContents().get(2);
+		private final Assignment cFontAssignment_2_0_3 = (Assignment)cGroup_2_0.eContents().get(3);
+		private final CrossReference cFontFontCrossReference_2_0_3_0 = (CrossReference)cFontAssignment_2_0_3.eContents().get(0);
+		private final RuleCall cFontFontQualifiedNameParserRuleCall_2_0_3_0_1 = (RuleCall)cFontFontCrossReference_2_0_3_0.eContents().get(1);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cTextureKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cTextureRegionAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final CrossReference cTextureRegionTextureRegionCrossReference_2_1_1_0 = (CrossReference)cTextureRegionAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cTextureRegionTextureRegionQualifiedNameParserRuleCall_2_1_1_0_1 = (RuleCall)cTextureRegionTextureRegionCrossReference_2_1_1_0.eContents().get(1);
 		
 		//GameMenuItem:
-		//	"menuitem" (text=STRING | textureRegion=[TextureRegion|QualifiedName]);
+		//	"menuitem" name=ID ("text" text=STRING "font" font=[Font|QualifiedName] | "texture"
+		//	textureRegion=[TextureRegion|QualifiedName]);
 		public ParserRule getRule() { return rule; }
 
-		//"menuitem" (text=STRING | textureRegion=[TextureRegion|QualifiedName])
+		//"menuitem" name=ID ("text" text=STRING "font" font=[Font|QualifiedName] | "texture"
+		//textureRegion=[TextureRegion|QualifiedName])
 		public Group getGroup() { return cGroup; }
 
 		//"menuitem"
 		public Keyword getMenuitemKeyword_0() { return cMenuitemKeyword_0; }
 
-		//text=STRING | textureRegion=[TextureRegion|QualifiedName]
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"text" text=STRING "font" font=[Font|QualifiedName] | "texture" textureRegion=[TextureRegion|QualifiedName]
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//"text" text=STRING "font" font=[Font|QualifiedName]
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
+		//"text"
+		public Keyword getTextKeyword_2_0_0() { return cTextKeyword_2_0_0; }
 
 		//text=STRING
-		public Assignment getTextAssignment_1_0() { return cTextAssignment_1_0; }
+		public Assignment getTextAssignment_2_0_1() { return cTextAssignment_2_0_1; }
 
 		//STRING
-		public RuleCall getTextSTRINGTerminalRuleCall_1_0_0() { return cTextSTRINGTerminalRuleCall_1_0_0; }
+		public RuleCall getTextSTRINGTerminalRuleCall_2_0_1_0() { return cTextSTRINGTerminalRuleCall_2_0_1_0; }
 
-		//textureRegion=[TextureRegion|QualifiedName]
-		public Assignment getTextureRegionAssignment_1_1() { return cTextureRegionAssignment_1_1; }
+		//"font"
+		public Keyword getFontKeyword_2_0_2() { return cFontKeyword_2_0_2; }
 
-		//[TextureRegion|QualifiedName]
-		public CrossReference getTextureRegionTextureRegionCrossReference_1_1_0() { return cTextureRegionTextureRegionCrossReference_1_1_0; }
+		//font=[Font|QualifiedName]
+		public Assignment getFontAssignment_2_0_3() { return cFontAssignment_2_0_3; }
+
+		//[Font|QualifiedName]
+		public CrossReference getFontFontCrossReference_2_0_3_0() { return cFontFontCrossReference_2_0_3_0; }
 
 		//QualifiedName
-		public RuleCall getTextureRegionTextureRegionQualifiedNameParserRuleCall_1_1_0_1() { return cTextureRegionTextureRegionQualifiedNameParserRuleCall_1_1_0_1; }
+		public RuleCall getFontFontQualifiedNameParserRuleCall_2_0_3_0_1() { return cFontFontQualifiedNameParserRuleCall_2_0_3_0_1; }
+
+		//"texture" textureRegion=[TextureRegion|QualifiedName]
+		public Group getGroup_2_1() { return cGroup_2_1; }
+
+		//"texture"
+		public Keyword getTextureKeyword_2_1_0() { return cTextureKeyword_2_1_0; }
+
+		//textureRegion=[TextureRegion|QualifiedName]
+		public Assignment getTextureRegionAssignment_2_1_1() { return cTextureRegionAssignment_2_1_1; }
+
+		//[TextureRegion|QualifiedName]
+		public CrossReference getTextureRegionTextureRegionCrossReference_2_1_1_0() { return cTextureRegionTextureRegionCrossReference_2_1_1_0; }
+
+		//QualifiedName
+		public RuleCall getTextureRegionTextureRegionQualifiedNameParserRuleCall_2_1_1_0_1() { return cTextureRegionTextureRegionQualifiedNameParserRuleCall_2_1_1_0_1; }
 	}
 
 	public class GameEntityElements extends AbstractParserRuleElementFinder {
@@ -12589,7 +12639,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MenuScene:
-	//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ "}";
+	//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ entities+=GameEntity* "}";
 	public MenuSceneElements getMenuSceneAccess() {
 		return (pMenuScene != null) ? pMenuScene : (pMenuScene = new MenuSceneElements());
 	}
@@ -12609,7 +12659,8 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//GameMenuItem:
-	//	"menuitem" (text=STRING | textureRegion=[TextureRegion|QualifiedName]);
+	//	"menuitem" name=ID ("text" text=STRING "font" font=[Font|QualifiedName] | "texture"
+	//	textureRegion=[TextureRegion|QualifiedName]);
 	public GameMenuItemElements getGameMenuItemAccess() {
 		return (pGameMenuItem != null) ? pGameMenuItem : (pGameMenuItem = new GameMenuItemElements());
 	}

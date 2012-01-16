@@ -749,7 +749,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//GameBackground/textureRegion"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//GameMenuItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//GameMenuItem/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//GameMenuItem/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//GameMenuItem/font"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//GameMenuItem/textureRegion"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//GameEntity">
