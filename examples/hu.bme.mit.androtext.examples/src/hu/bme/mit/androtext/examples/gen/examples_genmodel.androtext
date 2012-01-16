@@ -72,5 +72,10 @@ generator ExampleGenerators {
 		version 1.0
 	}
 	
+	target MenuExample {
+		project hu.bme.mit.androtext.examples.game.menuexample
+		platform Android 2.3.3
+		version 1.0
+	}
 	
 }
