@@ -38,23 +38,33 @@ public class PatternBuilderForuniqueApplicationModelElementName implements IStat
 		assert("androtext.uniqueApplicationModelElementName".equals(gtPattern));
 		buildable = buildable.getNextContainer().putOnTab("androtext.uniqueApplicationModelElementName");
 		
-		final Address<? extends Receiver> var_22 = buildable.patternCollector("androtext.uniqueApplicationModelElementName");
-		final Stub<Address<? extends Supplier>> var_23 = buildable.buildStartStub(new Object[] {}, new Object[] {});
-		final Stub<Address<? extends Supplier>> var_24 = buildable.patternCallStub(new FlatTuple(new Object[] {"Element1", "Name"}), "androtext.applicationModelElementHasName");
-		final TupleMask var_25 = new TupleMask(new int[] {}, 0);
-		final TupleMask var_26 = new TupleMask(new int[] {}, 2);
-		final TupleMask var_27 = new TupleMask(new int[] {0, 1}, 2);
-		final Stub<Address<? extends Supplier>> var_28 = buildable.buildBetaNode(var_23, var_24, var_25, var_26, var_27, false);
-		final Stub<Address<? extends Supplier>> var_29 = buildable.patternCallStub(new FlatTuple(new Object[] {"Element2", "Name"}), "androtext.applicationModelElementHasName");
-		final TupleMask var_30 = new TupleMask(new int[] {1}, 2);
-		final TupleMask var_31 = new TupleMask(new int[] {1}, 2);
-		final TupleMask var_32 = new TupleMask(new int[] {0}, 2);
-		final Stub<Address<? extends Supplier>> var_33 = buildable.buildBetaNode(var_28, var_29, var_30, var_31, var_32, false);
-		final Stub<Address<? extends Supplier>> var_34 = buildable.buildInjectivityChecker(var_33, 0, new int[] {2});
-		final TupleMask var_35 = new TupleMask(new int[] {0, 2, 1}, 3);
-		final Stub<Address<? extends Supplier>> var_36 = buildable.buildTrimmer(var_34, var_35);
-		buildable.buildConnection(var_36, var_22);
-		return var_22;
+		final Address<? extends Receiver> var_145 = buildable.patternCollector("androtext.uniqueApplicationModelElementName");
+		final Stub<Address<? extends Supplier>> var_146 = buildable.buildStartStub(new Object[] {}, new Object[] {});
+		final Stub<Address<? extends Supplier>> var_147 = buildable.patternCallStub(new FlatTuple(new Object[] {"Element1", "Name1"}), "androtext.applicationModelElementHasName");
+		final TupleMask var_148 = new TupleMask(new int[] {}, 0);
+		final TupleMask var_149 = new TupleMask(new int[] {}, 2);
+		final TupleMask var_150 = new TupleMask(new int[] {0, 1}, 2);
+		final Stub<Address<? extends Supplier>> var_151 = buildable.buildBetaNode(var_146, var_147, var_148, var_149, var_150, false);
+		final Stub<Address<? extends Supplier>> var_152 = buildable.patternCallStub(new FlatTuple(new Object[] {"Element2", "Name2"}), "androtext.applicationModelElementHasName");
+		final TupleMask var_153 = new TupleMask(new int[] {}, 2);
+		final TupleMask var_154 = new TupleMask(new int[] {}, 2);
+		final TupleMask var_155 = new TupleMask(new int[] {0, 1}, 2);
+		final Stub<Address<? extends Supplier>> var_156 = buildable.buildBetaNode(var_151, var_152, var_153, var_154, var_155, false);
+		final AbstractEvaluator var_157 = new AbstractEvaluator(){ 
+			@Override 
+			public Object doEvaluate(Tuple tuple) throws Exception { 
+				return VPMTermEvaluator.equals(tuple.get(1),tuple.get(3));
+			}
+		};
+		final Stub<Address<? extends Supplier>> var_158 = buildable.buildPredicateChecker(var_157, null, new int[] {3, 1}, var_156);
+		final Stub<Address<? extends Supplier>> var_159 = buildable.buildInjectivityChecker(var_158, 0, new int[] {2});
+		final Stub<Address<? extends Supplier>> var_160 = buildable.buildInjectivityChecker(var_159, 0, new int[] {3});
+		final Stub<Address<? extends Supplier>> var_161 = buildable.buildInjectivityChecker(var_160, 2, new int[] {1});
+		final Stub<Address<? extends Supplier>> var_162 = buildable.buildInjectivityChecker(var_161, 1, new int[] {3});
+		final TupleMask var_163 = new TupleMask(new int[] {0, 2, 1, 3}, 4);
+		final Stub<Address<? extends Supplier>> var_164 = buildable.buildTrimmer(var_162, var_163);
+		buildable.buildConnection(var_164, var_145);
+		return var_145;
 
 	}
 	
@@ -67,7 +77,8 @@ public class PatternBuilderForuniqueApplicationModelElementName implements IStat
 			
 			posMapping.put("Element1", 0);
 			posMapping.put("Element2", 1);
-			posMapping.put("Name", 2);
+			posMapping.put("Name1", 2);
+			posMapping.put("Name2", 3);
 
 		}
 		return posMapping;

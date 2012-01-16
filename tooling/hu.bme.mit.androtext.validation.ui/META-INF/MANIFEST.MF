@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.androtext.incquery.validation.sample
 Bundle-SymbolicName: hu.bme.mit.androtext.validation.ui;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Bundle-Activator: handlers.Activator
+Bundle-Activator: hu.bme.mit.androtext.validation.ui.internal.Activator
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.ui,

@@ -16,7 +16,7 @@ gamegui MenuExampleGui {
 
 gamelogic MenuExampleLogic {
 	
-	move flyAround 30 from(0 656) to(0 414)
+	move flyAround 30 from(0 0) to(656 414)
 	bind flyAround to MenuExampleGui.simpleMenu.face
 	
 }

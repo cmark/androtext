@@ -17,12 +17,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected AndroTextDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_BaseGameActivity_RightCurlyBracketKeyword_2_1_a;
+	protected AbstractElementAlias match_BaseGameActivity_RightCurlyBracketKeyword_2_1_p;
 	protected AbstractElementAlias match_LinearLayout_HorizontalKeyword_2_1_q;
 	protected AbstractElementAlias match_RadioGroup_VerticalKeyword_2_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AndroTextDslGrammarAccess) access;
+		match_BaseGameActivity_RightCurlyBracketKeyword_2_1_a = new TokenAlias(true, true, grammarAccess.getBaseGameActivityAccess().getRightCurlyBracketKeyword_2_1());
+		match_BaseGameActivity_RightCurlyBracketKeyword_2_1_p = new TokenAlias(true, false, grammarAccess.getBaseGameActivityAccess().getRightCurlyBracketKeyword_2_1());
 		match_LinearLayout_HorizontalKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getLinearLayoutAccess().getHorizontalKeyword_2_1());
 		match_RadioGroup_VerticalKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getRadioGroupAccess().getVerticalKeyword_2_1());
 	}
@@ -39,7 +43,11 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_LinearLayout_HorizontalKeyword_2_1_q.equals(syntax))
+			if(match_BaseGameActivity_RightCurlyBracketKeyword_2_1_a.equals(syntax))
+				emit_BaseGameActivity_RightCurlyBracketKeyword_2_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_BaseGameActivity_RightCurlyBracketKeyword_2_1_p.equals(syntax))
+				emit_BaseGameActivity_RightCurlyBracketKeyword_2_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_LinearLayout_HorizontalKeyword_2_1_q.equals(syntax))
 				emit_LinearLayout_HorizontalKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_RadioGroup_VerticalKeyword_2_1_q.equals(syntax))
 				emit_RadioGroup_VerticalKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -47,6 +55,22 @@ public class AbstractAndroTextDslSyntacticSequencer extends AbstractSyntacticSeq
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     '}'*
+	 */
+	protected void emit_BaseGameActivity_RightCurlyBracketKeyword_2_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '}'+
+	 */
+	protected void emit_BaseGameActivity_RightCurlyBracketKeyword_2_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     'horizontal'?

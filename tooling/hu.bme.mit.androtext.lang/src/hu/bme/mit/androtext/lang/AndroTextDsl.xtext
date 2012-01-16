@@ -942,9 +942,9 @@ terminal HEX_COLOR:
 /* AndroGameModelRoot and game model elements based on AndEngine www.andengine.org */
 BaseGameActivity:
 	'gameactivity' name=ID '{'
-		'camera' size=Size
-		'orientation' orientation=ScreenOrientation
-		'scene' scene=[Scene | QualifiedName]
+		('camera' size=Size)?
+		& ('orientation' orientation=ScreenOrientation)?
+		& ('scene' scene=[Scene | QualifiedName])?
 	'}'
 ;
 
@@ -966,7 +966,7 @@ AndroGameGui:
 AndroGameLogic:
 	'gamelogic' name=ID '{'
 		(box2dOptions=Box2DOptions)?
-		logicComponent+=LogicComponent*
+		(logicComponent+=LogicComponent)*
 	'}'
 ;
 
@@ -1036,7 +1036,7 @@ Scene:
 
 MenuScene:
 	'menu' name=ID (gameBackground=GameBackground)? '{'
-		(menuItems+=GameMenuItem)+
+		(menuItems+=GameMenuItem)*
 		(entities+=GameEntity)*
 	'}'
 ;

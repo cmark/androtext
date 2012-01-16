@@ -49,4 +49,6 @@ gamelogic PhysicsExampleLogic {
 	bind face to PhysicsExampleGui.PhysicsScene.face8
 	bind face to PhysicsExampleGui.PhysicsScene.face9
 	bind face to PhysicsExampleGui.PhysicsScene.face10
+	
+//	distancejoint validatorTest between face, face
 }

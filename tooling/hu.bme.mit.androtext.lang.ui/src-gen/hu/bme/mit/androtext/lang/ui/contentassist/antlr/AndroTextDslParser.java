@@ -272,7 +272,11 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDimensionValueAccess().getGroup(), "rule__DimensionValue__Group__0");
 					put(grammarAccess.getFLOATAccess().getGroup(), "rule__FLOAT__Group__0");
 					put(grammarAccess.getFLOATAccess().getGroup_1(), "rule__FLOAT__Group_1__0");
-					put(grammarAccess.getBaseGameActivityAccess().getGroup(), "rule__BaseGameActivity__Group__0");
+					put(grammarAccess.getBaseGameActivityAccess().getGroup_0(), "rule__BaseGameActivity__Group_0__0");
+					put(grammarAccess.getBaseGameActivityAccess().getGroup_0_3(), "rule__BaseGameActivity__Group_0_3__0");
+					put(grammarAccess.getBaseGameActivityAccess().getGroup_1(), "rule__BaseGameActivity__Group_1__0");
+					put(grammarAccess.getBaseGameActivityAccess().getGroup_2(), "rule__BaseGameActivity__Group_2__0");
+					put(grammarAccess.getBaseGameActivityAccess().getGroup_2_0(), "rule__BaseGameActivity__Group_2_0__0");
 					put(grammarAccess.getAndroGameRootAccess().getGroup(), "rule__AndroGameRoot__Group__0");
 					put(grammarAccess.getAndroGameGuiAccess().getGroup(), "rule__AndroGameGui__Group__0");
 					put(grammarAccess.getAndroGameLogicAccess().getGroup(), "rule__AndroGameLogic__Group__0");
@@ -702,10 +706,10 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTabDrawableResourceAccess().getUnselectedAssignment_5(), "rule__TabDrawableResource__UnselectedAssignment_5");
 					put(grammarAccess.getDimensionValueAccess().getValueAssignment_0(), "rule__DimensionValue__ValueAssignment_0");
 					put(grammarAccess.getDimensionValueAccess().getMetricAssignment_1(), "rule__DimensionValue__MetricAssignment_1");
-					put(grammarAccess.getBaseGameActivityAccess().getNameAssignment_1(), "rule__BaseGameActivity__NameAssignment_1");
-					put(grammarAccess.getBaseGameActivityAccess().getSizeAssignment_4(), "rule__BaseGameActivity__SizeAssignment_4");
-					put(grammarAccess.getBaseGameActivityAccess().getOrientationAssignment_6(), "rule__BaseGameActivity__OrientationAssignment_6");
-					put(grammarAccess.getBaseGameActivityAccess().getSceneAssignment_8(), "rule__BaseGameActivity__SceneAssignment_8");
+					put(grammarAccess.getBaseGameActivityAccess().getNameAssignment_0_1(), "rule__BaseGameActivity__NameAssignment_0_1");
+					put(grammarAccess.getBaseGameActivityAccess().getSizeAssignment_0_3_1(), "rule__BaseGameActivity__SizeAssignment_0_3_1");
+					put(grammarAccess.getBaseGameActivityAccess().getOrientationAssignment_1_1(), "rule__BaseGameActivity__OrientationAssignment_1_1");
+					put(grammarAccess.getBaseGameActivityAccess().getSceneAssignment_2_0_1(), "rule__BaseGameActivity__SceneAssignment_2_0_1");
 					put(grammarAccess.getAndroGameRootAccess().getAndroGameComponentsAssignment_1(), "rule__AndroGameRoot__AndroGameComponentsAssignment_1");
 					put(grammarAccess.getAndroGameGuiAccess().getNameAssignment_1(), "rule__AndroGameGui__NameAssignment_1");
 					put(grammarAccess.getAndroGameGuiAccess().getGameElementsAssignment_3(), "rule__AndroGameGui__GameElementsAssignment_3");
@@ -854,6 +858,7 @@ public class AndroTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGridViewAccess().getUnorderedGroup_5(), "rule__GridView__UnorderedGroup_5");
 					put(grammarAccess.getSpinnerAccess().getUnorderedGroup_6(), "rule__Spinner__UnorderedGroup_6");
 					put(grammarAccess.getNumericAttributeAccess().getUnorderedGroup(), "rule__NumericAttribute__UnorderedGroup");
+					put(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup(), "rule__BaseGameActivity__UnorderedGroup");
 				}
 			};
 		}

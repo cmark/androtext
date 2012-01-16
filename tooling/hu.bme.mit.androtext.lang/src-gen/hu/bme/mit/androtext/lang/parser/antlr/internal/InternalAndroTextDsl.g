@@ -13012,15 +13012,29 @@ ruleBaseGameActivity returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='gameactivity' 
+(
+
+(
+	{ 
+	  getUnorderedGroupHelper().enter(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup());
+	}
+	(
+		(
+
+			( 
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup(), 0)}?=>(
+					{ 
+	 				  getUnorderedGroupHelper().select(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup(), 0);
+	 				}
+					({true}?=>(	otherlv_1='gameactivity' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getBaseGameActivityAccess().getGameactivityKeyword_0());
+    	newLeafNode(otherlv_1, grammarAccess.getBaseGameActivityAccess().getGameactivityKeyword_0_0());
     }
 (
 (
-		lv_name_1_0=RULE_ID
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getBaseGameActivityAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getBaseGameActivityAccess().getNameIDTerminalRuleCall_0_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -13029,62 +13043,86 @@ ruleBaseGameActivity returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_2_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_2='{' 
+)	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBaseGameActivityAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getBaseGameActivityAccess().getLeftCurlyBracketKeyword_0_2());
     }
-	otherlv_3='camera' 
+(	otherlv_4='camera' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getBaseGameActivityAccess().getCameraKeyword_3());
+    	newLeafNode(otherlv_4, grammarAccess.getBaseGameActivityAccess().getCameraKeyword_0_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBaseGameActivityAccess().getSizeSizeParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getBaseGameActivityAccess().getSizeSizeParserRuleCall_0_3_1_0()); 
 	    }
-		lv_size_4_0=ruleSize		{
+		lv_size_5_0=ruleSize		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBaseGameActivityRule());
 	        }
        		set(
        			$current, 
        			"size",
-        		lv_size_4_0, 
+        		lv_size_5_0, 
         		"Size");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5='orientation' 
+))?))
+					{ 
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup());
+	 				}
+ 				)
+			)  |
+
+			( 
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup(), 1)}?=>(
+					{ 
+	 				  getUnorderedGroupHelper().select(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup(), 1);
+	 				}
+					({true}?=>(	otherlv_6='orientation' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getBaseGameActivityAccess().getOrientationKeyword_5());
+    	newLeafNode(otherlv_6, grammarAccess.getBaseGameActivityAccess().getOrientationKeyword_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBaseGameActivityAccess().getOrientationScreenOrientationEnumRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getBaseGameActivityAccess().getOrientationScreenOrientationEnumRuleCall_1_1_0()); 
 	    }
-		lv_orientation_6_0=ruleScreenOrientation		{
+		lv_orientation_7_0=ruleScreenOrientation		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBaseGameActivityRule());
 	        }
        		set(
        			$current, 
        			"orientation",
-        		lv_orientation_6_0, 
+        		lv_orientation_7_0, 
         		"ScreenOrientation");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_7='scene' 
+)))
+					{ 
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup());
+	 				}
+ 				)
+			)  |
+
+			( 
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup(), 2)}?=>(
+					{ 
+	 				  getUnorderedGroupHelper().select(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup(), 2);
+	 				}
+					({true}?=>((	otherlv_8='scene' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getBaseGameActivityAccess().getSceneKeyword_7());
+    	newLeafNode(otherlv_8, grammarAccess.getBaseGameActivityAccess().getSceneKeyword_2_0_0());
     }
 (
 (
@@ -13094,17 +13132,32 @@ ruleBaseGameActivity returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getBaseGameActivityAccess().getSceneSceneCrossReference_8_0()); 
+	        newCompositeNode(grammarAccess.getBaseGameActivityAccess().getSceneSceneCrossReference_2_0_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_9='}' 
+))?	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getBaseGameActivityAccess().getRightCurlyBracketKeyword_9());
+    	newLeafNode(otherlv_10, grammarAccess.getBaseGameActivityAccess().getRightCurlyBracketKeyword_2_1());
     }
+))
+					{ 
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup());
+	 				}
+ 				)
+			)  
+
+		)+
+	  	{getUnorderedGroupHelper().canLeave(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup())}?	
+	)
+)
+	{ 
+	  getUnorderedGroupHelper().leave(grammarAccess.getBaseGameActivityAccess().getUnorderedGroup());
+	}
+
 )
 ;
 
@@ -14394,7 +14447,7 @@ ruleMenuScene returns [EObject current=null]
 	    }
 
 )
-)+(
+)*(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getMenuSceneAccess().getEntitiesGameEntityParserRuleCall_5_0()); 

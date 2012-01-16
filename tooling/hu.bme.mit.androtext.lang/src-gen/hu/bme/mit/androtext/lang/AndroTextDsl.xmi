@@ -3476,30 +3476,40 @@
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//BaseGameActivity"/>
       </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="gameactivity"/>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+      <alternatives xsi:type="xtext:UnorderedGroup">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="gameactivity"/>
+          <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="{"/>
+          <elements xsi:type="xtext:Group" cardinality="?">
+            <elements xsi:type="xtext:Keyword" value="camera"/>
+            <elements xsi:type="xtext:Assignment" feature="size" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
+            </elements>
+          </elements>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Keyword" value="camera"/>
-        <elements xsi:type="xtext:Assignment" feature="size" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="orientation"/>
+          <elements xsi:type="xtext:Assignment" feature="orientation" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.229"/>
+          </elements>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="orientation"/>
-        <elements xsi:type="xtext:Assignment" feature="orientation" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.229"/>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Group" cardinality="?">
+            <elements xsi:type="xtext:Keyword" value="scene"/>
+            <elements xsi:type="xtext:Assignment" feature="scene" operator="=">
+              <terminal xsi:type="xtext:CrossReference">
+                <type metamodel="/0/@metamodelDeclarations.0">
+                  <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Scene"/>
+                </type>
+                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+              </terminal>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="}"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="scene"/>
-        <elements xsi:type="xtext:Assignment" feature="scene" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Scene"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
-          </terminal>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="AndroGameRoot">
@@ -3848,7 +3858,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.191"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Assignment" cardinality="+" feature="menuItems" operator="+=">
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="menuItems" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.192"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="entities" operator="+=">

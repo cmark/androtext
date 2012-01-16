@@ -5,12 +5,6 @@ import nemf.packages.androTextDsl;
 machine androtext
 {
 	
-	pattern applicationMainActivityIsTabActivity(Application, Activity) = {
-		TabActivity(Activity);
-		AndroidApplication(Application);
-		AndroidApplication.mainActivity(Ref, Application, Activity);
-	}
-	
 	pattern applicationModelElementHasName(Named, Name) = {
 		AndroidApplicationModelElement(Named);
 		AndroidApplicationModelElement.name(Ref, Named, Name);
@@ -23,9 +17,108 @@ machine androtext
 		EString(Name);
 	}
 	
-	pattern uniqueApplicationModelElementName(Element1, Element2, Name) = {
-		find applicationModelElementHasName(Element1, Name);
-		find applicationModelElementHasName(Element2, Name);
+	pattern baseGameActivityHasCamera(BGA) = {
+		BaseGameActivity(BGA);
+		Size(S);
+		BaseGameActivity.size(Ref, BGA, S);
 	}
 	
+	//pattern baseGameActivityHasOrientation(BGA) = {
+	//	BaseGameActivity(BGA);
+	//	ScreenOrientation(SO);
+	//	BaseGameActivity.orientation(Ref, BGA, SO);
+	//}
+	
+	pattern baseGameActivityHasScene(BGA) = {
+		BaseGameActivity(BGA);
+		Scene(S);
+		BaseGameActivity.scene(Ref, BGA, S);
+	}
+	
+	pattern androGameGuiHasGameComponent(AGG) = {
+		AndroGameGui(AGG);
+		GameComponent(GC);
+		AndroGameGui.gameElements(Ref, AGG, GC);	
+	}
+	
+	pattern menuSceneHasMenuItem(MS) = {
+		MenuScene(MS);
+		GameMenuItem(MI);
+		MenuScene.menuItems(Ref, MS, MI);
+	}
+	
+	pattern gameEntityHasName(GE) = {
+		GameEntity(GE);
+		EString(Name);
+		GameEntity.name(Ref, GE, Name);
+	}
+	
+	// constraints
+	@Constraint(mode="warning", location="BGA", message="BaseGameActivity $BGA$ not defines camera setting. Default is 720x480!")
+	pattern baseGameActivityCameraWarning(BGA) = {
+		BaseGameActivity(BGA);
+		neg find baseGameActivityHasCamera(BGA);
+	}
+	
+	//@Constraint(mode="warning", location="BGA", message="BaseGameActivity $BGA$ not defines orientation setting. Default is LANDSCAPE!")
+	//pattern baseGameActivityOrientationWarning(BGA) = {
+	//	BaseGameActivity(BGA);
+	//	neg find baseGameActivityHasOrientation(BGA);
+	//}
+	
+	@Constraint(mode="problem", location="BGA", message="BaseGameActivity $BGA$ must define a reference to a scene.")
+	pattern baseGameActivitySceneError(BGA) = {
+		BaseGameActivity(BGA);
+		neg find baseGameActivityHasScene(BGA);
+	}
+	
+	@Constraint(mode="warning", location="AGG", message="GameGui $AGG$ must define some component.")
+	pattern emptyAndroGameGui(AGG) = {
+		AndroGameGui(AGG);
+		neg find androGameGuiHasGameComponent(AGG);
+	}
+	
+	@Constraint(mode="problem", location="Element1", message="Two app component has the same name!")
+	pattern uniqueApplicationModelElementName(Element1, Element2, Name1, Name2) = {
+		find applicationModelElementHasName(Element1, Name1);
+		find applicationModelElementHasName(Element2, Name2);
+		check(value(Name1) == value(Name2));
+	}
+	
+	@Constraint(mode="problem", location="J", message="Joint $J$ must be defined between different bodies!!")
+	pattern uniqueJointBodies(J) = {
+		Joint(J);
+		Body(Body);
+		Joint.first(Ref1, J, Body);
+		Joint.second(Ref2, J, Body);
+	}
+	
+	@Constraint(mode="problem", location="F", message="Friction of fixture $F$ must be lower or equal than 1.0!")
+	pattern frictionOutOfRange(F) = {
+		Fixture(F);
+		EFloat(Friction);
+		Fixture.friction(Ref, F, Friction);
+		check(toDouble(value(Friction)) > 1.0);
+	}
+
+	@Constraint(mode="problem", location="F", message="Restitution of fixture $F$ must be lower or equal than 1.0!")
+	pattern restitutionOutOfRange(F) = {
+		Fixture(F);
+		EFloat(Restitution);
+		Fixture.restitution(Ref, F, Restitution);
+		check(toDouble(value(Restitution)) > 1.0);
+	}
+
+	@Constraint(mode="problem", location="MS", message="MenuScene $MS$ must define some menuitem!")
+	pattern emptyMenuScene(MS) = {
+		MenuScene(MS);
+		neg find menuSceneHasMenuItem(MS);
+	}
+	
+	@Constraint(mode="warning", location="GE", message="GameEntity")
+	pattern gameEntityNameError(GE) = {
+		GameEntity(GE);
+		neg find gameEntityHasName(GE);
+	}
+
 }

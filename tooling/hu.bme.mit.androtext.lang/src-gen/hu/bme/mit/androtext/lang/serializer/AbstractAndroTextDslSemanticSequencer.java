@@ -1810,7 +1810,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID size=Size orientation=ScreenOrientation scene=[Scene|QualifiedName])
+	 *     (name=ID size=Size? orientation=ScreenOrientation? scene=[Scene|QualifiedName]?)
 	 */
 	protected void sequence_BaseGameActivity(EObject context, BaseGameActivity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -3157,7 +3157,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID gameBackground=GameBackground? menuItems+=GameMenuItem+ entities+=GameEntity*)
+	 *     (name=ID gameBackground=GameBackground? menuItems+=GameMenuItem* entities+=GameEntity*)
 	 */
 	protected void sequence_MenuScene(EObject context, MenuScene semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

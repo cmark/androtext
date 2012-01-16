@@ -9,7 +9,7 @@
          <action
                label="EMF-IncQuery Validation for androTextDsl"
                style="push"
-               class="actions.InitValidationActionDelegate"
+               class="hu.bme.mit.androtext.validation.ui.actions.InitValidationActionDelegate"
                toolbarPath="file/export"
                id="hu.bme.mit.androtext.incquery.validation.sample.androTextDsl.action">
          </action>
@@ -19,12 +19,40 @@
          id=""
          point="org.eclipse.viatra2.emf.incquery.validation.constraint">
       <constraint
-            class="handlers.ActivityConstraint"
-            name="Application Has Main Activity Pattern">
+            name="FrictionOutOfRangeConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.FrictionOutOfRangeConstraint">
       </constraint>
       <constraint
-            class="handlers.UniqueApplicationModelElementNameConstraint"
-            name="Unique Name Constraint">
+            name="BaseGameActivitySceneErrorConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.BaseGameActivitySceneErrorConstraint">
+      </constraint>
+      <constraint
+            name="BaseGameActivityCameraWarningConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.BaseGameActivityCameraWarningConstraint">
+      </constraint>
+      <constraint
+            name="GameEntityNameErrorConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.GameEntityNameErrorConstraint">
+      </constraint>
+      <constraint
+            name="EmptyAndroGameGuiConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.EmptyAndroGameGuiConstraint">
+      </constraint>
+      <constraint
+            name="RestitutionOutOfRangeConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.RestitutionOutOfRangeConstraint">
+      </constraint>
+      <constraint
+            name="UniqueJointBodiesConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.UniqueJointBodiesConstraint">
+      </constraint>
+      <constraint
+            name="UniqueApplicationModelElementNameConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.UniqueApplicationModelElementNameConstraint">
+      </constraint>
+      <constraint
+            name="EmptyMenuSceneConstraint"
+            class="hu.bme.mit.androtext.validation.ui.handlers.EmptyMenuSceneConstraint">
       </constraint>
    </extension>
 

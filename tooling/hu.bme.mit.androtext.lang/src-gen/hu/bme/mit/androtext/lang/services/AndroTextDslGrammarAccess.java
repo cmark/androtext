@@ -6981,77 +6981,97 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class BaseGameActivityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BaseGameActivity");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGameactivityKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cCameraKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cSizeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSizeSizeParserRuleCall_4_0 = (RuleCall)cSizeAssignment_4.eContents().get(0);
-		private final Keyword cOrientationKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cOrientationAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cOrientationScreenOrientationEnumRuleCall_6_0 = (RuleCall)cOrientationAssignment_6.eContents().get(0);
-		private final Keyword cSceneKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cSceneAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cSceneSceneCrossReference_8_0 = (CrossReference)cSceneAssignment_8.eContents().get(0);
-		private final RuleCall cSceneSceneQualifiedNameParserRuleCall_8_0_1 = (RuleCall)cSceneSceneCrossReference_8_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final UnorderedGroup cUnorderedGroup = (UnorderedGroup)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cUnorderedGroup.eContents().get(0);
+		private final Keyword cGameactivityKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
+		private final Keyword cCameraKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
+		private final Assignment cSizeAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
+		private final RuleCall cSizeSizeParserRuleCall_0_3_1_0 = (RuleCall)cSizeAssignment_0_3_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cUnorderedGroup.eContents().get(1);
+		private final Keyword cOrientationKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cOrientationAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOrientationScreenOrientationEnumRuleCall_1_1_0 = (RuleCall)cOrientationAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cUnorderedGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final Keyword cSceneKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+		private final Assignment cSceneAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final CrossReference cSceneSceneCrossReference_2_0_1_0 = (CrossReference)cSceneAssignment_2_0_1.eContents().get(0);
+		private final RuleCall cSceneSceneQualifiedNameParserRuleCall_2_0_1_0_1 = (RuleCall)cSceneSceneCrossReference_2_0_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		
 		/// * End of AndroResModelRoot and resource model elements * /
 		/// * AndroGameModelRoot and game model elements based on AndEngine www.andengine.org * / BaseGameActivity:
-		//	"gameactivity" name=ID "{" "camera" size=Size "orientation" orientation=ScreenOrientation "scene"
-		//	scene=[Scene|QualifiedName] "}";
+		//	"gameactivity" name=ID "{" ("camera" size=Size)? & ("orientation" orientation=ScreenOrientation)? & ("scene"
+		//	scene=[Scene|QualifiedName])? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"gameactivity" name=ID "{" "camera" size=Size "orientation" orientation=ScreenOrientation "scene"
-		//scene=[Scene|QualifiedName] "}"
-		public Group getGroup() { return cGroup; }
+		//"gameactivity" name=ID "{" ("camera" size=Size)? & ("orientation" orientation=ScreenOrientation)? & ("scene"
+		//scene=[Scene|QualifiedName])? "}"
+		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
+
+		//"gameactivity" name=ID "{" ("camera" size=Size)?
+		public Group getGroup_0() { return cGroup_0; }
 
 		//"gameactivity"
-		public Keyword getGameactivityKeyword_0() { return cGameactivityKeyword_0; }
+		public Keyword getGameactivityKeyword_0_0() { return cGameactivityKeyword_0_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_0_2() { return cLeftCurlyBracketKeyword_0_2; }
+
+		//("camera" size=Size)?
+		public Group getGroup_0_3() { return cGroup_0_3; }
 
 		//"camera"
-		public Keyword getCameraKeyword_3() { return cCameraKeyword_3; }
+		public Keyword getCameraKeyword_0_3_0() { return cCameraKeyword_0_3_0; }
 
 		//size=Size
-		public Assignment getSizeAssignment_4() { return cSizeAssignment_4; }
+		public Assignment getSizeAssignment_0_3_1() { return cSizeAssignment_0_3_1; }
 
 		//Size
-		public RuleCall getSizeSizeParserRuleCall_4_0() { return cSizeSizeParserRuleCall_4_0; }
+		public RuleCall getSizeSizeParserRuleCall_0_3_1_0() { return cSizeSizeParserRuleCall_0_3_1_0; }
+
+		//("orientation" orientation=ScreenOrientation)?
+		public Group getGroup_1() { return cGroup_1; }
 
 		//"orientation"
-		public Keyword getOrientationKeyword_5() { return cOrientationKeyword_5; }
+		public Keyword getOrientationKeyword_1_0() { return cOrientationKeyword_1_0; }
 
 		//orientation=ScreenOrientation
-		public Assignment getOrientationAssignment_6() { return cOrientationAssignment_6; }
+		public Assignment getOrientationAssignment_1_1() { return cOrientationAssignment_1_1; }
 
 		//ScreenOrientation
-		public RuleCall getOrientationScreenOrientationEnumRuleCall_6_0() { return cOrientationScreenOrientationEnumRuleCall_6_0; }
+		public RuleCall getOrientationScreenOrientationEnumRuleCall_1_1_0() { return cOrientationScreenOrientationEnumRuleCall_1_1_0; }
+
+		//("scene" scene=[Scene|QualifiedName])? "}"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//("scene" scene=[Scene|QualifiedName])?
+		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//"scene"
-		public Keyword getSceneKeyword_7() { return cSceneKeyword_7; }
+		public Keyword getSceneKeyword_2_0_0() { return cSceneKeyword_2_0_0; }
 
 		//scene=[Scene|QualifiedName]
-		public Assignment getSceneAssignment_8() { return cSceneAssignment_8; }
+		public Assignment getSceneAssignment_2_0_1() { return cSceneAssignment_2_0_1; }
 
 		//[Scene|QualifiedName]
-		public CrossReference getSceneSceneCrossReference_8_0() { return cSceneSceneCrossReference_8_0; }
+		public CrossReference getSceneSceneCrossReference_2_0_1_0() { return cSceneSceneCrossReference_2_0_1_0; }
 
 		//QualifiedName
-		public RuleCall getSceneSceneQualifiedNameParserRuleCall_8_0_1() { return cSceneSceneQualifiedNameParserRuleCall_8_0_1; }
+		public RuleCall getSceneSceneQualifiedNameParserRuleCall_2_0_1_0_1() { return cSceneSceneQualifiedNameParserRuleCall_2_0_1_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_2_1() { return cRightCurlyBracketKeyword_2_1; }
 	}
 
 	public class AndroGameRootElements extends AbstractParserRuleElementFinder {
@@ -7769,10 +7789,10 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//MenuScene:
-		//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ entities+=GameEntity* "}";
+		//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem* entities+=GameEntity* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ entities+=GameEntity* "}"
+		//"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem* entities+=GameEntity* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"menu"
@@ -7793,7 +7813,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//menuItems+=GameMenuItem+
+		//menuItems+=GameMenuItem*
 		public Assignment getMenuItemsAssignment_4() { return cMenuItemsAssignment_4; }
 
 		//GameMenuItem
@@ -12437,8 +12457,8 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// * End of AndroResModelRoot and resource model elements * /
 	/// * AndroGameModelRoot and game model elements based on AndEngine www.andengine.org * / BaseGameActivity:
-	//	"gameactivity" name=ID "{" "camera" size=Size "orientation" orientation=ScreenOrientation "scene"
-	//	scene=[Scene|QualifiedName] "}";
+	//	"gameactivity" name=ID "{" ("camera" size=Size)? & ("orientation" orientation=ScreenOrientation)? & ("scene"
+	//	scene=[Scene|QualifiedName])? "}";
 	public BaseGameActivityElements getBaseGameActivityAccess() {
 		return (pBaseGameActivity != null) ? pBaseGameActivity : (pBaseGameActivity = new BaseGameActivityElements());
 	}
@@ -12639,7 +12659,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MenuScene:
-	//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem+ entities+=GameEntity* "}";
+	//	"menu" name=ID gameBackground=GameBackground? "{" menuItems+=GameMenuItem* entities+=GameEntity* "}";
 	public MenuSceneElements getMenuSceneAccess() {
 		return (pMenuScene != null) ? pMenuScene : (pMenuScene = new MenuSceneElements());
 	}
