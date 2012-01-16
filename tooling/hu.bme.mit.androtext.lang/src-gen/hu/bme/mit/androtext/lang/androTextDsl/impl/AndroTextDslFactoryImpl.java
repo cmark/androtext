@@ -223,9 +223,7 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.ANDRO_GAME_COMPONENT: return createAndroGameComponent();
       case AndroTextDslPackage.ANDRO_GAME_GUI: return createAndroGameGui();
       case AndroTextDslPackage.ANDRO_GAME_LOGIC: return createAndroGameLogic();
-      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC: return createAndroGameBox2DLogic();
       case AndroTextDslPackage.BOX2_DOPTIONS: return createBox2DOptions();
-      case AndroTextDslPackage.BOX2_DCOMPONENT: return createBox2DComponent();
       case AndroTextDslPackage.JOINT: return createJoint();
       case AndroTextDslPackage.REVOLUTE_JOINT: return createRevoluteJoint();
       case AndroTextDslPackage.DISTANCE_JOINT: return createDistanceJoint();
@@ -235,17 +233,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.BOX_BODY: return createBoxBody();
       case AndroTextDslPackage.FIXTURE: return createFixture();
       case AndroTextDslPackage.LOGIC_COMPONENT: return createLogicComponent();
-      case AndroTextDslPackage.LOGIC: return createLogic();
-      case AndroTextDslPackage.GAME_ELEMENT: return createGameElement();
+      case AndroTextDslPackage.BINDING: return createBinding();
+      case AndroTextDslPackage.BINDABLE: return createBindable();
+      case AndroTextDslPackage.GAME_COMPONENT: return createGameComponent();
       case AndroTextDslPackage.SCENE: return createScene();
       case AndroTextDslPackage.MENU_SCENE: return createMenuScene();
       case AndroTextDslPackage.GAME_BACKGROUND: return createGameBackground();
       case AndroTextDslPackage.GAME_MENU_ITEM: return createGameMenuItem();
       case AndroTextDslPackage.GAME_ENTITY: return createGameEntity();
       case AndroTextDslPackage.SIMPLE_ENTITY: return createSimpleEntity();
-      case AndroTextDslPackage.MODIFIER_BINDING: return createModifierBinding();
-      case AndroTextDslPackage.BOX2_DBINDING: return createBox2DBinding();
-      case AndroTextDslPackage.SENSOR_BINDING: return createSensorBinding();
+      case AndroTextDslPackage.BINDING_TARGET: return createBindingTarget();
+      case AndroTextDslPackage.ENTITY_BINDING_TARGET: return createEntityBindingTarget();
       case AndroTextDslPackage.ENTITY_MODIFIER: return createEntityModifier();
       case AndroTextDslPackage.SEQUENCE_ENTITY_MODIFIER: return createSequenceEntityModifier();
       case AndroTextDslPackage.LOOP_ENTITY_MODIFIER: return createLoopEntityModifier();
@@ -320,10 +318,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return createDimensionMetricFromString(eDataType, initialValue);
       case AndroTextDslPackage.BODY_TYPE:
         return createBodyTypeFromString(eDataType, initialValue);
-      case AndroTextDslPackage.SENSOR_TARGET:
-        return createSensorTargetFromString(eDataType, initialValue);
-      case AndroTextDslPackage.SENSOR_TYPE:
-        return createSensorTypeFromString(eDataType, initialValue);
       case AndroTextDslPackage.CONSTANT_COLOR:
         return createConstantColorFromString(eDataType, initialValue);
       case AndroTextDslPackage.HORIZONTAL_ALIGN:
@@ -377,10 +371,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
         return convertDimensionMetricToString(eDataType, instanceValue);
       case AndroTextDslPackage.BODY_TYPE:
         return convertBodyTypeToString(eDataType, instanceValue);
-      case AndroTextDslPackage.SENSOR_TARGET:
-        return convertSensorTargetToString(eDataType, instanceValue);
-      case AndroTextDslPackage.SENSOR_TYPE:
-        return convertSensorTypeToString(eDataType, instanceValue);
       case AndroTextDslPackage.CONSTANT_COLOR:
         return convertConstantColorToString(eDataType, instanceValue);
       case AndroTextDslPackage.HORIZONTAL_ALIGN:
@@ -2093,32 +2083,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public AndroGameBox2DLogic createAndroGameBox2DLogic()
-  {
-    AndroGameBox2DLogicImpl androGameBox2DLogic = new AndroGameBox2DLogicImpl();
-    return androGameBox2DLogic;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Box2DOptions createBox2DOptions()
   {
     Box2DOptionsImpl box2DOptions = new Box2DOptionsImpl();
     return box2DOptions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Box2DComponent createBox2DComponent()
-  {
-    Box2DComponentImpl box2DComponent = new Box2DComponentImpl();
-    return box2DComponent;
   }
 
   /**
@@ -2225,10 +2193,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public Logic createLogic()
+  public Binding createBinding()
   {
-    LogicImpl logic = new LogicImpl();
-    return logic;
+    BindingImpl binding = new BindingImpl();
+    return binding;
   }
 
   /**
@@ -2236,10 +2204,21 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public GameElement createGameElement()
+  public Bindable createBindable()
   {
-    GameElementImpl gameElement = new GameElementImpl();
-    return gameElement;
+    BindableImpl bindable = new BindableImpl();
+    return bindable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GameComponent createGameComponent()
+  {
+    GameComponentImpl gameComponent = new GameComponentImpl();
+    return gameComponent;
   }
 
   /**
@@ -2313,10 +2292,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public ModifierBinding createModifierBinding()
+  public BindingTarget createBindingTarget()
   {
-    ModifierBindingImpl modifierBinding = new ModifierBindingImpl();
-    return modifierBinding;
+    BindingTargetImpl bindingTarget = new BindingTargetImpl();
+    return bindingTarget;
   }
 
   /**
@@ -2324,21 +2303,10 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public Box2DBinding createBox2DBinding()
+  public EntityBindingTarget createEntityBindingTarget()
   {
-    Box2DBindingImpl box2DBinding = new Box2DBindingImpl();
-    return box2DBinding;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SensorBinding createSensorBinding()
-  {
-    SensorBindingImpl sensorBinding = new SensorBindingImpl();
-    return sensorBinding;
+    EntityBindingTargetImpl entityBindingTarget = new EntityBindingTargetImpl();
+    return entityBindingTarget;
   }
 
   /**
@@ -2986,50 +2954,6 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
    * @generated
    */
   public String convertBodyTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SensorTarget createSensorTargetFromString(EDataType eDataType, String initialValue)
-  {
-    SensorTarget result = SensorTarget.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertSensorTargetToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SensorType createSensorTypeFromString(EDataType eDataType, String initialValue)
-  {
-    SensorType result = SensorType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertSensorTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

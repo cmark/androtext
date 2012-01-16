@@ -26,7 +26,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface Font extends GameElement
+public interface Font extends GameComponent
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.

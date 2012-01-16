@@ -107,14 +107,6 @@
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//BodyType/kinetic"/>
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//BodyType/dynamic"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//SensorTarget">
-      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//SensorTarget/gravity"/>
-      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//SensorTarget/entity"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//SensorType">
-      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//SensorType/accelerometer"/>
-      <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//SensorType/orientation"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroTextDsl.ecore#//ConstantColor">
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ConstantColor/BLACK"/>
       <genEnumLiterals ecoreEnumLiteral="AndroTextDsl.ecore#//ConstantColor/WHITE"/>
@@ -708,19 +700,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroGameGui/gameElements"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//AndroGameLogic">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroGameLogic/box2dOptions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroGameLogic/logicComponent"/>
-    </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//AndroGameBox2DLogic">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroGameBox2DLogic/options"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//AndroGameBox2DLogic/box2dComponents"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//Box2DOptions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Box2DOptions/gravity"/>
     </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//Box2DComponent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Box2DComponent/name"/>
-    </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//Joint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Joint/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Joint/first"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Joint/second"/>
     </genClasses>
@@ -734,14 +721,21 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//CircleBody"/>
     <genClasses ecoreClass="AndroTextDsl.ecore#//BoxBody"/>
     <genClasses ecoreClass="AndroTextDsl.ecore#//Fixture">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Fixture/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Fixture/density"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Fixture/friction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Fixture/restitution"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//LogicComponent"/>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//Logic"/>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//GameElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//GameElement/name"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Binding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Binding/bindable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Binding/bindingTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Bindable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//Bindable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//GameComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//GameComponent/name"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//Scene">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Scene/gameBackground"/>
@@ -767,21 +761,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//SimpleEntity/size"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//SimpleEntity/children"/>
     </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//ModifierBinding">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ModifierBinding/modifier"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ModifierBinding/gameEntity"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//BindingTarget"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//EntityBindingTarget">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//EntityBindingTarget/entity"/>
     </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//Box2DBinding">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Box2DBinding/body"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Box2DBinding/gameEntity"/>
-    </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//SensorBinding">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//SensorBinding/sensorType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//SensorBinding/to"/>
-    </genClasses>
-    <genClasses ecoreClass="AndroTextDsl.ecore#//EntityModifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//EntityModifier/name"/>
-    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//EntityModifier"/>
     <genClasses ecoreClass="AndroTextDsl.ecore#//SequenceEntityModifier">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//SequenceEntityModifier/modifiers"/>
     </genClasses>

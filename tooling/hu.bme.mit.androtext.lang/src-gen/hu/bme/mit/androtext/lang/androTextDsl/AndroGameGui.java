@@ -28,7 +28,7 @@ public interface AndroGameGui extends AndroGameComponent
 {
   /**
    * Returns the value of the '<em><b>Game Elements</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.androtext.lang.androTextDsl.GameElement}.
+   * The list contents are of type {@link hu.bme.mit.androtext.lang.androTextDsl.GameComponent}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Game Elements</em>' containment reference list isn't clear,
@@ -40,6 +40,6 @@ public interface AndroGameGui extends AndroGameComponent
    * @model containment="true"
    * @generated
    */
-  EList<GameElement> getGameElements();
+  EList<GameComponent> getGameElements();
 
 } // AndroGameGui

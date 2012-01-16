@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Scene extends GameElement
+public interface Scene extends GameComponent
 {
   /**
    * Returns the value of the '<em><b>Game Background</b></em>' containment reference.

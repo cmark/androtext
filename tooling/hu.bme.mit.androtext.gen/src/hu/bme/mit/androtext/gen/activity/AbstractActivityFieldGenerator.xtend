@@ -1,16 +1,17 @@
 package hu.bme.mit.androtext.gen.activity
 
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
-import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
-import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
-import hu.bme.mit.androtext.lang.androTextDsl.Font
 import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
+import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
+import hu.bme.mit.androtext.lang.androTextDsl.Font
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic
+import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
+import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
+import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
+
+import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
 
 class AbstractActivityFieldGenerator {
 	
@@ -31,8 +32,10 @@ class AbstractActivityFieldGenerator {
 		«FOR e : activity.scene.eResource.allContentsIterable.filter(typeof(GameEntity))»
 		protected «e.type.toString.trim» «e.entityFieldName.toString.trim»;
 		«ENDFOR»
-		«FOR t : activity.scene.eResource.allContentsIterable.filter(typeof(AndroGameBox2DLogic))»
+		«FOR logic : activity.scene.eResource.allContentsIterable.filter(typeof(AndroGameLogic))»
+		«IF logic.containsBox2DObject»
 		protected PhysicsWorld mPhysicsWorld;
+		«ENDIF»
 		«ENDFOR»
 	'''
 	

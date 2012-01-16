@@ -954,36 +954,26 @@ AndroGameRoot:
 ;
 
 AndroGameComponent:
-	AndroGameGui | AndroGameLogic | AndroGameBox2DLogic
+	AndroGameGui | AndroGameLogic
 ;
 
 AndroGameGui:
 	'gamegui' name=ID '{' 
-		(gameElements+=GameElement)*
+		(gameElements+=GameComponent)*
 	'}'
 ;
 
 AndroGameLogic:
 	'gamelogic' name=ID '{'
+		(box2dOptions=Box2DOptions)?
 		logicComponent+=LogicComponent*
 	'}'
 ;
 
-AndroGameBox2DLogic:
-	'box2d' name=ID '{'
-		(options=Box2DOptions)?
-		box2dComponents+=Box2DComponent*
-	'}'	
-;
-
 Box2DOptions:
-	'options' '{'
+	'box2doptions' '{'
 		'gravity' gravity=FLOAT
 	'}'
-;
-
-Box2DComponent:
-	Body | Joint | Fixture
 ;
 
 Joint:
@@ -1019,18 +1009,22 @@ Fixture:
 ;
 
 enum BodyType:
-	static | kinetic | dynamic	
+	static | kinetic | dynamic
 ;
 
 LogicComponent:
-	Logic | EntityModifier
+	Binding | Bindable | Joint | Fixture
 ;
 
-Logic:
-	ModifierBinding | Box2DBinding | SensorBinding
+Binding:
+	'bind' bindable=[Bindable | QualifiedName] 'to' bindingTarget=BindingTarget 
 ;
 
-GameElement:
+Bindable:
+	EntityModifier | Body //| SensorBindable
+;
+
+GameComponent:
 	Scene | TextureRegion | Font
 ;
 
@@ -1064,26 +1058,25 @@ SimpleEntity:
 	'}'
 ;
 
-ModifierBinding:
-	'bindmodifier' modifier=[EntityModifier | QualifiedName] 'to' gameEntity=[GameEntity | QualifiedName]
+BindingTarget:
+	EntityBindingTarget //| SensorBindingTarget
 ;
 
-Box2DBinding:
-	'bindbody' body=[Body | QualifiedName] 'to' gameEntity=[GameEntity | QualifiedName]
+//SensorBindingTarget:
+//	sensor=SensorTarget
+//;
+
+EntityBindingTarget:
+	entity=[GameEntity | QualifiedName]	
 ;
 
-SensorBinding:
-	'bindsensor' sensorType=SensorType 'to' to=SensorTarget  
-;
+//SensorBindable:
+//	isAccelBinding?='accelerometer' | isOrientationBinding?='orientation'
+//;
 
-enum SensorTarget:
-	gravity | entity
-;
-
-enum SensorType:
-	accelerometer | orientation
-;
-
+//enum SensorTarget:
+//	gravity
+//;
 
 EntityModifier:
 	MoveModifier | MoveByModifier | ScaleModifier | AlphaModifier | RotationByModifier | RotationModifier | ColorModifier | LoopEntityModifier | SequenceEntityModifier 

@@ -7083,13 +7083,12 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAndroGameGuiParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cAndroGameLogicParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cAndroGameBox2DLogicParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AndroGameComponent:
-		//	AndroGameGui | AndroGameLogic | AndroGameBox2DLogic;
+		//	AndroGameGui | AndroGameLogic;
 		public ParserRule getRule() { return rule; }
 
-		//AndroGameGui | AndroGameLogic | AndroGameBox2DLogic
+		//AndroGameGui | AndroGameLogic
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//AndroGameGui
@@ -7097,9 +7096,6 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//AndroGameLogic
 		public RuleCall getAndroGameLogicParserRuleCall_1() { return cAndroGameLogicParserRuleCall_1; }
-
-		//AndroGameBox2DLogic
-		public RuleCall getAndroGameBox2DLogicParserRuleCall_2() { return cAndroGameBox2DLogicParserRuleCall_2; }
 	}
 
 	public class AndroGameGuiElements extends AbstractParserRuleElementFinder {
@@ -7110,14 +7106,14 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cGameElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cGameElementsGameElementParserRuleCall_3_0 = (RuleCall)cGameElementsAssignment_3.eContents().get(0);
+		private final RuleCall cGameElementsGameComponentParserRuleCall_3_0 = (RuleCall)cGameElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//AndroGameGui:
-		//	"gamegui" name=ID "{" gameElements+=GameElement* "}";
+		//	"gamegui" name=ID "{" gameElements+=GameComponent* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"gamegui" name=ID "{" gameElements+=GameElement* "}"
+		//"gamegui" name=ID "{" gameElements+=GameComponent* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"gamegui"
@@ -7132,11 +7128,11 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//gameElements+=GameElement*
+		//gameElements+=GameComponent*
 		public Assignment getGameElementsAssignment_3() { return cGameElementsAssignment_3; }
 
-		//GameElement
-		public RuleCall getGameElementsGameElementParserRuleCall_3_0() { return cGameElementsGameElementParserRuleCall_3_0; }
+		//GameComponent
+		public RuleCall getGameElementsGameComponentParserRuleCall_3_0() { return cGameElementsGameComponentParserRuleCall_3_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -7149,15 +7145,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLogicComponentAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLogicComponentLogicComponentParserRuleCall_3_0 = (RuleCall)cLogicComponentAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cBox2dOptionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cBox2dOptionsBox2DOptionsParserRuleCall_3_0 = (RuleCall)cBox2dOptionsAssignment_3.eContents().get(0);
+		private final Assignment cLogicComponentAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLogicComponentLogicComponentParserRuleCall_4_0 = (RuleCall)cLogicComponentAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//AndroGameLogic:
-		//	"gamelogic" name=ID "{" logicComponent+=LogicComponent* "}";
+		//	"gamelogic" name=ID "{" box2dOptions=Box2DOptions? logicComponent+=LogicComponent* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"gamelogic" name=ID "{" logicComponent+=LogicComponent* "}"
+		//"gamelogic" name=ID "{" box2dOptions=Box2DOptions? logicComponent+=LogicComponent* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"gamelogic"
@@ -7172,59 +7170,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//logicComponent+=LogicComponent*
-		public Assignment getLogicComponentAssignment_3() { return cLogicComponentAssignment_3; }
-
-		//LogicComponent
-		public RuleCall getLogicComponentLogicComponentParserRuleCall_3_0() { return cLogicComponentLogicComponentParserRuleCall_3_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-
-	public class AndroGameBox2DLogicElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AndroGameBox2DLogic");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBox2dKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cOptionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cOptionsBox2DOptionsParserRuleCall_3_0 = (RuleCall)cOptionsAssignment_3.eContents().get(0);
-		private final Assignment cBox2dComponentsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBox2dComponentsBox2DComponentParserRuleCall_4_0 = (RuleCall)cBox2dComponentsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//AndroGameBox2DLogic:
-		//	"box2d" name=ID "{" options=Box2DOptions? box2dComponents+=Box2DComponent* "}";
-		public ParserRule getRule() { return rule; }
-
-		//"box2d" name=ID "{" options=Box2DOptions? box2dComponents+=Box2DComponent* "}"
-		public Group getGroup() { return cGroup; }
-
-		//"box2d"
-		public Keyword getBox2dKeyword_0() { return cBox2dKeyword_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-
-		//options=Box2DOptions?
-		public Assignment getOptionsAssignment_3() { return cOptionsAssignment_3; }
+		//box2dOptions=Box2DOptions?
+		public Assignment getBox2dOptionsAssignment_3() { return cBox2dOptionsAssignment_3; }
 
 		//Box2DOptions
-		public RuleCall getOptionsBox2DOptionsParserRuleCall_3_0() { return cOptionsBox2DOptionsParserRuleCall_3_0; }
+		public RuleCall getBox2dOptionsBox2DOptionsParserRuleCall_3_0() { return cBox2dOptionsBox2DOptionsParserRuleCall_3_0; }
 
-		//box2dComponents+=Box2DComponent*
-		public Assignment getBox2dComponentsAssignment_4() { return cBox2dComponentsAssignment_4; }
+		//logicComponent+=LogicComponent*
+		public Assignment getLogicComponentAssignment_4() { return cLogicComponentAssignment_4; }
 
-		//Box2DComponent
-		public RuleCall getBox2dComponentsBox2DComponentParserRuleCall_4_0() { return cBox2dComponentsBox2DComponentParserRuleCall_4_0; }
+		//LogicComponent
+		public RuleCall getLogicComponentLogicComponentParserRuleCall_4_0() { return cLogicComponentLogicComponentParserRuleCall_4_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
@@ -7233,7 +7189,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class Box2DOptionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Box2DOptions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOptionsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cBox2doptionsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cGravityKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cGravityAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -7241,14 +7197,14 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Box2DOptions:
-		//	"options" "{" "gravity" gravity=FLOAT "}";
+		//	"box2doptions" "{" "gravity" gravity=FLOAT "}";
 		public ParserRule getRule() { return rule; }
 
-		//"options" "{" "gravity" gravity=FLOAT "}"
+		//"box2doptions" "{" "gravity" gravity=FLOAT "}"
 		public Group getGroup() { return cGroup; }
 
-		//"options"
-		public Keyword getOptionsKeyword_0() { return cOptionsKeyword_0; }
+		//"box2doptions"
+		public Keyword getBox2doptionsKeyword_0() { return cBox2doptionsKeyword_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
@@ -7264,30 +7220,6 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-
-	public class Box2DComponentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Box2DComponent");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cBodyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cJointParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cFixtureParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		
-		//Box2DComponent:
-		//	Body | Joint | Fixture;
-		public ParserRule getRule() { return rule; }
-
-		//Body | Joint | Fixture
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//Body
-		public RuleCall getBodyParserRuleCall_0() { return cBodyParserRuleCall_0; }
-
-		//Joint
-		public RuleCall getJointParserRuleCall_1() { return cJointParserRuleCall_1; }
-
-		//Fixture
-		public RuleCall getFixtureParserRuleCall_2() { return cFixtureParserRuleCall_2; }
 	}
 
 	public class JointElements extends AbstractParserRuleElementFinder {
@@ -7653,55 +7585,102 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class LogicComponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicComponent");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLogicParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEntityModifierParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cBindingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBindableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cJointParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cFixtureParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//LogicComponent:
-		//	Logic | EntityModifier;
+		//	Binding | Bindable | Joint | Fixture;
 		public ParserRule getRule() { return rule; }
 
-		//Logic | EntityModifier
+		//Binding | Bindable | Joint | Fixture
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Logic
-		public RuleCall getLogicParserRuleCall_0() { return cLogicParserRuleCall_0; }
+		//Binding
+		public RuleCall getBindingParserRuleCall_0() { return cBindingParserRuleCall_0; }
+
+		//Bindable
+		public RuleCall getBindableParserRuleCall_1() { return cBindableParserRuleCall_1; }
+
+		//Joint
+		public RuleCall getJointParserRuleCall_2() { return cJointParserRuleCall_2; }
+
+		//Fixture
+		public RuleCall getFixtureParserRuleCall_3() { return cFixtureParserRuleCall_3; }
+	}
+
+	public class BindingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Binding");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cBindableAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cBindableBindableCrossReference_1_0 = (CrossReference)cBindableAssignment_1.eContents().get(0);
+		private final RuleCall cBindableBindableQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cBindableBindableCrossReference_1_0.eContents().get(1);
+		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cBindingTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cBindingTargetBindingTargetParserRuleCall_3_0 = (RuleCall)cBindingTargetAssignment_3.eContents().get(0);
+		
+		//Binding:
+		//	"bind" bindable=[Bindable|QualifiedName] "to" bindingTarget=BindingTarget;
+		public ParserRule getRule() { return rule; }
+
+		//"bind" bindable=[Bindable|QualifiedName] "to" bindingTarget=BindingTarget
+		public Group getGroup() { return cGroup; }
+
+		//"bind"
+		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
+
+		//bindable=[Bindable|QualifiedName]
+		public Assignment getBindableAssignment_1() { return cBindableAssignment_1; }
+
+		//[Bindable|QualifiedName]
+		public CrossReference getBindableBindableCrossReference_1_0() { return cBindableBindableCrossReference_1_0; }
+
+		//QualifiedName
+		public RuleCall getBindableBindableQualifiedNameParserRuleCall_1_0_1() { return cBindableBindableQualifiedNameParserRuleCall_1_0_1; }
+
+		//"to"
+		public Keyword getToKeyword_2() { return cToKeyword_2; }
+
+		//bindingTarget=BindingTarget
+		public Assignment getBindingTargetAssignment_3() { return cBindingTargetAssignment_3; }
+
+		//BindingTarget
+		public RuleCall getBindingTargetBindingTargetParserRuleCall_3_0() { return cBindingTargetBindingTargetParserRuleCall_3_0; }
+	}
+
+	public class BindableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Bindable");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cEntityModifierParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBodyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Bindable:
+		//	EntityModifier | //| SensorBindable
+		//	Body;
+		public ParserRule getRule() { return rule; }
+
+		//EntityModifier | //| SensorBindable
+		//Body
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//EntityModifier
-		public RuleCall getEntityModifierParserRuleCall_1() { return cEntityModifierParserRuleCall_1; }
+		public RuleCall getEntityModifierParserRuleCall_0() { return cEntityModifierParserRuleCall_0; }
+
+		////| SensorBindable
+		//Body
+		public RuleCall getBodyParserRuleCall_1() { return cBodyParserRuleCall_1; }
 	}
 
-	public class LogicElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Logic");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cModifierBindingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cBox2DBindingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cSensorBindingParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		
-		//Logic:
-		//	ModifierBinding | Box2DBinding | SensorBinding;
-		public ParserRule getRule() { return rule; }
-
-		//ModifierBinding | Box2DBinding | SensorBinding
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//ModifierBinding
-		public RuleCall getModifierBindingParserRuleCall_0() { return cModifierBindingParserRuleCall_0; }
-
-		//Box2DBinding
-		public RuleCall getBox2DBindingParserRuleCall_1() { return cBox2DBindingParserRuleCall_1; }
-
-		//SensorBinding
-		public RuleCall getSensorBindingParserRuleCall_2() { return cSensorBindingParserRuleCall_2; }
-	}
-
-	public class GameElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GameElement");
+	public class GameComponentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GameComponent");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSceneParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cTextureRegionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cFontParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//GameElement:
+		//GameComponent:
 		//	Scene | TextureRegion | Font;
 		public ParserRule getRule() { return rule; }
 
@@ -8002,128 +7981,40 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
-	public class ModifierBindingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModifierBinding");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBindmodifierKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cModifierAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cModifierEntityModifierCrossReference_1_0 = (CrossReference)cModifierAssignment_1.eContents().get(0);
-		private final RuleCall cModifierEntityModifierQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cModifierEntityModifierCrossReference_1_0.eContents().get(1);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cGameEntityAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cGameEntityGameEntityCrossReference_3_0 = (CrossReference)cGameEntityAssignment_3.eContents().get(0);
-		private final RuleCall cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cGameEntityGameEntityCrossReference_3_0.eContents().get(1);
+	public class BindingTargetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BindingTarget");
+		private final RuleCall cEntityBindingTargetParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//ModifierBinding:
-		//	"bindmodifier" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
+		//BindingTarget: //| SensorBindingTarget
+		//	EntityBindingTarget;
 		public ParserRule getRule() { return rule; }
 
-		//"bindmodifier" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName]
-		public Group getGroup() { return cGroup; }
-
-		//"bindmodifier"
-		public Keyword getBindmodifierKeyword_0() { return cBindmodifierKeyword_0; }
-
-		//modifier=[EntityModifier|QualifiedName]
-		public Assignment getModifierAssignment_1() { return cModifierAssignment_1; }
-
-		//[EntityModifier|QualifiedName]
-		public CrossReference getModifierEntityModifierCrossReference_1_0() { return cModifierEntityModifierCrossReference_1_0; }
-
-		//QualifiedName
-		public RuleCall getModifierEntityModifierQualifiedNameParserRuleCall_1_0_1() { return cModifierEntityModifierQualifiedNameParserRuleCall_1_0_1; }
-
-		//"to"
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
-
-		//gameEntity=[GameEntity|QualifiedName]
-		public Assignment getGameEntityAssignment_3() { return cGameEntityAssignment_3; }
-
-		//[GameEntity|QualifiedName]
-		public CrossReference getGameEntityGameEntityCrossReference_3_0() { return cGameEntityGameEntityCrossReference_3_0; }
-
-		//QualifiedName
-		public RuleCall getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1() { return cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1; }
+		////| SensorBindingTarget
+		//EntityBindingTarget
+		public RuleCall getEntityBindingTargetParserRuleCall() { return cEntityBindingTargetParserRuleCall; }
 	}
 
-	public class Box2DBindingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Box2DBinding");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBindbodyKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBodyAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cBodyBodyCrossReference_1_0 = (CrossReference)cBodyAssignment_1.eContents().get(0);
-		private final RuleCall cBodyBodyQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cBodyBodyCrossReference_1_0.eContents().get(1);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cGameEntityAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cGameEntityGameEntityCrossReference_3_0 = (CrossReference)cGameEntityAssignment_3.eContents().get(0);
-		private final RuleCall cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cGameEntityGameEntityCrossReference_3_0.eContents().get(1);
+	public class EntityBindingTargetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EntityBindingTarget");
+		private final Assignment cEntityAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cEntityGameEntityCrossReference_0 = (CrossReference)cEntityAssignment.eContents().get(0);
+		private final RuleCall cEntityGameEntityQualifiedNameParserRuleCall_0_1 = (RuleCall)cEntityGameEntityCrossReference_0.eContents().get(1);
 		
-		//Box2DBinding:
-		//	"bindbody" body=[Body|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
+		////SensorBindingTarget:
+		////	sensor=SensorTarget
+		////;
+		//EntityBindingTarget:
+		//	entity=[GameEntity|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"bindbody" body=[Body|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName]
-		public Group getGroup() { return cGroup; }
-
-		//"bindbody"
-		public Keyword getBindbodyKeyword_0() { return cBindbodyKeyword_0; }
-
-		//body=[Body|QualifiedName]
-		public Assignment getBodyAssignment_1() { return cBodyAssignment_1; }
-
-		//[Body|QualifiedName]
-		public CrossReference getBodyBodyCrossReference_1_0() { return cBodyBodyCrossReference_1_0; }
-
-		//QualifiedName
-		public RuleCall getBodyBodyQualifiedNameParserRuleCall_1_0_1() { return cBodyBodyQualifiedNameParserRuleCall_1_0_1; }
-
-		//"to"
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
-
-		//gameEntity=[GameEntity|QualifiedName]
-		public Assignment getGameEntityAssignment_3() { return cGameEntityAssignment_3; }
+		//entity=[GameEntity|QualifiedName]
+		public Assignment getEntityAssignment() { return cEntityAssignment; }
 
 		//[GameEntity|QualifiedName]
-		public CrossReference getGameEntityGameEntityCrossReference_3_0() { return cGameEntityGameEntityCrossReference_3_0; }
+		public CrossReference getEntityGameEntityCrossReference_0() { return cEntityGameEntityCrossReference_0; }
 
 		//QualifiedName
-		public RuleCall getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1() { return cGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1; }
-	}
-
-	public class SensorBindingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SensorBinding");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBindsensorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cSensorTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cSensorTypeSensorTypeEnumRuleCall_1_0 = (RuleCall)cSensorTypeAssignment_1.eContents().get(0);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cToAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cToSensorTargetEnumRuleCall_3_0 = (RuleCall)cToAssignment_3.eContents().get(0);
-		
-		//SensorBinding:
-		//	"bindsensor" sensorType=SensorType "to" to=SensorTarget;
-		public ParserRule getRule() { return rule; }
-
-		//"bindsensor" sensorType=SensorType "to" to=SensorTarget
-		public Group getGroup() { return cGroup; }
-
-		//"bindsensor"
-		public Keyword getBindsensorKeyword_0() { return cBindsensorKeyword_0; }
-
-		//sensorType=SensorType
-		public Assignment getSensorTypeAssignment_1() { return cSensorTypeAssignment_1; }
-
-		//SensorType
-		public RuleCall getSensorTypeSensorTypeEnumRuleCall_1_0() { return cSensorTypeSensorTypeEnumRuleCall_1_0; }
-
-		//"to"
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
-
-		//to=SensorTarget
-		public Assignment getToAssignment_3() { return cToAssignment_3; }
-
-		//SensorTarget
-		public RuleCall getToSensorTargetEnumRuleCall_3_0() { return cToSensorTargetEnumRuleCall_3_0; }
+		public RuleCall getEntityGameEntityQualifiedNameParserRuleCall_0_1() { return cEntityGameEntityQualifiedNameParserRuleCall_0_1; }
 	}
 
 	public class EntityModifierElements extends AbstractParserRuleElementFinder {
@@ -8139,6 +8030,12 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLoopEntityModifierParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cSequenceEntityModifierParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
+		////SensorBindable:
+		////	isAccelBinding?='accelerometer' | isOrientationBinding?='orientation'
+		////;
+		////enum SensorTarget:
+		////	gravity
+		////;
 		//EntityModifier:
 		//	MoveModifier | MoveByModifier | ScaleModifier | AlphaModifier | RotationByModifier | RotationModifier | ColorModifier
 		//	| LoopEntityModifier | SequenceEntityModifier;
@@ -10291,62 +10188,6 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getDynamicDynamicKeyword_2_0() { return cDynamicDynamicKeyword_2_0; }
 	}
 
-	public class SensorTargetElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SensorTarget");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cGravityEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cGravityGravityKeyword_0_0 = (Keyword)cGravityEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cEntityEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cEntityEntityKeyword_1_0 = (Keyword)cEntityEnumLiteralDeclaration_1.eContents().get(0);
-		
-		//enum SensorTarget:
-		//	gravity | entity;
-		public EnumRule getRule() { return rule; }
-
-		//gravity | entity
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//gravity
-		public EnumLiteralDeclaration getGravityEnumLiteralDeclaration_0() { return cGravityEnumLiteralDeclaration_0; }
-
-		//"gravity"
-		public Keyword getGravityGravityKeyword_0_0() { return cGravityGravityKeyword_0_0; }
-
-		//entity
-		public EnumLiteralDeclaration getEntityEnumLiteralDeclaration_1() { return cEntityEnumLiteralDeclaration_1; }
-
-		//"entity"
-		public Keyword getEntityEntityKeyword_1_0() { return cEntityEntityKeyword_1_0; }
-	}
-
-	public class SensorTypeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SensorType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cAccelerometerEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cAccelerometerAccelerometerKeyword_0_0 = (Keyword)cAccelerometerEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cOrientationEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cOrientationOrientationKeyword_1_0 = (Keyword)cOrientationEnumLiteralDeclaration_1.eContents().get(0);
-		
-		//enum SensorType:
-		//	accelerometer | orientation;
-		public EnumRule getRule() { return rule; }
-
-		//accelerometer | orientation
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//accelerometer
-		public EnumLiteralDeclaration getAccelerometerEnumLiteralDeclaration_0() { return cAccelerometerEnumLiteralDeclaration_0; }
-
-		//"accelerometer"
-		public Keyword getAccelerometerAccelerometerKeyword_0_0() { return cAccelerometerAccelerometerKeyword_0_0; }
-
-		//orientation
-		public EnumLiteralDeclaration getOrientationEnumLiteralDeclaration_1() { return cOrientationEnumLiteralDeclaration_1; }
-
-		//"orientation"
-		public Keyword getOrientationOrientationKeyword_1_0() { return cOrientationOrientationKeyword_1_0; }
-	}
-
 	public class ConstantColorElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ConstantColor");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -10682,9 +10523,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private AndroGameComponentElements pAndroGameComponent;
 	private AndroGameGuiElements pAndroGameGui;
 	private AndroGameLogicElements pAndroGameLogic;
-	private AndroGameBox2DLogicElements pAndroGameBox2DLogic;
 	private Box2DOptionsElements pBox2DOptions;
-	private Box2DComponentElements pBox2DComponent;
 	private JointElements pJoint;
 	private RevoluteJointElements pRevoluteJoint;
 	private DistanceJointElements pDistanceJoint;
@@ -10695,19 +10534,17 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private FixtureElements pFixture;
 	private BodyTypeElements unknownRuleBodyType;
 	private LogicComponentElements pLogicComponent;
-	private LogicElements pLogic;
-	private GameElementElements pGameElement;
+	private BindingElements pBinding;
+	private BindableElements pBindable;
+	private GameComponentElements pGameComponent;
 	private SceneElements pScene;
 	private MenuSceneElements pMenuScene;
 	private GameBackgroundElements pGameBackground;
 	private GameMenuItemElements pGameMenuItem;
 	private GameEntityElements pGameEntity;
 	private SimpleEntityElements pSimpleEntity;
-	private ModifierBindingElements pModifierBinding;
-	private Box2DBindingElements pBox2DBinding;
-	private SensorBindingElements pSensorBinding;
-	private SensorTargetElements unknownRuleSensorTarget;
-	private SensorTypeElements unknownRuleSensorType;
+	private BindingTargetElements pBindingTarget;
+	private EntityBindingTargetElements pEntityBindingTarget;
 	private EntityModifierElements pEntityModifier;
 	private SequenceEntityModifierElements pSequenceEntityModifier;
 	private LoopEntityModifierElements pLoopEntityModifier;
@@ -12571,7 +12408,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AndroGameComponent:
-	//	AndroGameGui | AndroGameLogic | AndroGameBox2DLogic;
+	//	AndroGameGui | AndroGameLogic;
 	public AndroGameComponentElements getAndroGameComponentAccess() {
 		return (pAndroGameComponent != null) ? pAndroGameComponent : (pAndroGameComponent = new AndroGameComponentElements());
 	}
@@ -12581,7 +12418,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AndroGameGui:
-	//	"gamegui" name=ID "{" gameElements+=GameElement* "}";
+	//	"gamegui" name=ID "{" gameElements+=GameComponent* "}";
 	public AndroGameGuiElements getAndroGameGuiAccess() {
 		return (pAndroGameGui != null) ? pAndroGameGui : (pAndroGameGui = new AndroGameGuiElements());
 	}
@@ -12591,7 +12428,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AndroGameLogic:
-	//	"gamelogic" name=ID "{" logicComponent+=LogicComponent* "}";
+	//	"gamelogic" name=ID "{" box2dOptions=Box2DOptions? logicComponent+=LogicComponent* "}";
 	public AndroGameLogicElements getAndroGameLogicAccess() {
 		return (pAndroGameLogic != null) ? pAndroGameLogic : (pAndroGameLogic = new AndroGameLogicElements());
 	}
@@ -12600,34 +12437,14 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getAndroGameLogicAccess().getRule();
 	}
 
-	//AndroGameBox2DLogic:
-	//	"box2d" name=ID "{" options=Box2DOptions? box2dComponents+=Box2DComponent* "}";
-	public AndroGameBox2DLogicElements getAndroGameBox2DLogicAccess() {
-		return (pAndroGameBox2DLogic != null) ? pAndroGameBox2DLogic : (pAndroGameBox2DLogic = new AndroGameBox2DLogicElements());
-	}
-	
-	public ParserRule getAndroGameBox2DLogicRule() {
-		return getAndroGameBox2DLogicAccess().getRule();
-	}
-
 	//Box2DOptions:
-	//	"options" "{" "gravity" gravity=FLOAT "}";
+	//	"box2doptions" "{" "gravity" gravity=FLOAT "}";
 	public Box2DOptionsElements getBox2DOptionsAccess() {
 		return (pBox2DOptions != null) ? pBox2DOptions : (pBox2DOptions = new Box2DOptionsElements());
 	}
 	
 	public ParserRule getBox2DOptionsRule() {
 		return getBox2DOptionsAccess().getRule();
-	}
-
-	//Box2DComponent:
-	//	Body | Joint | Fixture;
-	public Box2DComponentElements getBox2DComponentAccess() {
-		return (pBox2DComponent != null) ? pBox2DComponent : (pBox2DComponent = new Box2DComponentElements());
-	}
-	
-	public ParserRule getBox2DComponentRule() {
-		return getBox2DComponentAccess().getRule();
 	}
 
 	//Joint:
@@ -12721,7 +12538,7 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LogicComponent:
-	//	Logic | EntityModifier;
+	//	Binding | Bindable | Joint | Fixture;
 	public LogicComponentElements getLogicComponentAccess() {
 		return (pLogicComponent != null) ? pLogicComponent : (pLogicComponent = new LogicComponentElements());
 	}
@@ -12730,24 +12547,35 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getLogicComponentAccess().getRule();
 	}
 
-	//Logic:
-	//	ModifierBinding | Box2DBinding | SensorBinding;
-	public LogicElements getLogicAccess() {
-		return (pLogic != null) ? pLogic : (pLogic = new LogicElements());
+	//Binding:
+	//	"bind" bindable=[Bindable|QualifiedName] "to" bindingTarget=BindingTarget;
+	public BindingElements getBindingAccess() {
+		return (pBinding != null) ? pBinding : (pBinding = new BindingElements());
 	}
 	
-	public ParserRule getLogicRule() {
-		return getLogicAccess().getRule();
+	public ParserRule getBindingRule() {
+		return getBindingAccess().getRule();
 	}
 
-	//GameElement:
-	//	Scene | TextureRegion | Font;
-	public GameElementElements getGameElementAccess() {
-		return (pGameElement != null) ? pGameElement : (pGameElement = new GameElementElements());
+	//Bindable:
+	//	EntityModifier | //| SensorBindable
+	//	Body;
+	public BindableElements getBindableAccess() {
+		return (pBindable != null) ? pBindable : (pBindable = new BindableElements());
 	}
 	
-	public ParserRule getGameElementRule() {
-		return getGameElementAccess().getRule();
+	public ParserRule getBindableRule() {
+		return getBindableAccess().getRule();
+	}
+
+	//GameComponent:
+	//	Scene | TextureRegion | Font;
+	public GameComponentElements getGameComponentAccess() {
+		return (pGameComponent != null) ? pGameComponent : (pGameComponent = new GameComponentElements());
+	}
+	
+	public ParserRule getGameComponentRule() {
+		return getGameComponentAccess().getRule();
 	}
 
 	//Scene:
@@ -12810,56 +12638,35 @@ public class AndroTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getSimpleEntityAccess().getRule();
 	}
 
-	//ModifierBinding:
-	//	"bindmodifier" modifier=[EntityModifier|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
-	public ModifierBindingElements getModifierBindingAccess() {
-		return (pModifierBinding != null) ? pModifierBinding : (pModifierBinding = new ModifierBindingElements());
+	//BindingTarget: //| SensorBindingTarget
+	//	EntityBindingTarget;
+	public BindingTargetElements getBindingTargetAccess() {
+		return (pBindingTarget != null) ? pBindingTarget : (pBindingTarget = new BindingTargetElements());
 	}
 	
-	public ParserRule getModifierBindingRule() {
-		return getModifierBindingAccess().getRule();
+	public ParserRule getBindingTargetRule() {
+		return getBindingTargetAccess().getRule();
 	}
 
-	//Box2DBinding:
-	//	"bindbody" body=[Body|QualifiedName] "to" gameEntity=[GameEntity|QualifiedName];
-	public Box2DBindingElements getBox2DBindingAccess() {
-		return (pBox2DBinding != null) ? pBox2DBinding : (pBox2DBinding = new Box2DBindingElements());
+	////SensorBindingTarget:
+	////	sensor=SensorTarget
+	////;
+	//EntityBindingTarget:
+	//	entity=[GameEntity|QualifiedName];
+	public EntityBindingTargetElements getEntityBindingTargetAccess() {
+		return (pEntityBindingTarget != null) ? pEntityBindingTarget : (pEntityBindingTarget = new EntityBindingTargetElements());
 	}
 	
-	public ParserRule getBox2DBindingRule() {
-		return getBox2DBindingAccess().getRule();
+	public ParserRule getEntityBindingTargetRule() {
+		return getEntityBindingTargetAccess().getRule();
 	}
 
-	//SensorBinding:
-	//	"bindsensor" sensorType=SensorType "to" to=SensorTarget;
-	public SensorBindingElements getSensorBindingAccess() {
-		return (pSensorBinding != null) ? pSensorBinding : (pSensorBinding = new SensorBindingElements());
-	}
-	
-	public ParserRule getSensorBindingRule() {
-		return getSensorBindingAccess().getRule();
-	}
-
-	//enum SensorTarget:
-	//	gravity | entity;
-	public SensorTargetElements getSensorTargetAccess() {
-		return (unknownRuleSensorTarget != null) ? unknownRuleSensorTarget : (unknownRuleSensorTarget = new SensorTargetElements());
-	}
-	
-	public EnumRule getSensorTargetRule() {
-		return getSensorTargetAccess().getRule();
-	}
-
-	//enum SensorType:
-	//	accelerometer | orientation;
-	public SensorTypeElements getSensorTypeAccess() {
-		return (unknownRuleSensorType != null) ? unknownRuleSensorType : (unknownRuleSensorType = new SensorTypeElements());
-	}
-	
-	public EnumRule getSensorTypeRule() {
-		return getSensorTypeAccess().getRule();
-	}
-
+	////SensorBindable:
+	////	isAccelBinding?='accelerometer' | isOrientationBinding?='orientation'
+	////;
+	////enum SensorTarget:
+	////	gravity
+	////;
 	//EntityModifier:
 	//	MoveModifier | MoveByModifier | ScaleModifier | AlphaModifier | RotationByModifier | RotationModifier | ColorModifier
 	//	| LoopEntityModifier | SequenceEntityModifier;

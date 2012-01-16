@@ -1273,14 +1273,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC:
-      {
-        AndroGameBox2DLogic androGameBox2DLogic = (AndroGameBox2DLogic)theEObject;
-        T result = caseAndroGameBox2DLogic(androGameBox2DLogic);
-        if (result == null) result = caseAndroGameComponent(androGameBox2DLogic);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AndroTextDslPackage.BOX2_DOPTIONS:
       {
         Box2DOptions box2DOptions = (Box2DOptions)theEObject;
@@ -1288,18 +1280,11 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.BOX2_DCOMPONENT:
-      {
-        Box2DComponent box2DComponent = (Box2DComponent)theEObject;
-        T result = caseBox2DComponent(box2DComponent);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AndroTextDslPackage.JOINT:
       {
         Joint joint = (Joint)theEObject;
         T result = caseJoint(joint);
-        if (result == null) result = caseBox2DComponent(joint);
+        if (result == null) result = caseLogicComponent(joint);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1308,7 +1293,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         RevoluteJoint revoluteJoint = (RevoluteJoint)theEObject;
         T result = caseRevoluteJoint(revoluteJoint);
         if (result == null) result = caseJoint(revoluteJoint);
-        if (result == null) result = caseBox2DComponent(revoluteJoint);
+        if (result == null) result = caseLogicComponent(revoluteJoint);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1317,7 +1302,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         DistanceJoint distanceJoint = (DistanceJoint)theEObject;
         T result = caseDistanceJoint(distanceJoint);
         if (result == null) result = caseJoint(distanceJoint);
-        if (result == null) result = caseBox2DComponent(distanceJoint);
+        if (result == null) result = caseLogicComponent(distanceJoint);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1325,7 +1310,8 @@ public class AndroTextDslSwitch<T> extends Switch<T>
       {
         Body body = (Body)theEObject;
         T result = caseBody(body);
-        if (result == null) result = caseBox2DComponent(body);
+        if (result == null) result = caseBindable(body);
+        if (result == null) result = caseLogicComponent(body);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1334,7 +1320,8 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         LineBody lineBody = (LineBody)theEObject;
         T result = caseLineBody(lineBody);
         if (result == null) result = caseBody(lineBody);
-        if (result == null) result = caseBox2DComponent(lineBody);
+        if (result == null) result = caseBindable(lineBody);
+        if (result == null) result = caseLogicComponent(lineBody);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1343,7 +1330,8 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         CircleBody circleBody = (CircleBody)theEObject;
         T result = caseCircleBody(circleBody);
         if (result == null) result = caseBody(circleBody);
-        if (result == null) result = caseBox2DComponent(circleBody);
+        if (result == null) result = caseBindable(circleBody);
+        if (result == null) result = caseLogicComponent(circleBody);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1352,7 +1340,8 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         BoxBody boxBody = (BoxBody)theEObject;
         T result = caseBoxBody(boxBody);
         if (result == null) result = caseBody(boxBody);
-        if (result == null) result = caseBox2DComponent(boxBody);
+        if (result == null) result = caseBindable(boxBody);
+        if (result == null) result = caseLogicComponent(boxBody);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1360,7 +1349,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
       {
         Fixture fixture = (Fixture)theEObject;
         T result = caseFixture(fixture);
-        if (result == null) result = caseBox2DComponent(fixture);
+        if (result == null) result = caseLogicComponent(fixture);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1371,18 +1360,26 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.LOGIC:
+      case AndroTextDslPackage.BINDING:
       {
-        Logic logic = (Logic)theEObject;
-        T result = caseLogic(logic);
-        if (result == null) result = caseLogicComponent(logic);
+        Binding binding = (Binding)theEObject;
+        T result = caseBinding(binding);
+        if (result == null) result = caseLogicComponent(binding);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.GAME_ELEMENT:
+      case AndroTextDslPackage.BINDABLE:
       {
-        GameElement gameElement = (GameElement)theEObject;
-        T result = caseGameElement(gameElement);
+        Bindable bindable = (Bindable)theEObject;
+        T result = caseBindable(bindable);
+        if (result == null) result = caseLogicComponent(bindable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroTextDslPackage.GAME_COMPONENT:
+      {
+        GameComponent gameComponent = (GameComponent)theEObject;
+        T result = caseGameComponent(gameComponent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1390,7 +1387,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
       {
         Scene scene = (Scene)theEObject;
         T result = caseScene(scene);
-        if (result == null) result = caseGameElement(scene);
+        if (result == null) result = caseGameComponent(scene);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1399,7 +1396,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         MenuScene menuScene = (MenuScene)theEObject;
         T result = caseMenuScene(menuScene);
         if (result == null) result = caseScene(menuScene);
-        if (result == null) result = caseGameElement(menuScene);
+        if (result == null) result = caseGameComponent(menuScene);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1432,30 +1429,18 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.MODIFIER_BINDING:
+      case AndroTextDslPackage.BINDING_TARGET:
       {
-        ModifierBinding modifierBinding = (ModifierBinding)theEObject;
-        T result = caseModifierBinding(modifierBinding);
-        if (result == null) result = caseLogic(modifierBinding);
-        if (result == null) result = caseLogicComponent(modifierBinding);
+        BindingTarget bindingTarget = (BindingTarget)theEObject;
+        T result = caseBindingTarget(bindingTarget);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AndroTextDslPackage.BOX2_DBINDING:
+      case AndroTextDslPackage.ENTITY_BINDING_TARGET:
       {
-        Box2DBinding box2DBinding = (Box2DBinding)theEObject;
-        T result = caseBox2DBinding(box2DBinding);
-        if (result == null) result = caseLogic(box2DBinding);
-        if (result == null) result = caseLogicComponent(box2DBinding);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AndroTextDslPackage.SENSOR_BINDING:
-      {
-        SensorBinding sensorBinding = (SensorBinding)theEObject;
-        T result = caseSensorBinding(sensorBinding);
-        if (result == null) result = caseLogic(sensorBinding);
-        if (result == null) result = caseLogicComponent(sensorBinding);
+        EntityBindingTarget entityBindingTarget = (EntityBindingTarget)theEObject;
+        T result = caseEntityBindingTarget(entityBindingTarget);
+        if (result == null) result = caseBindingTarget(entityBindingTarget);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1463,6 +1448,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
       {
         EntityModifier entityModifier = (EntityModifier)theEObject;
         T result = caseEntityModifier(entityModifier);
+        if (result == null) result = caseBindable(entityModifier);
         if (result == null) result = caseLogicComponent(entityModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1472,6 +1458,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         SequenceEntityModifier sequenceEntityModifier = (SequenceEntityModifier)theEObject;
         T result = caseSequenceEntityModifier(sequenceEntityModifier);
         if (result == null) result = caseEntityModifier(sequenceEntityModifier);
+        if (result == null) result = caseBindable(sequenceEntityModifier);
         if (result == null) result = caseLogicComponent(sequenceEntityModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1481,6 +1468,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         LoopEntityModifier loopEntityModifier = (LoopEntityModifier)theEObject;
         T result = caseLoopEntityModifier(loopEntityModifier);
         if (result == null) result = caseEntityModifier(loopEntityModifier);
+        if (result == null) result = caseBindable(loopEntityModifier);
         if (result == null) result = caseLogicComponent(loopEntityModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1490,6 +1478,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         MoveModifier moveModifier = (MoveModifier)theEObject;
         T result = caseMoveModifier(moveModifier);
         if (result == null) result = caseEntityModifier(moveModifier);
+        if (result == null) result = caseBindable(moveModifier);
         if (result == null) result = caseLogicComponent(moveModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1499,6 +1488,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         MoveByModifier moveByModifier = (MoveByModifier)theEObject;
         T result = caseMoveByModifier(moveByModifier);
         if (result == null) result = caseEntityModifier(moveByModifier);
+        if (result == null) result = caseBindable(moveByModifier);
         if (result == null) result = caseLogicComponent(moveByModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1508,6 +1498,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         ScaleModifier scaleModifier = (ScaleModifier)theEObject;
         T result = caseScaleModifier(scaleModifier);
         if (result == null) result = caseEntityModifier(scaleModifier);
+        if (result == null) result = caseBindable(scaleModifier);
         if (result == null) result = caseLogicComponent(scaleModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1517,6 +1508,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         AlphaModifier alphaModifier = (AlphaModifier)theEObject;
         T result = caseAlphaModifier(alphaModifier);
         if (result == null) result = caseEntityModifier(alphaModifier);
+        if (result == null) result = caseBindable(alphaModifier);
         if (result == null) result = caseLogicComponent(alphaModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1526,6 +1518,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         RotationByModifier rotationByModifier = (RotationByModifier)theEObject;
         T result = caseRotationByModifier(rotationByModifier);
         if (result == null) result = caseEntityModifier(rotationByModifier);
+        if (result == null) result = caseBindable(rotationByModifier);
         if (result == null) result = caseLogicComponent(rotationByModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1535,6 +1528,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         RotationModifier rotationModifier = (RotationModifier)theEObject;
         T result = caseRotationModifier(rotationModifier);
         if (result == null) result = caseEntityModifier(rotationModifier);
+        if (result == null) result = caseBindable(rotationModifier);
         if (result == null) result = caseLogicComponent(rotationModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1544,6 +1538,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
         ColorModifier colorModifier = (ColorModifier)theEObject;
         T result = caseColorModifier(colorModifier);
         if (result == null) result = caseEntityModifier(colorModifier);
+        if (result == null) result = caseBindable(colorModifier);
         if (result == null) result = caseLogicComponent(colorModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -1669,7 +1664,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
       {
         TextureRegion textureRegion = (TextureRegion)theEObject;
         T result = caseTextureRegion(textureRegion);
-        if (result == null) result = caseGameElement(textureRegion);
+        if (result == null) result = caseGameComponent(textureRegion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1684,7 +1679,7 @@ public class AndroTextDslSwitch<T> extends Switch<T>
       {
         Font font = (Font)theEObject;
         T result = caseFont(font);
-        if (result == null) result = caseGameElement(font);
+        if (result == null) result = caseGameComponent(font);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -4157,22 +4152,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Andro Game Box2 DLogic</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Andro Game Box2 DLogic</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAndroGameBox2DLogic(AndroGameBox2DLogic object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Box2 DOptions</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -4184,22 +4163,6 @@ public class AndroTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBox2DOptions(Box2DOptions object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Box2 DComponent</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Box2 DComponent</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBox2DComponent(Box2DComponent object)
   {
     return null;
   }
@@ -4349,33 +4312,49 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Logic</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Binding</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Logic</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Binding</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLogic(Logic object)
+  public T caseBinding(Binding object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Game Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Bindable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Game Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Bindable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGameElement(GameElement object)
+  public T caseBindable(Bindable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Game Component</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Game Component</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGameComponent(GameComponent object)
   {
     return null;
   }
@@ -4477,49 +4456,33 @@ public class AndroTextDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Modifier Binding</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Binding Target</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Modifier Binding</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Binding Target</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModifierBinding(ModifierBinding object)
+  public T caseBindingTarget(BindingTarget object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Box2 DBinding</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Entity Binding Target</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Box2 DBinding</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Entity Binding Target</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBox2DBinding(Box2DBinding object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sensor Binding</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sensor Binding</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSensorBinding(SensorBinding object)
+  public T caseEntityBindingTarget(EntityBindingTarget object)
   {
     return null;
   }

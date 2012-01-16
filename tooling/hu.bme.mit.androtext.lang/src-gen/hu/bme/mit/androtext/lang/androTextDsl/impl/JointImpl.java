@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.JointImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.JointImpl#getFirst <em>First</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.JointImpl#getSecond <em>Second</em>}</li>
  * </ul>
@@ -31,8 +32,28 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class JointImpl extends Box2DComponentImpl implements Joint
+public class JointImpl extends LogicComponentImpl implements Joint
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getFirst() <em>First</em>}' reference.
    * <!-- begin-user-doc -->
@@ -72,6 +93,29 @@ public class JointImpl extends Box2DComponentImpl implements Joint
   protected EClass eStaticClass()
   {
     return AndroTextDslPackage.eINSTANCE.getJoint();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.JOINT__NAME, oldName, name));
   }
 
   /**
@@ -170,6 +214,8 @@ public class JointImpl extends Box2DComponentImpl implements Joint
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.JOINT__NAME:
+        return getName();
       case AndroTextDslPackage.JOINT__FIRST:
         if (resolve) return getFirst();
         return basicGetFirst();
@@ -190,6 +236,9 @@ public class JointImpl extends Box2DComponentImpl implements Joint
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.JOINT__NAME:
+        setName((String)newValue);
+        return;
       case AndroTextDslPackage.JOINT__FIRST:
         setFirst((Body)newValue);
         return;
@@ -210,6 +259,9 @@ public class JointImpl extends Box2DComponentImpl implements Joint
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.JOINT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroTextDslPackage.JOINT__FIRST:
         setFirst((Body)null);
         return;
@@ -230,12 +282,31 @@ public class JointImpl extends Box2DComponentImpl implements Joint
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.JOINT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.JOINT__FIRST:
         return first != null;
       case AndroTextDslPackage.JOINT__SECOND:
         return second != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //JointImpl

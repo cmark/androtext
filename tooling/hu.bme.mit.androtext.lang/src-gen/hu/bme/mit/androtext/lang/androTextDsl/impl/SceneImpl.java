@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SceneImpl extends GameElementImpl implements Scene
+public class SceneImpl extends GameComponentImpl implements Scene
 {
   /**
    * The cached value of the '{@link #getGameBackground() <em>Game Background</em>}' containment reference.

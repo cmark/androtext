@@ -4510,34 +4510,6 @@ finally {
 
 
 
-// Entry rule entryRuleAndroGameBox2DLogic
-entryRuleAndroGameBox2DLogic 
-:
-{ before(grammarAccess.getAndroGameBox2DLogicRule()); }
-	 ruleAndroGameBox2DLogic
-{ after(grammarAccess.getAndroGameBox2DLogicRule()); } 
-	 EOF 
-;
-
-// Rule AndroGameBox2DLogic
-ruleAndroGameBox2DLogic
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getGroup()); }
-(rule__AndroGameBox2DLogic__Group__0)
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Entry rule entryRuleBox2DOptions
 entryRuleBox2DOptions 
 :
@@ -4557,34 +4529,6 @@ ruleBox2DOptions
 { before(grammarAccess.getBox2DOptionsAccess().getGroup()); }
 (rule__Box2DOptions__Group__0)
 { after(grammarAccess.getBox2DOptionsAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Entry rule entryRuleBox2DComponent
-entryRuleBox2DComponent 
-:
-{ before(grammarAccess.getBox2DComponentRule()); }
-	 ruleBox2DComponent
-{ after(grammarAccess.getBox2DComponentRule()); } 
-	 EOF 
-;
-
-// Rule Box2DComponent
-ruleBox2DComponent
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getBox2DComponentAccess().getAlternatives()); }
-(rule__Box2DComponent__Alternatives)
-{ after(grammarAccess.getBox2DComponentAccess().getAlternatives()); }
 )
 
 ;
@@ -4846,25 +4790,25 @@ finally {
 
 
 
-// Entry rule entryRuleLogic
-entryRuleLogic 
+// Entry rule entryRuleBinding
+entryRuleBinding 
 :
-{ before(grammarAccess.getLogicRule()); }
-	 ruleLogic
-{ after(grammarAccess.getLogicRule()); } 
+{ before(grammarAccess.getBindingRule()); }
+	 ruleBinding
+{ after(grammarAccess.getBindingRule()); } 
 	 EOF 
 ;
 
-// Rule Logic
-ruleLogic
+// Rule Binding
+ruleBinding
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getLogicAccess().getAlternatives()); }
-(rule__Logic__Alternatives)
-{ after(grammarAccess.getLogicAccess().getAlternatives()); }
+{ before(grammarAccess.getBindingAccess().getGroup()); }
+(rule__Binding__Group__0)
+{ after(grammarAccess.getBindingAccess().getGroup()); }
 )
 
 ;
@@ -4874,25 +4818,53 @@ finally {
 
 
 
-// Entry rule entryRuleGameElement
-entryRuleGameElement 
+// Entry rule entryRuleBindable
+entryRuleBindable 
 :
-{ before(grammarAccess.getGameElementRule()); }
-	 ruleGameElement
-{ after(grammarAccess.getGameElementRule()); } 
+{ before(grammarAccess.getBindableRule()); }
+	 ruleBindable
+{ after(grammarAccess.getBindableRule()); } 
 	 EOF 
 ;
 
-// Rule GameElement
-ruleGameElement
+// Rule Bindable
+ruleBindable
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getGameElementAccess().getAlternatives()); }
-(rule__GameElement__Alternatives)
-{ after(grammarAccess.getGameElementAccess().getAlternatives()); }
+{ before(grammarAccess.getBindableAccess().getAlternatives()); }
+(rule__Bindable__Alternatives)
+{ after(grammarAccess.getBindableAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleGameComponent
+entryRuleGameComponent 
+:
+{ before(grammarAccess.getGameComponentRule()); }
+	 ruleGameComponent
+{ after(grammarAccess.getGameComponentRule()); } 
+	 EOF 
+;
+
+// Rule GameComponent
+ruleGameComponent
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getGameComponentAccess().getAlternatives()); }
+(rule__GameComponent__Alternatives)
+{ after(grammarAccess.getGameComponentAccess().getAlternatives()); }
 )
 
 ;
@@ -5070,25 +5042,25 @@ finally {
 
 
 
-// Entry rule entryRuleModifierBinding
-entryRuleModifierBinding 
+// Entry rule entryRuleBindingTarget
+entryRuleBindingTarget 
 :
-{ before(grammarAccess.getModifierBindingRule()); }
-	 ruleModifierBinding
-{ after(grammarAccess.getModifierBindingRule()); } 
+{ before(grammarAccess.getBindingTargetRule()); }
+	 ruleBindingTarget
+{ after(grammarAccess.getBindingTargetRule()); } 
 	 EOF 
 ;
 
-// Rule ModifierBinding
-ruleModifierBinding
+// Rule BindingTarget
+ruleBindingTarget
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getModifierBindingAccess().getGroup()); }
-(rule__ModifierBinding__Group__0)
-{ after(grammarAccess.getModifierBindingAccess().getGroup()); }
+{ before(grammarAccess.getBindingTargetAccess().getEntityBindingTargetParserRuleCall()); }
+	ruleEntityBindingTarget
+{ after(grammarAccess.getBindingTargetAccess().getEntityBindingTargetParserRuleCall()); }
 )
 
 ;
@@ -5098,53 +5070,25 @@ finally {
 
 
 
-// Entry rule entryRuleBox2DBinding
-entryRuleBox2DBinding 
+// Entry rule entryRuleEntityBindingTarget
+entryRuleEntityBindingTarget 
 :
-{ before(grammarAccess.getBox2DBindingRule()); }
-	 ruleBox2DBinding
-{ after(grammarAccess.getBox2DBindingRule()); } 
+{ before(grammarAccess.getEntityBindingTargetRule()); }
+	 ruleEntityBindingTarget
+{ after(grammarAccess.getEntityBindingTargetRule()); } 
 	 EOF 
 ;
 
-// Rule Box2DBinding
-ruleBox2DBinding
+// Rule EntityBindingTarget
+ruleEntityBindingTarget
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getBox2DBindingAccess().getGroup()); }
-(rule__Box2DBinding__Group__0)
-{ after(grammarAccess.getBox2DBindingAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Entry rule entryRuleSensorBinding
-entryRuleSensorBinding 
-:
-{ before(grammarAccess.getSensorBindingRule()); }
-	 ruleSensorBinding
-{ after(grammarAccess.getSensorBindingRule()); } 
-	 EOF 
-;
-
-// Rule SensorBinding
-ruleSensorBinding
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getSensorBindingAccess().getGroup()); }
-(rule__SensorBinding__Group__0)
-{ after(grammarAccess.getSensorBindingAccess().getGroup()); }
+{ before(grammarAccess.getEntityBindingTargetAccess().getEntityAssignment()); }
+(rule__EntityBindingTarget__EntityAssignment)
+{ after(grammarAccess.getEntityBindingTargetAccess().getEntityAssignment()); }
 )
 
 ;
@@ -6280,44 +6224,6 @@ finally {
 
 
 
-// Rule SensorTarget
-ruleSensorTarget
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorTargetAccess().getAlternatives()); }
-(rule__SensorTarget__Alternatives)
-{ after(grammarAccess.getSensorTargetAccess().getAlternatives()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Rule SensorType
-ruleSensorType
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorTypeAccess().getAlternatives()); }
-(rule__SensorType__Alternatives)
-{ after(grammarAccess.getSensorTypeAccess().getAlternatives()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Rule ConstantColor
 ruleConstantColor
     @init {
@@ -7176,40 +7082,6 @@ rule__AndroGameComponent__Alternatives
 { after(grammarAccess.getAndroGameComponentAccess().getAndroGameLogicParserRuleCall_1()); }
 )
 
-    |(
-{ before(grammarAccess.getAndroGameComponentAccess().getAndroGameBox2DLogicParserRuleCall_2()); }
-	ruleAndroGameBox2DLogic
-{ after(grammarAccess.getAndroGameComponentAccess().getAndroGameBox2DLogicParserRuleCall_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Box2DComponent__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getBox2DComponentAccess().getBodyParserRuleCall_0()); }
-	ruleBody
-{ after(grammarAccess.getBox2DComponentAccess().getBodyParserRuleCall_0()); }
-)
-
-    |(
-{ before(grammarAccess.getBox2DComponentAccess().getJointParserRuleCall_1()); }
-	ruleJoint
-{ after(grammarAccess.getBox2DComponentAccess().getJointParserRuleCall_1()); }
-)
-
-    |(
-{ before(grammarAccess.getBox2DComponentAccess().getFixtureParserRuleCall_2()); }
-	ruleFixture
-{ after(grammarAccess.getBox2DComponentAccess().getFixtureParserRuleCall_2()); }
-)
-
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -7271,15 +7143,49 @@ rule__LogicComponent__Alternatives
     }
 :
 (
-{ before(grammarAccess.getLogicComponentAccess().getLogicParserRuleCall_0()); }
-	ruleLogic
-{ after(grammarAccess.getLogicComponentAccess().getLogicParserRuleCall_0()); }
+{ before(grammarAccess.getLogicComponentAccess().getBindingParserRuleCall_0()); }
+	ruleBinding
+{ after(grammarAccess.getLogicComponentAccess().getBindingParserRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getLogicComponentAccess().getEntityModifierParserRuleCall_1()); }
+{ before(grammarAccess.getLogicComponentAccess().getBindableParserRuleCall_1()); }
+	ruleBindable
+{ after(grammarAccess.getLogicComponentAccess().getBindableParserRuleCall_1()); }
+)
+
+    |(
+{ before(grammarAccess.getLogicComponentAccess().getJointParserRuleCall_2()); }
+	ruleJoint
+{ after(grammarAccess.getLogicComponentAccess().getJointParserRuleCall_2()); }
+)
+
+    |(
+{ before(grammarAccess.getLogicComponentAccess().getFixtureParserRuleCall_3()); }
+	ruleFixture
+{ after(grammarAccess.getLogicComponentAccess().getFixtureParserRuleCall_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Bindable__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBindableAccess().getEntityModifierParserRuleCall_0()); }
 	ruleEntityModifier
-{ after(grammarAccess.getLogicComponentAccess().getEntityModifierParserRuleCall_1()); }
+{ after(grammarAccess.getBindableAccess().getEntityModifierParserRuleCall_0()); }
+)
+
+    |(
+{ before(grammarAccess.getBindableAccess().getBodyParserRuleCall_1()); }
+	ruleBody
+{ after(grammarAccess.getBindableAccess().getBodyParserRuleCall_1()); }
 )
 
 ;
@@ -7287,55 +7193,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Logic__Alternatives
+rule__GameComponent__Alternatives
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getLogicAccess().getModifierBindingParserRuleCall_0()); }
-	ruleModifierBinding
-{ after(grammarAccess.getLogicAccess().getModifierBindingParserRuleCall_0()); }
-)
-
-    |(
-{ before(grammarAccess.getLogicAccess().getBox2DBindingParserRuleCall_1()); }
-	ruleBox2DBinding
-{ after(grammarAccess.getLogicAccess().getBox2DBindingParserRuleCall_1()); }
-)
-
-    |(
-{ before(grammarAccess.getLogicAccess().getSensorBindingParserRuleCall_2()); }
-	ruleSensorBinding
-{ after(grammarAccess.getLogicAccess().getSensorBindingParserRuleCall_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__GameElement__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getGameElementAccess().getSceneParserRuleCall_0()); }
+{ before(grammarAccess.getGameComponentAccess().getSceneParserRuleCall_0()); }
 	ruleScene
-{ after(grammarAccess.getGameElementAccess().getSceneParserRuleCall_0()); }
+{ after(grammarAccess.getGameComponentAccess().getSceneParserRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getGameElementAccess().getTextureRegionParserRuleCall_1()); }
+{ before(grammarAccess.getGameComponentAccess().getTextureRegionParserRuleCall_1()); }
 	ruleTextureRegion
-{ after(grammarAccess.getGameElementAccess().getTextureRegionParserRuleCall_1()); }
+{ after(grammarAccess.getGameComponentAccess().getTextureRegionParserRuleCall_1()); }
 )
 
     |(
-{ before(grammarAccess.getGameElementAccess().getFontParserRuleCall_2()); }
+{ before(grammarAccess.getGameComponentAccess().getFontParserRuleCall_2()); }
 	ruleFont
-{ after(grammarAccess.getGameElementAccess().getFontParserRuleCall_2()); }
+{ after(grammarAccess.getGameComponentAccess().getFontParserRuleCall_2()); }
 )
 
 ;
@@ -8160,54 +8038,6 @@ rule__BodyType__Alternatives
 (	'dynamic' 
 )
 { after(grammarAccess.getBodyTypeAccess().getDynamicEnumLiteralDeclaration_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorTarget__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorTargetAccess().getGravityEnumLiteralDeclaration_0()); }
-(	'gravity' 
-)
-{ after(grammarAccess.getSensorTargetAccess().getGravityEnumLiteralDeclaration_0()); }
-)
-
-    |(
-{ before(grammarAccess.getSensorTargetAccess().getEntityEnumLiteralDeclaration_1()); }
-(	'entity' 
-)
-{ after(grammarAccess.getSensorTargetAccess().getEntityEnumLiteralDeclaration_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorType__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorTypeAccess().getAccelerometerEnumLiteralDeclaration_0()); }
-(	'accelerometer' 
-)
-{ after(grammarAccess.getSensorTypeAccess().getAccelerometerEnumLiteralDeclaration_0()); }
-)
-
-    |(
-{ before(grammarAccess.getSensorTypeAccess().getOrientationEnumLiteralDeclaration_1()); }
-(	'orientation' 
-)
-{ after(grammarAccess.getSensorTypeAccess().getOrientationEnumLiteralDeclaration_1()); }
 )
 
 ;
@@ -28463,9 +28293,9 @@ rule__AndroGameLogic__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroGameLogicAccess().getLogicComponentAssignment_3()); }
-(rule__AndroGameLogic__LogicComponentAssignment_3)*
-{ after(grammarAccess.getAndroGameLogicAccess().getLogicComponentAssignment_3()); }
+{ before(grammarAccess.getAndroGameLogicAccess().getBox2dOptionsAssignment_3()); }
+(rule__AndroGameLogic__Box2dOptionsAssignment_3)?
+{ after(grammarAccess.getAndroGameLogicAccess().getBox2dOptionsAssignment_3()); }
 )
 
 ;
@@ -28480,6 +28310,7 @@ rule__AndroGameLogic__Group__4
     }
 :
 	rule__AndroGameLogic__Group__4__Impl
+	rule__AndroGameLogic__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -28491,200 +28322,39 @@ rule__AndroGameLogic__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroGameLogicAccess().getRightCurlyBracketKeyword_4()); }
+{ before(grammarAccess.getAndroGameLogicAccess().getLogicComponentAssignment_4()); }
+(rule__AndroGameLogic__LogicComponentAssignment_4)*
+{ after(grammarAccess.getAndroGameLogicAccess().getLogicComponentAssignment_4()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__AndroGameLogic__Group__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AndroGameLogic__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AndroGameLogic__Group__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAndroGameLogicAccess().getRightCurlyBracketKeyword_5()); }
 
 	'}' 
 
-{ after(grammarAccess.getAndroGameLogicAccess().getRightCurlyBracketKeyword_4()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-rule__AndroGameBox2DLogic__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AndroGameBox2DLogic__Group__0__Impl
-	rule__AndroGameBox2DLogic__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dKeyword_0()); }
-
-	'box2d' 
-
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AndroGameBox2DLogic__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AndroGameBox2DLogic__Group__1__Impl
-	rule__AndroGameBox2DLogic__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getNameAssignment_1()); }
-(rule__AndroGameBox2DLogic__NameAssignment_1)
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getNameAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AndroGameBox2DLogic__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AndroGameBox2DLogic__Group__2__Impl
-	rule__AndroGameBox2DLogic__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getLeftCurlyBracketKeyword_2()); }
-
-	'{' 
-
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getLeftCurlyBracketKeyword_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AndroGameBox2DLogic__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AndroGameBox2DLogic__Group__3__Impl
-	rule__AndroGameBox2DLogic__Group__4
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getOptionsAssignment_3()); }
-(rule__AndroGameBox2DLogic__OptionsAssignment_3)?
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getOptionsAssignment_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AndroGameBox2DLogic__Group__4
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AndroGameBox2DLogic__Group__4__Impl
-	rule__AndroGameBox2DLogic__Group__5
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__Group__4__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsAssignment_4()); }
-(rule__AndroGameBox2DLogic__Box2dComponentsAssignment_4)*
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsAssignment_4()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AndroGameBox2DLogic__Group__5
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AndroGameBox2DLogic__Group__5__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__Group__5__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getRightCurlyBracketKeyword_5()); }
-
-	'}' 
-
-{ after(grammarAccess.getAndroGameBox2DLogicAccess().getRightCurlyBracketKeyword_5()); }
+{ after(grammarAccess.getAndroGameLogicAccess().getRightCurlyBracketKeyword_5()); }
 )
 
 ;
@@ -28723,11 +28393,11 @@ rule__Box2DOptions__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getBox2DOptionsAccess().getOptionsKeyword_0()); }
+{ before(grammarAccess.getBox2DOptionsAccess().getBox2doptionsKeyword_0()); }
 
-	'options' 
+	'box2doptions' 
 
-{ after(grammarAccess.getBox2DOptionsAccess().getOptionsKeyword_0()); }
+{ after(grammarAccess.getBox2DOptionsAccess().getBox2doptionsKeyword_0()); }
 )
 
 ;
@@ -29978,6 +29648,133 @@ finally {
 
 
 
+rule__Binding__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Binding__Group__0__Impl
+	rule__Binding__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Binding__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBindingAccess().getBindKeyword_0()); }
+
+	'bind' 
+
+{ after(grammarAccess.getBindingAccess().getBindKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Binding__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Binding__Group__1__Impl
+	rule__Binding__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Binding__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBindingAccess().getBindableAssignment_1()); }
+(rule__Binding__BindableAssignment_1)
+{ after(grammarAccess.getBindingAccess().getBindableAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Binding__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Binding__Group__2__Impl
+	rule__Binding__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Binding__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBindingAccess().getToKeyword_2()); }
+
+	'to' 
+
+{ after(grammarAccess.getBindingAccess().getToKeyword_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Binding__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Binding__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Binding__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBindingAccess().getBindingTargetAssignment_3()); }
+(rule__Binding__BindingTargetAssignment_3)
+{ after(grammarAccess.getBindingAccess().getBindingTargetAssignment_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
 rule__Scene__Group_0__0
     @init {
 		int stackSize = keepStackSize();
@@ -30736,387 +30533,6 @@ finally {
 
 
 
-
-
-
-
-
-
-
-
-
-
-rule__ModifierBinding__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ModifierBinding__Group__0__Impl
-	rule__ModifierBinding__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ModifierBinding__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getModifierBindingAccess().getBindmodifierKeyword_0()); }
-
-	'bindmodifier' 
-
-{ after(grammarAccess.getModifierBindingAccess().getBindmodifierKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ModifierBinding__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ModifierBinding__Group__1__Impl
-	rule__ModifierBinding__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ModifierBinding__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getModifierBindingAccess().getModifierAssignment_1()); }
-(rule__ModifierBinding__ModifierAssignment_1)
-{ after(grammarAccess.getModifierBindingAccess().getModifierAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ModifierBinding__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ModifierBinding__Group__2__Impl
-	rule__ModifierBinding__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ModifierBinding__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getModifierBindingAccess().getToKeyword_2()); }
-
-	'to' 
-
-{ after(grammarAccess.getModifierBindingAccess().getToKeyword_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ModifierBinding__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ModifierBinding__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ModifierBinding__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getModifierBindingAccess().getGameEntityAssignment_3()); }
-(rule__ModifierBinding__GameEntityAssignment_3)
-{ after(grammarAccess.getModifierBindingAccess().getGameEntityAssignment_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-
-
-rule__Box2DBinding__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Box2DBinding__Group__0__Impl
-	rule__Box2DBinding__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Box2DBinding__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getBox2DBindingAccess().getBindbodyKeyword_0()); }
-
-	'bindbody' 
-
-{ after(grammarAccess.getBox2DBindingAccess().getBindbodyKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Box2DBinding__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Box2DBinding__Group__1__Impl
-	rule__Box2DBinding__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Box2DBinding__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getBox2DBindingAccess().getBodyAssignment_1()); }
-(rule__Box2DBinding__BodyAssignment_1)
-{ after(grammarAccess.getBox2DBindingAccess().getBodyAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Box2DBinding__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Box2DBinding__Group__2__Impl
-	rule__Box2DBinding__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Box2DBinding__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getBox2DBindingAccess().getToKeyword_2()); }
-
-	'to' 
-
-{ after(grammarAccess.getBox2DBindingAccess().getToKeyword_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Box2DBinding__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Box2DBinding__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Box2DBinding__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getBox2DBindingAccess().getGameEntityAssignment_3()); }
-(rule__Box2DBinding__GameEntityAssignment_3)
-{ after(grammarAccess.getBox2DBindingAccess().getGameEntityAssignment_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-
-
-rule__SensorBinding__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__SensorBinding__Group__0__Impl
-	rule__SensorBinding__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorBinding__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorBindingAccess().getBindsensorKeyword_0()); }
-
-	'bindsensor' 
-
-{ after(grammarAccess.getSensorBindingAccess().getBindsensorKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__SensorBinding__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__SensorBinding__Group__1__Impl
-	rule__SensorBinding__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorBinding__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorBindingAccess().getSensorTypeAssignment_1()); }
-(rule__SensorBinding__SensorTypeAssignment_1)
-{ after(grammarAccess.getSensorBindingAccess().getSensorTypeAssignment_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__SensorBinding__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__SensorBinding__Group__2__Impl
-	rule__SensorBinding__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorBinding__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorBindingAccess().getToKeyword_2()); }
-
-	'to' 
-
-{ after(grammarAccess.getSensorBindingAccess().getToKeyword_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__SensorBinding__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__SensorBinding__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorBinding__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorBindingAccess().getToAssignment_3()); }
-(rule__SensorBinding__ToAssignment_3)
-{ after(grammarAccess.getSensorBindingAccess().getToAssignment_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 
 
@@ -45227,8 +44643,8 @@ rule__AndroGameGui__GameElementsAssignment_3
     }
 :
 (
-{ before(grammarAccess.getAndroGameGuiAccess().getGameElementsGameElementParserRuleCall_3_0()); }
-	ruleGameElement{ after(grammarAccess.getAndroGameGuiAccess().getGameElementsGameElementParserRuleCall_3_0()); }
+{ before(grammarAccess.getAndroGameGuiAccess().getGameElementsGameComponentParserRuleCall_3_0()); }
+	ruleGameComponent{ after(grammarAccess.getAndroGameGuiAccess().getGameElementsGameComponentParserRuleCall_3_0()); }
 )
 
 ;
@@ -45251,14 +44667,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AndroGameLogic__LogicComponentAssignment_3
+rule__AndroGameLogic__Box2dOptionsAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroGameLogicAccess().getLogicComponentLogicComponentParserRuleCall_3_0()); }
-	ruleLogicComponent{ after(grammarAccess.getAndroGameLogicAccess().getLogicComponentLogicComponentParserRuleCall_3_0()); }
+{ before(grammarAccess.getAndroGameLogicAccess().getBox2dOptionsBox2DOptionsParserRuleCall_3_0()); }
+	ruleBox2DOptions{ after(grammarAccess.getAndroGameLogicAccess().getBox2dOptionsBox2DOptionsParserRuleCall_3_0()); }
 )
 
 ;
@@ -45266,44 +44682,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AndroGameBox2DLogic__NameAssignment_1
+rule__AndroGameLogic__LogicComponentAssignment_4
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getNameIDTerminalRuleCall_1_0()); }
-	RULE_ID{ after(grammarAccess.getAndroGameBox2DLogicAccess().getNameIDTerminalRuleCall_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__OptionsAssignment_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getOptionsBox2DOptionsParserRuleCall_3_0()); }
-	ruleBox2DOptions{ after(grammarAccess.getAndroGameBox2DLogicAccess().getOptionsBox2DOptionsParserRuleCall_3_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AndroGameBox2DLogic__Box2dComponentsAssignment_4
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsBox2DComponentParserRuleCall_4_0()); }
-	ruleBox2DComponent{ after(grammarAccess.getAndroGameBox2DLogicAccess().getBox2dComponentsBox2DComponentParserRuleCall_4_0()); }
+{ before(grammarAccess.getAndroGameLogicAccess().getLogicComponentLogicComponentParserRuleCall_4_0()); }
+	ruleLogicComponent{ after(grammarAccess.getAndroGameLogicAccess().getLogicComponentLogicComponentParserRuleCall_4_0()); }
 )
 
 ;
@@ -45639,6 +45025,40 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Binding__BindableAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBindingAccess().getBindableBindableCrossReference_1_0()); }
+(
+{ before(grammarAccess.getBindingAccess().getBindableBindableQualifiedNameParserRuleCall_1_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getBindingAccess().getBindableBindableQualifiedNameParserRuleCall_1_0_1()); }
+)
+{ after(grammarAccess.getBindingAccess().getBindableBindableCrossReference_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Binding__BindingTargetAssignment_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBindingAccess().getBindingTargetBindingTargetParserRuleCall_3_0()); }
+	ruleBindingTarget{ after(grammarAccess.getBindingAccess().getBindingTargetBindingTargetParserRuleCall_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Scene__NameAssignment_0_1
     @init {
 		int stackSize = keepStackSize();
@@ -45872,105 +45292,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ModifierBinding__ModifierAssignment_1
+rule__EntityBindingTarget__EntityAssignment
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getModifierBindingAccess().getModifierEntityModifierCrossReference_1_0()); }
+{ before(grammarAccess.getEntityBindingTargetAccess().getEntityGameEntityCrossReference_0()); }
 (
-{ before(grammarAccess.getModifierBindingAccess().getModifierEntityModifierQualifiedNameParserRuleCall_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getModifierBindingAccess().getModifierEntityModifierQualifiedNameParserRuleCall_1_0_1()); }
+{ before(grammarAccess.getEntityBindingTargetAccess().getEntityGameEntityQualifiedNameParserRuleCall_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getEntityBindingTargetAccess().getEntityGameEntityQualifiedNameParserRuleCall_0_1()); }
 )
-{ after(grammarAccess.getModifierBindingAccess().getModifierEntityModifierCrossReference_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ModifierBinding__GameEntityAssignment_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getModifierBindingAccess().getGameEntityGameEntityCrossReference_3_0()); }
-(
-{ before(grammarAccess.getModifierBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getModifierBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1()); }
-)
-{ after(grammarAccess.getModifierBindingAccess().getGameEntityGameEntityCrossReference_3_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Box2DBinding__BodyAssignment_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getBox2DBindingAccess().getBodyBodyCrossReference_1_0()); }
-(
-{ before(grammarAccess.getBox2DBindingAccess().getBodyBodyQualifiedNameParserRuleCall_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getBox2DBindingAccess().getBodyBodyQualifiedNameParserRuleCall_1_0_1()); }
-)
-{ after(grammarAccess.getBox2DBindingAccess().getBodyBodyCrossReference_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Box2DBinding__GameEntityAssignment_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityCrossReference_3_0()); }
-(
-{ before(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1()); }
-)
-{ after(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityCrossReference_3_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorBinding__SensorTypeAssignment_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorBindingAccess().getSensorTypeSensorTypeEnumRuleCall_1_0()); }
-	ruleSensorType{ after(grammarAccess.getSensorBindingAccess().getSensorTypeSensorTypeEnumRuleCall_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SensorBinding__ToAssignment_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSensorBindingAccess().getToSensorTargetEnumRuleCall_3_0()); }
-	ruleSensorTarget{ after(grammarAccess.getSensorBindingAccess().getToSensorTargetEnumRuleCall_3_0()); }
+{ after(grammarAccess.getEntityBindingTargetAccess().getEntityGameEntityCrossReference_0()); }
 )
 
 ;

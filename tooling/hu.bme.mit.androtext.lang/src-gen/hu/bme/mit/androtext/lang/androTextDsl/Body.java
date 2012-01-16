@@ -24,7 +24,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface Body extends Box2DComponent
+public interface Body extends Bindable
 {
   /**
    * Returns the value of the '<em><b>Body Type</b></em>' attribute.

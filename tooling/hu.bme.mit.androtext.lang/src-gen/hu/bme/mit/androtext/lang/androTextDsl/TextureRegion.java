@@ -24,7 +24,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface TextureRegion extends GameElement
+public interface TextureRegion extends GameComponent
 {
   /**
    * Returns the value of the '<em><b>File Name</b></em>' attribute.

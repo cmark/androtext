@@ -124,7 +124,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	
 	def dispatch interfaces(Activity activity) ''''''
 	def dispatch interfaces(BaseGameActivity activity) '''
-		«IF activity.findSensorUsage»implements IAccelerometerListener«ENDIF»
+«««		«IF activity.findSensorUsage»implements IAccelerometerListener«ENDIF»
 	'''
 	
 	def dispatch contentViewSet(Activity activity) '''

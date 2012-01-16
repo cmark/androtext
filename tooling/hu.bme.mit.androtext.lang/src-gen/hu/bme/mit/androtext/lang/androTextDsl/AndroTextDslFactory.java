@@ -1413,15 +1413,6 @@ public interface AndroTextDslFactory extends EFactory
   AndroGameLogic createAndroGameLogic();
 
   /**
-   * Returns a new object of class '<em>Andro Game Box2 DLogic</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Andro Game Box2 DLogic</em>'.
-   * @generated
-   */
-  AndroGameBox2DLogic createAndroGameBox2DLogic();
-
-  /**
    * Returns a new object of class '<em>Box2 DOptions</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1429,15 +1420,6 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   Box2DOptions createBox2DOptions();
-
-  /**
-   * Returns a new object of class '<em>Box2 DComponent</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Box2 DComponent</em>'.
-   * @generated
-   */
-  Box2DComponent createBox2DComponent();
 
   /**
    * Returns a new object of class '<em>Joint</em>'.
@@ -1521,22 +1503,31 @@ public interface AndroTextDslFactory extends EFactory
   LogicComponent createLogicComponent();
 
   /**
-   * Returns a new object of class '<em>Logic</em>'.
+   * Returns a new object of class '<em>Binding</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Logic</em>'.
+   * @return a new object of class '<em>Binding</em>'.
    * @generated
    */
-  Logic createLogic();
+  Binding createBinding();
 
   /**
-   * Returns a new object of class '<em>Game Element</em>'.
+   * Returns a new object of class '<em>Bindable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Game Element</em>'.
+   * @return a new object of class '<em>Bindable</em>'.
    * @generated
    */
-  GameElement createGameElement();
+  Bindable createBindable();
+
+  /**
+   * Returns a new object of class '<em>Game Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Game Component</em>'.
+   * @generated
+   */
+  GameComponent createGameComponent();
 
   /**
    * Returns a new object of class '<em>Scene</em>'.
@@ -1593,31 +1584,22 @@ public interface AndroTextDslFactory extends EFactory
   SimpleEntity createSimpleEntity();
 
   /**
-   * Returns a new object of class '<em>Modifier Binding</em>'.
+   * Returns a new object of class '<em>Binding Target</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Modifier Binding</em>'.
+   * @return a new object of class '<em>Binding Target</em>'.
    * @generated
    */
-  ModifierBinding createModifierBinding();
+  BindingTarget createBindingTarget();
 
   /**
-   * Returns a new object of class '<em>Box2 DBinding</em>'.
+   * Returns a new object of class '<em>Entity Binding Target</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Box2 DBinding</em>'.
+   * @return a new object of class '<em>Entity Binding Target</em>'.
    * @generated
    */
-  Box2DBinding createBox2DBinding();
-
-  /**
-   * Returns a new object of class '<em>Sensor Binding</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sensor Binding</em>'.
-   * @generated
-   */
-  SensorBinding createSensorBinding();
+  EntityBindingTarget createEntityBindingTarget();
 
   /**
    * Returns a new object of class '<em>Entity Modifier</em>'.

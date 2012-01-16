@@ -1,21 +1,19 @@
 package hu.bme.mit.androtext.gen.util
 
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
+import hu.bme.mit.androtext.lang.androTextDsl.Body
 import hu.bme.mit.androtext.lang.androTextDsl.Entity
+import hu.bme.mit.androtext.lang.androTextDsl.Font
+import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
 import hu.bme.mit.androtext.lang.androTextDsl.Property
+import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
+import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
+import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 import hu.bme.mit.androtext.lang.androTextDsl.View
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
-import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
-import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
-import hu.bme.mit.androtext.lang.androTextDsl.Font
-import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
-import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
-import hu.bme.mit.androtext.lang.androTextDsl.SensorBinding
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.SensorTarget
 
 class GeneratorExtensions {
 	
@@ -109,9 +107,25 @@ class GeneratorExtensions {
 		Entity
 	'''
 	
-	def boolean findSensorUsage(BaseGameActivity activity) {
-		for (sb : activity.scene.eResource.allContentsIterable.filter(typeof (SensorBinding))) {
-			if (sb.to == SensorTarget::GRAVITY) {
+//	def boolean findSensorUsage(BaseGameActivity activity) {
+//		for (sb : activity.scene.eResource.allContentsIterable.filter(typeof (Binding))) {
+//			if (sb.bindingTarget instanceof SensorBindingTarget) {
+//				return sb.bindingTarget.isGravity
+//			}
+//		}
+//		return false
+//	}
+	
+//	def dispatch boolean isGravity(BindingTarget target) { 
+//		return false;
+//	}
+//	def dispatch boolean isGravity(SensorBindingTarget target) { 
+//		return target.sensor == SensorTarget::GRAVITY
+//	}
+	
+	def boolean containsBox2DObject(AndroGameLogic logic) {
+		for (comp : logic.logicComponent) {
+			if (comp instanceof Body) {
 				return true
 			}
 		}

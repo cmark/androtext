@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FixtureImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FixtureImpl#getDensity <em>Density</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FixtureImpl#getFriction <em>Friction</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.FixtureImpl#getRestitution <em>Restitution</em>}</li>
@@ -30,8 +31,28 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class FixtureImpl extends Box2DComponentImpl implements Fixture
+public class FixtureImpl extends LogicComponentImpl implements Fixture
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDensity() <em>Density</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -118,6 +139,29 @@ public class FixtureImpl extends Box2DComponentImpl implements Fixture
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.FIXTURE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public float getDensity()
   {
     return density;
@@ -192,6 +236,8 @@ public class FixtureImpl extends Box2DComponentImpl implements Fixture
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.FIXTURE__NAME:
+        return getName();
       case AndroTextDslPackage.FIXTURE__DENSITY:
         return getDensity();
       case AndroTextDslPackage.FIXTURE__FRICTION:
@@ -212,6 +258,9 @@ public class FixtureImpl extends Box2DComponentImpl implements Fixture
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.FIXTURE__NAME:
+        setName((String)newValue);
+        return;
       case AndroTextDslPackage.FIXTURE__DENSITY:
         setDensity((Float)newValue);
         return;
@@ -235,6 +284,9 @@ public class FixtureImpl extends Box2DComponentImpl implements Fixture
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.FIXTURE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroTextDslPackage.FIXTURE__DENSITY:
         setDensity(DENSITY_EDEFAULT);
         return;
@@ -258,6 +310,8 @@ public class FixtureImpl extends Box2DComponentImpl implements Fixture
   {
     switch (featureID)
     {
+      case AndroTextDslPackage.FIXTURE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroTextDslPackage.FIXTURE__DENSITY:
         return density != DENSITY_EDEFAULT;
       case AndroTextDslPackage.FIXTURE__FRICTION:
@@ -279,7 +333,9 @@ public class FixtureImpl extends Box2DComponentImpl implements Fixture
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (density: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", density: ");
     result.append(density);
     result.append(", friction: ");
     result.append(friction);

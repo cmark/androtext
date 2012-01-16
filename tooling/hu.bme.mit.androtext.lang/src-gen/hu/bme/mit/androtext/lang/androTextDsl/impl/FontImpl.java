@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class FontImpl extends GameElementImpl implements Font
+public class FontImpl extends GameComponentImpl implements Font
 {
   /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.

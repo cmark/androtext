@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BodyImpl extends Box2DComponentImpl implements Body
+public class BodyImpl extends BindableImpl implements Body
 {
   /**
    * The default value of the '{@link #getBodyType() <em>Body Type</em>}' attribute.

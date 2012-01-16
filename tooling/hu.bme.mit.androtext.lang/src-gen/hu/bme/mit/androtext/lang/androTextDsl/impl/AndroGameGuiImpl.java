@@ -8,7 +8,7 @@ package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
-import hu.bme.mit.androtext.lang.androTextDsl.GameElement;
+import hu.bme.mit.androtext.lang.androTextDsl.GameComponent;
 
 import java.util.Collection;
 
@@ -45,7 +45,7 @@ public class AndroGameGuiImpl extends AndroGameComponentImpl implements AndroGam
    * @generated
    * @ordered
    */
-  protected EList<GameElement> gameElements;
+  protected EList<GameComponent> gameElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,11 +73,11 @@ public class AndroGameGuiImpl extends AndroGameComponentImpl implements AndroGam
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<GameElement> getGameElements()
+  public EList<GameComponent> getGameElements()
   {
     if (gameElements == null)
     {
-      gameElements = new EObjectContainmentEList<GameElement>(GameElement.class, this, AndroTextDslPackage.ANDRO_GAME_GUI__GAME_ELEMENTS);
+      gameElements = new EObjectContainmentEList<GameComponent>(GameComponent.class, this, AndroTextDslPackage.ANDRO_GAME_GUI__GAME_ELEMENTS);
     }
     return gameElements;
   }
@@ -127,7 +127,7 @@ public class AndroGameGuiImpl extends AndroGameComponentImpl implements AndroGam
     {
       case AndroTextDslPackage.ANDRO_GAME_GUI__GAME_ELEMENTS:
         getGameElements().clear();
-        getGameElements().addAll((Collection<? extends GameElement>)newValue);
+        getGameElements().addAll((Collection<? extends GameComponent>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

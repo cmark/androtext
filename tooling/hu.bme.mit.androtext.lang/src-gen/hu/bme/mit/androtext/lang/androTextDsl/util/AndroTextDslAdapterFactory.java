@@ -849,19 +849,9 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createAndroGameLogicAdapter();
       }
       @Override
-      public Adapter caseAndroGameBox2DLogic(AndroGameBox2DLogic object)
-      {
-        return createAndroGameBox2DLogicAdapter();
-      }
-      @Override
       public Adapter caseBox2DOptions(Box2DOptions object)
       {
         return createBox2DOptionsAdapter();
-      }
-      @Override
-      public Adapter caseBox2DComponent(Box2DComponent object)
-      {
-        return createBox2DComponentAdapter();
       }
       @Override
       public Adapter caseJoint(Joint object)
@@ -909,14 +899,19 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createLogicComponentAdapter();
       }
       @Override
-      public Adapter caseLogic(Logic object)
+      public Adapter caseBinding(Binding object)
       {
-        return createLogicAdapter();
+        return createBindingAdapter();
       }
       @Override
-      public Adapter caseGameElement(GameElement object)
+      public Adapter caseBindable(Bindable object)
       {
-        return createGameElementAdapter();
+        return createBindableAdapter();
+      }
+      @Override
+      public Adapter caseGameComponent(GameComponent object)
+      {
+        return createGameComponentAdapter();
       }
       @Override
       public Adapter caseScene(Scene object)
@@ -949,19 +944,14 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createSimpleEntityAdapter();
       }
       @Override
-      public Adapter caseModifierBinding(ModifierBinding object)
+      public Adapter caseBindingTarget(BindingTarget object)
       {
-        return createModifierBindingAdapter();
+        return createBindingTargetAdapter();
       }
       @Override
-      public Adapter caseBox2DBinding(Box2DBinding object)
+      public Adapter caseEntityBindingTarget(EntityBindingTarget object)
       {
-        return createBox2DBindingAdapter();
-      }
-      @Override
-      public Adapter caseSensorBinding(SensorBinding object)
-      {
-        return createSensorBindingAdapter();
+        return createEntityBindingTargetAdapter();
       }
       @Override
       public Adapter caseEntityModifier(EntityModifier object)
@@ -3441,21 +3431,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic <em>Andro Game Box2 DLogic</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic
-   * @generated
-   */
-  public Adapter createAndroGameBox2DLogicAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions <em>Box2 DOptions</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -3466,21 +3441,6 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBox2DOptionsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent <em>Box2 DComponent</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DComponent
-   * @generated
-   */
-  public Adapter createBox2DComponentAdapter()
   {
     return null;
   }
@@ -3621,31 +3581,46 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Logic <em>Logic</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Binding <em>Binding</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Logic
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Binding
    * @generated
    */
-  public Adapter createLogicAdapter()
+  public Adapter createBindingAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameElement <em>Game Element</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Bindable <em>Bindable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.GameElement
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Bindable
    * @generated
    */
-  public Adapter createGameElementAdapter()
+  public Adapter createBindableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.GameComponent <em>Game Component</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.GameComponent
+   * @generated
+   */
+  public Adapter createGameComponentAdapter()
   {
     return null;
   }
@@ -3741,46 +3716,31 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding <em>Modifier Binding</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.BindingTarget <em>Binding Target</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding
+   * @see hu.bme.mit.androtext.lang.androTextDsl.BindingTarget
    * @generated
    */
-  public Adapter createModifierBindingAdapter()
+  public Adapter createBindingTargetAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding <em>Box2 DBinding</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.EntityBindingTarget <em>Entity Binding Target</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding
+   * @see hu.bme.mit.androtext.lang.androTextDsl.EntityBindingTarget
    * @generated
    */
-  public Adapter createBox2DBindingAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.SensorBinding <em>Sensor Binding</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.androtext.lang.androTextDsl.SensorBinding
-   * @generated
-   */
-  public Adapter createSensorBindingAdapter()
+  public Adapter createEntityBindingTargetAdapter()
   {
     return null;
   }

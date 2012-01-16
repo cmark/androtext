@@ -14,7 +14,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.AlignParentTopAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.AlignTopAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.AlphaModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameRoot;
@@ -31,11 +30,11 @@ import hu.bme.mit.androtext.lang.androTextDsl.AutoTextAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.BackgroundAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.BelowAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.Binding;
 import hu.bme.mit.androtext.lang.androTextDsl.BitmapDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink;
-import hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding;
 import hu.bme.mit.androtext.lang.androTextDsl.Box2DOptions;
 import hu.bme.mit.androtext.lang.androTextDsl.BoxBody;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
@@ -71,6 +70,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.EditText;
 import hu.bme.mit.androtext.lang.androTextDsl.EditTextPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.EditableAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
+import hu.bme.mit.androtext.lang.androTextDsl.EntityBindingTarget;
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.EntriesAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.ExpandableListView;
@@ -115,7 +115,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.MarginLeftAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.MarginRightAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.MarginTopAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
-import hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding;
 import hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.MoveModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.NumColumnsAttribute;
@@ -143,7 +142,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.RotationByModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.RotationModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.ScaleModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.Scene;
-import hu.bme.mit.androtext.lang.androTextDsl.SensorBinding;
 import hu.bme.mit.androtext.lang.androTextDsl.SequenceEntityModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.ShrinkColumnsAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity;
@@ -292,6 +290,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				else break;
 			case AndroTextDslPackage.ALPHA_MODIFIER:
 				if(context == grammarAccess.getAlphaModifierRule() ||
+				   context == grammarAccess.getBindableRule() ||
 				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule()) {
 					sequence_AlphaModifier(context, (AlphaModifier) semanticObject); 
@@ -302,13 +301,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				if(context == grammarAccess.getAndroDataModelRootRule() ||
 				   context == grammarAccess.getModelRootRule()) {
 					sequence_AndroDataModelRoot(context, (AndroDataModelRoot) semanticObject); 
-					return; 
-				}
-				else break;
-			case AndroTextDslPackage.ANDRO_GAME_BOX2_DLOGIC:
-				if(context == grammarAccess.getAndroGameBox2DLogicRule() ||
-				   context == grammarAccess.getAndroGameComponentRule()) {
-					sequence_AndroGameBox2DLogic(context, (AndroGameBox2DLogic) semanticObject); 
 					return; 
 				}
 				else break;
@@ -414,6 +406,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.BINDING:
+				if(context == grammarAccess.getBindingRule() ||
+				   context == grammarAccess.getLogicComponentRule()) {
+					sequence_Binding(context, (Binding) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.BITMAP_DRAWABLE_RESOURCE:
 				if(context == grammarAccess.getBitmapDrawableResourceRule() ||
 				   context == grammarAccess.getDrawableResourceRule() ||
@@ -444,14 +443,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
-			case AndroTextDslPackage.BOX2_DBINDING:
-				if(context == grammarAccess.getBox2DBindingRule() ||
-				   context == grammarAccess.getLogicRule() ||
-				   context == grammarAccess.getLogicComponentRule()) {
-					sequence_Box2DBinding(context, (Box2DBinding) semanticObject); 
-					return; 
-				}
-				else break;
 			case AndroTextDslPackage.BOX2_DOPTIONS:
 				if(context == grammarAccess.getBox2DOptionsRule()) {
 					sequence_Box2DOptions(context, (Box2DOptions) semanticObject); 
@@ -459,9 +450,10 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.BOX_BODY:
-				if(context == grammarAccess.getBodyRule() ||
-				   context == grammarAccess.getBox2DComponentRule() ||
-				   context == grammarAccess.getBoxBodyRule()) {
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getBodyRule() ||
+				   context == grammarAccess.getBoxBodyRule() ||
+				   context == grammarAccess.getLogicComponentRule()) {
 					sequence_BoxBody(context, (BoxBody) semanticObject); 
 					return; 
 				}
@@ -534,9 +526,10 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.CIRCLE_BODY:
-				if(context == grammarAccess.getBodyRule() ||
-				   context == grammarAccess.getBox2DComponentRule() ||
-				   context == grammarAccess.getCircleBodyRule()) {
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getBodyRule() ||
+				   context == grammarAccess.getCircleBodyRule() ||
+				   context == grammarAccess.getLogicComponentRule()) {
 					sequence_CircleBody(context, (CircleBody) semanticObject); 
 					return; 
 				}
@@ -560,7 +553,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.COLOR_MODIFIER:
-				if(context == grammarAccess.getColorModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getColorModifierRule() ||
 				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule()) {
 					sequence_ColorModifier(context, (ColorModifier) semanticObject); 
@@ -653,9 +647,9 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.DISTANCE_JOINT:
-				if(context == grammarAccess.getBox2DComponentRule() ||
-				   context == grammarAccess.getDistanceJointRule() ||
-				   context == grammarAccess.getJointRule()) {
+				if(context == grammarAccess.getDistanceJointRule() ||
+				   context == grammarAccess.getJointRule() ||
+				   context == grammarAccess.getLogicComponentRule()) {
 					sequence_DistanceJoint(context, (DistanceJoint) semanticObject); 
 					return; 
 				}
@@ -692,6 +686,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 			case AndroTextDslPackage.ENTITY:
 				if(context == grammarAccess.getEntityRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.ENTITY_BINDING_TARGET:
+				if(context == grammarAccess.getBindingTargetRule() ||
+				   context == grammarAccess.getEntityBindingTargetRule()) {
+					sequence_EntityBindingTarget(context, (EntityBindingTarget) semanticObject); 
 					return; 
 				}
 				else break;
@@ -738,15 +739,15 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.FIXTURE:
-				if(context == grammarAccess.getBox2DComponentRule() ||
-				   context == grammarAccess.getFixtureRule()) {
+				if(context == grammarAccess.getFixtureRule() ||
+				   context == grammarAccess.getLogicComponentRule()) {
 					sequence_Fixture(context, (Fixture) semanticObject); 
 					return; 
 				}
 				else break;
 			case AndroTextDslPackage.FONT:
 				if(context == grammarAccess.getFontRule() ||
-				   context == grammarAccess.getGameElementRule()) {
+				   context == grammarAccess.getGameComponentRule()) {
 					sequence_Font(context, (Font) semanticObject); 
 					return; 
 				}
@@ -914,9 +915,10 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.LINE_BODY:
-				if(context == grammarAccess.getBodyRule() ||
-				   context == grammarAccess.getBox2DComponentRule() ||
-				   context == grammarAccess.getLineBodyRule()) {
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getBodyRule() ||
+				   context == grammarAccess.getLineBodyRule() ||
+				   context == grammarAccess.getLogicComponentRule()) {
 					sequence_LineBody(context, (LineBody) semanticObject); 
 					return; 
 				}
@@ -959,7 +961,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.LOOP_ENTITY_MODIFIER:
-				if(context == grammarAccess.getEntityModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getLoopEntityModifierRule()) {
 					sequence_LoopEntityModifier(context, (LoopEntityModifier) semanticObject); 
@@ -991,23 +994,16 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.MENU_SCENE:
-				if(context == grammarAccess.getGameElementRule() ||
+				if(context == grammarAccess.getGameComponentRule() ||
 				   context == grammarAccess.getMenuSceneRule() ||
 				   context == grammarAccess.getSceneRule()) {
 					sequence_MenuScene(context, (MenuScene) semanticObject); 
 					return; 
 				}
 				else break;
-			case AndroTextDslPackage.MODIFIER_BINDING:
-				if(context == grammarAccess.getLogicRule() ||
-				   context == grammarAccess.getLogicComponentRule() ||
-				   context == grammarAccess.getModifierBindingRule()) {
-					sequence_ModifierBinding(context, (ModifierBinding) semanticObject); 
-					return; 
-				}
-				else break;
 			case AndroTextDslPackage.MOVE_BY_MODIFIER:
-				if(context == grammarAccess.getEntityModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getMoveByModifierRule()) {
 					sequence_MoveByModifier(context, (MoveByModifier) semanticObject); 
@@ -1015,7 +1011,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.MOVE_MODIFIER:
-				if(context == grammarAccess.getEntityModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getMoveModifierRule()) {
 					sequence_MoveModifier(context, (MoveModifier) semanticObject); 
@@ -1150,8 +1147,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.REVOLUTE_JOINT:
-				if(context == grammarAccess.getBox2DComponentRule() ||
-				   context == grammarAccess.getJointRule() ||
+				if(context == grammarAccess.getJointRule() ||
+				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getRevoluteJointRule()) {
 					sequence_RevoluteJoint(context, (RevoluteJoint) semanticObject); 
 					return; 
@@ -1165,7 +1162,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.ROTATION_BY_MODIFIER:
-				if(context == grammarAccess.getEntityModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getRotationByModifierRule()) {
 					sequence_RotationByModifier(context, (RotationByModifier) semanticObject); 
@@ -1173,7 +1171,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.ROTATION_MODIFIER:
-				if(context == grammarAccess.getEntityModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getRotationModifierRule()) {
 					sequence_RotationModifier(context, (RotationModifier) semanticObject); 
@@ -1181,7 +1180,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.SCALE_MODIFIER:
-				if(context == grammarAccess.getEntityModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getScaleModifierRule()) {
 					sequence_ScaleModifier(context, (ScaleModifier) semanticObject); 
@@ -1189,22 +1189,15 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.SCENE:
-				if(context == grammarAccess.getGameElementRule() ||
+				if(context == grammarAccess.getGameComponentRule() ||
 				   context == grammarAccess.getSceneRule()) {
 					sequence_Scene(context, (Scene) semanticObject); 
 					return; 
 				}
 				else break;
-			case AndroTextDslPackage.SENSOR_BINDING:
-				if(context == grammarAccess.getLogicRule() ||
-				   context == grammarAccess.getLogicComponentRule() ||
-				   context == grammarAccess.getSensorBindingRule()) {
-					sequence_SensorBinding(context, (SensorBinding) semanticObject); 
-					return; 
-				}
-				else break;
 			case AndroTextDslPackage.SEQUENCE_ENTITY_MODIFIER:
-				if(context == grammarAccess.getEntityModifierRule() ||
+				if(context == grammarAccess.getBindableRule() ||
+				   context == grammarAccess.getEntityModifierRule() ||
 				   context == grammarAccess.getLogicComponentRule() ||
 				   context == grammarAccess.getSequenceEntityModifierRule()) {
 					sequence_SequenceEntityModifier(context, (SequenceEntityModifier) semanticObject); 
@@ -1388,7 +1381,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 				}
 				else break;
 			case AndroTextDslPackage.TEXTURE_REGION:
-				if(context == grammarAccess.getGameElementRule() ||
+				if(context == grammarAccess.getGameComponentRule() ||
 				   context == grammarAccess.getTextureRegionRule()) {
 					sequence_TextureRegion(context, (TextureRegion) semanticObject); 
 					return; 
@@ -1642,8 +1635,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_AlphaModifier(EObject context, AlphaModifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getAlphaModifier_Duration()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getAlphaModifier_Duration()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getAlphaModifier_From()) == ValueTransient.YES)
@@ -1672,16 +1665,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID options=Box2DOptions? box2dComponents+=Box2DComponent*)
-	 */
-	protected void sequence_AndroGameBox2DLogic(EObject context, AndroGameBox2DLogic semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID gameElements+=GameElement*)
+	 *     (name=ID gameElements+=GameComponent*)
 	 */
 	protected void sequence_AndroGameGui(EObject context, AndroGameGui semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1690,7 +1674,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID logicComponent+=LogicComponent*)
+	 *     (name=ID box2dOptions=Box2DOptions? logicComponent+=LogicComponent*)
 	 */
 	protected void sequence_AndroGameLogic(EObject context, AndroGameLogic semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1851,6 +1835,25 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     (bindable=[Bindable|QualifiedName] bindingTarget=BindingTarget)
+	 */
+	protected void sequence_Binding(EObject context, Binding semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBinding_Bindable()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBinding_Bindable()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBinding_BindingTarget()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBinding_BindingTarget()));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBindingAccess().getBindableBindableQualifiedNameParserRuleCall_1_0_1(), semanticObject.getBindable());
+		feeder.accept(grammarAccess.getBindingAccess().getBindingTargetBindingTargetParserRuleCall_3_0(), semanticObject.getBindingTarget());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID filename=ID)
 	 */
 	protected void sequence_BitmapDrawableResource(EObject context, BitmapDrawableResource semanticObject) {
@@ -1914,25 +1917,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (body=[Body|QualifiedName] gameEntity=[GameEntity|QualifiedName])
-	 */
-	protected void sequence_Box2DBinding(EObject context, Box2DBinding semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DBinding_Body()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DBinding_Body()));
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DBinding_GameEntity()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DBinding_GameEntity()));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getBox2DBindingAccess().getBodyBodyQualifiedNameParserRuleCall_1_0_1(), semanticObject.getBody());
-		feeder.accept(grammarAccess.getBox2DBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1(), semanticObject.getGameEntity());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     gravity=FLOAT
 	 */
 	protected void sequence_Box2DOptions(EObject context, Box2DOptions semanticObject) {
@@ -1953,8 +1937,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_BoxBody(EObject context, BoxBody semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_BodyType()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_BodyType()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_Fixture()) == ValueTransient.YES)
@@ -2133,8 +2117,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_CircleBody(EObject context, CircleBody semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_BodyType()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_BodyType()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_Fixture()) == ValueTransient.YES)
@@ -2180,8 +2164,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_ColorModifier(EObject context, ColorModifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getColorModifier_Duration()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getColorModifier_Duration()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getColorModifier_From()) == ValueTransient.YES)
@@ -2387,8 +2371,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_DistanceJoint(EObject context, DistanceJoint semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_First()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_First()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_Second()) == ValueTransient.YES)
@@ -2498,6 +2482,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     entity=[GameEntity|QualifiedName]
+	 */
+	protected void sequence_EntityBindingTarget(EObject context, EntityBindingTarget semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityBindingTarget_Entity()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityBindingTarget_Entity()));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEntityBindingTargetAccess().getEntityGameEntityQualifiedNameParserRuleCall_0_1(), semanticObject.getEntity());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     type=[Entity|QualifiedName]
 	 */
 	protected void sequence_EntityTypeRef(EObject context, EntityTypeRef semanticObject) {
@@ -2600,8 +2600,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_Fixture(EObject context, Fixture semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getFixture_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getFixture_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getFixture_Density()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getFixture_Density()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getFixture_Friction()) == ValueTransient.YES)
@@ -2974,8 +2974,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_LineBody(EObject context, LineBody semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_BodyType()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_BodyType()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBody_Fixture()) == ValueTransient.YES)
@@ -3166,31 +3166,12 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (modifier=[EntityModifier|QualifiedName] gameEntity=[GameEntity|QualifiedName])
-	 */
-	protected void sequence_ModifierBinding(EObject context, ModifierBinding semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getModifierBinding_Modifier()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getModifierBinding_Modifier()));
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getModifierBinding_GameEntity()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getModifierBinding_GameEntity()));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getModifierBindingAccess().getModifierEntityModifierQualifiedNameParserRuleCall_1_0_1(), semanticObject.getModifier());
-		feeder.accept(grammarAccess.getModifierBindingAccess().getGameEntityGameEntityQualifiedNameParserRuleCall_3_0_1(), semanticObject.getGameEntity());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (name=ID duration=FLOAT by=ByDouble)
 	 */
 	protected void sequence_MoveByModifier(EObject context, MoveByModifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getMoveByModifier_Duration()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getMoveByModifier_Duration()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getMoveByModifier_By()) == ValueTransient.YES)
@@ -3211,8 +3192,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_MoveModifier(EObject context, MoveModifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getMoveModifier_Duration()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getMoveModifier_Duration()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getMoveModifier_From()) == ValueTransient.YES)
@@ -3465,8 +3446,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_RevoluteJoint(EObject context, RevoluteJoint semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBox2DComponent_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_First()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_First()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getJoint_Second()) == ValueTransient.YES)
@@ -3509,8 +3490,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_RotationByModifier(EObject context, RotationByModifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getRotationByModifier_Duration()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getRotationByModifier_Duration()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getRotationByModifier_By()) == ValueTransient.YES)
@@ -3531,8 +3512,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_RotationModifier(EObject context, RotationModifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getRotationModifier_Duration()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getRotationModifier_Duration()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getRotationModifier_From()) == ValueTransient.YES)
@@ -3556,8 +3537,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_ScaleModifier(EObject context, ScaleModifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getEntityModifier_Name()));
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getBindable_Name()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getScaleModifier_Duration()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getScaleModifier_Duration()));
 			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getScaleModifier_From()) == ValueTransient.YES)
@@ -3581,25 +3562,6 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 */
 	protected void sequence_Scene(EObject context, Scene semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (sensorType=SensorType to=SensorTarget)
-	 */
-	protected void sequence_SensorBinding(EObject context, SensorBinding semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getSensorBinding_SensorType()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getSensorBinding_SensorType()));
-			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getSensorBinding_To()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getSensorBinding_To()));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSensorBindingAccess().getSensorTypeSensorTypeEnumRuleCall_1_0(), semanticObject.getSensorType());
-		feeder.accept(grammarAccess.getSensorBindingAccess().getToSensorTargetEnumRuleCall_3_0(), semanticObject.getTo());
-		feeder.finish();
 	}
 	
 	

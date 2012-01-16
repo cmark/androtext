@@ -15,6 +15,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getDensity <em>Density</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getFriction <em>Friction</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getRestitution <em>Restitution</em>}</li>
@@ -25,8 +26,34 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  * @model
  * @generated
  */
-public interface Fixture extends Box2DComponent
+public interface Fixture extends LogicComponent
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getFixture_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.Fixture#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Density</b></em>' attribute.
    * <!-- begin-user-doc -->

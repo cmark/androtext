@@ -3484,11 +3484,11 @@
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Keyword" value="camera"/>
         <elements xsi:type="xtext:Assignment" feature="size" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.226"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="orientation"/>
         <elements xsi:type="xtext:Assignment" feature="orientation" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.233"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.229"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="scene"/>
         <elements xsi:type="xtext:Assignment" feature="scene" operator="=">
@@ -3524,7 +3524,6 @@
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.173"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.174"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.175"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="AndroGameGui">
@@ -3538,7 +3537,7 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="gameElements" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.189"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.188"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
@@ -3553,27 +3552,11 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="box2dOptions" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.175"/>
+        </elements>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="logicComponent" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.187"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="}"/>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="AndroGameBox2DLogic">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//AndroGameBox2DLogic"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="box2d"/>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Assignment" cardinality="?" feature="options" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.176"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="*" feature="box2dComponents" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.177"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.185"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
@@ -3583,7 +3566,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Box2DOptions"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="options"/>
+        <elements xsi:type="xtext:Keyword" value="box2doptions"/>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Keyword" value="gravity"/>
         <elements xsi:type="xtext:Assignment" feature="gravity" operator="=">
@@ -3592,23 +3575,13 @@
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="Box2DComponent">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Box2DComponent"/>
-      </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.181"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.178"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.185"/>
-      </alternatives>
-    </rules>
     <rules xsi:type="xtext:ParserRule" name="Joint">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Joint"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.180"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.179"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.178"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.177"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="RevoluteJoint">
@@ -3674,9 +3647,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Body"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.184"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.183"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.182"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.181"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.180"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LineBody">
@@ -3689,7 +3662,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="bodyType" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.186"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.184"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="fixture"/>
         <elements xsi:type="xtext:Assignment" feature="fixture" operator="=">
@@ -3712,7 +3685,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="bodyType" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.186"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.184"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="fixture"/>
         <elements xsi:type="xtext:Assignment" feature="fixture" operator="=">
@@ -3735,7 +3708,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="bodyType" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.186"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.184"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="fixture"/>
         <elements xsi:type="xtext:Assignment" feature="fixture" operator="=">
@@ -3795,28 +3768,49 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//LogicComponent"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.188"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.201"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.186"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.187"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.176"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.183"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="Logic">
+    <rules xsi:type="xtext:ParserRule" name="Binding">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Logic"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Binding"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="bind"/>
+        <elements xsi:type="xtext:Assignment" feature="bindable" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Bindable"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="to"/>
+        <elements xsi:type="xtext:Assignment" feature="bindingTarget" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.195"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Bindable">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Bindable"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.196"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.197"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.198"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.179"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="GameElement">
+    <rules xsi:type="xtext:ParserRule" name="GameComponent">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//GameElement"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//GameComponent"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.190"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.227"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.229"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.189"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.223"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.225"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Scene">
@@ -3830,15 +3824,15 @@
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </elements>
           <elements xsi:type="xtext:Assignment" cardinality="?" feature="gameBackground" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.192"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.191"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value="{"/>
           <elements xsi:type="xtext:Assignment" cardinality="*" feature="entities" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.194"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.193"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value="}"/>
         </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.191"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.190"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="MenuScene">
@@ -3851,11 +3845,11 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="gameBackground" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.192"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.191"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" cardinality="+" feature="menuItems" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.193"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.192"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
@@ -3868,7 +3862,7 @@
         <elements xsi:type="xtext:Keyword" value="background"/>
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Assignment" feature="color" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="textureRegion" operator="=">
             <terminal xsi:type="xtext:CrossReference">
@@ -3907,12 +3901,12 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//GameEntity"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.195"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.194"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.215"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.216"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.217"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.218"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.219"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.221"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.223"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="SimpleEntity">
@@ -3925,114 +3919,38 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="position" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.225"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.221"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="size" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.226"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="color" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="children" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.194"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.193"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="ModifierBinding">
+    <rules xsi:type="xtext:ParserRule" name="BindingTarget">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//ModifierBinding"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//BindingTarget"/>
       </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="bindmodifier"/>
-        <elements xsi:type="xtext:Assignment" feature="modifier" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//EntityModifier"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
-          </terminal>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="to"/>
-        <elements xsi:type="xtext:Assignment" feature="gameEntity" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//GameEntity"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
-          </terminal>
-        </elements>
-      </alternatives>
+      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.196"/>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="Box2DBinding">
+    <rules xsi:type="xtext:ParserRule" name="EntityBindingTarget">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Box2DBinding"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//EntityBindingTarget"/>
       </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="bindbody"/>
-        <elements xsi:type="xtext:Assignment" feature="body" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//Body"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
-          </terminal>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="to"/>
-        <elements xsi:type="xtext:Assignment" feature="gameEntity" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//GameEntity"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
-          </terminal>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="SensorBinding">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//SensorBinding"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="bindsensor"/>
-        <elements xsi:type="xtext:Assignment" feature="sensorType" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.200"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="to"/>
-        <elements xsi:type="xtext:Assignment" feature="to" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.199"/>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:EnumRule" name="SensorTarget">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//SensorTarget"/>
-      </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//SensorTarget/gravity"/>
-          <literal value="gravity"/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//SensorTarget/entity"/>
-          <literal value="entity"/>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:EnumRule" name="SensorType">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//SensorType"/>
-      </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//SensorType/accelerometer"/>
-          <literal value="accelerometer"/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//SensorType/orientation"/>
-          <literal value="orientation"/>
-        </elements>
+      <alternatives xsi:type="xtext:Assignment" feature="entity" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//GameEntity"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+        </terminal>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="EntityModifier">
@@ -4040,15 +3958,15 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bme.hu/mit/androtext/lang/AndroTextDsl#//EntityModifier"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.200"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.201"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.202"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.203"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.204"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.205"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.206"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.207"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.208"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.209"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.210"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.203"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.202"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.199"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.198"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="SequenceEntityModifier">
@@ -4130,10 +4048,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="from" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.214"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.210"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="to" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.213"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.209"/>
         </elements>
       </alternatives>
     </rules>
@@ -4150,7 +4068,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="by" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.217"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.213"/>
         </elements>
       </alternatives>
     </rules>
@@ -4167,10 +4085,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="from" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.216"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.212"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="to" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.215"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.211"/>
         </elements>
       </alternatives>
     </rules>
@@ -4187,10 +4105,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="from" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.216"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.212"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="to" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.215"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.211"/>
         </elements>
       </alternatives>
     </rules>
@@ -4207,7 +4125,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="by" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.218"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.214"/>
         </elements>
       </alternatives>
     </rules>
@@ -4224,10 +4142,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="from" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.216"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.212"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="to" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.215"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.211"/>
         </elements>
       </alternatives>
     </rules>
@@ -4244,10 +4162,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.168"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="from" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.212"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.208"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="to" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.211"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.207"/>
         </elements>
       </alternatives>
     </rules>
@@ -4386,13 +4304,13 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="from" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.214"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.210"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="to" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.213"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.209"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="color" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="lineWidth"/>
@@ -4417,10 +4335,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="position" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.225"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.221"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="color" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="font" operator="=">
           <terminal xsi:type="xtext:CrossReference">
@@ -4431,7 +4349,7 @@
           </terminal>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="halign" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.231"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.227"/>
         </elements>
       </alternatives>
     </rules>
@@ -4445,13 +4363,13 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="position" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.225"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.221"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="size" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.226"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="color" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
         </elements>
       </alternatives>
     </rules>
@@ -4465,13 +4383,13 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="position" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.225"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.221"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="size" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.226"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="color" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="textureRegion" operator="=">
           <terminal xsi:type="xtext:CrossReference">
@@ -4493,13 +4411,13 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="position" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.225"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.221"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="size" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.226"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.222"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="color" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="textureRegion" operator="=">
           <terminal xsi:type="xtext:CrossReference">
@@ -4537,7 +4455,7 @@
             </elements>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="constantColor" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.230"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.226"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
@@ -4551,10 +4469,10 @@
         <elements xsi:type="xtext:Keyword" value="pos"/>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="x" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.234"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.230"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="y" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.234"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.230"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>
@@ -4567,10 +4485,10 @@
         <elements xsi:type="xtext:Keyword" value="size"/>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="w" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.234"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.230"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="h" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.234"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.230"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>
@@ -4588,7 +4506,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="tiled" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.228"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
         </elements>
       </alternatives>
     </rules>
@@ -4618,13 +4536,13 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.232"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.228"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="size" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="color" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.224"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.220"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="antialias" operator="?=">
           <terminal xsi:type="xtext:Keyword" value="antialias"/>

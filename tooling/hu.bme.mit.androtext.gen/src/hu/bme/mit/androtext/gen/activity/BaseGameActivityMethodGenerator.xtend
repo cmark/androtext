@@ -2,18 +2,27 @@ package hu.bme.mit.androtext.gen.activity
 
 import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
+import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
 import hu.bme.mit.androtext.lang.androTextDsl.AnimatedSprite
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
+import hu.bme.mit.androtext.lang.androTextDsl.Bindable
+import hu.bme.mit.androtext.lang.androTextDsl.Binding
+import hu.bme.mit.androtext.lang.androTextDsl.BindingTarget
+import hu.bme.mit.androtext.lang.androTextDsl.Body
+import hu.bme.mit.androtext.lang.androTextDsl.BoxBody
+import hu.bme.mit.androtext.lang.androTextDsl.CircleBody
 import hu.bme.mit.androtext.lang.androTextDsl.Color
+import hu.bme.mit.androtext.lang.androTextDsl.EntityBindingTarget
 import hu.bme.mit.androtext.lang.androTextDsl.EntityModifier
+import hu.bme.mit.androtext.lang.androTextDsl.Fixture
 import hu.bme.mit.androtext.lang.androTextDsl.Font
 import hu.bme.mit.androtext.lang.androTextDsl.FromDouble
 import hu.bme.mit.androtext.lang.androTextDsl.GameBackground
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
+import hu.bme.mit.androtext.lang.androTextDsl.Joint
 import hu.bme.mit.androtext.lang.androTextDsl.Line
-import hu.bme.mit.androtext.lang.androTextDsl.Logic
+import hu.bme.mit.androtext.lang.androTextDsl.LineBody
 import hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier
-import hu.bme.mit.androtext.lang.androTextDsl.ModifierBinding
 import hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier
 import hu.bme.mit.androtext.lang.androTextDsl.MoveModifier
 import hu.bme.mit.androtext.lang.androTextDsl.Position
@@ -30,21 +39,13 @@ import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 import hu.bme.mit.androtext.lang.androTextDsl.ToDouble
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGameBox2DLogic
-import hu.bme.mit.androtext.lang.androTextDsl.Fixture
-import hu.bme.mit.androtext.lang.androTextDsl.Joint
-import hu.bme.mit.androtext.lang.androTextDsl.Body
-import hu.bme.mit.androtext.lang.androTextDsl.BoxBody
-import hu.bme.mit.androtext.lang.androTextDsl.CircleBody
-import hu.bme.mit.androtext.lang.androTextDsl.LineBody
-import hu.bme.mit.androtext.lang.androTextDsl.Box2DBinding
 
 class BaseGameActivityMethodGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
 	def methods(BaseGameActivity activity) '''
-		«val boolean isSensorNeeded = activity.findSensorUsage»
+«««		«val boolean isSensorNeeded = activity.findSensorUsage»
 		@Override
 		public Engine onLoadEngine() {
 			«activity.loadEngine»
@@ -77,58 +78,66 @@ class BaseGameActivityMethodGenerator {
 			«activity.scene.initializeBox2D»
 		}
 		
-		@Override
-		public void onResumeGame() {
-			super.onResumeGame();
-			«IF isSensorNeeded»
-			this.enableAccelerometerSensor(this);
-			«ENDIF»
-		}
-		
-		@Override
-		public void onPauseGame() {
-			super.onPauseGame();
-			«IF isSensorNeeded»
-			this.disableAccelerometerSensor();
-			«ENDIF»
-		}
-		
-		«IF isSensorNeeded»
-		@Override
-		public void onAccelerometerChanged(AccelerometerData pAccelerometerData) {
-			final Vector2 gravity = Vector2Pool.obtain(pAccelerometerData.getX(), pAccelerometerData.getY());
-			this.mPhysicsWorld.setGravity(gravity);
-			Vector2Pool.recycle(gravity);
-		}
-		«ENDIF»
+«««		@Override
+«««		public void onResumeGame() {
+«««			super.onResumeGame();
+«««			«IF isSensorNeeded»
+«««			this.enableAccelerometerSensor(this);
+«««			«ENDIF»
+«««		}
+«««		
+«««		@Override
+«««		public void onPauseGame() {
+«««			super.onPauseGame();
+«««			«IF isSensorNeeded»
+«««			this.disableAccelerometerSensor();
+«««			«ENDIF»
+«««		}
+«««		
+«««		«IF isSensorNeeded»
+«««		@Override
+«««		public void onAccelerometerChanged(AccelerometerData pAccelerometerData) {
+«««			final Vector2 gravity = Vector2Pool.obtain(pAccelerometerData.getX(), pAccelerometerData.getY());
+«««			this.mPhysicsWorld.setGravity(gravity);
+«««			Vector2Pool.recycle(gravity);
+«««		}
+«««		«ENDIF»
 		
 	'''
 	
 	def initializeBox2D(Scene scene) '''
-		«FOR box2dLogic : scene.eResource.allContentsIterable.filter(typeof(AndroGameBox2DLogic))»
-		this.mPhysicsWorld = new PhysicsWorld(new Vector2(0, «IF box2dLogic.options != null»«box2dLogic.options.gravity»f«ELSE»SensorManager.GRAVITY_EARTH«ENDIF»), false);
+		«FOR logic : scene.eResource.allContentsIterable.filter(typeof(AndroGameLogic))»
+		this.mPhysicsWorld = new PhysicsWorld(new Vector2(0, «IF logic.box2dOptions == null»SensorManager.GRAVITY_EARTH«ELSE»«logic.box2dOptions.gravity»«ENDIF»), false);
 		// create box2d components
-		«box2dLogic.generateComponents»
+		«logic.generateBox2DComponents»
 		this.mScene.registerUpdateHandler(this.mPhysicsWorld);
 		«ENDFOR»
 	'''
 	
-	def generateComponents(AndroGameBox2DLogic box2d) '''
-		«FOR fixture : box2d.box2dComponents.filter(typeof(Fixture))»
+	def generateBox2DComponents(AndroGameLogic logic) '''
+		«FOR fixture : logic.logicComponent.filter(typeof(Fixture))»
 		FixtureDef «fixture.name» = PhysicsFactory.createFixtureDef(«fixture.density»f, «fixture.restitution»f, «fixture.friction»f);
 		«ENDFOR»
-		«FOR body : box2d.box2dComponents.filter(typeof(Body))»
-		«FOR binding : box2d.eResource.allContentsIterable.filter(typeof(Box2DBinding))»
-		«IF binding.body.equals(body)»
-		Body «body.name»For«binding.gameEntity.name» = PhysicsFactory.create«body.eClass.name»(«body.factoryParameters(binding.gameEntity)»);
-		this.mPhysicsWorld.registerPhysicsConnector(new PhysicsConnector(this.«binding.gameEntity.entityFieldName.toString.trim», «body.name»For«binding.gameEntity.name», true, true));
+		«FOR body : logic.logicComponent.filter(typeof(Body))»
+		«FOR binding : logic.eResource.allContentsIterable.filter(typeof(Binding))»
+		«IF binding.bindable.equals(body)»
+		«val gameEntity = binding.bindingTarget.getEntity»
+		Body «body.name»For«gameEntity.name.toString.trim» = PhysicsFactory.create«body.eClass.name»(«body.factoryParameters(gameEntity).toString.trim»);
+		this.mPhysicsWorld.registerPhysicsConnector(new PhysicsConnector(this.«gameEntity.entityFieldName.toString.trim», «body.name»For«gameEntity.name», true, true));
 		«ENDIF»
 		«ENDFOR»
 		«ENDFOR»
-		«FOR joint : box2d.box2dComponents.filter(typeof(Joint))»
+		«FOR joint : logic.logicComponent.filter(typeof(Joint))»
 		// TODO: joint generation «joint.name»
 		«ENDFOR»
 	'''
+	
+	def dispatch GameEntity getEntity(BindingTarget target) {
+		return null
+	}
+	def dispatch GameEntity getEntity(EntityBindingTarget target) {
+		return target.entity	
+	}
 	
 	def dispatch factoryParameters(Body body, GameEntity entity) ''''''
 	def dispatch factoryParameters(BoxBody body, GameEntity entity) '''
@@ -273,14 +282,23 @@ class BaseGameActivityMethodGenerator {
 		«FOR modifier : scene.eResource.allContentsIterable.filter(typeof (LoopEntityModifier))»
 		«modifier.generate»
 		«ENDFOR»
-		«FOR logic : scene.eResource.allContentsIterable.filter(typeof (Logic))»
+		«FOR logic : scene.eResource.allContentsIterable.filter(typeof (Binding))»
 		«logic.generate»
 		«ENDFOR»
 	'''
 	
-	def dispatch generate(Logic logic) ''''''
-	def dispatch generate(ModifierBinding logic) '''
-		this.«logic.gameEntity.entityFieldName.toString.trim».registerEntityModifier(«logic.modifier.name»);
+	def generate(Binding logic) '''
+		«IF logic.bindable instanceof EntityModifier»
+		this.«logic.bindingTarget.toString.trim».registerEntityModifier(«logic.bindable.name.toString.trim»);
+		«ENDIF»
+	'''
+	
+	def name(Bindable bindable) ''''''
+	def name(Body bindable) '''
+		«bindable.name»
+	'''
+	def name(EntityModifier bindable) '''
+		«bindable.name»
 	'''
 	
 	def type(EntityModifier modifier) '''

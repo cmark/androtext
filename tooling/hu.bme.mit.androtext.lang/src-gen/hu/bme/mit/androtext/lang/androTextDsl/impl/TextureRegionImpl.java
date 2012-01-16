@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TextureRegionImpl extends GameElementImpl implements TextureRegion
+public class TextureRegionImpl extends GameComponentImpl implements TextureRegion
 {
   /**
    * The default value of the '{@link #getFileName() <em>File Name</em>}' attribute.
