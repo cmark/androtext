@@ -1,3 +1,7 @@
+/**
+ * Add handwritten code for bind accelerometer sensor to the physicsworld gravity.
+ * See the example in AndEngineExamples project page: http://code.google.com/p/andengineexamples/
+ */
 gamegui PhysicsExampleGui {
 	
 	texture boxFace "face_box.png"
@@ -25,29 +29,24 @@ gamegui PhysicsExampleGui {
 }
 
 gamelogic PhysicsExampleLogic {
-	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.roof
-	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.ground
-	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.leftWall
-	bindbody SimpleBox2DWorld.wall to PhysicsExampleGui.PhysicsScene.rightWall
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face1
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face2
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face3
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face4
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face5
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face6
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face7
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face8
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face9
-	bindbody SimpleBox2DWorld.face to PhysicsExampleGui.PhysicsScene.face10
-	bindsensor accelerometer to gravity
-}
-
-box2d SimpleBox2DWorld {
 	
 	fixture wallFixture density 0.0 friction 0.5 restitution 0.5
 	fixture faceFixture density 1.0 friction 0.5 restitution 0.5
-		
 	boxbody wall static fixture wallFixture
 	boxbody face dynamic fixture faceFixture
 	
+	bind wall to PhysicsExampleGui.PhysicsScene.roof
+	bind wall to PhysicsExampleGui.PhysicsScene.ground
+	bind wall to PhysicsExampleGui.PhysicsScene.leftWall
+	bind wall to PhysicsExampleGui.PhysicsScene.rightWall
+	bind face to PhysicsExampleGui.PhysicsScene.face1
+	bind face to PhysicsExampleGui.PhysicsScene.face2
+	bind face to PhysicsExampleGui.PhysicsScene.face3
+	bind face to PhysicsExampleGui.PhysicsScene.face4
+	bind face to PhysicsExampleGui.PhysicsScene.face5
+	bind face to PhysicsExampleGui.PhysicsScene.face6
+	bind face to PhysicsExampleGui.PhysicsScene.face7
+	bind face to PhysicsExampleGui.PhysicsScene.face8
+	bind face to PhysicsExampleGui.PhysicsScene.face9
+	bind face to PhysicsExampleGui.PhysicsScene.face10
 }
