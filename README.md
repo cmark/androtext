@@ -7,36 +7,33 @@ Integrates with Eclipse and comes with IDE support (content assist, error checki
 
 # RoadMap #
 
-RoadMap Date: 2011. 11. 19.
+RoadMap Date: 2012. 02. 11.
 
 * 1.0
- * Language improvements
-  * Finalize AndroText grammar
+ * Features
+  * Activity 
+  * Simple UI design in textual context
+  * Simple navigation with widgets onClick
+  * Data-layer design like entities and ContentProvider
+ * Missing Features
   * Add all GUI feature to AndroGui Contents (easy layouting, all widgets, etc.)
-  * Add simple nagivations, invokes between the Activities, URLs, etc.
-  * Add menu support
-  * Add notification support
- * Generator improvements
-  * Generate ContentProvider/DataBaseManager from AndroData models
-  * Generate navigations
-  * Generate menus
-  * Generate notifications
- * Create 1.0 release
-* Future plans
- * Find out how to model Services/BroadCastReceivers
- * Use Google Guice, Roboguice for injecting Views and resources into Activity classes.
- * Write validation constraints. Use [EMF INCQuery](http://viatra.inf.mit.bme.hu/incquery/base#Overview)
+  * Navigation support for ListView item clicks
+  * Activity Menu support
+  * Simple notification support for events
+  * Generate ContentProvider/DataBaseManager from entity models
+ * Future plans
+  * Find out how to model Services/BroadCastReceivers
+  * Use Google Guice, Roboguice for injecting Views and resources into Activity classes.
+  * Write validation constraints. Use [EMF INCQuery](http://viatra.inf.mit.bme.hu/incquery/base#Overview)
  
 # Installation #
 
-1. Get Eclipse with Xtext 2.1
+1. Get Eclipse with Xtext 2.1 (Don't use Xtext 2.2 or later)
 2. Get AndroText from Github as Zip or Clone the repository
 3. Start Eclipse and import all project from the *tooling* directory into your workspace
-4. IMPORTANT: create the following empty folders (!Git not adding empty folders to Git index!). 
-4.1. hu.bme.mit.androtext.gen/xtend-gen
-4.2. hu.bme.mit.androtext.lang/xtend-gen
+4. IMPORTANT: generate the language with the workflow file in the *.lang project.
 5. Start a Runtime Eclipse with the newly imported plugins.
-6. Create a simple Java project (later a AndroText project), and create *.androtext files.
+6. Create a simple Java project (later a AndroText project), and create *.androtext files (Content assist helps a lot).
 7. See the example project in the *examples* folder.
 
 ## License ##
@@ -51,5 +48,5 @@ All files of AndroText project are licensed under the [EPL](http://www.eclipse.o
 If you want to contribute:
 
 1. Look at the [issues](https://github.com/CMark/androtext/issues).
-2. Clone AndroText and do your changes.
+2. Fork a repository from AndroText and do your changes.
 3. Send a pull request.
