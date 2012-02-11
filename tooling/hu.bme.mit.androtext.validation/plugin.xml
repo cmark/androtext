@@ -5,20 +5,8 @@
          id="hu.bme.mit.androtext.validation.generatedContribution"
          point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
       <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForrestitutionOutOfRange"
-            pattern-fqn="androtext.restitutionOutOfRange">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForbaseGameActivityCameraWarning"
-            pattern-fqn="androtext.baseGameActivityCameraWarning">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForandroGameGuiHasGameComponent"
-            pattern-fqn="androtext.androGameGuiHasGameComponent">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForentityHasName"
-            pattern-fqn="androtext.entityHasName">
+            build-class="patternbuilders.androtext.PatternBuilderForbaseGameActivityHasScene"
+            pattern-fqn="androtext.baseGameActivityHasScene">
       </pattern-builder>
       <pattern-builder
             build-class="patternbuilders.androtext.PatternBuilderForgameEntityNameError"
@@ -29,32 +17,48 @@
             pattern-fqn="androtext.uniqueJointBodies">
       </pattern-builder>
       <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForapplicationModelElementHasName"
-            pattern-fqn="androtext.applicationModelElementHasName">
+            build-class="patternbuilders.androtext.PatternBuilderForentityHasName"
+            pattern-fqn="androtext.entityHasName">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.androtext.PatternBuilderForfrictionOutOfRange"
+            pattern-fqn="androtext.frictionOutOfRange">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.androtext.PatternBuilderForrestitutionOutOfRange"
+            pattern-fqn="androtext.restitutionOutOfRange">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.androtext.PatternBuilderForandroGameGuiHasGameComponent"
+            pattern-fqn="androtext.androGameGuiHasGameComponent">
       </pattern-builder>
       <pattern-builder
             build-class="patternbuilders.androtext.PatternBuilderForgameEntityHasName"
             pattern-fqn="androtext.gameEntityHasName">
       </pattern-builder>
       <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForemptyAndroGameGui"
-            pattern-fqn="androtext.emptyAndroGameGui">
+            build-class="patternbuilders.androtext.PatternBuilderFormenuSceneHasMenuItem"
+            pattern-fqn="androtext.menuSceneHasMenuItem">
       </pattern-builder>
       <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForemptyMenuScene"
-            pattern-fqn="androtext.emptyMenuScene">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForbaseGameActivityHasScene"
-            pattern-fqn="androtext.baseGameActivityHasScene">
+            build-class="patternbuilders.androtext.PatternBuilderForapplicationModelElementHasName"
+            pattern-fqn="androtext.applicationModelElementHasName">
       </pattern-builder>
       <pattern-builder
             build-class="patternbuilders.androtext.PatternBuilderForbaseGameActivityHasCamera"
             pattern-fqn="androtext.baseGameActivityHasCamera">
       </pattern-builder>
       <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderForfrictionOutOfRange"
-            pattern-fqn="androtext.frictionOutOfRange">
+            build-class="patternbuilders.androtext.PatternBuilderForemptyMenuScene"
+            pattern-fqn="androtext.emptyMenuScene">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.androtext.PatternBuilderForemptyAndroGameGui"
+            pattern-fqn="androtext.emptyAndroGameGui">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.androtext.PatternBuilderForbaseGameActivityCameraWarning"
+            pattern-fqn="androtext.baseGameActivityCameraWarning">
       </pattern-builder>
       <pattern-builder
             build-class="patternbuilders.androtext.PatternBuilderForuniqueApplicationModelElementName"
@@ -63,10 +67,6 @@
       <pattern-builder
             build-class="patternbuilders.androtext.PatternBuilderForbaseGameActivitySceneError"
             pattern-fqn="androtext.baseGameActivitySceneError">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.androtext.PatternBuilderFormenuSceneHasMenuItem"
-            pattern-fqn="androtext.menuSceneHasMenuItem">
       </pattern-builder>
    </extension>
 
