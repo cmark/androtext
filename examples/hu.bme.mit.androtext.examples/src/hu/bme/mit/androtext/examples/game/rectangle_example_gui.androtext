@@ -22,6 +22,6 @@ gamelogic RectangleMovement {
 	
 	sequence simpleSeq simpleMove1, simpleRotate1, simpleMove2
 	
-	bindmodifier simpleSeq to RectangleExampleGui.rectangles.container.rect1
+	bind simpleSeq to RectangleExampleGui.rectangles.container.rect1
 	
 }
