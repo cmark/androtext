@@ -12,12 +12,15 @@ import hu.bme.mit.androtext.gen.layout.TabLayoutGenerator;
 import hu.bme.mit.androtext.gen.resources.BasicAndroidInformationValuesGenerator;
 import hu.bme.mit.androtext.gen.resources.StringArrayResourceGenerator;
 import hu.bme.mit.androtext.gen.selector.SelectorGenerator;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.generator.IFileSystemAccess;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
+import org.eclipse.xtext.xbase.lib.BooleanExtensions;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class AndroTextGeneratorMain implements IMainGenerator {
@@ -53,9 +56,11 @@ public class AndroTextGeneratorMain implements IMainGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication targetApplication) {
       AndroidApplication _application = targetApplication.getApplication();
-      AndroDataModelRoot _dataroot = _application.getDataroot();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_dataroot, null);
-      if (_operator_notEquals) {
+      EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
+      Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+      boolean _isEmpty = IterableExtensions.isEmpty(_filter);
+      boolean _operator_not = BooleanExtensions.operator_not(_isEmpty);
+      if (_operator_not) {
         {
           this.entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
           this.entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication);

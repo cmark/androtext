@@ -10,14 +10,18 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
+import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 
 class EntityClassGenerator implements IGenerator {
 	
 	@Inject extension GeneratorExtensions generatorExtensions
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (entity : androidApplication.application.dataroot.entities) {
-			fsa.generateFile(entity.javaFileName, IGeneratorSlots::DATA_SLOT, generate(entity, androidApplication))
+		for (databaseContentProvider : androidApplication.application.modelElements.filter(typeof (DatabaseContentProvider))) {
+			for (entity : databaseContentProvider.datamodel.entities) {
+				fsa.generateFile(entity.javaFileName, IGeneratorSlots::DATA_SLOT, generate(entity, androidApplication))
+			}
 		}
 	}
 	

@@ -19,7 +19,7 @@ class SimpleActivityMethodGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
-	def methods(Activity activity) '''
+	def simpleMethods(Activity activity) '''
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
@@ -65,11 +65,11 @@ class SimpleActivityMethodGenerator {
 	def dispatch logic(ListActivity activity) '''
 		«val listItem = activity.listitem.layoutName»
 		«activity.contentProvider.generate(listItem)»
-		«IF activity.action != null»
+		«IF activity.onListItemClickAction != null»
 		getListView().setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				«activity.action.generate(activity)»
+				«activity.onListItemClickAction.generate(activity)»
 			}
 		});
 		«ENDIF»
@@ -94,7 +94,7 @@ class SimpleActivityMethodGenerator {
 	
 	def dispatch generate(ContentProvider provider, String listItem) ''''''
 	def dispatch generate(ResourceContentProvider provider, String listItem) '''
-		«provider.link.generateContentSet(listItem)»
+		«provider.arrayResource.generateContentSet(listItem)»
 	'''
 	
 	def dispatch generateContentSet(ArrayResource resource, String listItem) '''

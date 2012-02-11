@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import hu.bme.mit.androtext.gen.layout.TabLayoutGenerator
 import hu.bme.mit.androtext.gen.selector.SelectorGenerator
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 
 class AndroTextGeneratorMain implements IMainGenerator {
 	
@@ -38,8 +39,8 @@ class AndroTextGeneratorMain implements IMainGenerator {
 	@Inject SelectorGenerator selectorGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication targetApplication) {
-		// generate data related stuff only if datamodel is defined
-		if (targetApplication.application.dataroot != null) {
+		// generate data related stuff only when a contentprovider exist in the application file
+		if (!targetApplication.application.modelElements.filter(typeof (DatabaseContentProvider)).empty) {
 			entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
 			entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication);	
 		}

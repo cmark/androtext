@@ -33,7 +33,7 @@ public class SimpleActivityMethodGenerator {
   @Inject
   private GeneratorExtensions _generatorExtensions;
   
-  public StringConcatenation methods(final Activity activity) {
+  public StringConcatenation simpleMethods(final Activity activity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("@Override");
     _builder.newLine();
@@ -189,8 +189,8 @@ public class SimpleActivityMethodGenerator {
     _builder.append(_generate, "");
     _builder.newLineIfNotEmpty();
     {
-      Action _action = activity.getAction();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_action, null);
+      Action _onListItemClickAction = activity.getOnListItemClickAction();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_onListItemClickAction, null);
       if (_operator_notEquals) {
         _builder.append("getListView().setOnItemClickListener(new OnItemClickListener() {");
         _builder.newLine();
@@ -201,8 +201,8 @@ public class SimpleActivityMethodGenerator {
         _builder.append("public void onItemClick(AdapterView<?> parent, View view, int position, long id) {");
         _builder.newLine();
         _builder.append("\t\t");
-        Action _action_1 = activity.getAction();
-        StringConcatenation _generate_1 = this.generate(_action_1, activity);
+        Action _onListItemClickAction_1 = activity.getOnListItemClickAction();
+        StringConcatenation _generate_1 = this.generate(_onListItemClickAction_1, activity);
         _builder.append(_generate_1, "		");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
@@ -272,8 +272,8 @@ public class SimpleActivityMethodGenerator {
   
   protected StringConcatenation _generate(final ResourceContentProvider provider, final String listItem) {
     StringConcatenation _builder = new StringConcatenation();
-    ArrayResource _link = provider.getLink();
-    StringConcatenation _generateContentSet = this.generateContentSet(_link, listItem);
+    ArrayResource _arrayResource = provider.getArrayResource();
+    StringConcatenation _generateContentSet = this.generateContentSet(_arrayResource, listItem);
     _builder.append(_generateContentSet, "");
     _builder.newLineIfNotEmpty();
     return _builder;
@@ -309,22 +309,22 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  public StringConcatenation generate(final EObject action, final Object activity) {
-    if ((action instanceof InvokeActivity)
-         && (activity instanceof Activity)) {
-      return _generate((InvokeActivity)action, (Activity)activity);
-    } else if ((action instanceof ResourceContentProvider)
-         && (activity instanceof String)) {
-      return _generate((ResourceContentProvider)action, (String)activity);
-    } else if ((action instanceof Action)
-         && (activity instanceof Activity)) {
-      return _generate((Action)action, (Activity)activity);
-    } else if ((action instanceof ContentProvider)
-         && (activity instanceof String)) {
-      return _generate((ContentProvider)action, (String)activity);
+  public StringConcatenation generate(final EObject provider, final Object listItem) {
+    if ((provider instanceof ResourceContentProvider)
+         && (listItem instanceof String)) {
+      return _generate((ResourceContentProvider)provider, (String)listItem);
+    } else if ((provider instanceof InvokeActivity)
+         && (listItem instanceof Activity)) {
+      return _generate((InvokeActivity)provider, (Activity)listItem);
+    } else if ((provider instanceof ContentProvider)
+         && (listItem instanceof String)) {
+      return _generate((ContentProvider)provider, (String)listItem);
+    } else if ((provider instanceof Action)
+         && (listItem instanceof Activity)) {
+      return _generate((Action)provider, (Activity)listItem);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(action, activity).toString());
+        Arrays.<Object>asList(provider, listItem).toString());
     }
   }
   

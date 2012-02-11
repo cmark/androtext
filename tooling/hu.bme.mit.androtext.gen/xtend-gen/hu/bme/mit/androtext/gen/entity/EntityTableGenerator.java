@@ -5,6 +5,8 @@ import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
@@ -12,6 +14,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.TypeRef;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.generator.IFileSystemAccess;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
@@ -73,14 +76,19 @@ public class EntityTableGenerator implements IGenerator {
     _builder.newLine();
     {
       AndroidApplication _application = androidApplication.getApplication();
-      AndroDataModelRoot _dataroot = _application.getDataroot();
-      EList<Entity> _entities = _dataroot.getEntities();
-      for(final Entity entity : _entities) {
-        _builder.append("\t");
-        StringConcatenation _entityTable = this.entityTable(entity, androidApplication);
-        _builder.append(_entityTable, "	");
-        _builder.append(" ");
-        _builder.newLineIfNotEmpty();
+      EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
+      Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+      for(final DatabaseContentProvider databaseContentProvider : _filter) {
+        {
+          AndroDataModelRoot _datamodel = databaseContentProvider.getDatamodel();
+          EList<Entity> _entities = _datamodel.getEntities();
+          for(final Entity entity : _entities) {
+            _builder.append("\t");
+            StringConcatenation _entityTable = this.entityTable(entity, androidApplication);
+            _builder.append(_entityTable, "	");
+            _builder.newLineIfNotEmpty();
+          }
+        }
       }
     }
     _builder.append("}");

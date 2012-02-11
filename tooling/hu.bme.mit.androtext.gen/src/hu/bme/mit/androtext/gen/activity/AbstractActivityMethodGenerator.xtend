@@ -11,11 +11,12 @@ class AbstractActivityMethodGenerator {
 	@Inject extension BaseGameActivityMethodGenerator
 	@Inject extension SimpleActivityMethodGenerator
 	
-	def dispatch generateMethods(Activity activity) {
-		activity.methods
-	}
 	def dispatch generateMethods(BaseGameActivity activity) {
-		activity.methods
+		activity.gameMethods
+	}
+	
+	def dispatch generateMethods(Activity activity) {
+		activity.simpleMethods
 	}
 	
 }

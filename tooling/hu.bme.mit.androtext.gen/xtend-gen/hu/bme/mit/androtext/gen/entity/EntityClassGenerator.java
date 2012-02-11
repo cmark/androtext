@@ -6,6 +6,8 @@ import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.compiler.ImportManager;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
@@ -27,12 +30,16 @@ public class EntityClassGenerator implements IGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
     AndroidApplication _application = androidApplication.getApplication();
-    AndroDataModelRoot _dataroot = _application.getDataroot();
-    EList<Entity> _entities = _dataroot.getEntities();
-    for (final Entity entity : _entities) {
-      String _javaFileName = this.generatorExtensions.javaFileName(entity);
-      StringConcatenation _generate = this.generate(entity, androidApplication);
-      fsa.generateFile(_javaFileName, IGeneratorSlots.DATA_SLOT, _generate);
+    EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
+    Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+    for (final DatabaseContentProvider databaseContentProvider : _filter) {
+      AndroDataModelRoot _datamodel = databaseContentProvider.getDatamodel();
+      EList<Entity> _entities = _datamodel.getEntities();
+      for (final Entity entity : _entities) {
+        String _javaFileName = this.generatorExtensions.javaFileName(entity);
+        StringConcatenation _generate = this.generate(entity, androidApplication);
+        fsa.generateFile(_javaFileName, IGeneratorSlots.DATA_SLOT, _generate);
+      }
     }
   }
   

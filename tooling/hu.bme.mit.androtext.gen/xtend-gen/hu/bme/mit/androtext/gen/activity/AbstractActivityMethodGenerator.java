@@ -19,14 +19,14 @@ public class AbstractActivityMethodGenerator {
   @Inject
   private SimpleActivityMethodGenerator _simpleActivityMethodGenerator;
   
-  protected StringConcatenation _generateMethods(final Activity activity) {
-    StringConcatenation _methods = this._simpleActivityMethodGenerator.methods(activity);
-    return _methods;
+  protected StringConcatenation _generateMethods(final BaseGameActivity activity) {
+    StringConcatenation _gameMethods = this._baseGameActivityMethodGenerator.gameMethods(activity);
+    return _gameMethods;
   }
   
-  protected StringConcatenation _generateMethods(final BaseGameActivity activity) {
-    StringConcatenation _methods = this._simpleActivityMethodGenerator.methods(activity);
-    return _methods;
+  protected StringConcatenation _generateMethods(final Activity activity) {
+    StringConcatenation _simpleMethods = this._simpleActivityMethodGenerator.simpleMethods(activity);
+    return _simpleMethods;
   }
   
   public StringConcatenation generateMethods(final Activity activity) {

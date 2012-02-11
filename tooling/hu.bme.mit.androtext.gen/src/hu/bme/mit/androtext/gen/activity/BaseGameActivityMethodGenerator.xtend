@@ -46,7 +46,7 @@ class BaseGameActivityMethodGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
-	def methods(BaseGameActivity activity) '''
+	def gameMethods(BaseGameActivity activity) '''
 «««		«val boolean isSensorNeeded = activity.findSensorUsage»
 		@Override
 		public Engine onLoadEngine() {

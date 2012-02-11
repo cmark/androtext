@@ -12,6 +12,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
@@ -332,24 +333,27 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			// load all remaining resource for generation
 			List<URI> uris = new ArrayList<URI>();
 			uris.add(app.getApplication().eResource().getURI());
-			if (app.getApplication().getDataroot() != null) {
-				uris.add(app.getApplication().getDataroot().eResource().getURI());
-			}
-			Activity main = app.getApplication().getMainActivity();
 			List<AndroidApplicationModelElement> activities = new ArrayList<AndroidApplicationModelElement>(app.getApplication().getModelElements());
-			activities.add(main);
+			activities.add(app.getApplication().getMainActivity());
 			for (AndroidApplicationModelElement ac : activities) {
+				if (ac instanceof ContentProvider) {
+					if (ac instanceof ResourceContentProvider) {
+						URI newURI2 = ((ResourceContentProvider) ac).getArrayResource().eResource().getURI();
+						if (!uris.contains(newURI2)) {
+							uris.add(newURI2);
+						}
+					}
+					if (ac instanceof DatabaseContentProvider) {
+						URI newURI2 = ((DatabaseContentProvider) ac).getDatamodel().eResource().getURI();
+						if (!uris.contains(newURI2)) {
+							uris.add(newURI2);
+						}
+					}
+				}
 				if (ac instanceof ListActivity) {
 					URI newURI = ((ListActivity) ac).getListitem().eResource().getURI();
 					if (!uris.contains(newURI)) {
 						uris.add(newURI);
-					}
-					ContentProvider cp = ((ListActivity) ac).getContentProvider();
-					if (cp instanceof ResourceContentProvider) {
-						URI newURI2 = ((ResourceContentProvider) cp).getLink().eResource().getURI();
-						if (!uris.contains(newURI2)) {
-							uris.add(newURI2);
-						}
 					}
 				}
 				if (ac instanceof Activity) {

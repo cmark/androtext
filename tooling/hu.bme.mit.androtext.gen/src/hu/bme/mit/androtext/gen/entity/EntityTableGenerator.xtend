@@ -8,6 +8,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.Property
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 
 class EntityTableGenerator implements IGenerator {
 	
@@ -32,8 +33,10 @@ class EntityTableGenerator implements IGenerator {
 		    private «androidApplication.dataInformationClassName()»() {
 		    }
 		    		
-			«FOR entity : androidApplication.application.dataroot.entities» 
-				«entityTable(entity, androidApplication)» 
+			«FOR databaseContentProvider : androidApplication.application.modelElements.filter(typeof (DatabaseContentProvider))» 
+				«FOR entity : databaseContentProvider.datamodel.entities»
+					«entityTable(entity, androidApplication)»
+				«ENDFOR»
 			«ENDFOR»
 		}
 	'''

@@ -67,7 +67,7 @@ public class BaseGameActivityMethodGenerator {
   @Inject
   private GeneratorExtensions _generatorExtensions;
   
-  public StringConcatenation methods(final BaseGameActivity activity) {
+  public StringConcatenation gameMethods(final BaseGameActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("@Override");
     _builder.newLine();

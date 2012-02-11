@@ -54,13 +54,12 @@ enum ApiLevel:
 /* AndroAppModelRoot and model elements */
 AndroidApplication:
 	'application' name=ID '{'
-		('datamodel' dataroot=[AndroDataModelRoot|QualifiedName])?
 		mainActivity = Activity
 		modelElements+=AndroidApplicationModelElement*
 	'}';
 
 AndroidApplicationModelElement:
-	Activity | PreferenceActivity
+	Activity | PreferenceActivity | ContentProvider
 ;
 
 Activity:
@@ -87,8 +86,8 @@ Tab:
 ListActivity:
 	'listactivity' name=ID 'listitem' listitem=[View | QualifiedName]
 	'{'
-		'content' contentProvider=ContentProvider
-		('onListItemClick' action=Action)?
+		('fetch' (entity=[Entity | QualifiedName])? 'from' contentProvider=[ContentProvider | QualifiedName])?
+		('onListItemClick' onListItemClickAction=Action)?
 	'}'
 ;
 	
@@ -96,26 +95,32 @@ PreferenceActivity:
 	'preferences' name=ID 'layout' layout=[PreferenceScreen | QualifiedName]
 ;
 
-ContentProvider:
-	ResourceContentProvider
+ContentProvider returns ContentProvider:
+	ResourceContentProvider | DatabaseContentProvider
 ;
 
-ResourceContentProvider:
-	link=[ArrayResource | QualifiedName]
+DatabaseContentProvider returns ContentProvider:
+	{DatabaseContentProvider}
+	'çontentprovider' name=ID 'data' datamodel=[AndroDataModelRoot | QualifiedName]
 ;
 
-Action:
+ResourceContentProvider returns ContentProvider:
+	{ResourceContentProvider}
+	'contentprovider' name=ID 'resource' arrayResource=[ArrayResource | QualifiedName]
+;
+
+Action returns Action:
 	InvokeActivity //| InvokeWebUrl
 ;
 
-InvokeActivity:
+InvokeActivity returns Action:
+	{InvokeActivity}
 	'navigateTo' activity=[Activity | QualifiedName]
 ;
-//
+
 //InvokeWebUrl:
 //	'goto' url=STRING
 //;
-
 /* End of AndroAppModelRoot and application model elements */
 
 /* AndroDataModelRoot and model elements */
@@ -429,6 +434,7 @@ ListView:
 	'{'
 		(entriesAttribute=EntriesAttribute)?
 		('listitem' layout=[View | QualifiedName])?
+		('onListItemClick' onListItemClickAction=Action)?
 	'}'
 ;
 	
