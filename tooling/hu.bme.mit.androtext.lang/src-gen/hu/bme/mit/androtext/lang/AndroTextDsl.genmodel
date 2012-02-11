@@ -173,6 +173,7 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//ListActivity">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListActivity/listitem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListActivity/contentProvider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListActivity/action"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//PreferenceActivity">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//PreferenceActivity/layout"/>
@@ -180,6 +181,10 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//ContentProvider"/>
     <genClasses ecoreClass="AndroTextDsl.ecore#//ResourceContentProvider">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ResourceContentProvider/link"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//Action"/>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//InvokeActivity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//InvokeActivity/activity"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//AndroDataModelRoot">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroTextDsl.ecore#//AndroDataModelRoot/name"/>
@@ -321,6 +326,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Button/backgroundAttribute"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Button/clickableAttribute"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Button/hintAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//Button/onClickAttribute"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//Gallery"/>
     <genClasses ecoreClass="AndroTextDsl.ecore#//ExpandableListView"/>
@@ -429,6 +435,9 @@
     <genClasses ecoreClass="AndroTextDsl.ecore#//ListPreferenceAttributes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListPreferenceAttributes/entriesAttribute"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//ListPreferenceAttributes/entryValues"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroTextDsl.ecore#//OnClickAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//OnClickAttribute/action"/>
     </genClasses>
     <genClasses ecoreClass="AndroTextDsl.ecore#//SpanAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroTextDsl.ecore#//SpanAttribute/span"/>

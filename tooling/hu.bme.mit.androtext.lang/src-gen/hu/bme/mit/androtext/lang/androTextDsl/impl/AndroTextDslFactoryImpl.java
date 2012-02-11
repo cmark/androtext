@@ -83,6 +83,8 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.PREFERENCE_ACTIVITY: return createPreferenceActivity();
       case AndroTextDslPackage.CONTENT_PROVIDER: return createContentProvider();
       case AndroTextDslPackage.RESOURCE_CONTENT_PROVIDER: return createResourceContentProvider();
+      case AndroTextDslPackage.ACTION: return createAction();
+      case AndroTextDslPackage.INVOKE_ACTIVITY: return createInvokeActivity();
       case AndroTextDslPackage.ANDRO_DATA_MODEL_ROOT: return createAndroDataModelRoot();
       case AndroTextDslPackage.ENTITY: return createEntity();
       case AndroTextDslPackage.PROPERTY: return createProperty();
@@ -133,6 +135,7 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
       case AndroTextDslPackage.PREFERENCE_ATTRIBUTES: return createPreferenceAttributes();
       case AndroTextDslPackage.DIALOG_PREFERENCE_ATTRIBUTES: return createDialogPreferenceAttributes();
       case AndroTextDslPackage.LIST_PREFERENCE_ATTRIBUTES: return createListPreferenceAttributes();
+      case AndroTextDslPackage.ON_CLICK_ATTRIBUTE: return createOnClickAttribute();
       case AndroTextDslPackage.SPAN_ATTRIBUTE: return createSpanAttribute();
       case AndroTextDslPackage.COLUMN_ATTRIBUTE: return createColumnAttribute();
       case AndroTextDslPackage.CENTER_VERTICAL_ATTRIBUTE: return createCenterVerticalAttribute();
@@ -536,6 +539,28 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     ResourceContentProviderImpl resourceContentProvider = new ResourceContentProviderImpl();
     return resourceContentProvider;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Action createAction()
+  {
+    ActionImpl action = new ActionImpl();
+    return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InvokeActivity createInvokeActivity()
+  {
+    InvokeActivityImpl invokeActivity = new InvokeActivityImpl();
+    return invokeActivity;
   }
 
   /**
@@ -1086,6 +1111,17 @@ public class AndroTextDslFactoryImpl extends EFactoryImpl implements AndroTextDs
   {
     ListPreferenceAttributesImpl listPreferenceAttributes = new ListPreferenceAttributesImpl();
     return listPreferenceAttributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OnClickAttribute createOnClickAttribute()
+  {
+    OnClickAttributeImpl onClickAttribute = new OnClickAttributeImpl();
+    return onClickAttribute;
   }
 
   /**

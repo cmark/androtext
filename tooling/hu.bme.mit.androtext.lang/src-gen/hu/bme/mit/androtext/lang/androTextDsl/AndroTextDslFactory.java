@@ -153,6 +153,24 @@ public interface AndroTextDslFactory extends EFactory
   ResourceContentProvider createResourceContentProvider();
 
   /**
+   * Returns a new object of class '<em>Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action</em>'.
+   * @generated
+   */
+  Action createAction();
+
+  /**
+   * Returns a new object of class '<em>Invoke Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Invoke Activity</em>'.
+   * @generated
+   */
+  InvokeActivity createInvokeActivity();
+
+  /**
    * Returns a new object of class '<em>Andro Data Model Root</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -601,6 +619,15 @@ public interface AndroTextDslFactory extends EFactory
    * @generated
    */
   ListPreferenceAttributes createListPreferenceAttributes();
+
+  /**
+   * Returns a new object of class '<em>On Click Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>On Click Attribute</em>'.
+   * @generated
+   */
+  OnClickAttribute createOnClickAttribute();
 
   /**
    * Returns a new object of class '<em>Span Attribute</em>'.

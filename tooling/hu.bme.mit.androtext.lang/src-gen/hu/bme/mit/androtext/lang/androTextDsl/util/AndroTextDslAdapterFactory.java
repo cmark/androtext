@@ -149,6 +149,16 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
         return createResourceContentProviderAdapter();
       }
       @Override
+      public Adapter caseAction(Action object)
+      {
+        return createActionAdapter();
+      }
+      @Override
+      public Adapter caseInvokeActivity(InvokeActivity object)
+      {
+        return createInvokeActivityAdapter();
+      }
+      @Override
       public Adapter caseAndroDataModelRoot(AndroDataModelRoot object)
       {
         return createAndroDataModelRootAdapter();
@@ -397,6 +407,11 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseListPreferenceAttributes(ListPreferenceAttributes object)
       {
         return createListPreferenceAttributesAdapter();
+      }
+      @Override
+      public Adapter caseOnClickAttribute(OnClickAttribute object)
+      {
+        return createOnClickAttributeAdapter();
       }
       @Override
       public Adapter caseSpanAttribute(SpanAttribute object)
@@ -1331,6 +1346,36 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.Action <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.Action
+   * @generated
+   */
+  public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity <em>Invoke Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity
+   * @generated
+   */
+  public Adapter createInvokeActivityAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot <em>Andro Data Model Root</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2076,6 +2121,21 @@ public class AndroTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createListPreferenceAttributesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute <em>On Click Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute
+   * @generated
+   */
+  public Adapter createOnClickAttributeAdapter()
   {
     return null;
   }

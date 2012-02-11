@@ -1,0 +1,6 @@
+application SimpleButtonNavExample {
+	
+	activity MainActivity layout SimpleButtonNavGui.mainLayout
+	activity OtherActivity layout SimpleButtonNavGui.otherLayout
+	
+}

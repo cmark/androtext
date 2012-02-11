@@ -1,0 +1,11 @@
+guimodel SimpleButtonNavGui {
+	
+	linearlayout otherLayout fill {	
+		
+		textview help "Hello there, this is the other activity, navigation was successful! Press BACK to return to main activity!" wrap {
+		}
+		
+			
+	}
+	
+}

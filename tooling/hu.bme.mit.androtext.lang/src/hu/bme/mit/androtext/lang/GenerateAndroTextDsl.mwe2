@@ -17,10 +17,12 @@ Workflow {
 
     component = DirectoryCleaner {
         directory = "${runtimeProject}/src-gen"
+        exclude = ".gitignore"
     }
 
     component = DirectoryCleaner {
         directory = "${runtimeProject}.ui/src-gen"
+        exclude = ".gitignore"
     }
 
     component = Generator {
@@ -59,10 +61,10 @@ Workflow {
 
             // The antlr parser generator fragment.
             fragment = parser.antlr.XtextAntlrGeneratorFragment {
-//				options = {
+				options = {
 //					backtrack = true
-//					classSplitting = true
-//				}
+					classSplitting = true
+				}
 				//http://www.antlr.org/pipermail/antlr-interest/2007-March/020014.html
 				//http://20000frames.blogspot.com/2010/09/dealing-with-could-not-even-do-k1-for.html
 	        	antlrParam = "-Xconversiontimeout" antlrParam = "60000"

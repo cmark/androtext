@@ -147,6 +147,20 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invokeActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass androDataModelRootEClass = null;
 
   /**
@@ -491,6 +505,13 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * @generated
    */
   private EClass listPreferenceAttributesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass onClickAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2065,6 +2086,16 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getListActivity_Action()
+  {
+        return (EReference)getListActivity().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPreferenceActivity()
   {
     if (preferenceActivityEClass == null)
@@ -2127,11 +2158,49 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAction()
+  {
+    if (actionEClass == null)
+    {
+      actionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(16);
+    }
+    return actionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInvokeActivity()
+  {
+    if (invokeActivityEClass == null)
+    {
+      invokeActivityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(17);
+    }
+    return invokeActivityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInvokeActivity_Activity()
+  {
+        return (EReference)getInvokeActivity().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAndroDataModelRoot()
   {
     if (androDataModelRootEClass == null)
     {
-      androDataModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(16);
+      androDataModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(18);
     }
     return androDataModelRootEClass;
   }
@@ -2165,7 +2234,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (entityEClass == null)
     {
-      entityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(17);
+      entityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(19);
     }
     return entityEClass;
   }
@@ -2209,7 +2278,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (propertyEClass == null)
     {
-      propertyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(18);
+      propertyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(20);
     }
     return propertyEClass;
   }
@@ -2243,7 +2312,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (typeRefEClass == null)
     {
-      typeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(19);
+      typeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(21);
     }
     return typeRefEClass;
   }
@@ -2257,7 +2326,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dataTypesRefEClass == null)
     {
-      dataTypesRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(20);
+      dataTypesRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(22);
     }
     return dataTypesRefEClass;
   }
@@ -2281,7 +2350,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (entityTypeRefEClass == null)
     {
-      entityTypeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(21);
+      entityTypeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(23);
     }
     return entityTypeRefEClass;
   }
@@ -2305,7 +2374,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (androGuiModelRootEClass == null)
     {
-      androGuiModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(23);
+      androGuiModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(25);
     }
     return androGuiModelRootEClass;
   }
@@ -2349,7 +2418,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (viewEClass == null)
     {
-      viewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(24);
+      viewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(26);
     }
     return viewEClass;
   }
@@ -2393,7 +2462,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (viewGroupEClass == null)
     {
-      viewGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(25);
+      viewGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(27);
     }
     return viewGroupEClass;
   }
@@ -2417,7 +2486,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (layoutPropertiesEClass == null)
     {
-      layoutPropertiesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(26);
+      layoutPropertiesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(28);
     }
     return layoutPropertiesEClass;
   }
@@ -2651,7 +2720,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (layoutStyleEClass == null)
     {
-      layoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(27);
+      layoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(29);
     }
     return layoutStyleEClass;
   }
@@ -2665,7 +2734,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (regularLayoutStyleEClass == null)
     {
-      regularLayoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(28);
+      regularLayoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(30);
     }
     return regularLayoutStyleEClass;
   }
@@ -2699,7 +2768,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fastLayoutStyleEClass == null)
     {
-      fastLayoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(29);
+      fastLayoutStyleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(31);
     }
     return fastLayoutStyleEClass;
   }
@@ -2723,7 +2792,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (absoluteLayoutEClass == null)
     {
-      absoluteLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(30);
+      absoluteLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(32);
     }
     return absoluteLayoutEClass;
   }
@@ -2737,7 +2806,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (linearLayoutEClass == null)
     {
-      linearLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(31);
+      linearLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(33);
     }
     return linearLayoutEClass;
   }
@@ -2771,7 +2840,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (frameLayoutEClass == null)
     {
-      frameLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(32);
+      frameLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(34);
     }
     return frameLayoutEClass;
   }
@@ -2785,7 +2854,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (relativeLayoutEClass == null)
     {
-      relativeLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(33);
+      relativeLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(35);
     }
     return relativeLayoutEClass;
   }
@@ -2799,7 +2868,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gridLayoutEClass == null)
     {
-      gridLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(34);
+      gridLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(36);
     }
     return gridLayoutEClass;
   }
@@ -2813,7 +2882,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (tableLayoutEClass == null)
     {
-      tableLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(35);
+      tableLayoutEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(37);
     }
     return tableLayoutEClass;
   }
@@ -2857,7 +2926,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (tableRowEClass == null)
     {
-      tableRowEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(36);
+      tableRowEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(38);
     }
     return tableRowEClass;
   }
@@ -2871,7 +2940,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (simpleViewEClass == null)
     {
-      simpleViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(37);
+      simpleViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(39);
     }
     return simpleViewEClass;
   }
@@ -2885,7 +2954,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (viewElementEClass == null)
     {
-      viewElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(38);
+      viewElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(40);
     }
     return viewElementEClass;
   }
@@ -2909,7 +2978,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (textViewEClass == null)
     {
-      textViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(39);
+      textViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(41);
     }
     return textViewEClass;
   }
@@ -3153,7 +3222,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (editTextEClass == null)
     {
-      editTextEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(40);
+      editTextEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(42);
     }
     return editTextEClass;
   }
@@ -3397,7 +3466,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (buttonEClass == null)
     {
-      buttonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(41);
+      buttonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(43);
     }
     return buttonEClass;
   }
@@ -3467,11 +3536,21 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getButton_OnClickAttribute()
+  {
+        return (EReference)getButton().getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getGallery()
   {
     if (galleryEClass == null)
     {
-      galleryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(42);
+      galleryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(44);
     }
     return galleryEClass;
   }
@@ -3485,7 +3564,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (expandableListViewEClass == null)
     {
-      expandableListViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(43);
+      expandableListViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(45);
     }
     return expandableListViewEClass;
   }
@@ -3499,7 +3578,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (webViewEClass == null)
     {
-      webViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(44);
+      webViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(46);
     }
     return webViewEClass;
   }
@@ -3513,7 +3592,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (imageViewEClass == null)
     {
-      imageViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(45);
+      imageViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(47);
     }
     return imageViewEClass;
   }
@@ -3597,7 +3676,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (listViewEClass == null)
     {
-      listViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(46);
+      listViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(48);
     }
     return listViewEClass;
   }
@@ -3631,7 +3710,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gridViewEClass == null)
     {
-      gridViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(47);
+      gridViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(49);
     }
     return gridViewEClass;
   }
@@ -3705,7 +3784,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (spinnerEClass == null)
     {
-      spinnerEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(48);
+      spinnerEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(50);
     }
     return spinnerEClass;
   }
@@ -3789,7 +3868,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (checkBoxEClass == null)
     {
-      checkBoxEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(49);
+      checkBoxEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(51);
     }
     return checkBoxEClass;
   }
@@ -3813,7 +3892,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (radioGroupEClass == null)
     {
-      radioGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(50);
+      radioGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(52);
     }
     return radioGroupEClass;
   }
@@ -3847,7 +3926,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (ratingBarEClass == null)
     {
-      ratingBarEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(51);
+      ratingBarEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(53);
     }
     return ratingBarEClass;
   }
@@ -3871,7 +3950,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (toggleButtonEClass == null)
     {
-      toggleButtonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(52);
+      toggleButtonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(54);
     }
     return toggleButtonEClass;
   }
@@ -3905,7 +3984,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (radioButtonEClass == null)
     {
-      radioButtonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(53);
+      radioButtonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(55);
     }
     return radioButtonEClass;
   }
@@ -3959,7 +4038,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (checkedTextViewEClass == null)
     {
-      checkedTextViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(54);
+      checkedTextViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(56);
     }
     return checkedTextViewEClass;
   }
@@ -3983,7 +4062,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (autoCompleteTextViewEClass == null)
     {
-      autoCompleteTextViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(55);
+      autoCompleteTextViewEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(57);
     }
     return autoCompleteTextViewEClass;
   }
@@ -4027,7 +4106,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (abstractPreferenceEClass == null)
     {
-      abstractPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(56);
+      abstractPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(58);
     }
     return abstractPreferenceEClass;
   }
@@ -4051,7 +4130,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (preferenceEClass == null)
     {
-      preferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(57);
+      preferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(59);
     }
     return preferenceEClass;
   }
@@ -4085,7 +4164,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (preferenceScreenEClass == null)
     {
-      preferenceScreenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(58);
+      preferenceScreenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(60);
     }
     return preferenceScreenEClass;
   }
@@ -4129,7 +4208,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (preferenceCategoryEClass == null)
     {
-      preferenceCategoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(59);
+      preferenceCategoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(61);
     }
     return preferenceCategoryEClass;
   }
@@ -4153,7 +4232,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (editTextPreferenceEClass == null)
     {
-      editTextPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(60);
+      editTextPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(62);
     }
     return editTextPreferenceEClass;
   }
@@ -4197,7 +4276,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (listPreferenceEClass == null)
     {
-      listPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(61);
+      listPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(63);
     }
     return listPreferenceEClass;
   }
@@ -4251,7 +4330,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (checkBoxPreferenceEClass == null)
     {
-      checkBoxPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(62);
+      checkBoxPreferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(64);
     }
     return checkBoxPreferenceEClass;
   }
@@ -4285,7 +4364,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (ringtonePrefenceEClass == null)
     {
-      ringtonePrefenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(63);
+      ringtonePrefenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(65);
     }
     return ringtonePrefenceEClass;
   }
@@ -4319,7 +4398,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (preferenceAttributesEClass == null)
     {
-      preferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(64);
+      preferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(66);
     }
     return preferenceAttributesEClass;
   }
@@ -4363,7 +4442,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dialogPreferenceAttributesEClass == null)
     {
-      dialogPreferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(65);
+      dialogPreferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(67);
     }
     return dialogPreferenceAttributesEClass;
   }
@@ -4397,7 +4476,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (listPreferenceAttributesEClass == null)
     {
-      listPreferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(66);
+      listPreferenceAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(68);
     }
     return listPreferenceAttributesEClass;
   }
@@ -4427,11 +4506,35 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOnClickAttribute()
+  {
+    if (onClickAttributeEClass == null)
+    {
+      onClickAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(69);
+    }
+    return onClickAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOnClickAttribute_Action()
+  {
+        return (EReference)getOnClickAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSpanAttribute()
   {
     if (spanAttributeEClass == null)
     {
-      spanAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(67);
+      spanAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(70);
     }
     return spanAttributeEClass;
   }
@@ -4455,7 +4558,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (columnAttributeEClass == null)
     {
-      columnAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(68);
+      columnAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(71);
     }
     return columnAttributeEClass;
   }
@@ -4479,7 +4582,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (centerVerticalAttributeEClass == null)
     {
-      centerVerticalAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(69);
+      centerVerticalAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(72);
     }
     return centerVerticalAttributeEClass;
   }
@@ -4503,7 +4606,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (centerInParentAttributeEClass == null)
     {
-      centerInParentAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(70);
+      centerInParentAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(73);
     }
     return centerInParentAttributeEClass;
   }
@@ -4527,7 +4630,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (centerHorizontalAttributeEClass == null)
     {
-      centerHorizontalAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(71);
+      centerHorizontalAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(74);
     }
     return centerHorizontalAttributeEClass;
   }
@@ -4551,7 +4654,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (toRightOfAttributeEClass == null)
     {
-      toRightOfAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(72);
+      toRightOfAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(75);
     }
     return toRightOfAttributeEClass;
   }
@@ -4575,7 +4678,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (toLeftOfAttributeEClass == null)
     {
-      toLeftOfAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(73);
+      toLeftOfAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(76);
     }
     return toLeftOfAttributeEClass;
   }
@@ -4599,7 +4702,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (aboveAttributeEClass == null)
     {
-      aboveAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(74);
+      aboveAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(77);
     }
     return aboveAttributeEClass;
   }
@@ -4623,7 +4726,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (belowAttributeEClass == null)
     {
-      belowAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(75);
+      belowAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(78);
     }
     return belowAttributeEClass;
   }
@@ -4647,7 +4750,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alignLeftAttributeEClass == null)
     {
-      alignLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(76);
+      alignLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(79);
     }
     return alignLeftAttributeEClass;
   }
@@ -4671,7 +4774,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alignBottomAttributeEClass == null)
     {
-      alignBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(77);
+      alignBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(80);
     }
     return alignBottomAttributeEClass;
   }
@@ -4695,7 +4798,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alignTopAttributeEClass == null)
     {
-      alignTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(78);
+      alignTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(81);
     }
     return alignTopAttributeEClass;
   }
@@ -4719,7 +4822,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alignParentLeftAttributeEClass == null)
     {
-      alignParentLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(79);
+      alignParentLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(82);
     }
     return alignParentLeftAttributeEClass;
   }
@@ -4743,7 +4846,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alignParentTopAttributeEClass == null)
     {
-      alignParentTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(80);
+      alignParentTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(83);
     }
     return alignParentTopAttributeEClass;
   }
@@ -4767,7 +4870,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alignParentRightAttributeEClass == null)
     {
-      alignParentRightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(81);
+      alignParentRightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(84);
     }
     return alignParentRightAttributeEClass;
   }
@@ -4791,7 +4894,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alignParentBottomAttributeEClass == null)
     {
-      alignParentBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(82);
+      alignParentBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(85);
     }
     return alignParentBottomAttributeEClass;
   }
@@ -4815,7 +4918,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (marginBottomAttributeEClass == null)
     {
-      marginBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(83);
+      marginBottomAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(86);
     }
     return marginBottomAttributeEClass;
   }
@@ -4839,7 +4942,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (marginRightAttributeEClass == null)
     {
-      marginRightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(84);
+      marginRightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(87);
     }
     return marginRightAttributeEClass;
   }
@@ -4863,7 +4966,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (marginTopAttributeEClass == null)
     {
-      marginTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(85);
+      marginTopAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(88);
     }
     return marginTopAttributeEClass;
   }
@@ -4887,7 +4990,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (weightAttributeEClass == null)
     {
-      weightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(86);
+      weightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(89);
     }
     return weightAttributeEClass;
   }
@@ -4911,7 +5014,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (marginLeftAttributeEClass == null)
     {
-      marginLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(87);
+      marginLeftAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(90);
     }
     return marginLeftAttributeEClass;
   }
@@ -4935,7 +5038,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (textStyleAttributeEClass == null)
     {
-      textStyleAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(88);
+      textStyleAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(91);
     }
     return textStyleAttributeEClass;
   }
@@ -4959,7 +5062,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (typefaceAttributeEClass == null)
     {
-      typefaceAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(89);
+      typefaceAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(92);
     }
     return typefaceAttributeEClass;
   }
@@ -4983,7 +5086,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (textColorAttributeEClass == null)
     {
-      textColorAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(90);
+      textColorAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(93);
     }
     return textColorAttributeEClass;
   }
@@ -5007,7 +5110,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (singleLineAttributeEClass == null)
     {
-      singleLineAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(91);
+      singleLineAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(94);
     }
     return singleLineAttributeEClass;
   }
@@ -5031,7 +5134,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (phoneNumberAttributeEClass == null)
     {
-      phoneNumberAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(92);
+      phoneNumberAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(95);
     }
     return phoneNumberAttributeEClass;
   }
@@ -5055,7 +5158,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (passwordAttributeEClass == null)
     {
-      passwordAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(93);
+      passwordAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(96);
     }
     return passwordAttributeEClass;
   }
@@ -5079,7 +5182,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (numericAttributeEClass == null)
     {
-      numericAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(94);
+      numericAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(97);
     }
     return numericAttributeEClass;
   }
@@ -5103,7 +5206,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (hintAttributeEClass == null)
     {
-      hintAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(96);
+      hintAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(99);
     }
     return hintAttributeEClass;
   }
@@ -5127,7 +5230,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (editableAttributeEClass == null)
     {
-      editableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(99);
+      editableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(102);
     }
     return editableAttributeEClass;
   }
@@ -5151,7 +5254,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (digitsAttributeEClass == null)
     {
-      digitsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(100);
+      digitsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(103);
     }
     return digitsAttributeEClass;
   }
@@ -5175,7 +5278,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (capitalizeAttributeEClass == null)
     {
-      capitalizeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(101);
+      capitalizeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(104);
     }
     return capitalizeAttributeEClass;
   }
@@ -5199,7 +5302,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (autoTextAttributeEClass == null)
     {
-      autoTextAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(103);
+      autoTextAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(106);
     }
     return autoTextAttributeEClass;
   }
@@ -5223,7 +5326,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (isScrollContainerAttributeEClass == null)
     {
-      isScrollContainerAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(104);
+      isScrollContainerAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(107);
     }
     return isScrollContainerAttributeEClass;
   }
@@ -5247,7 +5350,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fadeScrollBarsAttributeEClass == null)
     {
-      fadeScrollBarsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(105);
+      fadeScrollBarsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(108);
     }
     return fadeScrollBarsAttributeEClass;
   }
@@ -5271,7 +5374,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (clickableAttributeEClass == null)
     {
-      clickableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(106);
+      clickableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(109);
     }
     return clickableAttributeEClass;
   }
@@ -5295,7 +5398,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (autoLinkAttributeEClass == null)
     {
-      autoLinkAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(107);
+      autoLinkAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(110);
     }
     return autoLinkAttributeEClass;
   }
@@ -5329,7 +5432,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (widthAttributeEClass == null)
     {
-      widthAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(109);
+      widthAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(112);
     }
     return widthAttributeEClass;
   }
@@ -5353,7 +5456,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (heightAttributeEClass == null)
     {
-      heightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(110);
+      heightAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(113);
     }
     return heightAttributeEClass;
   }
@@ -5377,7 +5480,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (paddingAttributeEClass == null)
     {
-      paddingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(111);
+      paddingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(114);
     }
     return paddingAttributeEClass;
   }
@@ -5401,7 +5504,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gravityAttributeEClass == null)
     {
-      gravityAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(112);
+      gravityAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(115);
     }
     return gravityAttributeEClass;
   }
@@ -5425,7 +5528,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (textSizeAttributeEClass == null)
     {
-      textSizeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(113);
+      textSizeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(116);
     }
     return textSizeAttributeEClass;
   }
@@ -5449,7 +5552,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (backgroundAttributeEClass == null)
     {
-      backgroundAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(114);
+      backgroundAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(117);
     }
     return backgroundAttributeEClass;
   }
@@ -5473,7 +5576,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (columnWidthAttributeEClass == null)
     {
-      columnWidthAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(115);
+      columnWidthAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(118);
     }
     return columnWidthAttributeEClass;
   }
@@ -5497,7 +5600,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (horizontalSpacingAttributeEClass == null)
     {
-      horizontalSpacingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(116);
+      horizontalSpacingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(119);
     }
     return horizontalSpacingAttributeEClass;
   }
@@ -5521,7 +5624,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (numColumnsAttributeEClass == null)
     {
-      numColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(117);
+      numColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(120);
     }
     return numColumnsAttributeEClass;
   }
@@ -5555,7 +5658,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stretchModeAttributeEClass == null)
     {
-      stretchModeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(118);
+      stretchModeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(121);
     }
     return stretchModeAttributeEClass;
   }
@@ -5579,7 +5682,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (verticalSpacingAttributeEClass == null)
     {
-      verticalSpacingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(120);
+      verticalSpacingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(123);
     }
     return verticalSpacingAttributeEClass;
   }
@@ -5603,7 +5706,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (entriesAttributeEClass == null)
     {
-      entriesAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(121);
+      entriesAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(124);
     }
     return entriesAttributeEClass;
   }
@@ -5627,7 +5730,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stretchColumnsAttributeEClass == null)
     {
-      stretchColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(122);
+      stretchColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(125);
     }
     return stretchColumnsAttributeEClass;
   }
@@ -5651,7 +5754,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (shrinkColumnsAttributeEClass == null)
     {
-      shrinkColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(123);
+      shrinkColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(126);
     }
     return shrinkColumnsAttributeEClass;
   }
@@ -5675,7 +5778,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (collapseColumnsAttributeEClass == null)
     {
-      collapseColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(124);
+      collapseColumnsAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(127);
     }
     return collapseColumnsAttributeEClass;
   }
@@ -5699,7 +5802,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (androResModelRootEClass == null)
     {
-      androResModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(127);
+      androResModelRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(130);
     }
     return androResModelRootEClass;
   }
@@ -5733,7 +5836,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (propertyValueEClass == null)
     {
-      propertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(128);
+      propertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(131);
     }
     return propertyValueEClass;
   }
@@ -5747,7 +5850,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (anyDrawablePropertyValueEClass == null)
     {
-      anyDrawablePropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(129);
+      anyDrawablePropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(132);
     }
     return anyDrawablePropertyValueEClass;
   }
@@ -5761,7 +5864,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stringPropertyValueEClass == null)
     {
-      stringPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(130);
+      stringPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(133);
     }
     return stringPropertyValueEClass;
   }
@@ -5785,7 +5888,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (integerPropertyValueEClass == null)
     {
-      integerPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(131);
+      integerPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(134);
     }
     return integerPropertyValueEClass;
   }
@@ -5809,7 +5912,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (booleanPropertyValueEClass == null)
     {
-      booleanPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(132);
+      booleanPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(135);
     }
     return booleanPropertyValueEClass;
   }
@@ -5833,7 +5936,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (colorPropertyValueEClass == null)
     {
-      colorPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(133);
+      colorPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(136);
     }
     return colorPropertyValueEClass;
   }
@@ -5857,7 +5960,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (layoutDimensionPropertyValueEClass == null)
     {
-      layoutDimensionPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(134);
+      layoutDimensionPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(137);
     }
     return layoutDimensionPropertyValueEClass;
   }
@@ -5881,7 +5984,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dimensionPropertyValueEClass == null)
     {
-      dimensionPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(136);
+      dimensionPropertyValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(139);
     }
     return dimensionPropertyValueEClass;
   }
@@ -5905,7 +6008,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (drawableResourceLinkEClass == null)
     {
-      drawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(137);
+      drawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(140);
     }
     return drawableResourceLinkEClass;
   }
@@ -5929,7 +6032,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (tabDrawableResourceLinkEClass == null)
     {
-      tabDrawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(138);
+      tabDrawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(141);
     }
     return tabDrawableResourceLinkEClass;
   }
@@ -5953,7 +6056,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (externalDrawableResourceLinkEClass == null)
     {
-      externalDrawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(139);
+      externalDrawableResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(142);
     }
     return externalDrawableResourceLinkEClass;
   }
@@ -5977,7 +6080,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stringResourceLinkEClass == null)
     {
-      stringResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(141);
+      stringResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(144);
     }
     return stringResourceLinkEClass;
   }
@@ -6001,7 +6104,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (integerResourceLinkEClass == null)
     {
-      integerResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(142);
+      integerResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(145);
     }
     return integerResourceLinkEClass;
   }
@@ -6025,7 +6128,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (booleanResourceLinkEClass == null)
     {
-      booleanResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(143);
+      booleanResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(146);
     }
     return booleanResourceLinkEClass;
   }
@@ -6049,7 +6152,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (colorResourceLinkEClass == null)
     {
-      colorResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(144);
+      colorResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(147);
     }
     return colorResourceLinkEClass;
   }
@@ -6073,7 +6176,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dimensionResourceLinkEClass == null)
     {
-      dimensionResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(145);
+      dimensionResourceLinkEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(148);
     }
     return dimensionResourceLinkEClass;
   }
@@ -6097,7 +6200,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (resourceEClass == null)
     {
-      resourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(146);
+      resourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(149);
     }
     return resourceEClass;
   }
@@ -6121,7 +6224,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stringResourceEClass == null)
     {
-      stringResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(147);
+      stringResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(150);
     }
     return stringResourceEClass;
   }
@@ -6145,7 +6248,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (integerResourceEClass == null)
     {
-      integerResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(148);
+      integerResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(151);
     }
     return integerResourceEClass;
   }
@@ -6169,7 +6272,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (booleanResourceEClass == null)
     {
-      booleanResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(149);
+      booleanResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(152);
     }
     return booleanResourceEClass;
   }
@@ -6193,7 +6296,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (colorResourceEClass == null)
     {
-      colorResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(150);
+      colorResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(153);
     }
     return colorResourceEClass;
   }
@@ -6217,7 +6320,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dimensionResourceEClass == null)
     {
-      dimensionResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(151);
+      dimensionResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(154);
     }
     return dimensionResourceEClass;
   }
@@ -6241,7 +6344,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (arrayResourceEClass == null)
     {
-      arrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(152);
+      arrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(155);
     }
     return arrayResourceEClass;
   }
@@ -6255,7 +6358,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (integerArrayResourceEClass == null)
     {
-      integerArrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(153);
+      integerArrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(156);
     }
     return integerArrayResourceEClass;
   }
@@ -6279,7 +6382,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (integerArrayEntryEClass == null)
     {
-      integerArrayEntryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(154);
+      integerArrayEntryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(157);
     }
     return integerArrayEntryEClass;
   }
@@ -6313,7 +6416,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stringArrayResourceEClass == null)
     {
-      stringArrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(155);
+      stringArrayResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(158);
     }
     return stringArrayResourceEClass;
   }
@@ -6337,7 +6440,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stringArrayEntryEClass == null)
     {
-      stringArrayEntryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(156);
+      stringArrayEntryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(159);
     }
     return stringArrayEntryEClass;
   }
@@ -6371,7 +6474,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (drawableResourceEClass == null)
     {
-      drawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(157);
+      drawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(160);
     }
     return drawableResourceEClass;
   }
@@ -6385,7 +6488,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (bitmapDrawableResourceEClass == null)
     {
-      bitmapDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(158);
+      bitmapDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(161);
     }
     return bitmapDrawableResourceEClass;
   }
@@ -6409,7 +6512,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (transitionDrawableResourceEClass == null)
     {
-      transitionDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(159);
+      transitionDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(162);
     }
     return transitionDrawableResourceEClass;
   }
@@ -6443,7 +6546,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (tabDrawableResourceEClass == null)
     {
-      tabDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(160);
+      tabDrawableResourceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(163);
     }
     return tabDrawableResourceEClass;
   }
@@ -6477,7 +6580,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dimensionValueEClass == null)
     {
-      dimensionValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(161);
+      dimensionValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(164);
     }
     return dimensionValueEClass;
   }
@@ -6511,7 +6614,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (baseGameActivityEClass == null)
     {
-      baseGameActivityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(163);
+      baseGameActivityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(166);
     }
     return baseGameActivityEClass;
   }
@@ -6555,7 +6658,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (androGameRootEClass == null)
     {
-      androGameRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(164);
+      androGameRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(167);
     }
     return androGameRootEClass;
   }
@@ -6579,7 +6682,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (androGameComponentEClass == null)
     {
-      androGameComponentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(165);
+      androGameComponentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(168);
     }
     return androGameComponentEClass;
   }
@@ -6603,7 +6706,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (androGameGuiEClass == null)
     {
-      androGameGuiEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(166);
+      androGameGuiEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(169);
     }
     return androGameGuiEClass;
   }
@@ -6627,7 +6730,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (androGameLogicEClass == null)
     {
-      androGameLogicEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(167);
+      androGameLogicEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(170);
     }
     return androGameLogicEClass;
   }
@@ -6661,7 +6764,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (box2DOptionsEClass == null)
     {
-      box2DOptionsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(168);
+      box2DOptionsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(171);
     }
     return box2DOptionsEClass;
   }
@@ -6685,7 +6788,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (jointEClass == null)
     {
-      jointEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(169);
+      jointEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(172);
     }
     return jointEClass;
   }
@@ -6729,7 +6832,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (revoluteJointEClass == null)
     {
-      revoluteJointEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(170);
+      revoluteJointEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(173);
     }
     return revoluteJointEClass;
   }
@@ -6743,7 +6846,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (distanceJointEClass == null)
     {
-      distanceJointEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(171);
+      distanceJointEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(174);
     }
     return distanceJointEClass;
   }
@@ -6757,7 +6860,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (bodyEClass == null)
     {
-      bodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(172);
+      bodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(175);
     }
     return bodyEClass;
   }
@@ -6791,7 +6894,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (lineBodyEClass == null)
     {
-      lineBodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(173);
+      lineBodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(176);
     }
     return lineBodyEClass;
   }
@@ -6805,7 +6908,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (circleBodyEClass == null)
     {
-      circleBodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(174);
+      circleBodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(177);
     }
     return circleBodyEClass;
   }
@@ -6819,7 +6922,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (boxBodyEClass == null)
     {
-      boxBodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(175);
+      boxBodyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(178);
     }
     return boxBodyEClass;
   }
@@ -6833,7 +6936,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fixtureEClass == null)
     {
-      fixtureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(176);
+      fixtureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(179);
     }
     return fixtureEClass;
   }
@@ -6887,7 +6990,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (logicComponentEClass == null)
     {
-      logicComponentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(178);
+      logicComponentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(181);
     }
     return logicComponentEClass;
   }
@@ -6901,7 +7004,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (bindingEClass == null)
     {
-      bindingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(179);
+      bindingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(182);
     }
     return bindingEClass;
   }
@@ -6935,7 +7038,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (bindableEClass == null)
     {
-      bindableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(180);
+      bindableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(183);
     }
     return bindableEClass;
   }
@@ -6959,7 +7062,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gameComponentEClass == null)
     {
-      gameComponentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(181);
+      gameComponentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(184);
     }
     return gameComponentEClass;
   }
@@ -6983,7 +7086,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (sceneEClass == null)
     {
-      sceneEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(182);
+      sceneEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(185);
     }
     return sceneEClass;
   }
@@ -7017,7 +7120,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (menuSceneEClass == null)
     {
-      menuSceneEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(183);
+      menuSceneEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(186);
     }
     return menuSceneEClass;
   }
@@ -7041,7 +7144,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gameBackgroundEClass == null)
     {
-      gameBackgroundEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(184);
+      gameBackgroundEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(187);
     }
     return gameBackgroundEClass;
   }
@@ -7075,7 +7178,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gameMenuItemEClass == null)
     {
-      gameMenuItemEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(185);
+      gameMenuItemEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(188);
     }
     return gameMenuItemEClass;
   }
@@ -7129,7 +7232,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gameEntityEClass == null)
     {
-      gameEntityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(186);
+      gameEntityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(189);
     }
     return gameEntityEClass;
   }
@@ -7163,7 +7266,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (simpleEntityEClass == null)
     {
-      simpleEntityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(187);
+      simpleEntityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(190);
     }
     return simpleEntityEClass;
   }
@@ -7207,7 +7310,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (bindingTargetEClass == null)
     {
-      bindingTargetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(188);
+      bindingTargetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(191);
     }
     return bindingTargetEClass;
   }
@@ -7221,7 +7324,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (entityBindingTargetEClass == null)
     {
-      entityBindingTargetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(189);
+      entityBindingTargetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(192);
     }
     return entityBindingTargetEClass;
   }
@@ -7245,7 +7348,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (entityModifierEClass == null)
     {
-      entityModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(190);
+      entityModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(193);
     }
     return entityModifierEClass;
   }
@@ -7259,7 +7362,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (sequenceEntityModifierEClass == null)
     {
-      sequenceEntityModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(191);
+      sequenceEntityModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(194);
     }
     return sequenceEntityModifierEClass;
   }
@@ -7283,7 +7386,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (loopEntityModifierEClass == null)
     {
-      loopEntityModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(192);
+      loopEntityModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(195);
     }
     return loopEntityModifierEClass;
   }
@@ -7317,7 +7420,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (moveModifierEClass == null)
     {
-      moveModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(193);
+      moveModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(196);
     }
     return moveModifierEClass;
   }
@@ -7361,7 +7464,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (moveByModifierEClass == null)
     {
-      moveByModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(194);
+      moveByModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(197);
     }
     return moveByModifierEClass;
   }
@@ -7395,7 +7498,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (scaleModifierEClass == null)
     {
-      scaleModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(195);
+      scaleModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(198);
     }
     return scaleModifierEClass;
   }
@@ -7439,7 +7542,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (alphaModifierEClass == null)
     {
-      alphaModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(196);
+      alphaModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(199);
     }
     return alphaModifierEClass;
   }
@@ -7483,7 +7586,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (rotationByModifierEClass == null)
     {
-      rotationByModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(197);
+      rotationByModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(200);
     }
     return rotationByModifierEClass;
   }
@@ -7517,7 +7620,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (rotationModifierEClass == null)
     {
-      rotationModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(198);
+      rotationModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(201);
     }
     return rotationModifierEClass;
   }
@@ -7561,7 +7664,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (colorModifierEClass == null)
     {
-      colorModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(199);
+      colorModifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(202);
     }
     return colorModifierEClass;
   }
@@ -7605,7 +7708,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (toTripleEClass == null)
     {
-      toTripleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(200);
+      toTripleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(203);
     }
     return toTripleEClass;
   }
@@ -7649,7 +7752,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fromTripleEClass == null)
     {
-      fromTripleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(201);
+      fromTripleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(204);
     }
     return fromTripleEClass;
   }
@@ -7693,7 +7796,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (toDoubleEClass == null)
     {
-      toDoubleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(202);
+      toDoubleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(205);
     }
     return toDoubleEClass;
   }
@@ -7727,7 +7830,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fromDoubleEClass == null)
     {
-      fromDoubleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(203);
+      fromDoubleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(206);
     }
     return fromDoubleEClass;
   }
@@ -7761,7 +7864,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (toSingleEClass == null)
     {
-      toSingleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(204);
+      toSingleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(207);
     }
     return toSingleEClass;
   }
@@ -7785,7 +7888,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fromSingleEClass == null)
     {
-      fromSingleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(205);
+      fromSingleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(208);
     }
     return fromSingleEClass;
   }
@@ -7809,7 +7912,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (byDoubleEClass == null)
     {
-      byDoubleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(206);
+      byDoubleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(209);
     }
     return byDoubleEClass;
   }
@@ -7843,7 +7946,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (bySingleEClass == null)
     {
-      bySingleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(207);
+      bySingleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(210);
     }
     return bySingleEClass;
   }
@@ -7867,7 +7970,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (lineEClass == null)
     {
-      lineEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(208);
+      lineEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(211);
     }
     return lineEClass;
   }
@@ -7911,7 +8014,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (textEClass == null)
     {
-      textEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(209);
+      textEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(212);
     }
     return textEClass;
   }
@@ -7965,7 +8068,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (rectangleEClass == null)
     {
-      rectangleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(210);
+      rectangleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(213);
     }
     return rectangleEClass;
   }
@@ -7999,7 +8102,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (spriteEClass == null)
     {
-      spriteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(211);
+      spriteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(214);
     }
     return spriteEClass;
   }
@@ -8043,7 +8146,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (animatedSpriteEClass == null)
     {
-      animatedSpriteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(212);
+      animatedSpriteEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(215);
     }
     return animatedSpriteEClass;
   }
@@ -8097,7 +8200,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (colorEClass == null)
     {
-      colorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(213);
+      colorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(216);
     }
     return colorEClass;
   }
@@ -8161,7 +8264,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (positionEClass == null)
     {
-      positionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(214);
+      positionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(217);
     }
     return positionEClass;
   }
@@ -8195,7 +8298,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (sizeEClass == null)
     {
-      sizeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(215);
+      sizeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(218);
     }
     return sizeEClass;
   }
@@ -8229,7 +8332,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (textureRegionEClass == null)
     {
-      textureRegionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(216);
+      textureRegionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(219);
     }
     return textureRegionEClass;
   }
@@ -8263,7 +8366,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (tiledEClass == null)
     {
-      tiledEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(217);
+      tiledEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(220);
     }
     return tiledEClass;
   }
@@ -8297,7 +8400,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fontEClass == null)
     {
-      fontEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(218);
+      fontEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(221);
     }
     return fontEClass;
   }
@@ -8379,7 +8482,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dataTypesEEnum == null)
     {
-      dataTypesEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(22);
+      dataTypesEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(24);
     }
     return dataTypesEEnum;
   }
@@ -8393,7 +8496,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (numericKindEEnum == null)
     {
-      numericKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(95);
+      numericKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(98);
     }
     return numericKindEEnum;
   }
@@ -8407,7 +8510,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (typefaceKindEEnum == null)
     {
-      typefaceKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(97);
+      typefaceKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(100);
     }
     return typefaceKindEEnum;
   }
@@ -8421,7 +8524,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (textStyleKindEEnum == null)
     {
-      textStyleKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(98);
+      textStyleKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(101);
     }
     return textStyleKindEEnum;
   }
@@ -8435,7 +8538,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (capitalizeKindEEnum == null)
     {
-      capitalizeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(102);
+      capitalizeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(105);
     }
     return capitalizeKindEEnum;
   }
@@ -8449,7 +8552,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (autoLinkKindEEnum == null)
     {
-      autoLinkKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(108);
+      autoLinkKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(111);
     }
     return autoLinkKindEEnum;
   }
@@ -8463,7 +8566,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (stretchModeKindEEnum == null)
     {
-      stretchModeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(119);
+      stretchModeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(122);
     }
     return stretchModeKindEEnum;
   }
@@ -8477,7 +8580,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (gravityKindEEnum == null)
     {
-      gravityKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(125);
+      gravityKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(128);
     }
     return gravityKindEEnum;
   }
@@ -8491,7 +8594,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fastLayoutDimensionKindEEnum == null)
     {
-      fastLayoutDimensionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(126);
+      fastLayoutDimensionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(129);
     }
     return fastLayoutDimensionKindEEnum;
   }
@@ -8505,7 +8608,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (layoutDimensionKindEEnum == null)
     {
-      layoutDimensionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(135);
+      layoutDimensionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(138);
     }
     return layoutDimensionKindEEnum;
   }
@@ -8519,7 +8622,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (androidDrawableResourceEEnum == null)
     {
-      androidDrawableResourceEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(140);
+      androidDrawableResourceEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(143);
     }
     return androidDrawableResourceEEnum;
   }
@@ -8533,7 +8636,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (dimensionMetricEEnum == null)
     {
-      dimensionMetricEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(162);
+      dimensionMetricEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(165);
     }
     return dimensionMetricEEnum;
   }
@@ -8547,7 +8650,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (bodyTypeEEnum == null)
     {
-      bodyTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(177);
+      bodyTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(180);
     }
     return bodyTypeEEnum;
   }
@@ -8561,7 +8664,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (constantColorEEnum == null)
     {
-      constantColorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(219);
+      constantColorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(222);
     }
     return constantColorEEnum;
   }
@@ -8575,7 +8678,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (horizontalAlignEEnum == null)
     {
-      horizontalAlignEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(220);
+      horizontalAlignEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(223);
     }
     return horizontalAlignEEnum;
   }
@@ -8589,7 +8692,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (fontTypeEEnum == null)
     {
-      fontTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(221);
+      fontTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(224);
     }
     return fontTypeEEnum;
   }
@@ -8603,7 +8706,7 @@ public class AndroTextDslPackageImpl extends EPackageImpl implements AndroTextDs
   {
     if (screenOrientationEEnum == null)
     {
-      screenOrientationEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(222);
+      screenOrientationEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(AndroTextDslPackage.eNS_URI).getEClassifiers().get(225);
     }
     return screenOrientationEEnum;
   }

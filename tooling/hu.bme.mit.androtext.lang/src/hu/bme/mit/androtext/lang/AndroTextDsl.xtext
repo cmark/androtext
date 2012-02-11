@@ -85,9 +85,10 @@ Tab:
 	'}';
 	
 ListActivity:
-	'listactivity' name=ID  'listitem' listitem=[View | QualifiedName]
+	'listactivity' name=ID 'listitem' listitem=[View | QualifiedName]
 	'{'
 		'content' contentProvider=ContentProvider
+		('onListItemClick' action=Action)?
 	'}'
 ;
 	
@@ -103,13 +104,13 @@ ResourceContentProvider:
 	link=[ArrayResource | QualifiedName]
 ;
 
-//Action:
-//	InvokeActivity | InvokeWebUrl
-//;
-//
-//InvokeActivity:
-//	'show' activity=[Activity | QualifiedName]
-//;
+Action:
+	InvokeActivity //| InvokeWebUrl
+;
+
+InvokeActivity:
+	'navigateTo' activity=[Activity | QualifiedName]
+;
 //
 //InvokeWebUrl:
 //	'goto' url=STRING
@@ -208,7 +209,10 @@ FastLayoutStyle:
 ;
 
 AbsoluteLayout:
-	"absolutelayout" name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	"absolutelayout" 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	"{"
 		views+=View*
 	"}";
@@ -224,19 +228,28 @@ LinearLayout:
 	"}";
 
 FrameLayout:
-	"framelayout" name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	"framelayout" 
+	name=ID 
+	(layoutStyle=LayoutStyle)?
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	"{"
 		views+=View*
 	"}";
 	
 RelativeLayout:
-	"relativelayout" name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	"relativelayout" 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	"{"
 		views+=View*
 	"}";
 	
 GridLayout:
-	'girdlayout' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
+	'girdlayout' 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
 	'{'
 		views+=View*
 	'}'
@@ -256,7 +269,10 @@ TableLayout:
 ;
 
 TableRow:
-	'tablerow' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	'tablerow' 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	'{' 
 		views+=View*
 	'}'
@@ -267,14 +283,21 @@ SimpleView:
 ;
 
 ViewElement:
-	'view' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	'view' 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	'{'
 		(backgroundAttribute=BackgroundAttribute)?
 	'}'
 ;
 
 TextView:
-	"textview" name=ID (text=StringPropertyValue)? (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
+	"textview" 
+	name=ID 
+	(text=StringPropertyValue)? 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
 	'{' 
 		(
 			// View properties
@@ -307,7 +330,11 @@ TextView:
 ;
 	
 EditText:
-	"edittext" name=ID (text=StringPropertyValue)? (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
+	"edittext" 
+	name=ID 
+	(text=StringPropertyValue)? 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
 	'{'
 		(
 	      	(widthAttribute=WidthAttribute)?
@@ -338,7 +365,11 @@ EditText:
 ;
 	
 Button:
-	"button" name=ID text=StringPropertyValue (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	"button" 
+	name=ID 
+	text=StringPropertyValue 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	'{'
 		(
 	      	(widthAttribute=WidthAttribute)?
@@ -346,24 +377,38 @@ Button:
 	      	& (backgroundAttribute=BackgroundAttribute)?
 	      	& (clickableAttribute=ClickableAttribute)?
 	      	& (hintAttribute=HintAttribute)?
+	      	& (onClickAttribute=OnClickAttribute)?
 		)	
 	'}'
 ;
 
 Gallery:
-	'gallery' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	'gallery' 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 ;
 
 ExpandableListView:
-	'explistview' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	'explistview' 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 ;
 
 WebView:
-	'webview' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	'webview'
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 ;
 
 ImageView:
-	'imageview' name=ID src=AnyDrawablePropertyValue (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	'imageview' 
+	name=ID 
+	src=AnyDrawablePropertyValue 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	'{'
 		(
 	      	(widthAttribute=WidthAttribute)?
@@ -377,7 +422,10 @@ ImageView:
 ;	
 	
 ListView:
-	'listview' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	'listview' 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	'{'
 		(entriesAttribute=EntriesAttribute)?
 		('listitem' layout=[View | QualifiedName])?
@@ -385,7 +433,10 @@ ListView:
 ;
 	
 GridView:
-	'gridview' name=ID (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
+	'gridview' 
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
 	'{'
 		(
 			(columnWidthAttribute=ColumnWidthAttribute)?
@@ -399,7 +450,11 @@ GridView:
 ;
 	
 Spinner:
-	"spinner" name=ID (entriesAttribute=EntriesAttribute)? (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
+	"spinner" 
+	name=ID 
+	(entriesAttribute=EntriesAttribute)? 
+	(layoutStyle=LayoutStyle)?
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
 	'{'
 		(
 	      	(widthAttribute=WidthAttribute)?
@@ -413,48 +468,71 @@ Spinner:
 ;
 	
 CheckBox:
-	"checkbox" name=ID text=StringPropertyValue (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	'{'
-	'}';
+	"checkbox" 
+	name=ID 
+	text=StringPropertyValue 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	('{'
+	'}')?;
 	
 RadioGroup:
-	"radiogroup" name=ID (orientation?="horizontal"|"vertical")? (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
+	"radiogroup" 
+	name=ID 
+	(orientation?="horizontal"|"vertical")? 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
 	"{"  
 		(radiobuttons+=RadioButton)+
 	"}";
 	
 RatingBar:
-	"ratingbar" name=ID numStars=IntegerPropertyValue (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	'{'
-	'}';
+	"ratingbar" 
+	(name=ID)? 
+	numStars=IntegerPropertyValue 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	('{'
+	'}')?;
 	
 ToggleButton:
-	"togglebutton" name=ID "textOn" textOn=StringPropertyValue "textOff" textOff=StringPropertyValue (layoutStyle=LayoutStyle)? 
+	"togglebutton" 
+	name=ID 
+	"textOn" textOn=StringPropertyValue 
+	"textOff" textOff=StringPropertyValue 
+	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	'{'
-	'}';
+	('{'
+	'}')?;
 	
 RadioButton:
-	"radiobutton" name=ID text=STRING (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	'{'
-	'}';
+	"radiobutton" 
+	name=ID 
+	text=STRING 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
+	('{'
+	'}')?;
 
 CheckedTextView:
-	'checkedtextview' name=ID text=STRING (layoutStyle=LayoutStyle)? ('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
-	'{'
-	'}'
-;
+	'checkedtextview' 
+	name=ID 
+	text=STRING 
+	(layoutStyle=LayoutStyle)? 
+	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
+	('{'
+	'}')?;
 
 AutoCompleteTextView:
-	'autocompletetextview' name=ID 
+	'autocompletetextview' 
+	name=ID 
 	(entriesAttribute=EntriesAttribute)?
 	('listitem' listItem=[View | QualifiedName])?
 	(layoutStyle=LayoutStyle)?
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	('multi' multi=BooleanPropertyValue)? 
-	'{'
-	'}'
-;
+	('{'
+	'}')?;
 
 /* Preference Framework Elements */
 AbstractPreference:
@@ -522,6 +600,10 @@ ListPreferenceAttributes:
 ;
 
 /* XML attributes */
+OnClickAttribute:
+	'onClick' action=Action	
+;
+
 SpanAttribute:
 	'span' span=IntegerPropertyValue
 ;

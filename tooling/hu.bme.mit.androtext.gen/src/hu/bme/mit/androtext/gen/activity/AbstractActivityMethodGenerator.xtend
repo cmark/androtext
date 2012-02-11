@@ -9,8 +9,11 @@ class AbstractActivityMethodGenerator {
 	
 	@Inject extension GeneratorExtensions
 	@Inject extension BaseGameActivityMethodGenerator
+	@Inject extension SimpleActivityMethodGenerator
 	
-	def dispatch generateMethods(Activity activity) ''''''
+	def dispatch generateMethods(Activity activity) {
+		activity.methods
+	}
 	def dispatch generateMethods(BaseGameActivity activity) {
 		activity.methods
 	}

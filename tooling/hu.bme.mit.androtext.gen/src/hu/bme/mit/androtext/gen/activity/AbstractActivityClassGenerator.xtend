@@ -4,14 +4,10 @@ import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.IAbstractActivityGenerator
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
-import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
-import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
+import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
-import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider
-import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
@@ -19,7 +15,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 
 class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	
@@ -51,19 +46,32 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		«body»
 	'''
 	
-	def dispatch extraImports(Activity activity) ''''''
+	def basicImports(Activity activity) '''
+		import android.widget.Button;
+		import android.view.View;
+		import android.view.View.OnClickListener;
+		import android.content.Intent;
+	'''
+	
+	def dispatch extraImports(Activity activity) '''
+		«activity.basicImports.toString.trim»
+	'''
 	
 	def dispatch extraImports(ListActivity activity) '''
+		«activity.basicImports.toString.trim»
 		import android.widget.ArrayAdapter;
+		import android.widget.AdapterView.OnItemClickListener;
 	'''
 	
 	def dispatch extraImports(TabActivity activity) '''
+		«activity.basicImports.toString.trim»
 		import android.widget.TabHost;
 		import android.content.Intent;
 		import android.content.res.Resources;
 	'''
 	
 	def dispatch extraImports(BaseGameActivity activity) '''
+		«activity.basicImports.toString.trim»
 		import android.graphics.Color;
 		import android.graphics.Typeface;
 		import android.hardware.SensorManager;
@@ -116,13 +124,6 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 			
 			«activity.generateFields»
 			
-			@Override
-			protected void onCreate(Bundle savedInstanceState) {
-				super.onCreate(savedInstanceState);
-				«activity.contentViewSet»
-				«activity.logic»
-			}
-			
 			«activity.generateMethods»
 			
 		} 
@@ -133,52 +134,4 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 «««		«IF activity.findSensorUsage»implements IAccelerometerListener«ENDIF»
 		«IF activity.scene instanceof MenuScene»implements IOnMenuItemClickListener«ENDIF»
 	'''
-	
-	def dispatch contentViewSet(Activity activity) '''
-		«IF activity.layout != null»
-		setContentView(R.layout.«activity.layout.layoutName»);
-		«ENDIF»
-	'''
-	
-	def dispatch contentViewSet(TabActivity activity) '''
-		setContentView(R.layout.«activity.tabActivityLayout»);
-	'''
-	
-	def dispatch logic(Activity activity) ''''''
-	def dispatch logic(ListActivity activity) '''
-		«val listItem = activity.listitem.layoutName»
-		«activity.contentProvider.generate(listItem)»
-	'''
-	
-	def dispatch logic(TabActivity activity) '''
-		Resources res = getResources(); // Resource object to get Drawables
-		TabHost tabHost = getTabHost();  // The activity TabHost
-		TabHost.TabSpec spec;  // Resusable TabSpec for each tab
-		Intent intent;  // Reusable Intent for each tab
-		«FOR tab : activity.tabs»
-		intent = new Intent().setClass(this, «tab.activity.className».class);
-		spec = tabHost.newTabSpec("«tab.tag»").setIndicator("«tab.tag.toFirstUpper»",
-						res.getDrawable(R.drawable.«tab.drawable.link.name»))
-						.setContent(intent);
-		tabHost.addTab(spec);
-		
-		«ENDFOR»
-		
-		tabHost.setCurrentTab(2);
-	'''
-	
-	def dispatch generate(ContentProvider provider, String listItem) ''''''
-	def dispatch generate(ResourceContentProvider provider, String listItem) '''
-		«provider.link.generateContentSet(listItem)»
-	'''
-	
-	def dispatch generateContentSet(ArrayResource resource, String listItem) '''
-	'''
-	def dispatch generateContentSet(StringArrayResource resource, String listItem) '''
-		String[] «resource.name» = getResources().getStringArray(R.array.«resource.name»);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.«listItem», «resource.name»));
-	'''
-	def dispatch generateContentSet(IntegerArrayResource resource, String listItem) '''
-	'''
-	
 }

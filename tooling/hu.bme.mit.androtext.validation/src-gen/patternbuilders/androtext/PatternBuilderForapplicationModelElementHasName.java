@@ -38,19 +38,19 @@ public class PatternBuilderForapplicationModelElementHasName implements IStatele
 		assert("androtext.applicationModelElementHasName".equals(gtPattern));
 		buildable = buildable.getNextContainer().putOnTab("androtext.applicationModelElementHasName");
 		
-		final Address<? extends Receiver> var_39 = buildable.patternCollector("androtext.applicationModelElementHasName");
-		final Stub<Address<? extends Supplier>> var_40 = buildable.buildStartStub(new Object[] {}, new Object[] {});
-		final Object var_41 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://www.bme.hu/mit/androtext/lang/AndroTextDsl").getEClassifier("AndroidApplicationModelElement"))).getEStructuralFeature("name");
-		final Stub<Address<? extends Supplier>> var_42 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"Named", "Name"}), var_41);
-		final TupleMask var_43 = new TupleMask(new int[] {}, 0);
-		final TupleMask var_44 = new TupleMask(new int[] {}, 2);
-		final TupleMask var_45 = new TupleMask(new int[] {0, 1}, 2);
-		final Stub<Address<? extends Supplier>> var_46 = buildable.buildBetaNode(var_40, var_42, var_43, var_44, var_45, false);
-		final Stub<Address<? extends Supplier>> var_47 = buildable.buildInjectivityChecker(var_46, 1, new int[] {0});
-		final TupleMask var_48 = new TupleMask(new int[] {0, 1}, 2);
-		final Stub<Address<? extends Supplier>> var_49 = buildable.buildTrimmer(var_47, var_48);
-		buildable.buildConnection(var_49, var_39);
-		return var_39;
+		final Address<? extends Receiver> var_82 = buildable.patternCollector("androtext.applicationModelElementHasName");
+		final Stub<Address<? extends Supplier>> var_83 = buildable.buildStartStub(new Object[] {}, new Object[] {});
+		final Object var_84 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://www.bme.hu/mit/androtext/lang/AndroTextDsl").getEClassifier("AndroidApplicationModelElement"))).getEStructuralFeature("name");
+		final Stub<Address<? extends Supplier>> var_85 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"Named", "Name"}), var_84);
+		final TupleMask var_86 = new TupleMask(new int[] {}, 0);
+		final TupleMask var_87 = new TupleMask(new int[] {}, 2);
+		final TupleMask var_88 = new TupleMask(new int[] {0, 1}, 2);
+		final Stub<Address<? extends Supplier>> var_89 = buildable.buildBetaNode(var_83, var_85, var_86, var_87, var_88, false);
+		final Stub<Address<? extends Supplier>> var_90 = buildable.buildInjectivityChecker(var_89, 1, new int[] {0});
+		final TupleMask var_91 = new TupleMask(new int[] {0, 1}, 2);
+		final Stub<Address<? extends Supplier>> var_92 = buildable.buildTrimmer(var_90, var_91);
+		buildable.buildConnection(var_92, var_82);
+		return var_82;
 
 	}
 	

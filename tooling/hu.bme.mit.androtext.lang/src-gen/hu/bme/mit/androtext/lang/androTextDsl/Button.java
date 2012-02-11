@@ -21,6 +21,7 @@ package hu.bme.mit.androtext.lang.androTextDsl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getBackgroundAttribute <em>Background Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getClickableAttribute <em>Clickable Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getHintAttribute <em>Hint Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getOnClickAttribute <em>On Click Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -185,5 +186,31 @@ public interface Button extends SimpleView
    * @generated
    */
   void setHintAttribute(HintAttribute value);
+
+  /**
+   * Returns the value of the '<em><b>On Click Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>On Click Attribute</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>On Click Attribute</em>' containment reference.
+   * @see #setOnClickAttribute(OnClickAttribute)
+   * @see hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage#getButton_OnClickAttribute()
+   * @model containment="true"
+   * @generated
+   */
+  OnClickAttribute getOnClickAttribute();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.androtext.lang.androTextDsl.Button#getOnClickAttribute <em>On Click Attribute</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>On Click Attribute</em>' containment reference.
+   * @see #getOnClickAttribute()
+   * @generated
+   */
+  void setOnClickAttribute(OnClickAttribute value);
 
 } // Button

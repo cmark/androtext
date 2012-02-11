@@ -68,6 +68,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="listitem" eType="#//View"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentProvider" eType="#//ContentProvider"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PreferenceActivity" eSuperTypes="#//AndroidApplicationModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//PreferenceScreen"/>
@@ -75,6 +77,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ContentProvider"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceContentProvider" eSuperTypes="#//ContentProvider">
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//ArrayResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InvokeActivity" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AndroDataModelRoot" eSuperTypes="#//ModelRoot">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -309,6 +315,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hintAttribute" eType="#//HintAttribute"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onClickAttribute" eType="#//OnClickAttribute"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gallery" eSuperTypes="#//SimpleView"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExpandableListView" eSuperTypes="#//SimpleView"/>
@@ -458,6 +466,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="entriesAttribute" eType="#//EntriesAttribute"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entryValues" eType="#//StringArrayEntry"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnClickAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpanAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="span" eType="#//IntegerPropertyValue"

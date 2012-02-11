@@ -12,6 +12,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.ClickableAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.HeightAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.HintAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.WidthAttribute;
 
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ButtonImpl#getBackgroundAttribute <em>Background Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ButtonImpl#getClickableAttribute <em>Clickable Attribute</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ButtonImpl#getHintAttribute <em>Hint Attribute</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ButtonImpl#getOnClickAttribute <em>On Click Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,6 +104,16 @@ public class ButtonImpl extends SimpleViewImpl implements Button
    * @ordered
    */
   protected HintAttribute hintAttribute;
+
+  /**
+   * The cached value of the '{@link #getOnClickAttribute() <em>On Click Attribute</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOnClickAttribute()
+   * @generated
+   * @ordered
+   */
+  protected OnClickAttribute onClickAttribute;
 
   /**
    * <!-- begin-user-doc -->
@@ -417,6 +429,54 @@ public class ButtonImpl extends SimpleViewImpl implements Button
    * <!-- end-user-doc -->
    * @generated
    */
+  public OnClickAttribute getOnClickAttribute()
+  {
+    return onClickAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOnClickAttribute(OnClickAttribute newOnClickAttribute, NotificationChain msgs)
+  {
+    OnClickAttribute oldOnClickAttribute = onClickAttribute;
+    onClickAttribute = newOnClickAttribute;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE, oldOnClickAttribute, newOnClickAttribute);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOnClickAttribute(OnClickAttribute newOnClickAttribute)
+  {
+    if (newOnClickAttribute != onClickAttribute)
+    {
+      NotificationChain msgs = null;
+      if (onClickAttribute != null)
+        msgs = ((InternalEObject)onClickAttribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE, null, msgs);
+      if (newOnClickAttribute != null)
+        msgs = ((InternalEObject)newOnClickAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE, null, msgs);
+      msgs = basicSetOnClickAttribute(newOnClickAttribute, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE, newOnClickAttribute, newOnClickAttribute));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -434,6 +494,8 @@ public class ButtonImpl extends SimpleViewImpl implements Button
         return basicSetClickableAttribute(null, msgs);
       case AndroTextDslPackage.BUTTON__HINT_ATTRIBUTE:
         return basicSetHintAttribute(null, msgs);
+      case AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE:
+        return basicSetOnClickAttribute(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -460,6 +522,8 @@ public class ButtonImpl extends SimpleViewImpl implements Button
         return getClickableAttribute();
       case AndroTextDslPackage.BUTTON__HINT_ATTRIBUTE:
         return getHintAttribute();
+      case AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE:
+        return getOnClickAttribute();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -491,6 +555,9 @@ public class ButtonImpl extends SimpleViewImpl implements Button
         return;
       case AndroTextDslPackage.BUTTON__HINT_ATTRIBUTE:
         setHintAttribute((HintAttribute)newValue);
+        return;
+      case AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE:
+        setOnClickAttribute((OnClickAttribute)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -524,6 +591,9 @@ public class ButtonImpl extends SimpleViewImpl implements Button
       case AndroTextDslPackage.BUTTON__HINT_ATTRIBUTE:
         setHintAttribute((HintAttribute)null);
         return;
+      case AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE:
+        setOnClickAttribute((OnClickAttribute)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -550,6 +620,8 @@ public class ButtonImpl extends SimpleViewImpl implements Button
         return clickableAttribute != null;
       case AndroTextDslPackage.BUTTON__HINT_ATTRIBUTE:
         return hintAttribute != null;
+      case AndroTextDslPackage.BUTTON__ON_CLICK_ATTRIBUTE:
+        return onClickAttribute != null;
     }
     return super.eIsSet(featureID);
   }

@@ -6,6 +6,7 @@
  */
 package hu.bme.mit.androtext.lang.androTextDsl.impl;
 
+import hu.bme.mit.androtext.lang.androTextDsl.Action;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListActivityImpl#getListitem <em>Listitem</em>}</li>
  *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListActivityImpl#getContentProvider <em>Content Provider</em>}</li>
+ *   <li>{@link hu.bme.mit.androtext.lang.androTextDsl.impl.ListActivityImpl#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +56,16 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
    * @ordered
    */
   protected ContentProvider contentProvider;
+
+  /**
+   * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAction()
+   * @generated
+   * @ordered
+   */
+  protected Action action;
 
   /**
    * <!-- begin-user-doc -->
@@ -172,6 +184,54 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
    * <!-- end-user-doc -->
    * @generated
    */
+  public Action getAction()
+  {
+    return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAction(Action newAction, NotificationChain msgs)
+  {
+    Action oldAction = action;
+    action = newAction;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LIST_ACTIVITY__ACTION, oldAction, newAction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAction(Action newAction)
+  {
+    if (newAction != action)
+    {
+      NotificationChain msgs = null;
+      if (action != null)
+        msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LIST_ACTIVITY__ACTION, null, msgs);
+      if (newAction != null)
+        msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroTextDslPackage.LIST_ACTIVITY__ACTION, null, msgs);
+      msgs = basicSetAction(newAction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroTextDslPackage.LIST_ACTIVITY__ACTION, newAction, newAction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -179,6 +239,8 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
     {
       case AndroTextDslPackage.LIST_ACTIVITY__CONTENT_PROVIDER:
         return basicSetContentProvider(null, msgs);
+      case AndroTextDslPackage.LIST_ACTIVITY__ACTION:
+        return basicSetAction(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,6 +260,8 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
         return basicGetListitem();
       case AndroTextDslPackage.LIST_ACTIVITY__CONTENT_PROVIDER:
         return getContentProvider();
+      case AndroTextDslPackage.LIST_ACTIVITY__ACTION:
+        return getAction();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -217,6 +281,9 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
         return;
       case AndroTextDslPackage.LIST_ACTIVITY__CONTENT_PROVIDER:
         setContentProvider((ContentProvider)newValue);
+        return;
+      case AndroTextDslPackage.LIST_ACTIVITY__ACTION:
+        setAction((Action)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,6 +305,9 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
       case AndroTextDslPackage.LIST_ACTIVITY__CONTENT_PROVIDER:
         setContentProvider((ContentProvider)null);
         return;
+      case AndroTextDslPackage.LIST_ACTIVITY__ACTION:
+        setAction((Action)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -256,6 +326,8 @@ public class ListActivityImpl extends ActivityImpl implements ListActivity
         return listitem != null;
       case AndroTextDslPackage.LIST_ACTIVITY__CONTENT_PROVIDER:
         return contentProvider != null;
+      case AndroTextDslPackage.LIST_ACTIVITY__ACTION:
+        return action != null;
     }
     return super.eIsSet(featureID);
   }

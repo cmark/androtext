@@ -99,6 +99,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.IsScrollContainerAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutProperties;
@@ -119,6 +120,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.MoveModifier;
 import hu.bme.mit.androtext.lang.androTextDsl.NumColumnsAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.NumericAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.PaddingAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.PasswordAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.PhoneNumberAttribute;
@@ -888,6 +890,13 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 					return; 
 				}
 				else break;
+			case AndroTextDslPackage.INVOKE_ACTIVITY:
+				if(context == grammarAccess.getActionRule() ||
+				   context == grammarAccess.getInvokeActivityRule()) {
+					sequence_InvokeActivity(context, (InvokeActivity) semanticObject); 
+					return; 
+				}
+				else break;
 			case AndroTextDslPackage.IS_SCROLL_CONTAINER_ATTRIBUTE:
 				if(context == grammarAccess.getIsScrollContainerAttributeRule()) {
 					sequence_IsScrollContainerAttribute(context, (IsScrollContainerAttribute) semanticObject); 
@@ -1028,6 +1037,12 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 			case AndroTextDslPackage.NUMERIC_ATTRIBUTE:
 				if(context == grammarAccess.getNumericAttributeRule()) {
 					sequence_NumericAttribute(context, (NumericAttribute) semanticObject); 
+					return; 
+				}
+				else break;
+			case AndroTextDslPackage.ON_CLICK_ATTRIBUTE:
+				if(context == grammarAccess.getOnClickAttributeRule()) {
+					sequence_OnClickAttribute(context, (OnClickAttribute) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1964,7 +1979,8 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	 *         heightAttribute=HeightAttribute? 
 	 *         backgroundAttribute=BackgroundAttribute? 
 	 *         clickableAttribute=ClickableAttribute? 
-	 *         hintAttribute=HintAttribute?
+	 *         hintAttribute=HintAttribute? 
+	 *         onClickAttribute=OnClickAttribute?
 	 *     )
 	 */
 	protected void sequence_Button(EObject context, Button semanticObject) {
@@ -2906,6 +2922,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     activity=[Activity|QualifiedName]
+	 */
+	protected void sequence_InvokeActivity(EObject context, InvokeActivity semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getInvokeActivity_Activity()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getInvokeActivity_Activity()));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInvokeActivityAccess().getActivityActivityQualifiedNameParserRuleCall_1_0_1(), semanticObject.getActivity());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     isScrollContainer=BooleanPropertyValue
 	 */
 	protected void sequence_IsScrollContainerAttribute(EObject context, IsScrollContainerAttribute semanticObject) {
@@ -3017,7 +3049,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID listitem=[View|QualifiedName] contentProvider=ContentProvider)
+	 *     (name=ID listitem=[View|QualifiedName] contentProvider=ContentProvider action=Action?)
 	 */
 	protected void sequence_ListActivity(EObject context, ListActivity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -3231,6 +3263,22 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     action=Action
+	 */
+	protected void sequence_OnClickAttribute(EObject context, OnClickAttribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AndroTextDslPackage.eINSTANCE.getOnClickAttribute_Action()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AndroTextDslPackage.eINSTANCE.getOnClickAttribute_Action()));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getOnClickAttributeAccess().getActionActionParserRuleCall_1_0(), semanticObject.getAction());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     padding=DimensionPropertyValue
 	 */
 	protected void sequence_PaddingAttribute(EObject context, PaddingAttribute semanticObject) {
@@ -3390,7 +3438,7 @@ public class AbstractAndroTextDslSemanticSequencer extends AbstractSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID numStars=IntegerPropertyValue layoutStyle=LayoutStyle? layoutProperties=[LayoutProperties|QualifiedName]?)
+	 *     (name=ID? numStars=IntegerPropertyValue layoutStyle=LayoutStyle? layoutProperties=[LayoutProperties|QualifiedName]?)
 	 */
 	protected void sequence_RatingBar(EObject context, RatingBar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

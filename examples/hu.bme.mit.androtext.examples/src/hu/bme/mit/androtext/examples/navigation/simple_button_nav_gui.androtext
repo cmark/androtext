@@ -1,0 +1,14 @@
+guimodel SimpleButtonNavGui {
+	
+	linearlayout mainLayout fill {	
+		
+		button NavigateToOtherActivity "Click me" fill&wrap {
+			onClick navigateTo SimpleButtonNavExample.OtherActivity 
+		}
+		
+		textview help "Click on the button to navigate to the other activity!" wrap {
+		}
+			
+	}
+	
+}
