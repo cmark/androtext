@@ -4,14 +4,13 @@ import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.IGenerator
 import hu.bme.mit.androtext.gen.IGeneratorSlots
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.Entity
 import hu.bme.mit.androtext.lang.androTextDsl.Property
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 
 class EntityClassGenerator implements IGenerator {
 	
@@ -64,18 +63,18 @@ class EntityClassGenerator implements IGenerator {
 	}
 	
 	def feature(Property f, ImportManager importManager) '''
-		private «f.type» «f.featureName»;
+		private «f.type.name» «f.featureName»;
 	'''
 	
 	def getter(Property f) '''
-		public «f.type» get«f.name.toFirstUpper»() {
+		public «f.type.name» get«f.name.toFirstUpper»() {
 			return «f.name»;
 		}
 		
 	'''
 	
 	def setter(Property f) '''
-		public void set«f.name.toFirstUpper»(«f.type» «f.name») {
+		public void set«f.name.toFirstUpper»(«f.type.name» «f.name») {
 			this.«f.featureName» = «f.name»;
 		}
 		

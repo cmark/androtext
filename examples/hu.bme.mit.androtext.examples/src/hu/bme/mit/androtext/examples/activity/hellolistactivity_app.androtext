@@ -1,9 +1,10 @@
 application HelloListActivityExample {
 	
-	listactivity HelloListActivity listitem HelloListActivityGui.simple_list_item {
+	listactivity HelloListActivity {
+		listitem HelloListActivityGui.simple_list_item
 		fetch from simpleProvider
 	}
 	
-	contentprovider simpleProvider resource HelloListActivityResources.countries 
+	resourceprovider simpleProvider resource HelloListActivityResources.countries 
 	
 }

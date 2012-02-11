@@ -7,6 +7,7 @@ import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -67,11 +68,37 @@ public class AndroidManifestGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    {
+      EList<AndroidApplicationModelElement> _modelElements_1 = application.getModelElements();
+      Iterable<DatabaseContentProvider> _filter_1 = IterableExtensions.<DatabaseContentProvider>filter(_modelElements_1, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+      for(final DatabaseContentProvider contentProvider : _filter_1) {
+        _builder.append("\t\t");
+        StringConcatenation _generateContentProvider = this.generateContentProvider(contentProvider, androidApplication);
+        _builder.append(_generateContentProvider, "		");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append("\t");
     _builder.append("</application>");
     _builder.newLine();
-    _builder.append("</manifest>\t\t\t\t");
+    _builder.append("</manifest>");
     _builder.newLine();
+    return _builder;
+  }
+  
+  public StringConcatenation generateContentProvider(final DatabaseContentProvider contentProvider, final TargetApplication application) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<provider android:name=\"data.");
+    String _className = this.generatorExtensions.className(contentProvider);
+    _builder.append(_className, "");
+    _builder.append("\" ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("android:authorities=\"");
+    String _authority = this.generatorExtensions.authority(application);
+    _builder.append(_authority, "	");
+    _builder.append("\" />");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   

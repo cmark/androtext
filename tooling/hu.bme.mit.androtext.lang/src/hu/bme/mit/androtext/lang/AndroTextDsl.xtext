@@ -84,11 +84,12 @@ Tab:
 	'}';
 	
 ListActivity:
-	'listactivity' name=ID 'listitem' listitem=[View | QualifiedName]
-	'{'
+	'listactivity' name=ID
+	('{'
+		('listitem' listitem=[View | QualifiedName])?
 		('fetch' (entity=[Entity | QualifiedName])? 'from' contentProvider=[ContentProvider | QualifiedName])?
 		('onListItemClick' onListItemClickAction=Action)?
-	'}'
+	'}')?
 ;
 	
 PreferenceActivity:
@@ -101,12 +102,12 @@ ContentProvider returns ContentProvider:
 
 DatabaseContentProvider returns ContentProvider:
 	{DatabaseContentProvider}
-	'çontentprovider' name=ID 'data' datamodel=[AndroDataModelRoot | QualifiedName]
+	'provider' name=ID 'data' datamodel=[AndroDataModelRoot | QualifiedName]
 ;
 
 ResourceContentProvider returns ContentProvider:
 	{ResourceContentProvider}
-	'contentprovider' name=ID 'resource' arrayResource=[ArrayResource | QualifiedName]
+	'resourceprovider' name=ID 'resource' arrayResource=[ArrayResource | QualifiedName]
 ;
 
 Action returns Action:

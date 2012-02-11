@@ -5,7 +5,11 @@ import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Body;
+import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.DataTypes;
+import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
+import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.Font;
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
 import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem;
@@ -17,6 +21,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity;
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion;
+import hu.bme.mit.androtext.lang.androTextDsl.TypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
@@ -49,6 +54,14 @@ public class GeneratorExtensions {
     return _builder;
   }
   
+  public String authority(final TargetApplication application) {
+    String _dataPackageName = this.dataPackageName(application);
+    String _operator_plus = StringExtensions.operator_plus(_dataPackageName, ".");
+    String _dataInformationClassName = this.dataInformationClassName(application);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, _dataInformationClassName);
+    return _operator_plus_1;
+  }
+  
   public String findPackageName(final TargetApplication targetApplication) {
     boolean _operator_or = false;
     String _packageName = targetApplication.getPackageName();
@@ -67,6 +80,22 @@ public class GeneratorExtensions {
       String _packageName_2 = targetApplication.getPackageName();
       return _packageName_2;
     }
+  }
+  
+  public String path_uri(final Entity e) {
+    String _name = e.getName();
+    String _upperCase = _name.toUpperCase();
+    String _operator_plus = StringExtensions.operator_plus("PATH_", _upperCase);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "S");
+    return _operator_plus_1;
+  }
+  
+  public String path_id_uri(final Entity e) {
+    String _name = e.getName();
+    String _upperCase = _name.toUpperCase();
+    String _operator_plus = StringExtensions.operator_plus("PATH_", _upperCase);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "_ID");
+    return _operator_plus_1;
   }
   
   /**
@@ -96,10 +125,65 @@ public class GeneratorExtensions {
       }
     }
     if (!matched) {
+      if (o_1 instanceof ContentProvider) {
+        final ContentProvider o_4 = (ContentProvider) o_1;
+        matched=true;
+        String _name_2 = o_4.getName();
+        String _firstUpper_2 = StringExtensions.toFirstUpper(_name_2);
+        _switchResult = _firstUpper_2;
+      }
+    }
+    if (!matched) {
       Class<? extends Object> _class = o.getClass();
-      String _name_2 = _class.getName();
-      String _firstUpper_2 = StringExtensions.toFirstUpper(_name_2);
-      _switchResult = _firstUpper_2;
+      String _name_3 = _class.getName();
+      String _firstUpper_3 = StringExtensions.toFirstUpper(_name_3);
+      _switchResult = _firstUpper_3;
+    }
+    return _switchResult;
+  }
+  
+  public String abstractClassName(final Object o) {
+    String _className = this.className(o);
+    String _operator_plus = StringExtensions.operator_plus("Abstract", _className);
+    return _operator_plus;
+  }
+  
+  public String abstractJavaFileName(final Object o) {
+    String _javaFileName = this.javaFileName(o);
+    String _operator_plus = StringExtensions.operator_plus("Abstract", _javaFileName);
+    return _operator_plus;
+  }
+  
+  public String columnsClassName(final Entity entity) {
+    String _className = this.className(entity);
+    String _operator_plus = StringExtensions.operator_plus(_className, "Columns");
+    return _operator_plus;
+  }
+  
+  public String name(final TypeRef ref) {
+    String _switchResult = null;
+    final TypeRef ref_1 = ref;
+    boolean matched = false;
+    if (!matched) {
+      if (ref_1 instanceof EntityTypeRef) {
+        final EntityTypeRef ref_2 = (EntityTypeRef) ref_1;
+        matched=true;
+        Entity _type = ref_2.getType();
+        String _className = this.className(_type);
+        _switchResult = _className;
+      }
+    }
+    if (!matched) {
+      if (ref_1 instanceof DataTypesRef) {
+        final DataTypesRef ref_3 = (DataTypesRef) ref_1;
+        matched=true;
+        DataTypes _type_1 = ref_3.getType();
+        String _literal = _type_1.getLiteral();
+        _switchResult = _literal;
+      }
+    }
+    if (!matched) {
+      _switchResult = "Object";
     }
     return _switchResult;
   }
@@ -280,6 +364,73 @@ public class GeneratorExtensions {
         }
       }
       return false;
+  }
+  
+  public String columnType(final Property f) {
+    String _xblockexpression = null;
+    {
+      TypeRef _type = f.getType();
+      final TypeRef t = _type;
+      String _switchResult = null;
+      final TypeRef t_1 = t;
+      boolean matched = false;
+      if (!matched) {
+        if (t_1 instanceof EntityTypeRef) {
+          final EntityTypeRef t_2 = (EntityTypeRef) t_1;
+          matched=true;
+          _switchResult = "INTEGER";
+        }
+      }
+      if (!matched) {
+        if (t_1 instanceof DataTypesRef) {
+          final DataTypesRef t_3 = (DataTypesRef) t_1;
+          matched=true;
+          String _columnType = this.columnType(t_3);
+          _switchResult = _columnType;
+        }
+      }
+      if (!matched) {
+        _switchResult = null;
+      }
+      _xblockexpression = (_switchResult);
+    }
+    return _xblockexpression;
+  }
+  
+  public String columnType(final DataTypesRef ref) {
+    String _switchResult = null;
+    DataTypes _type = ref.getType();
+    final DataTypes __valOfSwitchOver = _type;
+    boolean matched = false;
+    if (!matched) {
+      if (ObjectExtensions.operator_equals(__valOfSwitchOver,DataTypes.BOOLEAN)) {
+        matched=true;
+        _switchResult = "BOOLEAN";
+      }
+    }
+    if (!matched) {
+      if (ObjectExtensions.operator_equals(__valOfSwitchOver,DataTypes.FLOAT)) {
+        matched=true;
+        _switchResult = "REAL";
+      }
+    }
+    if (!matched) {
+      if (ObjectExtensions.operator_equals(__valOfSwitchOver,DataTypes.STRING)) {
+        matched=true;
+        _switchResult = "TEXT";
+      }
+    }
+    if (!matched) {
+      if (ObjectExtensions.operator_equals(__valOfSwitchOver,DataTypes.INT)) {
+        matched=true;
+        _switchResult = "INTEGER";
+      }
+    }
+    if (!matched) {
+      IllegalArgumentException _illegalArgumentException = new IllegalArgumentException("Unresolved column type for DataTypeReference!");
+      throw _illegalArgumentException;
+    }
+    return _switchResult;
   }
   
   public StringConcatenation type(final GameEntity entity) {

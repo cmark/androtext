@@ -5,6 +5,8 @@ import hu.bme.mit.androtext.gen.IMainGenerator;
 import hu.bme.mit.androtext.gen.activity.AbstractActivityClassGenerator;
 import hu.bme.mit.androtext.gen.activity.ActivityClassGenerator;
 import hu.bme.mit.androtext.gen.application.AndroidManifestGenerator;
+import hu.bme.mit.androtext.gen.entity.AbstractContentProviderGenerator;
+import hu.bme.mit.androtext.gen.entity.ContentProviderGenerator;
 import hu.bme.mit.androtext.gen.entity.EntityClassGenerator;
 import hu.bme.mit.androtext.gen.entity.EntityTableGenerator;
 import hu.bme.mit.androtext.gen.layout.LayoutResourceGenerator;
@@ -54,6 +56,12 @@ public class AndroTextGeneratorMain implements IMainGenerator {
   @Inject
   private SelectorGenerator selectorGenerator;
   
+  @Inject
+  private ContentProviderGenerator contentProviderGenerator;
+  
+  @Inject
+  private AbstractContentProviderGenerator abstractContentProviderGenerator;
+  
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication targetApplication) {
       AndroidApplication _application = targetApplication.getApplication();
       EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
@@ -64,6 +72,8 @@ public class AndroTextGeneratorMain implements IMainGenerator {
         {
           this.entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
           this.entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication);
+          this.contentProviderGenerator.doGenerate(resourceSet, fsa, targetApplication);
+          this.abstractContentProviderGenerator.doGenerate(resourceSet, fsa, targetApplication);
         }
       }
       this.manifestGenerator.doGenerate(resourceSet, fsa, targetApplication);

@@ -9,6 +9,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
+import hu.bme.mit.androtext.gen.IGeneratorSlots
 
 class EntityTableGenerator implements IGenerator {
 	
@@ -16,18 +17,18 @@ class EntityTableGenerator implements IGenerator {
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa,
 			TargetApplication androidApplication) {
-		fsa.generateFile(androidApplication.dataInformationClassName + ".java", generateDataInformation(resourceSet, androidApplication))
+		fsa.generateFile(androidApplication.dataInformationClassName + ".java", IGeneratorSlots::DATA_SLOT, generateDataInformation(resourceSet, androidApplication))
 	}
 	
 	def generateDataInformation(ResourceSet resourceSet, TargetApplication androidApplication) '''
-		package «androidApplication.findPackageName»;
+		package «androidApplication.dataPackageName»;
 
 		import android.net.Uri;
 		import android.provider.BaseColumns;
 		
 		public final class «androidApplication.dataInformationClassName» {
 			
-		    public static final String AUTHORITY = "«androidApplication.dataPackageName».«androidApplication.dataInformationClassName»";
+		    public static final String AUTHORITY = "«androidApplication.authority»";
 		
 		    // This class cannot be instantiated
 		    private «androidApplication.dataInformationClassName()»() {
@@ -45,10 +46,10 @@ class EntityTableGenerator implements IGenerator {
 	    /**
 	     * Profiles table
 	     */
-	    public static final class «e.className»s implements BaseColumns {
+	    public static final class «e.columnsClassName» implements BaseColumns {
 	        
 	        // This class cannot be instantiated
-	        private «e.className»s() {}
+	        private «e.columnsClassName»() {}
 
 	        /**
 	         * The table name offered by this provider
@@ -71,12 +72,12 @@ class EntityTableGenerator implements IGenerator {
 	        /**
 	         * Path part for the «e.name.toLowerCase()»s URI
 	         */
-	        private static final String PATH_«e.name.toUpperCase()»S = "/«e.name.toLowerCase()»s";
+	        private static final String «e.path_uri» = "/«e.name.toLowerCase()»s";
 
 	        /**
 	         * Path part for the «e.name.toLowerCase()» ID URI
 	         */
-	        private static final String PATH_«e.name.toUpperCase()»_ID = "/«e.name.toLowerCase()»s/";
+	        private static final String «e.path_id_uri» = "/«e.name.toLowerCase()»s/";
 
 	        /**
 	         * 0-relative position of a «e.name.toLowerCase()» ID segment in the path part of a «e.name.toLowerCase()» ID URI
@@ -120,19 +121,22 @@ class EntityTableGenerator implements IGenerator {
 	        /**
 	         * The default sort order for this table
 	         */
-	        public static final String DEFAULT_SORT_ORDER = "name ASC";
+	        public static final String DEFAULT_SORT_ORDER = "_id ASC";
 
 	        /*
 	         * Column definitions
 	         */
 	         
+	        «FOR prop : e.properties»
+	        	«prop.column»
+	        «ENDFOR»
 	    }
 	''' 
 	
 	def column(Property f) '''
 		/**
 		 * Column name for the «f.name» feature
-		 * <P>Type: «f.type»</P>
+		 * <P>Type: «f.columnType»</P>
 		 */
 		public static final String «f.name.toUpperCase()» = "«f.name»";
 	'''

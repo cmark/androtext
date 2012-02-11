@@ -2,23 +2,29 @@ package hu.bme.mit.androtext.gen.util
 
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
 import hu.bme.mit.androtext.lang.androTextDsl.Body
+import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.DataTypes
+import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef
 import hu.bme.mit.androtext.lang.androTextDsl.Entity
+import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef
 import hu.bme.mit.androtext.lang.androTextDsl.Font
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
+import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
+import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 import hu.bme.mit.androtext.lang.androTextDsl.Property
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
+import hu.bme.mit.androtext.lang.androTextDsl.TypeRef
 import hu.bme.mit.androtext.lang.androTextDsl.View
+import java.util.ArrayList
 import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
-import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
-import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
-import java.util.ArrayList
+
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
 
 class GeneratorExtensions {
 	
@@ -30,13 +36,25 @@ class GeneratorExtensions {
 		xmlns:android="http://schemas.android.com/apk/res/android"
 	'''
 		
+	def String authority(TargetApplication application) {
+		application.dataPackageName + "." + application.dataInformationClassName
+	}
+		
 	def findPackageName(TargetApplication targetApplication) {
 		if (targetApplication.packageName == null || targetApplication.packageName.empty) {
 			return targetApplication.projectName;
 		} else {
 			return targetApplication.packageName;
 		}
-	}	
+	}
+	
+	def path_uri(Entity e) {
+		"PATH_"+e.name.toUpperCase() + "S"
+	}
+	
+	def path_id_uri(Entity e) {
+		"PATH_"+e.name.toUpperCase() + "_ID"
+	}
 		
 	/**
 	 * computes the class name if its a Entity 
@@ -46,7 +64,28 @@ class GeneratorExtensions {
 		switch(o) {
 			Entity : o.name.toFirstUpper
 			Activity : o.name.toFirstUpper
+			ContentProvider: o.name.toFirstUpper
 			default: o.^class.name.toFirstUpper
+		}
+	}
+	
+	def abstractClassName(Object o) {
+		"Abstract" + className(o)
+	}
+	
+	def abstractJavaFileName(Object o) {
+		"Abstract" + javaFileName(o)
+	}
+	
+	def columnsClassName(Entity entity) {
+		entity.className + "Columns"
+	}
+	
+	def name(TypeRef ref) {
+		switch (ref) {
+			EntityTypeRef: ref.type.className
+			DataTypesRef: ref.type.literal
+			default: "Object"
 		}
 	}
 	
@@ -157,23 +196,23 @@ class GeneratorExtensions {
 		return false
 	}
 	
-//	def columnType(Feature f) {
-//		val t = f.type;
-//		switch (t) {
-//			EntityTypeRef : "INTEGER" 
-//			DataTypeRef : columnType(t)
-//			default: null
-//		}
-//	}
+	def columnType(Property f) {
+		val t = f.type;
+		switch (t) {
+			EntityTypeRef : "INTEGER" 
+			DataTypesRef : columnType(t)
+			default: null
+		}
+	}
 	
-//	def columnType(DataTypeRef ref) {
-//		switch (ref) {
-//			case DataTypes::BOOLEAN : "BOOLEAN"
-//			case DataTypes::FLOAT : "REAL"
-//			case DataTypes::STRING : "TEXT"
-//			case DataTypes::INT : "INTEGER"
-//			default : throw new IllegalArgumentException("Unresolved column type for DataTypeReference!")
-//		}
-//	}
+	def columnType(DataTypesRef ref) {
+		switch (ref.type) {
+			case DataTypes::BOOLEAN : "BOOLEAN"
+			case DataTypes::FLOAT : "REAL"
+			case DataTypes::STRING : "TEXT"
+			case DataTypes::INT : "INTEGER"
+			default : throw new IllegalArgumentException("Unresolved column type for DataTypeReference!")
+		}
+	}
 	
 }

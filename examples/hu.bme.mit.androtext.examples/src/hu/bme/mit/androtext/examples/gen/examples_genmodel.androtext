@@ -48,6 +48,12 @@ generator ExampleGenerators {
 		version 1.0
 	}
 	
+	target DataExample {
+		project hu.bme.mit.androtext.examples.dataexample
+		platform Android 2.3.3
+		version 1.0
+	}
+	
 	target RectangleExampleApp {
 		project hu.bme.mit.androtext.examples.game.rectangle
 		platform Android 2.3.3

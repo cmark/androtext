@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 
 
 class AndroidManifestGenerator implements IGenerator {
@@ -32,11 +33,19 @@ class AndroidManifestGenerator implements IGenerator {
 				«FOR activity : application.modelElements.filter(typeof (Activity))» 
 					«activity.generateActivity»
 				«ENDFOR»
+				«FOR contentProvider : application.modelElements.filter(typeof (DatabaseContentProvider))» 
+					«contentProvider.generateContentProvider(androidApplication)»
+				«ENDFOR»
 			</application>
-		</manifest>				
+		</manifest>
 	'''
 	
-  def generateMainActivity(Activity activity) '''
+	def generateContentProvider(DatabaseContentProvider contentProvider, TargetApplication application) '''
+		<provider android:name="data.«contentProvider.className»" 
+			android:authorities="«application.authority»" />
+	'''	
+	
+  	def generateMainActivity(Activity activity) '''
 		<activity android:label="@string/«activity.activityNameValue»" android:name=".«activity.name.toFirstUpper()»">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />

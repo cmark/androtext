@@ -1,0 +1,13 @@
+datamodel simpleDataModel {
+	
+	entity Note {
+		title : String
+		note : String
+	}
+	
+	entity User {
+		name : String
+		age : int		
+	}
+		
+}
