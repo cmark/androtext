@@ -89,20 +89,34 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 	@Override
 	public void build(final IBuildContext context, final IProgressMonitor monitor)
 			throws CoreException {
+		System.out.println("====================PreBuild=======================");
 		if (context.getDeltas().isEmpty()) return;
-		final int numberOfDeltas = context.getDeltas().size();
+		final List<Delta> deltas = new ArrayList<IResourceDescription.Delta>();
+		for (Delta d : context.getDeltas()) {
+			if (canHandle(d.getUri().fileExtension())) {
+				deltas.add(d);
+			} else {
+				System.out.println("Cant handle " + d.getUri());
+			}
+		}
+		final int numberOfDeltas = deltas.size();
+		if (numberOfDeltas > 1) {
+			System.out.println("Warning: Multiple build of different deltas not implemented!");
+			return;
+		}
 		// monitor handling
-		if (monitor.isCanceled())
+		if (monitor.isCanceled()) {
 			throw new OperationCanceledException();
+		}
 		SubMonitor subMonitor = SubMonitor.convert(monitor, numberOfDeltas + 3);
 		// this file system access reused for the next couple of generations
 		EclipseResourceFileSystemAccess3 access = fileSystemAccessProvider.get();
 //		printResourceInformation(context);
 		System.out.println("====================Build=======================");
-		Map<TargetApplication, ResourceSet> targetApps = findTargetApplications(context);
-		Delta delta = context.getDeltas().get(0);
+		Map<TargetApplication, ResourceSet> targetApps = findTargetApplications(context, deltas);
+		Delta delta = deltas.get(0);
 		for (TargetApplication app : targetApps.keySet()) {
-			System.out.println("Building target application" + app.getProjectName());
+			System.out.println("Building target application " + app.getProjectName());
 			// monitor handling
 			if (subMonitor.isCanceled()) {
 				throw new OperationCanceledException();
@@ -134,6 +148,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			access.setPostProcessor(new EclipseResourceFileSystemAccess2.IFileCallback() {
 				
 				public boolean beforeFileDeletion(IFile file) {
+					System.out.println(file.getName() + " will be deleted!");
 					derivedResources.remove(file);
 					context.needRebuild();
 					return true;
@@ -158,6 +173,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 				}
 				
 			});
+			System.out.println("Delta.getNew(): " + delta.getNew());
 			if (delta.getNew() != null) {
 				handleChangedContents(delta, context, access, project, app, targetApps.get(app));
 			}
@@ -167,6 +183,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 				if (marker != null)
 					marker.delete();
 				if (derivedResourceMarkers.findDerivedResourceMarkers(iFile).length == 0) {
+					System.out.println(iFile.getName() + " deleted during build (derived file)!");
 					iFile.delete(IResource.KEEP_HISTORY, deleteMonitor.newChild(1));
 					context.needRebuild();
 				}
@@ -217,6 +234,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 	protected void handleChangedContents(Delta delta, IBuildContext context, IFileSystemAccess fileSystemAccess, IProject project, TargetApplication targetApplication, ResourceSet set) throws CoreException {
 		if (!canHandle(delta.getUri().fileExtension()))
 			return;
+		System.out.println("Handling changed contexts!");
 		// TODO: we will run out of memory here if the number of deltas is large enough
 		Resource resource = set.getResource(delta.getUri(), true);
 		if (shouldGenerate(resource, context)) {
@@ -296,18 +314,16 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 		}
 	}
 
-	private Map<TargetApplication, ResourceSet> findTargetApplications(IBuildContext context) {
-		final int numberOfDeltas = context.getDeltas().size();
+	private Map<TargetApplication, ResourceSet> findTargetApplications(IBuildContext context, List<Delta> deltas) {
 		Map<TargetApplication, ResourceSet> targetApps = new HashMap<TargetApplication, ResourceSet>();
-		for (int i = 0 ; i < numberOfDeltas ; i++) {
-			final IResourceDescription.Delta delta = context.getDeltas().get(i);
+		for (Delta delta : deltas) {
+			System.out.println("Current delta: " + delta.getUri());
 			// monitor handling
 //			if (subMonitor.isCanceled())
 //				throw new OperationCanceledException();
 			// First select a delta to search for TargetApplications
 			try {
 				Resource resource = context.getResourceSet().getResource(delta.getUri(), true);
-				System.out.println("Current delta: " + delta.getUri());
 				findAllContent(context, resource);
 				List<TargetApplication> targetApplications = TargetApplicationFinder.findTargetApplications(resource, context.getResourceSet());
 				if (targetApplications != null) {
