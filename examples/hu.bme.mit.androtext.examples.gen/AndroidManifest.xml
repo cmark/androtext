@@ -51,7 +51,7 @@
 		</activity>
 		<activity android:label="@string/textexampleactivity_title" android:name=".TextExampleActivity">		
 		</activity>
-		<provider android:name="data.SimpleDataProvider" 
+		<provider android:name=".data.SimpleDataProvider" 
 			android:authorities="hu.bme.mit.androtext.examples.gen.data.AndroTextExamplesData" />
 	</application>
 </manifest>

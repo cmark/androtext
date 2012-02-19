@@ -1,7 +1,22 @@
 resources exampleResources {
 	
 	stringarray exampleNameList {
-		"Hello World", "Hello LinearLayout", "Hello Relative Layout"
+		"Hello World", 
+		"Hello LinearLayout", 
+		"Hello RelativeLayout",
+		"Hello TableLayout",
+		"Hello GridView",
+		"Hello TabLayout",
+		"Hello AutoCompleteView",
+		"Hello ListActivity",
+		"Hello Button Navigation",
+		"Hello DataExample",
+		"Hello Game, LineExample",
+		"Hello Game, RectangleExample",
+		"Hello Game, MenuExample",
+		"Hello Game, SpriteExample",
+		"Hello Game, TextExample",
+		"Hello Game, PhysicsExample"
 	}
 	
 }

@@ -12,7 +12,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class ExamplesListActivity extends AbstractExamplesListActivity {
 	
-	private Map<Integer, Class> activityMap = new HashMap<Integer, Class>();
+	private Map<Integer, Class<? extends Activity>> activityMap = new HashMap<Integer, Class<? extends Activity>>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,20 @@ public class ExamplesListActivity extends AbstractExamplesListActivity {
 
 	private void initializeMap() {
 		activityMap.put(0, HelloWorldActivity.class);
-		activityMap.put(1, HelloListActivity.class);
+		activityMap.put(1, HelloLinearLayoutActivity.class);
 		activityMap.put(2, HelloRelativeLayoutExampleActivity.class);
+		activityMap.put(3, HelloTableLayoutActivity.class);
+		activityMap.put(4, HelloGridViewActivity.class);
+		activityMap.put(5, HelloTabWidgetActivity.class);
+		activityMap.put(6, HelloAutoCompleteActivity.class);
+		activityMap.put(7, HelloListActivity.class);
+		activityMap.put(8, MainActivity.class);
+		activityMap.put(9, DataExampleActivity.class);
+		activityMap.put(10, LineExampleActivity.class);
+		activityMap.put(11, RectangleExample.class);
+		activityMap.put(12, MenuExampleActivity.class);
+		activityMap.put(13, SpriteExampleActivity.class);
+		activityMap.put(14, TextExampleActivity.class);
+		activityMap.put(15, PhysicsExampleActivity.class);
 	}
 }
