@@ -1,6 +1,6 @@
 gamegui RectangleExampleGui {
 	
-	scene rectangles background color(0 0 0) {
+	scene rectangleScene background color(0 0 0) {
 //		rect rect1 pos(10 10) size(100 100) color(1 0 0 1)
 		entity container pos(360 240) {
 			
@@ -22,6 +22,6 @@ gamelogic RectangleMovement {
 	
 	sequence simpleSeq simpleMove1, simpleRotate1, simpleMove2
 	
-	bind simpleSeq to RectangleExampleGui.rectangles.container.rect1
+	bind simpleSeq to RectangleExampleGui.rectangleScene.container.rect1
 	
 }

@@ -1,8 +1,0 @@
-application LineExample {
-	
-	gameactivity LineExampleActivity {
-		camera size(720 480)
-		scene LineExampleGui.lineScene
-	}
-	
-}

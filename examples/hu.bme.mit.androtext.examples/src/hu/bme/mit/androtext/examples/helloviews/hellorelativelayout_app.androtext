@@ -1,5 +1,0 @@
-application HelloRelativeLayoutExample {
-	
-	activity HelloRelativeLayoutExampleActivity layout HelloRelativeLayoutExampleGui.relativeLayout
-	
-}

@@ -1,5 +1,0 @@
-application HelloAutoComplete {
-	
-	activity HelloAutoCompleteActivity layout HelloAutoCompleteGui.main
-	
-}

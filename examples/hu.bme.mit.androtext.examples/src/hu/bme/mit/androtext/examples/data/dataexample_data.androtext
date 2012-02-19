@@ -1,13 +1,8 @@
-datamodel simpleDataModel {
+datamodel NotePadModel {
 	
 	entity Note {
 		title : String
 		note : String
-	}
-	
-	entity User {
-		name : String
-		age : int		
 	}
 		
 }

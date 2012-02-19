@@ -2,7 +2,7 @@ gamegui SpriteExampleGui {
 	
 	texture boxFace "face_box.png"
 	
-	scene simpleSprite background color(0.09804 0.6274 0.8784) {
+	scene spriteScene background color(0.09804 0.6274 0.8784) {
 		
 		sprite pos(0 0) boxFace
 		

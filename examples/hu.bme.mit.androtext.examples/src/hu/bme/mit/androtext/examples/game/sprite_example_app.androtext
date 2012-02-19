@@ -1,9 +1,0 @@
-application SpriteExample  {
-	
-	gameactivity SpriteExampleActivity {
-		camera size(720 480)
-		orientation landscape
-		scene SpriteExampleGui.simpleSprite
-	}
-	
-}

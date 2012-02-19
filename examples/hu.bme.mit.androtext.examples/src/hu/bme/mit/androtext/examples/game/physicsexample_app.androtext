@@ -1,9 +1,0 @@
-application PhysicsExample {
-	
-	gameactivity PhysicsExampleActivity {
-		camera size(720 480)
-		orientation landscape
-		scene PhysicsExampleGui.PhysicsScene
-	}
-	
-}

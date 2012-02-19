@@ -3,7 +3,7 @@ guimodel SimpleButtonNavGui {
 	linearlayout mainLayout fill {	
 		
 		button NavigateToOtherActivity "Click me" fill&wrap {
-			onClick navigateTo SimpleButtonNavExample.OtherActivity 
+			onClick navigateTo AndroTextExamples.OtherActivity 
 		}
 		
 		textview help "Click on the button to navigate to the other activity!" wrap {

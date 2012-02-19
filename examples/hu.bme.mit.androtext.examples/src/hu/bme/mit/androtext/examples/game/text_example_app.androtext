@@ -1,9 +1,0 @@
-application TextExample {
-	
-	gameactivity TextExampleActivity {
-		camera size(720 480)
-		orientation landscape
-		scene TextExampleGui.textScene
-	}
-	
-}

@@ -1,15 +1,15 @@
 gamegui AnimatedSpriteExampleGui {
 	
-	texture dragon "snapdragon_tiled.png"
-	texture helicopter "helicopter_tiled.png"
-	texture banana "banana_tiled.png"
+	texture dragon "snapdragon_tiled.png" tiled(1 1)
+	texture helicopter "helicopter_tiled.png" tiled(1 1)
+	texture banana "banana_tiled.png" tiled(1 1)
 	
-	scene simpleAnimatedSpriteScene background color(0.09804 0.6274 0.8784) {
+	scene animatedSpriteScene background color(0.09804 0.6274 0.8784) {
 		
-		animsprite pos(100 50) SpriteExampleGui.boxFace 100
-		animsprite pos(320 50) helicopter 100
-		animsprite pos(300 200) dragon 100
-		animsprite pos(100 220) banana 100
+//		animsprite face pos(100 50) boxFace 100
+		animsprite heli pos(320 50) helicopter 100
+		animsprite dragon pos(300 200) dragon 100
+		animsprite banana pos(100 220) banana 100
 		
 	}
 	
