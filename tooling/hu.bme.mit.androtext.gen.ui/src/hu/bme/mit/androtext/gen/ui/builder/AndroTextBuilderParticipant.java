@@ -179,11 +179,13 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			}
 			SubMonitor deleteMonitor = SubMonitor.convert(subMonitor.newChild(1), derivedResources.size());
 			for (IFile iFile : derivedResources) {
+				System.err.println("" + iFile.getName() + " is in the derived list!");
+				if (!iFile.isDerived()) continue;
 				IMarker marker = derivedResourceMarkers.findDerivedResourceMarker(iFile, uri);
 				if (marker != null)
 					marker.delete();
 				if (derivedResourceMarkers.findDerivedResourceMarkers(iFile).length == 0) {
-					System.out.println(iFile.getName() + " deleted during build (derived file)!");
+					System.err.println(iFile.getName() + " deleted during build (derived file)!");
 					iFile.delete(IResource.KEEP_HISTORY, deleteMonitor.newChild(1));
 					context.needRebuild();
 				}

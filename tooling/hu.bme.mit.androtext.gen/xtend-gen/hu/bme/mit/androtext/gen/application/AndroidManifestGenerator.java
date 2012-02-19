@@ -88,7 +88,7 @@ public class AndroidManifestGenerator implements IGenerator {
   
   public StringConcatenation generateContentProvider(final DatabaseContentProvider contentProvider, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<provider android:name=\"data.");
+    _builder.append("<provider android:name=\".data.");
     String _className = this.generatorExtensions.className(contentProvider);
     _builder.append(_className, "");
     _builder.append("\" ");

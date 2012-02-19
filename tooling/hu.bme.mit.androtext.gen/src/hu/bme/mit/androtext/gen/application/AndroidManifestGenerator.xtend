@@ -41,7 +41,7 @@ class AndroidManifestGenerator implements IGenerator {
 	'''
 	
 	def generateContentProvider(DatabaseContentProvider contentProvider, TargetApplication application) '''
-		<provider android:name="data.«contentProvider.className»" 
+		<provider android:name=".data.«contentProvider.className»" 
 			android:authorities="«application.authority»" />
 	'''	
 	
