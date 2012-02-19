@@ -1,0 +1,99 @@
+generator ExampleGenerators {
+	
+	target AndroTextExamples {
+		project hu.bme.mit.androtext.examples.gen
+		platform Android 2.3.3
+		version 1.0
+	}
+	
+//	target HelloWorld {
+//		project hu.bme.mit.androtext.examples.helloworld
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target HelloLinearLayout {
+//		project hu.bme.mit.androtext.examples.hellolinearlayout
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target HelloRelativeLayoutExample {
+//		project hu.bme.mit.androtext.examples.hellorelativelayout
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target HelloTableLayout {
+//		project hu.bme.mit.androtext.examples.hellotablelayout
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target HelloListActivityExample {
+//		project hu.bme.mit.androtext.examples.hellolistactivity
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target HelloGridView {
+//		project hu.bme.mit.androtext.examples.hellogridview
+//		platform Android 2.3.3
+//		version 1.0	
+//	}
+//	
+//	target HelloTabWidget {
+//		project hu.bme.mit.androtext.examples.hellotabwidget
+//		platform Android 2.3.3
+//		version 1.0		
+//	}
+//	
+//	target SimpleButtonNavExample {
+//		project hu.bme.mit.androtext.examples.simplenav
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target DataExample {
+//		project hu.bme.mit.androtext.examples.dataexample
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target RectangleExampleApp {
+//		project hu.bme.mit.androtext.examples.game.rectangle
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target LineExample {
+//		project hu.bme.mit.androtext.examples.game.lineexample
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target SpriteExample {
+//		project hu.bme.mit.androtext.examples.game.spriteexample
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target TextExample {
+//		project hu.bme.mit.androtext.examples.game.textexample
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target PhysicsExample {
+//		project hu.bme.mit.androtext.examples.game.physicsexample
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+//	
+//	target MenuExample {
+//		project hu.bme.mit.androtext.examples.game.menuexample
+//		platform Android 2.3.3
+//		version 1.0
+//	}
+	
+}

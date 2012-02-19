@@ -1,0 +1,7 @@
+resources exampleResources {
+	
+	stringarray exampleNameList {
+		"Hello World", "Hello LinearLayout"
+	}
+	
+}

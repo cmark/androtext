@@ -1,0 +1,110 @@
+application AndroTextExamples {
+	
+	listactivity ExamplesListActivity {
+		listitem HelloListActivityGui.simple_list_item
+		fetch from countriesResourceProvider
+	}
+	resourceprovider exampleNameListProvider resource exampleResources.exampleNameList
+	
+	// Hello World
+	activity HelloWorldActivity layout HelloWorldGui.hellolayout
+	
+	// Hello AutoComplete Example
+	activity HelloAutoCompleteActivity layout HelloAutoCompleteGui.main
+	
+	// Hello GridView Example
+	activity HelloGridViewActivity layout HelloGridViewGui.gridView
+	// in the generated class HelloGridViewActivity load the GridView contents, like in the Hello GridView article
+	// http://developer.android.com/guide/tutorials/views/hello-gridview.html
+	
+	// Hello LinearLauyout Example
+	activity HelloLinearLayoutActivity layout HelloLinearLayoutGui.helloLinearLayoutMain
+	
+	// Hello Relative Layout Example
+	activity HelloRelativeLayoutExampleActivity layout HelloRelativeLayoutExampleGui.relativeLayout
+	
+	// Hello TableLayout Example
+	activity HelloTableLayoutActivity layout HelloTableLayoutGui.table
+	
+	// Hello ListActivity Example
+	listactivity HelloListActivity {
+		listitem HelloListActivityGui.simple_list_item
+		fetch from countriesResourceProvider
+	}
+	resourceprovider countriesResourceProvider resource HelloListActivityResources.countries
+	
+	// Hello TabActivity Example
+	tabactivity HelloTabWidgetActivity {
+		
+		tab "artists" {
+			show ArtistsActivity
+			image HelloTabWidgetRes.ic_tab_image
+		}
+		
+		tab "albums" {
+			show AlbumsActivity
+			image HelloTabWidgetRes.ic_tab_image
+		}
+		
+		tab "songs" {
+			show SongsActivity
+			image HelloTabWidgetRes.ic_tab_image
+		}
+	    	
+	}	
+	activity ArtistsActivity layout HelloTabWidgetGui.artistsText
+	activity AlbumsActivity layout HelloTabWidgetGui.albumsText
+	activity SongsActivity layout HelloTabWidgetGui.songsText
+	
+	// Hello Simple Navigation Example
+	activity MainActivity layout SimpleButtonNavGui.mainLayout
+	activity OtherActivity layout SimpleButtonNavGui.otherLayout
+	
+	// Simple Data Example
+	listactivity DataExampleActivity {
+		listitem HelloListActivityGui.simple_list_item
+		fetch NotePadModel.Note from SimpleDataProvider
+	}
+
+	provider SimpleDataProvider data NotePadModel
+	
+	// AndroGame Examples
+	// Line Example
+	gameactivity LineExampleActivity {
+		camera size(720 480)
+		scene LineExampleGui.lineScene
+	}
+
+	// Menu Example	
+	gameactivity MenuExampleActivity {
+		camera size(720 480)
+		scene MenuExampleGui.simpleMenu
+	}
+	
+	// Physics Example
+	gameactivity PhysicsExampleActivity {
+		camera size(720 480)
+		scene PhysicsExampleGui.physicsScene
+	}
+	// Rectangle Example
+	gameactivity RectangleExample {
+		camera size(720 480)
+		scene RectangleExampleGui.rectangleScene
+	}
+	// Sprite Example
+	gameactivity SpriteExampleActivity {
+		camera size(720 480)
+		scene SpriteExampleGui.spriteScene
+	}
+	// Text Example
+	gameactivity TextExampleActivity {
+		camera size(720 480)
+		scene TextExampleGui.textScene
+	}
+	// AnimatedSprite Example
+//	gameactivity AnimatedSpriteExampleActivity {
+//		camera size(720 480)
+//		scene AnimatedSpriteExampleGui.animatedSpriteScene
+//	}
+	
+}
