@@ -1,7 +1,7 @@
 resources exampleResources {
 	
 	stringarray exampleNameList {
-		"Hello World", "Hello LinearLayout"
+		"Hello World", "Hello LinearLayout", "Hello Relative Layout"
 	}
 	
 }

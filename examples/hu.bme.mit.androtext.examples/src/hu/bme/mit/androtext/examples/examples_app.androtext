@@ -2,7 +2,7 @@ application AndroTextExamples {
 	
 	listactivity ExamplesListActivity {
 		listitem HelloListActivityGui.simple_list_item
-		fetch from countriesResourceProvider
+		fetch from exampleNameListProvider
 	}
 	resourceprovider exampleNameListProvider resource exampleResources.exampleNameList
 	
