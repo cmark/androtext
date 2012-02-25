@@ -72,12 +72,12 @@ class EntityTableGenerator implements IGenerator {
 	        /**
 	         * Path part for the «e.name.toLowerCase()»s URI
 	         */
-	        private static final String «e.path_uri» = "/«e.name.toLowerCase()»s";
+	        public static final String «e.path_uri» = "«e.name.toLowerCase()»s";
 
 	        /**
 	         * Path part for the «e.name.toLowerCase()» ID URI
 	         */
-	        private static final String «e.path_id_uri» = "/«e.name.toLowerCase()»s/";
+	        public static final String «e.path_id_uri» = "«e.name.toLowerCase()»s/#";
 
 	        /**
 	         * 0-relative position of a «e.name.toLowerCase()» ID segment in the path part of a «e.name.toLowerCase()» ID URI

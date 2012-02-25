@@ -42,8 +42,16 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import android.os.Bundle;
 		«activity.importActivity.toString.trim»
 		«activity.extraImports.toString.trim»
+		«activity.genDepImports(application).toString.trim»
 		
 		«body»
+	'''
+	
+	def dispatch genDepImports(Activity activity, TargetApplication app) ''''''
+	def dispatch genDepImports(ListActivity activity, TargetApplication app) '''
+		«IF activity.databinding.entity != null»
+		import «app.dataPackageName».«app.dataInformationClassName».«activity.databinding.entity.columnsClassName»;
+		«ENDIF»
 	'''
 	
 	def basicImports(Activity activity) '''
@@ -61,6 +69,8 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		«activity.basicImports.toString.trim»
 		import android.widget.ArrayAdapter;
 		import android.widget.AdapterView.OnItemClickListener;
+		import android.database.Cursor;
+		import android.widget.SimpleCursorAdapter;
 	'''
 	
 	def dispatch extraImports(TabActivity activity) '''

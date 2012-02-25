@@ -87,9 +87,15 @@ ListActivity:
 	'listactivity' name=ID
 	('{'
 		('listitem' listitem=[View | QualifiedName])?
-		('fetch' (entity=[Entity | QualifiedName])? 'from' contentProvider=[ContentProvider | QualifiedName])?
+		(databinding=DataBinding)?
 		('onListItemClick' onListItemClickAction=Action)?
 	'}')?
+;
+
+DataBinding:
+	(fetchAll?='fetchAll'|'fetchOne') (entity=[Entity | QualifiedName] ('('projection+=[Property | QualifiedName] (',' projection+=[Property | QualifiedName])*')')?)? 
+	'from' contentProvider=[ContentProvider | QualifiedName]
+	('bind' target+=[View | QualifiedName] (',' target+=[View | QualifiedName])*)?
 ;
 	
 PreferenceActivity:

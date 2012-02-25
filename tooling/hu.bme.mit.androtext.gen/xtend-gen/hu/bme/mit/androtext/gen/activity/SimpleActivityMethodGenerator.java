@@ -7,10 +7,14 @@ import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Tab;
@@ -18,7 +22,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
-import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -180,12 +183,14 @@ public class SimpleActivityMethodGenerator {
   
   protected StringConcatenation _logic(final ListActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Intent intent = getIntent();");
+    _builder.newLine();
     View _listitem = activity.getListitem();
     String _layoutName = this._generatorExtensions.layoutName(_listitem);
     final String listItem = _layoutName;
     _builder.newLineIfNotEmpty();
-    ContentProvider _contentProvider = activity.getContentProvider();
-    StringConcatenation _generate = this.generate(_contentProvider, listItem);
+    DataBinding _databinding = activity.getDatabinding();
+    StringConcatenation _generate = this.generate(_databinding, listItem);
     _builder.append(_generate, "");
     _builder.newLineIfNotEmpty();
     {
@@ -265,17 +270,96 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final ContentProvider provider, final String listItem) {
+  public StringConcatenation generate(final DataBinding db, final String listItem) {
+    ContentProvider _contentProvider = db.getContentProvider();
+    StringConcatenation _generate = this.generate(_contentProvider, db, listItem);
+    return _generate;
+  }
+  
+  protected StringConcatenation _generate(final ContentProvider provider, final DataBinding db, final String listItem) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  protected StringConcatenation _generate(final ResourceContentProvider provider, final String listItem) {
+  protected StringConcatenation _generate(final ResourceContentProvider provider, final DataBinding db, final String listItem) {
     StringConcatenation _builder = new StringConcatenation();
     ArrayResource _arrayResource = provider.getArrayResource();
     StringConcatenation _generateContentSet = this.generateContentSet(_arrayResource, listItem);
     _builder.append(_generateContentSet, "");
     _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected StringConcatenation _generate(final DatabaseContentProvider provider, final DataBinding db, final String listItem) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _isFetchAll = db.isFetchAll();
+      if (_isFetchAll) {
+        _builder.append("if (intent.getData() == null) {");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("intent.setData(");
+        Entity _entity = db.getEntity();
+        String _columnsClassName = this._generatorExtensions.columnsClassName(_entity);
+        _builder.append(_columnsClassName, "	");
+        _builder.append(".CONTENT_URI);");
+        _builder.newLineIfNotEmpty();
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("Cursor cursor = managedQuery(getIntent().getData(), PROJECTION, null, null, ");
+        Entity _entity_1 = db.getEntity();
+        String _columnsClassName_1 = this._generatorExtensions.columnsClassName(_entity_1);
+        _builder.append(_columnsClassName_1, "");
+        _builder.append(".DEFAULT_SORT_ORDER);");
+        _builder.newLineIfNotEmpty();
+        _builder.append("SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.");
+        _builder.append(listItem, "");
+        _builder.append(", cursor, ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t");
+        _builder.append("new String[] { ");
+        {
+          EList<Property> _projection = db.getProjection();
+          boolean hasAnyElements = false;
+          for(final Property p : _projection) {
+            if (!hasAnyElements) {
+              hasAnyElements = true;
+            } else {
+              _builder.appendImmediate(", ", "			");
+            }
+            Entity _entity_2 = db.getEntity();
+            String _columnsClassName_2 = this._generatorExtensions.columnsClassName(_entity_2);
+            _builder.append(_columnsClassName_2, "			");
+            _builder.append(".");
+            String _name = p.getName();
+            String _upperCase = _name.toUpperCase();
+            _builder.append(_upperCase, "			");
+          }
+        }
+        _builder.append(" }, ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t");
+        _builder.append("new int[] { ");
+        {
+          EList<View> _target = db.getTarget();
+          boolean hasAnyElements_1 = false;
+          for(final View view : _target) {
+            if (!hasAnyElements_1) {
+              hasAnyElements_1 = true;
+            } else {
+              _builder.appendImmediate(", ", "			");
+            }
+            _builder.append("R.id.");
+            String _name_1 = view.getName();
+            _builder.append(_name_1, "			");
+          }
+        }
+        _builder.append(" });");
+        _builder.newLineIfNotEmpty();
+        _builder.append("setListAdapter(adapter);");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   
@@ -309,22 +393,11 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  public StringConcatenation generate(final EObject provider, final Object listItem) {
-    if ((provider instanceof ResourceContentProvider)
-         && (listItem instanceof String)) {
-      return _generate((ResourceContentProvider)provider, (String)listItem);
-    } else if ((provider instanceof InvokeActivity)
-         && (listItem instanceof Activity)) {
-      return _generate((InvokeActivity)provider, (Activity)listItem);
-    } else if ((provider instanceof ContentProvider)
-         && (listItem instanceof String)) {
-      return _generate((ContentProvider)provider, (String)listItem);
-    } else if ((provider instanceof Action)
-         && (listItem instanceof Activity)) {
-      return _generate((Action)provider, (Activity)listItem);
+  public StringConcatenation generate(final Action action, final Activity activity) {
+    if (action instanceof InvokeActivity) {
+      return _generate((InvokeActivity)action, activity);
     } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(provider, listItem).toString());
+      return _generate(action, activity);
     }
   }
   
@@ -343,6 +416,16 @@ public class SimpleActivityMethodGenerator {
       return _logic((TabActivity)activity);
     } else {
       return _logic(activity);
+    }
+  }
+  
+  public StringConcatenation generate(final ContentProvider provider, final DataBinding db, final String listItem) {
+    if (provider instanceof DatabaseContentProvider) {
+      return _generate((DatabaseContentProvider)provider, db, listItem);
+    } else if (provider instanceof ResourceContentProvider) {
+      return _generate((ResourceContentProvider)provider, db, listItem);
+    } else {
+      return _generate(provider, db, listItem);
     }
   }
   

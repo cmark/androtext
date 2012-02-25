@@ -5,18 +5,25 @@ import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.Font;
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
 import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
+import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.Scene;
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion;
 import hu.bme.mit.androtext.lang.androTextDsl.Tiled;
 import java.util.ArrayList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xtend2.lib.ResourceExtensions;
@@ -34,6 +41,62 @@ public class AbstractActivityFieldGenerator {
   
   protected StringConcatenation _generateFields(final ListActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _operator_and = false;
+      boolean _operator_and_1 = false;
+      DataBinding _databinding = activity.getDatabinding();
+      boolean _isFetchAll = _databinding.isFetchAll();
+      if (!_isFetchAll) {
+        _operator_and_1 = false;
+      } else {
+        DataBinding _databinding_1 = activity.getDatabinding();
+        ContentProvider _contentProvider = _databinding_1.getContentProvider();
+        _operator_and_1 = BooleanExtensions.operator_and(_isFetchAll, (_contentProvider instanceof DatabaseContentProvider));
+      }
+      if (!_operator_and_1) {
+        _operator_and = false;
+      } else {
+        DataBinding _databinding_2 = activity.getDatabinding();
+        Entity _entity = _databinding_2.getEntity();
+        boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_entity, null);
+        _operator_and = BooleanExtensions.operator_and(_operator_and_1, _operator_notEquals);
+      }
+      if (_operator_and) {
+        _builder.append("protected final static String[] PROJECTION = new String[] {");
+        _builder.newLine();
+        _builder.append("\t");
+        DataBinding _databinding_3 = activity.getDatabinding();
+        Entity _entity_1 = _databinding_3.getEntity();
+        String _columnsClassName = this._generatorExtensions.columnsClassName(_entity_1);
+        _builder.append(_columnsClassName, "	");
+        _builder.append("._ID,");
+        _builder.newLineIfNotEmpty();
+        {
+          DataBinding _databinding_4 = activity.getDatabinding();
+          EList<Property> _projection = _databinding_4.getProjection();
+          boolean hasAnyElements = false;
+          for(final Property p : _projection) {
+            if (!hasAnyElements) {
+              hasAnyElements = true;
+            } else {
+              _builder.appendImmediate(",", "	");
+            }
+            _builder.append("\t");
+            DataBinding _databinding_5 = activity.getDatabinding();
+            Entity _entity_2 = _databinding_5.getEntity();
+            String _columnsClassName_1 = this._generatorExtensions.columnsClassName(_entity_2);
+            _builder.append(_columnsClassName_1, "	");
+            _builder.append(".");
+            String _name = p.getName();
+            String _upperCase = _name.toUpperCase();
+            _builder.append(_upperCase, "	");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("};");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   

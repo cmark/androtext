@@ -265,8 +265,8 @@ class AbstractContentProviderGenerator implements IGenerator {
 			static {
 		        sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		        «FOR e : contentProvider.datamodel.entities»
-		        sUriMatcher.addURI(«application.dataInformationClassName».AUTHORITY, "«e.path_uri»", «e.query_all»);
-		        sUriMatcher.addURI(«application.dataInformationClassName».AUTHORITY, "«e.path_id_uri»#", «e.query_one»);
+		        sUriMatcher.addURI(«application.dataInformationClassName».AUTHORITY, «e.columnsClassName».«e.path_uri», «e.query_all»);
+		        sUriMatcher.addURI(«application.dataInformationClassName».AUTHORITY, «e.columnsClassName».«e.path_id_uri», «e.query_one»);
 		        «ENDFOR»
 
 		        «FOR e : contentProvider.datamodel.entities»

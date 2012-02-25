@@ -8,6 +8,8 @@ import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
+import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
@@ -27,6 +29,7 @@ import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.ResourceExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
@@ -103,9 +106,44 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     String _trim_1 = _string_1.trim();
     _builder.append(_trim_1, "");
     _builder.newLineIfNotEmpty();
+    StringConcatenation _genDepImports = this.genDepImports(activity, application);
+    String _string_2 = _genDepImports.toString();
+    String _trim_2 = _string_2.trim();
+    _builder.append(_trim_2, "");
+    _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append(body, "");
     _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected StringConcatenation _genDepImports(final Activity activity, final TargetApplication app) {
+    StringConcatenation _builder = new StringConcatenation();
+    return _builder;
+  }
+  
+  protected StringConcatenation _genDepImports(final ListActivity activity, final TargetApplication app) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      DataBinding _databinding = activity.getDatabinding();
+      Entity _entity = _databinding.getEntity();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_entity, null);
+      if (_operator_notEquals) {
+        _builder.append("import ");
+        String _dataPackageName = this._generatorExtensions.dataPackageName(app);
+        _builder.append(_dataPackageName, "");
+        _builder.append(".");
+        String _dataInformationClassName = this._generatorExtensions.dataInformationClassName(app);
+        _builder.append(_dataInformationClassName, "");
+        _builder.append(".");
+        DataBinding _databinding_1 = activity.getDatabinding();
+        Entity _entity_1 = _databinding_1.getEntity();
+        String _columnsClassName = this._generatorExtensions.columnsClassName(_entity_1);
+        _builder.append(_columnsClassName, "");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -142,6 +180,10 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     _builder.append("import android.widget.ArrayAdapter;");
     _builder.newLine();
     _builder.append("import android.widget.AdapterView.OnItemClickListener;");
+    _builder.newLine();
+    _builder.append("import android.database.Cursor;");
+    _builder.newLine();
+    _builder.append("import android.widget.SimpleCursorAdapter;");
     _builder.newLine();
     return _builder;
   }
@@ -313,6 +355,14 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     }
     _builder.newLineIfNotEmpty();
     return _builder;
+  }
+  
+  public StringConcatenation genDepImports(final Activity activity, final TargetApplication app) {
+    if (activity instanceof ListActivity) {
+      return _genDepImports((ListActivity)activity, app);
+    } else {
+      return _genDepImports(activity, app);
+    }
   }
   
   public StringConcatenation extraImports(final Activity activity) {

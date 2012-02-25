@@ -14,13 +14,23 @@ import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 
 class AbstractActivityFieldGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
 	def dispatch generateFields(Activity activity) ''''''
-	def dispatch generateFields(ListActivity activity) ''''''
+	def dispatch generateFields(ListActivity activity) '''
+		«IF activity.databinding.fetchAll && activity.databinding.contentProvider instanceof DatabaseContentProvider && activity.databinding.entity != null»
+		protected final static String[] PROJECTION = new String[] {
+			«activity.databinding.entity.columnsClassName»._ID,
+			«FOR p : activity.databinding.projection SEPARATOR ','»
+			«activity.databinding.entity.columnsClassName».«p.name.toUpperCase»
+			«ENDFOR»
+		};
+		«ENDIF»
+	'''
 	def dispatch generateFields(TabActivity activity) ''''''
 	def dispatch generateFields(BaseGameActivity activity) '''
 		protected Camera mCamera;

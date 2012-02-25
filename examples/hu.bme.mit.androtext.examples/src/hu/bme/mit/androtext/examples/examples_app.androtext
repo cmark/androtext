@@ -1,8 +1,10 @@
+import NotePadModel.Note
+
 application AndroTextExamples {
 	
 	listactivity ExamplesListActivity {
 		listitem HelloListActivityGui.simple_list_item
-		fetch from exampleNameListProvider
+		fetchAll from exampleNameListProvider
 	}
 	resourceprovider exampleNameListProvider resource exampleResources.exampleNameList
 	
@@ -29,7 +31,7 @@ application AndroTextExamples {
 	// Hello ListActivity Example
 	listactivity HelloListActivity {
 		listitem HelloListActivityGui.simple_list_item
-		fetch from countriesResourceProvider
+		fetchAll from countriesResourceProvider
 	}
 	resourceprovider countriesResourceProvider resource HelloListActivityResources.countries
 	
@@ -63,7 +65,8 @@ application AndroTextExamples {
 	// Simple Data Example
 	listactivity DataExampleActivity {
 		listitem HelloListActivityGui.simple_list_item
-		fetch NotePadModel.Note from SimpleDataProvider
+		fetchAll Note(NotePadModel.Note.title) from SimpleDataProvider
+		bind HelloListActivityGui.simple_list_item
 	}
 
 	provider SimpleDataProvider data NotePadModel

@@ -14,6 +14,8 @@ import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
 import hu.bme.mit.androtext.lang.androTextDsl.Button
 import hu.bme.mit.androtext.lang.androTextDsl.Action
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity
+import hu.bme.mit.androtext.lang.androTextDsl.DataBinding
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 
 class SimpleActivityMethodGenerator {
 	
@@ -63,8 +65,9 @@ class SimpleActivityMethodGenerator {
 	
 	def dispatch logic(Activity activity) ''''''
 	def dispatch logic(ListActivity activity) '''
+		Intent intent = getIntent();
 		«val listItem = activity.listitem.layoutName»
-		«activity.contentProvider.generate(listItem)»
+		«activity.databinding.generate(listItem)»
 		«IF activity.onListItemClickAction != null»
 		getListView().setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -92,9 +95,26 @@ class SimpleActivityMethodGenerator {
 		tabHost.setCurrentTab(2);
 	'''
 	
-	def dispatch generate(ContentProvider provider, String listItem) ''''''
-	def dispatch generate(ResourceContentProvider provider, String listItem) '''
+	def generate(DataBinding db, String listItem) {
+		return db.contentProvider.generate(db, listItem)
+	}
+	
+	def dispatch generate(ContentProvider provider, DataBinding db, String listItem) ''''''
+	def dispatch generate(ResourceContentProvider provider, DataBinding db, String listItem) '''
 		«provider.arrayResource.generateContentSet(listItem)»
+	'''
+	
+	def dispatch generate(DatabaseContentProvider provider, DataBinding db, String listItem)'''
+		«IF db.fetchAll»
+		if (intent.getData() == null) {
+			intent.setData(«db.entity.columnsClassName».CONTENT_URI);
+		}
+		Cursor cursor = managedQuery(getIntent().getData(), PROJECTION, null, null, «db.entity.columnsClassName».DEFAULT_SORT_ORDER);
+		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.«listItem», cursor, 
+					new String[] { «FOR p : db.projection SEPARATOR ', '»«db.entity.columnsClassName».«p.name.toUpperCase»«ENDFOR» }, 
+					new int[] { «FOR view : db.target SEPARATOR ', '»R.id.«view.name»«ENDFOR» });
+		setListAdapter(adapter);
+		«ENDIF»
 	'''
 	
 	def dispatch generateContentSet(ArrayResource resource, String listItem) '''
