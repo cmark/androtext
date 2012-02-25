@@ -33,6 +33,8 @@ public interface AndroidConstants2 {
 			+ "-" + Density.LOW.getResourceValue() + AdtConstants.WS_SEP; //$NON-NLS-1$
 	public static final String LAYOUT_DIRECTORY = AndroidConstants.FD_RES_LAYOUT
 			+ AdtConstants.WS_SEP;
+	public static final String MENU_DIRECTORY = AndroidConstants.FD_RES_MENU
+			+ AdtConstants.WS_SEP;
 	public static final String VALUES_DIRECTORY = AndroidConstants.FD_RES_VALUES
 			+ AdtConstants.WS_SEP;
 	public static final String XML_DIRECTORY = AndroidConstants.FD_RES_XML

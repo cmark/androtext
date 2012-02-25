@@ -17,6 +17,7 @@ import hu.bme.mit.androtext.gen.selector.SelectorGenerator
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 import hu.bme.mit.androtext.gen.entity.ContentProviderGenerator
 import hu.bme.mit.androtext.gen.entity.AbstractContentProviderGenerator
+import hu.bme.mit.androtext.gen.menu.ActivityMenuGenerator
 
 class AndroTextGeneratorMain implements IMainGenerator {
 	
@@ -32,6 +33,7 @@ class AndroTextGeneratorMain implements IMainGenerator {
 	@Inject SelectorGenerator selectorGenerator
 	@Inject ContentProviderGenerator contentProviderGenerator
 	@Inject AbstractContentProviderGenerator abstractContentProviderGenerator
+	@Inject ActivityMenuGenerator activityMenuGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication targetApplication) {
 		// generate data related stuff only when a contentprovider exist in the application file
@@ -49,6 +51,7 @@ class AndroTextGeneratorMain implements IMainGenerator {
 		layoutGenerator.doGenerate(resourceSet, fsa, targetApplication)
 		tabLayoutGenerator.doGenerate(resourceSet, fsa, targetApplication)
 		selectorGenerator.doGenerate(resourceSet, fsa, targetApplication)
+		activityMenuGenerator.doGenerate(resourceSet, fsa, targetApplication)
 	}
 	
 }

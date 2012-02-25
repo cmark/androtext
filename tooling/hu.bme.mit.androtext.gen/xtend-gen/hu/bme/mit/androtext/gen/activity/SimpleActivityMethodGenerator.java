@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.Action;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
@@ -59,6 +60,32 @@ public class SimpleActivityMethodGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
+    _builder.newLine();
+    {
+      ActivityMenu _menu = activity.getMenu();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_menu, null);
+      if (_operator_notEquals) {
+        _builder.append("@Override");
+        _builder.newLine();
+        _builder.append("public boolean onCreateOptionsMenu(Menu menu) {");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("MenuInflater inflater = getMenuInflater();");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("inflater.inflate(R.menu.");
+        ActivityMenu _menu_1 = activity.getMenu();
+        String _menuResourceFileName = this._generatorExtensions.menuResourceFileName(_menu_1);
+        _builder.append(_menuResourceFileName, "    ");
+        _builder.append(", menu);");
+        _builder.newLineIfNotEmpty();
+        _builder.append("    ");
+        _builder.append("return true;");
+        _builder.newLine();
+        _builder.append("}");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   

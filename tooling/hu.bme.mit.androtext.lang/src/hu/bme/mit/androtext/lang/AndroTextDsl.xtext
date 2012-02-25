@@ -63,7 +63,11 @@ AndroidApplicationModelElement:
 ;
 
 Activity:
-	'activity' name=ID 'layout' layout=[View | QualifiedName] ('theme' theme=ActivityTheme)? 
+	'activity' name=ID '{'
+		'layout' layout=[View | QualifiedName]
+		('theme' theme=ActivityTheme)?
+		(menu=ActivityMenu)?
+	'}'
 	| TabActivity | ListActivity | BaseGameActivity
 ;
 
@@ -74,6 +78,8 @@ enum ActivityTheme:
 TabActivity:
 	'tabactivity' name=ID '{'
 		(tabs+=Tab)+
+		('theme' theme=ActivityTheme)?
+		(menu=ActivityMenu)?
 	'}'
 ;
 
@@ -89,7 +95,32 @@ ListActivity:
 		('listitem' listitem=[View | QualifiedName])?
 		(databinding=DataBinding)?
 		('onListItemClick' onListItemClickAction=Action)?
+		('theme' theme=ActivityTheme)?
+		(menu=ActivityMenu)?
 	'}')?
+;
+
+ActivityMenu:
+	'menu' name=ID ('{'
+		(menuElements+=ActivityMenuElement)*
+	'}')?
+;
+
+ActivityMenuElement:
+	ActivityMenuItem | ActivityMenuGroup
+;
+
+ActivityMenuItem:
+	'item' name=ID title=STRING icon=AnyDrawablePropertyValue 
+	('{' 
+		(onSelectedAction=Action | subMenu=ActivityMenu)?
+	'}')?
+;
+
+ActivityMenuGroup:
+	'group' name=ID '{'
+		(menuItems+=ActivityMenuItem)*
+	'}'
 ;
 
 DataBinding:
@@ -921,7 +952,19 @@ ExternalDrawableResourceLink:
 ;
 
 enum AndroidDrawableResource:
-	edit_text| editbox_background | editbox_background_normal | editbox_dropdown_dark_frame | editbox_dropdown_light_frame  
+	edit_text | 
+	editbox_background | 
+	editbox_background_normal | 
+	editbox_dropdown_dark_frame | 
+	editbox_dropdown_light_frame |
+	ic_menu_add |
+	ic_menu_delete | 
+	ic_menu_edit |
+	ic_menu_help |
+	ic_menu_more |
+	ic_menu_revert |
+	ic_menu_save |
+	ic_menu_upload      
 ;
 
 StringResourceLink:

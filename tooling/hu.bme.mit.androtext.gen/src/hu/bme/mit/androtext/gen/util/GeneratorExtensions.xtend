@@ -25,6 +25,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
 
 class GeneratorExtensions {
 	
@@ -145,6 +146,10 @@ class GeneratorExtensions {
 	
 	def layoutName(View root) {
 		root.name.toLowerCase + "_layout"
+	}
+	
+	def menuResourceFileName(ActivityMenu menu) {
+		menu.name + "_menu"
 	}
 	
 	def textureRegionFieldName(TextureRegion region) '''

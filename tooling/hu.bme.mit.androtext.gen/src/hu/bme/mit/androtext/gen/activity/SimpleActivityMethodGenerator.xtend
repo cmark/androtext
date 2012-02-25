@@ -29,6 +29,15 @@ class SimpleActivityMethodGenerator {
 			«activity.logic»
 			«activity.generateButtonClicks»
 		}
+		
+		«IF activity.menu != null»
+		@Override
+		public boolean onCreateOptionsMenu(Menu menu) {
+		    MenuInflater inflater = getMenuInflater();
+		    inflater.inflate(R.menu.«activity.menu.menuResourceFileName», menu);
+		    return true;
+		}
+		«ENDIF»
 	'''
 	
 	def generateButtonClicks(Activity activity) '''

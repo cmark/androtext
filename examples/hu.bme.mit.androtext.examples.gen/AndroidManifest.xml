@@ -37,6 +37,8 @@
 		</activity>
 		<activity android:label="@string/otheractivity_title" android:name=".OtherActivity">		
 		</activity>
+		<activity android:label="@string/menuactivity_title" android:name=".MenuActivity">		
+		</activity>
 		<activity android:label="@string/dataexampleactivity_title" android:name=".DataExampleActivity">		
 		</activity>
 		<activity android:label="@string/lineexampleactivity_title" android:name=".LineExampleActivity">		

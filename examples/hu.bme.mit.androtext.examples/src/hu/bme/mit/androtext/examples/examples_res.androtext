@@ -9,6 +9,7 @@ resources exampleResources {
 		"Hello TabLayout",
 		"Hello AutoCompleteView",
 		"Hello ListActivity",
+		"Hello Menus",
 		"Hello Button Navigation",
 		"Hello DataExample",
 		"Hello Game, LineExample",

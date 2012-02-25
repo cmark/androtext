@@ -11,6 +11,7 @@ import hu.bme.mit.androtext.gen.entity.EntityClassGenerator;
 import hu.bme.mit.androtext.gen.entity.EntityTableGenerator;
 import hu.bme.mit.androtext.gen.layout.LayoutResourceGenerator;
 import hu.bme.mit.androtext.gen.layout.TabLayoutGenerator;
+import hu.bme.mit.androtext.gen.menu.ActivityMenuGenerator;
 import hu.bme.mit.androtext.gen.resources.BasicAndroidInformationValuesGenerator;
 import hu.bme.mit.androtext.gen.resources.StringArrayResourceGenerator;
 import hu.bme.mit.androtext.gen.selector.SelectorGenerator;
@@ -62,6 +63,9 @@ public class AndroTextGeneratorMain implements IMainGenerator {
   @Inject
   private AbstractContentProviderGenerator abstractContentProviderGenerator;
   
+  @Inject
+  private ActivityMenuGenerator activityMenuGenerator;
+  
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication targetApplication) {
       AndroidApplication _application = targetApplication.getApplication();
       EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
@@ -84,5 +88,6 @@ public class AndroTextGeneratorMain implements IMainGenerator {
       this.layoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
       this.tabLayoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
       this.selectorGenerator.doGenerate(resourceSet, fsa, targetApplication);
+      this.activityMenuGenerator.doGenerate(resourceSet, fsa, targetApplication);
   }
 }

@@ -6,6 +6,7 @@ import hu.bme.mit.androtext.gen.activity.AbstractActivityFieldGenerator;
 import hu.bme.mit.androtext.gen.activity.AbstractActivityMethodGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
@@ -157,6 +158,16 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     _builder.newLine();
     _builder.append("import android.content.Intent;");
     _builder.newLine();
+    {
+      ActivityMenu _menu = activity.getMenu();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_menu, null);
+      if (_operator_notEquals) {
+        _builder.append("import android.view.Menu;");
+        _builder.newLine();
+        _builder.append("import android.view.MenuInflater;");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   

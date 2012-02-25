@@ -59,6 +59,10 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import android.view.View;
 		import android.view.View.OnClickListener;
 		import android.content.Intent;
+		«IF activity.menu != null»
+		import android.view.Menu;
+		import android.view.MenuInflater;
+		«ENDIF»
 	'''
 	
 	def dispatch extraImports(Activity activity) '''

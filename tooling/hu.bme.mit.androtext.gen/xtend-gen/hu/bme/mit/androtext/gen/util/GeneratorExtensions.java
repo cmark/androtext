@@ -1,6 +1,7 @@
 package hu.bme.mit.androtext.gen.util;
 
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
@@ -294,6 +295,12 @@ public class GeneratorExtensions {
     String _name = root.getName();
     String _lowerCase = _name.toLowerCase();
     String _operator_plus = StringExtensions.operator_plus(_lowerCase, "_layout");
+    return _operator_plus;
+  }
+  
+  public String menuResourceFileName(final ActivityMenu menu) {
+    String _name = menu.getName();
+    String _operator_plus = StringExtensions.operator_plus(_name, "_menu");
     return _operator_plus;
   }
   

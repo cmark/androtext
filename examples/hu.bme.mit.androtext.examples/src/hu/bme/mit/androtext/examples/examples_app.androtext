@@ -9,25 +9,37 @@ application AndroTextExamples {
 	resourceprovider exampleNameListProvider resource exampleResources.exampleNameList
 	
 	// Hello World
-	activity HelloWorldActivity layout HelloWorldGui.hellolayout
+	activity HelloWorldActivity {
+		layout HelloWorldGui.hellolayout
+	}
 	
 	// Hello AutoComplete Example
-	activity HelloAutoCompleteActivity layout HelloAutoCompleteGui.main
+	activity HelloAutoCompleteActivity {
+		layout HelloAutoCompleteGui.main
+	} 
 	
 	// Hello GridView Example
-	activity HelloGridViewActivity layout HelloGridViewGui.gridView
-	// in the generated class HelloGridViewActivity load the GridView contents, like in the Hello GridView article
-	// http://developer.android.com/guide/tutorials/views/hello-gridview.html
+	activity HelloGridViewActivity {
+		layout HelloGridViewGui.gridView
+		// in the generated class HelloGridViewActivity load the GridView contents, like in the Hello GridView article
+		// http://developer.android.com/guide/tutorials/views/hello-gridview.html
+	}
 	
 	// Hello LinearLauyout Example
-	activity HelloLinearLayoutActivity layout HelloLinearLayoutGui.helloLinearLayoutMain
-	
+	activity HelloLinearLayoutActivity {
+		layout HelloLinearLayoutGui.helloLinearLayoutMain
+	}
+
 	// Hello Relative Layout Example
-	activity HelloRelativeLayoutExampleActivity layout HelloRelativeLayoutExampleGui.relativeLayout
+	activity HelloRelativeLayoutExampleActivity {
+		layout HelloRelativeLayoutExampleGui.relativeLayout
+	}
 	
 	// Hello TableLayout Example
-	activity HelloTableLayoutActivity layout HelloTableLayoutGui.table
-	
+	activity HelloTableLayoutActivity {
+		layout HelloTableLayoutGui.table
+	}
+
 	// Hello ListActivity Example
 	listactivity HelloListActivity {
 		listitem HelloListActivityGui.simple_list_item
@@ -54,13 +66,40 @@ application AndroTextExamples {
 		}
 	    	
 	}	
-	activity ArtistsActivity layout HelloTabWidgetGui.artistsText
-	activity AlbumsActivity layout HelloTabWidgetGui.albumsText
-	activity SongsActivity layout HelloTabWidgetGui.songsText
+	activity ArtistsActivity {
+		layout HelloTabWidgetGui.artistsText
+	}
+	activity AlbumsActivity {
+		layout HelloTabWidgetGui.albumsText
+	}
+	activity SongsActivity {
+		layout HelloTabWidgetGui.songsText
+	}
 	
 	// Hello Simple Navigation Example
-	activity MainActivity layout SimpleButtonNavGui.mainLayout
-	activity OtherActivity layout SimpleButtonNavGui.otherLayout
+	activity MainActivity {
+		layout SimpleButtonNavGui.mainLayout
+	}
+	activity OtherActivity {
+		layout SimpleButtonNavGui.otherLayout
+	}
+	
+	// Hello Activity Menu Example
+	activity MenuActivity {
+		layout MenuExampleGui.menulayout
+		menu simplemenu {
+			group common {
+				item save "Save" ic_menu_save
+				item edit "Edit" ic_menu_edit
+			}
+			item upload "Upload" ic_menu_upload
+			item more "More" ic_menu_more {
+				menu submenu {
+					item moreItem "MoreMoreMore" ic_menu_help
+				}
+			}
+		}
+	}
 	
 	// Simple Data Example
 	listactivity DataExampleActivity {

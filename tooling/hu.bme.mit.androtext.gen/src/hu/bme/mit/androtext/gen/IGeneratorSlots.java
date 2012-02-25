@@ -4,6 +4,7 @@ public interface IGeneratorSlots {
 
 	public static final String PROJECT_SLOT = "PROJECT";
 	public static final String VALUES_SLOT = "VALUES";
+	public static final String MENU_SLOT = "MENU";
 	public static final String DATA_SLOT = "DATA";
 	public static final String SRC_DATA_SLOT = "src_DATA";
 	public static final String XML_SLOT = "XML";

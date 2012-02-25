@@ -29,6 +29,7 @@ public class BasicAndroidOutputConfigurationProvider {
 		// android resource folders
 		configs.add(createConfiguration(IGeneratorSlots.DRAWABLE_SLOT, project.getFolder(AndroidConstants2.RES_DIRECTORY + AndroidConstants2.DRAWABLE_DIRECTORY).getProjectRelativePath().toString(), false, true, true, true, true));
 		configs.add(createConfiguration(IGeneratorSlots.VALUES_SLOT, project.getFolder(AndroidConstants2.RES_DIRECTORY + AndroidConstants2.VALUES_DIRECTORY).getProjectRelativePath().toString(), false, true, true, true, true));
+		configs.add(createConfiguration(IGeneratorSlots.MENU_SLOT, project.getFolder(AndroidConstants2.RES_DIRECTORY + AndroidConstants2.MENU_DIRECTORY).getProjectRelativePath().toString(), false, true, true, true, true));
 		configs.add(createConfiguration(IGeneratorSlots.LAYOUT_SLOT, project.getFolder(AndroidConstants2.RES_DIRECTORY + AndroidConstants2.LAYOUT_DIRECTORY).getProjectRelativePath().toString(), false, true, true, true, true));
 		configs.add(createConfiguration(IGeneratorSlots.XML_SLOT, project.getFolder(AndroidConstants2.RES_DIRECTORY + AndroidConstants2.XML_DIRECTORY).getProjectRelativePath().toString(), false, true, true, true, true));
 		// package folders in src folders

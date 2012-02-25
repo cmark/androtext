@@ -37,13 +37,14 @@ public class ExamplesListActivity extends AbstractExamplesListActivity {
 		activityMap.put(5, HelloTabWidgetActivity.class);
 		activityMap.put(6, HelloAutoCompleteActivity.class);
 		activityMap.put(7, HelloListActivity.class);
-		activityMap.put(8, MainActivity.class);
-		activityMap.put(9, DataExampleActivity.class);
-		activityMap.put(10, LineExampleActivity.class);
-		activityMap.put(11, RectangleExample.class);
-		activityMap.put(12, MenuExampleActivity.class);
-		activityMap.put(13, SpriteExampleActivity.class);
-		activityMap.put(14, TextExampleActivity.class);
-		activityMap.put(15, PhysicsExampleActivity.class);
+		activityMap.put(8, MenuActivity.class);
+		activityMap.put(9, MainActivity.class);
+		activityMap.put(10, DataExampleActivity.class);
+		activityMap.put(11, LineExampleActivity.class);
+		activityMap.put(12, RectangleExample.class);
+		activityMap.put(13, MenuExampleActivity.class);
+		activityMap.put(14, SpriteExampleActivity.class);
+		activityMap.put(15, TextExampleActivity.class);
+		activityMap.put(16, PhysicsExampleActivity.class);
 	}
 }
