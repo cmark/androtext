@@ -12,17 +12,16 @@ RoadMap Date: 2012. 02. 11.
 * Features
  * Simple Activity creation
  * Simple UI creation
- * Simple navigation with widgets onClick
+ * Simple navigation with widgets onClick, and onListItemClick
  * Data-layer design like entities and ContentProvider
  * The tool generates Activity classes, methods, simple logic. UI layout files (some selectors), Entity classes.
+ * Generate ContentProvider/DataBaseManager from entity models (single table handling, joins not supported)
 * Missing Features
  * Add all GUI feature to AndroGui Contents (easy layouting, all widgets, etc.)
- * Navigation support for ListView item clicks
  * Activity Menu support
  * Simple notification support for events
- * Generate ContentProvider/DataBaseManager from entity models
+ * Preferences support
 * Future plans
- * Find out how to model Services/BroadCastReceivers
  * Use Google Guice, Roboguice for injecting Views and resources into Activity classes.
  * Write validation constraints. Use [EMF INCQuery](http://viatra.inf.mit.bme.hu/incquery/base#Overview)
  
