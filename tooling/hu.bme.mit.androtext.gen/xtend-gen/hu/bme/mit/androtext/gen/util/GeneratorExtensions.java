@@ -300,7 +300,8 @@ public class GeneratorExtensions {
   
   public String menuResourceFileName(final ActivityMenu menu) {
     String _name = menu.getName();
-    String _operator_plus = StringExtensions.operator_plus(_name, "_menu");
+    String _lowerCase = _name.toLowerCase();
+    String _operator_plus = StringExtensions.operator_plus(_lowerCase, "_menu");
     return _operator_plus;
   }
   

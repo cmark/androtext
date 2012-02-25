@@ -149,7 +149,7 @@ class GeneratorExtensions {
 	}
 	
 	def menuResourceFileName(ActivityMenu menu) {
-		menu.name + "_menu"
+		menu.name.toLowerCase + "_menu"
 	}
 	
 	def textureRegionFieldName(TextureRegion region) '''
