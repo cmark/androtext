@@ -3,6 +3,10 @@ package hu.bme.mit.androtext.lang.validation;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.Fixture;
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
 import hu.bme.mit.androtext.lang.androTextDsl.Joint;
@@ -23,6 +27,31 @@ import org.eclipse.xtext.validation.Check;
  */
 public class AndroTextDslJavaValidator extends
 		AbstractAndroTextDslJavaValidator {
+
+	@Check
+	public void checkDataBindingContentProvider(DataBinding binding) {
+		if (binding.getEntity() != null
+				&& binding.getContentProvider() != null
+				&& !checkEntityInContentProvider(binding.getEntity(),
+						binding.getContentProvider())) {
+			error("Entity '" + binding.getEntity().getName()
+					+ "' does not exist in provider '"
+					+ binding.getContentProvider().getName() + "'",
+					binding,
+					AndroTextDslPackage.eINSTANCE.getDataBinding_Entity(),
+					AndroTextIssueCodes.ENTITY_NOT_IN_PROVIDER);
+		}
+	}
+	
+	private boolean checkEntityInContentProvider(Entity entity,
+			ContentProvider contentProvider) {
+		if (contentProvider instanceof DatabaseContentProvider) {
+			if (((DatabaseContentProvider) contentProvider).getDatamodel().getEntities().contains(entity)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	@Check
 	public void checkCameraSizeExistence(BaseGameActivity activity) {
