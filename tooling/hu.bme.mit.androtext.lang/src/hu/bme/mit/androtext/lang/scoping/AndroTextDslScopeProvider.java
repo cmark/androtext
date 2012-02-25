@@ -3,18 +3,35 @@
  */
 package hu.bme.mit.androtext.lang.scoping;
 
+import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
+import hu.bme.mit.androtext.lang.androTextDsl.Entity;
+import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.Property;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
+import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
+
 import java.lang.reflect.Method;
+import java.util.ListIterator;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.naming.IQualifiedNameConverter;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.naming.QualifiedName;
+import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.scoping.impl.FilteringScope;
+import org.eclipse.xtext.scoping.impl.SimpleScope;
+import org.eclipse.xtext.scoping.impl.SingletonScope;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
 
+import com.google.common.base.Function;
 import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+import com.google.inject.Inject;
 
 /**
  * This class contains custom scoping description.
@@ -24,6 +41,11 @@ import com.google.common.base.Predicate;
  *
  */
 public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider {
+	
+	@Inject
+	private IQualifiedNameConverter qualifiedNameConverter;
+	@Inject 
+	private IQualifiedNameProvider qualifiedNameProvider;
 	
 	private Predicate<IEObjectDescription> rootLayoutFilterPredicate = new Predicate<IEObjectDescription>() {
 		@Override
@@ -41,15 +63,65 @@ public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider 
 		return new FilteringScope(scope, rootLayoutFilterPredicate);
 	}
 	
+	/**
+	 * Custom scope for projection. Projection only allowed for the properties of the databinding's entity.
+	 * @param context
+	 * @param ref
+	 * @return
+	 */
+	protected IScope scope_DataBinding_projection(DataBinding context, EReference ref) {
+		if (context.getEntity() != null) {
+			Entity entity = context.getEntity();
+			IScope ret = new SimpleScope(IScope.NULLSCOPE, Iterables.transform(entity.getProperties(), new Function<Property, IEObjectDescription>() {
+				@Override
+				public IEObjectDescription apply(Property from) {
+					return EObjectDescription.create(qualifiedNameConverter.toQualifiedName(from.getName()), from);
+				}
+			}));
+			return ret;
+		}
+		return IScope.NULLSCOPE;
+	}
+	
+	/**
+	 * Custom scope for Databinding target Views.
+	 * @param context
+	 * @param ref
+	 * @return
+	 */
+	protected IScope scope_DataBinding_target(DataBinding context, EReference ref) {
+		if (context.eContainer() instanceof ListActivity) {
+			View li = ((ListActivity)context.eContainer()).getListitem();
+			if (li != null) {
+				if (li instanceof ViewGroup) {
+					IScope ret = new SimpleScope(IScope.NULLSCOPE, Iterables.transform(((ViewGroup) li).getViews(), new Function<View, IEObjectDescription>() {
+						@Override
+						public IEObjectDescription apply(View from) {
+							if (!(from instanceof ViewGroup)) {
+								return EObjectDescription.create(qualifiedNameConverter.toQualifiedName(from.getName()), from);	
+							}
+							return null;
+						}
+					}));
+					return ret;
+				} else {
+					IScope ret = new SingletonScope(EObjectDescription.create(qualifiedNameConverter.toQualifiedName(li.getName()), li), IScope.NULLSCOPE);
+					return ret;
+				}
+			}
+		}
+		return IScope.NULLSCOPE;
+	}
+	
 	protected Predicate<Method> getPredicate(EObject context, EClass type) {
 		String methodName = "scope_" + type.getName();
-//		System.out.println(methodName);
+		System.out.println(methodName);
 		return PolymorphicDispatcher.Predicates.forName(methodName, 2);
 	}
 
 	protected Predicate<Method> getPredicate(EObject context, EReference reference) {
 		String methodName = "scope_" + reference.getEContainingClass().getName() + "_" + reference.getName();
-//		System.out.println(methodName);
+		System.out.println(methodName);
 		return PolymorphicDispatcher.Predicates.forName(methodName, 2);
 	}
 	

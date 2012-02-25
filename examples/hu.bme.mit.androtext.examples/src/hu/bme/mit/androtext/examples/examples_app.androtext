@@ -65,8 +65,8 @@ application AndroTextExamples {
 	// Simple Data Example
 	listactivity DataExampleActivity {
 		listitem HelloListActivityGui.simple_list_item
-		fetchAll Note(NotePadModel.Note.title) from SimpleDataProvider
-		bind HelloListActivityGui.simple_list_item
+		fetchAll Note(note) from SimpleDataProvider
+		bind simple_list_item
 	}
 
 	provider SimpleDataProvider data NotePadModel

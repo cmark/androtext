@@ -4,5 +4,9 @@ datamodel NotePadModel {
 		title : String
 		note : String
 	}
+	
+	entity User {
+		name : String			
+	}
 		
 }
