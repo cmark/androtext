@@ -16,6 +16,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.Action
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
 
 class SimpleActivityMethodGenerator {
 	
@@ -70,6 +71,10 @@ class SimpleActivityMethodGenerator {
 	
 	def dispatch contentViewSet(TabActivity activity) '''
 		setContentView(R.layout.«activity.tabActivityLayout»);
+	'''
+	
+	def dispatch contentViewSet(PreferenceActivity activity) '''
+		addPreferencesFromResource(R.xml.«activity.preferenceXmlFileName»);
 	'''
 	
 	def dispatch logic(Activity activity) ''''''

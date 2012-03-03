@@ -40,11 +40,12 @@ public class ExamplesListActivity extends AbstractExamplesListActivity {
 		activityMap.put(8, MenuActivity.class);
 		activityMap.put(9, MainActivity.class);
 		activityMap.put(10, DataExampleActivity.class);
-		activityMap.put(11, LineExampleActivity.class);
-		activityMap.put(12, RectangleExample.class);
-		activityMap.put(13, MenuExampleActivity.class);
-		activityMap.put(14, SpriteExampleActivity.class);
-		activityMap.put(15, TextExampleActivity.class);
-		activityMap.put(16, PhysicsExampleActivity.class);
+		activityMap.put(11, Settings.class);
+		activityMap.put(12, LineExampleActivity.class);
+		activityMap.put(13, RectangleExample.class);
+		activityMap.put(14, MenuExampleActivity.class);
+		activityMap.put(15, SpriteExampleActivity.class);
+		activityMap.put(16, TextExampleActivity.class);
+		activityMap.put(17, PhysicsExampleActivity.class);
 	}
 }

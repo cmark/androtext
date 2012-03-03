@@ -5,7 +5,6 @@ import hu.bme.mit.androtext.gen.IGenerator
 import hu.bme.mit.androtext.gen.IGeneratorSlots
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import hu.bme.mit.androtext.lang.androTextDsl.View
 import hu.bme.mit.androtext.lang.androTextDsl.ViewElement
@@ -23,11 +22,7 @@ class LayoutResourceGenerator implements IGenerator {
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
 		for (guimodel : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (AndroGuiModelRoot))).flatten) {
 			for (root : guimodel.roots) {
-				if (root instanceof PreferenceScreen) {
-					fsa.generateFile(root.layoutName + ".xml", IGeneratorSlots::XML_SLOT, generate(root))
-				} else {
-					fsa.generateFile(root.layoutName + ".xml", IGeneratorSlots::LAYOUT_SLOT, generate(root))	
-				}	
+				fsa.generateFile(root.layoutName + ".xml", IGeneratorSlots::LAYOUT_SLOT, generate(root))	
 			}
 		}
 	}

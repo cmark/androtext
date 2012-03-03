@@ -1,5 +1,6 @@
 package hu.bme.mit.androtext.gen.util;
 
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
@@ -16,6 +17,10 @@ import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
 import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem;
 import hu.bme.mit.androtext.lang.androTextDsl.LogicComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceContainer;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceElement;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.Scene;
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity;
@@ -25,6 +30,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion;
 import hu.bme.mit.androtext.lang.androTextDsl.TypeRef;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -202,6 +209,29 @@ public class GeneratorExtensions {
       return menuItems;
   }
   
+  public List<AbstractPreference> getPreferencesWithKeys(final PreferenceContainer container) {
+      ArrayList<AbstractPreference> _arrayList = new ArrayList<AbstractPreference>();
+      final ArrayList<AbstractPreference> prefList = _arrayList;
+      if ((container instanceof PreferenceScreen)) {
+        String _name = ((PreferenceScreen) container).getName();
+        boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(_name);
+        boolean _operator_not = BooleanExtensions.operator_not(_isNullOrEmpty);
+        if (_operator_not) {
+          prefList.add(container);
+        }
+      }
+      EList<AbstractPreference> _preferences = container.getPreferences();
+      for (final AbstractPreference e : _preferences) {
+        if ((e instanceof PreferenceContainer)) {
+          List<AbstractPreference> _preferencesWithKeys = this.getPreferencesWithKeys(((PreferenceContainer) e));
+          prefList.addAll(_preferencesWithKeys);
+        } else {
+          prefList.add(e);
+        }
+      }
+      return prefList;
+  }
+  
   public StringConcatenation menuSceneFieldName(final MenuScene menu) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("mMenuScene");
@@ -237,6 +267,34 @@ public class GeneratorExtensions {
     String _lowerCase = _name.toLowerCase();
     String _operator_plus = StringExtensions.operator_plus(_lowerCase, "_layout");
     return _operator_plus;
+  }
+  
+  public String preferenceXmlFileName(final PreferenceActivity activity) {
+    String _name = activity.getName();
+    String _lowerCase = _name.toLowerCase();
+    String _operator_plus = StringExtensions.operator_plus(_lowerCase, "_preflayout");
+    return _operator_plus;
+  }
+  
+  protected String _preferenceKeyName(final PreferenceElement p) {
+    String _name = p.getName();
+    String _operator_plus = StringExtensions.operator_plus(_name, "Key");
+    return _operator_plus;
+  }
+  
+  protected String _preferenceKeyName(final PreferenceScreen p) {
+    String _xblockexpression = null;
+    {
+      String _name = p.getName();
+      boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(_name);
+      if (_isNullOrEmpty) {
+        return null;
+      }
+      String _name_1 = p.getName();
+      String _operator_plus = StringExtensions.operator_plus(_name_1, "Key");
+      _xblockexpression = (_operator_plus);
+    }
+    return _xblockexpression;
   }
   
   public String abstractClassName(final Activity activity) {
@@ -439,6 +497,17 @@ public class GeneratorExtensions {
       throw _illegalArgumentException;
     }
     return _switchResult;
+  }
+  
+  public String preferenceKeyName(final AbstractPreference p) {
+    if (p instanceof PreferenceScreen) {
+      return _preferenceKeyName((PreferenceScreen)p);
+    } else if (p instanceof PreferenceElement) {
+      return _preferenceKeyName((PreferenceElement)p);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(p).toString());
+    }
   }
   
   public StringConcatenation type(final GameEntity entity) {

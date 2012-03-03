@@ -12,6 +12,7 @@ resources exampleResources {
 		"Hello Menus",
 		"Hello Button Navigation",
 		"Hello DataExample",
+		"Hello Preferences",
 		"Hello Game, LineExample",
 		"Hello Game, RectangleExample",
 		"Hello Game, MenuExample",

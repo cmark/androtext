@@ -97,7 +97,7 @@ class ViewPropertiesGenerator {
 	
 	def generate(EntriesAttribute attribute) '''
 		«IF attribute != null»
-		android:entries="«attribute.entries.name»"
+		android:entries="@array/«attribute.entries.name»"
 		«ENDIF»
 	'''
 	

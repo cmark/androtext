@@ -10,10 +10,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
 
 class BasicAndroidInformationValuesGenerator implements IGenerator {
 	
-	@Inject extension GeneratorExtensions extensions
+	@Inject extension GeneratorExtensions
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
 		fsa.generateFile("string.xml", IGeneratorSlots::VALUES_SLOT, content(resourceSet, androidApplication))
@@ -26,7 +27,12 @@ class BasicAndroidInformationValuesGenerator implements IGenerator {
 			«stringLine("package_name", androidApplication.findPackageName)»
 			«FOR activity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (Activity))).flatten»
 				«stringLine(activity.activityNameValue, activity.name)»
-			«ENDFOR» 
+			«ENDFOR»
+			«FOR prefActivity : androidApplication.application.modelElements.filter(typeof (PreferenceActivity))»
+				«FOR pref : prefActivity.screen.preferencesWithKeys»
+				«stringLine(pref.preferenceKeyName, pref.preferenceKeyName)»
+				«ENDFOR»
+			«ENDFOR»
 		</resources>
 	'''
 	

@@ -251,7 +251,7 @@ public class ViewPropertiesGenerator {
     {
       boolean _operator_notEquals = ObjectExtensions.operator_notEquals(attribute, null);
       if (_operator_notEquals) {
-        _builder.append("android:entries=\"");
+        _builder.append("android:entries=\"@array/");
         ArrayResource _entries = attribute.getEntries();
         String _name = _entries.getName();
         _builder.append(_name, "");

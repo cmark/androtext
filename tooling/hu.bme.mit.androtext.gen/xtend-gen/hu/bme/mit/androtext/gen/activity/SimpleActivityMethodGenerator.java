@@ -15,6 +15,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource;
@@ -198,6 +199,16 @@ public class SimpleActivityMethodGenerator {
     _builder.append("setContentView(R.layout.");
     String _tabActivityLayout = this._generatorExtensions.tabActivityLayout(activity);
     _builder.append(_tabActivityLayout, "");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected StringConcatenation _contentViewSet(final PreferenceActivity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("addPreferencesFromResource(R.xml.");
+    String _preferenceXmlFileName = this._generatorExtensions.preferenceXmlFileName(activity);
+    _builder.append(_preferenceXmlFileName, "");
     _builder.append(");");
     _builder.newLineIfNotEmpty();
     return _builder;
@@ -429,7 +440,9 @@ public class SimpleActivityMethodGenerator {
   }
   
   public StringConcatenation contentViewSet(final Activity activity) {
-    if (activity instanceof TabActivity) {
+    if (activity instanceof PreferenceActivity) {
+      return _contentViewSet((PreferenceActivity)activity);
+    } else if (activity instanceof TabActivity) {
       return _contentViewSet((TabActivity)activity);
     } else {
       return _contentViewSet(activity);

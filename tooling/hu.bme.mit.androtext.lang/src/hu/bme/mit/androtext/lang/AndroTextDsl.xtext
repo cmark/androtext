@@ -59,7 +59,7 @@ AndroidApplication:
 	'}';
 
 AndroidApplicationModelElement:
-	Activity | PreferenceActivity | ContentProvider
+	Activity | ContentProvider
 ;
 
 Activity:
@@ -68,7 +68,7 @@ Activity:
 		('theme' theme=ActivityTheme)?
 		(menu=ActivityMenu)?
 	'}'
-	| TabActivity | ListActivity | BaseGameActivity
+	| TabActivity | ListActivity | BaseGameActivity | PreferenceActivity
 ;
 
 enum ActivityTheme:
@@ -130,7 +130,9 @@ DataBinding:
 ;
 	
 PreferenceActivity:
-	'preferences' name=ID 'layout' layout=[PreferenceScreen | QualifiedName]
+	'preferences' name=ID '{'
+		'layout' screen=PreferenceScreen
+	'}'
 ;
 
 ContentProvider returns ContentProvider:
@@ -191,7 +193,7 @@ EntityTypeRef:
 ;
 
 enum DataTypes:
-	STRING="String" | FLOAT="float" | BOOLEAN="boolean" | INT="int";
+	STRING='String' | FLOAT='float' | BOOLEAN='boolean' | INT='int';
 /* End of AndroDataModelRoot and data model elements */
 
 /* AndroGuiModelRoot and model elements */
@@ -252,41 +254,41 @@ FastLayoutStyle:
 ;
 
 AbsoluteLayout:
-	"absolutelayout" 
+	'absolutelayout' 
 	name=ID 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	"{"
+	'{'
 		views+=View*
-	"}";
+	'}';
 
 LinearLayout:
-	"linearlayout" name=ID 
-	(vertical?="vertical"|"horizontal")? 
+	'linearlayout' name=ID 
+	(vertical?='vertical'|'horizontal')? 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	(gravity=GravityAttribute)?
-	"{"
+	'{'
 		views+=View*
-	"}";
+	'}';
 
 FrameLayout:
-	"framelayout" 
+	'framelayout' 
 	name=ID 
 	(layoutStyle=LayoutStyle)?
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	"{"
+	'{'
 		views+=View*
-	"}";
+	'}';
 	
 RelativeLayout:
-	"relativelayout" 
+	'relativelayout' 
 	name=ID 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	"{"
+	'{'
 		views+=View*
-	"}";
+	'}';
 	
 GridLayout:
 	'girdlayout' 
@@ -336,7 +338,7 @@ ViewElement:
 ;
 
 TextView:
-	"textview" 
+	'textview' 
 	name=ID 
 	(text=StringPropertyValue)? 
 	(layoutStyle=LayoutStyle)? 
@@ -373,7 +375,7 @@ TextView:
 ;
 	
 EditText:
-	"edittext" 
+	'edittext' 
 	name=ID 
 	(text=StringPropertyValue)? 
 	(layoutStyle=LayoutStyle)? 
@@ -408,7 +410,7 @@ EditText:
 ;
 	
 Button:
-	"button" 
+	'button' 
 	name=ID 
 	text=StringPropertyValue 
 	(layoutStyle=LayoutStyle)? 
@@ -494,7 +496,7 @@ GridView:
 ;
 	
 Spinner:
-	"spinner" 
+	'spinner' 
 	name=ID 
 	(entriesAttribute=EntriesAttribute)? 
 	(layoutStyle=LayoutStyle)?
@@ -512,7 +514,7 @@ Spinner:
 ;
 	
 CheckBox:
-	"checkbox" 
+	'checkbox' 
 	name=ID 
 	text=StringPropertyValue 
 	(layoutStyle=LayoutStyle)? 
@@ -521,17 +523,17 @@ CheckBox:
 	'}')?;
 	
 RadioGroup:
-	"radiogroup" 
+	'radiogroup' 
 	name=ID 
-	(orientation?="horizontal"|"vertical")? 
+	(orientation?='horizontal'|'vertical')? 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
-	"{"  
+	'{'  
 		(radiobuttons+=RadioButton)+
-	"}";
+	'}';
 	
 RatingBar:
-	"ratingbar" 
+	'ratingbar' 
 	(name=ID)? 
 	numStars=IntegerPropertyValue 
 	(layoutStyle=LayoutStyle)? 
@@ -540,17 +542,17 @@ RatingBar:
 	'}')?;
 	
 ToggleButton:
-	"togglebutton" 
+	'togglebutton' 
 	name=ID 
-	"textOn" textOn=StringPropertyValue 
-	"textOff" textOff=StringPropertyValue 
+	'textOn' textOn=StringPropertyValue 
+	'textOff' textOff=StringPropertyValue 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
 	('{'
 	'}')?;
 	
 RadioButton:
-	"radiobutton" 
+	'radiobutton' 
 	name=ID 
 	text=STRING 
 	(layoutStyle=LayoutStyle)? 
@@ -580,67 +582,79 @@ AutoCompleteTextView:
 
 /* Preference Framework Elements */
 AbstractPreference:
-	Preference | EditTextPreference | ListPreference | CheckBoxPreference | RingtonePrefence | PreferenceCategory | PreferenceScreen
+	PreferenceElement | PreferenceContainer
+;
+
+PreferenceElement:
+	Preference | DialogBasedPreference | CheckBoxPreference | RingtonePrefence
+;
+
+DialogBasedPreference:
+	EditTextPreference | ListPreference
+;
+
+PreferenceContainer:
+	PreferenceScreen | PreferenceCategory
 ;
 
 Preference:
-	"preference" (name=ID)? title=STRING "{"
-		preferenceAttributes = PreferenceAttributes
-	"}"
+	'preference' (name=ID)? title=STRING ('{'
+		('summary' summary=STRING)?
+		('enabled' enabled=BOOL)?
+		('persistent' persistent=BOOL)?
+	'}')?
 ;
 
 PreferenceScreen:
-	"preferencescreen" (name=ID)? title=STRING '{'
-		preferenceAttributes = PreferenceAttributes
+	'preferencescreen' (name=ID)? title=STRING '{'
+		('summary' summary=STRING)?
+		('enabled' enabled=BOOL)?
+		('persistent' persistent=BOOL)?	
 		(preferences+=AbstractPreference)*
 	'}'
 ;
 
 PreferenceCategory:
-	"preferencecategery" title=STRING "{"
+	'preferencecategory' title=STRING '{'
 		(preferences+=AbstractPreference)*
-	"}";
+	'}'
+;
 
 EditTextPreference:
-	"edittextpreference" name=ID title=STRING "{"
-		preferenceAttributes = PreferenceAttributes
-		dialogPreferenceAttributes = DialogPreferenceAttributes
-	"}";
+	'edittextpreference' name=ID title=STRING ('{'
+		('summary' summary=STRING)?
+		('enabled' enabled=BOOL)?
+		('persistent' persistent=BOOL)?
+		('dialogTitle' dialogTitle=STRING)?
+		('defaultValue' defaultValue=STRING)?
+	'}')?;
 	
 ListPreference:
-	"listpreference" name=ID title=STRING "{"
-		preferenceAttributes = PreferenceAttributes
-		dialogPreferenceAttributes = DialogPreferenceAttributes
-		listPreferenceAttributes = ListPreferenceAttributes
-	"}";
+	'listpreference' name=ID title=STRING ('{'
+		('summary' summary=STRING)?
+		('enabled' enabled=BOOL)?
+		('persistent' persistent=BOOL)?
+		('dialogTitle' dialogTitle=STRING)?
+		('defaultValue' defaultValue=STRING)?
+		(entriesAttribute=EntriesAttribute)?
+		'entryValues' entryValues=[StringArrayEntry | QualifiedName]
+	'}')?
+;
 	
 CheckBoxPreference:
-	"checkboxpreference" name=ID title=STRING "{"
-		preferenceAttributes = PreferenceAttributes
-	"}";
+	'checkboxpreference' name=ID title=STRING ('{'
+		('summary' summary=STRING)?
+		('enabled' enabled=BOOL)?
+		('persistent' persistent=BOOL)?	
+	'}')?
+;
 	
 RingtonePrefence:
-	"ringtonepreference" name=ID title=STRING "{"
-		preferenceAttributes = PreferenceAttributes
-	"}";
-
-PreferenceAttributes:
-	{PreferenceAttributes}
-	("summary" summary=STRING)?
-	("enabled" enabled=BOOL)?
-	("persistent" persistent=BOOL)?
-;
-
-DialogPreferenceAttributes:
-	{DialogPreferenceAttributes}
-	("dialogTitle" dialogTitle=STRING)?
-	("defaultValue" defaultValue=STRING)?
-;
-
-ListPreferenceAttributes:
-	{ListPreferenceAttributes}
-	(entriesAttribute=EntriesAttribute)?
-	"entryValues" entryValues=[StringArrayEntry | QualifiedName]
+	'ringtonepreference' name=ID title=STRING ('{'
+		('summary' summary=STRING)?
+		('enabled' enabled=BOOL)?
+		('persistent' persistent=BOOL)?	
+	'}')?
 ;
 
 /* XML attributes */
@@ -869,7 +883,7 @@ VerticalSpacingAttribute:
 ;
 
 EntriesAttribute:
-	'entries' entries=[ArrayResource | QualifiedName]
+	'entries' entries=[ArrayResource | QualifiedName]	
 ;
 
 StretchColumnsAttribute:
@@ -892,7 +906,7 @@ enum GravityKind :
 ;
 
 enum FastLayoutDimensionKind:
-	FILL="fill" | WRAP="wrap" | FILL_WRAP="fill&wrap" | WRAP_FILL="wrap&fill";
+	FILL='fill' | WRAP='wrap' | FILL_WRAP='fill&wrap' | WRAP_FILL='wrap&fill';
 /* End of XML attributes */
 /* End of Preference Framework Elements */
 /* End of AndroGuiModelRoot and gui model elements */
@@ -1024,16 +1038,16 @@ IntegerArrayResource:
 ;
 
 IntegerArrayEntry:
-	(name=ID "=")? value=INT
+	(name=ID '=')? value=INT
 ;
 
 StringArrayResource:
-	"stringarray" name=ID "{" 
+	'stringarray' name=ID '{' 
 		( entries+=StringArrayEntry (',' entries+=StringArrayEntry)*)
-	"}";
+	'}';
 	
 StringArrayEntry:
-	(name=ID "=")? value=STRING;
+	(name=ID '=')? value=STRING;
 
 DrawableResource:
     (BitmapDrawableResource | TransitionDrawableResource)

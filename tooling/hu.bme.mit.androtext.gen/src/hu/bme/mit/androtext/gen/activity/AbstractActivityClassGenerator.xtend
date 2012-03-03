@@ -15,6 +15,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement
 
 class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	

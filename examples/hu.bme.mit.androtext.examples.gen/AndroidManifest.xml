@@ -41,6 +41,8 @@
 		</activity>
 		<activity android:label="@string/dataexampleactivity_title" android:name=".DataExampleActivity">		
 		</activity>
+		<activity android:label="@string/settings_title" android:name=".Settings">		
+		</activity>
 		<activity android:label="@string/lineexampleactivity_title" android:name=".LineExampleActivity">		
 		</activity>
 		<activity android:label="@string/menuexampleactivity_title" android:name=".MenuExampleActivity">		

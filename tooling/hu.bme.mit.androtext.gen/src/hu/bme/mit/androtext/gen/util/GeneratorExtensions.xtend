@@ -1,6 +1,7 @@
 package hu.bme.mit.androtext.gen.util
 
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
 import hu.bme.mit.androtext.lang.androTextDsl.Body
@@ -13,6 +14,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.Font
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
 import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
 import hu.bme.mit.androtext.lang.androTextDsl.Property
 import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
@@ -25,7 +27,11 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceElement
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceContainer
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference
+import java.util.List
 
 class GeneratorExtensions {
 	
@@ -98,6 +104,23 @@ class GeneratorExtensions {
 		return menuItems
 	}
 	
+	def List<AbstractPreference> getPreferencesWithKeys(PreferenceContainer container) {
+		val prefList = new ArrayList<AbstractPreference>()
+		if (container instanceof PreferenceScreen) {
+			if (!(container as PreferenceScreen).name.nullOrEmpty) {
+				prefList.add(container)
+			}
+		}
+		for (e : container.preferences) {
+			if (e instanceof PreferenceContainer) {
+				prefList.addAll(getPreferencesWithKeys(e as PreferenceContainer))
+			} else {
+				prefList.add(e)
+			}
+		}
+		return prefList
+	}
+	
 	def menuSceneFieldName(MenuScene menu) '''
 		mMenuScene«menu.name.toFirstUpper»
 	'''
@@ -112,6 +135,21 @@ class GeneratorExtensions {
 	
 	def tabActivityLayout(TabActivity activity) {
 		activity.name.toLowerCase+"_layout"
+	}
+	
+	def preferenceXmlFileName(PreferenceActivity activity) {
+		activity.name.toLowerCase+"_preflayout"
+	}
+	
+	def dispatch preferenceKeyName(PreferenceElement p) {
+		p.name + "Key"		
+	}
+	
+	def dispatch preferenceKeyName(PreferenceScreen p) {
+		if (p.name.nullOrEmpty) {
+			return null
+		}
+		p.name + "Key"		
 	}
 	
 	def abstractClassName(Activity activity) {

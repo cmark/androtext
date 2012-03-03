@@ -4,8 +4,12 @@ import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -22,7 +26,7 @@ import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 @SuppressWarnings("all")
 public class BasicAndroidInformationValuesGenerator implements IGenerator {
   @Inject
-  private GeneratorExtensions extensions;
+  private GeneratorExtensions _generatorExtensions;
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
     StringConcatenation _content = this.content(resourceSet, androidApplication);
@@ -31,7 +35,7 @@ public class BasicAndroidInformationValuesGenerator implements IGenerator {
   
   public StringConcatenation content(final ResourceSet resourceSet, final TargetApplication androidApplication) {
     StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _xmlHeader = this.extensions.xmlHeader(androidApplication);
+    StringConcatenation _xmlHeader = this._generatorExtensions.xmlHeader(androidApplication);
     _builder.append(_xmlHeader, "");
     _builder.newLineIfNotEmpty();
     _builder.append("<resources>");
@@ -43,7 +47,7 @@ public class BasicAndroidInformationValuesGenerator implements IGenerator {
     _builder.append(_stringLine, "	");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    String _findPackageName = this.extensions.findPackageName(androidApplication);
+    String _findPackageName = this._generatorExtensions.findPackageName(androidApplication);
     StringConcatenation _stringLine_1 = this.stringLine("package_name", _findPackageName);
     _builder.append(_stringLine_1, "	");
     _builder.newLineIfNotEmpty();
@@ -60,11 +64,30 @@ public class BasicAndroidInformationValuesGenerator implements IGenerator {
       Iterable<Activity> _flatten = IterableExtensions.<Activity>flatten(_map);
       for(final Activity activity : _flatten) {
         _builder.append("\t");
-        String _activityNameValue = this.extensions.activityNameValue(activity);
+        String _activityNameValue = this._generatorExtensions.activityNameValue(activity);
         String _name_1 = activity.getName();
         StringConcatenation _stringLine_2 = this.stringLine(_activityNameValue, _name_1);
         _builder.append(_stringLine_2, "	");
         _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      AndroidApplication _application_1 = androidApplication.getApplication();
+      EList<AndroidApplicationModelElement> _modelElements = _application_1.getModelElements();
+      Iterable<PreferenceActivity> _filter = IterableExtensions.<PreferenceActivity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity.class);
+      for(final PreferenceActivity prefActivity : _filter) {
+        {
+          PreferenceScreen _screen = prefActivity.getScreen();
+          List<AbstractPreference> _preferencesWithKeys = this._generatorExtensions.getPreferencesWithKeys(_screen);
+          for(final AbstractPreference pref : _preferencesWithKeys) {
+            _builder.append("\t");
+            String _preferenceKeyName = this._generatorExtensions.preferenceKeyName(pref);
+            String _preferenceKeyName_1 = this._generatorExtensions.preferenceKeyName(pref);
+            StringConcatenation _stringLine_3 = this.stringLine(_preferenceKeyName, _preferenceKeyName_1);
+            _builder.append(_stringLine_3, "	");
+            _builder.newLineIfNotEmpty();
+          }
+        }
       }
     }
     _builder.append("</resources>");

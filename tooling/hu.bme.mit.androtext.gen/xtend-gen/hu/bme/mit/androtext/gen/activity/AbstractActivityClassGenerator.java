@@ -7,7 +7,6 @@ import hu.bme.mit.androtext.gen.activity.AbstractActivityMethodGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
@@ -17,7 +16,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Scene;
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
-import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -388,16 +386,13 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     }
   }
   
-  public StringConcatenation importActivity(final AndroidApplicationModelElement activity) {
+  public StringConcatenation importActivity(final Activity activity) {
     if (activity instanceof BaseGameActivity) {
       return _importActivity((BaseGameActivity)activity);
-    } else if (activity instanceof Activity) {
-      return _importActivity((Activity)activity);
     } else if (activity instanceof PreferenceActivity) {
       return _importActivity((PreferenceActivity)activity);
     } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(activity).toString());
+      return _importActivity(activity);
     }
   }
   

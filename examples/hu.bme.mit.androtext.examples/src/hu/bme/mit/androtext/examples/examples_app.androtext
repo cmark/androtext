@@ -110,6 +110,17 @@ application AndroTextExamples {
 
 	provider SimpleDataProvider data NotePadModel
 	
+	// Simple Preferences
+	preferences Settings {
+		layout preferencescreen "Settings" {
+			preferencecategory "SimpleCategory" {
+				checkboxpreference simpleCheckBox "This is checkbox"
+				edittextpreference simpleEditText "This is edittext"				
+			}
+			preference appVersion "Version 1.0"
+		} 
+	}
+	
 	// AndroGame Examples
 	// Line Example
 	gameactivity LineExampleActivity {

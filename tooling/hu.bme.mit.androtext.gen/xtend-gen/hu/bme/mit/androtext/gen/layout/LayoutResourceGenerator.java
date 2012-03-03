@@ -6,7 +6,6 @@ import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.layout.ViewAttributeGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewElement;
@@ -47,17 +46,10 @@ public class LayoutResourceGenerator implements IGenerator {
     for (final AndroGuiModelRoot guimodel : _flatten) {
       EList<View> _roots = guimodel.getRoots();
       for (final View root : _roots) {
-        if ((root instanceof PreferenceScreen)) {
-          String _layoutName = this._generatorExtensions.layoutName(root);
-          String _operator_plus = StringExtensions.operator_plus(_layoutName, ".xml");
-          StringConcatenation _generate = this.generate(root);
-          fsa.generateFile(_operator_plus, IGeneratorSlots.XML_SLOT, _generate);
-        } else {
-          String _layoutName_1 = this._generatorExtensions.layoutName(root);
-          String _operator_plus_1 = StringExtensions.operator_plus(_layoutName_1, ".xml");
-          StringConcatenation _generate_1 = this.generate(root);
-          fsa.generateFile(_operator_plus_1, IGeneratorSlots.LAYOUT_SLOT, _generate_1);
-        }
+        String _layoutName = this._generatorExtensions.layoutName(root);
+        String _operator_plus = StringExtensions.operator_plus(_layoutName, ".xml");
+        StringConcatenation _generate = this.generate(root);
+        fsa.generateFile(_operator_plus, IGeneratorSlots.LAYOUT_SLOT, _generate);
       }
     }
   }
