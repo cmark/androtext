@@ -72,7 +72,7 @@ Activity:
 ;
 
 enum ActivityTheme:
-	DIALOG | NOTITLEBAR | FULLSCREEN
+	DIALOG | NOTITLEBAR | FULLSCREEN | LIGHT | DARK 
 ;
 
 TabActivity:

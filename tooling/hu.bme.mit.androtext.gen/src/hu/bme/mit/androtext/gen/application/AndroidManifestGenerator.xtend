@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme
 
 
 class AndroidManifestGenerator implements IGenerator {
@@ -46,7 +47,8 @@ class AndroidManifestGenerator implements IGenerator {
 	'''	
 	
   	def generateMainActivity(Activity activity) '''
-		<activity android:label="@string/«activity.activityNameValue»" android:name=".«activity.name.toFirstUpper()»">
+		<activity android:label="@string/«activity.activityNameValue»" 
+			android:name=".«activity.name.toFirstUpper()»" «IF activity.theme != null»android:theme="@android:style/Theme.«activity.resolveTheme»"«ENDIF»>
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
@@ -58,5 +60,13 @@ class AndroidManifestGenerator implements IGenerator {
 		<activity android:label="@string/«activity.activityNameValue»" android:name=".«activity.name.toFirstUpper()»">		
 		</activity>
 	'''
+	
+	def resolveTheme(Activity activity) {
+		switch (activity.theme) {
+			case ActivityTheme::FULLSCREEN: "NoTitleBar.FullScreen"
+			case ActivityTheme::NOTITLEBAR: "NoTitleBar"
+			default: activity.theme.name.toLowerCase.toFirstUpper
+		}
+	}
 
 }

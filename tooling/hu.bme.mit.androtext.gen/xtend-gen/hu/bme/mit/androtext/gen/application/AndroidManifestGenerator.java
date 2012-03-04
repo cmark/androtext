@@ -5,6 +5,7 @@ import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
@@ -13,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
@@ -107,11 +109,25 @@ public class AndroidManifestGenerator implements IGenerator {
     _builder.append("<activity android:label=\"@string/");
     String _activityNameValue = this.generatorExtensions.activityNameValue(activity);
     _builder.append(_activityNameValue, "");
-    _builder.append("\" android:name=\".");
+    _builder.append("\" ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("android:name=\".");
     String _name = activity.getName();
     String _firstUpper = StringExtensions.toFirstUpper(_name);
-    _builder.append(_firstUpper, "");
-    _builder.append("\">");
+    _builder.append(_firstUpper, "	");
+    _builder.append("\" ");
+    {
+      ActivityTheme _theme = activity.getTheme();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_theme, null);
+      if (_operator_notEquals) {
+        _builder.append("android:theme=\"@android:style/Theme.");
+        String _resolveTheme = this.resolveTheme(activity);
+        _builder.append(_resolveTheme, "	");
+        _builder.append("\"");
+      }
+    }
+    _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("<intent-filter>");
@@ -144,5 +160,32 @@ public class AndroidManifestGenerator implements IGenerator {
     _builder.append("</activity>");
     _builder.newLine();
     return _builder;
+  }
+  
+  public String resolveTheme(final Activity activity) {
+    String _switchResult = null;
+    ActivityTheme _theme = activity.getTheme();
+    final ActivityTheme __valOfSwitchOver = _theme;
+    boolean matched = false;
+    if (!matched) {
+      if (ObjectExtensions.operator_equals(__valOfSwitchOver,ActivityTheme.FULLSCREEN)) {
+        matched=true;
+        _switchResult = "NoTitleBar.FullScreen";
+      }
+    }
+    if (!matched) {
+      if (ObjectExtensions.operator_equals(__valOfSwitchOver,ActivityTheme.NOTITLEBAR)) {
+        matched=true;
+        _switchResult = "NoTitleBar";
+      }
+    }
+    if (!matched) {
+      ActivityTheme _theme_1 = activity.getTheme();
+      String _name = _theme_1.name();
+      String _lowerCase = _name.toLowerCase();
+      String _firstUpper = StringExtensions.toFirstUpper(_lowerCase);
+      _switchResult = _firstUpper;
+    }
+    return _switchResult;
   }
 }
