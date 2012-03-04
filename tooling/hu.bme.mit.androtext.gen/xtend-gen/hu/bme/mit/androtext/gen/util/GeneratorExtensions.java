@@ -106,6 +106,26 @@ public class GeneratorExtensions {
     return _operator_plus_1;
   }
   
+  public String contentType(final Entity e, final TargetApplication application) {
+    String _findPackageName = this.findPackageName(application);
+    String _operator_plus = StringExtensions.operator_plus("vnd.android.cursor.dir/vnd.", _findPackageName);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, ".");
+    String _name = e.getName();
+    String _lowerCase = _name.toLowerCase();
+    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _lowerCase);
+    return _operator_plus_2;
+  }
+  
+  public String contentItemType(final Entity e, final TargetApplication application) {
+    String _findPackageName = this.findPackageName(application);
+    String _operator_plus = StringExtensions.operator_plus("vnd.android.cursor.item/vnd.", _findPackageName);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, ".");
+    String _name = e.getName();
+    String _lowerCase = _name.toLowerCase();
+    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _lowerCase);
+    return _operator_plus_2;
+  }
+  
   /**
    * computes the class name if its a Entity
    * returns null otherwise

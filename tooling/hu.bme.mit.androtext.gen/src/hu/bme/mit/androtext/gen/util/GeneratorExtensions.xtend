@@ -62,6 +62,14 @@ class GeneratorExtensions {
 	def path_id_uri(Entity e) {
 		"PATH_"+e.name.toUpperCase() + "_ID"
 	}
+	
+	def contentType(Entity e, TargetApplication application) {
+		"vnd.android.cursor.dir/vnd."+application.findPackageName+"."+e.name.toLowerCase
+	}
+	
+	def contentItemType(Entity e, TargetApplication application) {
+		"vnd.android.cursor.item/vnd."+application.findPackageName+"."+e.name.toLowerCase
+	}
 		
 	/**
 	 * computes the class name if its a Entity 

@@ -64,8 +64,9 @@ AndroidApplicationModelElement:
 
 Activity:
 	'activity' name=ID '{'
-		'layout' layout=[View | QualifiedName]
 		('theme' theme=ActivityTheme)?
+		(intentFilters+=IntentFilter)*
+		'layout' layout=[View | QualifiedName]
 		(menu=ActivityMenu)?
 	'}'
 	| TabActivity | ListActivity | BaseGameActivity | PreferenceActivity
@@ -73,6 +74,34 @@ Activity:
 
 enum ActivityTheme:
 	DIALOG | NOTITLEBAR | FULLSCREEN | LIGHT | DARK 
+;
+
+IntentFilter:
+	'filter' name=ID '{'
+		(actions+=IntentAction)*
+		('category' categories+=IntentCategory)*
+		(datas+=IntentData)*
+	'}'
+;
+
+IntentData:
+	'data' entity=[Entity | QualifiedName] dataType=IntentDataType
+;
+
+IntentAction:
+	'action' (name=ID | type=IntentActionType)
+;
+
+enum IntentActionType:
+	INSERT | VIEW | EDIT | PICK | DEFAULT | DELETE
+;
+
+enum IntentCategory:
+	DEFAULT | ALTERNATIVE | SELECTED_ALTERNATIVE
+;
+
+enum IntentDataType:
+	DIR | ITEM
 ;
 
 TabActivity:

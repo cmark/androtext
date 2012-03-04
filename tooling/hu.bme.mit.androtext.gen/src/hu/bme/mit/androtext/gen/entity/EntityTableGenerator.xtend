@@ -110,13 +110,13 @@ class EntityTableGenerator implements IGenerator {
 	        /**
 	         * The MIME type of {@link #CONTENT_URI} providing a directory of «e.name.toLowerCase()»s.
 	         */
-	        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.«androidApplication.findPackageName».«e.name.toLowerCase()»";
+	        public static final String CONTENT_TYPE = "«e.contentType(androidApplication)»";
 
 	        /**
 	         * The MIME type of a {@link #CONTENT_URI} sub-directory of a single
 	         * «e.name.toLowerCase()».
 	         */
-	        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.«androidApplication.findPackageName».«e.name.toLowerCase()»";
+	        public static final String CONTENT_ITEM_TYPE = "«e.contentItemType(androidApplication)»";
 
 	        /**
 	         * The default sort order for this table
