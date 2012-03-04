@@ -15,7 +15,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListView;
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
@@ -397,9 +396,6 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 								uris.add(resURI);
 							}
 						}
-					}
-					if (lay instanceof PreferenceScreen) {
-						// TODO implement
 					}
 				}
 			}

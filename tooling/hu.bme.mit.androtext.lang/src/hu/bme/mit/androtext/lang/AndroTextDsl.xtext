@@ -54,30 +54,40 @@ enum ApiLevel:
 /* AndroAppModelRoot and model elements */
 AndroidApplication:
 	'application' name=ID '{'
-		mainActivity = Activity
+		mainActivity = AbstractActivity
 		modelElements+=AndroidApplicationModelElement*
 	'}';
 
 AndroidApplicationModelElement:
-	Activity | ContentProvider
+	AbstractActivity | ContentProvider
 ;
 
-Activity:
-	'activity' name=ID '{'
-		('theme' theme=ActivityTheme)?
+AbstractActivity returns AbstractActivity:
+	Activity | TabActivity | ListActivity | BaseGameActivity | PreferenceActivity 
+;
+
+Activity returns AbstractActivity:
+	{Activity}
+	'activity' name=ID (theme=ActivityTheme)? '{'
+		(customActions+=CustomAction)*
 		(intentFilters+=IntentFilter)*
-		'layout' layout=[View | QualifiedName]
+		('layout' layout=[View | QualifiedName])?
 		(menu=ActivityMenu)?
 	'}'
-	| TabActivity | ListActivity | BaseGameActivity | PreferenceActivity
+;
+
+CustomAction returns CustomAction:
+	{CustomAction}
+	'action' name=QualifiedName
 ;
 
 enum ActivityTheme:
-	DIALOG | NOTITLEBAR | FULLSCREEN | LIGHT | DARK 
+	THEME | DIALOG | NOTITLEBAR | FULLSCREEN | LIGHT | DARK 
 ;
 
-IntentFilter:
-	'filter' name=ID '{'
+IntentFilter returns IntentFilter:
+	{IntentFilter}
+	'filter' (name=ID)? '{'
 		(actions+=IntentAction)*
 		('category' categories+=IntentCategory)*
 		(datas+=IntentData)*
@@ -89,7 +99,7 @@ IntentData:
 ;
 
 IntentAction:
-	'action' (name=ID | type=IntentActionType)
+	'action' (type=IntentActionType | customAction=[CustomAction | QualifiedName])
 ;
 
 enum IntentActionType:
@@ -104,29 +114,33 @@ enum IntentDataType:
 	DIR | ITEM
 ;
 
-TabActivity:
-	'tabactivity' name=ID '{'
-		(tabs+=Tab)+
-		('theme' theme=ActivityTheme)?
+TabActivity returns AbstractActivity:
+	{TabActivity}
+	'tabactivity' name=ID (theme=ActivityTheme)? '{'
+		(customActions+=CustomAction)*
+		(intentFilters+=IntentFilter)*
+		(tabs+=Tab)*
 		(menu=ActivityMenu)?
 	'}'
 ;
 
 Tab:
 	'tab' tag=STRING '{' 
-		'show' activity=[Activity | QualifiedName]
+		'show' activity=[AbstractActivity | QualifiedName]
 		'image' drawable=TabDrawableResourceLink
 	'}';
 	
-ListActivity:
-	'listactivity' name=ID
-	('{'
+ListActivity returns AbstractActivity:
+	{ListActivity}
+	'listactivity' name=ID (theme=ActivityTheme)?
+	'{'
+		(customActions+=CustomAction)*
+		(intentFilters+=IntentFilter)*
 		('listitem' listitem=[View | QualifiedName])?
 		(databinding=DataBinding)?
 		('onListItemClick' onListItemClickAction=Action)?
-		('theme' theme=ActivityTheme)?
 		(menu=ActivityMenu)?
-	'}')?
+	'}'
 ;
 
 ActivityMenu:
@@ -135,18 +149,20 @@ ActivityMenu:
 	'}')?
 ;
 
-ActivityMenuElement:
+ActivityMenuElement returns ActivityMenuElement:
 	ActivityMenuItem | ActivityMenuGroup
 ;
 
-ActivityMenuItem:
+ActivityMenuItem returns ActivityMenuElement:
+	{ActivityMenuItem}
 	'item' name=ID title=STRING icon=AnyDrawablePropertyValue 
 	('{' 
 		(onSelectedAction=Action | subMenu=ActivityMenu)?
 	'}')?
 ;
 
-ActivityMenuGroup:
+ActivityMenuGroup returns ActivityMenuElement:
+	{ActivityMenuGroup}
 	'group' name=ID '{'
 		(menuItems+=ActivityMenuItem)*
 	'}'
@@ -158,9 +174,13 @@ DataBinding:
 	('bind' target+=[View | QualifiedName] (',' target+=[View | QualifiedName])*)?
 ;
 	
-PreferenceActivity:
-	'preferences' name=ID '{'
-		'layout' screen=PreferenceScreen
+PreferenceActivity returns AbstractActivity:
+	{PreferenceActivity}
+	'preferences' name=ID (theme=ActivityTheme)? '{'
+		(customActions+=CustomAction)*
+		(intentFilters+=IntentFilter)*
+		('layout' screen=PreferenceScreen)?
+		(menu=ActivityMenu)?
 	'}'
 ;
 
@@ -179,17 +199,40 @@ ResourceContentProvider returns ContentProvider:
 ;
 
 Action returns Action:
-	InvokeActivity //| InvokeWebUrl
+	InvokeExplicitActivity |  InvokeImplicitActivity | DataAction
 ;
 
-InvokeActivity returns Action:
-	{InvokeActivity}
-	'navigateTo' activity=[Activity | QualifiedName]
+InvokeExplicitActivity returns Action:
+	{InvokeExplicitActivity}
+	'navigateTo' (activity=[AbstractActivity | QualifiedName])
+	('data' (data=STRING | currentUri=Keyword))?
 ;
 
-//InvokeWebUrl:
-//	'goto' url=STRING
-//;
+InvokeImplicitActivity returns Action:
+	{InvokeImplicitActivity}
+	'invoke' (customAction=[CustomAction | QualifiedName] | action=IntentActionType)
+	('data' (data=STRING | currentUri=Keyword))?
+;
+
+enum Keyword:
+	currentData='current'
+;
+
+DataAction returns Action:
+	{DataAction}
+	type=DataActionType 
+	entity=[Entity | QualifiedName]
+	(values+=DataValue (',' values+=DataValue)*)?
+;
+
+DataValue:
+	feature=[Property | QualifiedName] '=' value=STRING
+;
+
+enum DataActionType:
+	insert | delete | update
+;
+
 /* End of AndroAppModelRoot and application model elements */
 
 /* AndroDataModelRoot and model elements */
@@ -296,8 +339,8 @@ LinearLayout:
 	(vertical?='vertical'|'horizontal')? 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	(gravity=GravityAttribute)?
 	'{'
+		(gravity=GravityAttribute)?
 		views+=View*
 	'}';
 
@@ -361,9 +404,9 @@ ViewElement:
 	name=ID 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	'{'
+	('{'
 		(backgroundAttribute=BackgroundAttribute)?
-	'}'
+	'}')?
 ;
 
 TextView:
@@ -452,6 +495,7 @@ Button:
 	      	& (clickableAttribute=ClickableAttribute)?
 	      	& (hintAttribute=HintAttribute)?
 	      	& (onClickAttribute=OnClickAttribute)?
+	      	& (gravity=GravityAttribute)?
 		)	
 	'}'
 ;
@@ -483,7 +527,7 @@ ImageView:
 	src=AnyDrawablePropertyValue 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	'{'
+	('{'
 		(
 	      	(widthAttribute=WidthAttribute)?
 	      	& (heightAttribute=HeightAttribute)?
@@ -492,7 +536,7 @@ ImageView:
 	      	& (fadeScrollBarsAttribute=FadeScrollBarsAttribute)?
 	      	& (isScrollContainerAttribute=IsScrollContainerAttribute)?	
 		)
-	'}'
+	'}')?
 ;	
 	
 ListView:
@@ -500,11 +544,11 @@ ListView:
 	name=ID 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-	'{'
+	('{'
 		(entriesAttribute=EntriesAttribute)?
 		('listitem' layout=[View | QualifiedName])?
 		('onListItemClick' onListItemClickAction=Action)?
-	'}'
+	'}')?
 ;
 	
 GridView:
@@ -512,7 +556,7 @@ GridView:
 	name=ID 
 	(layoutStyle=LayoutStyle)? 
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
-	'{'
+	('{'
 		(
 			(columnWidthAttribute=ColumnWidthAttribute)?
 			& (horizontalSpacingAttribute=HorizontalSpacingAttribute)?
@@ -521,7 +565,7 @@ GridView:
 			& (stretchModeAttribute=StretchModeAttribute)?
 			& (gravityAttribute=GravityAttribute)?
 		)
-	'}'
+	'}')?
 ;
 	
 Spinner:
@@ -530,7 +574,7 @@ Spinner:
 	(entriesAttribute=EntriesAttribute)? 
 	(layoutStyle=LayoutStyle)?
 	('layout' layoutProperties=[LayoutProperties | QualifiedName])? 
-	'{'
+	('{'
 		(
 	      	(widthAttribute=WidthAttribute)?
 	      	& (heightAttribute=HeightAttribute)?
@@ -539,7 +583,7 @@ Spinner:
 	      	& (fadeScrollBarsAttribute=FadeScrollBarsAttribute)?
 	      	& (isScrollContainerAttribute=IsScrollContainerAttribute)?	
 		)
-	'}'
+	'}')?
 ;
 	
 CheckBox:
@@ -1121,11 +1165,15 @@ terminal HEX_COLOR:
 /* End of AndroResModelRoot and resource model elements */
 
 /* AndroGameModelRoot and game model elements based on AndEngine www.andengine.org */
-BaseGameActivity:
-	'gameactivity' name=ID '{'
+BaseGameActivity returns AbstractActivity:
+	{BaseGameActivity}
+	'gameactivity' name=ID (theme=ActivityTheme)? '{'
+		(customActions+=CustomAction)*
+		(intentFilters+=IntentFilter)*
 		('camera' size=Size)?
-		& ('orientation' orientation=ScreenOrientation)?
-		& ('scene' scene=[Scene | QualifiedName])?
+		('orientation' orientation=ScreenOrientation)?
+		('scene' scene=[Scene | QualifiedName])?
+		(menu=ActivityMenu)?
 	'}'
 ;
 

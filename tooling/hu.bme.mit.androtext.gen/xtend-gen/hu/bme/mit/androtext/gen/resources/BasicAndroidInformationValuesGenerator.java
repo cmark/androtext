@@ -4,8 +4,8 @@ import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
@@ -53,16 +53,16 @@ public class BasicAndroidInformationValuesGenerator implements IGenerator {
     _builder.newLineIfNotEmpty();
     {
       EList<Resource> _resources = resourceSet.getResources();
-      final Function1<Resource,Iterable<Activity>> _function = new Function1<Resource,Iterable<Activity>>() {
-          public Iterable<Activity> apply(final Resource r) {
+      final Function1<Resource,Iterable<AbstractActivity>> _function = new Function1<Resource,Iterable<AbstractActivity>>() {
+          public Iterable<AbstractActivity> apply(final Resource r) {
             Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(r);
-            Iterable<Activity> _filter = IterableExtensions.<Activity>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.Activity.class);
+            Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
             return _filter;
           }
         };
-      List<Iterable<Activity>> _map = ListExtensions.<Resource, Iterable<Activity>>map(_resources, _function);
-      Iterable<Activity> _flatten = IterableExtensions.<Activity>flatten(_map);
-      for(final Activity activity : _flatten) {
+      List<Iterable<AbstractActivity>> _map = ListExtensions.<Resource, Iterable<AbstractActivity>>map(_resources, _function);
+      Iterable<AbstractActivity> _flatten = IterableExtensions.<AbstractActivity>flatten(_map);
+      for(final AbstractActivity activity : _flatten) {
         _builder.append("\t");
         String _activityNameValue = this._generatorExtensions.activityNameValue(activity);
         String _name_1 = activity.getName();

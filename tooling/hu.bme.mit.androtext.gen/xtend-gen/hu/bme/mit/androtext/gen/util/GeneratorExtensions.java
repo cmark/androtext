@@ -1,7 +1,7 @@
 package hu.bme.mit.androtext.gen.util;
 
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
@@ -144,8 +144,8 @@ public class GeneratorExtensions {
       }
     }
     if (!matched) {
-      if (o_1 instanceof Activity) {
-        final Activity o_3 = (Activity) o_1;
+      if (o_1 instanceof AbstractActivity) {
+        final AbstractActivity o_3 = (AbstractActivity) o_1;
         matched=true;
         String _name_1 = o_3.getName();
         String _firstUpper_1 = StringExtensions.toFirstUpper(_name_1);
@@ -317,7 +317,7 @@ public class GeneratorExtensions {
     return _xblockexpression;
   }
   
-  public String abstractClassName(final Activity activity) {
+  public String abstractClassName(final AbstractActivity activity) {
     String _className = this.className(activity);
     String _operator_plus = StringExtensions.operator_plus("Abstract", _className);
     return _operator_plus;
@@ -348,7 +348,7 @@ public class GeneratorExtensions {
     return _firstLower;
   }
   
-  public String activityNameValue(final Activity a) {
+  public String activityNameValue(final AbstractActivity a) {
     String _name = a.getName();
     String _lowerCase = _name.toLowerCase();
     String _operator_plus = StringExtensions.operator_plus(_lowerCase, "_title");

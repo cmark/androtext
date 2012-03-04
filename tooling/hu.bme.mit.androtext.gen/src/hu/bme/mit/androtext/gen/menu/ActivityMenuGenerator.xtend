@@ -1,18 +1,20 @@
 package hu.bme.mit.androtext.gen.menu
 
-import hu.bme.mit.androtext.gen.IGenerator
+import com.google.common.collect.Iterables
 import com.google.inject.Inject
-import hu.bme.mit.androtext.gen.util.GeneratorExtensions
-import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.xtext.generator.IFileSystemAccess
-import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.gen.IGenerator
 import hu.bme.mit.androtext.gen.IGeneratorSlots
+import hu.bme.mit.androtext.gen.layout.PropertyValueGenerator
+import hu.bme.mit.androtext.gen.util.GeneratorExtensions
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuElement
-import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuGroup
-import hu.bme.mit.androtext.gen.layout.PropertyValueGenerator
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem
+import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
+import java.util.Collections
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.xtext.generator.IFileSystemAccess
 
 class ActivityMenuGenerator implements IGenerator {
 	
@@ -20,7 +22,9 @@ class ActivityMenuGenerator implements IGenerator {
 	@Inject extension PropertyValueGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (activity : androidApplication.application.modelElements.filter(typeof (Activity))) {
+		val activities = androidApplication.application.modelElements.filter(typeof (AbstractActivity)).toList
+		Iterables::addAll(activities, Collections::singletonList(androidApplication.application.mainActivity))
+		for (activity : activities) {
 			if (activity.menu != null) {
 				fsa.generateFile(activity.menu.menuResourceFileName+".xml", IGeneratorSlots::MENU_SLOT, activity.menu.generate(true))
 			}

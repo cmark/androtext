@@ -15,7 +15,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 
 class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	
@@ -24,12 +24,12 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	@Inject extension AbstractActivityMethodGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (activity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (Activity))).flatten) {
+		for (activity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (AbstractActivity))).flatten) {
 			fsa.generateFile(activity.abstractClassName + ".java", generate(activity, androidApplication))
 		}
 	}
 	
-	def generate(Activity activity, TargetApplication application) '''
+	def generate(AbstractActivity activity, TargetApplication application) '''
 		«val importManager = new ImportManager(true)»
 		«/* first evaluate the body in order to collect the used types for the import section */
 		val body = body(activity, importManager)»
@@ -48,14 +48,14 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		«body»
 	'''
 	
-	def dispatch genDepImports(Activity activity, TargetApplication app) ''''''
+	def dispatch genDepImports(AbstractActivity activity, TargetApplication app) ''''''
 	def dispatch genDepImports(ListActivity activity, TargetApplication app) '''
-		«IF activity.databinding.entity != null»
+		«IF activity.databinding != null && activity.databinding.entity != null»
 		import «app.dataPackageName».«app.dataInformationClassName».«activity.databinding.entity.columnsClassName»;
 		«ENDIF»
 	'''
 	
-	def basicImports(Activity activity) '''
+	def basicImports(AbstractActivity activity) '''
 		import android.widget.Button;
 		import android.view.View;
 		import android.view.View.OnClickListener;
@@ -83,6 +83,10 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import android.widget.TabHost;
 		import android.content.Intent;
 		import android.content.res.Resources;
+	'''
+	
+	def dispatch extraImports(PreferenceActivity activity) '''
+		«activity.basicImports.toString.trim»
 	'''
 	
 	def dispatch extraImports(BaseGameActivity activity) '''
@@ -122,7 +126,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import javax.microedition.khronos.opengles.GL10;
 	'''
 	
-	def dispatch importActivity(Activity a) '''
+	def dispatch importActivity(AbstractActivity a) '''
 		import android.app.«a.eClass.name»;
 	'''
 	
@@ -134,7 +138,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import android.preference.PreferenceActivity;
 	''' 
 	
-	def body(Activity activity, ImportManager manager) '''
+	def body(AbstractActivity activity, ImportManager manager) '''
 		public abstract class «activity.abstractClassName» extends «activity.eClass.name» «activity.interfaces.toString.trim» {
 			
 			«activity.generateFields»
@@ -144,7 +148,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		} 
 	'''
 	
-	def dispatch interfaces(Activity activity) ''''''
+	def dispatch interfaces(AbstractActivity activity) ''''''
 	def dispatch interfaces(BaseGameActivity activity) '''
 «««		«IF activity.findSensorUsage»implements IAccelerometerListener«ENDIF»
 		«IF activity.scene instanceof MenuScene»implements IOnMenuItemClickListener«ENDIF»

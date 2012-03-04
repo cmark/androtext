@@ -2,27 +2,31 @@ package hu.bme.mit.androtext.gen.activity
 
 import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.lang.androTextDsl.Action
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.Button
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.DataBinding
+import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.InvokeExplicitActivity
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
+
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.Button
-import hu.bme.mit.androtext.lang.androTextDsl.Action
-import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity
-import hu.bme.mit.androtext.lang.androTextDsl.DataBinding
-import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
+import hu.bme.mit.androtext.lang.androTextDsl.InvokeImplicitActivity
+import hu.bme.mit.androtext.lang.androTextDsl.Keyword
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
+import hu.bme.mit.androtext.lang.androTextDsl.Activity
 
 class SimpleActivityMethodGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
-	def simpleMethods(Activity activity) '''
+	def simpleMethods(AbstractActivity activity) '''
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
@@ -41,7 +45,8 @@ class SimpleActivityMethodGenerator {
 		«ENDIF»
 	'''
 	
-	def generateButtonClicks(Activity activity) '''
+	def dispatch generateButtonClicks(AbstractActivity activity) ''''''
+	def dispatch generateButtonClicks(Activity activity) '''
 		«IF activity.layout != null»
 		«FOR button : activity.layout.eResource.allContentsIterable.filter(typeof (Button))»
 		«IF button.onClickAttribute != null»
@@ -57,12 +62,51 @@ class SimpleActivityMethodGenerator {
 		«ENDIF»
 	'''
 	
-	def dispatch generate(Action action, Activity activity) ''''''
-	def dispatch generate(InvokeActivity action, Activity activity) '''
+	def dispatch generate(Action action, AbstractActivity activity) ''''''
+	/**
+	 * TODO add data
+	 */
+	def dispatch generate(InvokeExplicitActivity action, AbstractActivity activity) '''
 		Intent invoke«action.activity.name» = new Intent(«activity.abstractClassName.toString.trim».this, «action.activity.className.toString.trim».class);
 		startActivity(invoke«action.activity.name»);
 	'''
 	
+	def dispatch generate(InvokeImplicitActivity action, AbstractActivity activity) '''
+		Intent «val varName = action.intentVariableName» = new Intent(«action.actionName»);
+		«IF !action.data.nullOrEmpty»
+			«varName».setData(Uri.create("«action.data»"));
+		«ELSEIF action.currentUri != null && action.currentUri == Keyword::CURRENT_DATA»
+			«varName».setData(getIntent().getData());
+		«ELSE»
+			"Wrong model state at implicit intent invocation: " 
+		«ENDIF»
+		startActivity(«varName»);
+	'''
+	
+	def actionName(InvokeImplicitActivity action) {
+		if (action.action != null) {
+			action.action.name
+		} else {
+			action.customAction.name
+		}
+	}
+	
+	def intentVariableName(InvokeImplicitActivity action) {
+		var variableName = ""
+		if (action.action != null) {
+			variableName = action.action.name.toFirstUpper
+		} else {
+			val li = action.customAction.name.lastIndexOf(".")
+			if (li == -1) {
+				variableName = action.customAction.name
+			} else {
+				variableName = action.customAction.name.substring(li)	
+			}
+		}
+		"invoke"+variableName
+	}
+	
+	def dispatch contentViewSet(AbstractActivity activity) ''''''
 	def dispatch contentViewSet(Activity activity) '''
 		«IF activity.layout != null»
 		setContentView(R.layout.«activity.layout.layoutName»);
@@ -77,11 +121,13 @@ class SimpleActivityMethodGenerator {
 		addPreferencesFromResource(R.xml.«activity.preferenceXmlFileName»);
 	'''
 	
-	def dispatch logic(Activity activity) ''''''
+	def dispatch logic(AbstractActivity activity) ''''''
 	def dispatch logic(ListActivity activity) '''
 		Intent intent = getIntent();
 		«val listItem = activity.listitem.layoutName»
+		«IF activity.databinding != null»
 		«activity.databinding.generate(listItem)»
+		«ENDIF»
 		«IF activity.onListItemClickAction != null»
 		getListView().setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -110,6 +156,7 @@ class SimpleActivityMethodGenerator {
 	'''
 	
 	def generate(DataBinding db, String listItem) {
+		if (db.contentProvider == null) return ""
 		return db.contentProvider.generate(db, listItem)
 	}
 	

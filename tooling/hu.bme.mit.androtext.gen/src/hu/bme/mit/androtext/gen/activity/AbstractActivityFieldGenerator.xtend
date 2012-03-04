@@ -2,7 +2,6 @@ package hu.bme.mit.androtext.gen.activity
 
 import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
 import hu.bme.mit.androtext.lang.androTextDsl.Font
@@ -15,14 +14,15 @@ import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 
 class AbstractActivityFieldGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
-	def dispatch generateFields(Activity activity) ''''''
+	def dispatch generateFields(AbstractActivity activity) ''''''
 	def dispatch generateFields(ListActivity activity) '''
-		«IF activity.databinding.fetchAll && activity.databinding.contentProvider instanceof DatabaseContentProvider && activity.databinding.entity != null»
+		«IF activity.databinding != null && activity.databinding.fetchAll && activity.databinding.contentProvider instanceof DatabaseContentProvider && activity.databinding.entity != null»
 		protected final static String[] PROJECTION = new String[] {
 			«activity.databinding.entity.columnsClassName»._ID,
 			«FOR p : activity.databinding.projection SEPARATOR ','»

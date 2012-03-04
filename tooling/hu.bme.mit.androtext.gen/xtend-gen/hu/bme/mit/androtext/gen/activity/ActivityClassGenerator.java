@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -28,16 +28,16 @@ public class ActivityClassGenerator implements IGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
     EList<Resource> _resources = resourceSet.getResources();
-    final Function1<Resource,Iterable<Activity>> _function = new Function1<Resource,Iterable<Activity>>() {
-        public Iterable<Activity> apply(final Resource r) {
+    final Function1<Resource,Iterable<AbstractActivity>> _function = new Function1<Resource,Iterable<AbstractActivity>>() {
+        public Iterable<AbstractActivity> apply(final Resource r) {
           Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(r);
-          Iterable<Activity> _filter = IterableExtensions.<Activity>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.Activity.class);
+          Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
           return _filter;
         }
       };
-    List<Iterable<Activity>> _map = ListExtensions.<Resource, Iterable<Activity>>map(_resources, _function);
-    Iterable<Activity> _flatten = IterableExtensions.<Activity>flatten(_map);
-    for (final Activity activity : _flatten) {
+    List<Iterable<AbstractActivity>> _map = ListExtensions.<Resource, Iterable<AbstractActivity>>map(_resources, _function);
+    Iterable<AbstractActivity> _flatten = IterableExtensions.<AbstractActivity>flatten(_map);
+    for (final AbstractActivity activity : _flatten) {
       String _className = this.extensions.className(activity);
       String _operator_plus = StringExtensions.operator_plus(_className, ".java");
       StringConcatenation _generate = this.generate(activity, androidApplication);
@@ -45,7 +45,7 @@ public class ActivityClassGenerator implements IGenerator {
     }
   }
   
-  public StringConcatenation generate(final Activity activity, final TargetApplication application) {
+  public StringConcatenation generate(final AbstractActivity activity, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     ImportManager _importManager = new ImportManager(true);
     final ImportManager importManager = _importManager;
@@ -83,7 +83,7 @@ public class ActivityClassGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation body(final Activity activity, final ImportManager manager) {
+  public StringConcatenation body(final AbstractActivity activity, final ImportManager manager) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("public class ");
     String _className = this.extensions.className(activity);

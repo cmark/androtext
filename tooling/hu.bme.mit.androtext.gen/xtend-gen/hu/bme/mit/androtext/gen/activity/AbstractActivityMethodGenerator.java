@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.activity.BaseGameActivityMethodGenerator;
 import hu.bme.mit.androtext.gen.activity.SimpleActivityMethodGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
@@ -24,12 +24,12 @@ public class AbstractActivityMethodGenerator {
     return _gameMethods;
   }
   
-  protected StringConcatenation _generateMethods(final Activity activity) {
+  protected StringConcatenation _generateMethods(final AbstractActivity activity) {
     StringConcatenation _simpleMethods = this._simpleActivityMethodGenerator.simpleMethods(activity);
     return _simpleMethods;
   }
   
-  public StringConcatenation generateMethods(final Activity activity) {
+  public StringConcatenation generateMethods(final AbstractActivity activity) {
     if (activity instanceof BaseGameActivity) {
       return _generateMethods((BaseGameActivity)activity);
     } else {

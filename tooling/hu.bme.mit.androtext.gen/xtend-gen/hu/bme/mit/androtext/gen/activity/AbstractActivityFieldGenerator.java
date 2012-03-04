@@ -2,7 +2,7 @@ package hu.bme.mit.androtext.gen.activity;
 
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
@@ -34,7 +34,7 @@ public class AbstractActivityFieldGenerator {
   @Inject
   private GeneratorExtensions _generatorExtensions;
   
-  protected StringConcatenation _generateFields(final Activity activity) {
+  protected StringConcatenation _generateFields(final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
@@ -44,36 +44,44 @@ public class AbstractActivityFieldGenerator {
     {
       boolean _operator_and = false;
       boolean _operator_and_1 = false;
+      boolean _operator_and_2 = false;
       DataBinding _databinding = activity.getDatabinding();
-      boolean _isFetchAll = _databinding.isFetchAll();
-      if (!_isFetchAll) {
-        _operator_and_1 = false;
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_databinding, null);
+      if (!_operator_notEquals) {
+        _operator_and_2 = false;
       } else {
         DataBinding _databinding_1 = activity.getDatabinding();
-        ContentProvider _contentProvider = _databinding_1.getContentProvider();
-        _operator_and_1 = BooleanExtensions.operator_and(_isFetchAll, (_contentProvider instanceof DatabaseContentProvider));
+        boolean _isFetchAll = _databinding_1.isFetchAll();
+        _operator_and_2 = BooleanExtensions.operator_and(_operator_notEquals, _isFetchAll);
+      }
+      if (!_operator_and_2) {
+        _operator_and_1 = false;
+      } else {
+        DataBinding _databinding_2 = activity.getDatabinding();
+        ContentProvider _contentProvider = _databinding_2.getContentProvider();
+        _operator_and_1 = BooleanExtensions.operator_and(_operator_and_2, (_contentProvider instanceof DatabaseContentProvider));
       }
       if (!_operator_and_1) {
         _operator_and = false;
       } else {
-        DataBinding _databinding_2 = activity.getDatabinding();
-        Entity _entity = _databinding_2.getEntity();
-        boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_entity, null);
-        _operator_and = BooleanExtensions.operator_and(_operator_and_1, _operator_notEquals);
+        DataBinding _databinding_3 = activity.getDatabinding();
+        Entity _entity = _databinding_3.getEntity();
+        boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_entity, null);
+        _operator_and = BooleanExtensions.operator_and(_operator_and_1, _operator_notEquals_1);
       }
       if (_operator_and) {
         _builder.append("protected final static String[] PROJECTION = new String[] {");
         _builder.newLine();
         _builder.append("\t");
-        DataBinding _databinding_3 = activity.getDatabinding();
-        Entity _entity_1 = _databinding_3.getEntity();
+        DataBinding _databinding_4 = activity.getDatabinding();
+        Entity _entity_1 = _databinding_4.getEntity();
         String _columnsClassName = this._generatorExtensions.columnsClassName(_entity_1);
         _builder.append(_columnsClassName, "	");
         _builder.append("._ID,");
         _builder.newLineIfNotEmpty();
         {
-          DataBinding _databinding_4 = activity.getDatabinding();
-          EList<Property> _projection = _databinding_4.getProjection();
+          DataBinding _databinding_5 = activity.getDatabinding();
+          EList<Property> _projection = _databinding_5.getProjection();
           boolean hasAnyElements = false;
           for(final Property p : _projection) {
             if (!hasAnyElements) {
@@ -82,8 +90,8 @@ public class AbstractActivityFieldGenerator {
               _builder.appendImmediate(",", "	");
             }
             _builder.append("\t");
-            DataBinding _databinding_5 = activity.getDatabinding();
-            Entity _entity_2 = _databinding_5.getEntity();
+            DataBinding _databinding_6 = activity.getDatabinding();
+            Entity _entity_2 = _databinding_6.getEntity();
             String _columnsClassName_1 = this._generatorExtensions.columnsClassName(_entity_2);
             _builder.append(_columnsClassName_1, "	");
             _builder.append(".");
@@ -255,7 +263,7 @@ public class AbstractActivityFieldGenerator {
     return _builder;
   }
   
-  public StringConcatenation generateFields(final Activity activity) {
+  public StringConcatenation generateFields(final AbstractActivity activity) {
     if (activity instanceof BaseGameActivity) {
       return _generateFields((BaseGameActivity)activity);
     } else if (activity instanceof ListActivity) {

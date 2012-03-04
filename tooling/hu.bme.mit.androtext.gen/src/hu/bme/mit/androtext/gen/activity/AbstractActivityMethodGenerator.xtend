@@ -2,8 +2,8 @@ package hu.bme.mit.androtext.gen.activity
 
 import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 
 class AbstractActivityMethodGenerator {
 	
@@ -15,7 +15,7 @@ class AbstractActivityMethodGenerator {
 		activity.gameMethods
 	}
 	
-	def dispatch generateMethods(Activity activity) {
+	def dispatch generateMethods(AbstractActivity activity) {
 		activity.simpleMethods
 	}
 	

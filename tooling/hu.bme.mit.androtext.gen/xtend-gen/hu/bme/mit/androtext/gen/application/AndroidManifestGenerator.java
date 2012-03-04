@@ -4,10 +4,12 @@ import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.CustomAction;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.IntentAction;
@@ -21,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -58,20 +61,25 @@ public class AndroidManifestGenerator implements IGenerator {
     _builder.append("android:versionName=\"1.0\">");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>");
-    _builder.newLine();
+    {
+      boolean _permissionNeededWakeLock = this.permissionNeededWakeLock(androidApplication);
+      if (_permissionNeededWakeLock) {
+        _builder.append("<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("<application android:icon=\"@drawable/icon\" android:label=\"@string/app_name\" android:debuggable=\"true\">");
     _builder.newLine();
     _builder.append("\t\t");
-    Activity _mainActivity = application.getMainActivity();
+    AbstractActivity _mainActivity = application.getMainActivity();
     StringConcatenation _generateMainActivity = this.generateMainActivity(_mainActivity, androidApplication);
     _builder.append(_generateMainActivity, "		");
     _builder.newLineIfNotEmpty();
     {
       EList<AndroidApplicationModelElement> _modelElements = application.getModelElements();
-      Iterable<Activity> _filter = IterableExtensions.<Activity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.Activity.class);
-      for(final Activity activity : _filter) {
+      Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
+      for(final AbstractActivity activity : _filter) {
         _builder.append("\t\t");
         StringConcatenation _generateActivity = this.generateActivity(activity, androidApplication);
         _builder.append(_generateActivity, "		");
@@ -96,6 +104,18 @@ public class AndroidManifestGenerator implements IGenerator {
     return _builder;
   }
   
+  public boolean permissionNeededWakeLock(final TargetApplication androidApplication) {
+    AndroidApplication _application = androidApplication.getApplication();
+    EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
+    final Function1<AndroidApplicationModelElement,Boolean> _function = new Function1<AndroidApplicationModelElement,Boolean>() {
+        public Boolean apply(final AndroidApplicationModelElement me) {
+          return ((Boolean)(me instanceof BaseGameActivity));
+        }
+      };
+    boolean _exists = IterableExtensions.<AndroidApplicationModelElement>exists(_modelElements, _function);
+    return _exists;
+  }
+  
   public StringConcatenation generateContentProvider(final DatabaseContentProvider contentProvider, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<provider android:name=\".data.");
@@ -112,7 +132,7 @@ public class AndroidManifestGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation generateMainActivity(final Activity activity, final TargetApplication application) {
+  public StringConcatenation generateMainActivity(final AbstractActivity activity, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<activity android:label=\"@string/");
     String _activityNameValue = this._generatorExtensions.activityNameValue(activity);
@@ -124,16 +144,10 @@ public class AndroidManifestGenerator implements IGenerator {
     String _className = this._generatorExtensions.className(activity);
     _builder.append(_className, "	");
     _builder.append("\" ");
-    {
-      ActivityTheme _theme = activity.getTheme();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_theme, null);
-      if (_operator_notEquals) {
-        _builder.append("android:theme=\"@android:style/Theme.");
-        String _resolveTheme = this.resolveTheme(activity);
-        _builder.append(_resolveTheme, "	");
-        _builder.append("\"");
-      }
-    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    StringConcatenation _generateTheme = this.generateTheme(activity);
+    _builder.append(_generateTheme, "	");
     _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -157,43 +171,77 @@ public class AndroidManifestGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation generateActivity(final Activity activity, final TargetApplication application) {
+  public StringConcatenation generateTheme(final AbstractActivity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _operator_and = false;
+      ActivityTheme _theme = activity.getTheme();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_theme, null);
+      if (!_operator_notEquals) {
+        _operator_and = false;
+      } else {
+        ActivityTheme _theme_1 = activity.getTheme();
+        boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_theme_1, ActivityTheme.THEME);
+        _operator_and = BooleanExtensions.operator_and(_operator_notEquals, _operator_notEquals_1);
+      }
+      if (_operator_and) {
+        _builder.append("android:theme=\"@android:style/Theme.");
+        ActivityTheme _theme_2 = activity.getTheme();
+        String _resolveTheme = this.resolveTheme(_theme_2);
+        _builder.append(_resolveTheme, "");
+        _builder.append("\"");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public StringConcatenation generateActivity(final AbstractActivity activity, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<activity android:label=\"@string/");
     String _activityNameValue = this._generatorExtensions.activityNameValue(activity);
     _builder.append(_activityNameValue, "");
-    _builder.append("\" android:name=\".");
-    String _className = this._generatorExtensions.className(activity);
-    _builder.append(_className, "");
-    _builder.append("\">");
+    _builder.append("\" ");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("android:name=\".");
+    String _className = this._generatorExtensions.className(activity);
+    _builder.append(_className, "	");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    StringConcatenation _generateTheme = this.generateTheme(activity);
+    _builder.append(_generateTheme, "	");
+    _builder.append(">");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    StringConcatenation _generateFilters = this.generateFilters(activity, application);
+    _builder.append(_generateFilters, "	");
+    _builder.append("\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("</activity>");
     _builder.newLine();
     return _builder;
   }
   
-  public String resolveTheme(final Activity activity) {
+  public String resolveTheme(final ActivityTheme theme) {
     String _switchResult = null;
-    ActivityTheme _theme = activity.getTheme();
-    final ActivityTheme __valOfSwitchOver = _theme;
+    final ActivityTheme theme_1 = theme;
     boolean matched = false;
     if (!matched) {
-      if (ObjectExtensions.operator_equals(__valOfSwitchOver,ActivityTheme.FULLSCREEN)) {
+      if (ObjectExtensions.operator_equals(theme_1,ActivityTheme.FULLSCREEN)) {
         matched=true;
         _switchResult = "NoTitleBar.FullScreen";
       }
     }
     if (!matched) {
-      if (ObjectExtensions.operator_equals(__valOfSwitchOver,ActivityTheme.NOTITLEBAR)) {
+      if (ObjectExtensions.operator_equals(theme_1,ActivityTheme.NOTITLEBAR)) {
         matched=true;
         _switchResult = "NoTitleBar";
       }
     }
     if (!matched) {
-      ActivityTheme _theme_1 = activity.getTheme();
-      String _name = _theme_1.name();
+      String _name = theme.name();
       String _lowerCase = _name.toLowerCase();
       String _firstUpper = StringExtensions.toFirstUpper(_lowerCase);
       _switchResult = _firstUpper;
@@ -201,7 +249,7 @@ public class AndroidManifestGenerator implements IGenerator {
     return _switchResult;
   }
   
-  public StringConcatenation generateFilters(final Activity activity, final TargetApplication application) {
+  public StringConcatenation generateFilters(final AbstractActivity activity, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<IntentFilter> _intentFilters = activity.getIntentFilters();
@@ -226,14 +274,14 @@ public class AndroidManifestGenerator implements IGenerator {
             _builder.append("\t");
             _builder.append("<action android:name=\"");
             {
-              String _name_2 = action.getName();
-              boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(_name_2);
-              boolean _operator_not_1 = BooleanExtensions.operator_not(_isNullOrEmpty_1);
-              if (_operator_not_1) {
-                String _name_3 = action.getName();
-                _builder.append(_name_3, "	");
+              CustomAction _customAction = action.getCustomAction();
+              boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_customAction, null);
+              if (_operator_notEquals) {
+                CustomAction _customAction_1 = action.getCustomAction();
+                String _name_2 = _customAction_1.getName();
+                _builder.append(_name_2, "	");
               } else {
-                StringConcatenation _actionType = this.actionType(action);
+                String _actionType = this.actionType(action);
                 _builder.append(_actionType, "	");
               }
             }
@@ -246,7 +294,7 @@ public class AndroidManifestGenerator implements IGenerator {
           for(final IntentCategory category : _categories) {
             _builder.append("\t");
             _builder.append("<category android:name=\"");
-            StringConcatenation _categoryName = this.categoryName(category);
+            String _categoryName = this.categoryName(category);
             _builder.append(_categoryName, "	");
             _builder.append("\" />");
             _builder.newLineIfNotEmpty();
@@ -294,24 +342,18 @@ public class AndroidManifestGenerator implements IGenerator {
     return _switchResult;
   }
   
-  public StringConcatenation actionType(final IntentAction action) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("android.intent.action.");
+  public String actionType(final IntentAction action) {
     IntentActionType _type = action.getType();
     String _name = _type.name();
     String _upperCase = _name.toUpperCase();
-    _builder.append(_upperCase, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    String _operator_plus = StringExtensions.operator_plus("android.intent.action.", _upperCase);
+    return _operator_plus;
   }
   
-  public StringConcatenation categoryName(final IntentCategory category) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("android.intent.category.");
+  public String categoryName(final IntentCategory category) {
     String _name = category.name();
     String _upperCase = _name.toUpperCase();
-    _builder.append(_upperCase, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    String _operator_plus = StringExtensions.operator_plus("android.intent.category.", _upperCase);
+    return _operator_plus;
   }
 }

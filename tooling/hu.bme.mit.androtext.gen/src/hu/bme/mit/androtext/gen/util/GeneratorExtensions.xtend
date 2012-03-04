@@ -1,6 +1,5 @@
 package hu.bme.mit.androtext.gen.util
 
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
@@ -32,6 +31,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceContainer
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference
 import java.util.List
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 
 class GeneratorExtensions {
 	
@@ -78,7 +78,7 @@ class GeneratorExtensions {
 	def className(Object o) {
 		switch(o) {
 			Entity : o.name.toFirstUpper
-			Activity : o.name.toFirstUpper
+			AbstractActivity : o.name.toFirstUpper
 			ContentProvider: o.name.toFirstUpper
 			default: o.^class.name.toFirstUpper
 		}
@@ -160,7 +160,7 @@ class GeneratorExtensions {
 		p.name + "Key"		
 	}
 	
-	def abstractClassName(Activity activity) {
+	def abstractClassName(AbstractActivity activity) {
 		"Abstract"+activity.className
 	}
 	
@@ -178,7 +178,7 @@ class GeneratorExtensions {
 		f.name.toFirstLower
 	}
 	
-	def activityNameValue(Activity a) {
+	def activityNameValue(AbstractActivity a) {
 		a.name.toLowerCase()+"_title";	
 	}
 	

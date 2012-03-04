@@ -4,7 +4,6 @@ import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.IGenerator
 import hu.bme.mit.androtext.gen.IGeneratorSlots
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
-import hu.bme.mit.androtext.lang.androTextDsl.Activity
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
@@ -15,6 +14,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntentDataType
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
+import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
 
 
 class AndroidManifestGenerator implements IGenerator {
@@ -32,10 +33,10 @@ class AndroidManifestGenerator implements IGenerator {
 			package="«androidApplication.findPackageName»"
 			android:versionCode="1"
 			android:versionName="1.0">
-			<uses-permission android:name="android.permission.WAKE_LOCK"/>
+			«IF androidApplication.permissionNeededWakeLock»<uses-permission android:name="android.permission.WAKE_LOCK"/>«ENDIF»
 			<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
 				«application.mainActivity.generateMainActivity(androidApplication)»
-				«FOR activity : application.modelElements.filter(typeof (Activity))» 
+				«FOR activity : application.modelElements.filter(typeof (AbstractActivity))» 
 					«activity.generateActivity(androidApplication)»
 				«ENDFOR»
 				«FOR contentProvider : application.modelElements.filter(typeof (DatabaseContentProvider))» 
@@ -45,14 +46,19 @@ class AndroidManifestGenerator implements IGenerator {
 		</manifest>
 	'''
 	
+	def permissionNeededWakeLock(TargetApplication androidApplication) {
+		return androidApplication.application.modelElements.exists(me | me instanceof BaseGameActivity)
+	}
+	
 	def generateContentProvider(DatabaseContentProvider contentProvider, TargetApplication application) '''
 		<provider android:name=".data.«contentProvider.className»" 
 			android:authorities="«application.authority»" />
 	'''	
 	
-  	def generateMainActivity(Activity activity, TargetApplication application) '''
+  	def generateMainActivity(AbstractActivity activity, TargetApplication application) '''
 		<activity android:label="@string/«activity.activityNameValue»" 
-			android:name=".«activity.className»" «IF activity.theme != null»android:theme="@android:style/Theme.«activity.resolveTheme»"«ENDIF»>
+			android:name=".«activity.className»" 
+			«activity.generateTheme»>
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
@@ -61,25 +67,31 @@ class AndroidManifestGenerator implements IGenerator {
 		</activity>
 	'''
 	
-	def generateActivity(Activity activity, TargetApplication application) '''
-		<activity android:label="@string/«activity.activityNameValue»" android:name=".«activity.className»">
-				
+	def generateTheme(AbstractActivity activity) '''
+		«IF activity.theme != null && activity.theme != ActivityTheme::THEME»android:theme="@android:style/Theme.«activity.theme.resolveTheme»"«ENDIF»
+	'''	
+	
+	def generateActivity(AbstractActivity activity, TargetApplication application) '''
+		<activity android:label="@string/«activity.activityNameValue»" 
+			android:name=".«activity.className»"
+			«activity.generateTheme»>
+			«activity.generateFilters(application)»	
 		</activity>
 	'''
 	
-	def resolveTheme(Activity activity) {
-		switch (activity.theme) {
+	def resolveTheme(ActivityTheme theme) {
+		switch (theme) {
 			case ActivityTheme::FULLSCREEN: "NoTitleBar.FullScreen"
 			case ActivityTheme::NOTITLEBAR: "NoTitleBar"
-			default: activity.theme.name.toLowerCase.toFirstUpper
+			default: theme.name.toLowerCase.toFirstUpper
 		}
 	}
 	
-	def generateFilters(Activity activity, TargetApplication application) '''
+	def generateFilters(AbstractActivity activity, TargetApplication application) '''
 		«FOR filter : activity.intentFilters»
 		<intent-filter «IF !filter.name.nullOrEmpty»android:label="«filter.name»"«ENDIF»>
 			«FOR action : filter.actions»
-			<action android:name="«IF !action.name.nullOrEmpty»«action.name»«ELSE»«action.actionType»«ENDIF»" />
+			<action android:name="«IF action.customAction != null»«action.customAction.name»«ELSE»«action.actionType»«ENDIF»" />
 			«ENDFOR»
 			«FOR category : filter.categories»
 			<category android:name="«category.categoryName»" />
@@ -98,12 +110,12 @@ class AndroidManifestGenerator implements IGenerator {
 		}
 	}
 	
-	def actionType(IntentAction action) '''
-		android.intent.action.«action.type.name.toUpperCase»
-	'''
+	def actionType(IntentAction action) {
+		"android.intent.action."+action.type.name.toUpperCase
+	}
 	
-	def categoryName(IntentCategory category) '''
-		android.intent.category.«category.name.toUpperCase»
-	'''
+	def categoryName(IntentCategory category) {
+		"android.intent.category."+category.name.toUpperCase
+	}
 
 }

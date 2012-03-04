@@ -1,11 +1,12 @@
 package hu.bme.mit.androtext.gen.menu;
 
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.layout.PropertyValueGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuGroup;
@@ -14,6 +15,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
 import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.generator.IFileSystemAccess;
@@ -31,21 +34,27 @@ public class ActivityMenuGenerator implements IGenerator {
   private PropertyValueGenerator _propertyValueGenerator;
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
-    AndroidApplication _application = androidApplication.getApplication();
-    EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
-    Iterable<Activity> _filter = IterableExtensions.<Activity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.Activity.class);
-    for (final Activity activity : _filter) {
-      ActivityMenu _menu = activity.getMenu();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_menu, null);
-      if (_operator_notEquals) {
-        ActivityMenu _menu_1 = activity.getMenu();
-        String _menuResourceFileName = this._generatorExtensions.menuResourceFileName(_menu_1);
-        String _operator_plus = StringExtensions.operator_plus(_menuResourceFileName, ".xml");
-        ActivityMenu _menu_2 = activity.getMenu();
-        StringConcatenation _generate = this.generate(_menu_2, true);
-        fsa.generateFile(_operator_plus, IGeneratorSlots.MENU_SLOT, _generate);
+      AndroidApplication _application = androidApplication.getApplication();
+      EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
+      Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
+      List<AbstractActivity> _list = IterableExtensions.<AbstractActivity>toList(_filter);
+      final List<AbstractActivity> activities = _list;
+      AndroidApplication _application_1 = androidApplication.getApplication();
+      AbstractActivity _mainActivity = _application_1.getMainActivity();
+      List<AbstractActivity> _singletonList = Collections.<AbstractActivity>singletonList(_mainActivity);
+      Iterables.<AbstractActivity>addAll(activities, _singletonList);
+      for (final AbstractActivity activity : activities) {
+        ActivityMenu _menu = activity.getMenu();
+        boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_menu, null);
+        if (_operator_notEquals) {
+          ActivityMenu _menu_1 = activity.getMenu();
+          String _menuResourceFileName = this._generatorExtensions.menuResourceFileName(_menu_1);
+          String _operator_plus = StringExtensions.operator_plus(_menuResourceFileName, ".xml");
+          ActivityMenu _menu_2 = activity.getMenu();
+          StringConcatenation _generate = this.generate(_menu_2, true);
+          fsa.generateFile(_operator_plus, IGeneratorSlots.MENU_SLOT, _generate);
+        }
       }
-    }
   }
   
   public StringConcatenation generate(final ActivityMenu menu, final boolean isRoot) {
@@ -133,8 +142,8 @@ public class ActivityMenuGenerator implements IGenerator {
     _builder.append("\">");
     _builder.newLineIfNotEmpty();
     {
-      EList<ActivityMenuItem> _menuItems = element.getMenuItems();
-      for(final ActivityMenuItem item : _menuItems) {
+      EList<ActivityMenuElement> _menuItems = element.getMenuItems();
+      for(final ActivityMenuElement item : _menuItems) {
         _builder.append("\t");
         StringConcatenation _generate = this.generate(item);
         _builder.append(_generate, "	");

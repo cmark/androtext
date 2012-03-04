@@ -1,6 +1,6 @@
 package hu.bme.mit.androtext.gen.util;
 
-import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot;
@@ -97,7 +97,7 @@ public class TargetApplicationFinder {
 	private static List<TargetApplication> findTargetApplications(ViewGroup root, ResourceSet context) {
 		List<TargetApplication> targetApplications = new ArrayList<TargetApplication>();
 		for (EObject eObject : GeneratorUtil.findCrossReferences(root, context)) {
-			if (eObject instanceof Activity) {
+			if (eObject instanceof AbstractActivity) {
 				targetApplications.addAll(findTargetApplications((AndroidApplication) eObject.eContainer(), context));
 			}
 		}

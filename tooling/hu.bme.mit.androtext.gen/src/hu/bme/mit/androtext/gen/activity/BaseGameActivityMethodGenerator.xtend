@@ -19,10 +19,12 @@ import hu.bme.mit.androtext.lang.androTextDsl.Font
 import hu.bme.mit.androtext.lang.androTextDsl.FromDouble
 import hu.bme.mit.androtext.lang.androTextDsl.GameBackground
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
+import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
 import hu.bme.mit.androtext.lang.androTextDsl.Joint
 import hu.bme.mit.androtext.lang.androTextDsl.Line
 import hu.bme.mit.androtext.lang.androTextDsl.LineBody
 import hu.bme.mit.androtext.lang.androTextDsl.LoopEntityModifier
+import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 import hu.bme.mit.androtext.lang.androTextDsl.MoveByModifier
 import hu.bme.mit.androtext.lang.androTextDsl.MoveModifier
 import hu.bme.mit.androtext.lang.androTextDsl.Position
@@ -39,8 +41,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
 import hu.bme.mit.androtext.lang.androTextDsl.ToDouble
 
 import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
-import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
 
 class BaseGameActivityMethodGenerator {
 	

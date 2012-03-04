@@ -2,17 +2,22 @@ package hu.bme.mit.androtext.gen.activity;
 
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Action;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
+import hu.bme.mit.androtext.lang.androTextDsl.CustomAction;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
-import hu.bme.mit.androtext.lang.androTextDsl.InvokeActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.IntentActionType;
+import hu.bme.mit.androtext.lang.androTextDsl.InvokeExplicitActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.InvokeImplicitActivity;
+import hu.bme.mit.androtext.lang.androTextDsl.Keyword;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
@@ -27,6 +32,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.View;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.xbase.lib.BooleanExtensions;
+import org.eclipse.xtext.xbase.lib.IntegerExtensions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -38,7 +45,7 @@ public class SimpleActivityMethodGenerator {
   @Inject
   private GeneratorExtensions _generatorExtensions;
   
-  public StringConcatenation simpleMethods(final Activity activity) {
+  public StringConcatenation simpleMethods(final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("@Override");
     _builder.newLine();
@@ -90,7 +97,12 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  public StringConcatenation generateButtonClicks(final Activity activity) {
+  protected StringConcatenation _generateButtonClicks(final AbstractActivity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    return _builder;
+  }
+  
+  protected StringConcatenation _generateButtonClicks(final Activity activity) {
     StringConcatenation _builder = new StringConcatenation();
     {
       View _layout = activity.getLayout();
@@ -144,15 +156,18 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Action action, final Activity activity) {
+  protected StringConcatenation _generate(final Action action, final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  protected StringConcatenation _generate(final InvokeActivity action, final Activity activity) {
+  /**
+   * TODO add data
+   */
+  protected StringConcatenation _generate(final InvokeExplicitActivity action, final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("Intent invoke");
-    Activity _activity = action.getActivity();
+    AbstractActivity _activity = action.getActivity();
     String _name = _activity.getName();
     _builder.append(_name, "");
     _builder.append(" = new Intent(");
@@ -161,7 +176,7 @@ public class SimpleActivityMethodGenerator {
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.append(".this, ");
-    Activity _activity_1 = action.getActivity();
+    AbstractActivity _activity_1 = action.getActivity();
     String _className = this._generatorExtensions.className(_activity_1);
     String _string_1 = _className.toString();
     String _trim_1 = _string_1.trim();
@@ -169,11 +184,118 @@ public class SimpleActivityMethodGenerator {
     _builder.append(".class);");
     _builder.newLineIfNotEmpty();
     _builder.append("startActivity(invoke");
-    Activity _activity_2 = action.getActivity();
+    AbstractActivity _activity_2 = action.getActivity();
     String _name_1 = _activity_2.getName();
     _builder.append(_name_1, "");
     _builder.append(");");
     _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected StringConcatenation _generate(final InvokeImplicitActivity action, final AbstractActivity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Intent ");
+    String _intentVariableName = this.intentVariableName(action);
+    final String varName = _intentVariableName;
+    _builder.append(" = new Intent(");
+    String _actionName = this.actionName(action);
+    _builder.append(_actionName, "");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    {
+      String _data = action.getData();
+      boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(_data);
+      boolean _operator_not = BooleanExtensions.operator_not(_isNullOrEmpty);
+      if (_operator_not) {
+        _builder.append(varName, "");
+        _builder.append(".setData(Uri.create(\"");
+        String _data_1 = action.getData();
+        _builder.append(_data_1, "");
+        _builder.append("\"));");
+        _builder.newLineIfNotEmpty();
+      } else {
+        boolean _operator_and = false;
+        Keyword _currentUri = action.getCurrentUri();
+        boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_currentUri, null);
+        if (!_operator_notEquals) {
+          _operator_and = false;
+        } else {
+          Keyword _currentUri_1 = action.getCurrentUri();
+          boolean _operator_equals = ObjectExtensions.operator_equals(_currentUri_1, Keyword.CURRENT_DATA);
+          _operator_and = BooleanExtensions.operator_and(_operator_notEquals, _operator_equals);
+        }
+        if (_operator_and) {
+          _builder.append(varName, "");
+          _builder.append(".setData(getIntent().getData());");
+          _builder.newLineIfNotEmpty();
+        } else {
+          _builder.append("\"Wrong model state at implicit intent invocation: \" ");
+          _builder.newLine();
+        }
+      }
+    }
+    _builder.append("startActivity(");
+    _builder.append(varName, "");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public String actionName(final InvokeImplicitActivity action) {
+    String _xifexpression = null;
+    IntentActionType _action = action.getAction();
+    boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_action, null);
+    if (_operator_notEquals) {
+      IntentActionType _action_1 = action.getAction();
+      String _name = _action_1.name();
+      _xifexpression = _name;
+    } else {
+      CustomAction _customAction = action.getCustomAction();
+      String _name_1 = _customAction.getName();
+      _xifexpression = _name_1;
+    }
+    return _xifexpression;
+  }
+  
+  public String intentVariableName(final InvokeImplicitActivity action) {
+    String _xblockexpression = null;
+    {
+      String variableName = "";
+      IntentActionType _action = action.getAction();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_action, null);
+      if (_operator_notEquals) {
+        IntentActionType _action_1 = action.getAction();
+        String _name = _action_1.name();
+        String _firstUpper = StringExtensions.toFirstUpper(_name);
+        variableName = _firstUpper;
+      } else {
+        {
+          CustomAction _customAction = action.getCustomAction();
+          String _name_1 = _customAction.getName();
+          int _lastIndexOf = _name_1.lastIndexOf(".");
+          final int li = _lastIndexOf;
+          int _operator_minus = IntegerExtensions.operator_minus(1);
+          boolean _operator_equals = ObjectExtensions.operator_equals(((Integer)li), ((Integer)_operator_minus));
+          if (_operator_equals) {
+            CustomAction _customAction_1 = action.getCustomAction();
+            String _name_2 = _customAction_1.getName();
+            variableName = _name_2;
+          } else {
+            CustomAction _customAction_2 = action.getCustomAction();
+            String _name_3 = _customAction_2.getName();
+            String _substring = _name_3.substring(li);
+            variableName = _substring;
+          }
+        }
+      }
+      String _operator_plus = StringExtensions.operator_plus("invoke", variableName);
+      _xblockexpression = (_operator_plus);
+    }
+    return _xblockexpression;
+  }
+  
+  protected StringConcatenation _contentViewSet(final AbstractActivity activity) {
+    StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
@@ -214,7 +336,7 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _logic(final Activity activity) {
+  protected StringConcatenation _logic(final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
@@ -227,14 +349,20 @@ public class SimpleActivityMethodGenerator {
     String _layoutName = this._generatorExtensions.layoutName(_listitem);
     final String listItem = _layoutName;
     _builder.newLineIfNotEmpty();
-    DataBinding _databinding = activity.getDatabinding();
-    StringConcatenation _generate = this.generate(_databinding, listItem);
-    _builder.append(_generate, "");
-    _builder.newLineIfNotEmpty();
+    {
+      DataBinding _databinding = activity.getDatabinding();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_databinding, null);
+      if (_operator_notEquals) {
+        DataBinding _databinding_1 = activity.getDatabinding();
+        CharSequence _generate = this.generate(_databinding_1, listItem);
+        _builder.append(_generate, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     {
       Action _onListItemClickAction = activity.getOnListItemClickAction();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_onListItemClickAction, null);
-      if (_operator_notEquals) {
+      boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_onListItemClickAction, null);
+      if (_operator_notEquals_1) {
         _builder.append("getListView().setOnItemClickListener(new OnItemClickListener() {");
         _builder.newLine();
         _builder.append("\t");
@@ -272,7 +400,7 @@ public class SimpleActivityMethodGenerator {
       EList<Tab> _tabs = activity.getTabs();
       for(final Tab tab : _tabs) {
         _builder.append("intent = new Intent().setClass(this, ");
-        Activity _activity = tab.getActivity();
+        AbstractActivity _activity = tab.getActivity();
         String _className = this._generatorExtensions.className(_activity);
         _builder.append(_className, "");
         _builder.append(".class);");
@@ -308,10 +436,15 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  public StringConcatenation generate(final DataBinding db, final String listItem) {
-    ContentProvider _contentProvider = db.getContentProvider();
-    StringConcatenation _generate = this.generate(_contentProvider, db, listItem);
-    return _generate;
+  public CharSequence generate(final DataBinding db, final String listItem) {
+      ContentProvider _contentProvider = db.getContentProvider();
+      boolean _operator_equals = ObjectExtensions.operator_equals(_contentProvider, null);
+      if (_operator_equals) {
+        return "";
+      }
+      ContentProvider _contentProvider_1 = db.getContentProvider();
+      StringConcatenation _generate = this.generate(_contentProvider_1, db, listItem);
+      return _generate;
   }
   
   protected StringConcatenation _generate(final ContentProvider provider, final DataBinding db, final String listItem) {
@@ -431,16 +564,28 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  public StringConcatenation generate(final Action action, final Activity activity) {
-    if (action instanceof InvokeActivity) {
-      return _generate((InvokeActivity)action, activity);
+  public StringConcatenation generateButtonClicks(final AbstractActivity activity) {
+    if (activity instanceof Activity) {
+      return _generateButtonClicks((Activity)activity);
+    } else {
+      return _generateButtonClicks(activity);
+    }
+  }
+  
+  public StringConcatenation generate(final Action action, final AbstractActivity activity) {
+    if (action instanceof InvokeExplicitActivity) {
+      return _generate((InvokeExplicitActivity)action, activity);
+    } else if (action instanceof InvokeImplicitActivity) {
+      return _generate((InvokeImplicitActivity)action, activity);
     } else {
       return _generate(action, activity);
     }
   }
   
-  public StringConcatenation contentViewSet(final Activity activity) {
-    if (activity instanceof PreferenceActivity) {
+  public StringConcatenation contentViewSet(final AbstractActivity activity) {
+    if (activity instanceof Activity) {
+      return _contentViewSet((Activity)activity);
+    } else if (activity instanceof PreferenceActivity) {
       return _contentViewSet((PreferenceActivity)activity);
     } else if (activity instanceof TabActivity) {
       return _contentViewSet((TabActivity)activity);
@@ -449,7 +594,7 @@ public class SimpleActivityMethodGenerator {
     }
   }
   
-  public StringConcatenation logic(final Activity activity) {
+  public StringConcatenation logic(final AbstractActivity activity) {
     if (activity instanceof ListActivity) {
       return _logic((ListActivity)activity);
     } else if (activity instanceof TabActivity) {
