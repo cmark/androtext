@@ -1,0 +1,25 @@
+guimodel NotePadGui {
+	
+	linearlayout title_editor vertical wrap {
+		// TODO add padding
+		edittext title "" wrap layout editTextTitle {
+			autoText true
+			capitalize sentences
+		}
+		
+		button button_ok "OK" wrap {
+			gravity right
+		}
+	}
+	
+	textview noteslist_item width fill height 14.5sp {
+    	// android:textAppearance="?android:attr/textAppearanceLarge"
+		gravity center_vertical
+		singleLine true
+	}
+	
+	layoutProperties editTextTitle {
+		marginTop 2dp
+	}
+	
+}

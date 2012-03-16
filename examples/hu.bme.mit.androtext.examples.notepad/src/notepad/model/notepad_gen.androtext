@@ -1,0 +1,9 @@
+generator NotePadGenerator {
+	
+	target NotePad {
+		project hu.bme.mit.androtext.examples.notepad.gen
+		platform Android 2.3.3
+		version 1.0
+	}
+	
+}

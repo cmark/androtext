@@ -1,0 +1,10 @@
+datamodel NotePadModel {
+	
+	entity Note {
+		title : String
+		note : String
+		created_date : int
+		modified_date : int
+	}
+		
+}

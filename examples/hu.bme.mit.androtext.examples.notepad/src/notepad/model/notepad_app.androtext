@@ -1,0 +1,65 @@
+application NotePad {
+	
+	listactivity NotesList {
+		listitem NotePadGui.noteslist_item
+		fetchAll NotePadModel.Note(title) from NotePadProvider bind noteslist_item
+		onListItemClick {
+			invoke(EDIT)
+		}
+		menu NotesListMenu {
+			item menu_add "Add note" ic_menu_add {
+				invoke(INSERT)
+			}
+		}
+		contextmenu NotesListContextMenu {
+			item context_open "Open" {
+				invoke(EDIT)
+			}
+			item context_delete "Delete" {
+				delete NotePadModel.Note
+			}
+		}
+	}
+	
+	activity NoteEditor LIGHT {
+		action com.android.notepad.EDIT_NOTE
+		filter Edit_Note {
+			action VIEW
+			action EDIT
+			action com.android.notepad.EDIT_NOTE
+			category DEFAULT
+			data NotePadModel.Note ITEM
+		}
+		filter {
+			action INSERT
+			category DEFAULT
+			data NotePadModel.Note DIR
+		}
+		menu editor_options {
+			item menu_save "Save" ic_menu_save
+			group menu_group_edit {
+				item menu_revert "Revert changes" ic_menu_revert
+				item menu_delete "Delete" ic_menu_delete
+			}
+			group menu_group_insert {
+				item menu_discard "Discard" NotePadResources.ic_menu_discard
+			}
+		}
+	}
+
+	activity TitleEditor DIALOG {
+		action com.android.notepad.EDIT_TITLE
+		filter Edit_Title {
+			action com.android.notepad.EDIT_TITLE
+			category DEFAULT
+			category ALTERNATIVE
+			category SELECTED_ALTERNATIVE
+			data NotePadModel.Note ITEM			
+		}
+		layout NotePadGui.title_editor
+		fetchOne NotePadModel.Note(title) from NotePadProvider
+	}
+	
+	provider NotePadProvider data NotePadModel
+	
+}
