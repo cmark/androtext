@@ -29,6 +29,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.StringResource;
 import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
@@ -131,37 +132,28 @@ public class PropertyValueGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _dimensionValue(final LayoutDimensionPropertyValue value) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\"");
+  protected String _dimensionValue(final LayoutDimensionPropertyValue value) {
     LayoutDimensionKind _constValue = value.getConstValue();
     String _layoutDimensionKind = this.layoutDimensionKind(_constValue);
-    _builder.append(_layoutDimensionKind, "");
-    _builder.append("\"");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    return _layoutDimensionKind;
   }
   
-  protected StringConcatenation _dimensionValue(final DimensionPropertyValue dimensionPropertyValue) {
-    StringConcatenation _builder = new StringConcatenation();
+  protected String _dimensionValue(final DimensionPropertyValue dimensionPropertyValue) {
     DimensionValue _value = dimensionPropertyValue.getValue();
     float _value_1 = _value.getValue();
-    _builder.append(_value_1, "");
+    String _operator_plus = StringExtensions.operator_plus("", ((Float)_value_1));
     DimensionValue _value_2 = dimensionPropertyValue.getValue();
     DimensionMetric _metric = _value_2.getMetric();
-    _builder.append(_metric, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    String _string = _metric.toString();
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, _string);
+    return _operator_plus_1;
   }
   
-  protected StringConcatenation _dimensionValue(final DimensionResourceLink dimensionResourceLink) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@dimen/");
+  protected String _dimensionValue(final DimensionResourceLink dimensionResourceLink) {
     DimensionResource _link = dimensionResourceLink.getLink();
     String _name = _link.getName();
-    _builder.append(_name, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    String _operator_plus = StringExtensions.operator_plus("@dimen/", _name);
+    return _operator_plus;
   }
   
   protected StringConcatenation _generate(final LayoutStyle style) {
@@ -186,7 +178,7 @@ public class PropertyValueGenerator {
       if (_operator_notEquals) {
         _builder.append("android:layout_width=\"");
         LayoutDimensionPropertyValue _width_1 = style.getWidth();
-        StringConcatenation _dimensionValue = this.dimensionValue(_width_1);
+        String _dimensionValue = this.dimensionValue(_width_1);
         _builder.append(_dimensionValue, "");
         _builder.append("\"");
         _builder.newLineIfNotEmpty();
@@ -198,7 +190,7 @@ public class PropertyValueGenerator {
       if (_operator_notEquals_1) {
         _builder.append("android:layout_height=\"");
         LayoutDimensionPropertyValue _height_1 = style.getHeight();
-        StringConcatenation _dimensionValue_1 = this.dimensionValue(_height_1);
+        String _dimensionValue_1 = this.dimensionValue(_height_1);
         _builder.append(_dimensionValue_1, "");
         _builder.append("\"\t");
         _builder.newLineIfNotEmpty();
@@ -341,7 +333,7 @@ public class PropertyValueGenerator {
     }
   }
   
-  public StringConcatenation dimensionValue(final LayoutDimensionPropertyValue dimensionResourceLink) {
+  public String dimensionValue(final LayoutDimensionPropertyValue dimensionResourceLink) {
     if (dimensionResourceLink instanceof DimensionResourceLink) {
       return _dimensionValue((DimensionResourceLink)dimensionResourceLink);
     } else if (dimensionResourceLink instanceof DimensionPropertyValue) {

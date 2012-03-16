@@ -63,17 +63,17 @@ class PropertyValueGenerator {
 		@android:drawable/«valueLink.externalResource.name.toLowerCase»
 	'''
 	
-	def dispatch dimensionValue(LayoutDimensionPropertyValue value) '''
-		"«value.constValue.layoutDimensionKind»"
-	'''
+	def dispatch dimensionValue(LayoutDimensionPropertyValue value) {
+		value.constValue.layoutDimensionKind
+	}	
 	
-	def dispatch dimensionValue(DimensionPropertyValue dimensionPropertyValue) '''
-		«dimensionPropertyValue.value.value»«dimensionPropertyValue.value.metric»
-	'''
+	def dispatch dimensionValue(DimensionPropertyValue dimensionPropertyValue) { 
+		"" + dimensionPropertyValue.value.value + dimensionPropertyValue.value.metric.toString
+	}
 	
-	def dispatch dimensionValue(DimensionResourceLink dimensionResourceLink) '''
-		@dimen/«dimensionResourceLink.link.name»
-	'''
+	def dispatch dimensionValue(DimensionResourceLink dimensionResourceLink) {
+		"@dimen/" + dimensionResourceLink.link.name		
+	}
 	
 	def dispatch generate(LayoutStyle style) '''
 	'''

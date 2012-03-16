@@ -199,7 +199,7 @@ public class ViewPropertiesGenerator {
       if (_operator_notEquals) {
         _builder.append("android:columnWidth=\"");
         DimensionPropertyValue _columnWidth = attribute.getColumnWidth();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_columnWidth);
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_columnWidth);
         String _string = _dimensionValue.toString();
         String _trim = _string.trim();
         _builder.append(_trim, "");
@@ -314,7 +314,7 @@ public class ViewPropertiesGenerator {
       if (_operator_notEquals) {
         _builder.append("android:height=\"");
         DimensionPropertyValue _height = attribute.getHeight();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_height);
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_height);
         String _string = _dimensionValue.toString();
         String _trim = _string.trim();
         _builder.append(_trim, "");
@@ -350,7 +350,7 @@ public class ViewPropertiesGenerator {
       if (_operator_notEquals) {
         _builder.append("android:horizontalSpacing=\"");
         DimensionPropertyValue _horizontalSpacing = attribute.getHorizontalSpacing();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_horizontalSpacing);
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_horizontalSpacing);
         String _string = _dimensionValue.toString();
         String _trim = _string.trim();
         _builder.append(_trim, "");
@@ -442,8 +442,8 @@ public class ViewPropertiesGenerator {
       boolean _operator_notEquals = ObjectExtensions.operator_notEquals(attribute, null);
       if (_operator_notEquals) {
         DimensionPropertyValue _padding = attribute.getPadding();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_padding);
-        final StringConcatenation paddingValue = _dimensionValue;
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_padding);
+        final String paddingValue = _dimensionValue;
         _builder.newLineIfNotEmpty();
         _builder.append("android:padding=\"");
         String _string = paddingValue.toString();
@@ -615,8 +615,8 @@ public class ViewPropertiesGenerator {
       boolean _operator_notEquals = ObjectExtensions.operator_notEquals(attribute, null);
       if (_operator_notEquals) {
         DimensionPropertyValue _textSize = attribute.getTextSize();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_textSize);
-        final StringConcatenation testSizeValue = _dimensionValue;
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_textSize);
+        final String testSizeValue = _dimensionValue;
         _builder.newLineIfNotEmpty();
         _builder.append("android:textSize=\"");
         String _string = testSizeValue.toString();
@@ -680,7 +680,7 @@ public class ViewPropertiesGenerator {
       if (_operator_notEquals) {
         _builder.append("android:verticalSpacing=\"");
         DimensionPropertyValue _verticalSpacing = attribute.getVerticalSpacing();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_verticalSpacing);
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_verticalSpacing);
         String _string = _dimensionValue.toString();
         String _trim = _string.trim();
         _builder.append(_trim, "");
@@ -698,7 +698,7 @@ public class ViewPropertiesGenerator {
       if (_operator_notEquals) {
         _builder.append("android:width=\"");
         DimensionPropertyValue _width = attribute.getWidth();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_width);
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_width);
         String _string = _dimensionValue.toString();
         String _trim = _string.trim();
         _builder.append(_trim, "");

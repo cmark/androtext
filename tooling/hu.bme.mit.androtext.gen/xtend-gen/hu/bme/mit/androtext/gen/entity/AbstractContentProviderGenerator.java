@@ -665,7 +665,7 @@ public class AbstractContentProviderGenerator implements IGenerator {
     _builder.append("getContext().getContentResolver().notifyChange(newUri, null);");
     _builder.newLine();
     _builder.append("            ");
-    _builder.append("return uri;");
+    _builder.append("return newUri;");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("}");

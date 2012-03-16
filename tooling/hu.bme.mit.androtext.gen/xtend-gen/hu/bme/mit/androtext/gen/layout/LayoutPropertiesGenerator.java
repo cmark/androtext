@@ -271,8 +271,8 @@ public class LayoutPropertiesGenerator {
       if (_operator_notEquals_15) {
         MarginLeftAttribute _marginLeftAttribute_1 = properties.getMarginLeftAttribute();
         DimensionPropertyValue _marginLeft = _marginLeftAttribute_1.getMarginLeft();
-        StringConcatenation _dimensionValue = this._propertyValueGenerator.dimensionValue(_marginLeft);
-        final StringConcatenation marginValue = _dimensionValue;
+        String _dimensionValue = this._propertyValueGenerator.dimensionValue(_marginLeft);
+        final String marginValue = _dimensionValue;
         _builder.newLineIfNotEmpty();
         _builder.append("android:layout_marginLeft=\"");
         String _string_8 = marginValue.toString();
@@ -288,8 +288,8 @@ public class LayoutPropertiesGenerator {
       if (_operator_notEquals_16) {
         MarginTopAttribute _marginTopAttribute_1 = properties.getMarginTopAttribute();
         DimensionPropertyValue _marginTop = _marginTopAttribute_1.getMarginTop();
-        StringConcatenation _dimensionValue_1 = this._propertyValueGenerator.dimensionValue(_marginTop);
-        final StringConcatenation marginValue_1 = _dimensionValue_1;
+        String _dimensionValue_1 = this._propertyValueGenerator.dimensionValue(_marginTop);
+        final String marginValue_1 = _dimensionValue_1;
         _builder.newLineIfNotEmpty();
         _builder.append("android:layout_marginLeft=\"");
         String _string_9 = marginValue_1.toString();
@@ -305,8 +305,8 @@ public class LayoutPropertiesGenerator {
       if (_operator_notEquals_17) {
         MarginRightAttribute _marginRightAttribute_1 = properties.getMarginRightAttribute();
         DimensionPropertyValue _marginRight = _marginRightAttribute_1.getMarginRight();
-        StringConcatenation _dimensionValue_2 = this._propertyValueGenerator.dimensionValue(_marginRight);
-        final StringConcatenation marginValue_2 = _dimensionValue_2;
+        String _dimensionValue_2 = this._propertyValueGenerator.dimensionValue(_marginRight);
+        final String marginValue_2 = _dimensionValue_2;
         _builder.newLineIfNotEmpty();
         _builder.append("android:layout_marginLeft=\"");
         String _string_10 = marginValue_2.toString();
@@ -322,8 +322,8 @@ public class LayoutPropertiesGenerator {
       if (_operator_notEquals_18) {
         MarginBottomAttribute _marginBottomAttribute_1 = properties.getMarginBottomAttribute();
         DimensionPropertyValue _marginBottom = _marginBottomAttribute_1.getMarginBottom();
-        StringConcatenation _dimensionValue_3 = this._propertyValueGenerator.dimensionValue(_marginBottom);
-        final StringConcatenation marginValue_3 = _dimensionValue_3;
+        String _dimensionValue_3 = this._propertyValueGenerator.dimensionValue(_marginBottom);
+        final String marginValue_3 = _dimensionValue_3;
         _builder.newLineIfNotEmpty();
         _builder.append("android:layout_marginLeft=\"");
         String _string_11 = marginValue_3.toString();

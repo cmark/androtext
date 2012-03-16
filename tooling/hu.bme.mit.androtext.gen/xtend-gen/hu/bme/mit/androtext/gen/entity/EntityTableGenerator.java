@@ -254,7 +254,7 @@ public class EntityTableGenerator implements IGenerator {
     _builder.append("*/");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public static final Uri CONTENT_URI =  Uri.parse(SCHEME + AUTHORITY + PATH_");
+    _builder.append("public static final Uri CONTENT_URI =  Uri.parse(SCHEME + AUTHORITY + \"/\" + PATH_");
     String _name_8 = e.getName();
     String _upperCase_1 = _name_8.toUpperCase();
     _builder.append(_upperCase_1, "    ");
@@ -288,7 +288,7 @@ public class EntityTableGenerator implements IGenerator {
     _builder.append("public static final Uri CONTENT_ID_URI_BASE");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("= Uri.parse(SCHEME + AUTHORITY + PATH_");
+    _builder.append("= Uri.parse(SCHEME + AUTHORITY + \"/\" + PATH_");
     String _name_12 = e.getName();
     String _upperCase_2 = _name_12.toUpperCase();
     _builder.append(_upperCase_2, "        ");

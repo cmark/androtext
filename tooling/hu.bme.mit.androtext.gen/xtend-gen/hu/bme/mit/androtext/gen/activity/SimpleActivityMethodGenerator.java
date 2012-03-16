@@ -2,14 +2,19 @@ package hu.bme.mit.androtext.gen.activity;
 
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
+import hu.bme.mit.androtext.gen.util.IteratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Action;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityContextMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.CustomAction;
+import hu.bme.mit.androtext.lang.androTextDsl.DataAction;
+import hu.bme.mit.androtext.lang.androTextDsl.DataActionType;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
@@ -17,7 +22,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource;
 import hu.bme.mit.androtext.lang.androTextDsl.IntentActionType;
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeExplicitActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeImplicitActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.Keyword;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
@@ -29,10 +33,14 @@ import hu.bme.mit.androtext.lang.androTextDsl.TabActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
+import org.eclipse.xtext.xbase.lib.ComparableExtensions;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -92,9 +100,335 @@ public class SimpleActivityMethodGenerator {
         _builder.newLine();
         _builder.append("}");
         _builder.newLine();
+        _builder.newLine();
+        {
+          ActivityMenu _menu_2 = activity.getMenu();
+          boolean _isOnSelectedMethodNeeded = this.isOnSelectedMethodNeeded(_menu_2);
+          if (_isOnSelectedMethodNeeded) {
+            _builder.append("@Override");
+            _builder.newLine();
+            _builder.append("public boolean onOptionsItemSelected(MenuItem item) {");
+            _builder.newLine();
+            {
+              ActivityMenu _menu_3 = activity.getMenu();
+              boolean _dataUriNeeded = this.dataUriNeeded(_menu_3);
+              if (_dataUriNeeded) {
+                _builder.append("\t");
+                _builder.append("AdapterView.AdapterContextMenuInfo info;");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("try {");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("     ");
+                _builder.append("info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("} catch (ClassCastException e) {");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("    ");
+                _builder.append("Log.e(TAG, \"bad menuInfo\", e);");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("    ");
+                _builder.append("return false;");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("}");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("Uri dataUri = ContentUris.withAppendedId(getIntent().getData(), info.id);");
+                _builder.newLine();
+              }
+            }
+            _builder.append("\t");
+            _builder.append("switch (item.getItemId()) {");
+            _builder.newLine();
+            {
+              ActivityMenu _menu_4 = activity.getMenu();
+              TreeIterator<EObject> _eAllContents = _menu_4.eAllContents();
+              Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_eAllContents);
+              Iterable<ActivityMenuItem> _filter = IterableExtensions.<ActivityMenuItem>filter(_iterable, hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem.class);
+              for(final ActivityMenuItem menuItem : _filter) {
+                _builder.append("\t");
+                _builder.append("case R.id.");
+                String _name = menuItem.getName();
+                _builder.append(_name, "	");
+                _builder.append(":");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                _builder.append("\t");
+                Action _onSelectedAction = menuItem.getOnSelectedAction();
+                StringConcatenation _generate = this.generate(_onSelectedAction, activity);
+                _builder.append(_generate, "		");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                _builder.append("    ");
+                _builder.append("return true;");
+                _builder.newLine();
+              }
+            }
+            _builder.append("\t");
+            _builder.append("default:");
+            _builder.newLine();
+            _builder.append("\t    ");
+            _builder.append("return super.onOptionsItemSelected(item);");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("}");
+            _builder.newLine();
+          }
+        }
+      }
+    }
+    _builder.newLine();
+    {
+      boolean _isListActivity = this.isListActivity(activity);
+      if (_isListActivity) {
+        {
+          Action _onListItemClickAction = ((ListActivity) activity).getOnListItemClickAction();
+          boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_onListItemClickAction, null);
+          if (_operator_notEquals_1) {
+            _builder.append("@Override");
+            _builder.newLine();
+            _builder.append("protected void onListItemClick(ListView l, View v, int position, long id) {");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("Uri dataUri = ContentUris.withAppendedId(getIntent().getData(), id);");
+            _builder.newLine();
+            _builder.append("\t");
+            Action _onListItemClickAction_1 = ((ListActivity) activity).getOnListItemClickAction();
+            StringConcatenation _generate_1 = this.generate(_onListItemClickAction_1, activity);
+            _builder.append(_generate_1, "	");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+          }
+        }
+        _builder.newLine();
+        {
+          ActivityContextMenu _contextMenu = activity.getContextMenu();
+          boolean _operator_notEquals_2 = ObjectExtensions.operator_notEquals(_contextMenu, null);
+          if (_operator_notEquals_2) {
+            _builder.append("@Override");
+            _builder.newLine();
+            _builder.append("public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("AdapterView.AdapterContextMenuInfo info;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("try {");
+            _builder.newLine();
+            _builder.append("\t\t");
+            _builder.append("info = (AdapterView.AdapterContextMenuInfo) menuInfo;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("} catch (ClassCastException e) {");
+            _builder.newLine();
+            _builder.append("\t\t");
+            _builder.append("Log.e(TAG, \"bad menuInfo\", e);");
+            _builder.newLine();
+            _builder.append("\t\t");
+            _builder.append("return;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("Cursor cursor = (Cursor) getListAdapter().getItem(info.position);");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("if (cursor == null) {");
+            _builder.newLine();
+            _builder.append("\t    ");
+            _builder.append("// For some reason the requested item isn\'t available, do nothing");
+            _builder.newLine();
+            _builder.append("\t    ");
+            _builder.append("return;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("// Inflate menu from XML resource");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("MenuInflater inflater = getMenuInflater();");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("inflater.inflate(R.menu.");
+            ActivityContextMenu _contextMenu_1 = activity.getContextMenu();
+            String _menuResourceFileName_1 = this._generatorExtensions.menuResourceFileName(_contextMenu_1);
+            _builder.append(_menuResourceFileName_1, "	");
+            _builder.append(", menu);");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+            _builder.newLine();
+            {
+              ActivityContextMenu _contextMenu_2 = activity.getContextMenu();
+              boolean _isOnSelectedMethodNeeded_1 = this.isOnSelectedMethodNeeded(_contextMenu_2);
+              if (_isOnSelectedMethodNeeded_1) {
+                _builder.append("@Override");
+                _builder.newLine();
+                _builder.append("public boolean onContextItemSelected(MenuItem item) {");
+                _builder.newLine();
+                {
+                  ActivityContextMenu _contextMenu_3 = activity.getContextMenu();
+                  boolean _dataUriNeeded_1 = this.dataUriNeeded(_contextMenu_3);
+                  if (_dataUriNeeded_1) {
+                    _builder.append("\t");
+                    _builder.append("AdapterView.AdapterContextMenuInfo info;");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("try {");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("} catch (ClassCastException e) {");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("Log.e(TAG, \"bad menuInfo\", e);");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t");
+                    _builder.append("return false;");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("}");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("Uri dataUri = ContentUris.withAppendedId(getIntent().getData(), info.id);");
+                    _builder.newLine();
+                  }
+                }
+                _builder.append("\t");
+                _builder.append("switch (item.getItemId()) {");
+                _builder.newLine();
+                {
+                  ActivityContextMenu _contextMenu_4 = activity.getContextMenu();
+                  TreeIterator<EObject> _eAllContents_1 = _contextMenu_4.eAllContents();
+                  Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_eAllContents_1);
+                  Iterable<ActivityMenuItem> _filter_1 = IterableExtensions.<ActivityMenuItem>filter(_iterable_1, hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem.class);
+                  for(final ActivityMenuItem menuItem_1 : _filter_1) {
+                    {
+                      Action _onSelectedAction_1 = menuItem_1.getOnSelectedAction();
+                      boolean _operator_notEquals_3 = ObjectExtensions.operator_notEquals(_onSelectedAction_1, null);
+                      if (_operator_notEquals_3) {
+                        _builder.append("\t");
+                        _builder.append("case R.id.");
+                        String _name_1 = menuItem_1.getName();
+                        _builder.append(_name_1, "	");
+                        _builder.append(":");
+                        _builder.newLineIfNotEmpty();
+                        _builder.append("\t");
+                        _builder.append("\t");
+                        Action _onSelectedAction_2 = menuItem_1.getOnSelectedAction();
+                        StringConcatenation _generate_2 = this.generate(_onSelectedAction_2, activity);
+                        _builder.append(_generate_2, "		");
+                        _builder.newLineIfNotEmpty();
+                        _builder.append("\t");
+                        _builder.append("    ");
+                        _builder.append("return true;");
+                        _builder.newLine();
+                      }
+                    }
+                  }
+                }
+                _builder.append("\t");
+                _builder.append("default:");
+                _builder.newLine();
+                _builder.append("\t    ");
+                _builder.append("return super.onOptionsItemSelected(item);");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("}");
+                _builder.newLine();
+                _builder.append("}");
+                _builder.newLine();
+              }
+            }
+          }
+        }
       }
     }
     return _builder;
+  }
+  
+  protected boolean _isOnSelectedMethodNeeded(final ActivityMenu menu) {
+    TreeIterator<EObject> _eAllContents = menu.eAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_eAllContents);
+    Iterable<Action> _filter = IterableExtensions.<Action>filter(_iterable, hu.bme.mit.androtext.lang.androTextDsl.Action.class);
+    int _size = IterableExtensions.size(_filter);
+    boolean _operator_greaterThan = ComparableExtensions.<Integer>operator_greaterThan(((Integer)_size), ((Integer)0));
+    return _operator_greaterThan;
+  }
+  
+  protected boolean _isOnSelectedMethodNeeded(final ActivityContextMenu menu) {
+    TreeIterator<EObject> _eAllContents = menu.eAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_eAllContents);
+    Iterable<Action> _filter = IterableExtensions.<Action>filter(_iterable, hu.bme.mit.androtext.lang.androTextDsl.Action.class);
+    int _size = IterableExtensions.size(_filter);
+    boolean _operator_greaterThan = ComparableExtensions.<Integer>operator_greaterThan(((Integer)_size), ((Integer)0));
+    return _operator_greaterThan;
+  }
+  
+  protected boolean _dataUriNeeded(final ActivityMenu menu) {
+    TreeIterator<EObject> _eAllContents = menu.eAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_eAllContents);
+    Iterable<Action> _filter = IterableExtensions.<Action>filter(_iterable, hu.bme.mit.androtext.lang.androTextDsl.Action.class);
+    final Function1<Action,Boolean> _function = new Function1<Action,Boolean>() {
+        public Boolean apply(final Action it) {
+          {
+            if ((it instanceof InvokeImplicitActivity)) {
+              IntentActionType _action = ((InvokeImplicitActivity) it).getAction();
+              boolean _equals = _action.equals(IntentActionType.INSERT);
+              if (_equals) {
+                return ((Boolean)false);
+              }
+            }
+            return ((Boolean)true);
+          }
+        }
+      };
+    Iterable<Action> _filter_1 = IterableExtensions.<Action>filter(_filter, _function);
+    int _size = IterableExtensions.size(_filter_1);
+    boolean _operator_greaterThan = ComparableExtensions.<Integer>operator_greaterThan(((Integer)_size), ((Integer)0));
+    return _operator_greaterThan;
+  }
+  
+  protected boolean _dataUriNeeded(final ActivityContextMenu menu) {
+    TreeIterator<EObject> _eAllContents = menu.eAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_eAllContents);
+    Iterable<Action> _filter = IterableExtensions.<Action>filter(_iterable, hu.bme.mit.androtext.lang.androTextDsl.Action.class);
+    final Function1<Action,Boolean> _function = new Function1<Action,Boolean>() {
+        public Boolean apply(final Action it) {
+          {
+            if ((it instanceof InvokeImplicitActivity)) {
+              IntentActionType _action = ((InvokeImplicitActivity) it).getAction();
+              boolean _equals = _action.equals(IntentActionType.INSERT);
+              if (_equals) {
+                return ((Boolean)false);
+              }
+            }
+            return ((Boolean)true);
+          }
+        }
+      };
+    Iterable<Action> _filter_1 = IterableExtensions.<Action>filter(_filter, _function);
+    int _size = IterableExtensions.size(_filter_1);
+    boolean _operator_greaterThan = ComparableExtensions.<Integer>operator_greaterThan(((Integer)_size), ((Integer)0));
+    return _operator_greaterThan;
   }
   
   protected StringConcatenation _generateButtonClicks(final AbstractActivity activity) {
@@ -161,9 +495,72 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
-  /**
-   * TODO add data
-   */
+  protected StringConcatenation _generate(final DataAction action, final AbstractActivity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      DataActionType _type = action.getType();
+      boolean _equals = _type.equals(DataActionType.INSERT);
+      if (_equals) {
+        _builder.append("getContentResolver().");
+        DataActionType _type_1 = action.getType();
+        String _name = _type_1.name();
+        String _lowerCase = _name.toLowerCase();
+        _builder.append(_lowerCase, "");
+        _builder.append("(getIntent().getData(), null);");
+        _builder.newLineIfNotEmpty();
+      } else {
+        DataActionType _type_2 = action.getType();
+        boolean _equals_1 = _type_2.equals(DataActionType.UPDATE);
+        if (_equals_1) {
+          _builder.append("// TODO add values");
+          _builder.newLine();
+          _builder.append("getContentResolver().");
+          DataActionType _type_3 = action.getType();
+          String _name_1 = _type_3.name();
+          String _lowerCase_1 = _name_1.toLowerCase();
+          _builder.append(_lowerCase_1, "");
+          _builder.append("(");
+          {
+            boolean _isListActivity = this.isListActivity(activity);
+            if (_isListActivity) {
+              _builder.append("dataUri");
+            } else {
+              _builder.append("getIntent().getData()");
+            }
+          }
+          _builder.append(", null, null, null);");
+          _builder.newLineIfNotEmpty();
+        } else {
+          DataActionType _type_4 = action.getType();
+          boolean _equals_2 = _type_4.equals(DataActionType.DELETE);
+          if (_equals_2) {
+            _builder.append("getContentResolver().");
+            DataActionType _type_5 = action.getType();
+            String _name_2 = _type_5.name();
+            String _lowerCase_2 = _name_2.toLowerCase();
+            _builder.append(_lowerCase_2, "");
+            _builder.append("(");
+            {
+              boolean _isListActivity_1 = this.isListActivity(activity);
+              if (_isListActivity_1) {
+                _builder.append("dataUri");
+              } else {
+                _builder.append("getIntent().getData()");
+              }
+            }
+            _builder.append(", null, null);");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public boolean isListActivity(final AbstractActivity activity) {
+    return (activity instanceof ListActivity);
+  }
+  
   protected StringConcatenation _generate(final InvokeExplicitActivity action, final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("Intent invoke");
@@ -194,9 +591,11 @@ public class SimpleActivityMethodGenerator {
   
   protected StringConcatenation _generate(final InvokeImplicitActivity action, final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Intent ");
     String _intentVariableName = this.intentVariableName(action);
     final String varName = _intentVariableName;
+    _builder.newLineIfNotEmpty();
+    _builder.append("Intent ");
+    _builder.append(varName, "");
     _builder.append(" = new Intent(");
     String _actionName = this.actionName(action);
     _builder.append(_actionName, "");
@@ -214,23 +613,24 @@ public class SimpleActivityMethodGenerator {
         _builder.append("\"));");
         _builder.newLineIfNotEmpty();
       } else {
-        boolean _operator_and = false;
-        Keyword _currentUri = action.getCurrentUri();
-        boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_currentUri, null);
-        if (!_operator_notEquals) {
-          _operator_and = false;
+        boolean _operator_or = false;
+        boolean _isListActivity = this.isListActivity(activity);
+        boolean _operator_not_1 = BooleanExtensions.operator_not(_isListActivity);
+        if (_operator_not_1) {
+          _operator_or = true;
         } else {
-          Keyword _currentUri_1 = action.getCurrentUri();
-          boolean _operator_equals = ObjectExtensions.operator_equals(_currentUri_1, Keyword.CURRENT_DATA);
-          _operator_and = BooleanExtensions.operator_and(_operator_notEquals, _operator_equals);
+          IntentActionType _action = action.getAction();
+          boolean _equals = _action.equals(IntentActionType.INSERT);
+          _operator_or = BooleanExtensions.operator_or(_operator_not_1, _equals);
         }
-        if (_operator_and) {
+        if (_operator_or) {
           _builder.append(varName, "");
           _builder.append(".setData(getIntent().getData());");
           _builder.newLineIfNotEmpty();
         } else {
-          _builder.append("\"Wrong model state at implicit intent invocation: \" ");
-          _builder.newLine();
+          _builder.append(varName, "");
+          _builder.append(".setData(dataUri);");
+          _builder.newLineIfNotEmpty();
         }
       }
     }
@@ -248,7 +648,8 @@ public class SimpleActivityMethodGenerator {
     if (_operator_notEquals) {
       IntentActionType _action_1 = action.getAction();
       String _name = _action_1.name();
-      _xifexpression = _name;
+      String _operator_plus = StringExtensions.operator_plus("Intent.ACTION_", _name);
+      _xifexpression = _operator_plus;
     } else {
       CustomAction _customAction = action.getCustomAction();
       String _name_1 = _customAction.getName();
@@ -341,46 +742,45 @@ public class SimpleActivityMethodGenerator {
     return _builder;
   }
   
+  protected StringConcatenation _logic(final Activity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      DataBinding _databinding = activity.getDatabinding();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_databinding, null);
+      if (_operator_notEquals) {
+        DataBinding _databinding_1 = activity.getDatabinding();
+        CharSequence _generate = this.generate(_databinding_1, null);
+        _builder.append(_generate, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
   protected StringConcatenation _logic(final ListActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("Intent intent = getIntent();");
     _builder.newLine();
+    {
+      ActivityContextMenu _contextMenu = activity.getContextMenu();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_contextMenu, null);
+      if (_operator_notEquals) {
+        _builder.append("getListView().setOnCreateContextMenuListener(this);");
+        _builder.newLine();
+      }
+    }
     View _listitem = activity.getListitem();
     String _layoutName = this._generatorExtensions.layoutName(_listitem);
     final String listItem = _layoutName;
     _builder.newLineIfNotEmpty();
     {
       DataBinding _databinding = activity.getDatabinding();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_databinding, null);
-      if (_operator_notEquals) {
+      boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_databinding, null);
+      if (_operator_notEquals_1) {
         DataBinding _databinding_1 = activity.getDatabinding();
         CharSequence _generate = this.generate(_databinding_1, listItem);
         _builder.append(_generate, "");
         _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      Action _onListItemClickAction = activity.getOnListItemClickAction();
-      boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_onListItemClickAction, null);
-      if (_operator_notEquals_1) {
-        _builder.append("getListView().setOnItemClickListener(new OnItemClickListener() {");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("@Override");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("public void onItemClick(AdapterView<?> parent, View view, int position, long id) {");
-        _builder.newLine();
-        _builder.append("\t\t");
-        Action _onListItemClickAction_1 = activity.getOnListItemClickAction();
-        StringConcatenation _generate_1 = this.generate(_onListItemClickAction_1, activity);
-        _builder.append(_generate_1, "		");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
-        _builder.append("}");
-        _builder.newLine();
-        _builder.append("});");
-        _builder.newLine();
       }
     }
     return _builder;
@@ -431,7 +831,7 @@ public class SimpleActivityMethodGenerator {
       }
     }
     _builder.newLine();
-    _builder.append("tabHost.setCurrentTab(2);");
+    _builder.append("tabHost.setCurrentTab(0);");
     _builder.newLine();
     return _builder;
   }
@@ -466,68 +866,77 @@ public class SimpleActivityMethodGenerator {
     {
       boolean _isFetchAll = db.isFetchAll();
       if (_isFetchAll) {
-        _builder.append("if (intent.getData() == null) {");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("intent.setData(");
-        Entity _entity = db.getEntity();
-        String _columnsClassName = this._generatorExtensions.columnsClassName(_entity);
-        _builder.append(_columnsClassName, "	");
-        _builder.append(".CONTENT_URI);");
-        _builder.newLineIfNotEmpty();
-        _builder.append("}");
-        _builder.newLine();
-        _builder.append("Cursor cursor = managedQuery(getIntent().getData(), PROJECTION, null, null, ");
-        Entity _entity_1 = db.getEntity();
-        String _columnsClassName_1 = this._generatorExtensions.columnsClassName(_entity_1);
-        _builder.append(_columnsClassName_1, "");
-        _builder.append(".DEFAULT_SORT_ORDER);");
-        _builder.newLineIfNotEmpty();
-        _builder.append("SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.");
-        _builder.append(listItem, "");
-        _builder.append(", cursor, ");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t");
-        _builder.append("new String[] { ");
         {
-          EList<Property> _projection = db.getProjection();
-          boolean hasAnyElements = false;
-          for(final Property p : _projection) {
-            if (!hasAnyElements) {
-              hasAnyElements = true;
-            } else {
-              _builder.appendImmediate(", ", "			");
+          boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(listItem);
+          boolean _operator_not = BooleanExtensions.operator_not(_isNullOrEmpty);
+          if (_operator_not) {
+            _builder.append("if (intent.getData() == null) {");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("intent.setData(");
+            Entity _entity = db.getEntity();
+            String _columnsClassName = this._generatorExtensions.columnsClassName(_entity);
+            _builder.append(_columnsClassName, "	");
+            _builder.append(".CONTENT_URI);");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("this.mCursor = managedQuery(getIntent().getData(), PROJECTION, null, null, ");
+            Entity _entity_1 = db.getEntity();
+            String _columnsClassName_1 = this._generatorExtensions.columnsClassName(_entity_1);
+            _builder.append(_columnsClassName_1, "");
+            _builder.append(".DEFAULT_SORT_ORDER);");
+            _builder.newLineIfNotEmpty();
+            _builder.append("SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.");
+            _builder.append(listItem, "");
+            _builder.append(", this.mCursor, ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t\t\t");
+            _builder.append("new String[] { ");
+            {
+              EList<Property> _projection = db.getProjection();
+              boolean hasAnyElements = false;
+              for(final Property p : _projection) {
+                if (!hasAnyElements) {
+                  hasAnyElements = true;
+                } else {
+                  _builder.appendImmediate(", ", "			");
+                }
+                Entity _entity_2 = db.getEntity();
+                String _columnsClassName_2 = this._generatorExtensions.columnsClassName(_entity_2);
+                _builder.append(_columnsClassName_2, "			");
+                _builder.append(".");
+                String _name = p.getName();
+                String _upperCase = _name.toUpperCase();
+                _builder.append(_upperCase, "			");
+              }
             }
-            Entity _entity_2 = db.getEntity();
-            String _columnsClassName_2 = this._generatorExtensions.columnsClassName(_entity_2);
-            _builder.append(_columnsClassName_2, "			");
-            _builder.append(".");
-            String _name = p.getName();
-            String _upperCase = _name.toUpperCase();
-            _builder.append(_upperCase, "			");
+            _builder.append(" }, ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t\t\t");
+            _builder.append("new int[] { ");
+            {
+              EList<View> _target = db.getTarget();
+              boolean hasAnyElements_1 = false;
+              for(final View view : _target) {
+                if (!hasAnyElements_1) {
+                  hasAnyElements_1 = true;
+                } else {
+                  _builder.appendImmediate(", ", "			");
+                }
+                _builder.append("R.id.");
+                String _name_1 = view.getName();
+                _builder.append(_name_1, "			");
+              }
+            }
+            _builder.append(" });");
+            _builder.newLineIfNotEmpty();
+            _builder.append("setListAdapter(adapter);");
+            _builder.newLine();
           }
         }
-        _builder.append(" }, ");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t");
-        _builder.append("new int[] { ");
-        {
-          EList<View> _target = db.getTarget();
-          boolean hasAnyElements_1 = false;
-          for(final View view : _target) {
-            if (!hasAnyElements_1) {
-              hasAnyElements_1 = true;
-            } else {
-              _builder.appendImmediate(", ", "			");
-            }
-            _builder.append("R.id.");
-            String _name_1 = view.getName();
-            _builder.append(_name_1, "			");
-          }
-        }
-        _builder.append(" });");
-        _builder.newLineIfNotEmpty();
-        _builder.append("setListAdapter(adapter);");
+      } else {
+        _builder.append("this.mCursor = managedQuery(getIntent().getData(), PROJECTION, null, null, null);");
         _builder.newLine();
       }
     }
@@ -561,7 +970,44 @@ public class SimpleActivityMethodGenerator {
   
   protected StringConcatenation _generateContentSet(final IntegerArrayResource resource, final String listItem) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("int[] ");
+    String _name = resource.getName();
+    _builder.append(_name, "");
+    _builder.append(" = getResources().getIntArray(R.array.");
+    String _name_1 = resource.getName();
+    _builder.append(_name_1, "");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    _builder.append("setListAdapter(new ArrayAdapter<Integer>(this, R.layout.");
+    _builder.append(listItem, "");
+    _builder.append(", ");
+    String _name_2 = resource.getName();
+    _builder.append(_name_2, "");
+    _builder.append("));");
+    _builder.newLineIfNotEmpty();
     return _builder;
+  }
+  
+  public boolean isOnSelectedMethodNeeded(final EObject menu) {
+    if (menu instanceof ActivityContextMenu) {
+      return _isOnSelectedMethodNeeded((ActivityContextMenu)menu);
+    } else if (menu instanceof ActivityMenu) {
+      return _isOnSelectedMethodNeeded((ActivityMenu)menu);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(menu).toString());
+    }
+  }
+  
+  public boolean dataUriNeeded(final EObject menu) {
+    if (menu instanceof ActivityContextMenu) {
+      return _dataUriNeeded((ActivityContextMenu)menu);
+    } else if (menu instanceof ActivityMenu) {
+      return _dataUriNeeded((ActivityMenu)menu);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(menu).toString());
+    }
   }
   
   public StringConcatenation generateButtonClicks(final AbstractActivity activity) {
@@ -573,7 +1019,9 @@ public class SimpleActivityMethodGenerator {
   }
   
   public StringConcatenation generate(final Action action, final AbstractActivity activity) {
-    if (action instanceof InvokeExplicitActivity) {
+    if (action instanceof DataAction) {
+      return _generate((DataAction)action, activity);
+    } else if (action instanceof InvokeExplicitActivity) {
       return _generate((InvokeExplicitActivity)action, activity);
     } else if (action instanceof InvokeImplicitActivity) {
       return _generate((InvokeImplicitActivity)action, activity);
@@ -595,7 +1043,9 @@ public class SimpleActivityMethodGenerator {
   }
   
   public StringConcatenation logic(final AbstractActivity activity) {
-    if (activity instanceof ListActivity) {
+    if (activity instanceof Activity) {
+      return _logic((Activity)activity);
+    } else if (activity instanceof ListActivity) {
       return _logic((ListActivity)activity);
     } else if (activity instanceof TabActivity) {
       return _logic((TabActivity)activity);

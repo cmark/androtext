@@ -72,7 +72,9 @@ Activity returns AbstractActivity:
 		(customActions+=CustomAction)*
 		(intentFilters+=IntentFilter)*
 		('layout' layout=[View | QualifiedName])?
+		(databinding=DataBinding)?
 		(menu=ActivityMenu)?
+		(contextMenu = ActivityContextMenu)?
 	'}'
 ;
 
@@ -121,6 +123,7 @@ TabActivity returns AbstractActivity:
 		(intentFilters+=IntentFilter)*
 		(tabs+=Tab)*
 		(menu=ActivityMenu)?
+		(contextMenu = ActivityContextMenu)?
 	'}'
 ;
 
@@ -138,9 +141,18 @@ ListActivity returns AbstractActivity:
 		(intentFilters+=IntentFilter)*
 		('listitem' listitem=[View | QualifiedName])?
 		(databinding=DataBinding)?
-		('onListItemClick' onListItemClickAction=Action)?
+		('onListItemClick' '{'
+			onListItemClickAction=Action
+		'}')?
 		(menu=ActivityMenu)?
+		(contextMenu = ActivityContextMenu)?
 	'}'
+;
+
+ActivityContextMenu:
+	'contextmenu' name=ID ('{'
+		(menuElements+=ActivityMenuElement)*
+	'}')?
 ;
 
 ActivityMenu:
@@ -155,7 +167,7 @@ ActivityMenuElement returns ActivityMenuElement:
 
 ActivityMenuItem returns ActivityMenuElement:
 	{ActivityMenuItem}
-	'item' name=ID title=STRING icon=AnyDrawablePropertyValue 
+	'item' name=ID title=STRING (icon=AnyDrawablePropertyValue)? 
 	('{' 
 		(onSelectedAction=Action | subMenu=ActivityMenu)?
 	'}')?
@@ -181,6 +193,7 @@ PreferenceActivity returns AbstractActivity:
 		(intentFilters+=IntentFilter)*
 		('layout' screen=PreferenceScreen)?
 		(menu=ActivityMenu)?
+		(contextMenu = ActivityContextMenu)?
 	'}'
 ;
 
@@ -204,19 +217,25 @@ Action returns Action:
 
 InvokeExplicitActivity returns Action:
 	{InvokeExplicitActivity}
-	'navigateTo' (activity=[AbstractActivity | QualifiedName])
-	('data' (data=STRING | currentUri=Keyword))?
+	'navigateTo' 
+	'(' 
+		(activity=[AbstractActivity | QualifiedName])
+		(data=STRING)?
+	')'
 ;
 
 InvokeImplicitActivity returns Action:
 	{InvokeImplicitActivity}
-	'invoke' (customAction=[CustomAction | QualifiedName] | action=IntentActionType)
-	('data' (data=STRING | currentUri=Keyword))?
+	'invoke' 
+	'(' 
+		(customAction=[CustomAction | QualifiedName] | action=IntentActionType)
+		(data=STRING)? 
+	')'
 ;
 
-enum Keyword:
-	currentData='current'
-;
+//enum Keyword:
+//	currentData='current'
+//;
 
 DataAction returns Action:
 	{DataAction}
@@ -1174,6 +1193,7 @@ BaseGameActivity returns AbstractActivity:
 		('orientation' orientation=ScreenOrientation)?
 		('scene' scene=[Scene | QualifiedName])?
 		(menu=ActivityMenu)?
+		(contextMenu = ActivityContextMenu)?
 	'}'
 ;
 

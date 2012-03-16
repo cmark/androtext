@@ -206,7 +206,7 @@ class AbstractContentProviderGenerator implements IGenerator {
 		        if (rowId > 0) {
 		            Uri newUri = ContentUris.withAppendedId(contentUri, rowId);
 		            getContext().getContentResolver().notifyChange(newUri, null);
-		            return uri;
+		            return newUri;
 		        }
 		
 		        throw new SQLException("Failed to insert row into " + uri);

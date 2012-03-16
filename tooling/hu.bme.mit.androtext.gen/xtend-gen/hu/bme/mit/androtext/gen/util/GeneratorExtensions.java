@@ -2,6 +2,7 @@ package hu.bme.mit.androtext.gen.util;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityContextMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
@@ -376,7 +377,14 @@ public class GeneratorExtensions {
     return _operator_plus;
   }
   
-  public String menuResourceFileName(final ActivityMenu menu) {
+  protected String _menuResourceFileName(final ActivityMenu menu) {
+    String _name = menu.getName();
+    String _lowerCase = _name.toLowerCase();
+    String _operator_plus = StringExtensions.operator_plus(_lowerCase, "_menu");
+    return _operator_plus;
+  }
+  
+  protected String _menuResourceFileName(final ActivityContextMenu menu) {
     String _name = menu.getName();
     String _lowerCase = _name.toLowerCase();
     String _operator_plus = StringExtensions.operator_plus(_lowerCase, "_menu");
@@ -527,6 +535,17 @@ public class GeneratorExtensions {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(p).toString());
+    }
+  }
+  
+  public String menuResourceFileName(final EObject menu) {
+    if (menu instanceof ActivityContextMenu) {
+      return _menuResourceFileName((ActivityContextMenu)menu);
+    } else if (menu instanceof ActivityMenu) {
+      return _menuResourceFileName((ActivityMenu)menu);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(menu).toString());
     }
   }
   

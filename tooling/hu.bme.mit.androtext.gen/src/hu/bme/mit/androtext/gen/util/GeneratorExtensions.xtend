@@ -32,6 +32,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.PreferenceContainer
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference
 import java.util.List
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityContextMenu
 
 class GeneratorExtensions {
 	
@@ -194,7 +195,11 @@ class GeneratorExtensions {
 		root.name.toLowerCase + "_layout"
 	}
 	
-	def menuResourceFileName(ActivityMenu menu) {
+	def dispatch menuResourceFileName(ActivityMenu menu) {
+		menu.name.toLowerCase + "_menu"
+	}
+	
+	def dispatch menuResourceFileName(ActivityContextMenu menu) {
 		menu.name.toLowerCase + "_menu"
 	}
 	

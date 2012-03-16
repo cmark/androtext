@@ -87,14 +87,14 @@ class EntityTableGenerator implements IGenerator {
 	        /**
 	         * The content:// style URL for this table
 	         */
-	        public static final Uri CONTENT_URI =  Uri.parse(SCHEME + AUTHORITY + PATH_«e.name.toUpperCase()»S);
+	        public static final Uri CONTENT_URI =  Uri.parse(SCHEME + AUTHORITY + "/" + PATH_«e.name.toUpperCase()»S);
 
 	        /**
 	         * The content URI base for a single «e.name.toLowerCase()». Callers must
 	         * append a numeric «e.name.toLowerCase()» id to this Uri to retrieve a «e.name.toLowerCase()»
 	         */
 	        public static final Uri CONTENT_ID_URI_BASE
-	            = Uri.parse(SCHEME + AUTHORITY + PATH_«e.name.toUpperCase()»_ID);
+	            = Uri.parse(SCHEME + AUTHORITY + "/" + PATH_«e.name.toUpperCase()»_ID);
 
 	        /**
 	         * The content URI match pattern for a single «e.name.toLowerCase()», specified by its ID. Use this to match

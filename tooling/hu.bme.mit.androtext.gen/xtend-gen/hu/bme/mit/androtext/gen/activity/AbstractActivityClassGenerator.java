@@ -7,6 +7,7 @@ import hu.bme.mit.androtext.gen.activity.AbstractActivityMethodGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityContextMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
@@ -123,6 +124,39 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     return _builder;
   }
   
+  protected StringConcatenation _genDepImports(final Activity activity, final TargetApplication app) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _operator_and = false;
+      DataBinding _databinding = activity.getDatabinding();
+      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_databinding, null);
+      if (!_operator_notEquals) {
+        _operator_and = false;
+      } else {
+        DataBinding _databinding_1 = activity.getDatabinding();
+        Entity _entity = _databinding_1.getEntity();
+        boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_entity, null);
+        _operator_and = BooleanExtensions.operator_and(_operator_notEquals, _operator_notEquals_1);
+      }
+      if (_operator_and) {
+        _builder.append("import ");
+        String _dataPackageName = this._generatorExtensions.dataPackageName(app);
+        _builder.append(_dataPackageName, "");
+        _builder.append(".");
+        String _dataInformationClassName = this._generatorExtensions.dataInformationClassName(app);
+        _builder.append(_dataInformationClassName, "");
+        _builder.append(".");
+        DataBinding _databinding_2 = activity.getDatabinding();
+        Entity _entity_1 = _databinding_2.getEntity();
+        String _columnsClassName = this._generatorExtensions.columnsClassName(_entity_1);
+        _builder.append(_columnsClassName, "");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
   protected StringConcatenation _genDepImports(final ListActivity activity, final TargetApplication app) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -158,6 +192,10 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
   
   public StringConcatenation basicImports(final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("import android.net.Uri;");
+    _builder.newLine();
+    _builder.append("import android.util.Log;");
+    _builder.newLine();
     _builder.append("import android.widget.Button;");
     _builder.newLine();
     _builder.append("import android.view.View;");
@@ -166,12 +204,40 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     _builder.newLine();
     _builder.append("import android.content.Intent;");
     _builder.newLine();
+    _builder.append("import android.content.ContentUris;");
+    _builder.newLine();
     {
       ActivityMenu _menu = activity.getMenu();
       boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_menu, null);
       if (_operator_notEquals) {
         _builder.append("import android.view.Menu;");
         _builder.newLine();
+        _builder.append("import android.view.MenuItem;");
+        _builder.newLine();
+      }
+    }
+    {
+      ActivityContextMenu _contextMenu = activity.getContextMenu();
+      boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_contextMenu, null);
+      if (_operator_notEquals_1) {
+        _builder.append("import android.view.ContextMenu;");
+        _builder.newLine();
+        _builder.append("import android.view.ContextMenu.ContextMenuInfo;");
+        _builder.newLine();
+      }
+    }
+    {
+      boolean _operator_or = false;
+      ActivityContextMenu _contextMenu_1 = activity.getContextMenu();
+      boolean _operator_notEquals_2 = ObjectExtensions.operator_notEquals(_contextMenu_1, null);
+      if (_operator_notEquals_2) {
+        _operator_or = true;
+      } else {
+        ActivityMenu _menu_1 = activity.getMenu();
+        boolean _operator_notEquals_3 = ObjectExtensions.operator_notEquals(_menu_1, null);
+        _operator_or = BooleanExtensions.operator_or(_operator_notEquals_2, _operator_notEquals_3);
+      }
+      if (_operator_or) {
         _builder.append("import android.view.MenuInflater;");
         _builder.newLine();
       }
@@ -186,6 +252,8 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.newLineIfNotEmpty();
+    _builder.append("import android.database.Cursor;");
+    _builder.newLine();
     return _builder;
   }
   
@@ -198,11 +266,15 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
     _builder.newLineIfNotEmpty();
     _builder.append("import android.widget.ArrayAdapter;");
     _builder.newLine();
+    _builder.append("import android.widget.AdapterView;");
+    _builder.newLine();
     _builder.append("import android.widget.AdapterView.OnItemClickListener;");
     _builder.newLine();
     _builder.append("import android.database.Cursor;");
     _builder.newLine();
     _builder.append("import android.widget.SimpleCursorAdapter;");
+    _builder.newLine();
+    _builder.append("import android.widget.ListView;");
     _builder.newLine();
     return _builder;
   }
@@ -387,7 +459,9 @@ public class AbstractActivityClassGenerator implements IAbstractActivityGenerato
   }
   
   public StringConcatenation genDepImports(final AbstractActivity activity, final TargetApplication app) {
-    if (activity instanceof ListActivity) {
+    if (activity instanceof Activity) {
+      return _genDepImports((Activity)activity, app);
+    } else if (activity instanceof ListActivity) {
       return _genDepImports((ListActivity)activity, app);
     } else {
       return _genDepImports(activity, app);

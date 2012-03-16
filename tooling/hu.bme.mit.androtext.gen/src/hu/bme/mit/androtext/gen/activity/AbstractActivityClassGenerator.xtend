@@ -49,6 +49,11 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	'''
 	
 	def dispatch genDepImports(AbstractActivity activity, TargetApplication app) ''''''
+	def dispatch genDepImports(Activity activity, TargetApplication app) '''
+		«IF activity.databinding != null && activity.databinding.entity != null»
+		import «app.dataPackageName».«app.dataInformationClassName».«activity.databinding.entity.columnsClassName»;
+		«ENDIF»
+	'''
 	def dispatch genDepImports(ListActivity activity, TargetApplication app) '''
 		«IF activity.databinding != null && activity.databinding.entity != null»
 		import «app.dataPackageName».«app.dataInformationClassName».«activity.databinding.entity.columnsClassName»;
@@ -56,26 +61,39 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 	'''
 	
 	def basicImports(AbstractActivity activity) '''
+		import android.net.Uri;
+		import android.util.Log;
 		import android.widget.Button;
 		import android.view.View;
 		import android.view.View.OnClickListener;
 		import android.content.Intent;
+		import android.content.ContentUris;
 		«IF activity.menu != null»
 		import android.view.Menu;
+		import android.view.MenuItem;
+		«ENDIF»
+		«IF activity.contextMenu != null»
+		import android.view.ContextMenu;
+		import android.view.ContextMenu.ContextMenuInfo;
+		«ENDIF»
+		«IF activity.contextMenu != null || activity.menu != null»
 		import android.view.MenuInflater;
 		«ENDIF»
 	'''
 	
 	def dispatch extraImports(Activity activity) '''
 		«activity.basicImports.toString.trim»
+		import android.database.Cursor;
 	'''
 	
 	def dispatch extraImports(ListActivity activity) '''
 		«activity.basicImports.toString.trim»
 		import android.widget.ArrayAdapter;
+		import android.widget.AdapterView;
 		import android.widget.AdapterView.OnItemClickListener;
 		import android.database.Cursor;
 		import android.widget.SimpleCursorAdapter;
+		import android.widget.ListView;
 	'''
 	
 	def dispatch extraImports(TabActivity activity) '''
