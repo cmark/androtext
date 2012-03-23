@@ -301,6 +301,9 @@ LayoutStyle:
 	value=FastLayoutDimensionKind
 ;
 
+enum FastLayoutDimensionKind:
+	FILL='fill' | WRAP='wrap' | FILL_WRAP='fill&wrap' | WRAP_FILL='wrap&fill';
+
 AbsoluteLayout:
 	'absolutelayout' 
 	name=ID 
@@ -315,7 +318,6 @@ LinearLayout:
 	(vertical?='vertical'|'horizontal')? 
 	(layoutStyle=LayoutStyle)? 
 	'{'
-//		(gravity=GravityAttribute)?
 		attributes+=Attribute*
 		views+=View*
 	'}';
@@ -352,10 +354,6 @@ TableLayout:
 	'tablelayout' 
 	name=ID 
 	(layoutStyle=LayoutStyle)? 
-//	('layout' layoutProperties=[LayoutProperties | QualifiedName])?
-//	(collapseColumnsAttribute=CollapseColumnsAttribute)?
-//	(shrinkColumnsAttribute=ShrinkColumnsAttribute)?
-//	(stretchColumnsAttribute=StretchColumnsAttribute)?
 	'{'
 		attributes+=Attribute*
 		views+=View*
@@ -382,7 +380,6 @@ ViewElement:
 	(layoutStyle=LayoutStyle)? 
 	('{'
 		attributes+=Attribute*
-//		(backgroundAttribute=BackgroundAttribute)?
 	'}')?
 ;
 
@@ -393,33 +390,6 @@ TextView:
 	(layoutStyle=LayoutStyle)? 
 	('{' 
 		attributes+=Attribute*
-//		(
-//			// View properties
-//	      	(widthAttribute=WidthAttribute)?
-//	      	& (heightAttribute=HeightAttribute)?
-//	      	& (backgroundAttribute=BackgroundAttribute)?
-//	      	& (clickableAttribute=ClickableAttribute)?
-//	      	& (fadeScrollBarsAttribute=FadeScrollBarsAttribute)?
-//	      	& (isScrollContainerAttribute=IsScrollContainerAttribute)?
-//	      	
-//		    //TextView attributes
-//		    & (autoLinkAttribute=AutoLinkAttribute)?
-//		    & (autoTextAttribute=AutoTextAttribute)?
-//		    & (capitalizeAttribute=CapitalizeAttribute)?
-//		    & (digitsAttribute=DigitsAttribute)?
-//		    & (editableAttribute=EditableAttribute)?
-//		    & (hintAttribute=HintAttribute)?
-//		    & (numericAttribute=NumericAttribute)?
-//		    & (passwordAttribute=PasswordAttribute)?
-//		    & (phoneNumberAttribute=PhoneNumberAttribute)?
-//		    & (singleLineAttribute=SingleLineAttribute)?
-//		    & (textColorAttribute=TextColorAttribute)?
-//		    & (typefaceAttribute=TypefaceAttribute)?
-//		    & (textStyleAttribute=TextStyleAttribute)? 
-//		    & (gravityAttribute=GravityAttribute)?
-//			& (textSizeAttribute=TextSizeAttribute)?
-//			& (paddingAttribute=PaddingAttribute)?
-//		)
 	'}')?
 ;
 	
@@ -430,31 +400,6 @@ EditText:
 	(layoutStyle=LayoutStyle)? 
 	('{'
 		attributes+=Attribute*
-//		(
-//	      	(widthAttribute=WidthAttribute)?
-//	      	& (heightAttribute=HeightAttribute)?
-//	      	& (backgroundAttribute=BackgroundAttribute)?
-//	      	& (clickableAttribute=ClickableAttribute)?
-//	      	& (fadeScrollBarsAttribute=FadeScrollBarsAttribute)?
-//	      	& (isScrollContainerAttribute=IsScrollContainerAttribute)?
-//	      	
-//	      	& (autoLinkAttribute=AutoLinkAttribute)?
-//		    & (autoTextAttribute=AutoTextAttribute)?
-//		    & (capitalizeAttribute=CapitalizeAttribute)?
-//		    & (digitsAttribute=DigitsAttribute)?
-//		    & (editableAttribute=EditableAttribute)?
-//		    & (hintAttribute=HintAttribute)?
-//		    & (numericAttribute=NumericAttribute)?
-//		    & (passwordAttribute=PasswordAttribute)?
-//		    & (phoneNumberAttribute=PhoneNumberAttribute)?
-//		    & (singleLineAttribute=SingleLineAttribute)?
-//		    & (textColorAttribute=TextColorAttribute)?
-//		    & (typefaceAttribute=TypefaceAttribute)?
-//		    & (textStyleAttribute=TextStyleAttribute)? 	
-//			& (gravityAttribute=GravityAttribute)?
-//			& (textSizeAttribute=TextSizeAttribute)?
-//			& (paddingAttribute=PaddingAttribute)?
-//		)
 	'}')?
 ;
 	
@@ -466,14 +411,6 @@ Button:
 	('{'
 		attributes+=Attribute*
 		(onClickAttribute=OnClickAttribute)?
-//		(
-//	      	(widthAttribute=WidthAttribute)?
-//	      	& (heightAttribute=HeightAttribute)?
-//	      	& (backgroundAttribute=BackgroundAttribute)?
-//	      	& (clickableAttribute=ClickableAttribute)?
-//	      	& (hintAttribute=HintAttribute)?
-//	      	& (gravity=GravityAttribute)?
-//		)	
 	'}')?
 ;
 
@@ -511,14 +448,6 @@ ImageView:
 	(layoutStyle=LayoutStyle)? 
 	('{'
 		attributes+=Attribute*
-//		(
-//	      	(widthAttribute=WidthAttribute)?
-//	      	& (heightAttribute=HeightAttribute)?
-//	      	& (backgroundAttribute=BackgroundAttribute)?
-//	      	& (clickableAttribute=ClickableAttribute)?
-//	      	& (fadeScrollBarsAttribute=FadeScrollBarsAttribute)?
-//	      	& (isScrollContainerAttribute=IsScrollContainerAttribute)?	
-//		)
 	'}')?
 ;	
 	
@@ -540,14 +469,6 @@ GridView:
 	(layoutStyle=LayoutStyle)? 
 	('{'
 		attributes+=Attribute*
-//		(
-//			(columnWidthAttribute=ColumnWidthAttribute)?
-//			& (horizontalSpacingAttribute=HorizontalSpacingAttribute)?
-//			& (verticalSpacingAttribute=VerticalSpacingAttribute)?
-//			& (numColumnsAttribute=NumColumnsAttribute)?
-//			& (stretchModeAttribute=StretchModeAttribute)?
-//			& (gravityAttribute=GravityAttribute)?
-//		)
 	'}')?
 ;
 	
@@ -558,14 +479,6 @@ Spinner:
 	(layoutStyle=LayoutStyle)?
 	('{'
 		attributes+=Attribute*
-//		(
-//	      	(widthAttribute=WidthAttribute)?
-//	      	& (heightAttribute=HeightAttribute)?
-//	      	& (backgroundAttribute=BackgroundAttribute)?
-//	      	& (clickableAttribute=ClickableAttribute)?
-//	      	& (fadeScrollBarsAttribute=FadeScrollBarsAttribute)?
-//	      	& (isScrollContainerAttribute=IsScrollContainerAttribute)?	
-//		)
 	'}')?
 ;
 	
@@ -872,12 +785,9 @@ EntriesAttribute:
 //ClickableAttribute:
 //	'clickable' clickable=BooleanPropertyValue
 //;
-
-
 //AutoLinkAttribute:
 //	'autoLink' (all?='all' | autoLinkMask+=AutoLinkKind ('|' autoLinkMask+=AutoLinkKind)?)
 //;
-
 //WidthAttribute:
 //	'width' width=DimensionPropertyValue
 //;
@@ -897,7 +807,6 @@ EntriesAttribute:
 //TextSizeAttribute:
 //	'textSize' textSize=DimensionPropertyValue
 //;
-
 //BackgroundAttribute:
 //	'background' background=AnyDrawablePropertyValue
 //;
@@ -917,25 +826,18 @@ EntriesAttribute:
 //StretchModeAttribute:
 //	'stretchMode' stretchMode=StretchModeKind
 //;
-
 //VerticalSpacingAttribute:
 //	'verticalSpacing' verticalSpacing=DimensionPropertyValue
 //;
-
 //StretchColumnsAttribute:
 //	'stretch' stretchColumns+=IntegerPropertyValue (',' stretchColumns+=IntegerPropertyValue)?
 //;
-
 //ShrinkColumnsAttribute:
 //	'shrink' shrinkColumns+=IntegerPropertyValue (',' shrinkColumns+=IntegerPropertyValue)?
 //;
-
 //CollapseColumnsAttribute:
 //	'collapse' collapseColumns+=IntegerPropertyValue (',' collapseColumns+=IntegerPropertyValue)?
 //;
-
-enum FastLayoutDimensionKind:
-	FILL='fill' | WRAP='wrap' | FILL_WRAP='fill&wrap' | WRAP_FILL='wrap&fill';
 /* End of XML attributes */
 /* End of Preference Framework Elements */
 /* End of AndroGuiModelRoot and gui model elements */
@@ -1328,24 +1230,12 @@ SimpleEntity:
 ;
 
 BindingTarget:
-	EntityBindingTarget //| SensorBindingTarget
+	EntityBindingTarget
 ;
-
-//SensorBindingTarget:
-//	sensor=SensorTarget
-//;
 
 EntityBindingTarget:
 	entity=[GameEntity | QualifiedName]	
 ;
-
-//SensorBindable:
-//	isAccelBinding?='accelerometer' | isOrientationBinding?='orientation'
-//;
-
-//enum SensorTarget:
-//	gravity
-//;
 
 EntityModifier:
 	MoveModifier | MoveByModifier | ScaleModifier | AlphaModifier | RotationByModifier | RotationModifier | ColorModifier | LoopEntityModifier | SequenceEntityModifier 
