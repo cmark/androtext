@@ -1,18 +1,16 @@
 guimodel HelloAutoCompleteGui {
 	
 	textview list_item fill {
-		padding 10dp
-		textSize 16sp
-		textColor #000000
+		padding : 10dp
+		textSize : 16sp
+		textColor : #000000
 	}
 	
 	linearlayout main horizontal fill&wrap {
-		textview label "Country" wrap {}		
-		autocompletetextview autocomplete_country entries HelloListActivityResources.countries fill&wrap layout autocomplete_props {}
-	}
-	
-	layoutProperties autocomplete_props {
-		marginLeft 5dp
+		textview label "Country" wrap
+		autocompletetextview autocomplete_country entries HelloListActivityResources.countries fill&wrap {
+			layout_marginLeft : 5dp
+		}
 	}
 	
 }

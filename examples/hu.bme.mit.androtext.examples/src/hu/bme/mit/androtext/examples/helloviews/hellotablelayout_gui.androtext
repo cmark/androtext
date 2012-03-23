@@ -1,73 +1,75 @@
 guimodel HelloTableLayoutGui {
 	
-	tablelayout table fill stretch 1 {  
-		
+	tablelayout table fill {
+		stretchColumns : 1
 		tablerow row1 {
-			textview Name "Open..." layout columnOneLayout {
-				padding 3dp
+			textview open "Open..." {
+				layout_column : 1
+				padding : 3dp
 			}
-			textview Name "Ctrl-O" {
-				gravity right
-				padding 3dp
+			textview ctrlO "Ctrl-O" {
+				gravity : right
+				padding : 3dp
 			}
 		}
 		
 		tablerow row2 { 
-			textview Name "Save..." layout columnOneLayout {
-				padding 3dp
+			textview save "Save..." {
+				layout_column : 1
+				padding : 3dp
 			}
-			textview Name "Ctrl-S" {
-				gravity right
-				padding 3dp
+			textview ctrlS "Ctrl-S" {
+				gravity : right
+				padding : 3dp
 			}
 		}
 		
 		tablerow row3 { 
-			textview Name "Save As..." layout columnOneLayout {
-				padding 3dp
+			textview saveas "Save As..." {
+				layout_column : 1
+				padding : 3dp
 			}
-			textview Name "Ctrl-Shift-S" {
-				gravity right
-				padding 3dp
+			textview ctrlshiftS "Ctrl-Shift-S" {
+				gravity : right
+				padding : 3dp
 			}
 		}
 		
-		view hr1 height 2dp {
-			background #FF909090
+		view hr1 {
+			layout_height : 2dp
+			background : #FF909090
 		}
 		
 		tablerow row4 { 
-			textview Name "X" {
-				padding 3dp
+			textview x "X" {
+				padding : 3dp
 			}
-			textview Name "Import" {
-				padding 3dp
+			textview i "Import" {
+				padding : 3dp
 			}
 		}
 		
 		tablerow row5 { 
-			textview Name "X" {}
-			textview Name "Export" {}
-			textview Name "Ctrl-E" {
-				gravity right
-				padding 3dp
+			textview X2 "X"
+			textview Export "Export"
+			textview ctrlE "Ctrl-E" {
+				gravity : right
+				padding : 3dp
 			}
 		}
 		
-		view hr2 height 2dp {
-			background #FF909090
+		view hr2 {
+			background : #FF909090
+			layout_height : 2dp
 		}
 		
 		tablerow row6 { 
-			textview Name "Quit" layout columnOneLayout {
-				padding 3dp
+			textview quit "Quit" {
+				layout_column : 1
+				padding : 3dp
 			}
 		}
 		
-	}
-	
-	layoutProperties columnOneLayout {
-		column 1
 	}
 	
 }

@@ -5,55 +5,101 @@
 	android:versionName="1.0">
 	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 	<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
-		<activity android:label="@string/exampleslistactivity_title" android:name=".ExamplesListActivity">
+		<activity android:label="@string/exampleslistactivity_title" 
+			android:name=".ExamplesListActivity" 
+			>
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:label="@string/helloworldactivity_title" android:name=".HelloWorldActivity">		
+		<activity android:label="@string/helloworldactivity_title" 
+			android:name=".HelloWorldActivity"
+			>
 		</activity>
-		<activity android:label="@string/helloautocompleteactivity_title" android:name=".HelloAutoCompleteActivity">		
+		<activity android:label="@string/helloautocompleteactivity_title" 
+			android:name=".HelloAutoCompleteActivity"
+			>
 		</activity>
-		<activity android:label="@string/hellogridviewactivity_title" android:name=".HelloGridViewActivity">		
+		<activity android:label="@string/hellogridviewactivity_title" 
+			android:name=".HelloGridViewActivity"
+			>
 		</activity>
-		<activity android:label="@string/hellolinearlayoutactivity_title" android:name=".HelloLinearLayoutActivity">		
+		<activity android:label="@string/hellolinearlayoutactivity_title" 
+			android:name=".HelloLinearLayoutActivity"
+			>
 		</activity>
-		<activity android:label="@string/hellorelativelayoutexampleactivity_title" android:name=".HelloRelativeLayoutExampleActivity">		
+		<activity android:label="@string/hellorelativelayoutexampleactivity_title" 
+			android:name=".HelloRelativeLayoutExampleActivity"
+			>
 		</activity>
-		<activity android:label="@string/hellotablelayoutactivity_title" android:name=".HelloTableLayoutActivity">		
+		<activity android:label="@string/hellotablelayoutactivity_title" 
+			android:name=".HelloTableLayoutActivity"
+			>
 		</activity>
-		<activity android:label="@string/hellolistactivity_title" android:name=".HelloListActivity">		
+		<activity android:label="@string/hellolistactivity_title" 
+			android:name=".HelloListActivity"
+			>
 		</activity>
-		<activity android:label="@string/hellotabwidgetactivity_title" android:name=".HelloTabWidgetActivity">		
+		<activity android:label="@string/hellotabwidgetactivity_title" 
+			android:name=".HelloTabWidgetActivity"
+			>
 		</activity>
-		<activity android:label="@string/artistsactivity_title" android:name=".ArtistsActivity">		
+		<activity android:label="@string/artistsactivity_title" 
+			android:name=".ArtistsActivity"
+			>
 		</activity>
-		<activity android:label="@string/albumsactivity_title" android:name=".AlbumsActivity">		
+		<activity android:label="@string/albumsactivity_title" 
+			android:name=".AlbumsActivity"
+			>
 		</activity>
-		<activity android:label="@string/songsactivity_title" android:name=".SongsActivity">		
+		<activity android:label="@string/songsactivity_title" 
+			android:name=".SongsActivity"
+			>
 		</activity>
-		<activity android:label="@string/mainactivity_title" android:name=".MainActivity">		
+		<activity android:label="@string/mainactivity_title" 
+			android:name=".MainActivity"
+			>
 		</activity>
-		<activity android:label="@string/otheractivity_title" android:name=".OtherActivity">		
+		<activity android:label="@string/otheractivity_title" 
+			android:name=".OtherActivity"
+			>
 		</activity>
-		<activity android:label="@string/menuactivity_title" android:name=".MenuActivity">		
+		<activity android:label="@string/menuactivity_title" 
+			android:name=".MenuActivity"
+			>
 		</activity>
-		<activity android:label="@string/dataexampleactivity_title" android:name=".DataExampleActivity">		
+		<activity android:label="@string/dataexampleactivity_title" 
+			android:name=".DataExampleActivity"
+			>
 		</activity>
-		<activity android:label="@string/settings_title" android:name=".Settings">		
+		<activity android:label="@string/settings_title" 
+			android:name=".Settings"
+			>
 		</activity>
-		<activity android:label="@string/lineexampleactivity_title" android:name=".LineExampleActivity">		
+		<activity android:label="@string/lineexampleactivity_title" 
+			android:name=".LineExampleActivity"
+			>
 		</activity>
-		<activity android:label="@string/menuexampleactivity_title" android:name=".MenuExampleActivity">		
+		<activity android:label="@string/menuexampleactivity_title" 
+			android:name=".MenuExampleActivity"
+			>
 		</activity>
-		<activity android:label="@string/physicsexampleactivity_title" android:name=".PhysicsExampleActivity">		
+		<activity android:label="@string/physicsexampleactivity_title" 
+			android:name=".PhysicsExampleActivity"
+			>
 		</activity>
-		<activity android:label="@string/rectangleexample_title" android:name=".RectangleExample">		
+		<activity android:label="@string/rectangleexample_title" 
+			android:name=".RectangleExample"
+			>
 		</activity>
-		<activity android:label="@string/spriteexampleactivity_title" android:name=".SpriteExampleActivity">		
+		<activity android:label="@string/spriteexampleactivity_title" 
+			android:name=".SpriteExampleActivity"
+			>
 		</activity>
-		<activity android:label="@string/textexampleactivity_title" android:name=".TextExampleActivity">		
+		<activity android:label="@string/textexampleactivity_title" 
+			android:name=".TextExampleActivity"
+			>
 		</activity>
 		<provider android:name=".data.SimpleDataProvider" 
 			android:authorities="hu.bme.mit.androtext.examples.gen.data.AndroTextExamplesData" />

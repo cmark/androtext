@@ -4,7 +4,7 @@ gamegui AnimatedSpriteExampleGui {
 	texture helicopter "helicopter_tiled.png" tiled(1 1)
 	texture banana "banana_tiled.png" tiled(1 1)
 	
-	scene animatedSpriteScene background color(0.09804 0.6274 0.8784) {
+	scene animatedSpriteScene gamebg color(0.09804 0.6274 0.8784) {
 		
 //		animsprite face pos(100 50) boxFace 100
 		animsprite heli pos(320 50) helicopter 100

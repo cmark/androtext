@@ -1,6 +1,6 @@
 gamegui LineExampleGui {
 	
-	scene lineScene background color(0.09804 0.6274 0.8784) {
+	scene lineScene gamebg color(0.09804 0.6274 0.8784) {
 		
 		line line1 from(100 100) to(100 150) color(1 0 0 1) lineWidth(1)
 		line line2 from(150 150) to(150 200) color(1 0 0 1) lineWidth(1)

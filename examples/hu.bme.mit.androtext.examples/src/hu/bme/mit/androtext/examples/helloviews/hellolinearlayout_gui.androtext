@@ -2,44 +2,47 @@ guimodel HelloLinearLayoutGui {
 	
 	linearlayout helloLinearLayoutMain vertical fill {
 		
-		linearlayout horizontalLayout horizontal fill layout simpleWeight {
-			textview text1 "red" wrap&fill layout simpleWeight {
-				background #aa0000
-				gravity center_horizontal
+		linearlayout horizontalLayout horizontal fill {
+			layout_weight : 1
+			textview text1 "red" wrap&fill {
+				background : #aa0000
+				gravity : center_horizontal
+				layout_weight : 1
 			}
-			textview text2 "green" wrap&fill layout simpleWeight {
-				background #00aa00
-				gravity center_horizontal
+			textview text2 "green" wrap&fill {
+				background : #00aa00
+				gravity : center_horizontal
+				layout_weight : 1
 			}
 			textview text3 "blue" wrap&fill {
-				background #0000aa
-				gravity center_horizontal
+				background : #0000aa
+				gravity : center_horizontal
 			}
-			textview text4 "yellow" wrap&fill layout simpleWeight {
-				background #aaaa00
-				gravity center_horizontal
-			}
-		}
-		
-		linearlayout verticalLayout vertical fill layout simpleWeight {
-			textview text1 "row one" fill&wrap layout simpleWeight {
-				textSize 15pt
-			}
-			textview text2 "row two" fill&wrap layout simpleWeight {
-				textSize 15pt
-			}
-			textview text3 "row three" fill&wrap layout simpleWeight {
-				textSize 15pt
-			}
-			textview text4 "row four" fill&wrap layout simpleWeight {
-				textSize 15pt
+			textview text4 "yellow" wrap&fill {
+				background : #aaaa00
+				gravity : center_horizontal
+				layout_weight : 1
 			}
 		}
 		
-	}
-	
-	layoutProperties simpleWeight {
-		weight 1
+		linearlayout verticalLayout vertical fill {
+			layout_weight : 1
+			textview text1 "row one" fill&wrap {
+				textSize : 15pt
+				layout_weight : 1
+			}
+			textview text2 "row two" fill&wrap {
+				textSize : 15pt
+				layout_weight : 1
+			}
+			textview text3 "row three" fill&wrap {
+				textSize : 15pt
+			}
+			textview text4 "row four" fill&wrap {
+				textSize : 15pt
+			}
+		}
+		
 	}
 	
 }

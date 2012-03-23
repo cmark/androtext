@@ -1,8 +1,8 @@
 guimodel HelloListActivityGui {
 	
 	textview simple_list_item fill {
-		padding 10dp
-		textSize 16sp
+		padding : 10dp
+		textSize : 16sp
 	}
 
 }

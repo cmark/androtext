@@ -1,7 +1,7 @@
 guimodel HelloTabWidgetGui {
 	
-	textview artistsText "This is the Artists tab" wrap {}
-	textview albumsText "This is the Albums tab" wrap {}
-	textview songsText "This is the Songs tab" wrap {}
+	textview artistsText "This is the Artists tab" wrap
+	textview albumsText "This is the Albums tab" wrap
+	textview songsText "This is the Songs tab" wrap
 	
 }

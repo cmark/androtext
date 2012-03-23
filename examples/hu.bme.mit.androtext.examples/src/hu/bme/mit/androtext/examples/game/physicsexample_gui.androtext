@@ -6,7 +6,7 @@ gamegui PhysicsExampleGui {
 	
 	texture boxFace "face_box.png"
 	
-	scene physicsScene background color(0 0 0 1) {
+	scene physicsScene gamebg color(0 0 0 1) {
 		
 		rect ground pos(0 478) size(720 2) color(1 0 0 1)
 		rect roof pos(0 0) size(720 2) color(1 0 0 1)

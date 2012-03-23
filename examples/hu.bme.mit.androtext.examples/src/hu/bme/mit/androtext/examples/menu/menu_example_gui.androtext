@@ -1,7 +1,7 @@
 guimodel MenuExampleGui {
 	
 	linearlayout menulayout vertical fill {
-		textview MenuTextView "Hello Android Menus! Press the Menu button to see the Activity menu." wrap {}
+		textview MenuTextView "Hello Android Menus! Press the Menu button to see the Activity menu." wrap
 	}
 	
 }

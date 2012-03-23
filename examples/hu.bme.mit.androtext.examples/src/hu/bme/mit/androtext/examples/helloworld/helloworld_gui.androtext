@@ -1,7 +1,7 @@
 guimodel HelloWorldGui {
 	
 	linearlayout hellolayout vertical fill {
-		textview HelloTextView "Hello AndroText World!" wrap {}
+		textview tv "Hello AndroText World!" wrap
 	}
 	
 }

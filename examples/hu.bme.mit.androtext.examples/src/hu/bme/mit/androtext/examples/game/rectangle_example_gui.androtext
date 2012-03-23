@@ -1,6 +1,6 @@
 gamegui RectangleExampleGui {
 	
-	scene rectangleScene background color(0 0 0) {
+	scene rectangleScene gamebg color(0 0 0) {
 //		rect rect1 pos(10 10) size(100 100) color(1 0 0 1)
 		entity container pos(360 240) {
 			
