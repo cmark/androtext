@@ -2,6 +2,7 @@ package hu.bme.mit.androtext.lang.validation;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
+import hu.bme.mit.androtext.lang.androTextDsl.Attribute;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
@@ -11,8 +12,16 @@ import hu.bme.mit.androtext.lang.androTextDsl.Fixture;
 import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
 import hu.bme.mit.androtext.lang.androTextDsl.Joint;
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
+import hu.bme.mit.androtext.lang.attributes.IAndroidAttributeProvider;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
+import static org.eclipse.xtext.xbase.lib.IterableExtensions.*;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.*;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+
+import com.google.inject.Inject;
 
 /**
  * <p>
@@ -27,7 +36,40 @@ import org.eclipse.xtext.validation.Check;
  */
 public class AndroTextDslJavaValidator extends
 		AbstractAndroTextDslJavaValidator {
-
+	
+	@Inject IAndroidAttributeProvider attributeProvider;
+	
+	@Check
+	public void checkAttribute(Attribute attribute) {
+		EObject container = attribute.eContainer();
+		if (container == null || StringExtensions.isNullOrEmpty(attribute.getName())) return;
+		// check if the attribute is a valid attribute
+		if (toList(attributeProvider.provideAttribute(container)).contains(
+				attribute.getName())) {
+			if (container instanceof View) {
+				for (Attribute a : ((View) container).getAttributes()) {
+					if (!a.equals(attribute)
+							&& a.getName().equals(attribute.getName())) {
+						error("Duplicate attribute " + a.getName(), a,
+								AndroTextDslPackage.eINSTANCE
+										.getAttribute_Name(),
+								DUPLICATE_ATTRIBUTE);
+						error("Duplicate attribute " + attribute.getName(), attribute,
+								AndroTextDslPackage.eINSTANCE
+										.getAttribute_Name(),
+								DUPLICATE_ATTRIBUTE);
+					}
+				}
+			}
+		} else {
+			error("Attribute " + attribute.getName()
+					+ " not exists in the context of "
+					+ container.eClass().getName(),
+					AndroTextDslPackage.eINSTANCE.getAttribute_Name(),
+					INVALID_ATTRIBUTE);
+		}
+	}
+	
 	@Check
 	public void checkDataBindingContentProvider(DataBinding binding) {
 		if (binding.getEntity() != null
@@ -39,7 +81,7 @@ public class AndroTextDslJavaValidator extends
 					+ binding.getContentProvider().getName() + "'",
 					binding,
 					AndroTextDslPackage.eINSTANCE.getDataBinding_Entity(),
-					AndroTextIssueCodes.ENTITY_NOT_IN_PROVIDER);
+					ENTITY_NOT_IN_PROVIDER);
 		}
 	}
 	

@@ -380,23 +380,23 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 					if (!uris.contains(newURI)) {
 						uris.add(newURI);
 					}
-					if (lay instanceof ViewGroup) {
-						for (View uie : ((ViewGroup) lay).getViews()) {
-							URI resURI = null;
-							if (uie instanceof ListView) {
-								if (((ListView) uie).getEntriesAttribute() != null) {
-									ArrayResource res = ((ListView) uie).getEntriesAttribute().getEntries();
-									if (res != null) {
-										resURI = res.eResource().getURI();
-									}
-								}
-							}
+//					if (lay instanceof ViewGroup) {
+//						for (View uie : ((ViewGroup) lay).getViews()) {
+//							URI resURI = null;
+//							if (uie instanceof ListView) {
+//								if (((ListView) uie).getEntriesAttribute() != null) {
+//									ArrayResource res = ((ListView) uie).getEntriesAttribute().getEntries();
+//									if (res != null) {
+//										resURI = res.eResource().getURI();
+//									}
+//								}
+//							}
 							// TODO add more instanceof if needed, or maybe a good abstraction of resource usage
-							if (resURI != null && !uris.contains(resURI)) {
-								uris.add(resURI);
-							}
-						}
-					}
+//							if (resURI != null && !uris.contains(resURI)) {
+//								uris.add(resURI);
+//							}
+//						}
+//					}
 				}
 			}
 			for (URI uri : uris) {

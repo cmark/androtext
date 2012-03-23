@@ -168,15 +168,15 @@ class SimpleActivityMethodGenerator {
 	def dispatch generateButtonClicks(Activity activity) '''
 		«IF activity.layout != null»
 		«FOR button : activity.layout.eResource.allContentsIterable.filter(typeof (Button))»
-		«IF button.onClickAttribute != null»
-		Button «button.name» = (Button)findViewById(R.id.«button.name»);
-		«button.name».setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				«button.onClickAttribute.action.generate(activity)»
-			}
-		});
-		«ENDIF»
+«««		«IF button.onClickAttribute != null»
+«««		Button «button.name» = (Button)findViewById(R.id.«button.name»);
+«««		«button.name».setOnClickListener(new OnClickListener() {
+«««			@Override
+«««			public void onClick(View v) {
+«««				«button.onClickAttribute.action.generate(activity)»
+«««			}
+«««		});
+«««		«ENDIF»
 		«ENDFOR»
 		«ENDIF»
 	'''

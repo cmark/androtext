@@ -67,8 +67,8 @@ public class LayoutResourceGenerator implements IGenerator {
     StringConcatenation _androidSchema = this._generatorExtensions.androidSchema(root);
     _builder.append(_androidSchema, "");
     _builder.append(" ");
-    StringConcatenation _attributes = this._viewAttributeGenerator.attributes(root);
-    String _string = _attributes.toString();
+    StringConcatenation _generateAttributes = this._viewAttributeGenerator.generateAttributes(root);
+    String _string = _generateAttributes.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.append(">");
@@ -108,8 +108,8 @@ public class LayoutResourceGenerator implements IGenerator {
     String _name = _eClass.getName();
     _builder.append(_name, "");
     _builder.append(" ");
-    StringConcatenation _attributes = this._viewAttributeGenerator.attributes(element);
-    String _string = _attributes.toString();
+    StringConcatenation _generateAttributes = this._viewAttributeGenerator.generateAttributes(element);
+    String _string = _generateAttributes.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.append(">");
@@ -120,8 +120,8 @@ public class LayoutResourceGenerator implements IGenerator {
   protected StringConcatenation _startTag(final ViewElement element) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<View ");
-    StringConcatenation _attributes = this._viewAttributeGenerator.attributes(element);
-    String _string = _attributes.toString();
+    StringConcatenation _generateAttributes = this._viewAttributeGenerator.generateAttributes(element);
+    String _string = _generateAttributes.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.append(">");

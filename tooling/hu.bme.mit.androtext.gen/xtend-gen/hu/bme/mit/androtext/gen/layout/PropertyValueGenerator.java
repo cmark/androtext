@@ -2,143 +2,179 @@ package hu.bme.mit.androtext.gen.layout;
 
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
+import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkEnumerationPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkKind;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource;
-import hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.CapitalizeEnumerationPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.CapitalizeKind;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ColorResource;
-import hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionMetric;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource;
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource;
-import hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.EnumerationPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind;
-import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle;
+import hu.bme.mit.androtext.lang.androTextDsl.GravityEnumerationPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.GravityKind;
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerResource;
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
-import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle;
+import hu.bme.mit.androtext.lang.androTextDsl.Linkable;
+import hu.bme.mit.androtext.lang.androTextDsl.LinkableLink;
+import hu.bme.mit.androtext.lang.androTextDsl.NumColumnsPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.NumericEnumerationPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.NumericKind;
+import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.Resource;
+import hu.bme.mit.androtext.lang.androTextDsl.StretchModeEnumerationPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.StretchModeKind;
 import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.StringResource;
-import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink;
+import hu.bme.mit.androtext.lang.androTextDsl.TextStyleEnumerationPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.TextStyleKind;
+import hu.bme.mit.androtext.lang.androTextDsl.TypefaceEnumerationPropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.TypefaceKind;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
+import java.util.Arrays;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class PropertyValueGenerator {
-  protected StringConcatenation _booleanValue(final BooleanPropertyValue value) {
-    StringConcatenation _builder = new StringConcatenation();
+  protected Object _generateValue(final PropertyValue value) {
+    return null;
+  }
+  
+  protected Object _generateValue(final LinkableLink link) {
+    Linkable _link = link.getLink();
+    String _generateLinkable = this.generateLinkable(_link);
+    return _generateLinkable;
+  }
+  
+  protected String _generateLinkable(final Resource resource) {
+    String _type = this.type(resource);
+    String _operator_plus = StringExtensions.operator_plus("@", _type);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "/");
+    String _name = resource.getName();
+    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _name);
+    return _operator_plus_2;
+  }
+  
+  public String type(final Resource resource) {
+    String _switchResult = null;
+    final Resource resource_1 = resource;
+    boolean matched = false;
+    if (!matched) {
+      if (resource_1 instanceof ArrayResource) {
+        final ArrayResource resource_2 = (ArrayResource) resource_1;
+        matched=true;
+        _switchResult = "array";
+      }
+    }
+    if (!matched) {
+      if (resource_1 instanceof BooleanResource) {
+        final BooleanResource resource_3 = (BooleanResource) resource_1;
+        matched=true;
+        _switchResult = "bool";
+      }
+    }
+    if (!matched) {
+      if (resource_1 instanceof StringResource) {
+        final StringResource resource_4 = (StringResource) resource_1;
+        matched=true;
+        _switchResult = "string";
+      }
+    }
+    if (!matched) {
+      if (resource_1 instanceof ColorResource) {
+        final ColorResource resource_5 = (ColorResource) resource_1;
+        matched=true;
+        _switchResult = "color";
+      }
+    }
+    if (!matched) {
+      if (resource_1 instanceof DrawableResource) {
+        final DrawableResource resource_6 = (DrawableResource) resource_1;
+        matched=true;
+        _switchResult = "drawable";
+      }
+    }
+    if (!matched) {
+      if (resource_1 instanceof DimensionResource) {
+        final DimensionResource resource_7 = (DimensionResource) resource_1;
+        matched=true;
+        _switchResult = "dimen";
+      }
+    }
+    return _switchResult;
+  }
+  
+  protected String _generateLinkable(final View view) {
+    String _name = view.getName();
+    String _operator_plus = StringExtensions.operator_plus("@id/", _name);
+    return _operator_plus;
+  }
+  
+  protected Object _generateValue(final BooleanPropertyValue value) {
     String _value = value.getValue();
-    _builder.append(_value, "");
+    return _value;
+  }
+  
+  protected Object _generateValue(final IntegerPropertyValue value) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<Integer> _values = value.getValues();
+      boolean hasAnyElements = false;
+      for(final Integer v : _values) {
+        if (!hasAnyElements) {
+          hasAnyElements = true;
+        } else {
+          _builder.appendImmediate(",", "");
+        }
+        _builder.append(v, "");
+      }
+    }
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  protected StringConcatenation _booleanValue(final BooleanResourceLink value) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@bool/");
-    BooleanResource _link = value.getLink();
-    String _name = _link.getName();
-    _builder.append(_name, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected StringConcatenation _integerValue(final IntegerPropertyValue value) {
-    StringConcatenation _builder = new StringConcatenation();
-    int _value = value.getValue();
-    _builder.append(_value, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected StringConcatenation _integerValue(final IntegerResourceLink value) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@integer/");
-    IntegerResource _link = value.getLink();
-    String _name = _link.getName();
-    _builder.append(_name, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected StringConcatenation _stringValue(final StringPropertyValue value) {
-    StringConcatenation _builder = new StringConcatenation();
+  protected Object _generateValue(final StringPropertyValue value) {
     String _value = value.getValue();
-    _builder.append(_value, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    return _value;
   }
   
-  protected StringConcatenation _stringValue(final StringResourceLink valueLink) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@string/");
-    StringResource _link = valueLink.getLink();
-    String _name = _link.getName();
-    _builder.append(_name, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+  protected Object _generateValue(final AnyDrawablePropertyValue value) {
+    return null;
   }
   
-  protected StringConcatenation _backgroundValue(final AnyDrawablePropertyValue value) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder;
-  }
-  
-  protected StringConcatenation _backgroundValue(final ColorPropertyValue value) {
-    StringConcatenation _builder = new StringConcatenation();
+  protected Object _generateValue(final ColorPropertyValue value) {
     String _value = value.getValue();
-    _builder.append(_value, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    return _value;
   }
   
-  protected StringConcatenation _backgroundValue(final ColorResourceLink valueLink) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@color/");
-    ColorResource _link = valueLink.getLink();
-    String _name = _link.getName();
-    _builder.append(_name, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected StringConcatenation _backgroundValue(final DrawableResourceLink valueLink) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@drawable/");
-    DrawableResource _link = valueLink.getLink();
-    String _name = _link.getName();
-    _builder.append(_name, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected StringConcatenation _backgroundValue(final ExternalDrawableResourceLink valueLink) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("@android:drawable/");
+  protected Object _generateValue(final ExternalDrawableResourceLink valueLink) {
     AndroidDrawableResource _externalResource = valueLink.getExternalResource();
     String _name = _externalResource.name();
     String _lowerCase = _name.toLowerCase();
-    _builder.append(_lowerCase, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    String _operator_plus = StringExtensions.operator_plus("@android:drawable/", _lowerCase);
+    return _operator_plus;
   }
   
-  protected String _dimensionValue(final LayoutDimensionPropertyValue value) {
-    LayoutDimensionKind _constValue = value.getConstValue();
-    String _layoutDimensionKind = this.layoutDimensionKind(_constValue);
+  protected Object _generateValue(final LayoutDimensionPropertyValue value) {
+    LayoutDimensionKind _value = value.getValue();
+    String _layoutDimensionKind = this.layoutDimensionKind(_value);
     return _layoutDimensionKind;
   }
   
-  protected String _dimensionValue(final DimensionPropertyValue dimensionPropertyValue) {
+  protected Object _generateValue(final DimensionPropertyValue dimensionPropertyValue) {
     DimensionValue _value = dimensionPropertyValue.getValue();
     float _value_1 = _value.getValue();
     String _operator_plus = StringExtensions.operator_plus("", ((Float)_value_1));
@@ -149,54 +185,97 @@ public class PropertyValueGenerator {
     return _operator_plus_1;
   }
   
-  protected String _dimensionValue(final DimensionResourceLink dimensionResourceLink) {
-    DimensionResource _link = dimensionResourceLink.getLink();
-    String _name = _link.getName();
-    String _operator_plus = StringExtensions.operator_plus("@dimen/", _name);
-    return _operator_plus;
+  protected Object _generateValue(final NumColumnsPropertyValue value) {
+    String _xifexpression = null;
+    boolean _isAutofit = value.isAutofit();
+    if (_isAutofit) {
+      return "auto_fit";
+    } else {
+      IntegerPropertyValue _numColumns = value.getNumColumns();
+      String _operator_plus = StringExtensions.operator_plus("", _numColumns);
+      _xifexpression = _operator_plus;
+    }
+    return _xifexpression;
   }
   
-  protected StringConcatenation _generate(final LayoutStyle style) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder;
+  protected Object _generateValue(final EnumerationPropertyValue value) {
+    return null;
   }
   
-  protected StringConcatenation _generate(final FastLayoutStyle style) {
+  protected Object _generateValue(final AutoLinkEnumerationPropertyValue value) {
+    EList<AutoLinkKind> _values = value.getValues();
+    boolean _contains = _values.contains(AutoLinkKind.ALL);
+    if (_contains) {
+      return "all";
+    } else {
+      EList<AutoLinkKind> _values_1 = value.getValues();
+      StringConcatenation _generateEnumList = this.generateEnumList(_values_1);
+      String _string = _generateEnumList.toString();
+      String _trim = _string.trim();
+      return _trim;
+    }
+  }
+  
+  protected Object _generateValue(final CapitalizeEnumerationPropertyValue value) {
+    CapitalizeKind _value = value.getValue();
+    return _value;
+  }
+  
+  protected Object _generateValue(final GravityEnumerationPropertyValue value) {
+    EList<GravityKind> _values = value.getValues();
+    StringConcatenation _generateEnumList = this.generateEnumList(_values);
+    String _string = _generateEnumList.toString();
+    String _trim = _string.trim();
+    return _trim;
+  }
+  
+  protected Object _generateValue(final NumericEnumerationPropertyValue value) {
+    EList<NumericKind> _values = value.getValues();
+    StringConcatenation _generateEnumList = this.generateEnumList(_values);
+    String _string = _generateEnumList.toString();
+    String _trim = _string.trim();
+    return _trim;
+  }
+  
+  protected Object _generateValue(final StretchModeEnumerationPropertyValue value) {
+    StretchModeKind _value = value.getValue();
+    return _value;
+  }
+  
+  protected Object _generateValue(final TextStyleEnumerationPropertyValue value) {
+    EList<TextStyleKind> _values = value.getValues();
+    StringConcatenation _generateEnumList = this.generateEnumList(_values);
+    String _string = _generateEnumList.toString();
+    String _trim = _string.trim();
+    return _trim;
+  }
+  
+  protected Object _generateValue(final TypefaceEnumerationPropertyValue value) {
+    TypefaceKind _value = value.getValue();
+    return _value;
+  }
+  
+  public StringConcatenation generateEnumList(final EList<?> list) {
     StringConcatenation _builder = new StringConcatenation();
-    FastLayoutDimensionKind _value = style.getValue();
-    StringConcatenation _layoutDimensionKind = this.layoutDimensionKind(_value);
-    _builder.append(_layoutDimensionKind, "");
+    {
+      boolean hasAnyElements = false;
+      for(final Object e : list) {
+        if (!hasAnyElements) {
+          hasAnyElements = true;
+        } else {
+          _builder.appendImmediate("|", "");
+        }
+        _builder.append(e, "");
+      }
+    }
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  protected StringConcatenation _generate(final RegularLayoutStyle style) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      LayoutDimensionPropertyValue _width = style.getWidth();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_width, null);
-      if (_operator_notEquals) {
-        _builder.append("android:layout_width=\"");
-        LayoutDimensionPropertyValue _width_1 = style.getWidth();
-        String _dimensionValue = this.dimensionValue(_width_1);
-        _builder.append(_dimensionValue, "");
-        _builder.append("\"");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      LayoutDimensionPropertyValue _height = style.getHeight();
-      boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_height, null);
-      if (_operator_notEquals_1) {
-        _builder.append("android:layout_height=\"");
-        LayoutDimensionPropertyValue _height_1 = style.getHeight();
-        String _dimensionValue_1 = this.dimensionValue(_height_1);
-        _builder.append(_dimensionValue_1, "");
-        _builder.append("\"\t");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    return _builder;
+  public StringConcatenation generate(final LayoutStyle style) {
+    FastLayoutDimensionKind _value = style.getValue();
+    StringConcatenation _layoutDimensionKind = this.layoutDimensionKind(_value);
+    return _layoutDimensionKind;
   }
   
   public StringConcatenation layoutDimensionKind(final FastLayoutDimensionKind kind) {
@@ -295,61 +374,56 @@ public class PropertyValueGenerator {
     return _builder;
   }
   
-  public StringConcatenation booleanValue(final BooleanPropertyValue value) {
-    if (value instanceof BooleanResourceLink) {
-      return _booleanValue((BooleanResourceLink)value);
+  public Object generateValue(final PropertyValue value) {
+    if (value instanceof AutoLinkEnumerationPropertyValue) {
+      return _generateValue((AutoLinkEnumerationPropertyValue)value);
+    } else if (value instanceof CapitalizeEnumerationPropertyValue) {
+      return _generateValue((CapitalizeEnumerationPropertyValue)value);
+    } else if (value instanceof ColorPropertyValue) {
+      return _generateValue((ColorPropertyValue)value);
+    } else if (value instanceof ExternalDrawableResourceLink) {
+      return _generateValue((ExternalDrawableResourceLink)value);
+    } else if (value instanceof GravityEnumerationPropertyValue) {
+      return _generateValue((GravityEnumerationPropertyValue)value);
+    } else if (value instanceof NumericEnumerationPropertyValue) {
+      return _generateValue((NumericEnumerationPropertyValue)value);
+    } else if (value instanceof StretchModeEnumerationPropertyValue) {
+      return _generateValue((StretchModeEnumerationPropertyValue)value);
+    } else if (value instanceof TextStyleEnumerationPropertyValue) {
+      return _generateValue((TextStyleEnumerationPropertyValue)value);
+    } else if (value instanceof TypefaceEnumerationPropertyValue) {
+      return _generateValue((TypefaceEnumerationPropertyValue)value);
+    } else if (value instanceof AnyDrawablePropertyValue) {
+      return _generateValue((AnyDrawablePropertyValue)value);
+    } else if (value instanceof BooleanPropertyValue) {
+      return _generateValue((BooleanPropertyValue)value);
+    } else if (value instanceof DimensionPropertyValue) {
+      return _generateValue((DimensionPropertyValue)value);
+    } else if (value instanceof EnumerationPropertyValue) {
+      return _generateValue((EnumerationPropertyValue)value);
+    } else if (value instanceof IntegerPropertyValue) {
+      return _generateValue((IntegerPropertyValue)value);
+    } else if (value instanceof LayoutDimensionPropertyValue) {
+      return _generateValue((LayoutDimensionPropertyValue)value);
+    } else if (value instanceof LinkableLink) {
+      return _generateValue((LinkableLink)value);
+    } else if (value instanceof NumColumnsPropertyValue) {
+      return _generateValue((NumColumnsPropertyValue)value);
+    } else if (value instanceof StringPropertyValue) {
+      return _generateValue((StringPropertyValue)value);
     } else {
-      return _booleanValue(value);
+      return _generateValue(value);
     }
   }
   
-  public StringConcatenation integerValue(final IntegerPropertyValue value) {
-    if (value instanceof IntegerResourceLink) {
-      return _integerValue((IntegerResourceLink)value);
+  public String generateLinkable(final Linkable resource) {
+    if (resource instanceof Resource) {
+      return _generateLinkable((Resource)resource);
+    } else if (resource instanceof View) {
+      return _generateLinkable((View)resource);
     } else {
-      return _integerValue(value);
-    }
-  }
-  
-  public StringConcatenation stringValue(final StringPropertyValue valueLink) {
-    if (valueLink instanceof StringResourceLink) {
-      return _stringValue((StringResourceLink)valueLink);
-    } else {
-      return _stringValue(valueLink);
-    }
-  }
-  
-  public StringConcatenation backgroundValue(final AnyDrawablePropertyValue valueLink) {
-    if (valueLink instanceof ColorResourceLink) {
-      return _backgroundValue((ColorResourceLink)valueLink);
-    } else if (valueLink instanceof ColorPropertyValue) {
-      return _backgroundValue((ColorPropertyValue)valueLink);
-    } else if (valueLink instanceof DrawableResourceLink) {
-      return _backgroundValue((DrawableResourceLink)valueLink);
-    } else if (valueLink instanceof ExternalDrawableResourceLink) {
-      return _backgroundValue((ExternalDrawableResourceLink)valueLink);
-    } else {
-      return _backgroundValue(valueLink);
-    }
-  }
-  
-  public String dimensionValue(final LayoutDimensionPropertyValue dimensionResourceLink) {
-    if (dimensionResourceLink instanceof DimensionResourceLink) {
-      return _dimensionValue((DimensionResourceLink)dimensionResourceLink);
-    } else if (dimensionResourceLink instanceof DimensionPropertyValue) {
-      return _dimensionValue((DimensionPropertyValue)dimensionResourceLink);
-    } else {
-      return _dimensionValue(dimensionResourceLink);
-    }
-  }
-  
-  public StringConcatenation generate(final LayoutStyle style) {
-    if (style instanceof FastLayoutStyle) {
-      return _generate((FastLayoutStyle)style);
-    } else if (style instanceof RegularLayoutStyle) {
-      return _generate((RegularLayoutStyle)style);
-    } else {
-      return _generate(style);
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(resource).toString());
     }
   }
 }

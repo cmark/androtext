@@ -29,7 +29,7 @@ class LayoutResourceGenerator implements IGenerator {
 	
 	def generate(View root) '''
 		«root.xmlHeader»
-		<«root.eClass.name» «root.androidSchema» «root.attributes.toString.trim»>
+		<«root.eClass.name» «root.androidSchema» «root.generateAttributes.toString.trim»>
 			«root.generateElements»
 		</«root.eClass.name»>
 	'''
@@ -41,11 +41,11 @@ class LayoutResourceGenerator implements IGenerator {
 	'''
 	
 	def dispatch startTag(View element) '''
-		<«element.eClass.name» «element.attributes.toString.trim»>
+		<«element.eClass.name» «element.generateAttributes.toString.trim»>
 	'''
 	
 	def dispatch startTag(ViewElement element) '''
-		<View «element.attributes.toString.trim»>
+		<View «element.generateAttributes.toString.trim»>
 	'''
 	
 	def dispatch endTag(View element) '''

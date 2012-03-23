@@ -173,10 +173,8 @@ public class ActivityMenuGenerator implements IGenerator {
       if (_operator_notEquals) {
         _builder.append("android:icon=\"");
         AnyDrawablePropertyValue _icon_1 = element.getIcon();
-        StringConcatenation _backgroundValue = this._propertyValueGenerator.backgroundValue(_icon_1);
-        String _string = _backgroundValue.toString();
-        String _trim = _string.trim();
-        _builder.append(_trim, "	  ");
+        Object _generateValue = this._propertyValueGenerator.generateValue(_icon_1);
+        _builder.append(_generateValue, "	  ");
         _builder.append("\"");
       }
     }

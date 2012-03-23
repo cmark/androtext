@@ -3,10 +3,29 @@
 */
 package hu.bme.mit.androtext.lang.ui.contentassist;
 
-import hu.bme.mit.androtext.lang.ui.contentassist.AbstractAndroTextDslProposalProvider;
+import hu.bme.mit.androtext.lang.attributes.IAndroidAttributeProvider;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import com.google.inject.Inject;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class AndroTextDslProposalProvider extends AbstractAndroTextDslProposalProvider {
 
+	@Inject IAndroidAttributeProvider attributeProvider;
+	
+	@Override
+	public void complete_Attribute(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		for (String attributeName : attributeProvider.provideAttribute(model)) {
+			acceptor.accept(createCompletionProposal(attributeName, context));
+		}
+	}
+	
+	
+	
 }

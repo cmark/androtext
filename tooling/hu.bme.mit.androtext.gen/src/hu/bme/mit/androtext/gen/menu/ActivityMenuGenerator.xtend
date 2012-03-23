@@ -57,7 +57,7 @@ class ActivityMenuGenerator implements IGenerator {
 	def dispatch generate(ActivityMenuItem element) '''
 		<item android:id="@+id/«element.name»" 
 			  «IF !element.title.nullOrEmpty»android:title="«element.title»"«ENDIF»
-			  «IF element.icon != null»android:icon="«element.icon.backgroundValue.toString.trim»"«ENDIF»>
+			  «IF element.icon != null»android:icon="«element.icon.generateValue»"«ENDIF»>
 			  «IF element.subMenu != null»
 			  «element.subMenu.generate(false)»
 			  «ENDIF»

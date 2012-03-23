@@ -24,13 +24,14 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: hu.bme.mit.androtext.lang,
- hu.bme.mit.androtext.lang.services,
  hu.bme.mit.androtext.lang.androTextDsl,
  hu.bme.mit.androtext.lang.androTextDsl.impl,
  hu.bme.mit.androtext.lang.androTextDsl.util,
- hu.bme.mit.androtext.lang.serializer,
+ hu.bme.mit.androtext.lang.attributes,
+ hu.bme.mit.androtext.lang.formatting,
  hu.bme.mit.androtext.lang.parser.antlr,
  hu.bme.mit.androtext.lang.parser.antlr.internal,
- hu.bme.mit.androtext.lang.validation,
  hu.bme.mit.androtext.lang.scoping,
- hu.bme.mit.androtext.lang.formatting
+ hu.bme.mit.androtext.lang.serializer,
+ hu.bme.mit.androtext.lang.services,
+ hu.bme.mit.androtext.lang.validation

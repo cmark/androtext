@@ -1,94 +1,136 @@
 package hu.bme.mit.androtext.gen.layout
 
-import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.BooleanResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.IntegerResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.StringResourceLink
 import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.ColorResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.DrawableResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
 import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind
-import hu.bme.mit.androtext.lang.androTextDsl.RegularLayoutStyle
-import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutStyle
+import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
+import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
+import hu.bme.mit.androtext.lang.androTextDsl.LinkableLink
+import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.Resource
+import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.View
+import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource
+import hu.bme.mit.androtext.lang.androTextDsl.StringResource
+import hu.bme.mit.androtext.lang.androTextDsl.ColorResource
+import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource
+import hu.bme.mit.androtext.lang.androTextDsl.NumColumnsPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.EnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.CapitalizeEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.GravityEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.NumericEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.StretchModeEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.TextStyleEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.TypefaceEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkKind
+import org.eclipse.emf.common.util.EList
 
 class PropertyValueGenerator {
 	
-	def dispatch booleanValue(BooleanPropertyValue value) '''
-		«value.value»
+	def dispatch generateValue(PropertyValue value) {}
+	
+	def dispatch generateValue(LinkableLink link) {
+		link.link.generateLinkable
+	}
+	
+	def dispatch generateLinkable(Resource resource) {
+		"@" + resource.type + "/" + resource.name
+	}
+	
+	def type(Resource resource) {
+		switch (resource) {
+			ArrayResource : "array"
+			BooleanResource : "bool"
+			StringResource : "string"
+			ColorResource : "color"
+			DrawableResource : "drawable"
+			DimensionResource : "dimen"
+		}
+	}
+	
+	def dispatch generateLinkable(View view) {
+		"@id/" + view.name
+	}
+	
+	def dispatch generateValue(BooleanPropertyValue value) {
+		value.value
+	}
+	
+	def dispatch generateValue(IntegerPropertyValue value) '''
+		«FOR v : value.values SEPARATOR ','»«v»«ENDFOR»
 	'''
 	
-	def dispatch booleanValue(BooleanResourceLink value) '''
-		@bool/«value.link.name»
-	'''
+	def dispatch generateValue(StringPropertyValue value) {
+		value.value
+	}
 	
-	def dispatch integerValue(IntegerPropertyValue value) '''
-		«value.value»
-	'''
-	def dispatch integerValue(IntegerResourceLink value) '''
-		@integer/«value.link.name»
-	'''
+	def dispatch generateValue(AnyDrawablePropertyValue value) {}
 	
-	def dispatch stringValue(StringPropertyValue value) '''
-		«value.value»
-	'''
+	def dispatch generateValue(ColorPropertyValue value) {
+		value.value
+	}
 	
-	def dispatch stringValue(StringResourceLink valueLink) '''
-		@string/«valueLink.link.name»
-	'''
+	def dispatch generateValue(ExternalDrawableResourceLink valueLink) {
+		"@android:drawable/" + valueLink.externalResource.name.toLowerCase
+	}
 	
-	def dispatch backgroundValue(AnyDrawablePropertyValue value) ''''''
-	
-	def dispatch backgroundValue(ColorPropertyValue value) '''
-		«value.value»
-	'''
-	
-	def dispatch backgroundValue(ColorResourceLink valueLink) '''
-		@color/«valueLink.link.name»
-	'''
-	
-	def dispatch backgroundValue(DrawableResourceLink valueLink) '''
-		@drawable/«valueLink.link.name»
-	'''
-	
-	def dispatch backgroundValue(ExternalDrawableResourceLink valueLink) '''
-		@android:drawable/«valueLink.externalResource.name.toLowerCase»
-	'''
-	
-	def dispatch dimensionValue(LayoutDimensionPropertyValue value) {
-		value.constValue.layoutDimensionKind
+	def dispatch generateValue(LayoutDimensionPropertyValue value) {
+		value.value.layoutDimensionKind
 	}	
 	
-	def dispatch dimensionValue(DimensionPropertyValue dimensionPropertyValue) { 
+	def dispatch generateValue(DimensionPropertyValue dimensionPropertyValue) { 
 		"" + dimensionPropertyValue.value.value + dimensionPropertyValue.value.metric.toString
 	}
 	
-	def dispatch dimensionValue(DimensionResourceLink dimensionResourceLink) {
-		"@dimen/" + dimensionResourceLink.link.name		
+	def dispatch generateValue(NumColumnsPropertyValue value) {
+		if (value.autofit) {
+			return "auto_fit"
+		} else {
+			""+value.numColumns	
+		}
 	}
 	
-	def dispatch generate(LayoutStyle style) '''
-	'''
-	def dispatch generate(FastLayoutStyle style) '''
-		«style.value.layoutDimensionKind»
-	'''
-	def dispatch generate(RegularLayoutStyle style) '''
-		«IF style.width != null»
-			android:layout_width="«style.width.dimensionValue»"
-		«ENDIF»
-		«IF style.height != null»
-			android:layout_height="«style.height.dimensionValue»"	
-		«ENDIF»
-	'''
+	def dispatch generateValue(EnumerationPropertyValue value) {}
+	def dispatch generateValue(AutoLinkEnumerationPropertyValue value) {
+		if (value.values.contains(AutoLinkKind::ALL)) {
+			return "all"
+		} else {
+			return value.values.generateEnumList.toString.trim
+		}
+	}	
+	def dispatch generateValue(CapitalizeEnumerationPropertyValue value) {
+		value.value
+	}
+	def dispatch generateValue(GravityEnumerationPropertyValue value) {
+		return value.values.generateEnumList.toString.trim
+	}
+	def dispatch generateValue(NumericEnumerationPropertyValue value) {
+		return value.values.generateEnumList.toString.trim
+	}
+	def dispatch generateValue(StretchModeEnumerationPropertyValue value) {
+		value.value
+	}
+	def dispatch generateValue(TextStyleEnumerationPropertyValue value) {
+		return value.values.generateEnumList.toString.trim
+	}
+	def dispatch generateValue(TypefaceEnumerationPropertyValue value) {
+		value.value
+	}
 	
+	def generateEnumList(EList<?> list) '''
+		«FOR e : list SEPARATOR '|'»«e»«ENDFOR»
+	'''
+	def generate(LayoutStyle style) {
+		style.value.layoutDimensionKind
+	}
 
 	def layoutDimensionKind(FastLayoutDimensionKind kind) {
 		switch (kind) {

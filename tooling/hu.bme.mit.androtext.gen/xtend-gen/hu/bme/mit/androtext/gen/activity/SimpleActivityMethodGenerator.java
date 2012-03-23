@@ -23,7 +23,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.IntentActionType;
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeExplicitActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeImplicitActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.OnClickAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
@@ -448,41 +447,6 @@ public class SimpleActivityMethodGenerator {
           Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(_eResource);
           Iterable<Button> _filter = IterableExtensions.<Button>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.Button.class);
           for(final Button button : _filter) {
-            {
-              OnClickAttribute _onClickAttribute = button.getOnClickAttribute();
-              boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_onClickAttribute, null);
-              if (_operator_notEquals_1) {
-                _builder.append("Button ");
-                String _name = button.getName();
-                _builder.append(_name, "");
-                _builder.append(" = (Button)findViewById(R.id.");
-                String _name_1 = button.getName();
-                _builder.append(_name_1, "");
-                _builder.append(");");
-                _builder.newLineIfNotEmpty();
-                String _name_2 = button.getName();
-                _builder.append(_name_2, "");
-                _builder.append(".setOnClickListener(new OnClickListener() {");
-                _builder.newLineIfNotEmpty();
-                _builder.append("\t");
-                _builder.append("@Override");
-                _builder.newLine();
-                _builder.append("\t");
-                _builder.append("public void onClick(View v) {");
-                _builder.newLine();
-                _builder.append("\t\t");
-                OnClickAttribute _onClickAttribute_1 = button.getOnClickAttribute();
-                Action _action = _onClickAttribute_1.getAction();
-                StringConcatenation _generate = this.generate(_action, activity);
-                _builder.append(_generate, "		");
-                _builder.newLineIfNotEmpty();
-                _builder.append("\t");
-                _builder.append("}");
-                _builder.newLine();
-                _builder.append("});");
-                _builder.newLine();
-              }
-            }
           }
         }
       }
