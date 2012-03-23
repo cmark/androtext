@@ -2,7 +2,7 @@
 
 AndroText is a model-driven development tool for the Android Platform. 
 Provides rapid prototyping development process with the AndroText language (based on Xtext framework). 
-Provides a fully automated generator, that generates an entire Android application from scratch based on the models of the Android components.
+Provides a fully automated generator, that generates an entire, simple Android application from scratch based on the models of the Android components.
 Integrates with Eclipse and comes with IDE support (content assist, error checking validation).
 
 # RoadMap #
@@ -10,17 +10,16 @@ Integrates with Eclipse and comes with IDE support (content assist, error checki
 RoadMap Date: 2012. 02. 11.
 
 * Features
- * Simple Activity creation
- * Simple UI creation
- * Simple navigation with widgets onClick, and onListItemClick
- * Data-layer design like entities and ContentProvider
- * The tool generates Activity classes, methods, simple logic. UI layout files (some selectors), Entity classes.
- * Generate ContentProvider/DataBaseManager from entity models (single table handling, joins not supported)
-* Missing Features
- * Add all GUI feature to AndroGui Contents (easy layouting, all widgets, etc.)
- * Activity Menu support
- * Simple notification support for events
- * Preferences support
+ * Simple Activity design
+ * Simple UI design
+ * Simple View and Layout attributes
+ * Simple navigation with widgets onClick, and onListItemClick, and intent calls (explicit and implicit)
+ * Activity Menu and ContextMenu support
+ * Preferences API support
+ * Simple Data-layer design (Entity Model, ContentProvider)
+ * The tool generates Activity classes, methods, simple logic. 
+ * The tool generates UI layout files (some selectors), Entity classes.
+ * The tool generates Generate ContentProvider/DataBaseManager from entity models (single table handling, joins not supported)
 * Future plans
  * Use Google Guice, Roboguice for injecting Views and resources into Activity classes.
  * Write validation constraints. Use [EMF INCQuery](http://viatra.inf.mit.bme.hu/incquery/base#Overview)
