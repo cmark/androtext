@@ -1,5 +1,7 @@
 package hu.bme.mit.androtext.lang.attributes;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 
 import com.google.inject.ImplementedBy;
@@ -12,6 +14,6 @@ public interface IAndroidAttributeProvider {
 	 * @param eObject
 	 * @return
 	 */
-	public Iterable<String> provideAttribute(EObject eObject); 
+	public List<String> provideAttribute(EObject eObject); 
 	
 }

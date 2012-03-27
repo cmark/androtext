@@ -3,9 +3,11 @@
 */
 package hu.bme.mit.androtext.lang.ui.contentassist;
 
+import hu.bme.mit.androtext.lang.androTextDsl.Attribute;
 import hu.bme.mit.androtext.lang.attributes.IAndroidAttributeProvider;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
@@ -21,11 +23,54 @@ public class AndroTextDslProposalProvider extends AbstractAndroTextDslProposalPr
 	@Override
 	public void complete_Attribute(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		System.out.println("Attribute for : " + model);
 		for (String attributeName : attributeProvider.provideAttribute(model)) {
 			acceptor.accept(createCompletionProposal(attributeName, context));
 		}
 	}
 	
+	@Override
+	public void completeKeyword(Keyword keyword,
+			ContentAssistContext contentAssistContext,
+			ICompletionProposalAcceptor acceptor) {
+		if (contentAssistContext.getCurrentModel() instanceof Attribute) {
+			System.out.println("Keyword complete for " + ((Attribute)contentAssistContext.getCurrentModel()).getName());
+			// write attribute name based keyword proposals
+		} else {
+			super.completeKeyword(keyword, contentAssistContext, acceptor);
+		}
+	}
 	
+	@Override
+	public void complete_SignedFloat(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		acceptor.accept(createCompletionProposal("1.0", "1.0/-1.0 - SignedFloat", getImage(model), context));
+	}
+	
+	@Override
+	public void complete_FLOAT(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		acceptor.accept(createCompletionProposal("1.0", "1.0 - Float", null, context));
+	}
+	
+	@Override
+	public void complete_HEX_COLOR(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		acceptor.accept(createCompletionProposal("#000000", "#000000 - Color", null, context));
+	}
+	
+	@Override
+	public void complete_BOOL(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		acceptor.accept(createCompletionProposal("true", context));
+		acceptor.accept(createCompletionProposal("false", context));
+	}
+	
+	@Override
+	public void complete_PropertyValue(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		System.out.println("complete_PropertyValue: " + model.eClass().getName());
+		super.complete_PropertyValue(model, ruleCall, context, acceptor);
+	}
 	
 }

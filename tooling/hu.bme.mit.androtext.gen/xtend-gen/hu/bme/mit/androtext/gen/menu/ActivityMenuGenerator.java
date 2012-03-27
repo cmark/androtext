@@ -14,7 +14,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
-import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue;
+import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import java.util.Arrays;
 import java.util.Collections;
@@ -168,11 +168,11 @@ public class ActivityMenuGenerator implements IGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t  ");
     {
-      AnyDrawablePropertyValue _icon = element.getIcon();
+      PropertyValue _icon = element.getIcon();
       boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_icon, null);
       if (_operator_notEquals) {
         _builder.append("android:icon=\"");
-        AnyDrawablePropertyValue _icon_1 = element.getIcon();
+        PropertyValue _icon_1 = element.getIcon();
         Object _generateValue = this._propertyValueGenerator.generateValue(_icon_1);
         _builder.append(_generateValue, "	  ");
         _builder.append("\"");

@@ -167,7 +167,7 @@ ActivityMenuElement returns ActivityMenuElement:
 
 ActivityMenuItem returns ActivityMenuElement:
 	{ActivityMenuItem}
-	'item' name=ID title=STRING (icon=AnyDrawablePropertyValue)? 
+	'item' name=ID title=STRING (icon=LinkableLink | icon=ExternalDrawableResourceLink)? 
 	('{' 
 		(onSelectedAction=Action | subMenu=ActivityMenu)?
 	'}')?
@@ -341,7 +341,7 @@ RelativeLayout:
 	'}';
 	
 GridLayout:
-	'girdlayout' 
+	'gridlayout' 
 	name=ID 
 	(layoutStyle=LayoutStyle)? 
 	'{'
@@ -444,7 +444,6 @@ WebView:
 ImageView:
 	'imageview' 
 	name=ID 
-	src=AnyDrawablePropertyValue 
 	(layoutStyle=LayoutStyle)? 
 	('{'
 		attributes+=Attribute*
@@ -1003,6 +1002,7 @@ enum AndroidDrawableResource:
 	ic_menu_save |
 	ic_menu_upload      
 ;
+
 
 Resource returns Resource:
     StringResource | IntegerResource | BooleanResource

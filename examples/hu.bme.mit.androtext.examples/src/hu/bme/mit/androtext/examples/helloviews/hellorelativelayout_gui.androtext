@@ -7,6 +7,7 @@ guimodel HelloRelativeLayoutExampleGui {
 		edittext entry fill&wrap {
 			background : editbox_background
 			layout_below : relativeLayout.label
+			
 		}
 		
 		button ok "OK" wrap {

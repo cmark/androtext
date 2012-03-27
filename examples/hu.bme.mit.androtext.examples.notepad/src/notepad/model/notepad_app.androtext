@@ -42,7 +42,7 @@ application NotePad {
 				item menu_delete "Delete" ic_menu_delete
 			}
 			group menu_group_insert {
-				item menu_discard "Discard" //NotePadResources.ic_menu_discard
+				item menu_discard "Discard" NotePadResources.ic_menu_discard
 			}
 		}
 	}

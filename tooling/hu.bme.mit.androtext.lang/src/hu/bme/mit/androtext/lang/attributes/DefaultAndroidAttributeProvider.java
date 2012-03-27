@@ -6,9 +6,11 @@ import hu.bme.mit.androtext.lang.androTextDsl.View;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
 
 import java.lang.reflect.Field;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -19,7 +21,7 @@ public class DefaultAndroidAttributeProvider implements
 	private Logger logger = Logger.getLogger(getClass());
 	
 	@Override
-	public Iterable<String> provideAttribute(EObject eObject) {
+	public List<String> provideAttribute(EObject eObject) {
 		EObject context = eObject;
 		if (eObject instanceof Attribute) {
 			context = eObject.eContainer();
@@ -30,10 +32,10 @@ public class DefaultAndroidAttributeProvider implements
 		return Lists.newArrayList();
 	}
 	
-	private Iterable<String> provideAttributes(View context) {
+	private List<String> provideAttributes(View context) {
 		Iterable<String> viewAttributes = getViewAttributes(context);
 		Iterable<String> layoutAttributes = getLayoutAttributes(context);
-		return Iterables.concat(viewAttributes, layoutAttributes);
+		return IterableExtensions.toList(Iterables.concat(viewAttributes, layoutAttributes));
 	}
 	
 	private Iterable<String> getLayoutAttributes(View context) {

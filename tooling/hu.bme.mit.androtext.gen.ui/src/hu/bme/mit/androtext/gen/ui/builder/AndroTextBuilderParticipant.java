@@ -99,7 +99,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			}
 		}
 		final int numberOfDeltas = deltas.size();
-		if (numberOfDeltas > 1) {
+		if (numberOfDeltas <= 0) {
 			System.out.println("Warning: Multiple build of different deltas not implemented!");
 			return;
 		}
@@ -113,6 +113,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 //		printResourceInformation(context);
 		System.out.println("====================Build=======================");
 		Map<TargetApplication, ResourceSet> targetApps = findTargetApplications(context, deltas);
+		// always get the zero delta
 		Delta delta = deltas.get(0);
 		for (TargetApplication app : targetApps.keySet()) {
 			System.out.println("Building target application " + app.getProjectName());

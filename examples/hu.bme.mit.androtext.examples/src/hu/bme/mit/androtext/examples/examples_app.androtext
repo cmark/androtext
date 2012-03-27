@@ -118,7 +118,7 @@ application AndroTextExamples {
 				edittextpreference simpleEditText "This is edittext"				
 			}
 			preference appVersion "Version 1.0"
-		} 
+		}
 	}
 	
 	// AndroGame Examples

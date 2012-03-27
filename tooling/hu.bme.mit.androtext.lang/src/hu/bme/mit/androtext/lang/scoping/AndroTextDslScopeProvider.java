@@ -3,22 +3,26 @@
  */
 package hu.bme.mit.androtext.lang.scoping;
 
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem;
+import hu.bme.mit.androtext.lang.androTextDsl.Attribute;
+import hu.bme.mit.androtext.lang.androTextDsl.DataAction;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
+import hu.bme.mit.androtext.lang.androTextDsl.DataValue;
+import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
+import hu.bme.mit.androtext.lang.attributes.AndroidAttributeList;
+import hu.bme.mit.androtext.lang.attributes.IAndroidAttributeProvider;
 
 import java.lang.reflect.Method;
-import java.util.ListIterator;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
-import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
@@ -44,8 +48,7 @@ public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider 
 	
 	@Inject
 	private IQualifiedNameConverter qualifiedNameConverter;
-	@Inject 
-	private IQualifiedNameProvider qualifiedNameProvider;
+	@Inject IAndroidAttributeProvider attributeProvider;
 	
 	private Predicate<IEObjectDescription> rootLayoutFilterPredicate = new Predicate<IEObjectDescription>() {
 		@Override
@@ -57,10 +60,73 @@ public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider 
 		}
 	};
 	
+	protected IScope scope_DataValue_feature(DataValue value, EReference reference) {
+		if (value.eContainer() != null && value.eContainer() instanceof DataAction) {
+			Entity entity = ((DataAction)value.eContainer()).getEntity();
+			IScope ret = new SimpleScope(IScope.NULLSCOPE, Iterables.transform(entity.getProperties(), new Function<Property, IEObjectDescription>() {
+				@Override
+				public IEObjectDescription apply(Property from) {
+					return EObjectDescription.create(qualifiedNameConverter.toQualifiedName(from.getName()), from);
+				}
+			}));
+			return ret;
+		}
+		return null;
+	}
+	
 	protected IScope scope_Activity_layout(EObject context, EReference reference) {
 		IScope scope = delegateGetScope(context, reference);
 		// show only the second level in qualified names (one dot, two segment)
 		return new FilteringScope(scope, rootLayoutFilterPredicate);
+	}
+	
+	protected IScope scope_LinkableLink_link(EObject context, EReference reference) {
+		System.out.println("Linkable context: " + context.eClass().getName());
+		if (context instanceof Attribute) {
+			String name = ((Attribute) context).getName();
+			if (AndroidAttributeList.VIEWRELATIVE_ATTRIBUTES.contains(name)) {
+				IScope scope = delegateGetScope(context, reference);
+				return new FilteringScope(scope, new Predicate<IEObjectDescription>() {
+					@Override
+					public boolean apply(IEObjectDescription input) {
+						EObject obj = input.getEObjectOrProxy();
+						if (obj instanceof View) {
+							return true;
+						}
+						return false;
+					}
+				});
+			} else if (AndroidAttributeList.DRAWABLE_ATTRIBUTES.contains(name)) {
+				IScope scope = delegateGetScope(context, reference);
+				return new FilteringScope(scope, new Predicate<IEObjectDescription>() {
+					@Override
+					public boolean apply(IEObjectDescription input) {
+						EObject obj = input.getEObjectOrProxy();
+						if (obj instanceof DrawableResource) {
+							return true;
+						}
+						return false;
+					}
+				});
+			} else {
+				// any other attribute type does'nt refer to other EObjects.
+				return IScope.NULLSCOPE;
+			}
+		}
+		if (context instanceof ActivityMenuItem) {
+			IScope scope = delegateGetScope(context, reference);
+			return new FilteringScope(scope, new Predicate<IEObjectDescription>() {
+				@Override
+				public boolean apply(IEObjectDescription input) {
+					EObject obj = input.getEObjectOrProxy();
+					if (obj instanceof DrawableResource) {
+						return true;
+					}
+					return false;
+				}
+			});
+		}
+		return null;
 	}
 	
 	/**
