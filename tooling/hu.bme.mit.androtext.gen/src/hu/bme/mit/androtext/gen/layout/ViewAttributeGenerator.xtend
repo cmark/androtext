@@ -3,11 +3,8 @@ package hu.bme.mit.androtext.gen.layout
 import com.google.inject.Inject
 import hu.bme.mit.androtext.lang.androTextDsl.Button
 import hu.bme.mit.androtext.lang.androTextDsl.EditText
-import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout
-import hu.bme.mit.androtext.lang.androTextDsl.TableLayout
 import hu.bme.mit.androtext.lang.androTextDsl.TextView
 import hu.bme.mit.androtext.lang.androTextDsl.View
-import hu.bme.mit.androtext.lang.androTextDsl.ViewElement
 
 class ViewAttributeGenerator {
 	
@@ -29,18 +26,7 @@ class ViewAttributeGenerator {
 			«ENDIF»
 	'''
 	
-	def dispatch specificAttributes(View view) ''''''
-	def dispatch specificAttributes(ViewElement view) ''''''
-	def dispatch specificAttributes(LinearLayout linearLayout) '''
-		«IF linearLayout.vertical»
-		android:orientation="vertical"
-		«ELSE»
-		android:orientation="horizontal"
-		«ENDIF»
-	'''		
-	
-	def dispatch specificAttributes(TableLayout layout) '''
-	'''
+	def dispatch specificAttributes(View view) ''''''		
 	
 	def dispatch specificAttributes(Button view) '''
 		«IF view.text!=null»

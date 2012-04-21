@@ -310,8 +310,22 @@ View:
 	ViewGroup
 ;
 
-ViewGroup:
-	LinearLayout | AbsoluteLayout | FrameLayout | RelativeLayout | GridLayout | TableLayout | TableRow
+ViewGroup returns ViewGroup:
+	(	
+		{AbsoluteLayout} 'absolutelayout' | 
+		{LinearLayout} 'linearlayout' |
+		{FrameLayout} 'framelayout' |
+		{RelativeLayout} 'relativelayout' |
+		{GridLayout} 'gridlayout' |
+		{TableLayout} 'tablelayout' |
+		{TableRow} 'tablerow'
+	)
+	name=ID 
+	(layoutStyle=LayoutStyle)? 
+	'{'
+		attributes+=Attribute*
+		views+=View*
+	'}'
 ;
 
 LayoutStyle:
@@ -321,65 +335,65 @@ LayoutStyle:
 enum FastLayoutDimensionKind:
 	FILL='fill' | WRAP='wrap' | FILL_WRAP='fill&wrap' | WRAP_FILL='wrap&fill';
 
-AbsoluteLayout:
-	'absolutelayout' name=ID 
-	(layoutStyle=LayoutStyle)? 
-	'{'
-		attributes+=Attribute*
-		views+=View*
-	'}';
+//AbsoluteLayout:
+//	'absolutelayout' name=ID 
+//	(layoutStyle=LayoutStyle)? 
+//	'{'
+//		attributes+=Attribute*
+//		views+=View*
+//	'}';
 
-LinearLayout:
-	'linearlayout' name=ID 
-	(vertical?='vertical'|'horizontal')? 
-	(layoutStyle=LayoutStyle)? 
-	'{'
-		attributes+=Attribute*
-		views+=View*
-	'}';
-
-FrameLayout:
-	'framelayout' name=ID 
-	(layoutStyle=LayoutStyle)?
-	'{'
-		attributes+=Attribute*
-		views+=View*
-	'}';
-	
-RelativeLayout:
-	'relativelayout' name=ID 
-	(layoutStyle=LayoutStyle)? 
-	'{'
-		attributes+=Attribute*
-		views+=View*
-	'}';
-	
-GridLayout:
-	'gridlayout' name=ID 
-	(layoutStyle=LayoutStyle)? 
-	'{'
-		attributes+=Attribute*
-		views+=View*
-	'}'
-;
-
-TableLayout:
-	'tablelayout' name=ID 
-	(layoutStyle=LayoutStyle)? 
-	'{'
-		attributes+=Attribute*
-		views+=View*
-	'}'
-;
-
-TableRow:
-	'tablerow' name=ID 
-	(layoutStyle=LayoutStyle)? 
-	'{' 
-		attributes+=Attribute*
-		views+=View*
-	'}'
-;
+//LinearLayout:
+//	'linearlayout' name=ID 
+//	(vertical?='vertical'|'horizontal')? 
+//	(layoutStyle=LayoutStyle)? 
+//	'{'
+//		attributes+=Attribute*
+//		views+=View*
+//	'}';
+//
+//FrameLayout:
+//	'framelayout' name=ID 
+//	(layoutStyle=LayoutStyle)?
+//	'{'
+//		attributes+=Attribute*
+//		views+=View*
+//	'}';
+//	
+//RelativeLayout:
+//	'relativelayout' name=ID 
+//	(layoutStyle=LayoutStyle)? 
+//	'{'
+//		attributes+=Attribute*
+//		views+=View*
+//	'}';
+//	
+//GridLayout:
+//	'gridlayout' name=ID 
+//	(layoutStyle=LayoutStyle)? 
+//	'{'
+//		attributes+=Attribute*
+//		views+=View*
+//	'}'
+//;
+//
+//TableLayout:
+//	'tablelayout' name=ID 
+//	(layoutStyle=LayoutStyle)? 
+//	'{'
+//		attributes+=Attribute*
+//		views+=View*
+//	'}'
+//;
+//
+//TableRow:
+//	'tablerow' name=ID 
+//	(layoutStyle=LayoutStyle)? 
+//	'{' 
+//		attributes+=Attribute*
+//		views+=View*
+//	'}'
+//;
 
 //SimpleView:
 //	ViewElement | Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView

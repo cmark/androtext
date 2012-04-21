@@ -6,13 +6,10 @@ import hu.bme.mit.androtext.lang.androTextDsl.Attribute;
 import hu.bme.mit.androtext.lang.androTextDsl.Button;
 import hu.bme.mit.androtext.lang.androTextDsl.EditText;
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle;
-import hu.bme.mit.androtext.lang.androTextDsl.LinearLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue;
-import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.TextView;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
-import hu.bme.mit.androtext.lang.androTextDsl.ViewElement;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
@@ -89,31 +86,6 @@ public class ViewAttributeGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _specificAttributes(final ViewElement view) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder;
-  }
-  
-  protected StringConcatenation _specificAttributes(final LinearLayout linearLayout) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      boolean _isVertical = linearLayout.isVertical();
-      if (_isVertical) {
-        _builder.append("android:orientation=\"vertical\"");
-        _builder.newLine();
-      } else {
-        _builder.append("android:orientation=\"horizontal\"");
-        _builder.newLine();
-      }
-    }
-    return _builder;
-  }
-  
-  protected StringConcatenation _specificAttributes(final TableLayout layout) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder;
-  }
-  
   protected StringConcatenation _specificAttributes(final Button view) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -165,21 +137,15 @@ public class ViewAttributeGenerator {
     return _builder;
   }
   
-  public StringConcatenation specificAttributes(final View linearLayout) {
-    if (linearLayout instanceof LinearLayout) {
-      return _specificAttributes((LinearLayout)linearLayout);
-    } else if (linearLayout instanceof TableLayout) {
-      return _specificAttributes((TableLayout)linearLayout);
-    } else if (linearLayout instanceof Button) {
-      return _specificAttributes((Button)linearLayout);
-    } else if (linearLayout instanceof EditText) {
-      return _specificAttributes((EditText)linearLayout);
-    } else if (linearLayout instanceof TextView) {
-      return _specificAttributes((TextView)linearLayout);
-    } else if (linearLayout instanceof ViewElement) {
-      return _specificAttributes((ViewElement)linearLayout);
+  public StringConcatenation specificAttributes(final View view) {
+    if (view instanceof Button) {
+      return _specificAttributes((Button)view);
+    } else if (view instanceof EditText) {
+      return _specificAttributes((EditText)view);
+    } else if (view instanceof TextView) {
+      return _specificAttributes((TextView)view);
     } else {
-      return _specificAttributes(linearLayout);
+      return _specificAttributes(view);
     }
   }
 }
