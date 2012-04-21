@@ -290,7 +290,24 @@ AndroGuiModelRoot:
 ;
 
 View:
-	SimpleView | ViewGroup
+	ViewElement | 
+	Gallery | 
+	ExpandableListView | 
+	GridView | 
+	WebView | 
+	ImageView | 
+	TextView | 
+	EditText | 
+	Button | 
+	ListView | 
+	Spinner | 
+	RadioGroup | 
+	CheckBox | 
+	RatingBar | 
+	ToggleButton | 
+	CheckedTextView | 
+	AutoCompleteTextView | 
+	ViewGroup
 ;
 
 ViewGroup:
@@ -305,8 +322,7 @@ enum FastLayoutDimensionKind:
 	FILL='fill' | WRAP='wrap' | FILL_WRAP='fill&wrap' | WRAP_FILL='wrap&fill';
 
 AbsoluteLayout:
-	'absolutelayout' 
-	name=ID 
+	'absolutelayout' name=ID 
 	(layoutStyle=LayoutStyle)? 
 	'{'
 		attributes+=Attribute*
@@ -323,8 +339,7 @@ LinearLayout:
 	'}';
 
 FrameLayout:
-	'framelayout' 
-	name=ID 
+	'framelayout' name=ID 
 	(layoutStyle=LayoutStyle)?
 	'{'
 		attributes+=Attribute*
@@ -332,8 +347,7 @@ FrameLayout:
 	'}';
 	
 RelativeLayout:
-	'relativelayout' 
-	name=ID 
+	'relativelayout' name=ID 
 	(layoutStyle=LayoutStyle)? 
 	'{'
 		attributes+=Attribute*
@@ -341,8 +355,7 @@ RelativeLayout:
 	'}';
 	
 GridLayout:
-	'gridlayout' 
-	name=ID 
+	'gridlayout' name=ID 
 	(layoutStyle=LayoutStyle)? 
 	'{'
 		attributes+=Attribute*
@@ -351,8 +364,7 @@ GridLayout:
 ;
 
 TableLayout:
-	'tablelayout' 
-	name=ID 
+	'tablelayout' name=ID 
 	(layoutStyle=LayoutStyle)? 
 	'{'
 		attributes+=Attribute*
@@ -361,8 +373,7 @@ TableLayout:
 ;
 
 TableRow:
-	'tablerow' 
-	name=ID 
+	'tablerow' name=ID 
 	(layoutStyle=LayoutStyle)? 
 	'{' 
 		attributes+=Attribute*
@@ -370,9 +381,9 @@ TableRow:
 	'}'
 ;
 
-SimpleView:
-	ViewElement | Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView
-;
+//SimpleView:
+//	ViewElement | Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView
+//;
 
 ViewElement:
 	'view' 
@@ -1087,7 +1098,7 @@ enum DimensionMetric:
 	dp | sp | pt | px | mm | in
 ;
 
-BOOL:
+BOOL returns ecore::EBoolean:
     'true' | 'false'
 ;
 

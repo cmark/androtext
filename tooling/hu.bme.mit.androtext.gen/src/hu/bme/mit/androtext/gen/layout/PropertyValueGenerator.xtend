@@ -1,37 +1,37 @@
 package hu.bme.mit.androtext.gen.layout
 
 import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkKind
 import hu.bme.mit.androtext.lang.androTextDsl.BooleanPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource
+import hu.bme.mit.androtext.lang.androTextDsl.CapitalizeEnumerationPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.ColorPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.ColorResource
 import hu.bme.mit.androtext.lang.androTextDsl.DimensionPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource
+import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource
+import hu.bme.mit.androtext.lang.androTextDsl.EnumerationPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.ExternalDrawableResourceLink
-import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind
+import hu.bme.mit.androtext.lang.androTextDsl.GravityEnumerationPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionKind
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutDimensionPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.LayoutStyle
 import hu.bme.mit.androtext.lang.androTextDsl.LinkableLink
+import hu.bme.mit.androtext.lang.androTextDsl.NumColumnsPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.NumericEnumerationPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.Resource
-import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.View
-import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
-import hu.bme.mit.androtext.lang.androTextDsl.BooleanResource
-import hu.bme.mit.androtext.lang.androTextDsl.StringResource
-import hu.bme.mit.androtext.lang.androTextDsl.ColorResource
-import hu.bme.mit.androtext.lang.androTextDsl.DrawableResource
-import hu.bme.mit.androtext.lang.androTextDsl.DimensionResource
-import hu.bme.mit.androtext.lang.androTextDsl.NumColumnsPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.EnumerationPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkEnumerationPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.CapitalizeEnumerationPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.GravityEnumerationPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.NumericEnumerationPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.StretchModeEnumerationPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.StringPropertyValue
+import hu.bme.mit.androtext.lang.androTextDsl.StringResource
 import hu.bme.mit.androtext.lang.androTextDsl.TextStyleEnumerationPropertyValue
 import hu.bme.mit.androtext.lang.androTextDsl.TypefaceEnumerationPropertyValue
-import hu.bme.mit.androtext.lang.androTextDsl.AutoLinkKind
+import hu.bme.mit.androtext.lang.androTextDsl.View
 import org.eclipse.emf.common.util.EList
+import hu.bme.mit.androtext.lang.androTextDsl.FastLayoutDimensionKind
 
 class PropertyValueGenerator {
 	

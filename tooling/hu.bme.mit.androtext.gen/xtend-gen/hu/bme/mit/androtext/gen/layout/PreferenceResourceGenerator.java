@@ -151,34 +151,20 @@ public class PreferenceResourceGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    {
-      String _enabled = preference.getEnabled();
-      boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(_enabled);
-      boolean _operator_not_1 = BooleanExtensions.operator_not(_isNullOrEmpty_1);
-      if (_operator_not_1) {
-        _builder.append("android:enabled=\"");
-        String _enabled_1 = preference.getEnabled();
-        String _string_1 = _enabled_1.toString();
-        String _trim_1 = _string_1.trim();
-        _builder.append(_trim_1, "");
-        _builder.append("\"");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      String _persistent = preference.getPersistent();
-      boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(_persistent);
-      boolean _operator_not_2 = BooleanExtensions.operator_not(_isNullOrEmpty_2);
-      if (_operator_not_2) {
-        _builder.append("android:persistent=\"");
-        String _persistent_1 = preference.getPersistent();
-        String _string_2 = _persistent_1.toString();
-        String _trim_2 = _string_2.trim();
-        _builder.append(_trim_2, "");
-        _builder.append("\"");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("android:enabled=\"");
+    boolean _isEnabled = preference.isEnabled();
+    String _string_1 = ((Boolean)_isEnabled).toString();
+    String _trim_1 = _string_1.trim();
+    _builder.append(_trim_1, "");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    _builder.append("android:persistent=\"");
+    boolean _isPersistent = preference.isPersistent();
+    String _string_2 = ((Boolean)_isPersistent).toString();
+    String _trim_2 = _string_2.trim();
+    _builder.append(_trim_2, "");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -206,34 +192,20 @@ public class PreferenceResourceGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    {
-      String _enabled = preference.getEnabled();
-      boolean _isNullOrEmpty_1 = StringExtensions.isNullOrEmpty(_enabled);
-      boolean _operator_not_1 = BooleanExtensions.operator_not(_isNullOrEmpty_1);
-      if (_operator_not_1) {
-        _builder.append("android:enabled=\"");
-        String _enabled_1 = preference.getEnabled();
-        String _string_1 = _enabled_1.toString();
-        String _trim_1 = _string_1.trim();
-        _builder.append(_trim_1, "");
-        _builder.append("\"");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      String _persistent = preference.getPersistent();
-      boolean _isNullOrEmpty_2 = StringExtensions.isNullOrEmpty(_persistent);
-      boolean _operator_not_2 = BooleanExtensions.operator_not(_isNullOrEmpty_2);
-      if (_operator_not_2) {
-        _builder.append("android:persistent=\"");
-        String _persistent_1 = preference.getPersistent();
-        String _string_2 = _persistent_1.toString();
-        String _trim_2 = _string_2.trim();
-        _builder.append(_trim_2, "");
-        _builder.append("\"");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("android:enabled=\"");
+    boolean _isEnabled = preference.isEnabled();
+    String _string_1 = ((Boolean)_isEnabled).toString();
+    String _trim_1 = _string_1.trim();
+    _builder.append(_trim_1, "");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    _builder.append("android:persistent=\"");
+    boolean _isPersistent = preference.isPersistent();
+    String _string_2 = ((Boolean)_isPersistent).toString();
+    String _trim_2 = _string_2.trim();
+    _builder.append(_trim_2, "");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   

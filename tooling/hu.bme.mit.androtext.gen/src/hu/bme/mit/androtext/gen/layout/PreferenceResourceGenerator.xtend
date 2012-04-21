@@ -51,12 +51,8 @@ class PreferenceResourceGenerator implements IGenerator {
 		«IF !preference.summary.nullOrEmpty»
 		android:summary="«preference.summary.toString.trim»"
 		«ENDIF»
-		«IF !preference.enabled.nullOrEmpty»
 		android:enabled="«preference.enabled.toString.trim»"
-		«ENDIF»
-		«IF !preference.persistent.nullOrEmpty»
 		android:persistent="«preference.persistent.toString.trim»"
-		«ENDIF»
 	'''
 	
 	def dispatch attributes(AbstractPreference preference) ''''''
@@ -65,12 +61,8 @@ class PreferenceResourceGenerator implements IGenerator {
 		«IF !preference.summary.nullOrEmpty»
 		android:summary="«preference.summary.toString.trim»"
 		«ENDIF»
-		«IF !preference.enabled.nullOrEmpty»
 		android:enabled="«preference.enabled.toString.trim»"
-		«ENDIF»
-		«IF !preference.persistent.nullOrEmpty»
 		android:persistent="«preference.persistent.toString.trim»"
-		«ENDIF»
 	'''
 	def dispatch attributes(PreferenceElement preference) '''
 		«preference.basicAttributes»

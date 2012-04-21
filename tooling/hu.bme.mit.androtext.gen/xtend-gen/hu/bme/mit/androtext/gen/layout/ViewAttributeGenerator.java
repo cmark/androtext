@@ -165,21 +165,21 @@ public class ViewAttributeGenerator {
     return _builder;
   }
   
-  public StringConcatenation specificAttributes(final View view) {
-    if (view instanceof Button) {
-      return _specificAttributes((Button)view);
-    } else if (view instanceof EditText) {
-      return _specificAttributes((EditText)view);
-    } else if (view instanceof LinearLayout) {
-      return _specificAttributes((LinearLayout)view);
-    } else if (view instanceof TableLayout) {
-      return _specificAttributes((TableLayout)view);
-    } else if (view instanceof TextView) {
-      return _specificAttributes((TextView)view);
-    } else if (view instanceof ViewElement) {
-      return _specificAttributes((ViewElement)view);
+  public StringConcatenation specificAttributes(final View linearLayout) {
+    if (linearLayout instanceof LinearLayout) {
+      return _specificAttributes((LinearLayout)linearLayout);
+    } else if (linearLayout instanceof TableLayout) {
+      return _specificAttributes((TableLayout)linearLayout);
+    } else if (linearLayout instanceof Button) {
+      return _specificAttributes((Button)linearLayout);
+    } else if (linearLayout instanceof EditText) {
+      return _specificAttributes((EditText)linearLayout);
+    } else if (linearLayout instanceof TextView) {
+      return _specificAttributes((TextView)linearLayout);
+    } else if (linearLayout instanceof ViewElement) {
+      return _specificAttributes((ViewElement)linearLayout);
     } else {
-      return _specificAttributes(view);
+      return _specificAttributes(linearLayout);
     }
   }
 }

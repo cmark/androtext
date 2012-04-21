@@ -124,8 +124,8 @@ public class PropertyValueGenerator {
   }
   
   protected Object _generateValue(final BooleanPropertyValue value) {
-    String _value = value.getValue();
-    return _value;
+    boolean _isValue = value.isValue();
+    return _isValue;
   }
   
   protected Object _generateValue(final IntegerPropertyValue value) {
