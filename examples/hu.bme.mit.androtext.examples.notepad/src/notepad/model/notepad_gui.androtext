@@ -1,6 +1,7 @@
 guimodel NotePadGui {
 	
-	linearlayout title_editor vertical wrap {
+	linearlayout title_editor wrap {
+		orientation : "vertical"
 		paddingLeft : 6dp
 		paddingRight : 6dp
 		paddingBottom : 3dp

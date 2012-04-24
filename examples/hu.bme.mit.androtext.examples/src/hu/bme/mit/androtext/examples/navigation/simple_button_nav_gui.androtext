@@ -1,7 +1,7 @@
 guimodel SimpleButtonNavGui {
 	
-	linearlayout mainLayout vertical fill {	
-
+	linearlayout mainLayout fill {	
+		orientation : "vertical"
 		textview help "Click on the button to navigate to the other activity!" wrap
 		
 		button NavigateToOtherActivity "Click me" fill&wrap {

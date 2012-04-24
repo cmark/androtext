@@ -1,6 +1,7 @@
 guimodel MenuExampleGui {
 	
-	linearlayout menulayout vertical fill {
+	linearlayout menulayout fill {
+		orientation : "vertical"
 		textview MenuTextView "Hello Android Menus! Press the Menu button to see the Activity menu." wrap
 	}
 	

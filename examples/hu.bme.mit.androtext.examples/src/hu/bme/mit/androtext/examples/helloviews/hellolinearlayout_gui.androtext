@@ -1,8 +1,9 @@
 guimodel HelloLinearLayoutGui {
 	
-	linearlayout helloLinearLayoutMain vertical fill {
-		
-		linearlayout horizontalLayout horizontal fill {
+	linearlayout helloLinearLayoutMain fill {
+		orientation : "vertical"
+		linearlayout horizontalLayout fill {
+			orientation : "horizontal"
 			layout_weight : 1
 			textview text1 "red" wrap&fill {
 				background : #aa0000
@@ -25,7 +26,8 @@ guimodel HelloLinearLayoutGui {
 			}
 		}
 		
-		linearlayout verticalLayout vertical fill {
+		linearlayout verticalLayout fill {
+			orientation : "vertical"
 			layout_weight : 1
 			textview text1 "row one" fill&wrap {
 				textSize : 15pt
