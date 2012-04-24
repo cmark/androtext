@@ -32,7 +32,7 @@ public class AndroidAttributeList {
 							"gravity"));
 
 	public static final Iterable<String> LINEARLAYOUT_ATTRIBUTES = Iterables
-			.concat(VIEW_ATTRIBUTES, newArrayList("gravity, orientation"));
+			.concat(VIEW_ATTRIBUTES, newArrayList("gravity", "orientation"));
 
 	public static final Iterable<String> RELATIVELAYOUT_ATTRIBUTES = Iterables
 			.concat(VIEW_ATTRIBUTES, newArrayList("gravity"));

@@ -524,8 +524,7 @@ CheckBox:
 	
 RadioGroup:
 	'radiogroup' 
-	name=ID 
-	(orientation?='horizontal'|'vertical')? 
+	name=ID
 	(layoutStyle=LayoutStyle)? 
 	'{'  
 		attributes+=Attribute*
@@ -1143,7 +1142,7 @@ BaseGameActivity returns AbstractActivity:
 		(customActions+=CustomAction)*
 		(intentFilters+=IntentFilter)*
 		('camera' size=Size)?
-		('orientation' orientation=ScreenOrientation)?
+		('screen' orientation=ScreenOrientation)?
 		('scene' scene=[Scene | QualifiedName])?
 		(menu=ActivityMenu)?
 		(contextMenu = ActivityContextMenu)?
