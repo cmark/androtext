@@ -7,7 +7,7 @@ import hu.bme.mit.androtext.gen.layout.ViewPropertiesGenerator;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.DialogBasedPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.EntriesAttribute;
 import hu.bme.mit.androtext.lang.androTextDsl.ListPreference;
@@ -37,8 +37,8 @@ public class PreferenceResourceGenerator implements IGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication targetApplication) {
     AndroidApplication _application = targetApplication.getApplication();
-    EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
-    Iterable<PreferenceActivity> _filter = IterableExtensions.<PreferenceActivity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity.class);
+    EList<AndroidApplicationComponent> _components = _application.getComponents();
+    Iterable<PreferenceActivity> _filter = IterableExtensions.<PreferenceActivity>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity.class);
     for (final PreferenceActivity pref : _filter) {
       PreferenceScreen _screen = pref.getScreen();
       boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_screen, null);

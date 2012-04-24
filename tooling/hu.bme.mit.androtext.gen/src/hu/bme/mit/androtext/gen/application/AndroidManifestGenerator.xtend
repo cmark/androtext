@@ -36,10 +36,10 @@ class AndroidManifestGenerator implements IGenerator {
 			«IF androidApplication.permissionNeededWakeLock»<uses-permission android:name="android.permission.WAKE_LOCK"/>«ENDIF»
 			<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
 				«application.mainActivity.generateMainActivity(androidApplication)»
-				«FOR activity : application.modelElements.filter(typeof (AbstractActivity))» 
+				«FOR activity : application.components.filter(typeof (AbstractActivity))» 
 					«activity.generateActivity(androidApplication)»
 				«ENDFOR»
-				«FOR contentProvider : application.modelElements.filter(typeof (DatabaseContentProvider))» 
+				«FOR contentProvider : application.components.filter(typeof (DatabaseContentProvider))» 
 					«contentProvider.generateContentProvider(androidApplication)»
 				«ENDFOR»
 			</application>
@@ -47,7 +47,7 @@ class AndroidManifestGenerator implements IGenerator {
 	'''
 	
 	def permissionNeededWakeLock(TargetApplication androidApplication) {
-		return androidApplication.application.modelElements.exists(me | me instanceof BaseGameActivity)
+		return androidApplication.application.components.exists(me | me instanceof BaseGameActivity)
 	}
 	
 	def generateContentProvider(DatabaseContentProvider contentProvider, TargetApplication application) '''

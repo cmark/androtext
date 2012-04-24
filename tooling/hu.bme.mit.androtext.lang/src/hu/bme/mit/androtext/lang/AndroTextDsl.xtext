@@ -10,7 +10,12 @@ AndroTextModelRoot:
 	actualModelRoot=ModelRoot;
 
 ModelRoot:
-	AndroGenModelRoot | AndroidApplication | AndroGuiModelRoot | AndroDataModelRoot | AndroResModelRoot | AndroGameRoot
+	AndroGenModelRoot | 
+	AndroidApplication | 
+	AndroGuiModelRoot | 
+	AndroDataModelRoot | 
+	AndroResModelRoot | 
+	AndroGameRoot
 ;
 
 /* Common language elements */
@@ -26,9 +31,11 @@ QualifiedNameWithWildCard :
 
 /* AndroGenModelRoot and model elements */
 AndroGenModelRoot:
-	'generator' name=ID '{'
+	{AndroGenModelRoot}
+//	'generator' name=ID '{'
 		targetApplications+=TargetApplication*	
-	'}';
+//	'}'
+;
 	
 TargetApplication:
 	'target' application=[AndroidApplication | QualifiedName] '{'
@@ -55,10 +62,10 @@ enum ApiLevel:
 AndroidApplication:
 	'application' name=ID '{'
 		mainActivity = AbstractActivity
-		modelElements+=AndroidApplicationModelElement*
+		components+=AndroidApplicationComponent*
 	'}';
 
-AndroidApplicationModelElement:
+AndroidApplicationComponent:
 	AbstractActivity | ContentProvider
 ;
 

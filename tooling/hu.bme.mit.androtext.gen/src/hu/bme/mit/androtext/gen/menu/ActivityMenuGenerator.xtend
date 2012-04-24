@@ -23,7 +23,7 @@ class ActivityMenuGenerator implements IGenerator {
 	@Inject extension PropertyValueGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		val activities = androidApplication.application.modelElements.filter(typeof (AbstractActivity)).toList
+		val activities = androidApplication.application.components.filter(typeof (AbstractActivity)).toList
 		Iterables::addAll(activities, Collections::singletonList(androidApplication.application.mainActivity))
 		for (activity : activities) {
 			if (activity.menu != null) {

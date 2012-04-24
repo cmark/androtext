@@ -8,17 +8,14 @@ import hu.bme.mit.androtext.gen.util.AndroidProjectUtil;
 import hu.bme.mit.androtext.gen.util.GeneratorUtil;
 import hu.bme.mit.androtext.gen.util.TargetApplicationFinder;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
-import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.ListView;
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
-import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -289,7 +286,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			if (target.getApplication().getMainActivity() instanceof BaseGameActivity) {
 				addGameJar = true;
 			} else {
-				for (AndroidApplicationModelElement me : target.getApplication().getModelElements()) {
+				for (AndroidApplicationComponent me : target.getApplication().getComponents()) {
 					if (me instanceof BaseGameActivity) {
 						addGameJar = true;
 						break;
@@ -351,9 +348,9 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			// load all remaining resource for generation
 			List<URI> uris = new ArrayList<URI>();
 			uris.add(app.getApplication().eResource().getURI());
-			List<AndroidApplicationModelElement> activities = new ArrayList<AndroidApplicationModelElement>(app.getApplication().getModelElements());
+			List<AndroidApplicationComponent> activities = new ArrayList<AndroidApplicationComponent>(app.getApplication().getComponents());
 			activities.add(app.getApplication().getMainActivity());
-			for (AndroidApplicationModelElement ac : activities) {
+			for (AndroidApplicationComponent ac : activities) {
 				if (ac instanceof ContentProvider) {
 					if (ac instanceof ResourceContentProvider) {
 						URI newURI2 = ((ResourceContentProvider) ac).getArrayResource().eResource().getURI();

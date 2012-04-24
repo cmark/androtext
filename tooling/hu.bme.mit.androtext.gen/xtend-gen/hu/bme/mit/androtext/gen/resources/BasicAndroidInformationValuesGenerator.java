@@ -7,7 +7,7 @@ import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
@@ -73,8 +73,8 @@ public class BasicAndroidInformationValuesGenerator implements IGenerator {
     }
     {
       AndroidApplication _application_1 = androidApplication.getApplication();
-      EList<AndroidApplicationModelElement> _modelElements = _application_1.getModelElements();
-      Iterable<PreferenceActivity> _filter = IterableExtensions.<PreferenceActivity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity.class);
+      EList<AndroidApplicationComponent> _components = _application_1.getComponents();
+      Iterable<PreferenceActivity> _filter = IterableExtensions.<PreferenceActivity>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity.class);
       for(final PreferenceActivity prefActivity : _filter) {
         {
           PreferenceScreen _screen = prefActivity.getScreen();

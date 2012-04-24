@@ -16,7 +16,7 @@ class ContentProviderGenerator implements IGenerator {
 	@Inject extension JvmTypesBuilder
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (databaseContentProvider : androidApplication.application.modelElements.filter(typeof (DatabaseContentProvider))) {
+		for (databaseContentProvider : androidApplication.application.components.filter(typeof (DatabaseContentProvider))) {
 			fsa.generateFile(databaseContentProvider.javaFileName, IGeneratorSlots::SRC_DATA_SLOT, generate(databaseContentProvider, androidApplication))
 		}
 	}

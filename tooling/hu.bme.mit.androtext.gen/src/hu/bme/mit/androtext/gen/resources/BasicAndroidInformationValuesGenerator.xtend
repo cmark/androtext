@@ -28,7 +28,7 @@ class BasicAndroidInformationValuesGenerator implements IGenerator {
 			«FOR activity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (AbstractActivity))).flatten»
 				«stringLine(activity.activityNameValue, activity.name)»
 			«ENDFOR»
-			«FOR prefActivity : androidApplication.application.modelElements.filter(typeof (PreferenceActivity))»
+			«FOR prefActivity : androidApplication.application.components.filter(typeof (PreferenceActivity))»
 				«FOR pref : prefActivity.screen.preferencesWithKeys»
 				«stringLine(pref.preferenceKeyName, pref.preferenceKeyName)»
 				«ENDFOR»

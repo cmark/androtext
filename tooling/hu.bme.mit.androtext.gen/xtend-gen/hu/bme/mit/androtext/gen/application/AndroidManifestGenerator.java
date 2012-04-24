@@ -7,7 +7,7 @@ import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityTheme;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.CustomAction;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
@@ -77,8 +77,8 @@ public class AndroidManifestGenerator implements IGenerator {
     _builder.append(_generateMainActivity, "		");
     _builder.newLineIfNotEmpty();
     {
-      EList<AndroidApplicationModelElement> _modelElements = application.getModelElements();
-      Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
+      EList<AndroidApplicationComponent> _components = application.getComponents();
+      Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
       for(final AbstractActivity activity : _filter) {
         _builder.append("\t\t");
         StringConcatenation _generateActivity = this.generateActivity(activity, androidApplication);
@@ -87,8 +87,8 @@ public class AndroidManifestGenerator implements IGenerator {
       }
     }
     {
-      EList<AndroidApplicationModelElement> _modelElements_1 = application.getModelElements();
-      Iterable<DatabaseContentProvider> _filter_1 = IterableExtensions.<DatabaseContentProvider>filter(_modelElements_1, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+      EList<AndroidApplicationComponent> _components_1 = application.getComponents();
+      Iterable<DatabaseContentProvider> _filter_1 = IterableExtensions.<DatabaseContentProvider>filter(_components_1, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
       for(final DatabaseContentProvider contentProvider : _filter_1) {
         _builder.append("\t\t");
         StringConcatenation _generateContentProvider = this.generateContentProvider(contentProvider, androidApplication);
@@ -106,13 +106,13 @@ public class AndroidManifestGenerator implements IGenerator {
   
   public boolean permissionNeededWakeLock(final TargetApplication androidApplication) {
     AndroidApplication _application = androidApplication.getApplication();
-    EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
-    final Function1<AndroidApplicationModelElement,Boolean> _function = new Function1<AndroidApplicationModelElement,Boolean>() {
-        public Boolean apply(final AndroidApplicationModelElement me) {
+    EList<AndroidApplicationComponent> _components = _application.getComponents();
+    final Function1<AndroidApplicationComponent,Boolean> _function = new Function1<AndroidApplicationComponent,Boolean>() {
+        public Boolean apply(final AndroidApplicationComponent me) {
           return ((Boolean)(me instanceof BaseGameActivity));
         }
       };
-    boolean _exists = IterableExtensions.<AndroidApplicationModelElement>exists(_modelElements, _function);
+    boolean _exists = IterableExtensions.<AndroidApplicationComponent>exists(_components, _function);
     return _exists;
   }
   

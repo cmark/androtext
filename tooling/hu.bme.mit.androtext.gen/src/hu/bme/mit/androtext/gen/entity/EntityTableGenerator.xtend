@@ -34,7 +34,7 @@ class EntityTableGenerator implements IGenerator {
 		    private «androidApplication.dataInformationClassName()»() {
 		    }
 		    		
-			«FOR databaseContentProvider : androidApplication.application.modelElements.filter(typeof (DatabaseContentProvider))» 
+			«FOR databaseContentProvider : androidApplication.application.components.filter(typeof (DatabaseContentProvider))» 
 				«FOR entity : databaseContentProvider.datamodel.entities»
 					«entityTable(entity, androidApplication)»
 				«ENDFOR»

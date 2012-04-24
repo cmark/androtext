@@ -17,7 +17,7 @@ class EntityClassGenerator implements IGenerator {
 	@Inject extension GeneratorExtensions generatorExtensions
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (databaseContentProvider : androidApplication.application.modelElements.filter(typeof (DatabaseContentProvider))) {
+		for (databaseContentProvider : androidApplication.application.components.filter(typeof (DatabaseContentProvider))) {
 			for (entity : databaseContentProvider.datamodel.entities) {
 				fsa.generateFile(entity.javaFileName, IGeneratorSlots::DATA_SLOT, generate(entity, androidApplication))
 			}

@@ -6,7 +6,7 @@ import hu.bme.mit.androtext.gen.IGeneratorSlots;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
@@ -30,8 +30,8 @@ public class AbstractContentProviderGenerator implements IGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
     AndroidApplication _application = androidApplication.getApplication();
-    EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
-    Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+    EList<AndroidApplicationComponent> _components = _application.getComponents();
+    Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
     for (final DatabaseContentProvider databaseContentProvider : _filter) {
       String _abstractJavaFileName = this.generatorExtensions.abstractJavaFileName(databaseContentProvider);
       StringConcatenation _generate = this.generate(databaseContentProvider, androidApplication);

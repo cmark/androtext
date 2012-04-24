@@ -1,6 +1,20 @@
 package hu.bme.mit.androtext.lang.validation;
 
-import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.*;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_ACTIVITY;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_ATTRIBUTE;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_CONTENTPROVIDER;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_DATAACTION_VALUE_SET;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_ENTITY;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_INTENTFILTER;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_LAYOUTSTYLE_ATTRIBUTE;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_MENUELEMENT;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_RESOURCE;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_TARGET_APP_PROJECT;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.DUPLICATE_VIEW;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.ENTITY_NOT_IN_PROVIDER;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.INVALID_ATTRIBUTE;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.MISSING_LAYOUTSTYLE_ATTRIBUTE;
+import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.WRONG_DATAVALUE_VALUE_TYPE;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
@@ -15,7 +29,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DataAction;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
-import hu.bme.mit.androtext.lang.androTextDsl.DataTypes;
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
 import hu.bme.mit.androtext.lang.androTextDsl.DataValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
@@ -197,16 +210,16 @@ public class AndroTextDslJavaValidator extends
 
 	@Check
 	public void checkAndroidApplication(AndroidApplication application) {
-		List<AbstractActivity> activities = Lists.newArrayList(Iterables.filter(application.getModelElements(), AbstractActivity.class));
+		List<AbstractActivity> activities = Lists.newArrayList(Iterables.filter(application.getComponents(), AbstractActivity.class));
 		activities.add(application.getMainActivity());
-		List<ContentProvider> contentProviders = Lists.newArrayList(Iterables.filter(application.getModelElements(), ContentProvider.class));
+		List<ContentProvider> contentProviders = Lists.newArrayList(Iterables.filter(application.getComponents(), ContentProvider.class));
 		for (int i = 0; i < contentProviders.size(); ++i) {
 			String leftName = contentProviders.get(i).getName();
 			for (int j = i + 1; j < contentProviders.size(); ++j) {
 				String rightName = contentProviders.get(j).getName();
 				if (leftName.equals(rightName)) {
-					error("Duplicate contentprovider '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_ModelElements(), i, DUPLICATE_CONTENTPROVIDER);
-					error("Duplicate contentprovider '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_ModelElements(), j, DUPLICATE_CONTENTPROVIDER);
+					error("Duplicate contentprovider '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), i, DUPLICATE_CONTENTPROVIDER);
+					error("Duplicate contentprovider '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), j, DUPLICATE_CONTENTPROVIDER);
 				}
 			}
 		}
@@ -216,14 +229,14 @@ public class AndroTextDslJavaValidator extends
 				String rightName = activities.get(j).getName();
 				if (leftName.equals(rightName)) {
 					if (activities.get(i) == application.getMainActivity()) {
-						error("Duplicate activity '" + leftName + "'", application.getMainActivity(), AndroTextDslPackage.eINSTANCE.getAndroidApplicationModelElement_Name(), DUPLICATE_ACTIVITY);
-						error("Duplicate activity '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_ModelElements(), j, DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + leftName + "'", application.getMainActivity(), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), j, DUPLICATE_ACTIVITY);
 					} else if (activities.get(j) == application.getMainActivity()) {
-						error("Duplicate activity '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_ModelElements(), i, DUPLICATE_ACTIVITY);
-						error("Duplicate activity '" + rightName + "'", application.getMainActivity(), AndroTextDslPackage.eINSTANCE.getAndroidApplicationModelElement_Name(), DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), i, DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + rightName + "'", application.getMainActivity(), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
 					} else {
-						error("Duplicate activity '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_ModelElements(), i, DUPLICATE_ACTIVITY);
-						error("Duplicate activity '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_ModelElements(), j, DUPLICATE_ACTIVITY);						
+						error("Duplicate activity '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), i, DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), j, DUPLICATE_ACTIVITY);						
 					}
 				}
 			}

@@ -17,7 +17,7 @@ import hu.bme.mit.androtext.gen.resources.BasicAndroidInformationValuesGenerator
 import hu.bme.mit.androtext.gen.resources.StringArrayResourceGenerator;
 import hu.bme.mit.androtext.gen.selector.SelectorGenerator;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import org.eclipse.emf.common.util.EList;
@@ -72,8 +72,8 @@ public class AndroTextGeneratorMain implements IMainGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication targetApplication) {
       AndroidApplication _application = targetApplication.getApplication();
-      EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
-      Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+      EList<AndroidApplicationComponent> _components = _application.getComponents();
+      Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
       boolean _isEmpty = IterableExtensions.isEmpty(_filter);
       boolean _operator_not = BooleanExtensions.operator_not(_isEmpty);
       if (_operator_not) {

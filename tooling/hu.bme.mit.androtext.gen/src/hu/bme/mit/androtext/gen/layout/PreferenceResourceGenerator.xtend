@@ -21,7 +21,7 @@ class PreferenceResourceGenerator implements IGenerator {
 	@Inject extension ViewPropertiesGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication targetApplication) {
-		for (pref : targetApplication.application.modelElements.filter(typeof (PreferenceActivity))) {
+		for (pref : targetApplication.application.components.filter(typeof (PreferenceActivity))) {
 			if (pref.screen != null) {
 				fsa.generateFile(pref.preferenceXmlFileName + ".xml", IGeneratorSlots::XML_SLOT, generate(pref.screen))
 			}

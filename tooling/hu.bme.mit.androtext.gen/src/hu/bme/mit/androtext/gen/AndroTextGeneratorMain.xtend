@@ -39,7 +39,7 @@ class AndroTextGeneratorMain implements IMainGenerator {
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication targetApplication) {
 		// generate data related stuff only when a contentprovider exist in the application file
-		if (!targetApplication.application.modelElements.filter(typeof (DatabaseContentProvider)).empty) {
+		if (!targetApplication.application.components.filter(typeof (DatabaseContentProvider)).empty) {
 			entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication)
 			entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication)
 			contentProviderGenerator.doGenerate(resourceSet, fsa, targetApplication)

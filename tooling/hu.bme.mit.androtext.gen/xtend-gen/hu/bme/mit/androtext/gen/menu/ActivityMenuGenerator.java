@@ -13,7 +13,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuGroup;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationModelElement;
+import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
 import hu.bme.mit.androtext.lang.androTextDsl.PropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import java.util.Arrays;
@@ -39,8 +39,8 @@ public class ActivityMenuGenerator implements IGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
       AndroidApplication _application = androidApplication.getApplication();
-      EList<AndroidApplicationModelElement> _modelElements = _application.getModelElements();
-      Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_modelElements, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
+      EList<AndroidApplicationComponent> _components = _application.getComponents();
+      Iterable<AbstractActivity> _filter = IterableExtensions.<AbstractActivity>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity.class);
       List<AbstractActivity> _list = IterableExtensions.<AbstractActivity>toList(_filter);
       final List<AbstractActivity> activities = _list;
       AndroidApplication _application_1 = androidApplication.getApplication();
