@@ -3,9 +3,17 @@
  */
 package hu.bme.mit.androtext.lang;
 
+import hu.bme.mit.androtext.lang.scoping.AndroTextResourceDescriptionStrategy;
+
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class AndroTextDslRuntimeModule extends hu.bme.mit.androtext.lang.AbstractAndroTextDslRuntimeModule {
 
+	public Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
+		return AndroTextResourceDescriptionStrategy.class;
+	}
+	
 }

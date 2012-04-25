@@ -38,6 +38,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
 import hu.bme.mit.androtext.lang.androTextDsl.Joint;
 import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
+import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
+import hu.bme.mit.androtext.lang.androTextDsl.TableRow;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
 import hu.bme.mit.androtext.lang.attributes.AndroidAttributeList;
@@ -191,6 +193,10 @@ public class AndroTextDslJavaValidator extends
 	
 	@Check
 	public void checkViewLayout(View view) {
+		// TableRow can define own layout properties
+		if (view instanceof TableRow) return;
+		if (view.eContainer() instanceof TableRow) return;
+		if (view.eContainer() instanceof TableLayout) return;
 		Map<String, Attribute> nameToAttributeMap = Maps.uniqueIndex(view.getAttributes(), new Function<Attribute, String>() {
 			@Override
 			public String apply(Attribute from) {

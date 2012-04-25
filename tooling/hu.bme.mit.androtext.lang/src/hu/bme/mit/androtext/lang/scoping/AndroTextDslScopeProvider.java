@@ -54,7 +54,7 @@ public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider 
 	private Predicate<IEObjectDescription> rootLayoutFilterPredicate = new Predicate<IEObjectDescription>() {
 		@Override
 		public boolean apply(IEObjectDescription input) {
-			if (input != null && input.getName() != null && input.getName().getSegmentCount() == 1) {
+			if ("true".equals(input.getUserData("root"))) {
 				return true;
 			}
 			return false;

@@ -233,13 +233,13 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 	protected void handleChangedContents(Delta delta, IBuildContext context, IFileSystemAccess fileSystemAccess, IProject project, TargetApplication targetApplication, ResourceSet set) throws CoreException {
 		if (!canHandle(delta.getUri().fileExtension()))
 			return;
-		System.out.println("Handling changed contexts!");
+//		System.out.println("Handling changed contexts!");
 		// TODO: we will run out of memory here if the number of deltas is large enough
 		Resource resource = set.getResource(delta.getUri(), true);
 		if (shouldGenerate(resource, context)) {
 			try {
-				System.out.println("Generate called on " + delta.getUri());
-				System.out.println("Destination: " + project.getName());
+//				System.out.println("Generate called on " + delta.getUri());
+//				System.out.println("Destination: " + project.getName());
 				mainGenerator.doGenerate(set, fileSystemAccess, targetApplication);
 			} catch (RuntimeException e) {
 				if (e.getCause() instanceof CoreException) {
@@ -316,7 +316,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 	private Map<TargetApplication, ResourceSet> findTargetApplications(IBuildContext context, List<Delta> deltas) {
 		Map<TargetApplication, ResourceSet> targetApps = new HashMap<TargetApplication, ResourceSet>();
 		for (Delta delta : deltas) {
-			System.out.println("Current delta: " + delta.getUri());
+//			System.out.println("Current delta: " + delta.getUri());
 			// monitor handling
 //			if (subMonitor.isCanceled())
 //				throw new OperationCanceledException();
@@ -327,7 +327,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 				List<TargetApplication> targetApplications = TargetApplicationFinder.findTargetApplications(resource, context.getResourceSet());
 				if (targetApplications != null) {
 					for (TargetApplication app : targetApplications) {
-						System.out.println("Found a target application with project name: " + app.getProjectName());
+//						System.out.println("Found a target application with project name: " + app.getProjectName());
 						if (!targetApps.containsKey(app)) {
 							ResourceSet set = new XtextResourceSet();
 							set.getResource(delta.getUri(), true);
@@ -338,12 +338,11 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 					}
 				}
 			} catch (Exception e) {
-				System.out.println(delta.getUri() + " MalformedURLException!");
-//				e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 		for (TargetApplication app : targetApps.keySet()) {
-			System.out.println("\n\nFound an application " + app.getProjectName() + " with resources: ");
+//			System.out.println("\n\nFound an application " + app.getProjectName() + " with resources: ");
 			ResourceSet set = targetApps.get(app);
 			// load all remaining resource for generation
 			List<URI> uris = new ArrayList<URI>();
@@ -373,33 +372,16 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 				}
 				if (ac instanceof Activity) {
 					View lay = ((Activity) ac).getLayout();
-					if (lay == null) continue;
-					URI newURI = lay.eResource().getURI();
-					if (!uris.contains(newURI)) {
-						uris.add(newURI);
+					if (lay != null && lay.eResource() != null) {
+						if (!uris.contains(lay.eResource().getURI())) {
+							uris.add(lay.eResource().getURI());
+						}						
 					}
-//					if (lay instanceof ViewGroup) {
-//						for (View uie : ((ViewGroup) lay).getViews()) {
-//							URI resURI = null;
-//							if (uie instanceof ListView) {
-//								if (((ListView) uie).getEntriesAttribute() != null) {
-//									ArrayResource res = ((ListView) uie).getEntriesAttribute().getEntries();
-//									if (res != null) {
-//										resURI = res.eResource().getURI();
-//									}
-//								}
-//							}
-							// TODO add more instanceof if needed, or maybe a good abstraction of resource usage
-//							if (resURI != null && !uris.contains(resURI)) {
-//								uris.add(resURI);
-//							}
-//						}
-//					}
 				}
 			}
 			for (URI uri : uris) {
 				try {
-					System.out.println("Resource: " + uri);
+//					System.out.println("Resource: " + uri);
 					set.getResource(uri, true);
 				} catch (Exception e) {
 					e.printStackTrace();
