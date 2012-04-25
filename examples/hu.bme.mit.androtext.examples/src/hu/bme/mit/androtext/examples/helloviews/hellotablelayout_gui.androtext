@@ -1,75 +1,71 @@
-guimodel HelloTableLayoutGui {
+tablelayout table fill {
+	stretchColumns : 1
+	tablerow row1 {
+		textview open "Open..." {
+			layout_column : 1
+			padding : 3dp
+		}
+		textview ctrlO "Ctrl-O" {
+			gravity : right
+			padding : 3dp
+		}
+	}
 	
-	tablelayout table fill {
-		stretchColumns : 1
-		tablerow row1 {
-			textview open "Open..." {
-				layout_column : 1
-				padding : 3dp
-			}
-			textview ctrlO "Ctrl-O" {
-				gravity : right
-				padding : 3dp
-			}
+	tablerow row2 { 
+		textview save "Save..." {
+			layout_column : 1
+			padding : 3dp
 		}
-		
-		tablerow row2 { 
-			textview save "Save..." {
-				layout_column : 1
-				padding : 3dp
-			}
-			textview ctrlS "Ctrl-S" {
-				gravity : right
-				padding : 3dp
-			}
+		textview ctrlS "Ctrl-S" {
+			gravity : right
+			padding : 3dp
 		}
-		
-		tablerow row3 { 
-			textview saveas "Save As..." {
-				layout_column : 1
-				padding : 3dp
-			}
-			textview ctrlshiftS "Ctrl-Shift-S" {
-				gravity : right
-				padding : 3dp
-			}
+	}
+	
+	tablerow row3 { 
+		textview saveas "Save As..." {
+			layout_column : 1
+			padding : 3dp
 		}
-		
-		view hr1 {
-			layout_height : 2dp
-			background : #FF909090
+		textview ctrlshiftS "Ctrl-Shift-S" {
+			gravity : right
+			padding : 3dp
 		}
-		
-		tablerow row4 { 
-			textview x "X" {
-				padding : 3dp
-			}
-			textview i "Import" {
-				padding : 3dp
-			}
+	}
+	
+	view hr1 {
+		layout_height : 2dp
+		background : #FF909090
+	}
+	
+	tablerow row4 { 
+		textview x "X" {
+			padding : 3dp
 		}
-		
-		tablerow row5 { 
-			textview X2 "X"
-			textview Export "Export"
-			textview ctrlE "Ctrl-E" {
-				gravity : right
-				padding : 3dp
-			}
+		textview i "Import" {
+			padding : 3dp
 		}
-		
-		view hr2 {
-			background : #FF909090
-			layout_height : 2dp
+	}
+	
+	tablerow row5 { 
+		textview X2 "X"
+		textview Export "Export"
+		textview ctrlE "Ctrl-E" {
+			gravity : right
+			padding : 3dp
 		}
-		
-		tablerow row6 { 
-			textview quit "Quit" {
-				layout_column : 1
-				padding : 3dp
-			}
+	}
+	
+	view hr2 {
+		background : #FF909090
+		layout_height : 2dp
+	}
+	
+	tablerow row6 { 
+		textview quit "Quit" {
+			layout_column : 1
+			padding : 3dp
 		}
-		
 	}
 	
 }

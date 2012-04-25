@@ -1,12 +1,8 @@
-guimodel HelloGridViewGui {
-	
-	gridview gridView fill {
-		numColumns : auto_fit
-		horizontalSpacing : 10dp
-		verticalSpacing : 10dp
+gridview gridView fill {
+	numColumns : auto_fit
+	horizontalSpacing : 10dp
+	verticalSpacing : 10dp
 //		columnWidth : 90dp
-		stretchMode : columnWidth
-		gravity : center
-	}
-	
+	stretchMode : columnWidth
+	gravity : center
 }

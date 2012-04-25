@@ -1,25 +1,21 @@
-guimodel HelloRelativeLayoutExampleGui {
+relativelayout relativeLayout fill {
+
+	textview label "Type here:" fill&wrap
 	
-	relativelayout relativeLayout fill {
-		
-		textview label "Type here:" fill&wrap
-		
-		edittext entry fill&wrap {
-			background : editbox_background
-			layout_below : relativeLayout.label
-			
-		}
-		
-		button ok "OK" wrap {
-			layout_marginLeft : 10dp
-			layout_alignParentRight : true
-			layout_below : relativeLayout.entry 
-		}
-		button cancel "Cancel" wrap {
-			layout_toLeftOf : relativeLayout.ok
-			layout_alignTop : relativeLayout.ok
-		}
+	edittext entry fill&wrap {
+		background : editbox_background
+		layout_below : relativeLayout.label
 		
 	}
-		
+	
+	button ok "OK" wrap {
+		layout_marginLeft : 10dp
+		layout_alignParentRight : true
+		layout_below : relativeLayout.entry 
+	}
+	button cancel "Cancel" wrap {
+		layout_toLeftOf : relativeLayout.ok
+		layout_alignTop : relativeLayout.ok
+	}
+	
 }

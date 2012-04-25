@@ -1,28 +1,24 @@
-guimodel NotePadGui {
-	
-	linearlayout title_editor wrap {
-		orientation : "vertical"
-		paddingLeft : 6dp
-		paddingRight : 6dp
-		paddingBottom : 3dp
-		edittext title wrap {
-			ems : 25
-			layout_marginTop : 2dp
-			autoText : true
-			capitalize : sentences
-		}
-		
-		button button_ok "OK" wrap {
-			layout_gravity : right
-		}
+linearlayout title_editor wrap {
+	orientation : "vertical"
+	paddingLeft : 6dp
+	paddingRight : 6dp
+	paddingBottom : 3dp
+	edittext title wrap {
+		ems : 25
+		layout_marginTop : 2dp
+		autoText : true
+		capitalize : sentences
 	}
 	
-	textview noteslist_item {
-    	// android:textAppearance="?android:attr/textAppearanceLarge"
-		gravity : center_vertical
-		singleLine : true
-		layout_width : fill
-		layout_height : 14.5sp 
+	button button_ok "OK" wrap {
+		layout_gravity : right
 	}
-	
+}
+
+textview noteslist_item {
+	// android:textAppearance="?android:attr/textAppearanceLarge"
+	gravity : center_vertical
+	singleLine : true
+	layout_width : fill
+	layout_height : 14.5sp 
 }

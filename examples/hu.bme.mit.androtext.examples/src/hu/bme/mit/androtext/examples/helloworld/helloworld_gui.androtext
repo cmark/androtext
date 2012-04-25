@@ -1,8 +1,4 @@
-guimodel HelloWorldGui {
-	
-	linearlayout hellolayout fill {
-		orientation : "vertical"
-		textview tv "Hello AndroText World!" wrap
-	}
-	
+linearlayout hellolayout fill {
+	orientation : "vertical"
+	textview tv "Hello AndroText World!" wrap
 }

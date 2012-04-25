@@ -1,50 +1,46 @@
-guimodel HelloLinearLayoutGui {
+linearlayout helloLinearLayoutMain fill {
+	orientation : "vertical"
+	linearlayout horizontalLayout fill {
+		orientation : "horizontal"
+		layout_weight : 1
+		textview text1 "red" wrap&fill {
+			background : #aa0000
+			gravity : center_horizontal
+			layout_weight : 1
+		}
+		textview text2 "green" wrap&fill {
+			background : #00aa00
+			gravity : center_horizontal
+			layout_weight : 1
+		}
+		textview text3 "blue" wrap&fill {
+			background : #0000aa
+			gravity : center_horizontal
+		}
+		textview text4 "yellow" wrap&fill {
+			background : #aaaa00
+			gravity : center_horizontal
+			layout_weight : 1
+		}
+	}
 	
-	linearlayout helloLinearLayoutMain fill {
+	linearlayout verticalLayout fill {
 		orientation : "vertical"
-		linearlayout horizontalLayout fill {
-			orientation : "horizontal"
+		layout_weight : 1
+		textview text1 "row one" fill&wrap {
+			textSize : 15pt
 			layout_weight : 1
-			textview text1 "red" wrap&fill {
-				background : #aa0000
-				gravity : center_horizontal
-				layout_weight : 1
-			}
-			textview text2 "green" wrap&fill {
-				background : #00aa00
-				gravity : center_horizontal
-				layout_weight : 1
-			}
-			textview text3 "blue" wrap&fill {
-				background : #0000aa
-				gravity : center_horizontal
-			}
-			textview text4 "yellow" wrap&fill {
-				background : #aaaa00
-				gravity : center_horizontal
-				layout_weight : 1
-			}
 		}
-		
-		linearlayout verticalLayout fill {
-			orientation : "vertical"
+		textview text2 "row two" fill&wrap {
+			textSize : 15pt
 			layout_weight : 1
-			textview text1 "row one" fill&wrap {
-				textSize : 15pt
-				layout_weight : 1
-			}
-			textview text2 "row two" fill&wrap {
-				textSize : 15pt
-				layout_weight : 1
-			}
-			textview text3 "row three" fill&wrap {
-				textSize : 15pt
-			}
-			textview text4 "row four" fill&wrap {
-				textSize : 15pt
-			}
 		}
-		
+		textview text3 "row three" fill&wrap {
+			textSize : 15pt
+		}
+		textview text4 "row four" fill&wrap {
+			textSize : 15pt
+		}
 	}
 	
 }

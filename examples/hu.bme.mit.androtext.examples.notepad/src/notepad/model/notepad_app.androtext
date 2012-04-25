@@ -1,7 +1,7 @@
 application NotePad {
 	
 	listactivity NotesList {
-		listitem NotePadGui.noteslist_item
+		listitem noteslist_item
 		fetchAll NotePadModel.Note(title) from NotePadProvider bind noteslist_item
 		onListItemClick {
 			invoke(EDIT)
@@ -56,7 +56,7 @@ application NotePad {
 			category SELECTED_ALTERNATIVE
 			data NotePadModel.Note ITEM			
 		}
-		layout NotePadGui.title_editor
+		layout title_editor
 		fetchOne NotePadModel.Note(title) from NotePadProvider
 	}
 	

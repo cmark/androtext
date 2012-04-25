@@ -3,46 +3,46 @@ import NotePadModel.Note
 application AndroTextExamples {
 	
 	listactivity ExamplesListActivity {
-		listitem HelloListActivityGui.simple_list_item
+		listitem simple_list_item
 		fetchAll from exampleNameListProvider
 	}
 	resourceprovider exampleNameListProvider resource exampleResources.exampleNameList
 	
 	// Hello World
 	activity HelloWorldActivity {
-		layout HelloWorldGui.hellolayout
+		layout hellolayout
 	}
 	
 	// Hello AutoComplete Example
 	activity HelloAutoCompleteActivity {
-		layout HelloAutoCompleteGui.main
+		layout main
 	} 
 	
 	// Hello GridView Example
 	activity HelloGridViewActivity {
-		layout HelloGridViewGui.gridView
+		layout gridView
 		// in the generated class HelloGridViewActivity load the GridView contents, like in the Hello GridView article
 		// http://developer.android.com/guide/tutorials/views/hello-gridview.html
 	}
 	
 	// Hello LinearLauyout Example
 	activity HelloLinearLayoutActivity {
-		layout HelloLinearLayoutGui.helloLinearLayoutMain
+		layout helloLinearLayoutMain
 	}
 
 	// Hello Relative Layout Example
 	activity HelloRelativeLayoutExampleActivity {
-		layout HelloRelativeLayoutExampleGui.relativeLayout
+		layout relativeLayout
 	}
 	
 	// Hello TableLayout Example
 	activity HelloTableLayoutActivity {
-		layout HelloTableLayoutGui.table
+		layout table
 	}
 
 	// Hello ListActivity Example
 	listactivity HelloListActivity {
-		listitem HelloListActivityGui.simple_list_item
+		listitem simple_list_item
 		fetchAll from countriesResourceProvider
 	}
 	resourceprovider countriesResourceProvider resource HelloListActivityResources.countries
@@ -67,26 +67,26 @@ application AndroTextExamples {
 	    	
 	}	
 	activity ArtistsActivity {
-		layout HelloTabWidgetGui.artistsText
+		layout artistsText
 	}
 	activity AlbumsActivity {
-		layout HelloTabWidgetGui.albumsText
+		layout albumsText
 	}
 	activity SongsActivity {
-		layout HelloTabWidgetGui.songsText
+		layout songsText
 	}
 	
 	// Hello Simple Navigation Example
 	activity MainActivity {
-		layout SimpleButtonNavGui.mainLayout
+		layout mainLayout
 	}
 	activity OtherActivity {
-		layout SimpleButtonNavGui.otherLayout
+		layout otherLayout
 	}
 	
 	// Hello Activity Menu Example
 	activity MenuActivity {
-		layout MenuExampleGui.menulayout
+		layout menulayout
 		menu simplemenu {
 			group common {
 				item save "Save" ic_menu_save
@@ -103,7 +103,7 @@ application AndroTextExamples {
 	
 	// Simple Data Example
 	listactivity DataExampleActivity {
-		listitem HelloListActivityGui.simple_list_item
+		listitem simple_list_item
 		fetchAll Note(note) from SimpleDataProvider
 		bind simple_list_item
 	}
