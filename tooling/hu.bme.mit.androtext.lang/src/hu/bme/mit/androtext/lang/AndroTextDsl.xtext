@@ -291,28 +291,20 @@ enum DataTypes:
 
 /* AndroGuiModelRoot and model elements */
 AndroGuiModelRoot:
-	'guimodel' name=ID '{' 
-		roots+=View*
-	'}'
+	{AndroGuiModelRoot}
+	roots+=View*
 ;
 
 View:
-	ViewElement | 
-	Gallery | 
+	ViewElement | Gallery | 
 	ExpandableListView | 
-	GridView | 
-	WebView | 
-	ImageView | 
-	TextView | 
-	EditText | 
-	Button | 
-	ListView | 
-	Spinner | 
-	RadioGroup | 
-	CheckBox | 
-	RatingBar | 
-	ToggleButton | 
-	CheckedTextView | 
+	GridView | WebView | 
+	ImageView | TextView | 
+	EditText | Button | 
+	ListView | ToggleButton | 
+	RadioGroup | CheckBox | 
+	RatingBar | Spinner |
+	CheckedTextView |
 	AutoCompleteTextView | 
 	ViewGroup
 ;
@@ -341,70 +333,6 @@ LayoutStyle:
 
 enum FastLayoutDimensionKind:
 	FILL='fill' | WRAP='wrap' | FILL_WRAP='fill&wrap' | WRAP_FILL='wrap&fill';
-
-//AbsoluteLayout:
-//	'absolutelayout' name=ID 
-//	(layoutStyle=LayoutStyle)? 
-//	'{'
-//		attributes+=Attribute*
-//		views+=View*
-//	'}';
-
-//LinearLayout:
-//	'linearlayout' name=ID 
-//	(vertical?='vertical'|'horizontal')? 
-//	(layoutStyle=LayoutStyle)? 
-//	'{'
-//		attributes+=Attribute*
-//		views+=View*
-//	'}';
-//
-//FrameLayout:
-//	'framelayout' name=ID 
-//	(layoutStyle=LayoutStyle)?
-//	'{'
-//		attributes+=Attribute*
-//		views+=View*
-//	'}';
-//	
-//RelativeLayout:
-//	'relativelayout' name=ID 
-//	(layoutStyle=LayoutStyle)? 
-//	'{'
-//		attributes+=Attribute*
-//		views+=View*
-//	'}';
-//	
-//GridLayout:
-//	'gridlayout' name=ID 
-//	(layoutStyle=LayoutStyle)? 
-//	'{'
-//		attributes+=Attribute*
-//		views+=View*
-//	'}'
-//;
-//
-//TableLayout:
-//	'tablelayout' name=ID 
-//	(layoutStyle=LayoutStyle)? 
-//	'{'
-//		attributes+=Attribute*
-//		views+=View*
-//	'}'
-//;
-//
-//TableRow:
-//	'tablerow' name=ID 
-//	(layoutStyle=LayoutStyle)? 
-//	'{' 
-//		attributes+=Attribute*
-//		views+=View*
-//	'}'
-//;
-
-//SimpleView:
-//	ViewElement | Gallery | ExpandableListView | GridView | WebView | ImageView | TextView | EditText | Button | ListView | Spinner | RadioGroup | CheckBox | RatingBar | ToggleButton | CheckedTextView | AutoCompleteTextView
-//;
 
 ViewElement:
 	'view' 

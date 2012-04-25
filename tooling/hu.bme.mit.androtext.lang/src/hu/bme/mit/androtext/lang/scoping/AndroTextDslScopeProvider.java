@@ -46,14 +46,15 @@ import com.google.inject.Inject;
  */
 public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider {
 	
-	@Inject
-	private IQualifiedNameConverter qualifiedNameConverter;
-	@Inject IAndroidAttributeProvider attributeProvider;
+	@Inject 
+	IQualifiedNameConverter qualifiedNameConverter;
+	@Inject 
+	IAndroidAttributeProvider attributeProvider;
 	
 	private Predicate<IEObjectDescription> rootLayoutFilterPredicate = new Predicate<IEObjectDescription>() {
 		@Override
 		public boolean apply(IEObjectDescription input) {
-			if (input != null && input.getName() != null && input.getName().getSegmentCount() == 2) {
+			if (input != null && input.getName() != null && input.getName().getSegmentCount() == 1) {
 				return true;
 			}
 			return false;
@@ -76,12 +77,12 @@ public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider 
 	
 	protected IScope scope_Activity_layout(EObject context, EReference reference) {
 		IScope scope = delegateGetScope(context, reference);
-		// show only the second level in qualified names (one dot, two segment)
+		// show only the second level in qualified names (zero dot, one segment)
 		return new FilteringScope(scope, rootLayoutFilterPredicate);
 	}
 	
 	protected IScope scope_LinkableLink_link(EObject context, EReference reference) {
-		System.out.println("Linkable context: " + context.eClass().getName());
+//		System.out.println("Linkable context: " + context.eClass().getName());
 		if (context instanceof Attribute) {
 			String name = ((Attribute) context).getName();
 			if (AndroidAttributeList.VIEWRELATIVE_ATTRIBUTES.contains(name)) {
@@ -181,13 +182,13 @@ public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider 
 	
 	protected Predicate<Method> getPredicate(EObject context, EClass type) {
 		String methodName = "scope_" + type.getName();
-		System.out.println(methodName);
+//		System.out.println(methodName);
 		return PolymorphicDispatcher.Predicates.forName(methodName, 2);
 	}
 
 	protected Predicate<Method> getPredicate(EObject context, EReference reference) {
 		String methodName = "scope_" + reference.getEContainingClass().getName() + "_" + reference.getName();
-		System.out.println(methodName);
+//		System.out.println(methodName);
 		return PolymorphicDispatcher.Predicates.forName(methodName, 2);
 	}
 	

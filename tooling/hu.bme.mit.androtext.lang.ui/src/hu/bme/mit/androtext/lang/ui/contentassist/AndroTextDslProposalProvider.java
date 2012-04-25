@@ -23,9 +23,8 @@ public class AndroTextDslProposalProvider extends AbstractAndroTextDslProposalPr
 	@Override
 	public void complete_Attribute(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		System.out.println("Attribute for : " + model);
 		for (String attributeName : attributeProvider.provideAttribute(model)) {
-			acceptor.accept(createCompletionProposal(attributeName, context));
+			acceptor.accept(createCompletionProposal(attributeName, attributeName, getImage(model), context));
 		}
 	}
 	
@@ -44,7 +43,7 @@ public class AndroTextDslProposalProvider extends AbstractAndroTextDslProposalPr
 	@Override
 	public void complete_SignedFloat(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		acceptor.accept(createCompletionProposal("1.0", "1.0/-1.0 - SignedFloat", getImage(model), context));
+		acceptor.accept(createCompletionProposal("1.0", "1.0/-1.0 - SignedFloat", null, context));
 	}
 	
 	@Override
@@ -62,15 +61,8 @@ public class AndroTextDslProposalProvider extends AbstractAndroTextDslProposalPr
 	@Override
 	public void complete_BOOL(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		acceptor.accept(createCompletionProposal("true", context));
-		acceptor.accept(createCompletionProposal("false", context));
-	}
-	
-	@Override
-	public void complete_PropertyValue(EObject model, RuleCall ruleCall,
-			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		System.out.println("complete_PropertyValue: " + model.eClass().getName());
-		super.complete_PropertyValue(model, ruleCall, context, acceptor);
+		acceptor.accept(createCompletionProposal("true", "true", null, context));
+		acceptor.accept(createCompletionProposal("false", "true", null, context));
 	}
 	
 }
