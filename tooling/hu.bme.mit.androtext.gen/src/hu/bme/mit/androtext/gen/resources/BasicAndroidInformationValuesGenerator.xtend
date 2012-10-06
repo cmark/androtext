@@ -10,8 +10,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-
 class BasicAndroidInformationValuesGenerator implements IGenerator {
 	
 	@Inject extension GeneratorExtensions
@@ -25,7 +23,7 @@ class BasicAndroidInformationValuesGenerator implements IGenerator {
 		<resources>
 			«stringLine("app_name", androidApplication.application.name)»
 			«stringLine("package_name", androidApplication.findPackageName)»
-			«FOR activity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (AbstractActivity))).flatten»
+			«FOR activity : resourceSet.resources.map(r | r.allContents.toIterable.filter(typeof (AbstractActivity))).flatten»
 				«stringLine(activity.activityNameValue, activity.name)»
 			«ENDFOR»
 			«FOR prefActivity : androidApplication.application.components.filter(typeof (PreferenceActivity))»

@@ -15,6 +15,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.xtext.builder.EclipseResourceFileSystemAccess2.IFileCallback;
 import org.eclipse.xtext.generator.AbstractFileSystemAccess;
 import org.eclipse.xtext.generator.OutputConfiguration;
@@ -174,6 +175,11 @@ public class EclipseResourceFileSystemAccess3 extends AbstractFileSystemAccess {
 		OutputConfiguration configuration = getOutputConfig(outputName);
 		final Path path = new Path(configuration.getOutputDirectory()+"/"+fileName);
 		return project.getFile(path);
+	}
+
+	public URI getURI(String fileName, String outputConfiguration) {
+		IFile file = getFile(fileName, outputConfiguration);
+		return URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 	}
 	
 }

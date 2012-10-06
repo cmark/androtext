@@ -1,5 +1,6 @@
 package hu.bme.mit.androtext.gen.selector;
 
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
@@ -11,16 +12,15 @@ import hu.bme.mit.androtext.lang.androTextDsl.TabDrawableResourceLink;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.ResourceExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class SelectorGenerator implements IGenerator {
@@ -31,32 +31,33 @@ public class SelectorGenerator implements IGenerator {
     EList<Resource> _resources = resourceSet.getResources();
     final Function1<Resource,Iterable<Tab>> _function = new Function1<Resource,Iterable<Tab>>() {
         public Iterable<Tab> apply(final Resource r) {
-          Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(r);
-          Iterable<Tab> _filter = IterableExtensions.<Tab>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.Tab.class);
+          TreeIterator<EObject> _allContents = r.getAllContents();
+          Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+          Iterable<Tab> _filter = Iterables.<Tab>filter(_iterable, Tab.class);
           return _filter;
         }
       };
     List<Iterable<Tab>> _map = ListExtensions.<Resource, Iterable<Tab>>map(_resources, _function);
-    Iterable<Tab> _flatten = IterableExtensions.<Tab>flatten(_map);
+    Iterable<Tab> _flatten = Iterables.<Tab>concat(_map);
     for (final Tab tab : _flatten) {
       TabDrawableResourceLink _drawable = tab.getDrawable();
       TabDrawableResource _link = _drawable.getLink();
       String _name = _link.getName();
-      String _operator_plus = StringExtensions.operator_plus(_name, ".xml");
+      String _plus = (_name + ".xml");
       TabDrawableResourceLink _drawable_1 = tab.getDrawable();
       TabDrawableResource _link_1 = _drawable_1.getLink();
-      StringConcatenation _generate = this.generate(_link_1);
-      fsa.generateFile(_operator_plus, IGeneratorSlots.DRAWABLE_SLOT, _generate);
+      CharSequence _generate = this.generate(_link_1);
+      fsa.generateFile(_plus, IGeneratorSlots.DRAWABLE_SLOT, _generate);
     }
   }
   
-  public StringConcatenation generate(final TabDrawableResource resource) {
+  public CharSequence generate(final TabDrawableResource resource) {
     StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _xmlHeader = this._generatorExtensions.xmlHeader(resource);
+    CharSequence _xmlHeader = this._generatorExtensions.xmlHeader(resource);
     _builder.append(_xmlHeader, "");
     _builder.newLineIfNotEmpty();
     _builder.append("<selector ");
-    StringConcatenation _androidSchema = this._generatorExtensions.androidSchema(resource);
+    CharSequence _androidSchema = this._generatorExtensions.androidSchema(resource);
     _builder.append(_androidSchema, "");
     _builder.append(" >");
     _builder.newLineIfNotEmpty();

@@ -12,15 +12,13 @@ import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-
 class LayoutResourceGenerator implements IGenerator {
 
 	@Inject extension GeneratorExtensions
 	@Inject extension ViewAttributeGenerator
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (guimodel : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (AndroGuiModelRoot))).flatten) {
+		for (guimodel : resourceSet.resources.map(r | r.allContents.toIterable.filter(typeof (AndroGuiModelRoot))).flatten) {
 			for (root : guimodel.roots) {
 				fsa.generateFile(root.layoutName + ".xml", IGeneratorSlots::LAYOUT_SLOT, generate(root))	
 			}
@@ -40,12 +38,12 @@ class LayoutResourceGenerator implements IGenerator {
 		«element.endTag»
 	'''
 	
-	def dispatch startTag(View element) '''
-		<«element.eClass.name» «element.generateAttributes.toString.trim»>
-	'''
-	
 	def dispatch startTag(ViewElement element) '''
 		<View «element.generateAttributes.toString.trim»>
+	'''
+	
+	def dispatch startTag(View element) '''
+		<«element.eClass.name» «element.generateAttributes.toString.trim»>
 	'''
 	
 	def dispatch endTag(View element) '''

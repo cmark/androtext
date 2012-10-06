@@ -1,5 +1,6 @@
 package hu.bme.mit.androtext.gen.entity;
 
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
@@ -13,12 +14,10 @@ import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
-import org.eclipse.xtext.xbase.lib.IntegerExtensions;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class AbstractContentProviderGenerator implements IGenerator {
@@ -31,15 +30,15 @@ public class AbstractContentProviderGenerator implements IGenerator {
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
     AndroidApplication _application = androidApplication.getApplication();
     EList<AndroidApplicationComponent> _components = _application.getComponents();
-    Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+    Iterable<DatabaseContentProvider> _filter = Iterables.<DatabaseContentProvider>filter(_components, DatabaseContentProvider.class);
     for (final DatabaseContentProvider databaseContentProvider : _filter) {
       String _abstractJavaFileName = this.generatorExtensions.abstractJavaFileName(databaseContentProvider);
-      StringConcatenation _generate = this.generate(databaseContentProvider, androidApplication);
+      CharSequence _generate = this.generate(databaseContentProvider, androidApplication);
       fsa.generateFile(_abstractJavaFileName, IGeneratorSlots.DATA_SLOT, _generate);
     }
   }
   
-  public StringConcatenation generate(final DatabaseContentProvider contentProvider, final TargetApplication application) {
+  public CharSequence generate(final DatabaseContentProvider contentProvider, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
     String _dataPackageName = this.generatorExtensions.dataPackageName(application);
@@ -95,7 +94,7 @@ public class AbstractContentProviderGenerator implements IGenerator {
     _builder.append("import java.util.HashMap;");
     _builder.newLine();
     _builder.newLine();
-    StringConcatenation _body = this.body(contentProvider, application);
+    CharSequence _body = this.body(contentProvider, application);
     _builder.append(_body, "");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -105,33 +104,33 @@ public class AbstractContentProviderGenerator implements IGenerator {
   public String query_all(final Entity entity) {
     String _name = entity.getName();
     String _upperCase = _name.toUpperCase();
-    String _operator_plus = StringExtensions.operator_plus(_upperCase, "S");
-    return _operator_plus;
+    String _plus = (_upperCase + "S");
+    return _plus;
   }
   
   public String query_one(final Entity entity) {
     String _name = entity.getName();
     String _upperCase = _name.toUpperCase();
-    String _operator_plus = StringExtensions.operator_plus(_upperCase, "_ID");
-    return _operator_plus;
+    String _plus = (_upperCase + "_ID");
+    return _plus;
   }
   
   public String tableNameFieldNameRef(final Entity e) {
     String _columnsClassName = this.generatorExtensions.columnsClassName(e);
-    String _operator_plus = StringExtensions.operator_plus(_columnsClassName, ".TABLE_NAME");
-    return _operator_plus;
+    String _plus = (_columnsClassName + ".TABLE_NAME");
+    return _plus;
   }
   
   public String projectionFieldName(final Entity e) {
     String _query_all = this.query_all(e);
     String _lowerCase = _query_all.toLowerCase();
     String _firstUpper = StringExtensions.toFirstUpper(_lowerCase);
-    String _operator_plus = StringExtensions.operator_plus("s", _firstUpper);
-    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "ProjectionMap");
-    return _operator_plus_1;
+    String _plus = ("s" + _firstUpper);
+    String _plus_1 = (_plus + "ProjectionMap");
+    return _plus_1;
   }
   
-  public StringConcatenation body(final DatabaseContentProvider contentProvider, final TargetApplication application) {
+  public CharSequence body(final DatabaseContentProvider contentProvider, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("public abstract class ");
     String _abstractClassName = this.generatorExtensions.abstractClassName(contentProvider);
@@ -170,9 +169,9 @@ public class AbstractContentProviderGenerator implements IGenerator {
         AndroDataModelRoot _datamodel_1 = contentProvider.getDatamodel();
         EList<Entity> _entities_1 = _datamodel_1.getEntities();
         int _indexOf = _entities_1.indexOf(e);
-        int _operator_multiply = IntegerExtensions.operator_multiply(((Integer)2), ((Integer)_indexOf));
-        int _operator_plus = IntegerExtensions.operator_plus(((Integer)_operator_multiply), ((Integer)1));
-        _builder.append(_operator_plus, "	");
+        int _multiply = (2 * _indexOf);
+        int _plus = (_multiply + 1);
+        _builder.append(_plus, "	");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
@@ -183,9 +182,9 @@ public class AbstractContentProviderGenerator implements IGenerator {
         AndroDataModelRoot _datamodel_2 = contentProvider.getDatamodel();
         EList<Entity> _entities_2 = _datamodel_2.getEntities();
         int _indexOf_1 = _entities_2.indexOf(e);
-        int _operator_multiply_1 = IntegerExtensions.operator_multiply(((Integer)2), ((Integer)_indexOf_1));
-        int _operator_plus_1 = IntegerExtensions.operator_plus(((Integer)_operator_multiply_1), ((Integer)2));
-        _builder.append(_operator_plus_1, "	");
+        int _multiply_1 = (2 * _indexOf_1);
+        int _plus_1 = (_multiply_1 + 2);
+        _builder.append(_plus_1, "	");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
       }
@@ -266,10 +265,10 @@ public class AbstractContentProviderGenerator implements IGenerator {
         _builder.append("\t");
         {
           EList<Property> _properties = e_2.getProperties();
-          boolean hasAnyElements = false;
+          boolean _hasElements = false;
           for(final Property p : _properties) {
-            if (!hasAnyElements) {
-              hasAnyElements = true;
+            if (!_hasElements) {
+              _hasElements = true;
             } else {
               _builder.appendImmediate(",\" ", "        		");
             }

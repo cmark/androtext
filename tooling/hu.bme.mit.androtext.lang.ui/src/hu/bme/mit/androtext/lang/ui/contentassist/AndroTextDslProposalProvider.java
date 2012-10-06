@@ -41,12 +41,6 @@ public class AndroTextDslProposalProvider extends AbstractAndroTextDslProposalPr
 	}
 	
 	@Override
-	public void complete_SignedFloat(EObject model, RuleCall ruleCall,
-			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		acceptor.accept(createCompletionProposal("1.0", "1.0/-1.0 - SignedFloat", null, context));
-	}
-	
-	@Override
 	public void complete_FLOAT(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		acceptor.accept(createCompletionProposal("1.0", "1.0 - Float", null, context));

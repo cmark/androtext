@@ -1,38 +1,28 @@
 package hu.bme.mit.androtext.gen.util
 
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
-import hu.bme.mit.androtext.lang.androTextDsl.Body
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypes
 import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef
 import hu.bme.mit.androtext.lang.androTextDsl.Entity
 import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef
-import hu.bme.mit.androtext.lang.androTextDsl.Font
-import hu.bme.mit.androtext.lang.androTextDsl.GameEntity
-import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem
-import hu.bme.mit.androtext.lang.androTextDsl.MenuScene
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
-import hu.bme.mit.androtext.lang.androTextDsl.Property
-import hu.bme.mit.androtext.lang.androTextDsl.SimpleEntity
-import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
-import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
-import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion
-import hu.bme.mit.androtext.lang.androTextDsl.TypeRef
-import hu.bme.mit.androtext.lang.androTextDsl.View
-import java.util.ArrayList
-import org.eclipse.xtext.common.types.JvmTypeReference
-import org.eclipse.xtext.xbase.compiler.ImportManager
-
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
+import hu.bme.mit.androtext.lang.androTextDsl.PreferenceContainer
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceElement
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceScreen
-import hu.bme.mit.androtext.lang.androTextDsl.PreferenceContainer
-import hu.bme.mit.androtext.lang.androTextDsl.AbstractPreference
+import hu.bme.mit.androtext.lang.androTextDsl.Property
+import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
+import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
+import hu.bme.mit.androtext.lang.androTextDsl.TypeRef
+import hu.bme.mit.androtext.lang.androTextDsl.View
+import hu.bme.mit.androtext.lang.androTextDsl.ViewElement
+import java.util.ArrayList
 import java.util.List
-import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
-import hu.bme.mit.androtext.lang.androTextDsl.ActivityContextMenu
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.common.types.JvmTypeReference
+import org.eclipse.xtext.xbase.compiler.ImportManager
 
 class GeneratorExtensions {
 	
@@ -54,6 +44,10 @@ class GeneratorExtensions {
 		} else {
 			return targetApplication.packageName;
 		}
+	}
+	
+	def fieldName(View view) {
+		"m"+view.name.toFirstUpper
 	}
 	
 	def path_uri(Entity e) {
@@ -85,6 +79,13 @@ class GeneratorExtensions {
 		}
 	}
 	
+	def javaType(EObject e) {
+		switch (e) {
+			ViewElement: "View"
+			default: e.eClass.name
+		}
+	}
+	
 	def abstractClassName(Object o) {
 		"Abstract" + className(o)
 	}
@@ -105,14 +106,6 @@ class GeneratorExtensions {
 		}
 	}
 	
-	def findAllGameMenuItems(BaseGameActivity activity) {
-		var menuItems = new ArrayList<GameMenuItem>();
-		for (item : activity.scene.eResource.allContentsIterable.filter(typeof (GameMenuItem))) {
-			menuItems.add(item)
-		}
-		return menuItems
-	}
-	
 	def List<AbstractPreference> getPreferencesWithKeys(PreferenceContainer container) {
 		val prefList = new ArrayList<AbstractPreference>()
 		if (container instanceof PreferenceScreen) {
@@ -129,18 +122,6 @@ class GeneratorExtensions {
 		}
 		return prefList
 	}
-	
-	def menuSceneFieldName(MenuScene menu) '''
-		mMenuScene«menu.name.toFirstUpper»
-	'''
-	
-	def createMenuMethodName(MenuScene menu) '''
-		createMenuScene«menu.name.toFirstUpper»
-	'''
-	
-	def variableName(GameMenuItem item) '''
-		«item.name.toFirstLower»MenuItem
-	'''
 	
 	def tabActivityLayout(TabActivity activity) {
 		activity.name.toLowerCase+"_layout"
@@ -195,61 +176,8 @@ class GeneratorExtensions {
 		root.name.toLowerCase + "_layout"
 	}
 	
-	def dispatch menuResourceFileName(ActivityMenu menu) {
+	def menuResourceFileName(ActivityMenu menu) {
 		menu.name.toLowerCase + "_menu"
-	}
-	
-	def dispatch menuResourceFileName(ActivityContextMenu menu) {
-		menu.name.toLowerCase + "_menu"
-	}
-	
-	def textureRegionFieldName(TextureRegion region) '''
-		m«region.name.toFirstUpper»TextureRegion
-	'''
-	
-	def fontFieldName(Font font) '''
-		m«font.name.toFirstUpper»Font
-	'''
-	
-	def textureVariableName(Font font) '''
-		«font.name.toFirstLower»Texture
-	'''
-	
-	def entityFieldName(GameEntity entity) '''
-		m«entity.name.toFirstUpper»Entity
-	'''
-	
-	def dispatch type(GameEntity entity) '''
-		«entity.eClass.name»
-	'''
-	
-	def dispatch type(SimpleEntity entity) '''
-		Entity
-	'''
-	
-//	def boolean findSensorUsage(BaseGameActivity activity) {
-//		for (sb : activity.scene.eResource.allContentsIterable.filter(typeof (Binding))) {
-//			if (sb.bindingTarget instanceof SensorBindingTarget) {
-//				return sb.bindingTarget.isGravity
-//			}
-//		}
-//		return false
-//	}
-	
-//	def dispatch boolean isGravity(BindingTarget target) { 
-//		return false;
-//	}
-//	def dispatch boolean isGravity(SensorBindingTarget target) { 
-//		return target.sensor == SensorTarget::GRAVITY
-//	}
-	
-	def boolean containsBox2DObject(AndroGameLogic logic) {
-		for (comp : logic.logicComponent) {
-			if (comp instanceof Body) {
-				return true
-			}
-		}
-		return false
 	}
 	
 	def columnType(Property f) {

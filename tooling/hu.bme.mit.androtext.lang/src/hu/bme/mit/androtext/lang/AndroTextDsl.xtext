@@ -9,13 +9,12 @@ AndroTextModelRoot:
 	imports+=Import*
 	actualModelRoot=ModelRoot;
 
-ModelRoot:
+ModelRoot returns ModelRoot:
 	AndroGenModelRoot | 
 	AndroidApplication | 
 	AndroGuiModelRoot | 
 	AndroDataModelRoot | 
-	AndroResModelRoot | 
-	AndroGameRoot
+	AndroResModelRoot
 ;
 
 /* Common language elements */
@@ -30,19 +29,17 @@ QualifiedNameWithWildCard :
 /* End of Common language elements */
 
 /* AndroGenModelRoot and model elements */
-AndroGenModelRoot:
+AndroGenModelRoot returns ModelRoot:
 	{AndroGenModelRoot}
-//	'generator' name=ID '{'
-		targetApplications+=TargetApplication*	
-//	'}'
+	targetApplications+=TargetApplication*	
 ;
 	
 TargetApplication:
 	'target' application=[AndroidApplication | QualifiedName] '{'
-		'project' projectName=QualifiedName
+		('project' projectName=QualifiedName)?
 		('package' packageName=AndroidPackageName)?
-		'platform' target=ApiLevel
-		'version' version=VersionCode
+		('platform' target=ApiLevel)?
+		('version' version=VersionCode)?
 	'}'
 ;
 
@@ -59,9 +56,10 @@ enum ApiLevel:
 /* End of AndroGenModelRoot and generator model elements */
 
 /* AndroAppModelRoot and model elements */
-AndroidApplication:
+AndroidApplication returns ModelRoot:
+	{AndroidApplication}
 	'application' name=ID '{'
-		mainActivity = AbstractActivity
+		(mainActivity = AbstractActivity)? => 
 		components+=AndroidApplicationComponent*
 	'}';
 
@@ -70,7 +68,7 @@ AndroidApplicationComponent:
 ;
 
 AbstractActivity returns AbstractActivity:
-	Activity | TabActivity | ListActivity | BaseGameActivity | PreferenceActivity 
+	Activity | TabActivity | ListActivity | PreferenceActivity 
 ;
 
 Activity returns AbstractActivity:
@@ -156,13 +154,13 @@ ListActivity returns AbstractActivity:
 	'}'
 ;
 
-ActivityContextMenu:
+ActivityContextMenu returns ActivityMenu:
 	'contextmenu' name=ID ('{'
 		(menuElements+=ActivityMenuElement)*
 	'}')?
 ;
 
-ActivityMenu:
+ActivityMenu returns ActivityMenu:
 	'menu' name=ID ('{'
 		(menuElements+=ActivityMenuElement)*
 	'}')?
@@ -257,7 +255,8 @@ enum DataActionType:
 /* End of AndroAppModelRoot and application model elements */
 
 /* AndroDataModelRoot and model elements */
-AndroDataModelRoot:
+AndroDataModelRoot returns ModelRoot:
+	{AndroDataModelRoot}
 	'datamodel' name=ID '{'
 		entities+=Entity*
 	'}'
@@ -290,7 +289,7 @@ enum DataTypes:
 /* End of AndroDataModelRoot and data model elements */
 
 /* AndroGuiModelRoot and model elements */
-AndroGuiModelRoot:
+AndroGuiModelRoot returns ModelRoot:
 	{AndroGuiModelRoot}
 	roots+=View*
 ;
@@ -801,7 +800,8 @@ EntriesAttribute:
 /* End of AndroGuiModelRoot and gui model elements */
 
 /* AndroRes ModelRoot and model elements */
-AndroResModelRoot:
+AndroResModelRoot returns ModelRoot:
+	{AndroResModelRoot}
 	'resources' name=ID '{'
 		resources+=Resource*
 	'}'
@@ -1062,273 +1062,3 @@ terminal HEX_COLOR:
   (('0'..'9'|'A'..'F'|'a'..'f') ('0'..'9'|'A'..'F'|'a'..'f'))? 
 ;
 /* End of AndroResModelRoot and resource model elements */
-
-/* AndroGameModelRoot and game model elements based on AndEngine www.andengine.org */
-BaseGameActivity returns AbstractActivity:
-	{BaseGameActivity}
-	'gameactivity' name=ID (theme=ActivityTheme)? '{'
-		(customActions+=CustomAction)*
-		(intentFilters+=IntentFilter)*
-		('camera' size=Size)?
-		('screen' orientation=ScreenOrientation)?
-		('scene' scene=[Scene | QualifiedName])?
-		(menu=ActivityMenu)?
-		(contextMenu = ActivityContextMenu)?
-	'}'
-;
-
-AndroGameRoot:
-	{AndroGameRoot}
-	androGameComponents+=(AndroGameComponent)*
-;
-
-AndroGameComponent:
-	AndroGameGui | AndroGameLogic
-;
-
-AndroGameGui:
-	'gamegui' name=ID '{' 
-		(gameElements+=GameComponent)*
-	'}'
-;
-
-AndroGameLogic:
-	'gamelogic' name=ID '{'
-		(box2dOptions=Box2DOptions)?
-		(logicComponent+=LogicComponent)*
-	'}'
-;
-
-Box2DOptions:
-	'box2doptions' '{'
-		'box2dgravity' gravity=FLOAT
-	'}'
-;
-
-Joint:
-	DistanceJoint | RevoluteJoint	
-;
-
-RevoluteJoint:
-	'revolutejoint' name=ID 'between' first=[Body | QualifiedName] ',' second=[Body | QualifiedName]
-;
-
-DistanceJoint:
-	'distancejoint' name=ID 'between' first=[Body | QualifiedName] ',' second=[Body | QualifiedName]
-;
-
-Body:
-	BoxBody | CircleBody | LineBody
-;
-
-LineBody:
-	'linebody' name=ID bodyType=BodyType 'fixture' fixture=[Fixture | QualifiedName]
-;
-
-CircleBody:
-	'circlebody' name=ID bodyType=BodyType 'fixture' fixture=[Fixture | QualifiedName]
-;
-
-BoxBody:
-	'boxbody' name=ID bodyType=BodyType 'fixture' fixture=[Fixture | QualifiedName]
-;
-
-Fixture:
-	'fixture' name=ID 'density' density=FLOAT 'friction' friction=FLOAT 'restitution' restitution=FLOAT
-;
-
-enum BodyType:
-	static | kinetic | dynamic
-;
-
-LogicComponent:
-	Binding | Bindable | Joint | Fixture
-;
-
-Binding:
-	'bind' bindable=[Bindable | QualifiedName] 'to' bindingTarget=BindingTarget 
-;
-
-Bindable:
-	EntityModifier | Body //| SensorBindable
-;
-
-GameComponent:
-	Scene | TextureRegion | Font
-;
-
-Scene:
-	'scene'	name=ID (gameBackground=GameBackground)? '{'
-		(entities+=GameEntity)*
-	'}' | MenuScene
-;
-
-MenuScene:
-	'menu' name=ID (gameBackground=GameBackground)? '{'
-		(menuItems+=GameMenuItem)*
-		(entities+=GameEntity)*
-	'}'
-;
-
-GameBackground:
-	'gamebg' (color=Color | textureRegion=[TextureRegion | QualifiedName]) 
-;
-
-GameMenuItem:
-	'menuitem' name=ID ('text' text=STRING 'font' font=[Font | QualifiedName]  | 'texture' textureRegion=[TextureRegion | QualifiedName])
-;
-
-GameEntity:
-	SimpleEntity | Line | Text | Rectangle | Sprite | AnimatedSprite
-;
-
-SimpleEntity:
-	'entity' (name=ID)? position=Position (size=Size)? (color=Color)? '{'
-		children+=GameEntity*
-	'}'
-;
-
-BindingTarget:
-	EntityBindingTarget
-;
-
-EntityBindingTarget:
-	entity=[GameEntity | QualifiedName]	
-;
-
-EntityModifier:
-	MoveModifier | MoveByModifier | ScaleModifier | AlphaModifier | RotationByModifier | RotationModifier | ColorModifier | LoopEntityModifier | SequenceEntityModifier 
-;
-
-SequenceEntityModifier:
-	'sequence' name=ID modifiers+=[EntityModifier] (',' modifiers+=[EntityModifier])*
-;
-
-LoopEntityModifier:
-	'loop' name=ID modifiers+=[EntityModifier] (',' modifiers+=[EntityModifier])* ('count' count=INT)?
-;
-
-MoveModifier:
-	'move' name=ID duration=FLOAT from=FromDouble to=ToDouble
-;
-
-MoveByModifier:
-	'moveby' name=ID duration=FLOAT by=ByDouble
-;
-
-ScaleModifier:
-	'scale' name=ID duration=FLOAT from=FromSingle to=ToSingle
-;
-
-AlphaModifier:
-	'alphamodifier' name=ID duration=FLOAT from=FromSingle to=ToSingle
-;
-
-RotationByModifier:
-	'rotateby' name=ID duration=FLOAT by=BySingle
-;
-
-RotationModifier:
-	'rotate' name=ID duration=FLOAT from=FromSingle to=ToSingle
-;
-
-ColorModifier: 
-	'colormodifier' name=ID duration=FLOAT from=FromTriple to=ToTriple
-;
-
-ToTriple:
-	'to''('first=FLOAT second=FLOAT third=FLOAT')'
-;
-
-FromTriple:
-	'from''('first=FLOAT second=FLOAT third=FLOAT')'
-;
-
-ToDouble:
-	'to''('x=FLOAT y=FLOAT')'
-;
-
-FromDouble:
-	'from''('x=FLOAT y=FLOAT')'
-;
-
-ToSingle:
-	'to' '('value=FLOAT')'
-;
-
-FromSingle:
-	'from''('value=FLOAT')'
-;
-
-ByDouble:
-	'by''('x=FLOAT y=FLOAT')'	
-;
-
-BySingle:
-	'by''('value=FLOAT')'
-;
-
-Line:
-	'line' (name=ID)? from=FromDouble to=ToDouble (color=Color)? ('lineWidth''('lineWidth=FLOAT')')?
-;
-
-Text:
-	'text' (name=ID)? text=STRING position=Position (color=Color)? font=[Font | QualifiedName] (halign=HorizontalAlign)?
-;
-
-Rectangle:
-	'rect' (name=ID)? position=Position size=Size color=Color
-;
-
-Sprite:
-	'sprite' (name=ID)? position=Position (size=Size)? (color=Color)? textureRegion=[TextureRegion | QualifiedName] 
-;
-
-AnimatedSprite:
-	'animsprite' (name=ID)? position=Position (size=Size)? (color=Color)? textureRegion=[TextureRegion | QualifiedName] animate=INT 
-;
-
-Color:
-	'color''('(r=FLOAT g=FLOAT b=FLOAT (a=FLOAT)? | constantColor=ConstantColor)')'
-;
-
-Position:
-	'pos''('x=SignedFloat y=SignedFloat')'
-;
-
-Size:
-	'size''('w=SignedFloat h=SignedFloat')'
-;
-
-TextureRegion:
-	'texture' name=ID fileName=STRING (tiled=Tiled)?
-;
-
-Tiled:
-	'tiled''('column=INT row=INT')'
-;
-
-Font:
-	'font' name=ID (type=FontType)? size=INT color=Color antialias?='antialias'
-;
-
-enum ConstantColor:
-	BLACK | WHITE | RED | GREEN | BLUE | YELLOW
-;
-
-enum HorizontalAlign:
-	LEFT | RIGHT | CENTER
-;
-
-enum FontType:
-	BOLD | ITALIC | BOLD_ITALIC
-;
-
-enum ScreenOrientation:
-	landscape | portrait
-;
-
-SignedFloat returns ecore::EFloat:
-	'-'? FLOAT
-;
-/* End of AndroGameModelRoot and game model elements */

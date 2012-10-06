@@ -9,7 +9,6 @@ import hu.bme.mit.androtext.gen.util.GeneratorUtil;
 import hu.bme.mit.androtext.gen.util.TargetApplicationFinder;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplicationComponent;
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
@@ -108,7 +107,7 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 		// this file system access reused for the next couple of generations
 		EclipseResourceFileSystemAccess3 access = fileSystemAccessProvider.get();
 //		printResourceInformation(context);
-		System.out.println("====================Build=======================");
+		System.out.println("=====================Build========================");
 		Map<TargetApplication, ResourceSet> targetApps = findTargetApplications(context, deltas);
 		// always get the zero delta
 		Delta delta = deltas.get(0);
@@ -282,35 +281,14 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 		if (!project.exists()) {
 			// create the project
 			AndroidProjectUtil.createEclipseProject(monitor, project, GeneratorUtil.getTarget(target), false);
-			boolean addGameJar = false;
-			if (target.getApplication().getMainActivity() instanceof BaseGameActivity) {
-				addGameJar = true;
-			} else {
-				for (AndroidApplicationComponent me : target.getApplication().getComponents()) {
-					if (me instanceof BaseGameActivity) {
-						addGameJar = true;
-						break;
-					}
-				}
-			}
-			if (addGameJar) {
-				AndroidProjectUtil.addGameJars(project);
-			}
+			configureCreatedProject(project, target);
 		} else {
-			// clean only the src-gen folder, if the project exists
 			cleanOutput(project, srcGenConfig, monitor);
-			// clean src-gen directory
-//			String folderToClean = project.getFolder("src-gen").getLocation().toString();
-//			File f = new File(folderToClean);
-//			if (f.exists() && f.isDirectory()) {
-//				try {
-//					GeneratorUtil.cleanFolder(f, null, false, false);
-//				}
-//				catch (FileNotFoundException e) {
-//					e.printStackTrace();
-//				}
-//			}
 		}
+	}
+
+	protected void configureCreatedProject(IProject project,
+			TargetApplication target) {
 	}
 
 	private Map<TargetApplication, ResourceSet> findTargetApplications(IBuildContext context, List<Delta> deltas) {
@@ -365,9 +343,11 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 					}
 				}
 				if (ac instanceof ListActivity) {
-					URI newURI = ((ListActivity) ac).getListitem().eResource().getURI();
-					if (!uris.contains(newURI)) {
-						uris.add(newURI);
+					if (((ListActivity) ac).getListitem() != null) {
+						URI newURI = ((ListActivity) ac).getListitem().eResource().getURI();
+						if (!uris.contains(newURI)) {
+							uris.add(newURI);
+						}						
 					}
 				}
 				if (ac instanceof Activity) {
@@ -381,7 +361,6 @@ public class AndroTextBuilderParticipant implements IXtextBuilderParticipant {
 			}
 			for (URI uri : uris) {
 				try {
-//					System.out.println("Resource: " + uri);
 					set.getResource(uri, true);
 				} catch (Exception e) {
 					e.printStackTrace();

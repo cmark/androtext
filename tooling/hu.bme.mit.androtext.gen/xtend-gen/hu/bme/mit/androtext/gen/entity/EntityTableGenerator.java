@@ -1,5 +1,6 @@
 package hu.bme.mit.androtext.gen.entity;
 
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
@@ -13,10 +14,8 @@ import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class EntityTableGenerator implements IGenerator {
@@ -25,12 +24,12 @@ public class EntityTableGenerator implements IGenerator {
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
     String _dataInformationClassName = this.extensions.dataInformationClassName(androidApplication);
-    String _operator_plus = StringExtensions.operator_plus(_dataInformationClassName, ".java");
-    StringConcatenation _generateDataInformation = this.generateDataInformation(resourceSet, androidApplication);
-    fsa.generateFile(_operator_plus, IGeneratorSlots.DATA_SLOT, _generateDataInformation);
+    String _plus = (_dataInformationClassName + ".java");
+    CharSequence _generateDataInformation = this.generateDataInformation(resourceSet, androidApplication);
+    fsa.generateFile(_plus, IGeneratorSlots.DATA_SLOT, _generateDataInformation);
   }
   
-  public StringConcatenation generateDataInformation(final ResourceSet resourceSet, final TargetApplication androidApplication) {
+  public CharSequence generateDataInformation(final ResourceSet resourceSet, final TargetApplication androidApplication) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
     String _dataPackageName = this.extensions.dataPackageName(androidApplication);
@@ -74,14 +73,14 @@ public class EntityTableGenerator implements IGenerator {
     {
       AndroidApplication _application = androidApplication.getApplication();
       EList<AndroidApplicationComponent> _components = _application.getComponents();
-      Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+      Iterable<DatabaseContentProvider> _filter = Iterables.<DatabaseContentProvider>filter(_components, DatabaseContentProvider.class);
       for(final DatabaseContentProvider databaseContentProvider : _filter) {
         {
           AndroDataModelRoot _datamodel = databaseContentProvider.getDatamodel();
           EList<Entity> _entities = _datamodel.getEntities();
           for(final Entity entity : _entities) {
             _builder.append("\t");
-            StringConcatenation _entityTable = this.entityTable(entity, androidApplication);
+            CharSequence _entityTable = this.entityTable(entity, androidApplication);
             _builder.append(_entityTable, "	");
             _builder.newLineIfNotEmpty();
           }
@@ -93,7 +92,7 @@ public class EntityTableGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation entityTable(final Entity e, final TargetApplication androidApplication) {
+  public CharSequence entityTable(final Entity e, final TargetApplication androidApplication) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/**");
     _builder.newLine();
@@ -403,7 +402,7 @@ public class EntityTableGenerator implements IGenerator {
       EList<Property> _properties = e.getProperties();
       for(final Property prop : _properties) {
         _builder.append("    ");
-        StringConcatenation _column = this.column(prop);
+        CharSequence _column = this.column(prop);
         _builder.append(_column, "    ");
         _builder.newLineIfNotEmpty();
       }
@@ -413,7 +412,7 @@ public class EntityTableGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation column(final Property f) {
+  public CharSequence column(final Property f) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/**");
     _builder.newLine();

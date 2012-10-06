@@ -18,14 +18,12 @@ import static hu.bme.mit.androtext.lang.validation.AndroTextIssueCodes.WRONG_DAT
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroDataModelRoot;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGameGui;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGenModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroResModelRoot;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroTextDslPackage;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.Attribute;
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DataAction;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
@@ -33,10 +31,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef;
 import hu.bme.mit.androtext.lang.androTextDsl.DataValue;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
-import hu.bme.mit.androtext.lang.androTextDsl.Fixture;
-import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
-import hu.bme.mit.androtext.lang.androTextDsl.Joint;
-import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
 import hu.bme.mit.androtext.lang.androTextDsl.TableLayout;
 import hu.bme.mit.androtext.lang.androTextDsl.TableRow;
@@ -216,6 +210,10 @@ public class AndroTextDslJavaValidator extends
 
 	@Check
 	public void checkAndroidApplication(AndroidApplication application) {
+		if (application.getMainActivity() == null) {
+			warning("Must define an Activity component as entry point.", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Name());
+			return;
+		}
 		List<AbstractActivity> activities = Lists.newArrayList(Iterables.filter(application.getComponents(), AbstractActivity.class));
 		activities.add(application.getMainActivity());
 		List<ContentProvider> contentProviders = Lists.newArrayList(Iterables.filter(application.getComponents(), ContentProvider.class));
@@ -236,13 +234,13 @@ public class AndroTextDslJavaValidator extends
 				if (leftName.equals(rightName)) {
 					if (activities.get(i) == application.getMainActivity()) {
 						error("Duplicate activity '" + leftName + "'", application.getMainActivity(), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
-						error("Duplicate activity '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), j, DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + rightName + "'", application.getComponents().get(j), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
 					} else if (activities.get(j) == application.getMainActivity()) {
-						error("Duplicate activity '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), i, DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + leftName + "'", application.getComponents().get(i), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
 						error("Duplicate activity '" + rightName + "'", application.getMainActivity(), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
 					} else {
-						error("Duplicate activity '" + leftName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), i, DUPLICATE_ACTIVITY);
-						error("Duplicate activity '" + rightName + "'", AndroTextDslPackage.eINSTANCE.getAndroidApplication_Components(), j, DUPLICATE_ACTIVITY);						
+						error("Duplicate activity '" + leftName + "'", application.getComponents().get(i), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
+						error("Duplicate activity '" + rightName + "'", application.getComponents().get(j), AndroTextDslPackage.eINSTANCE.getAndroidApplicationComponent_Name(), DUPLICATE_ACTIVITY);
 					}
 				}
 			}
@@ -327,87 +325,6 @@ public class AndroTextDslJavaValidator extends
 			}
 		}
 		return false;
-	}
-
-	@Check
-	public void checkCameraSizeExistence(BaseGameActivity activity) {
-		if (activity.getSize() == null) {
-			warning(activity.getName()
-					+ " not defines camera setting. Default is 720x480!",
-					AndroTextDslPackage.eINSTANCE.getBaseGameActivity_Size());
-		}
-	}
-
-	@Check
-	public void checkSceneExistence(BaseGameActivity activity) {
-		if (activity.getScene() == null) {
-			error(activity.getName() + " must define a reference to a scene!",
-					AndroTextDslPackage.eINSTANCE.getBaseGameActivity_Scene());
-		}
-	}
-
-	@Check
-	public void checkOrientationExistence(BaseGameActivity activity) {
-		if (activity.getOrientation() == null) {
-			warning(activity.getName()
-					+ " not defines orientation setting. Default is LANDSCAPE!",
-					AndroTextDslPackage.eINSTANCE
-							.getBaseGameActivity_Orientation());
-		}
-	}
-
-	@Check
-	public void checkAndroGameGuiEmptiness(AndroGameGui gui) {
-		if (gui.getGameElements() != null && gui.getGameElements().isEmpty()) {
-			warning(gui.getName() + " must define some component.",
-					AndroTextDslPackage.eINSTANCE
-							.getAndroGameGui_GameElements());
-		}
-	}
-
-	@Check
-	public void checkJointBodies(Joint joint) {
-		if (joint.getFirst() != null && joint.getSecond() != null) {
-			if (joint.getFirst().equals(joint.getSecond())) {
-				error(joint.getName()
-						+ " must be defined between different bodies!",
-						AndroTextDslPackage.eINSTANCE.getJoint_First());
-			}
-		}
-	}
-
-	@Check
-	public void checkFrictionRange(Fixture fixture) {
-		if (fixture.getFriction() > 1.0f) {
-			error("Friction of " + fixture.getName()
-					+ " must be lower or equal than one!",
-					AndroTextDslPackage.eINSTANCE.getFixture_Friction());
-		}
-	}
-
-	@Check
-	public void checkRestitutionRange(Fixture fixture) {
-		if (fixture.getRestitution() > 1.0f) {
-			error("Restitution of " + fixture.getName()
-					+ " must be lower or equal than one!",
-					AndroTextDslPackage.eINSTANCE.getFixture_Restitution());
-		}
-	}
-
-	@Check
-	public void checkMenuSceneEmptiness(MenuScene menu) {
-		if (menu.getMenuItems() != null && menu.getMenuItems().isEmpty()) {
-			error(menu.getName() + " must define some menuitem!",
-					AndroTextDslPackage.eINSTANCE.getMenuScene_MenuItems());
-		}
-	}
-
-	@Check
-	public void checkGameEntityHasName(GameEntity gameEntity) {
-		if (gameEntity.getName() == null) {
-			warning("Name required for linking!",
-					AndroTextDslPackage.eINSTANCE.getGameEntity_Name());
-		}
 	}
 
 }

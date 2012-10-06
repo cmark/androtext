@@ -1,22 +1,20 @@
 package hu.bme.mit.androtext.gen.layout
 
+import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.IGenerator
+import hu.bme.mit.androtext.gen.IGeneratorSlots
+import hu.bme.mit.androtext.gen.util.GeneratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
-
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import com.google.inject.Inject
-import hu.bme.mit.androtext.gen.util.GeneratorExtensions
-import hu.bme.mit.androtext.gen.IGeneratorSlots
 
 class TabLayoutGenerator implements IGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication application) {
-		for (tabactivity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof(TabActivity))).flatten) {
+		for (tabactivity : resourceSet.resources.map(r | r.allContents.toIterable.filter(typeof(TabActivity))).flatten) {
 			fsa.generateFile(tabactivity.tabActivityLayout + ".xml", IGeneratorSlots::LAYOUT_SLOT, tabactivity.generateLayout)
 		}
 	}

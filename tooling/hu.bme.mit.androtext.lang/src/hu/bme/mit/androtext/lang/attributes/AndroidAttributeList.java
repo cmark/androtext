@@ -16,6 +16,8 @@ public class AndroidAttributeList {
 					"fadeScrollbars", "padding", "paddingBottom",
 					"paddingLeft", "paddingRight", "paddingTop", "visibility",
 					"isScrollContainer"));
+	
+	public static final Iterable<String> VIEWELEMENT_ATTRIBUTES = Iterables.concat(VIEW_ATTRIBUTES, newArrayList("class"));
 
 	public static final Iterable<String> TEXTVIEW_ATTRIBUTES = Iterables
 			.concat(VIEW_ATTRIBUTES,

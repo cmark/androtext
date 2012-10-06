@@ -1,40 +1,28 @@
 package hu.bme.mit.androtext.gen.activity;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions;
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.Activity;
-import hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic;
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity;
 import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding;
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider;
 import hu.bme.mit.androtext.lang.androTextDsl.Entity;
-import hu.bme.mit.androtext.lang.androTextDsl.Font;
-import hu.bme.mit.androtext.lang.androTextDsl.GameEntity;
-import hu.bme.mit.androtext.lang.androTextDsl.GameMenuItem;
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity;
-import hu.bme.mit.androtext.lang.androTextDsl.MenuScene;
 import hu.bme.mit.androtext.lang.androTextDsl.Property;
-import hu.bme.mit.androtext.lang.androTextDsl.Scene;
-import hu.bme.mit.androtext.lang.androTextDsl.TextureRegion;
-import hu.bme.mit.androtext.lang.androTextDsl.Tiled;
-import java.util.ArrayList;
+import hu.bme.mit.androtext.lang.androTextDsl.View;
+import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.xbase.lib.BooleanExtensions;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
-import org.eclipse.xtext.xtend2.lib.ResourceExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
+import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class AbstractActivityFieldGenerator {
   @Inject
   private GeneratorExtensions _generatorExtensions;
   
-  public StringConcatenation defaultFields(final AbstractActivity activity) {
+  public CharSequence defaultFields(final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("protected final static String TAG = \"");
     String _className = this._generatorExtensions.className(activity);
@@ -44,9 +32,9 @@ public class AbstractActivityFieldGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generateFields(final AbstractActivity activity) {
+  protected CharSequence _generateFields(final AbstractActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _defaultFields = this.defaultFields(activity);
+    CharSequence _defaultFields = this.defaultFields(activity);
     String _string = _defaultFields.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
@@ -54,34 +42,34 @@ public class AbstractActivityFieldGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generateFields(final Activity activity) {
+  protected CharSequence _generateFields(final Activity activity) {
     StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _defaultFields = this.defaultFields(activity);
+    CharSequence _defaultFields = this.defaultFields(activity);
     String _string = _defaultFields.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.newLineIfNotEmpty();
     {
-      boolean _operator_and = false;
-      boolean _operator_and_1 = false;
+      boolean _and = false;
+      boolean _and_1 = false;
       DataBinding _databinding = activity.getDatabinding();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_databinding, null);
-      if (!_operator_notEquals) {
-        _operator_and_1 = false;
+      boolean _notEquals = (!Objects.equal(_databinding, null));
+      if (!_notEquals) {
+        _and_1 = false;
       } else {
         DataBinding _databinding_1 = activity.getDatabinding();
         ContentProvider _contentProvider = _databinding_1.getContentProvider();
-        _operator_and_1 = BooleanExtensions.operator_and(_operator_notEquals, (_contentProvider instanceof DatabaseContentProvider));
+        _and_1 = (_notEquals && (_contentProvider instanceof DatabaseContentProvider));
       }
-      if (!_operator_and_1) {
-        _operator_and = false;
+      if (!_and_1) {
+        _and = false;
       } else {
         DataBinding _databinding_2 = activity.getDatabinding();
         Entity _entity = _databinding_2.getEntity();
-        boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_entity, null);
-        _operator_and = BooleanExtensions.operator_and(_operator_and_1, _operator_notEquals_1);
+        boolean _notEquals_1 = (!Objects.equal(_entity, null));
+        _and = (_and_1 && _notEquals_1);
       }
-      if (_operator_and) {
+      if (_and) {
         _builder.append("protected final static String[] PROJECTION = new String[] {");
         _builder.newLine();
         _builder.append("\t");
@@ -94,10 +82,10 @@ public class AbstractActivityFieldGenerator {
         {
           DataBinding _databinding_4 = activity.getDatabinding();
           EList<Property> _projection = _databinding_4.getProjection();
-          boolean hasAnyElements = false;
+          boolean _hasElements = false;
           for(final Property p : _projection) {
-            if (!hasAnyElements) {
-              hasAnyElements = true;
+            if (!_hasElements) {
+              _hasElements = true;
             } else {
               _builder.appendImmediate(",", "	");
             }
@@ -115,55 +103,122 @@ public class AbstractActivityFieldGenerator {
         }
         _builder.append("};");
         _builder.newLine();
+        {
+          DataBinding _databinding_6 = activity.getDatabinding();
+          EList<Property> _projection_1 = _databinding_6.getProjection();
+          for(final Property p_1 : _projection_1) {
+            _builder.append("protected final static int COLUMN_INDEX_");
+            String _name_1 = p_1.getName();
+            String _upperCase_1 = _name_1.toUpperCase();
+            _builder.append(_upperCase_1, "");
+            _builder.append(" = ");
+            DataBinding _databinding_7 = activity.getDatabinding();
+            EList<Property> _projection_2 = _databinding_7.getProjection();
+            int _indexOf = _projection_2.indexOf(p_1);
+            int _plus = (_indexOf + 1);
+            _builder.append(_plus, "");
+            _builder.append(";");
+            _builder.newLineIfNotEmpty();
+          }
+        }
       }
     }
     {
-      DataBinding _databinding_6 = activity.getDatabinding();
-      boolean _operator_notEquals_2 = ObjectExtensions.operator_notEquals(_databinding_6, null);
-      if (_operator_notEquals_2) {
+      DataBinding _databinding_8 = activity.getDatabinding();
+      boolean _notEquals_2 = (!Objects.equal(_databinding_8, null));
+      if (_notEquals_2) {
         _builder.append("protected Cursor mCursor;");
         _builder.newLine();
+      }
+    }
+    CharSequence _viewFields = this.viewFields(activity);
+    _builder.append(_viewFields, "");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _viewFields(final AbstractActivity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    return _builder;
+  }
+  
+  protected CharSequence _viewFields(final Activity activity) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      View _layout = activity.getLayout();
+      boolean _notEquals = (!Objects.equal(_layout, null));
+      if (_notEquals) {
+        {
+          View _layout_1 = activity.getLayout();
+          if ((_layout_1 instanceof ViewGroup)) {
+            {
+              View _layout_2 = activity.getLayout();
+              EList<View> _views = ((ViewGroup) _layout_2).getViews();
+              for(final View v : _views) {
+                _builder.append("protected ");
+                String _javaType = this._generatorExtensions.javaType(v);
+                _builder.append(_javaType, "");
+                _builder.append(" ");
+                String _fieldName = this._generatorExtensions.fieldName(v);
+                _builder.append(_fieldName, "");
+                _builder.append(";");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          } else {
+            _builder.append("protected ");
+            View _layout_3 = activity.getLayout();
+            String _javaType_1 = this._generatorExtensions.javaType(_layout_3);
+            _builder.append(_javaType_1, "");
+            _builder.append(" ");
+            View _layout_4 = activity.getLayout();
+            String _fieldName_1 = this._generatorExtensions.fieldName(_layout_4);
+            _builder.append(_fieldName_1, "");
+            _builder.append(";");
+            _builder.newLineIfNotEmpty();
+          }
+        }
       }
     }
     return _builder;
   }
   
-  protected StringConcatenation _generateFields(final ListActivity activity) {
+  protected CharSequence _generateFields(final ListActivity activity) {
     StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _defaultFields = this.defaultFields(activity);
+    CharSequence _defaultFields = this.defaultFields(activity);
     String _string = _defaultFields.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.newLineIfNotEmpty();
     {
-      boolean _operator_and = false;
-      boolean _operator_and_1 = false;
-      boolean _operator_and_2 = false;
+      boolean _and = false;
+      boolean _and_1 = false;
+      boolean _and_2 = false;
       DataBinding _databinding = activity.getDatabinding();
-      boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_databinding, null);
-      if (!_operator_notEquals) {
-        _operator_and_2 = false;
+      boolean _notEquals = (!Objects.equal(_databinding, null));
+      if (!_notEquals) {
+        _and_2 = false;
       } else {
         DataBinding _databinding_1 = activity.getDatabinding();
         boolean _isFetchAll = _databinding_1.isFetchAll();
-        _operator_and_2 = BooleanExtensions.operator_and(_operator_notEquals, _isFetchAll);
+        _and_2 = (_notEquals && _isFetchAll);
       }
-      if (!_operator_and_2) {
-        _operator_and_1 = false;
+      if (!_and_2) {
+        _and_1 = false;
       } else {
         DataBinding _databinding_2 = activity.getDatabinding();
         ContentProvider _contentProvider = _databinding_2.getContentProvider();
-        _operator_and_1 = BooleanExtensions.operator_and(_operator_and_2, (_contentProvider instanceof DatabaseContentProvider));
+        _and_1 = (_and_2 && (_contentProvider instanceof DatabaseContentProvider));
       }
-      if (!_operator_and_1) {
-        _operator_and = false;
+      if (!_and_1) {
+        _and = false;
       } else {
         DataBinding _databinding_3 = activity.getDatabinding();
         Entity _entity = _databinding_3.getEntity();
-        boolean _operator_notEquals_1 = ObjectExtensions.operator_notEquals(_entity, null);
-        _operator_and = BooleanExtensions.operator_and(_operator_and_1, _operator_notEquals_1);
+        boolean _notEquals_1 = (!Objects.equal(_entity, null));
+        _and = (_and_1 && _notEquals_1);
       }
-      if (_operator_and) {
+      if (_and) {
         _builder.append("protected final static String[] PROJECTION = new String[] {");
         _builder.newLine();
         _builder.append("\t");
@@ -176,10 +231,10 @@ public class AbstractActivityFieldGenerator {
         {
           DataBinding _databinding_5 = activity.getDatabinding();
           EList<Property> _projection = _databinding_5.getProjection();
-          boolean hasAnyElements = false;
+          boolean _hasElements = false;
           for(final Property p : _projection) {
-            if (!hasAnyElements) {
-              hasAnyElements = true;
+            if (!_hasElements) {
+              _hasElements = true;
             } else {
               _builder.appendImmediate(",", "	");
             }
@@ -201,8 +256,8 @@ public class AbstractActivityFieldGenerator {
     }
     {
       DataBinding _databinding_7 = activity.getDatabinding();
-      boolean _operator_notEquals_2 = ObjectExtensions.operator_notEquals(_databinding_7, null);
-      if (_operator_notEquals_2) {
+      boolean _notEquals_2 = (!Objects.equal(_databinding_7, null));
+      if (_notEquals_2) {
         _builder.append("protected Cursor mCursor;");
         _builder.newLine();
       }
@@ -210,170 +265,27 @@ public class AbstractActivityFieldGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generateFields(final BaseGameActivity activity) {
-    StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _defaultFields = this.defaultFields(activity);
-    String _string = _defaultFields.toString();
-    String _trim = _string.trim();
-    _builder.append(_trim, "");
-    _builder.newLineIfNotEmpty();
-    _builder.append("protected Camera mCamera;");
-    _builder.newLine();
-    _builder.append("protected Scene mScene;");
-    _builder.newLine();
-    {
-      Scene _scene = activity.getScene();
-      Resource _eResource = _scene.eResource();
-      Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(_eResource);
-      Iterable<TextureRegion> _filter = IterableExtensions.<TextureRegion>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.TextureRegion.class);
-      for(final TextureRegion t : _filter) {
-        _builder.append("protected ");
-        {
-          Tiled _tiled = t.getTiled();
-          boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_tiled, null);
-          if (_operator_notEquals) {
-            _builder.append("Tiled");
-          }
-        }
-        _builder.append("TextureRegion ");
-        StringConcatenation _textureRegionFieldName = this._generatorExtensions.textureRegionFieldName(t);
-        String _string_1 = _textureRegionFieldName.toString();
-        String _trim_1 = _string_1.trim();
-        _builder.append(_trim_1, "");
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      Scene _scene_1 = activity.getScene();
-      Resource _eResource_1 = _scene_1.eResource();
-      Iterable<EObject> _allContentsIterable_1 = ResourceExtensions.allContentsIterable(_eResource_1);
-      Iterable<Font> _filter_1 = IterableExtensions.<Font>filter(_allContentsIterable_1, hu.bme.mit.androtext.lang.androTextDsl.Font.class);
-      for(final Font f : _filter_1) {
-        _builder.append("protected Font ");
-        StringConcatenation _fontFieldName = this._generatorExtensions.fontFieldName(f);
-        String _string_2 = _fontFieldName.toString();
-        String _trim_2 = _string_2.trim();
-        _builder.append(_trim_2, "");
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      Scene _scene_2 = activity.getScene();
-      Resource _eResource_2 = _scene_2.eResource();
-      Iterable<EObject> _allContentsIterable_2 = ResourceExtensions.allContentsIterable(_eResource_2);
-      Iterable<GameEntity> _filter_2 = IterableExtensions.<GameEntity>filter(_allContentsIterable_2, hu.bme.mit.androtext.lang.androTextDsl.GameEntity.class);
-      for(final GameEntity e : _filter_2) {
-        _builder.append("protected ");
-        StringConcatenation _type = this._generatorExtensions.type(e);
-        String _string_3 = _type.toString();
-        String _trim_3 = _string_3.trim();
-        _builder.append(_trim_3, "");
-        _builder.append(" ");
-        StringConcatenation _entityFieldName = this._generatorExtensions.entityFieldName(e);
-        String _string_4 = _entityFieldName.toString();
-        String _trim_4 = _string_4.trim();
-        _builder.append(_trim_4, "");
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      Scene _scene_3 = activity.getScene();
-      Resource _eResource_3 = _scene_3.eResource();
-      Iterable<EObject> _allContentsIterable_3 = ResourceExtensions.allContentsIterable(_eResource_3);
-      Iterable<AndroGameLogic> _filter_3 = IterableExtensions.<AndroGameLogic>filter(_allContentsIterable_3, hu.bme.mit.androtext.lang.androTextDsl.AndroGameLogic.class);
-      for(final AndroGameLogic logic : _filter_3) {
-        {
-          boolean _containsBox2DObject = this._generatorExtensions.containsBox2DObject(logic);
-          if (_containsBox2DObject) {
-            _builder.append("protected PhysicsWorld mPhysicsWorld;");
-            _builder.newLine();
-          }
-        }
-      }
-    }
-    {
-      Scene _scene_4 = activity.getScene();
-      Resource _eResource_4 = _scene_4.eResource();
-      Iterable<EObject> _allContentsIterable_4 = ResourceExtensions.allContentsIterable(_eResource_4);
-      Iterable<MenuScene> _filter_4 = IterableExtensions.<MenuScene>filter(_allContentsIterable_4, hu.bme.mit.androtext.lang.androTextDsl.MenuScene.class);
-      for(final MenuScene menu : _filter_4) {
-        _builder.append("protected MenuScene ");
-        StringConcatenation _menuSceneFieldName = this._generatorExtensions.menuSceneFieldName(menu);
-        String _string_5 = _menuSceneFieldName.toString();
-        String _trim_5 = _string_5.trim();
-        _builder.append(_trim_5, "");
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    String _menuItemFields = this.menuItemFields(activity);
-    String _string_6 = _menuItemFields.toString();
-    String _trim_6 = _string_6.trim();
-    _builder.append(_trim_6, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  public String menuItemFields(final BaseGameActivity activity) {
-      StringBuffer _stringBuffer = new StringBuffer();
-      StringBuffer buffer = _stringBuffer;
-      GameMenuItem prev = null;
-      ArrayList<GameMenuItem> _findAllGameMenuItems = this._generatorExtensions.findAllGameMenuItems(activity);
-      for (final GameMenuItem item : _findAllGameMenuItems) {
-        {
-          boolean _operator_equals = ObjectExtensions.operator_equals(prev, null);
-          if (_operator_equals) {
-            StringConcatenation _firstMenuItem = this.firstMenuItem(item);
-            buffer.append(_firstMenuItem);
-          } else {
-            StringConcatenation _afterFirstMenuItem = this.afterFirstMenuItem(item, prev);
-            buffer.append(_afterFirstMenuItem);
-          }
-          prev = item;
-        }
-      }
-      String _string = buffer.toString();
-      return _string;
-  }
-  
-  public StringConcatenation firstMenuItem(final GameMenuItem item) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("public static final int ");
-    String _name = item.getName();
-    String _upperCase = _name.toUpperCase();
-    _builder.append(_upperCase, "");
-    _builder.append(" = 0;");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  public StringConcatenation afterFirstMenuItem(final GameMenuItem item, final GameMenuItem prev) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("public static final int ");
-    String _name = item.getName();
-    String _upperCase = _name.toUpperCase();
-    _builder.append(_upperCase, "");
-    _builder.append(" = ");
-    String _name_1 = prev.getName();
-    String _upperCase_1 = _name_1.toUpperCase();
-    _builder.append(_upperCase_1, "");
-    _builder.append(" + 1;");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  public StringConcatenation generateFields(final AbstractActivity activity) {
+  public CharSequence generateFields(final AbstractActivity activity) {
     if (activity instanceof Activity) {
       return _generateFields((Activity)activity);
-    } else if (activity instanceof BaseGameActivity) {
-      return _generateFields((BaseGameActivity)activity);
     } else if (activity instanceof ListActivity) {
       return _generateFields((ListActivity)activity);
-    } else {
+    } else if (activity != null) {
       return _generateFields(activity);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(activity).toString());
+    }
+  }
+  
+  public CharSequence viewFields(final AbstractActivity activity) {
+    if (activity instanceof Activity) {
+      return _viewFields((Activity)activity);
+    } else if (activity != null) {
+      return _viewFields(activity);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(activity).toString());
     }
   }
 }

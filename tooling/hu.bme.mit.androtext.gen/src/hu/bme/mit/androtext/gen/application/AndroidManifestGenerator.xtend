@@ -15,12 +15,12 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
-import hu.bme.mit.androtext.lang.androTextDsl.BaseGameActivity
-
+import hu.bme.mit.androtext.gen.IAndroidManifestPermissionGenerator
 
 class AndroidManifestGenerator implements IGenerator {
 
 	@Inject extension GeneratorExtensions
+	@Inject extension IAndroidManifestPermissionGenerator
 
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
 		fsa.generateFile("AndroidManifest.xml", IGeneratorSlots::PROJECT_SLOT, generate(androidApplication))
@@ -33,7 +33,7 @@ class AndroidManifestGenerator implements IGenerator {
 			package="«androidApplication.findPackageName»"
 			android:versionCode="1"
 			android:versionName="1.0">
-			«IF androidApplication.permissionNeededWakeLock»<uses-permission android:name="android.permission.WAKE_LOCK"/>«ENDIF»
+			«androidApplication.generatePermissons»
 			<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
 				«application.mainActivity.generateMainActivity(androidApplication)»
 				«FOR activity : application.components.filter(typeof (AbstractActivity))» 
@@ -45,10 +45,6 @@ class AndroidManifestGenerator implements IGenerator {
 			</application>
 		</manifest>
 	'''
-	
-	def permissionNeededWakeLock(TargetApplication androidApplication) {
-		return androidApplication.application.components.exists(me | me instanceof BaseGameActivity)
-	}
 	
 	def generateContentProvider(DatabaseContentProvider contentProvider, TargetApplication application) '''
 		<provider android:name=".data.«contentProvider.className»" 

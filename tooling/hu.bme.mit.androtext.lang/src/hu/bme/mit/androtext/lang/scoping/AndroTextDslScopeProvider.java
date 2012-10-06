@@ -3,6 +3,7 @@
  */
 package hu.bme.mit.androtext.lang.scoping;
 
+import hu.bme.mit.androtext.lang.androTextDsl.Activity;
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem;
 import hu.bme.mit.androtext.lang.androTextDsl.Attribute;
 import hu.bme.mit.androtext.lang.androTextDsl.DataAction;
@@ -160,26 +161,37 @@ public class AndroTextDslScopeProvider extends AbstractDeclarativeScopeProvider 
 		if (context.eContainer() instanceof ListActivity) {
 			View li = ((ListActivity)context.eContainer()).getListitem();
 			if (li != null) {
-				if (li instanceof ViewGroup) {
-					IScope ret = new SimpleScope(IScope.NULLSCOPE, Iterables.transform(((ViewGroup) li).getViews(), new Function<View, IEObjectDescription>() {
-						@Override
-						public IEObjectDescription apply(View from) {
-							if (!(from instanceof ViewGroup)) {
-								return EObjectDescription.create(qualifiedNameConverter.toQualifiedName(from.getName()), from);	
-							}
-							return null;
-						}
-					}));
-					return ret;
-				} else {
-					IScope ret = new SingletonScope(EObjectDescription.create(qualifiedNameConverter.toQualifiedName(li.getName()), li), IScope.NULLSCOPE);
-					return ret;
-				}
+				return getScopeForView(li);
+			}
+		}
+		if (context.eContainer() instanceof Activity) {
+			View layout = ((Activity)context.eContainer()).getLayout();
+			if (layout != null) {
+				return getScopeForView(layout);
 			}
 		}
 		return IScope.NULLSCOPE;
 	}
 	
+	private IScope getScopeForView(View layout) {
+		if (layout instanceof ViewGroup) {
+			// TODO iterate over the hierarchy
+			IScope ret = new SimpleScope(IScope.NULLSCOPE, Iterables.transform(((ViewGroup) layout).getViews(), new Function<View, IEObjectDescription>() {
+				@Override
+				public IEObjectDescription apply(View from) {
+					if (!(from instanceof ViewGroup)) {
+						return EObjectDescription.create(qualifiedNameConverter.toQualifiedName(from.getName()), from);	
+					}
+					return null;
+				}
+			}));
+			return ret;
+		} else {
+			IScope ret = new SingletonScope(EObjectDescription.create(qualifiedNameConverter.toQualifiedName(layout.getName()), layout), IScope.NULLSCOPE);
+			return ret;
+		}
+	}
+
 	protected Predicate<Method> getPredicate(EObject context, EClass type) {
 		String methodName = "scope_" + type.getName();
 //		System.out.println(methodName);

@@ -1,5 +1,6 @@
 package hu.bme.mit.androtext.gen;
 
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IMainGenerator;
 import hu.bme.mit.androtext.gen.activity.AbstractActivityClassGenerator;
@@ -23,7 +24,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.generator.IFileSystemAccess;
-import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
@@ -71,28 +71,26 @@ public class AndroTextGeneratorMain implements IMainGenerator {
   private PreferenceResourceGenerator preferenceGenerator;
   
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication targetApplication) {
-      AndroidApplication _application = targetApplication.getApplication();
-      EList<AndroidApplicationComponent> _components = _application.getComponents();
-      Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
-      boolean _isEmpty = IterableExtensions.isEmpty(_filter);
-      boolean _operator_not = BooleanExtensions.operator_not(_isEmpty);
-      if (_operator_not) {
-        {
-          this.entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
-          this.entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication);
-          this.contentProviderGenerator.doGenerate(resourceSet, fsa, targetApplication);
-          this.abstractContentProviderGenerator.doGenerate(resourceSet, fsa, targetApplication);
-        }
-      }
-      this.manifestGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.basicValueGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.stringArrayResourceGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.abstractActivityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.activityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.layoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.preferenceGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.tabLayoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.selectorGenerator.doGenerate(resourceSet, fsa, targetApplication);
-      this.activityMenuGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    AndroidApplication _application = targetApplication.getApplication();
+    EList<AndroidApplicationComponent> _components = _application.getComponents();
+    Iterable<DatabaseContentProvider> _filter = Iterables.<DatabaseContentProvider>filter(_components, DatabaseContentProvider.class);
+    boolean _isEmpty = IterableExtensions.isEmpty(_filter);
+    boolean _not = (!_isEmpty);
+    if (_not) {
+      this.entityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
+      this.entityTableGenerator.doGenerate(resourceSet, fsa, targetApplication);
+      this.contentProviderGenerator.doGenerate(resourceSet, fsa, targetApplication);
+      this.abstractContentProviderGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    }
+    this.manifestGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.basicValueGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.stringArrayResourceGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.abstractActivityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.activityClassGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.layoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.preferenceGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.tabLayoutGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.selectorGenerator.doGenerate(resourceSet, fsa, targetApplication);
+    this.activityMenuGenerator.doGenerate(resourceSet, fsa, targetApplication);
   }
 }

@@ -1,5 +1,6 @@
 package hu.bme.mit.androtext.gen.layout;
 
+import com.google.common.base.Objects;
 import hu.bme.mit.androtext.lang.androTextDsl.AndroidDrawableResource;
 import hu.bme.mit.androtext.lang.androTextDsl.AnyDrawablePropertyValue;
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource;
@@ -43,9 +44,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.TypefaceKind;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
+import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class PropertyValueGenerator {
@@ -61,56 +60,55 @@ public class PropertyValueGenerator {
   
   protected String _generateLinkable(final Resource resource) {
     String _type = this.type(resource);
-    String _operator_plus = StringExtensions.operator_plus("@", _type);
-    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "/");
+    String _plus = ("@" + _type);
+    String _plus_1 = (_plus + "/");
     String _name = resource.getName();
-    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _name);
-    return _operator_plus_2;
+    String _plus_2 = (_plus_1 + _name);
+    return _plus_2;
   }
   
   public String type(final Resource resource) {
     String _switchResult = null;
-    final Resource resource_1 = resource;
-    boolean matched = false;
-    if (!matched) {
-      if (resource_1 instanceof ArrayResource) {
-        final ArrayResource resource_2 = (ArrayResource) resource_1;
-        matched=true;
+    boolean _matched = false;
+    if (!_matched) {
+      if (resource instanceof ArrayResource) {
+        final ArrayResource _arrayResource = (ArrayResource)resource;
+        _matched=true;
         _switchResult = "array";
       }
     }
-    if (!matched) {
-      if (resource_1 instanceof BooleanResource) {
-        final BooleanResource resource_3 = (BooleanResource) resource_1;
-        matched=true;
+    if (!_matched) {
+      if (resource instanceof BooleanResource) {
+        final BooleanResource _booleanResource = (BooleanResource)resource;
+        _matched=true;
         _switchResult = "bool";
       }
     }
-    if (!matched) {
-      if (resource_1 instanceof StringResource) {
-        final StringResource resource_4 = (StringResource) resource_1;
-        matched=true;
+    if (!_matched) {
+      if (resource instanceof StringResource) {
+        final StringResource _stringResource = (StringResource)resource;
+        _matched=true;
         _switchResult = "string";
       }
     }
-    if (!matched) {
-      if (resource_1 instanceof ColorResource) {
-        final ColorResource resource_5 = (ColorResource) resource_1;
-        matched=true;
+    if (!_matched) {
+      if (resource instanceof ColorResource) {
+        final ColorResource _colorResource = (ColorResource)resource;
+        _matched=true;
         _switchResult = "color";
       }
     }
-    if (!matched) {
-      if (resource_1 instanceof DrawableResource) {
-        final DrawableResource resource_6 = (DrawableResource) resource_1;
-        matched=true;
+    if (!_matched) {
+      if (resource instanceof DrawableResource) {
+        final DrawableResource _drawableResource = (DrawableResource)resource;
+        _matched=true;
         _switchResult = "drawable";
       }
     }
-    if (!matched) {
-      if (resource_1 instanceof DimensionResource) {
-        final DimensionResource resource_7 = (DimensionResource) resource_1;
-        matched=true;
+    if (!_matched) {
+      if (resource instanceof DimensionResource) {
+        final DimensionResource _dimensionResource = (DimensionResource)resource;
+        _matched=true;
         _switchResult = "dimen";
       }
     }
@@ -119,8 +117,8 @@ public class PropertyValueGenerator {
   
   protected String _generateLinkable(final View view) {
     String _name = view.getName();
-    String _operator_plus = StringExtensions.operator_plus("@id/", _name);
-    return _operator_plus;
+    String _plus = ("@id/" + _name);
+    return _plus;
   }
   
   protected Object _generateValue(final BooleanPropertyValue value) {
@@ -132,10 +130,10 @@ public class PropertyValueGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Integer> _values = value.getValues();
-      boolean hasAnyElements = false;
+      boolean _hasElements = false;
       for(final Integer v : _values) {
-        if (!hasAnyElements) {
-          hasAnyElements = true;
+        if (!_hasElements) {
+          _hasElements = true;
         } else {
           _builder.appendImmediate(",", "");
         }
@@ -164,8 +162,8 @@ public class PropertyValueGenerator {
     AndroidDrawableResource _externalResource = valueLink.getExternalResource();
     String _name = _externalResource.name();
     String _lowerCase = _name.toLowerCase();
-    String _operator_plus = StringExtensions.operator_plus("@android:drawable/", _lowerCase);
-    return _operator_plus;
+    String _plus = ("@android:drawable/" + _lowerCase);
+    return _plus;
   }
   
   protected Object _generateValue(final LayoutDimensionPropertyValue value) {
@@ -177,12 +175,12 @@ public class PropertyValueGenerator {
   protected Object _generateValue(final DimensionPropertyValue dimensionPropertyValue) {
     DimensionValue _value = dimensionPropertyValue.getValue();
     float _value_1 = _value.getValue();
-    String _operator_plus = StringExtensions.operator_plus("", ((Float)_value_1));
+    String _plus = ("" + Float.valueOf(_value_1));
     DimensionValue _value_2 = dimensionPropertyValue.getValue();
     DimensionMetric _metric = _value_2.getMetric();
     String _string = _metric.toString();
-    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, _string);
-    return _operator_plus_1;
+    String _plus_1 = (_plus + _string);
+    return _plus_1;
   }
   
   protected Object _generateValue(final NumColumnsPropertyValue value) {
@@ -192,8 +190,8 @@ public class PropertyValueGenerator {
       return "auto_fit";
     } else {
       IntegerPropertyValue _numColumns = value.getNumColumns();
-      String _operator_plus = StringExtensions.operator_plus("", _numColumns);
-      _xifexpression = _operator_plus;
+      String _plus = ("" + _numColumns);
+      _xifexpression = _plus;
     }
     return _xifexpression;
   }
@@ -209,10 +207,9 @@ public class PropertyValueGenerator {
       return "all";
     } else {
       EList<AutoLinkKind> _values_1 = value.getValues();
-      StringConcatenation _generateEnumList = this.generateEnumList(_values_1);
+      CharSequence _generateEnumList = this.generateEnumList(_values_1);
       String _string = _generateEnumList.toString();
-      String _trim = _string.trim();
-      return _trim;
+      return _string.trim();
     }
   }
   
@@ -223,18 +220,16 @@ public class PropertyValueGenerator {
   
   protected Object _generateValue(final GravityEnumerationPropertyValue value) {
     EList<GravityKind> _values = value.getValues();
-    StringConcatenation _generateEnumList = this.generateEnumList(_values);
+    CharSequence _generateEnumList = this.generateEnumList(_values);
     String _string = _generateEnumList.toString();
-    String _trim = _string.trim();
-    return _trim;
+    return _string.trim();
   }
   
   protected Object _generateValue(final NumericEnumerationPropertyValue value) {
     EList<NumericKind> _values = value.getValues();
-    StringConcatenation _generateEnumList = this.generateEnumList(_values);
+    CharSequence _generateEnumList = this.generateEnumList(_values);
     String _string = _generateEnumList.toString();
-    String _trim = _string.trim();
-    return _trim;
+    return _string.trim();
   }
   
   protected Object _generateValue(final StretchModeEnumerationPropertyValue value) {
@@ -244,10 +239,9 @@ public class PropertyValueGenerator {
   
   protected Object _generateValue(final TextStyleEnumerationPropertyValue value) {
     EList<TextStyleKind> _values = value.getValues();
-    StringConcatenation _generateEnumList = this.generateEnumList(_values);
+    CharSequence _generateEnumList = this.generateEnumList(_values);
     String _string = _generateEnumList.toString();
-    String _trim = _string.trim();
-    return _trim;
+    return _string.trim();
   }
   
   protected Object _generateValue(final TypefaceEnumerationPropertyValue value) {
@@ -255,13 +249,13 @@ public class PropertyValueGenerator {
     return _value;
   }
   
-  public StringConcatenation generateEnumList(final EList<?> list) {
+  public CharSequence generateEnumList(final EList<? extends Object> list) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      boolean hasAnyElements = false;
+      boolean _hasElements = false;
       for(final Object e : list) {
-        if (!hasAnyElements) {
-          hasAnyElements = true;
+        if (!_hasElements) {
+          _hasElements = true;
         } else {
           _builder.appendImmediate("|", "");
         }
@@ -272,41 +266,40 @@ public class PropertyValueGenerator {
     return _builder;
   }
   
-  public StringConcatenation generate(final LayoutStyle style) {
+  public CharSequence generate(final LayoutStyle style) {
     FastLayoutDimensionKind _value = style.getValue();
-    StringConcatenation _layoutDimensionKind = this.layoutDimensionKind(_value);
+    CharSequence _layoutDimensionKind = this.layoutDimensionKind(_value);
     return _layoutDimensionKind;
   }
   
-  public StringConcatenation layoutDimensionKind(final FastLayoutDimensionKind kind) {
-    StringConcatenation _switchResult = null;
-    final FastLayoutDimensionKind kind_1 = kind;
-    boolean matched = false;
-    if (!matched) {
-      if (ObjectExtensions.operator_equals(kind_1,FastLayoutDimensionKind.FILL)) {
-        matched=true;
-        StringConcatenation _fillLayout = this.fillLayout();
+  public CharSequence layoutDimensionKind(final FastLayoutDimensionKind kind) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(kind,FastLayoutDimensionKind.FILL)) {
+        _matched=true;
+        CharSequence _fillLayout = this.fillLayout();
         _switchResult = _fillLayout;
       }
     }
-    if (!matched) {
-      if (ObjectExtensions.operator_equals(kind_1,FastLayoutDimensionKind.WRAP)) {
-        matched=true;
-        StringConcatenation _wrapLayout = this.wrapLayout();
+    if (!_matched) {
+      if (Objects.equal(kind,FastLayoutDimensionKind.WRAP)) {
+        _matched=true;
+        CharSequence _wrapLayout = this.wrapLayout();
         _switchResult = _wrapLayout;
       }
     }
-    if (!matched) {
-      if (ObjectExtensions.operator_equals(kind_1,FastLayoutDimensionKind.FILL_WRAP)) {
-        matched=true;
-        StringConcatenation _fillwrapLayout = this.fillwrapLayout();
+    if (!_matched) {
+      if (Objects.equal(kind,FastLayoutDimensionKind.FILL_WRAP)) {
+        _matched=true;
+        CharSequence _fillwrapLayout = this.fillwrapLayout();
         _switchResult = _fillwrapLayout;
       }
     }
-    if (!matched) {
-      if (ObjectExtensions.operator_equals(kind_1,FastLayoutDimensionKind.WRAP_FILL)) {
-        matched=true;
-        StringConcatenation _wrapfillLayout = this.wrapfillLayout();
+    if (!_matched) {
+      if (Objects.equal(kind,FastLayoutDimensionKind.WRAP_FILL)) {
+        _matched=true;
+        CharSequence _wrapfillLayout = this.wrapfillLayout();
         _switchResult = _wrapfillLayout;
       }
     }
@@ -315,30 +308,29 @@ public class PropertyValueGenerator {
   
   public String layoutDimensionKind(final LayoutDimensionKind style) {
     String _switchResult = null;
-    final LayoutDimensionKind style_1 = style;
-    boolean matched = false;
-    if (!matched) {
-      if (ObjectExtensions.operator_equals(style_1,LayoutDimensionKind.FILL)) {
-        matched=true;
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(style,LayoutDimensionKind.FILL)) {
+        _matched=true;
         _switchResult = "fill_parent";
       }
     }
-    if (!matched) {
-      if (ObjectExtensions.operator_equals(style_1,LayoutDimensionKind.WRAP)) {
-        matched=true;
+    if (!_matched) {
+      if (Objects.equal(style,LayoutDimensionKind.WRAP)) {
+        _matched=true;
         _switchResult = "wrap_content";
       }
     }
-    if (!matched) {
-      if (ObjectExtensions.operator_equals(style_1,LayoutDimensionKind.MATCH)) {
-        matched=true;
+    if (!_matched) {
+      if (Objects.equal(style,LayoutDimensionKind.MATCH)) {
+        _matched=true;
         _switchResult = "match_parent";
       }
     }
     return _switchResult;
   }
   
-  public StringConcatenation fillLayout() {
+  public CharSequence fillLayout() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("android:layout_width=\"fill_parent\"");
     _builder.newLine();
@@ -347,7 +339,7 @@ public class PropertyValueGenerator {
     return _builder;
   }
   
-  public StringConcatenation wrapLayout() {
+  public CharSequence wrapLayout() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("android:layout_width=\"wrap_content\"");
     _builder.newLine();
@@ -356,7 +348,7 @@ public class PropertyValueGenerator {
     return _builder;
   }
   
-  public StringConcatenation fillwrapLayout() {
+  public CharSequence fillwrapLayout() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("android:layout_width=\"fill_parent\"");
     _builder.newLine();
@@ -365,7 +357,7 @@ public class PropertyValueGenerator {
     return _builder;
   }
   
-  public StringConcatenation wrapfillLayout() {
+  public CharSequence wrapfillLayout() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("android:layout_width=\"wrap_content\"");
     _builder.newLine();
@@ -411,8 +403,11 @@ public class PropertyValueGenerator {
       return _generateValue((NumColumnsPropertyValue)value);
     } else if (value instanceof StringPropertyValue) {
       return _generateValue((StringPropertyValue)value);
-    } else {
+    } else if (value != null) {
       return _generateValue(value);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(value).toString());
     }
   }
   

@@ -15,7 +15,6 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import java.util.Collections
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
-import hu.bme.mit.androtext.lang.androTextDsl.ActivityContextMenu
 
 class ActivityMenuGenerator implements IGenerator {
 	
@@ -36,15 +35,6 @@ class ActivityMenuGenerator implements IGenerator {
 	}
 	
 	def dispatch generate(ActivityMenu menu, boolean isRoot) '''
-		«IF isRoot»«menu.xmlHeader»«ENDIF»
-		<menu «IF isRoot»«menu.androidSchema.toString.trim»«ENDIF»>
-			«FOR element : menu.menuElements»
-			«element.generate»
-			«ENDFOR»
-		</menu>
-	'''
-	
-	def dispatch generate(ActivityContextMenu menu, boolean isRoot) '''
 		«IF isRoot»«menu.xmlHeader»«ENDIF»
 		<menu «IF isRoot»«menu.androidSchema.toString.trim»«ENDIF»>
 			«FOR element : menu.menuElements»

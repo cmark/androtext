@@ -1,5 +1,7 @@
 package hu.bme.mit.androtext.gen.entity;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
@@ -15,13 +17,10 @@ import hu.bme.mit.androtext.lang.androTextDsl.TypeRef;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.compiler.ImportManager;
-import org.eclipse.xtext.xbase.lib.BooleanExtensions;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class EntityClassGenerator implements IGenerator {
@@ -31,31 +30,30 @@ public class EntityClassGenerator implements IGenerator {
   public void doGenerate(final ResourceSet resourceSet, final IFileSystemAccess fsa, final TargetApplication androidApplication) {
     AndroidApplication _application = androidApplication.getApplication();
     EList<AndroidApplicationComponent> _components = _application.getComponents();
-    Iterable<DatabaseContentProvider> _filter = IterableExtensions.<DatabaseContentProvider>filter(_components, hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider.class);
+    Iterable<DatabaseContentProvider> _filter = Iterables.<DatabaseContentProvider>filter(_components, DatabaseContentProvider.class);
     for (final DatabaseContentProvider databaseContentProvider : _filter) {
       AndroDataModelRoot _datamodel = databaseContentProvider.getDatamodel();
       EList<Entity> _entities = _datamodel.getEntities();
       for (final Entity entity : _entities) {
         String _javaFileName = this.generatorExtensions.javaFileName(entity);
-        StringConcatenation _generate = this.generate(entity, androidApplication);
+        CharSequence _generate = this.generate(entity, androidApplication);
         fsa.generateFile(_javaFileName, IGeneratorSlots.DATA_SLOT, _generate);
       }
     }
   }
   
-  public StringConcatenation generate(final Entity e, final TargetApplication application) {
+  public CharSequence generate(final Entity e, final TargetApplication application) {
     StringConcatenation _builder = new StringConcatenation();
     ImportManager _importManager = new ImportManager(true);
     final ImportManager importManager = _importManager;
     _builder.newLineIfNotEmpty();
-    StringConcatenation _body = this.body(e, importManager);
-    final StringConcatenation body = _body;
+    final CharSequence body = this.body(e, importManager);
     _builder.newLineIfNotEmpty();
     {
       String _findPackageName = this.generatorExtensions.findPackageName(application);
       boolean _isNullOrEmpty = StringExtensions.isNullOrEmpty(_findPackageName);
-      boolean _operator_not = BooleanExtensions.operator_not(_isNullOrEmpty);
-      if (_operator_not) {
+      boolean _not = (!_isNullOrEmpty);
+      if (_not) {
         _builder.append("package ");
         String _findPackageName_1 = this.generatorExtensions.findPackageName(application);
         _builder.append(_findPackageName_1, "");
@@ -79,7 +77,7 @@ public class EntityClassGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation body(final Entity e, final ImportManager importManager) {
+  public CharSequence body(final Entity e, final ImportManager importManager) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("public class ");
     String _className = this.generatorExtensions.className(e);
@@ -95,7 +93,7 @@ public class EntityClassGenerator implements IGenerator {
       EList<Property> _properties = e.getProperties();
       for(final Property f : _properties) {
         _builder.append("\t");
-        StringConcatenation _feature = this.feature(f, importManager);
+        CharSequence _feature = this.feature(f, importManager);
         _builder.append(_feature, "	");
         _builder.newLineIfNotEmpty();
       }
@@ -106,7 +104,7 @@ public class EntityClassGenerator implements IGenerator {
       EList<Property> _properties_1 = e.getProperties();
       for(final Property f_1 : _properties_1) {
         _builder.append("\t");
-        StringConcatenation _ter = this.getter(f_1);
+        CharSequence _ter = this.getter(f_1);
         _builder.append(_ter, "	");
         _builder.newLineIfNotEmpty();
       }
@@ -117,7 +115,7 @@ public class EntityClassGenerator implements IGenerator {
       EList<Property> _properties_2 = e.getProperties();
       for(final Property f_2 : _properties_2) {
         _builder.append("\t");
-        StringConcatenation _setter = this.setter(f_2);
+        CharSequence _setter = this.setter(f_2);
         _builder.append(_setter, "	");
         _builder.newLineIfNotEmpty();
       }
@@ -130,20 +128,20 @@ public class EntityClassGenerator implements IGenerator {
   public String superTypeClause(final Entity e, final ImportManager importManager) {
     String _xifexpression = null;
     Entity _superType = e.getSuperType();
-    boolean _operator_notEquals = ObjectExtensions.operator_notEquals(_superType, null);
-    if (_operator_notEquals) {
+    boolean _notEquals = (!Objects.equal(_superType, null));
+    if (_notEquals) {
       Entity _superType_1 = e.getSuperType();
       String _className = this.generatorExtensions.className(_superType_1);
-      String _operator_plus = StringExtensions.operator_plus("extends ", _className);
-      String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, " ");
-      _xifexpression = _operator_plus_1;
+      String _plus = ("extends " + _className);
+      String _plus_1 = (_plus + " ");
+      _xifexpression = _plus_1;
     } else {
       _xifexpression = "";
     }
     return _xifexpression;
   }
   
-  public StringConcatenation feature(final Property f, final ImportManager importManager) {
+  public CharSequence feature(final Property f, final ImportManager importManager) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("private ");
     TypeRef _type = f.getType();
@@ -157,7 +155,7 @@ public class EntityClassGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation getter(final Property f) {
+  public CharSequence getter(final Property f) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("public ");
     TypeRef _type = f.getType();
@@ -181,7 +179,7 @@ public class EntityClassGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation setter(final Property f) {
+  public CharSequence setter(final Property f) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("public void set");
     String _name = f.getName();

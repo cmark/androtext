@@ -4,20 +4,18 @@ import com.google.inject.Inject
 import hu.bme.mit.androtext.gen.IGenerator
 import hu.bme.mit.androtext.gen.IGeneratorSlots
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
+import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.xbase.compiler.ImportManager
-
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 
 class ActivityClassGenerator implements IGenerator {
 	
 	@Inject extension GeneratorExtensions extensions
 	
 	override void doGenerate(ResourceSet resourceSet, IFileSystemAccess fsa, TargetApplication androidApplication) {
-		for (activity : resourceSet.resources.map(r | r.allContentsIterable.filter(typeof (AbstractActivity))).flatten) {
+		for (activity : resourceSet.resources.map(r | r.allContents.toIterable.filter(typeof (AbstractActivity))).flatten) {
 			fsa.generateFile(activity.className + ".java", IGeneratorSlots::DEFAULT_SRC, generate(activity, androidApplication))	
 		}
 	}

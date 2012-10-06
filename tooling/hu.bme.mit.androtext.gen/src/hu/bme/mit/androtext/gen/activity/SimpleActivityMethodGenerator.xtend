@@ -1,11 +1,12 @@
 package hu.bme.mit.androtext.gen.activity
 
 import com.google.inject.Inject
+import hu.bme.mit.androtext.gen.IActivityMethodGenerator
 import hu.bme.mit.androtext.gen.util.GeneratorExtensions
-import hu.bme.mit.androtext.gen.util.IteratorExtensions
 import hu.bme.mit.androtext.lang.androTextDsl.AbstractActivity
 import hu.bme.mit.androtext.lang.androTextDsl.Action
 import hu.bme.mit.androtext.lang.androTextDsl.Activity
+import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
 import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenuItem
 import hu.bme.mit.androtext.lang.androTextDsl.ArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.Button
@@ -13,32 +14,55 @@ import hu.bme.mit.androtext.lang.androTextDsl.ContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.DataAction
 import hu.bme.mit.androtext.lang.androTextDsl.DataActionType
 import hu.bme.mit.androtext.lang.androTextDsl.DataBinding
+import hu.bme.mit.androtext.lang.androTextDsl.DataTypesRef
 import hu.bme.mit.androtext.lang.androTextDsl.DatabaseContentProvider
+import hu.bme.mit.androtext.lang.androTextDsl.EntityTypeRef
 import hu.bme.mit.androtext.lang.androTextDsl.IntegerArrayResource
+import hu.bme.mit.androtext.lang.androTextDsl.IntentActionType
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeExplicitActivity
 import hu.bme.mit.androtext.lang.androTextDsl.InvokeImplicitActivity
 import hu.bme.mit.androtext.lang.androTextDsl.ListActivity
 import hu.bme.mit.androtext.lang.androTextDsl.PreferenceActivity
+import hu.bme.mit.androtext.lang.androTextDsl.Property
 import hu.bme.mit.androtext.lang.androTextDsl.ResourceContentProvider
 import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
+import hu.bme.mit.androtext.lang.androTextDsl.View
+import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup
 
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import hu.bme.mit.androtext.lang.androTextDsl.ActivityMenu
-import hu.bme.mit.androtext.lang.androTextDsl.ActivityContextMenu
-import hu.bme.mit.androtext.lang.androTextDsl.IntentActionType
-
-class SimpleActivityMethodGenerator {
+class SimpleActivityMethodGenerator implements IActivityMethodGenerator {
 	
 	@Inject extension GeneratorExtensions
 	
-	def simpleMethods(AbstractActivity activity) '''
+	def View viewForProjection(DataBinding db, Property p) {
+		val pI = db.projection.indexOf(p)
+		db.target.get(pI)
+	}
+	
+	override generateMethods(AbstractActivity activity) '''
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			«activity.contentViewSet»
+			«activity.getViewsToLocalVariable»
 			«activity.logic»
 			«activity.generateButtonClicks»
+		}
+		
+		@Override
+		protected void onResume() {
+			super.onResume();
+			«IF activity instanceof Activity»
+				«IF (activity as Activity).databinding != null»
+					if (mCursor != null) {
+						mCursor.requery();
+						mCursor.moveToFirst();
+						«FOR p : (activity as Activity).databinding.projection»
+						«(activity as Activity).databinding.viewForProjection(p).fieldName».setText(mCursor.get«p.cursorGetter»(COLUMN_INDEX_«p.name.toUpperCase»));
+						«ENDFOR»
+					}
+				«ENDIF»
+			«ENDIF»
 		}
 		
 		«IF activity.menu != null»
@@ -64,7 +88,7 @@ class SimpleActivityMethodGenerator {
 			Uri dataUri = ContentUris.withAppendedId(getIntent().getData(), info.id);
 			«ENDIF»
 			switch (item.getItemId()) {
-			«FOR menuItem : IteratorExtensions::toIterable(activity.menu.eAllContents).filter(typeof (ActivityMenuItem))»
+			«FOR menuItem : activity.menu.eAllContents.toIterable.filter(typeof (ActivityMenuItem))»
 			case R.id.«menuItem.name»:
 				«menuItem.onSelectedAction.generate(activity)»
 			    return true;
@@ -119,7 +143,7 @@ class SimpleActivityMethodGenerator {
 			Uri dataUri = ContentUris.withAppendedId(getIntent().getData(), info.id);
 			«ENDIF»
 			switch (item.getItemId()) {
-			«FOR menuItem : IteratorExtensions::toIterable(activity.contextMenu.eAllContents).filter(typeof (ActivityMenuItem))»
+			«FOR menuItem : activity.contextMenu.eAllContents.toIterable.filter(typeof (ActivityMenuItem))»
 			«IF menuItem.onSelectedAction != null»
 			case R.id.«menuItem.name»:
 				«menuItem.onSelectedAction.generate(activity)»
@@ -135,26 +159,36 @@ class SimpleActivityMethodGenerator {
 		«ENDIF»
 	'''
 	
-	def dispatch isOnSelectedMethodNeeded(ActivityMenu menu) {
-		return IteratorExtensions::toIterable(menu.eAllContents).filter(typeof (Action)).size > 0
+	def cursorGetter(Property p) {
+		val type = p.type
+		switch (type) {
+			EntityTypeRef : "Int"
+			DataTypesRef: type.type.literal.toFirstUpper
+			default: null
+		}
 	}
-	def dispatch isOnSelectedMethodNeeded(ActivityContextMenu menu) {
-		return IteratorExtensions::toIterable(menu.eAllContents).filter(typeof (Action)).size > 0
+	
+	def dispatch getViewsToLocalVariable(AbstractActivity activity) '''
+	'''
+	
+	def dispatch getViewsToLocalVariable(Activity activity) '''
+		«IF activity.layout != null»
+		«IF activity.layout instanceof ViewGroup»
+			«FOR v : (activity.layout as ViewGroup).views»
+				«v.fieldName» = («v.javaType») findViewById(R.id.«v.name»);
+			«ENDFOR»
+		«ELSE»
+			«activity.layout.fieldName» = («activity.layout.javaType») findViewById(R.id.«activity.layout.name»);
+		«ENDIF»
+		«ENDIF»
+	'''
+	
+	def isOnSelectedMethodNeeded(ActivityMenu menu) {
+		return menu.eAllContents.filter(typeof (Action)).size > 0
 	}
 	
 	def dispatch dataUriNeeded(ActivityMenu menu) {
-		return IteratorExtensions::toIterable(menu.eAllContents).filter(typeof (Action)).filter([
-			if (it instanceof InvokeImplicitActivity) {
-				if ((it as InvokeImplicitActivity).action.equals(IntentActionType::INSERT)) {
-					return false;	
-				}
-			}
-			return true
-		]).size > 0
-	}
-	
-	def dispatch dataUriNeeded(ActivityContextMenu menu) {
-		return IteratorExtensions::toIterable(menu.eAllContents).filter(typeof (Action)).filter([
+		return menu.eAllContents.toIterable.filter(typeof (Action)).filter([
 			if (it instanceof InvokeImplicitActivity) {
 				if ((it as InvokeImplicitActivity).action.equals(IntentActionType::INSERT)) {
 					return false;	
@@ -167,7 +201,7 @@ class SimpleActivityMethodGenerator {
 	def dispatch generateButtonClicks(AbstractActivity activity) ''''''
 	def dispatch generateButtonClicks(Activity activity) '''
 		«IF activity.layout != null»
-		«FOR button : activity.layout.eResource.allContentsIterable.filter(typeof (Button))»
+		«FOR button : activity.layout.eResource.allContents.toIterable.filter(typeof (Button))»
 «««		«IF button.onClickAttribute != null»
 «««		Button «button.name» = (Button)findViewById(R.id.«button.name»);
 «««		«button.name».setOnClickListener(new OnClickListener() {
@@ -205,7 +239,7 @@ class SimpleActivityMethodGenerator {
 	
 	def dispatch generate(InvokeImplicitActivity action, AbstractActivity activity) '''
 		«val varName = action.intentVariableName»
-		Intent «varName» = new Intent(«action.actionName»);
+		Intent «varName» = new Intent(«action.actionName.toString.trim»);
 		«IF !action.data.nullOrEmpty»
 			«varName».setData(Uri.create("«action.data»"));
 		«ELSEIF !activity.listActivity || action.action.equals(IntentActionType::INSERT)»
@@ -216,13 +250,13 @@ class SimpleActivityMethodGenerator {
 		startActivity(«varName»);
 	'''
 	
-	def actionName(InvokeImplicitActivity action) {
-		if (action.action != null) {
-			"Intent.ACTION_"+action.action.name
-		} else {
-			action.customAction.name
-		}
-	}
+	def actionName(InvokeImplicitActivity action) '''
+		«IF action.customAction != null && !action.customAction.name.nullOrEmpty»
+			"«action.customAction.name»"
+		«ELSE»
+			Intent.ACTION_«action.action.name»
+		«ENDIF»
+	'''
 	
 	def intentVariableName(InvokeImplicitActivity action) {
 		var variableName = ""
@@ -261,6 +295,7 @@ class SimpleActivityMethodGenerator {
 		«ENDIF»
 	'''
 	def dispatch logic(ListActivity activity) '''
+		«IF activity.listitem != null»
 		Intent intent = getIntent();
 		«IF activity.contextMenu != null»
 		getListView().setOnCreateContextMenuListener(this);
@@ -268,6 +303,7 @@ class SimpleActivityMethodGenerator {
 		«val listItem = activity.listitem.layoutName»
 		«IF activity.databinding != null»
 		«activity.databinding.generate(listItem)»
+		«ENDIF»
 		«ENDIF»
 	'''
 	

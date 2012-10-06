@@ -1,5 +1,6 @@
 package hu.bme.mit.androtext.gen.layout;
 
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import hu.bme.mit.androtext.gen.IGenerator;
 import hu.bme.mit.androtext.gen.IGeneratorSlots;
@@ -10,19 +11,19 @@ import hu.bme.mit.androtext.lang.androTextDsl.TargetApplication;
 import hu.bme.mit.androtext.lang.androTextDsl.View;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewElement;
 import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup;
+import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.ResourceExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class LayoutResourceGenerator implements IGenerator {
@@ -36,27 +37,28 @@ public class LayoutResourceGenerator implements IGenerator {
     EList<Resource> _resources = resourceSet.getResources();
     final Function1<Resource,Iterable<AndroGuiModelRoot>> _function = new Function1<Resource,Iterable<AndroGuiModelRoot>>() {
         public Iterable<AndroGuiModelRoot> apply(final Resource r) {
-          Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(r);
-          Iterable<AndroGuiModelRoot> _filter = IterableExtensions.<AndroGuiModelRoot>filter(_allContentsIterable, hu.bme.mit.androtext.lang.androTextDsl.AndroGuiModelRoot.class);
+          TreeIterator<EObject> _allContents = r.getAllContents();
+          Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+          Iterable<AndroGuiModelRoot> _filter = Iterables.<AndroGuiModelRoot>filter(_iterable, AndroGuiModelRoot.class);
           return _filter;
         }
       };
     List<Iterable<AndroGuiModelRoot>> _map = ListExtensions.<Resource, Iterable<AndroGuiModelRoot>>map(_resources, _function);
-    Iterable<AndroGuiModelRoot> _flatten = IterableExtensions.<AndroGuiModelRoot>flatten(_map);
+    Iterable<AndroGuiModelRoot> _flatten = Iterables.<AndroGuiModelRoot>concat(_map);
     for (final AndroGuiModelRoot guimodel : _flatten) {
       EList<View> _roots = guimodel.getRoots();
       for (final View root : _roots) {
         String _layoutName = this._generatorExtensions.layoutName(root);
-        String _operator_plus = StringExtensions.operator_plus(_layoutName, ".xml");
-        StringConcatenation _generate = this.generate(root);
-        fsa.generateFile(_operator_plus, IGeneratorSlots.LAYOUT_SLOT, _generate);
+        String _plus = (_layoutName + ".xml");
+        CharSequence _generate = this.generate(root);
+        fsa.generateFile(_plus, IGeneratorSlots.LAYOUT_SLOT, _generate);
       }
     }
   }
   
-  public StringConcatenation generate(final View root) {
+  public CharSequence generate(final View root) {
     StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _xmlHeader = this._generatorExtensions.xmlHeader(root);
+    CharSequence _xmlHeader = this._generatorExtensions.xmlHeader(root);
     _builder.append(_xmlHeader, "");
     _builder.newLineIfNotEmpty();
     _builder.append("<");
@@ -64,17 +66,17 @@ public class LayoutResourceGenerator implements IGenerator {
     String _name = _eClass.getName();
     _builder.append(_name, "");
     _builder.append(" ");
-    StringConcatenation _androidSchema = this._generatorExtensions.androidSchema(root);
+    CharSequence _androidSchema = this._generatorExtensions.androidSchema(root);
     _builder.append(_androidSchema, "");
     _builder.append(" ");
-    StringConcatenation _generateAttributes = this._viewAttributeGenerator.generateAttributes(root);
+    CharSequence _generateAttributes = this._viewAttributeGenerator.generateAttributes(root);
     String _string = _generateAttributes.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
     _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    StringConcatenation _generateElements = this.generateElements(root);
+    CharSequence _generateElements = this.generateElements(root);
     _builder.append(_generateElements, "	");
     _builder.newLineIfNotEmpty();
     _builder.append("</");
@@ -86,29 +88,41 @@ public class LayoutResourceGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation uielement(final View element) {
+  public CharSequence uielement(final View element) {
     StringConcatenation _builder = new StringConcatenation();
-    StringConcatenation _startTag = this.startTag(element);
+    CharSequence _startTag = this.startTag(element);
     _builder.append(_startTag, "");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    StringConcatenation _generateElements = this.generateElements(element);
+    CharSequence _generateElements = this.generateElements(element);
     _builder.append(_generateElements, "	");
     _builder.newLineIfNotEmpty();
-    StringConcatenation _endTag = this.endTag(element);
+    CharSequence _endTag = this.endTag(element);
     _builder.append(_endTag, "");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  protected StringConcatenation _startTag(final View element) {
+  protected CharSequence _startTag(final ViewElement element) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<View ");
+    CharSequence _generateAttributes = this._viewAttributeGenerator.generateAttributes(element);
+    String _string = _generateAttributes.toString();
+    String _trim = _string.trim();
+    _builder.append(_trim, "");
+    _builder.append(">");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _startTag(final View element) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<");
     EClass _eClass = element.eClass();
     String _name = _eClass.getName();
     _builder.append(_name, "");
     _builder.append(" ");
-    StringConcatenation _generateAttributes = this._viewAttributeGenerator.generateAttributes(element);
+    CharSequence _generateAttributes = this._viewAttributeGenerator.generateAttributes(element);
     String _string = _generateAttributes.toString();
     String _trim = _string.trim();
     _builder.append(_trim, "");
@@ -117,19 +131,7 @@ public class LayoutResourceGenerator implements IGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _startTag(final ViewElement element) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<View ");
-    StringConcatenation _generateAttributes = this._viewAttributeGenerator.generateAttributes(element);
-    String _string = _generateAttributes.toString();
-    String _trim = _string.trim();
-    _builder.append(_trim, "");
-    _builder.append(">");
-    _builder.newLineIfNotEmpty();
-    return _builder;
-  }
-  
-  protected StringConcatenation _endTag(final View element) {
+  protected CharSequence _endTag(final View element) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("</");
     EClass _eClass = element.eClass();
@@ -140,24 +142,24 @@ public class LayoutResourceGenerator implements IGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _endTag(final ViewElement element) {
+  protected CharSequence _endTag(final ViewElement element) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("</View>");
     _builder.newLine();
     return _builder;
   }
   
-  protected StringConcatenation _generateElements(final View element) {
+  protected CharSequence _generateElements(final View element) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  protected StringConcatenation _generateElements(final ViewGroup layout) {
+  protected CharSequence _generateElements(final ViewGroup layout) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<View> _views = layout.getViews();
       for(final View e : _views) {
-        StringConcatenation _uielement = this.uielement(e);
+        CharSequence _uielement = this.uielement(e);
         _builder.append(_uielement, "");
         _builder.newLineIfNotEmpty();
       }
@@ -165,27 +167,36 @@ public class LayoutResourceGenerator implements IGenerator {
     return _builder;
   }
   
-  public StringConcatenation startTag(final View element) {
+  public CharSequence startTag(final View element) {
     if (element instanceof ViewElement) {
       return _startTag((ViewElement)element);
-    } else {
+    } else if (element != null) {
       return _startTag(element);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(element).toString());
     }
   }
   
-  public StringConcatenation endTag(final View element) {
+  public CharSequence endTag(final View element) {
     if (element instanceof ViewElement) {
       return _endTag((ViewElement)element);
-    } else {
+    } else if (element != null) {
       return _endTag(element);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(element).toString());
     }
   }
   
-  public StringConcatenation generateElements(final View layout) {
+  public CharSequence generateElements(final View layout) {
     if (layout instanceof ViewGroup) {
       return _generateElements((ViewGroup)layout);
-    } else {
+    } else if (layout != null) {
       return _generateElements(layout);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(layout).toString());
     }
   }
 }
