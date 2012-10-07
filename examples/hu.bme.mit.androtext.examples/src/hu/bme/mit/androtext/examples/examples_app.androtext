@@ -114,50 +114,10 @@ application AndroTextExamples {
 	preferences Settings {
 		layout preferencescreen "Settings" {
 			preferencecategory "SimpleCategory" {
-				checkboxpreference simpleCheckBox "This is checkbox"
-				edittextpreference simpleEditText "This is edittext"				
+				checkboxpreference simpleCheckBox "This is a CheckboxPreference"
+				edittextpreference simpleEditText "This is an EditTextPreference"				
 			}
 			preference appVersion "Version 1.0"
 		}
 	}
-	
-	// AndroGame Examples
-	// Line Example
-	gameactivity LineExampleActivity {
-		camera size(720 480)
-		scene LineExampleGui.lineScene
-	}
-
-	// Menu Example	
-	gameactivity MenuExampleActivity {
-		camera size(720 480)
-		scene MenuExampleGui.simpleMenu
-	}
-	
-	// Physics Example
-	gameactivity PhysicsExampleActivity {
-		camera size(720 480)
-		scene PhysicsExampleGui.physicsScene
-	}
-	// Rectangle Example
-	gameactivity RectangleExample {
-		camera size(720 480)
-		scene RectangleExampleGui.rectangleScene
-	}
-	// Sprite Example
-	gameactivity SpriteExampleActivity {
-		camera size(720 480)
-		scene SpriteExampleGui.spriteScene
-	}
-	// Text Example
-	gameactivity TextExampleActivity {
-		camera size(720 480)
-		scene TextExampleGui.textScene
-	}
-	// AnimatedSprite Example
-//	gameactivity AnimatedSpriteExampleActivity {
-//		camera size(720 480)
-//		scene AnimatedSpriteExampleGui.animatedSpriteScene
-//	}
-	
 }
