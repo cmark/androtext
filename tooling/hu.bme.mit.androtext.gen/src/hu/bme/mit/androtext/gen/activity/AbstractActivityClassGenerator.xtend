@@ -71,6 +71,7 @@ class AbstractActivityClassGenerator implements IAbstractActivityGenerator {
 		import android.view.View.OnClickListener;
 		import android.content.Intent;
 		import android.content.ContentUris;
+		import android.widget.ArrayAdapter;
 		«IF activity.menu != null»
 		import android.view.Menu;
 		import android.view.MenuItem;

@@ -1,13 +1,13 @@
 textview list_item fill {
 	padding : 10dp
 	textSize : 16sp
-	textColor : #ffffff
+	textColor : #000000
 }
 
 linearlayout main fill&wrap {
 	orientation : "horizontal"
 	textview label "Country" wrap
-	autocompletetextview autocomplete_country entries HelloListActivityResources.countries fill&wrap {
+	autocompletetextview autocomplete_country entries HelloListActivityResources.countries listitem list_item fill&wrap {
 		layout_marginLeft : 5dp
 	}
 }

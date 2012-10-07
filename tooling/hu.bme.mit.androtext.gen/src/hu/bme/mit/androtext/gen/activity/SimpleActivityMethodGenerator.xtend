@@ -29,6 +29,7 @@ import hu.bme.mit.androtext.lang.androTextDsl.StringArrayResource
 import hu.bme.mit.androtext.lang.androTextDsl.TabActivity
 import hu.bme.mit.androtext.lang.androTextDsl.View
 import hu.bme.mit.androtext.lang.androTextDsl.ViewGroup
+import hu.bme.mit.androtext.lang.androTextDsl.AutoCompleteTextView
 
 class SimpleActivityMethodGenerator implements IActivityMethodGenerator {
 	
@@ -202,15 +203,15 @@ class SimpleActivityMethodGenerator implements IActivityMethodGenerator {
 	def dispatch generateButtonClicks(Activity activity) '''
 		«IF activity.layout != null»
 		«FOR button : activity.layout.eResource.allContents.toIterable.filter(typeof (Button))»
-«««		«IF button.onClickAttribute != null»
-«««		Button «button.name» = (Button)findViewById(R.id.«button.name»);
-«««		«button.name».setOnClickListener(new OnClickListener() {
-«««			@Override
-«««			public void onClick(View v) {
-«««				«button.onClickAttribute.action.generate(activity)»
-«««			}
-«««		});
-«««		«ENDIF»
+		«IF button.onClickAttribute != null»
+		Button «button.name» = (Button)findViewById(R.id.«button.name»);
+		«button.name».setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				«button.onClickAttribute.action.generate(activity)»
+			}
+		});
+		«ENDIF»
 		«ENDFOR»
 		«ENDIF»
 	'''
@@ -290,10 +291,26 @@ class SimpleActivityMethodGenerator implements IActivityMethodGenerator {
 	
 	def dispatch logic(AbstractActivity activity) ''''''
 	def dispatch logic(Activity activity) '''
+		«activity.generateAutoCompleteInit»
 		«IF activity.databinding != null»
 		«activity.databinding.generate(null)»
 		«ENDIF»
 	'''
+	
+	def generateAutoCompleteInit(Activity activity) '''
+		«FOR act : activity.layout.eAllContents.toIterable.filter(typeof (AutoCompleteTextView))»
+		«act.entriesAttribute.entries.generateAutoCompleteContent(act.listItem)»
+		«act.fieldName».setAdapter(«act.entriesAttribute.entries.name»Adapter);
+		«ENDFOR»
+	'''
+	
+	def dispatch generateAutoCompleteContent(ArrayResource resource, View listItem) ''''''
+	def dispatch generateAutoCompleteContent(StringArrayResource resource, View listItem) '''
+		String[] «resource.name» = «resource.getResource("String")»
+		ArrayAdapter<String> «resource.name»Adapter = new ArrayAdapter<String>(this, R.layout.«listItem.layoutName», «resource.name»);
+	'''
+	def dispatch generateAutoCompleteContent(IntegerArrayResource resource, View listItem) ''''''
+	
 	def dispatch logic(ListActivity activity) '''
 		«IF activity.listitem != null»
 		Intent intent = getIntent();
@@ -354,12 +371,16 @@ class SimpleActivityMethodGenerator implements IActivityMethodGenerator {
 	def dispatch generateContentSet(ArrayResource resource, String listItem) '''
 	'''
 	def dispatch generateContentSet(StringArrayResource resource, String listItem) '''
-		String[] «resource.name» = getResources().getStringArray(R.array.«resource.name»);
+		String[] «resource.name» = «resource.getResource("String")»
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.«listItem», «resource.name»));
 	'''
 	def dispatch generateContentSet(IntegerArrayResource resource, String listItem) '''
-		int[] «resource.name» = getResources().getIntArray(R.array.«resource.name»);
+		int[] «resource.name» = «resource.getResource("Int")»
 		setListAdapter(new ArrayAdapter<Integer>(this, R.layout.«listItem», «resource.name»));
+	'''
+	
+	def getResource(ArrayResource resource, String type) '''
+		getResources().get«type»Array(R.array.«resource.name»);
 	'''
 	
 }
