@@ -188,7 +188,7 @@ class SimpleActivityMethodGenerator implements IActivityMethodGenerator {
 		return menu.eAllContents.filter(typeof (Action)).size > 0
 	}
 	
-	def dispatch dataUriNeeded(ActivityMenu menu) {
+	def dataUriNeeded(ActivityMenu menu) {
 		return menu.eAllContents.toIterable.filter(typeof (Action)).filter([
 			if (it instanceof InvokeImplicitActivity) {
 				if ((it as InvokeImplicitActivity).action.equals(IntentActionType::INSERT)) {
@@ -202,10 +202,9 @@ class SimpleActivityMethodGenerator implements IActivityMethodGenerator {
 	def dispatch generateButtonClicks(AbstractActivity activity) ''''''
 	def dispatch generateButtonClicks(Activity activity) '''
 		«IF activity.layout != null»
-		«FOR button : activity.layout.eResource.allContents.toIterable.filter(typeof (Button))»
+		«FOR button : activity.layout.eAllContents.toIterable.filter(typeof (Button))»
 		«IF button.onClickAttribute != null»
-		Button «button.name» = (Button)findViewById(R.id.«button.name»);
-		«button.name».setOnClickListener(new OnClickListener() {
+		«button.fieldName».setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				«button.onClickAttribute.action.generate(activity)»
