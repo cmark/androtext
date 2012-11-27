@@ -14,8 +14,8 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.3.1",
  org.eclipse.xtext.builder;bundle-version="2.3.1",
  hu.bme.mit.androtext.lang;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.xtend2.lib;bundle-version="2.3.1",
- com.android.ide.eclipse.adt;bundle-version="20.0.0",
- com.android.ide.eclipse.base;bundle-version="20.0.0"
+ com.android.ide.eclipse.adt;bundle-version="21.0.0",
+ com.android.ide.eclipse.base;bundle-version="21.0.0"
 Export-Package: hu.bme.mit.androtext.gen,
  hu.bme.mit.androtext.gen.activity,
  hu.bme.mit.androtext.gen.application,

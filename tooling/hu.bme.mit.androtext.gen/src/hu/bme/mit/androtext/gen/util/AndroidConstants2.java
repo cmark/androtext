@@ -1,10 +1,8 @@
 package hu.bme.mit.androtext.gen.util;
 
-import com.android.AndroidConstants;
-import com.android.ide.common.layout.LayoutConstants;
+import com.android.SdkConstants;
 import com.android.ide.eclipse.adt.AdtConstants;
 import com.android.resources.Density;
-import com.android.sdklib.SdkConstants;
 
 @SuppressWarnings("restriction")
 public interface AndroidConstants2 {
@@ -22,22 +20,22 @@ public interface AndroidConstants2 {
 	public static final String ASSETS_DIRECTORY = SdkConstants.FD_ASSETS
 			+ AdtConstants.WS_SEP;
 
-	public static final String DRAWABLE_DIRECTORY = AndroidConstants.FD_RES_DRAWABLE
+	public static final String DRAWABLE_DIRECTORY = SdkConstants.FD_RES_DRAWABLE
 			+ AdtConstants.WS_SEP;
 
-	public static final String DRAWABLE_HDPI_DIRECTORY = AndroidConstants.FD_RES_DRAWABLE
+	public static final String DRAWABLE_HDPI_DIRECTORY = SdkConstants.FD_RES_DRAWABLE
 			+ "-" + Density.HIGH.getResourceValue() + AdtConstants.WS_SEP; //$NON-NLS-1$
-	public static final String DRAWABLE_MDPI_DIRECTORY = AndroidConstants.FD_RES_DRAWABLE
+	public static final String DRAWABLE_MDPI_DIRECTORY = SdkConstants.FD_RES_DRAWABLE
 			+ "-" + Density.MEDIUM.getResourceValue() + AdtConstants.WS_SEP; //$NON-NLS-1$
-	public static final String DRAWABLE_LDPI_DIRECTORY = AndroidConstants.FD_RES_DRAWABLE
+	public static final String DRAWABLE_LDPI_DIRECTORY = SdkConstants.FD_RES_DRAWABLE
 			+ "-" + Density.LOW.getResourceValue() + AdtConstants.WS_SEP; //$NON-NLS-1$
-	public static final String LAYOUT_DIRECTORY = AndroidConstants.FD_RES_LAYOUT
+	public static final String LAYOUT_DIRECTORY = SdkConstants.FD_RES_LAYOUT
 			+ AdtConstants.WS_SEP;
-	public static final String MENU_DIRECTORY = AndroidConstants.FD_RES_MENU
+	public static final String MENU_DIRECTORY = SdkConstants.FD_RES_MENU
 			+ AdtConstants.WS_SEP;
-	public static final String VALUES_DIRECTORY = AndroidConstants.FD_RES_VALUES
+	public static final String VALUES_DIRECTORY = SdkConstants.FD_RES_VALUES
 			+ AdtConstants.WS_SEP;
-	public static final String XML_DIRECTORY = AndroidConstants.FD_RES_XML
+	public static final String XML_DIRECTORY = SdkConstants.FD_RES_XML
 			+ AdtConstants.WS_SEP;
 
 	public static final String GEN_SRC_DIRECTORY = SdkConstants.FD_GEN_SOURCES
@@ -68,7 +66,7 @@ public interface AndroidConstants2 {
 
 	public static final String STRINGS_FILE = "strings.xml"; //$NON-NLS-1$
 
-	public static final String STRING_RSRC_PREFIX = LayoutConstants.STRING_PREFIX;
+	public static final String STRING_RSRC_PREFIX = SdkConstants.STRING_PREFIX;
 	public static final String STRING_APP_NAME = "app_name"; //$NON-NLS-1$
 	public static final String STRING_HELLO_WORLD = "hello"; //$NON-NLS-1$
 
