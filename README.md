@@ -27,12 +27,13 @@ RoadMap Date: 2012. 10. 07.
 # Installation #
 
 1. Get Eclipse with Xtext 2.3.1
-2. Get AndroText from Github as Zip or Clone the repository
-3. Start Eclipse and import all project from the *tooling* directory into your workspace
-4. IMPORTANT: generate the language with the workflow file in the *.lang project.
-5. Start a Runtime Eclipse with the newly imported plugins.
-6. Create a simple Java project (later a AndroText project), and create *.androtext files (Content assist helps a lot).
-7. See the example project in the *examples* folder.
+2. Use http://incquery.net/update/archive/incquery-0.4/ update site for EMF-IncQuery
+3. Get AndroText from Github as Zip or Clone the repository
+4. Start Eclipse and import all project from the *tooling* directory into your workspace
+5. IMPORTANT: generate the language with the workflow file in the *.lang project.
+6. Start a Runtime Eclipse with the newly imported plugins.
+7. Create a simple Java project (later a AndroText project), and create *.androtext files (Content assist helps a lot).
+8. See the example project in the *examples* folder.
 
 ## License ##
 
